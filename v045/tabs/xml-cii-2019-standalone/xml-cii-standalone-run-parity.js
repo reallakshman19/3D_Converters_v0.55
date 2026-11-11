@@ -10,6 +10,8 @@
 import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';
 import { synchronizeXmlCiiNodeBoreWithOutsideDiameter } from '../../converters/xml-cii2019-core/node-bore-od-authority.js';
 import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js';
+import { findExactClassWall, nodeBoreMm } from './ui-adapted/xml-cii-adapted-preview-wall-evidence.js';
+import { xmlCiiClassSizeKey } from '../../converters/xml-cii2019-core/branch-process-resolver.js';
 
 const PARITY_MODULE_URL = new URL(
   '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js',
@@ -60,6 +62,7 @@ function recordExpected(entries, {
   scope,
   branchName,
   nodeNumber = '',
+  nodeOrdinal,
   path,
   field,
   value,
@@ -68,7 +71,11 @@ function recordExpected(entries, {
 }) {
   const expected = text(value).trim();
   if (!expected) return;
-  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });
+  entries.push({
+    scope, branchName, nodeNumber, path, field, expected, kind, source,
+    // Node numbers repeat inside a branch (-1); the source position is exact.
+    ...(Number.isSafeInteger(nodeOrdinal) ? { nodeOrdinal } : {}),
+  });
 }
 
 const WEIGHT_BEARING_TYPES = new Set(['FLAN', 'VALV', 'RIGID', 'INST']);
@@ -83,6 +90,28 @@ function mappedNodeWeights(nodeRows, config) {
     if (weight !== null) weights.set(`${text(nr.branchName)}|${text(nr.nodeNumber)}`, weight);
   }
   return weights;
+}
+
+// v0.55 (Owner 11 Nov): a mixed-diameter branch must not give every node the
+// first node's wall. Each node's own size picks: a manual class+size override,
+// else the branch value when the node is the branch's own size, else the
+// piping-class master row for that size. No row for that size: do not write.
+export function nodeWallThicknessForSize(row, node, config) {
+  const nodeBore = nodeBoreMm(node);
+  const branchBore = Number(row?.sizeMm);
+  if (!Number.isFinite(nodeBore) || nodeBore <= 0) return { value: row?.wallThickness, source: 'branch' };
+  const pipingClass = text(row?.pipingClass || row?.pipingClassDerived);
+  const key = xmlCiiClassSizeKey(pipingClass, nodeBore);
+  const overrides = config?.overrides?.wallThickness || {};
+  if (key && numeric(overrides[key]) !== null && numeric(overrides[key]) > 0) {
+    return { value: overrides[key], source: 'class-size-override', key };
+  }
+  if (Number.isFinite(branchBore) && Math.round(branchBore) === Math.round(nodeBore)) {
+    return { value: row?.wallThickness, source: 'branch' };
+  }
+  const classWall = findExactClassWall(config, pipingClass, nodeBore);
+  if (classWall) return { value: String(classWall.wallThicknessMm), source: 'piping-class-master-node-size', key };
+  return { value: null, source: 'no-class-row-for-node-size', key };
 }
 
 async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics) {
@@ -128,14 +157,19 @@ async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, dia
       });
     }
 
-    for (const node of childrenByName(branch, 'Node')) {
+    for (const [nodeOrdinal, node] of childrenByName(branch, 'Node').entries()) {
       const nodeNumber = childText(node, 'NodeNumber');
+      const nodeWall = nodeWallThicknessForSize(row, node, config);
+      if (nodeWall.source !== 'branch') {
+        result.nodeWallBySize = result.nodeWallBySize || [];
+        result.nodeWallBySize.push({ branchName, nodeNumber, ...nodeWall });
+      }
       const nodeWrites = [
         { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },
         { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },
         { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },
         { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },
-        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },
+        { name: 'WallThickness', field: 'wallThickness', value: nodeWall.value, kind: 'number' },
         { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },
       ];
       for (const write of nodeWrites) {
@@ -143,7 +177,7 @@ async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, dia
         if (!valid || !setChildText(document, node, write.name, write.value)) continue;
         result.appliedFields += 1;
         recordExpected(result.expectedEntries, {
-          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,
+          scope: 'node', branchName, nodeNumber, nodeOrdinal, path: [write.name], field: write.field,
           value: write.value, kind: write.kind, source: 'standalone-preview',
         });
       }
@@ -153,13 +187,24 @@ async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, dia
       if (mapped !== undefined && (existingWeight === null || existingWeight === 0) && setChildText(document, node, 'Weight', mapped)) {
         result.appliedFields += 1;
         recordExpected(result.expectedEntries, {
-          scope: 'node', branchName, nodeNumber, path: ['Weight'], field: 'weight',
+          scope: 'node', branchName, nodeNumber, nodeOrdinal, path: ['Weight'], field: 'weight',
           value: mapped, kind: 'number', source: 'weight-match',
         });
       }
     }
   }
 
+  if (result.nodeWallBySize?.length) {
+    const missing = result.nodeWallBySize.filter((item) => item.value === null);
+    diagnostics.push({
+      type: 'standalone-node-wall-by-size',
+      severity: missing.length ? 'warning' : 'info',
+      count: result.nodeWallBySize.length,
+      missing: missing.length,
+      message: `${result.nodeWallBySize.length} node(s) on mixed-diameter branches use the wall for their own size`
+        + (missing.length ? `; ${missing.length} have no piping-class row for their size and keep the source wall.` : '.'),
+    });
+  }
   if (!result.appliedFields) return result;
   diagnostics.push({
     type: 'standalone-process-parity-applied',

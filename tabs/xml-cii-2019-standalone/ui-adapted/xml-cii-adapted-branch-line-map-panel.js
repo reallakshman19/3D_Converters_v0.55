@@ -188,6 +188,34 @@ function bindToggle(container) {
   });
 }
 
+/** Owner 11 Nov: say plainly why unmapped branches are unmapped. */
+export function unmappedLineKeySummary(branchRows = [], map = {}, lineListKeys = []) {
+  const listed = new Set((lineListKeys || []).map((key) => text(key).toUpperCase()));
+  const notInList = new Map();
+  let noKey = 0;
+  for (const row of branchRows) {
+    if (branchLineMapRowState(row, map).mapped) continue;
+    const branchName = text(row?.branchName);
+    const key = text(row?.lineKey || row?.lineNoKey);
+    if (!key || key === branchName) { noKey += 1; continue; }
+    if (listed.has(key.toUpperCase())) continue;
+    notInList.set(key, (notInList.get(key) || 0) + 1);
+  }
+  return { notInList: [...notInList.keys()].sort(), branchCount: [...notInList.values()].reduce((a, b) => a + b, 0), noKey };
+}
+
+function unmappedSummaryHtml(summary) {
+  if (!summary.notInList.length && !summary.noKey) return '';
+  const parts = [];
+  if (summary.notInList.length) {
+    parts.push(`<div><strong style="color:#fbbf24;">Not in line list</strong> (${summary.notInList.length} key${summary.notInList.length === 1 ? '' : 's'}, ${summary.branchCount} branch${summary.branchCount === 1 ? '' : 'es'}): <span style="font-family:monospace;color:#e2e8f0;">${summary.notInList.map(esc).join(', ')}</span></div>`);
+  }
+  if (summary.noKey) {
+    parts.push(`<div><strong style="color:#fbbf24;">No line key read from the branch name</strong>: ${summary.noKey} branch${summary.noKey === 1 ? '' : 'es'}. Check the Regex tab formats.</div>`);
+  }
+  return `<div class="bulk-unmapped-summary" data-not-in-line-list="${esc(summary.notInList.join(','))}" style="margin-top:6px;padding:8px 12px;font-size:11px;line-height:1.5;color:#cbd5e1;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:6px;">${parts.join('')}</div>`;
+}
+
 export function renderBranchLineMapPanel(container, { branchRows = [], lineListKeys = [], config = {}, onSaveConfig, onRebuildPreview }) {
   if (!container || !Array.isArray(branchRows) || !branchRows.length) return;
   const currentMap = config.linelist?.branchLineKeyMap || {};
@@ -195,7 +223,7 @@ export function renderBranchLineMapPanel(container, { branchRows = [], lineListK
   const mappedCount = states.filter((state) => state.mapped).length;
   const datalistId = `bulk-ll-keys-${Math.random().toString(36).slice(2, 8)}`;
   const options = (lineListKeys || []).map((key) => `<option value="${esc(key)}"></option>`).join('');
-  container.innerHTML = `<div class="bulk-branch-mapping-wrapper" style="margin:0 0 16px;font-family:inherit;">${headerHtml(mappedCount, states.length - mappedCount)}<div class="bulk-map-body" style="display:none;margin-top:8px;padding:16px;background:rgba(15,23,36,0.85);border:1px solid #1e293b;border-radius:8px;">${controlsHtml()}<datalist id="${datalistId}">${options}</datalist><div style="max-height:360px;overflow-y:auto;border:1px solid rgba(148,163,184,0.15);border-radius:6px;background:#090d16;"><table style="width:100%;border-collapse:collapse;text-align:left;"><thead style="position:sticky;top:0;background:#182235;z-index:2;"><tr><th style="padding:10px 12px;font-size:11px;color:#94a3b8;">Branch Name</th><th style="padding:10px 12px;font-size:11px;color:#94a3b8;">Assigned Line List Key</th><th style="padding:10px 12px;font-size:11px;color:#94a3b8;text-align:center;">Status</th></tr></thead><tbody class="bulk-map-tbody">${tableRows(branchRows, currentMap, datalistId)}</tbody></table></div>${patternCardHtml()}</div></div>`;
+  container.innerHTML = `<div class="bulk-branch-mapping-wrapper" style="margin:0 0 16px;font-family:inherit;">${headerHtml(mappedCount, states.length - mappedCount)}${unmappedSummaryHtml(unmappedLineKeySummary(branchRows, currentMap, lineListKeys))}<div class="bulk-map-body" style="display:none;margin-top:8px;padding:16px;background:rgba(15,23,36,0.85);border:1px solid #1e293b;border-radius:8px;">${controlsHtml()}<datalist id="${datalistId}">${options}</datalist><div style="max-height:360px;overflow-y:auto;border:1px solid rgba(148,163,184,0.15);border-radius:6px;background:#090d16;"><table style="width:100%;border-collapse:collapse;text-align:left;"><thead style="position:sticky;top:0;background:#182235;z-index:2;"><tr><th style="padding:10px 12px;font-size:11px;color:#94a3b8;">Branch Name</th><th style="padding:10px 12px;font-size:11px;color:#94a3b8;">Assigned Line List Key</th><th style="padding:10px 12px;font-size:11px;color:#94a3b8;text-align:center;">Status</th></tr></thead><tbody class="bulk-map-tbody">${tableRows(branchRows, currentMap, datalistId)}</tbody></table></div>${patternCardHtml()}</div></div>`;
   bindToggle(container);
   bindFilters(container);
   bindOverrides(container);

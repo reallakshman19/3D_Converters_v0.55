@@ -37,6 +37,7 @@ function authorityKey(entry) {
     entry?.scope || '',
     entry?.branchName || '',
     entry?.nodeNumber || '',
+    Number.isSafeInteger(entry?.nodeOrdinal) ? `#${entry.nodeOrdinal}` : '',
     ...(Array.isArray(entry?.path) ? entry.path : []),
   ].join('\u0000');
 }
@@ -86,7 +87,10 @@ export function extractXmlCiiParityAuthorityEntries(xmlText, expectedEntries = [
     if (!branch) return { ...entry, actual: '', found: false, missing: 'branch' };
     let owner = branch;
     if (entry?.scope === 'node') {
-      owner = childrenByName(branch, 'Node').find((node) => childText(node, 'NodeNumber') === text(entry?.nodeNumber)) || null;
+      const nodes = childrenByName(branch, 'Node');
+      owner = Number.isSafeInteger(entry?.nodeOrdinal)
+        ? (childText(nodes[entry.nodeOrdinal], 'NodeNumber') === text(entry?.nodeNumber) ? nodes[entry.nodeOrdinal] : null)
+        : (nodes.find((node) => childText(node, 'NodeNumber') === text(entry?.nodeNumber)) || null);
       if (!owner) return { ...entry, actual: '', found: false, missing: 'node' };
     }
     const actual = valueAtPath(owner, entry?.path || []);
