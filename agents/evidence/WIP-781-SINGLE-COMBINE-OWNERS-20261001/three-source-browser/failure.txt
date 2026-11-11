@@ -1,0 +1,407 @@
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(candidateValue > 0)
+
+    at file:///C:/CodeA/3DC_live_acceptance/tests/browser/xml-cii-single-combine-owners-e2e.mjs:94:10
+FORMATCONVERTERS
+CONVERTERS, EXCHANGE, MAPPING
+CONVERTERS
+3D Model Converters
+XML→CII 2019 Standalone
+XML Builder
+Basic GLB-PCF
+Universal XML
+Universal Enrichment Workbench
+stagedJson Properties
+StagedJSON→Enriched XML
+EXCHANGE
+Model Exchange
+Interchange Config
+Support Mapping
+Adapter Mapping
+ENGINEERING
+Engineering Calculations
+XML→CII 2019 Standalone
+
+Mode A processes multiple XML files as isolated models; no node or branch identities are merged across files.
+
+Source Mode: XML
+Active Source: Loaded (228.0 KB)
+Separate Models: 1/1
+Branches: 7/7
+Masters: 1/4 loaded
+Master Readiness: Loaded
+Diagnostics: not built
+1 Source & Masters
+2 Regex Tester
+3 Resolver / JSON Trace
+4 Preview
+5 Diagnostics
+6 Weight Match
+7 Support Type Mapper
+8 Config
+9 Propagation Audit
+10 Output / Run
+5 Weight Match i
+Weight candidates use manual Rating, Preview Rating, or Rating prefix mapping. Edit Rating in the table; use ↓ to fill the same piping class. DTXR Rating requires the explicit button.
+Rows included: RIGID, FLAN*, VALV / VALVE / VLV, INST. Rows excluded: support-only, TEE, ELBO/BEND, REDUCER, OLET, PIPE, GASK. Nodes with a non-empty ConnectionType (e.g. BRAN) are excluded. Valve Hint applies to all eligible nodes (Endpoint restriction removed). Exact candidate length gate is ±6 mm.
+Editable weight keyword / factor rules
+Build Weight Data
+Use Rating as per DTXR
+Use all ★ preferred
+⇄ in→mm: OFF
+0 mapped · 0 exact · 0 flange fallback · 0 inferred · 42 missing Rating · 42 unresolved · 42 shown
+Rating authority: Manual → Preview → Rating prefix mapping. Edit Rating to override this line or branch; ↓ fills the same piping class and rebuilds suggestions. Proposed values are not engineering authority until you select a candidate, edit/confirm the weight, or use an explicit accept/fill action; accepted values are stored as Match-1. Exact candidate length gate is ±6.0 mm. Length conversion is OFF.
+Authority legend: Candidate matched / Suggested is algorithmic evidence only and remains NOT ACCEPTED. Use Accept as Match-1 (or explicitly edit/confirm the weight) to create Match-1 authority.
+Status	Branch	Line Key	ComponentType	Bore	Rating	Node	ComponentRefNo_Endpoint	DTXR	Valve Hint	Length	Weight (kg)	Nearest Suggestions
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810010-91261M7-HC-01/B1	S8810010	RIGID	150 mm	
+↓
+91261M7	20	1006649732/121566_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	FLAN	50 mm	
+↓
+91261M7	606	1006649732/119312_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	VALV	50 mm	
+↓
+91261M7	608	1006649732/119314_2	Not found		368.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	RIGID	50 mm	
+↓
+91261M7	610	1006649732/119316_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	FLAN	50 mm	
+↓
+91261M7	646	1006649732/119320_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	VALV	50 mm	
+↓
+91261M7	648	1006649732/119322_2	Not found		368.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	D8810083	RIGID	50 mm	
+↓
+91261M7	650	1006649732/119324_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	FLAN	150 mm	
+↓
+91261M7	~100070	1006657924/45564_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	VALV	150 mm	
+↓
+91261M7	~100070	1006657924/45566_2	Not found		610.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100070	1006657924/45568_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	FLAN	150 mm	
+↓
+91261M7	~100190	1006657924/45577_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100190	1006657924/45579_2	Not found		610.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100190	1006657924/45585_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	FLAN	150 mm	
+↓
+91261M7	~100280	1006657924/45592_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100280	1006657924/45596_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	FLAN	150 mm	
+↓
+91261M7	~100340	1006666116/6272_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	VALV	150 mm	
+↓
+91261M7	~100340	1006666116/6274_2	Not found		508.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100340	1006666116/6276_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	FLAN	150 mm	
+↓
+91261M7	~100340	1006666116/6277_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	VALV	150 mm	
+↓
+91261M7	~100340	1006666116/6279_2	Not found		508.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	S8810011	RIGID	150 mm	
+↓
+91261M7	~100340	1006666116/6281_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8810011-91261M7-HC-01/B6	S8810011	FLAN	150 mm	
+↓
+91261M7	~100730	1006657924/45706_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	FLAN	150 mm	
+↓
+91261M7	~200060	1006649732/121352_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	VALV	150 mm	
+↓
+91261M7	~200060	1006649732/121354_2	Not found		610.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	RIGID	150 mm	
+↓
+91261M7	~200060	1006649732/121356_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	FLAN	150 mm	
+↓
+91261M7	~200180	1006649732/121365_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	RIGID	150 mm	
+↓
+91261M7	~200180	1006649732/121367_2	Not found		610.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	RIGID	150 mm	
+↓
+91261M7	~200180	1006649732/121373_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	FLAN	150 mm	
+↓
+91261M7	~200270	1006649732/121380_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	RIGID	150 mm	
+↓
+91261M7	~200270	1006649732/121384_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	FLAN	80 mm	
+↓
+91261M7	~200340	1006649732/121389_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	INST	80 mm	
+↓
+91261M7	~200340	1006649732/121391_2	Not found		400.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	RIGID	80 mm	
+↓
+91261M7	~200340	1006649732/121393_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	S8811956	FLAN	150 mm	
+↓
+91261M7	~200410	1006649732/121398_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	FLAN	50 mm	
+↓
+91261M7	~200070	1006649732/121403_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	VALV	50 mm	
+↓
+91261M7	~200070	1006649732/121405_2	Not found		368.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	RIGID	50 mm	
+↓
+91261M7	~200070	1006649732/121407_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	FLAN	50 mm	
+↓
+91261M7	~200520	1006649732/121415_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	VALV	50 mm	
+↓
+91261M7	~200520	1006649732/121417_2	Not found		368.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	S8811956	RIGID	50 mm	
+↓
+91261M7	~200520	1006649732/121419_2	Not found		109.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B6	S8811956	RIGID	150 mm	
+↓
+91261M7	~200420	1006649732/121459_2	Not found		147.0 mm		
+No suggestion
+
+
+Unresolved
+Engineering status: NOT ACCEPTED
+	/ASIM-1836-6"-S8811956-91261M7-HC-01/B6	S8811956	FLAN	150 mm	
+↓
+91261M7	~200840	1006649732/121494_2	Not found		147.0 mm		
+No suggestion
+Weight Validation Report — resolved components, A1/A2 abnormality > ±30%
+Build report
+Save abnormal CSV
+Save audit JSON
+Save validation evidence ZIP
+Read-only validation; accepted weight is never modified.
+3D converters
+
+Loading workspace...
+
+🐞
+0 0 0 0 XML 0 Built 0 Guide 0 Stop 0 Rendered 0 Cfg XML(PCFX1) Tol 0.5
+Clear Export
+Logs Trace Supports Events Conversion Scene
+Time	Severity	Category	Message
+Errors: 

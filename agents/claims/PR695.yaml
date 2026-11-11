@@ -1,0 +1,29 @@
+schema: AgentClaim.v1
+pr_or_wip: PR695
+pull_request: 695
+claim_state: ACTIVE
+branch: agent/vib-m13-action-completion-authoring-20260821
+authority_domains:
+  - VIBRATION_ACTION_COMPLETION_AUTHORING
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - tabs/vibration-integrity-action-completion-controller.js
+    - tabs/vibration-integrity-action-completion-view.js
+    - tabs/vibration-integrity-activity-view.js
+    - tabs/vibration-integrity-user-data-shell.js
+    - tabs/vibration-integrity-audit-log.js
+    - tests/vibration-integrity-action-completion-authoring.test.mjs
+exclusions:
+  - mechanism equations and coefficients
+  - source/master qualification
+  - applicability and AssessmentCompleteness authority
+  - EI main-line aggregation authority
+  - design authority
+  - bare checkbox completion
+  - cross-run completion carry-forward
+coordination:
+  PR693: MERGED_COMPLETION_CUSTODY_FOUNDATION
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

@@ -1,0 +1,29 @@
+pr: 732
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  include:
+    - converters/engineering-calculations/mechanics/load-resultant.js
+    - converters/engineering-calculations/bolts/group-assessment.js
+    - tests/bolt-group-assessment.test.mjs
+    - docs/engineering-calculations/bolted-joints-p3-bolt-group-api.md
+    - agents/PR732_workreport.md
+    - agents/status/PR732.yaml
+    - agents/claims/PR732.yaml
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0022.md
+  exclude:
+    - converters/engineering-calculations/bolts/group-loads.js
+    - converters/engineering-calculations/default-registry.js
+    - converters/engineering-calculations/index.js
+    - tabs/**
+    - .github/workflows/**
+coordination:
+  p2_neighbor: PR731
+  source_neighbor: PR723
+  shared_agentchain_index_owned_elsewhere: true
+authority:
+  method: REFERENCE_KERNEL_ONLY
+  can_use_for_design_authority: false
+  governing_eligible: false
+hard_stop: EXACT_NATIVE_PR732_FOCUSED_TESTS
+merge_authority: OWNER_ONLY_NOT_GRANTED

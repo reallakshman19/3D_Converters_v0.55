@@ -1,0 +1,33 @@
+schema: AgentClaim.v1
+pr_or_wip: PR684
+pull_request: 684
+claim_state: ACTIVE
+branch: agent/aiv-facility-scenario-handoff-20260820
+authority_domains:
+  - VIBRATION_FACILITY_SCENARIO_HANDOFF
+  - AIV_LINKED_RUNTIME_SCENARIO_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  prefixes:
+    - converters/vibration/facility/
+    - converters/vibration/aiv/
+    - tabs/engineering-calculations-tab.js
+    - tabs/vibration-aiv-
+    - tabs/vibration-integrity-mechanisms.js
+    - tabs/vibration-integrity-roadmap-bridge.js
+    - tests/vibration-aiv-facility-scenario-handoff.test.mjs
+    - tests/vibration-facility-fit-execute.test.mjs
+    - tests/vibration-integrity-mechanism-matrix.test.mjs
+exclusions:
+  - AIV equations and coefficients
+  - AIV source/master qualification
+  - process actualization
+  - applicability/completeness authority
+  - line/case AIV screening aggregation authority
+  - design authority
+coordination:
+  PR682: MERGED_RUNTIME_GUARD_FOUNDATION
+  PR506: STALE_SALVAGE_ONLY_PER_MERGED_PR517
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

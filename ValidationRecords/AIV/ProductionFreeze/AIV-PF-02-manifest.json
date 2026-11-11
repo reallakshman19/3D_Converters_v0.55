@@ -1,0 +1,100 @@
+{
+  "schema": "AivProductionFreezeManifest.v1",
+  "sliceId": "PF-02",
+  "issueId": 513,
+  "repository": "reallaksh19/3D_Converters",
+  "mission": "Prove READY_FOR_QUALIFICATION is an executable screening precondition and direct registered AIV execution cannot bypass or diverge from the readiness contract.",
+  "baseSha": "3c3a01ebe00abaa739252c2e67bacb5126540182",
+  "baseTree": "920d9e6d33b8bcdf388df16a1bbbb6fcef3d2321",
+  "candidateSha": null,
+  "branch": "agent/aiv-pf02-readiness-contract-20260815",
+  "qualification": {
+    "status": "QUALIFIED_FOR_CURRENT_MAIN_PF02_EVIDENCE_REGROUND_ONLY",
+    "appendixAScore": 95,
+    "productionMutationAuthorized": false,
+    "issueCommentId": 5301819610
+  },
+  "progressionWaiver": {
+    "status": "OWNER_AUTHORIZED_PROGRESSION_FROM_PF01_WITH_NOT_RUN_GATES",
+    "issueCommentId": 5302095544,
+    "scope": "Progression only; PF-01 remains non-PASS and PF-02 retains its own live-product-first gate."
+  },
+  "branchRecovery": {
+    "oldHead": "4c6e15c80ba6f2ebb4985397575f044eb0893048",
+    "backupBranch": "backup/pr517-pre-reground-20260819",
+    "currentMainRegroundCommit": "132f50e6311b2a869dc616d9c2cb4b505c088927"
+  },
+  "appBuildIdentity": {
+    "status": "NOT_ESTABLISHED_FOR_REAL_BROWSER",
+    "servedRevision": null,
+    "reason": "Current execution environment cannot provide the required navigation-permitted exact-current-head real application browser run."
+  },
+  "browserCustody": {
+    "startUrl": null,
+    "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+    "currentMainSha": "3c3a01ebe00abaa739252c2e67bacb5126540182",
+    "historicalManagedPolicy": {"URLBlocklist":["*"]},
+    "note": "Historical PF-02 browser attempts executed no product steps; no browser PASS is inherited by this re-ground."
+  },
+  "currentMainContractSources": [
+    {"path":"converters/vibration/aiv/aiv-readiness.js","blob":"6423267fd49b3d720874a7b699b0b48a657a5df6","role":"UI/readiness qualification contract"},
+    {"path":"converters/vibration/aiv/aiv-calculator.js","blob":"5014342e1436ca9fbf723242a348f768fb842f0c","role":"AIV screening calculator"},
+    {"path":"converters/vibration/aiv/aiv-kernel-candidate.js","blob":"b0967c4c2e9fb98c90b6a3e9028ce9851e9bbcbb","role":"numerical executable-domain rejection path"},
+    {"path":"converters/engineering-calculations/adapters/vibration-aiv.js","blob":"2dff38ac41005a7835c14cc3ed9502da46e70524","role":"registered calculation adapter validation boundary"},
+    {"path":"converters/engineering-calculations/engine.js","blob":"7b37f45cd22789e565ce8c4b1c31d01a263f9c74","role":"shared registered execution engine"},
+    {"path":"converters/vibration/aiv/source-csv.js","blob":"057c57c7d26aaa69b81eeaa0d802d24c3af433c9","role":"controlled source table parser"},
+    {"path":"converters/vibration/aiv/aiv-tabular-common.js","blob":"7db1eac719093013d8ed3bb9c478e5e246145b63","role":"quantity pair parser"},
+    {"path":"tabs/vibration-aiv-screening-gate.js","blob":"dcde1fadd5b54f17d07e63da4705680dbcf152d4","role":"UI Run Screening gate"},
+    {"path":"tabs/vibration-aiv-screening-request.js","blob":"a9bcef48c9bab98dd8229b5435c6dc87e9f86749","role":"readiness-qualified request builder"}
+  ],
+  "sourceInspectionFinding": {
+    "classification": "SOURCE_CONTRACT_MISMATCH_REPRODUCED_SUPPORTING_EVIDENCE_ONLY",
+    "finding": "Current tabular quantity parsing preserves arbitrary explicit unit strings; readiness checks positive mass-flow values but not mass-flow units and checks pressure positivity/reference evidence but not resolved upstream > downstream ordering. Current numerical kernel rejects unsupported mass-flow units and rejects non-positive pressure drop. Readiness and executable numerical-domain checks are therefore not one shared contract.",
+    "supportingReproductionPath": "ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-current-head-source-reproduction.json",
+    "limitation": "This is not a full registered calculateEngineering or real-browser reproduction and does not authorize a production patch.",
+    "falsifier": "If exact-current-head real UI plus direct registered API demonstrates equivalent fail-closed behavior for every PF-02 domain through the required production path, classify NOT_REPRODUCIBLE_ON_CURRENT_MAIN and do not replay PR #506."
+  },
+  "pr506Salvage": {
+    "authority": "CANDIDATE_EVIDENCE_ONLY",
+    "head": "b846cbfb765cbc01734154ad837b12d040fe0bf7",
+    "candidateExecutableContractPath": "converters/vibration/aiv/aiv-executable-contract.js",
+    "candidateExecutableContractBlob": "a6de9d2c6bda73370fa5d9889503de4757b95701",
+    "candidateCalculatorBlob": "f9785783a155371d7174dfc3ebe326e577abddb6",
+    "candidateBehavior": "Runs readiness internally for screening and adds executable validation for PF-02 domains, but also contains PF-03 simultaneous-group behavior.",
+    "replayRule": "Do not cherry-pick the 33-file PR. Salvage only the smallest PF-02 behavior after the live-product gate is satisfied."
+  },
+  "requiredNegativeDomains": [
+    "upstream/downstream pressure ordering",
+    "absolute-pressure positivity",
+    "temperature above absolute zero",
+    "supported units",
+    "gauge reference pressure + source + revision",
+    "sonic state",
+    "low-noise trim state/reduction/provenance",
+    "required assessment geometry",
+    "physical distance value/unit/source/revision",
+    "supported assessment-method envelope"
+  ],
+  "benchmarkSources": [
+    {"id":"AIV.EI.D2.3.WORKED_EXAMPLE.v1","path":"tabs/vibration-aiv-benchmarks.js","commit":"d659e670a2f8fe0a35fc8072382512f6493898cf","blob":"c6f95bc3e1a6ecd1ca668c3a55a7ad2ef09fd2d0"},
+    {"id":"AIV-HAND-MULTI-SOURCE","path":"converters/vibration/aiv/aiv-independent-benchmark-evidence.js","commit":"d659e670a2f8fe0a35fc8072382512f6493898cf","blob":"21d1e687dca0c537f4170e961b2d7b1894d710cc"}
+  ],
+  "expectedOracles": [
+    {"id":"B1-D23-RELIEF-RAW-PWL","expected":164.6851759525391,"unit":"dB","absoluteTolerance":1e-10},
+    {"id":"B1-D23-RELIEF-POINT-PWL","expected":164.3734876408508,"unit":"dB","absoluteTolerance":1e-10},
+    {"id":"B2-160+160","expected":163.0102999566398,"unit":"dB","absoluteTolerance":1e-9},
+    {"id":"B3-160+150","expected":160.41392685158226,"unit":"dB","absoluteTolerance":1e-9}
+  ],
+  "authority": {
+    "tablesAreEngineeringSourceOfTruth": true,
+    "svgGeometryIsPhysicalDistanceAuthority": false,
+    "screeningResultScope": "ASSESSMENT",
+    "lineCaseSummaryAuthoritativeForScreening": false,
+    "designAuthority": false
+  },
+  "comparisonTolerancePolicy": "Frozen expected values/tolerances may not be changed to fit implementation output. Identity, provenance, readiness disposition and authority fields compare exactly.",
+  "createdAt": "2026-08-15T15:51:27+04:00",
+  "updatedAt": "2026-08-19T22:33:00+04:00",
+  "operator": "GPT-5.6 Sol via connected GitHub",
+  "environmentDisposition": "PF02_CURRENT_MAIN_SOURCE_MISMATCH_LIVE_BROWSER_NOT_RUN"
+}

@@ -1,0 +1,16 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-781-P1-LINELIST-20260929
+claim_state: ACTIVE
+branch: agent/issue-781-p1-linelist-sheet-20260929
+workstream: XML_CII_STANDALONE_ISSUE_781_P1_LINELIST
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_LINE_LIST_WORKBOOK_SHEET_SELECTION
+  - XML_CII_MASTER_DATASET_WORKER_IMPORT
+protected_paths:
+  - tabs/xml-cii-2019-standalone/workers/master-dataset-parser.js
+  - tabs/xml-cii-2019-standalone/workers/master-dataset-service.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-09-29

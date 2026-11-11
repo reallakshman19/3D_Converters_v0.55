@@ -1,0 +1,184 @@
+TAP version 13
+# (node:21260) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-config.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: compact master config removes large dataset arrays without mutating source authority fields
+ok 1 - compact master config removes large dataset arrays without mutating source authority fields
+  ---
+  duration_ms: 35.4287
+  type: 'test'
+  ...
+# Subtest: metadata-only assertion fails closed when a master dataset array is present
+ok 2 - metadata-only assertion fails closed when a master dataset array is present
+  ---
+  duration_ms: 0.9107
+  type: 'test'
+  ...
+# (node:33444) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-service.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: worker service preserves explicit saved mapping and exposes bounded raw rows
+ok 3 - worker service preserves explicit saved mapping and exposes bounded raw rows
+  ---
+  duration_ms: 45.6073
+  type: 'test'
+  ...
+# Subtest: coordinator hydrates normalized and raw rows in bounded chunks
+ok 4 - coordinator hydrates normalized and raw rows in bounded chunks
+  ---
+  duration_ms: 10.3632
+  type: 'test'
+  ...
+# Subtest: coordinator materializes a persisted dataset in bounded normalized chunks
+ok 5 - coordinator materializes a persisted dataset in bounded normalized chunks
+  ---
+  duration_ms: 1.0697
+  type: 'test'
+  ...
+# (node:22332) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-runtime.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: dataset-backed commit keeps only that master metadata-only during phased migration
+ok 6 - dataset-backed commit keeps only that master metadata-only during phased migration
+  ---
+  duration_ms: 2.7235
+  type: 'test'
+  ...
+# Subtest: dataset-backed persistence clears large localStorage payloads and retains custody metadata
+ok 7 - dataset-backed persistence clears large localStorage payloads and retains custody metadata
+  ---
+  duration_ms: 2.7355
+  type: 'test'
+  ...
+# Subtest: legacy non-worker commit retains existing row-array behavior
+ok 8 - legacy non-worker commit retains existing row-array behavior
+  ---
+  duration_ms: 0.54
+  type: 'test'
+  ...
+# Subtest: supportConfigJson omits worker-backed 100k datasets without dropping legacy sections
+ok 9 - supportConfigJson omits worker-backed 100k datasets without dropping legacy sections
+  ---
+  duration_ms: 21.0492
+  type: 'test'
+  ...
+# (node:19640) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-startup-hydration.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: startup hydration preserves non-master support config when masterContext is empty
+ok 10 - startup hydration preserves non-master support config when masterContext is empty
+  ---
+  duration_ms: 41.9136
+  type: 'test'
+  ...
+# Subtest: re-parsing the same workbook sheet creates a new dataset without overwriting prior APPLIED bytes
+ok 11 - re-parsing the same workbook sheet creates a new dataset without overwriting prior APPLIED bytes
+  ---
+  duration_ms: 15.9525
+  type: 'test'
+  ...
+# (node:28184) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-startup-hydration.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: startup restore keeps IndexedDB-backed masters metadata-only with a bounded preview
+ok 12 - startup restore keeps IndexedDB-backed masters metadata-only with a bounded preview
+  ---
+  duration_ms: 22.7483
+  type: 'test'
+  ...
+# Subtest: startup hydration is a no-op when no IndexedDB custody exists
+ok 13 - startup hydration is a no-op when no IndexedDB custody exists
+  ---
+  duration_ms: 0.3575
+  type: 'test'
+  ...
+# Subtest: canonical workflow shell hydrates persisted datasets once after initial render
+ok 14 - canonical workflow shell hydrates persisted datasets once after initial render
+  ---
+  duration_ms: 11.5482
+  type: 'test'
+  ...
+# (node:25952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-parser.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: XLSX discovery and selected-sheet parse are two distinct reads
+ok 15 - XLSX discovery and selected-sheet parse are two distinct reads
+  ---
+  duration_ms: 34.6082
+  type: 'test'
+  ...
+# Subtest: JSON import accepts an explicit row array without workbook materialization
+ok 16 - JSON import accepts an explicit row array without workbook materialization
+  ---
+  duration_ms: 1.0498
+  type: 'test'
+  ...
+# Subtest: dataset service returns metadata + bounded preview and keeps full rows behind service
+ok 17 - dataset service returns metadata + bounded preview and keeps full rows behind service
+  ---
+  duration_ms: 9.8477
+  type: 'test'
+  ...
+# Subtest: client transfers ArrayBuffer ownership and hard-cancels by terminating worker
+ok 18 - client transfers ArrayBuffer ownership and hard-cancels by terminating worker
+  ---
+  duration_ms: 3.019
+  type: 'test'
+  ...
+# Subtest: dataset-backed Preview search is worker-owned and fail-closed
+ok 19 - dataset-backed Preview search is worker-owned and fail-closed
+  ---
+  duration_ms: 10.5315
+  type: 'test'
+  ...
+# Subtest: Preview and import share one coordinator singleton including persisted dataset ids
+ok 20 - Preview and import share one coordinator singleton including persisted dataset ids
+  ---
+  duration_ms: 2.6344
+  type: 'test'
+  ...
+# Subtest: worker-search runtime mirrors are byte-identical in docs deployment
+ok 21 - worker-search runtime mirrors are byte-identical in docs deployment
+  ---
+  duration_ms: 13.4115
+  type: 'test'
+  ...
+# Subtest: master event facade contains no main-thread workbook parser
+ok 22 - master event facade contains no main-thread workbook parser
+  ---
+  duration_ms: 7.8547
+  type: 'test'
+  ...
+# Subtest: worker import binding preserves atomic dataset commit and sheet selection
+ok 23 - worker import binding preserves atomic dataset commit and sheet selection
+  ---
+  duration_ms: 1.723
+  type: 'test'
+  ...
+# Subtest: mapping authority remains separated from worker I/O
+ok 24 - mapping authority remains separated from worker I/O
+  ---
+  duration_ms: 1.3724
+  type: 'test'
+  ...
+# Subtest: worker uses a pinned SheetJS ESM release
+ok 25 - worker uses a pinned SheetJS ESM release
+  ---
+  duration_ms: 1.9159
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 354.1496

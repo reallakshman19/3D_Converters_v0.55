@@ -1,0 +1,30 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: PR606
+pull_request: 606
+branch: agent/xml-cii-c5-weight-incremental-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C5_WEIGHT_ONLY
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-rating-authority.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-incremental.js
+  - tests/xml-cii-standalone-preview-incremental-weight.test.mjs
+  - tests/xml-cii-standalone-preview-incremental-integration.test.mjs
+  - agents/PR606_workreport.md
+  - agents/status/PR606.yaml
+  - agents/claims/PR606.yaml
+exclusions:
+  - .github/workflows/**
+  - line/process/support incremental recomputation
+  - workers
+  - persisted indexes/caches
+  - support/GAP semantics
+  - CII writer/runtime
+coordination:
+  PR604: HARD_STACK_BASE
+  C3_WORKERS: NOT_ADMITTED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:56:00+04:00

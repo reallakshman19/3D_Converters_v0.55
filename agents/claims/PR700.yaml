@@ -1,0 +1,72 @@
+schema: AgentClaim.v1
+pr_or_wip: PR700
+pull_request: 700
+claim_state: ACTIVE
+branch: agent/vib-m15-rca-authoring-20260821
+authority_domains:
+  - VIBRATION_RCA_EVIDENCE_CUSTODY
+  - VIBRATION_RCA_ACTIVITY_AUTHORING
+  - VIBRATION_VERIFICATION_STATUS_INTEGRITY
+  - VIBRATION_MEASUREMENT_PROVENANCE_BINDING
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/action-verification.js
+    - converters/vibration/facility/action-verification-integrity.js
+    - converters/vibration/rca/contracts.js
+    - converters/vibration/rca/ledger.js
+    - tabs/vibration-integrity-rca-audit.js
+    - tabs/vibration-integrity-rca-controller.js
+    - tabs/vibration-integrity-rca-view.js
+    - tabs/vibration-integrity-action-verification-controller.js
+    - tabs/vibration-integrity-activity-view.js
+    - tabs/vibration-integrity-audit-log.js
+    - tests/vibration-facility-action-verification.test.mjs
+    - tests/vibration-integrity-rca-authoring.test.mjs
+exclusions:
+  - automatic root-cause inference
+  - mechanism equations and coefficients
+  - applicability and AssessmentCompleteness authority
+  - EI aggregation authority
+  - design or code authority
+  - M13 action completion mutation
+  - project persistence schema changes
+  - reviewer or engineer identity authentication
+  - digital signatures or cryptographic signer authenticity
+claims:
+  - id: PR700-001
+    statement: RCA evidence is limited to exact project-scoped M14 verification records for the exact current action occurrence.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR700-002
+    statement: Confirmed root cause can exist only as explicit engineer attestation with accepted supporting verification evidence; platform inference is forbidden.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR700-003
+    statement: RCA hypothesis evolution is append-only revision history with deterministic fingerprint custody and no overwrite semantics.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR700-004
+    statement: RCA cannot determine screening, applicability, AssessmentCompleteness, action completion, design, code, safety or governing results.
+    status: SOURCE_CONFIRMED
+  - id: PR700-005
+    statement: The inherited M14 Activity success audit reads attachment.evidence rather than the nonexistent evidenceSnapshot field.
+    status: SOURCE_CONFIRMED
+  - id: PR700-006
+    statement: M15 accepted-verification prerequisites consume VibrationActionVerificationAttachment.v2, whose verification state and disposition are semantically checked against exact evidence and bound by a SHA-256 status fingerprint into attachment identity.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR700-007
+    statement: Verification and RCA fingerprints provide deterministic self-consistency and tamper evidence; they do not authenticate reviewer or engineer identity and are not digital signatures.
+    status: SOURCE_CONFIRMED
+  - id: PR700-008
+    statement: M14 evidence identity binds the full governed measurement-session and signal-product records, so calibration, acquisition, sensor/source, and processing provenance changes alter evidence and attachment identity even if raw and artifact hashes are unchanged.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR700-009
+    statement: Once a hypothesis has an explicit engineer conclusion, a later revision cannot anonymously revert to HYPOTHESIS_OPEN; another explicit engineer conclusion is required.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+coordination:
+  PR699: MERGED_M14_ACTIVITY_VERIFICATION_FOUNDATION
+  PR698: MERGED_HP_ONLY_UNRELATED_MAIN_DRIFT
+  PR701: MERGED_HP_ONLY_UNRELATED_MAIN_DRIFT
+  PR665: RELATED_PROJECT_V2_ZERO_EXACT_PATH_OVERLAP
+  PR506: OLDER_AIV_RELATED_TERM_NO_EXACT_RCA_OWNERSHIP
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

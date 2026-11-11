@@ -1,0 +1,16 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR811
+branch: agent/issue-781-weight-rating-20261001
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR811_workreport.md
+current_stage: OWNER_REVIEW_HANDOVER
+main_head_last_checked: d6f19bdd3bf2c07e339d5e549d1b82795aa0fb4c
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Inspect final metadata-head checks; owner review next; no merge authority.
+last_updated: 2026-10-01
+validation_head: a78569001a26b136860d142b34ed2c9f123592fe
+validation: {local_worker_gate: PASS_19,ci: PASS_13_FAIL_3_INHERITED,real41_rating_ui: PASS_LOCAL_AND_CI,deployed_owner_profile: NOT_RUN}

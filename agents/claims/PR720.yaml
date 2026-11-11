@@ -1,0 +1,48 @@
+schema: AgentClaims.v1
+pr_or_wip: PR720
+claim_state: OPEN_VALIDATION_NOT_RUN
+claims:
+  - id: VIB-PROJ-V2-LIFECYCLE-PERSISTENCE
+    statement: VibrationIntegrityProject.v2 provides durable project-container custody for M13-M16 ledgers without promoting their engineering authority.
+    evidence:
+      - converters/vibration/project/schema.js
+      - tabs/vibration-project-lifecycle-handoff.js
+      - tabs/vibration-roadmap-controller.js
+      - tabs/engineering-calculations-tab.js
+      - tabs/vibration-integrity-tab.js
+    authority_limit: PERSISTENCE_ONLY
+  - id: VIB-PROJ-V2-CURRENT-RESULT-NONRESTORATION
+    statement: Project v2 rejects non-empty currentResults and does not restore current calculation authority from .vibproj load.
+    evidence:
+      - converters/vibration/project/schema.js
+      - tests/vibration-project-lifecycle-persistence.test.mjs
+    authority_limit: NO_CURRENT_RESULT_AUTHORITY
+  - id: VIB-PROJ-V2-RESERVED-INPUT-FAIL-CLOSED
+    statement: Reserved engineering input and historical calculation namespaces reject non-empty records until separately qualified.
+    evidence:
+      - converters/vibration/project/schema.js
+      - tests/vibration-project-lifecycle-persistence.test.mjs
+    authority_limit: NO_UNQUALIFIED_PERSISTENCE_PROMOTION
+  - id: VIB-PROJ-V2-PROJECT-ISOLATION
+    statement: Workspace project changes replace lifecycle state, and foreign project lifecycle handoffs are rejected before project replacement.
+    evidence:
+      - tabs/vibration-project-lifecycle-handoff.js
+      - tabs/vibration-integrity-tab.js
+      - tabs/vibration-roadmap-controller.js
+      - tests/vibration-project-lifecycle-persistence.test.mjs
+    authority_limit: CUSTODY_ISOLATION_ONLY
+validation:
+  source_review: PASS_WITH_BOUNDARY_NOTE
+  repository_native_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_ci: NOT_RUN_ACTIONS_EVENT_DELIVERY_UNAVAILABLE
+release_condition: OWNER_DISPOSITION_REQUIRED_UNTIL_EXECUTION_EVIDENCE_EXISTS
+exclusions:
+  - current calculation result authority persistence
+  - historical calculation evidence authority
+  - non-empty user engineering data persistence
+  - non-empty identification authoring persistence
+  - non-empty project assumptions persistence
+  - automatic root-cause conclusion
+  - automatic action completion
+  - automatic mitigation recommendation or predicted benefit
+  - design authority

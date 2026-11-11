@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>#226 shipped Mode-A LFJ native index intake</title>
+<div id="host"></div>
+<script type="module">
+  import {renderXmlCii2019StandaloneTab} from '../../tabs/xml-cii-2019-standalone-tab.js';
+  const monitor={active:false,last:0,maxFrameGapMs:0,frames:0};
+  const raf=t=>{
+    if(monitor.active&&monitor.last){
+      monitor.maxFrameGapMs=Math.max(monitor.maxFrameGapMs,t-monitor.last);
+      monitor.frames++;
+    }
+    monitor.last=t;
+    requestAnimationFrame(raf);
+  };
+  requestAnimationFrame(raf);
+  window.__lfj226Metrics={
+    start(){monitor.active=true;monitor.last=performance.now();monitor.maxFrameGapMs=0;monitor.frames=0;},
+    stop(){monitor.active=false;return {...monitor};}
+  };
+  renderXmlCii2019StandaloneTab(document.getElementById('host'));
+  window.__lfj226Mounted=true;
+</script>

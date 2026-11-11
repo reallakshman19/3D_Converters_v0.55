@@ -1,0 +1,32 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-hp-kd320-published-oracle-prefill
+branch: agent/hp-kd320-published-oracle-prefill
+stacked_on_pr: 622
+workstream: HP_KD320_QUALIFICATION
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_Q2_PUBLISHED_ORACLE_PREFILL_ONLY
+claimed_paths:
+  - engineering/hp-class-standardization/qualification/kd320-q2/published-reference/**
+  - scripts/audit-b313-ch9-kd320-published-reference-prefill.mjs
+  - tests/b313-chapter-ix-kd320-published-reference-prefill.test.mjs
+  - agents/WIP-hp-kd320-published-oracle-prefill_workreport.md
+  - agents/status/WIP-hp-kd320-published-oracle-prefill.yaml
+  - agents/claims/WIP-hp-kd320-published-oracle-prefill.yaml
+exclusions:
+  - engineering/hp-class-standardization/qualification/kd320-q1/**
+  - engineering/hp-class-standardization/qualification/kd320-q2/candidate.template.json
+  - engineering/hp-class-standardization/qualification/kd320-q2/intake.js
+  - engineering/hp-class-standardization/qualification/kd3-oracle/catalog.json
+  - converters/**
+  - tabs/**
+  - package.json
+  - .github/workflows/**
+  - native KD320 equations
+  - QF-022 admission
+  - production calculation authority
+  - Code/design authority promotion
+coordination:
+  PR619: TRANSITIVE_STACKED_DEPENDENCY
+  PR622: STACKED_DEPENDENCY_NO_EXISTING_FILE_OVERLAP
+merge_authority: OWNER_ONLY_NOT_GRANTED

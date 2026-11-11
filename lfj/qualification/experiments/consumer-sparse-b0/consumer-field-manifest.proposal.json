@@ -1,0 +1,286 @@
+{
+  "schema": "LFJ.B0.ConsumerFieldManifestProposal.v1",
+  "status": "PROPOSAL_ONLY_NOT_ACCEPTED",
+  "protocol_ref": "reallaksh19/Common@13989969f6b7e432c4f7c1ddfe975449dba53593:skills/engineering-pr-delivery-v3.2",
+  "source_baseline": "reallaksh19/3D_Converters@1205639a43e9ce1589360479d2558678aebcfab7",
+  "source_bindings": [
+    {
+      "path": "tabs/xml-cii-2019-standalone/xml-cii-json-trace-fields.js",
+      "git_blob_sha": "51e03b2c21a829f8d0beec20ecfa320844a9250d",
+      "symbol": "DEFAULT_JSON_TRACE_CAPTURE_FIELDS"
+    },
+    {
+      "path": "converters/xml-cii2019-core/source-schema-adapter.js",
+      "git_blob_sha": "2588b0064fa865f4eb0f82794b3b9ff7b517f227",
+      "symbol": "LEGACY_FIELDS"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/xml-cii-trace-resolution-ledger.js",
+      "git_blob_sha": "faf632afeee59d72c861349c90dec9e10c1ea7a9",
+      "symbol": "walkStaged"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/stagedjson-enrichment/stagedjson-branch-context.js",
+      "git_blob_sha": "fead6029155c5648aa6cb3a635d883dacaa20bda",
+      "symbol": "collectStagedJsonBranchContexts"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/stagedjson-enrichment/stagedjson-enrichment-engine.js",
+      "git_blob_sha": "6b21f051aed83730492225fbd4b2b77c811f99fb",
+      "symbol": "enrichStagedJson"
+    }
+  ],
+  "resolver": {
+    "consumer": "xml-cii-2019-resolver",
+    "dynamic_capture_fields": true,
+    "configured_roles": true,
+    "capture_field_defaults": [
+      "DTXR_POS",
+      "DTXR_PS",
+      "DTXR",
+      "SPRE",
+      "SPREF",
+      "MDSSUPPTYPE",
+      "NAME",
+      "CMPSUPGAP",
+      "MDSLINKREF",
+      "CMPSUPREFN",
+      "PREV-NAME",
+      "OWNER"
+    ],
+    "capture_field_normalization": "trim; uppercase; remove characters except A-Z, 0-9 and underscore",
+    "primary_descriptor_order": [
+      "DTXR",
+      "SPRE",
+      "SPREF",
+      "DTXR_PS",
+      "DTXR_POS"
+    ],
+    "legacy_semantic_roles": {
+      "objectName": [
+        "NAME",
+        "NodeName"
+      ],
+      "objectType": [
+        "TYPE",
+        "ComponentType",
+        "COMPONENTTYPE"
+      ],
+      "directLink": [
+        "MDSLINKREF"
+      ],
+      "supportGroupRef": [
+        "CMPSUPREFN"
+      ],
+      "parentRef": [
+        "OWNER"
+      ],
+      "previousRef": [
+        "PREV-NAME"
+      ],
+      "nextRef": [
+        "NEXT-NAME"
+      ],
+      "componentRef": [
+        "ComponentRefNo",
+        "COMPONENTREFNO",
+        "COMPRE",
+        "RefNo",
+        "REFNO",
+        "REF"
+      ],
+      "nodeNumber": [
+        "NodeNumber",
+        "NODE",
+        "NODE_NO",
+        "JsonNodeNo",
+        "JSON_NODE_NO",
+        "SEQ",
+        "SEQUENCE"
+      ],
+      "nodeName": [
+        "NodeName",
+        "NAME"
+      ],
+      "supportTag": [
+        "SupportTag",
+        "PS",
+        "supportPs",
+        "psNo"
+      ],
+      "supportType": [
+        "MDSSUPPTYPE",
+        "CMPSUPTYPE",
+        "SUPPORT_TYPE"
+      ],
+      "supportFunction": [
+        "MDSSUPPFUNC"
+      ],
+      "supportKind": [
+        "SUPPORT_KIND",
+        "SUPPORT_MAPPER_KIND"
+      ],
+      "supportGap": [
+        "CMPSUPGAP",
+        "CMPSUPGAP_POS",
+        "CMPSUPGAP_PS",
+        "SUPPORT GAP"
+      ],
+      "dtxrPosition": [
+        "DTXR_POS"
+      ],
+      "dtxrPs": [
+        "DTXR_PS",
+        "DTXRPS"
+      ],
+      "dtxr": [
+        "DTXR",
+        "DESC",
+        "DESCRIPTION",
+        "RTEXT",
+        "SPRE"
+      ],
+      "position": [
+        "SUPPORTCOORD",
+        "SUPPORT_COORD",
+        "POS",
+        "POSI",
+        "BPOS",
+        "APOS",
+        "LPOS",
+        "CPOS",
+        "HPOS",
+        "TPOS",
+        "SPOS",
+        "EPOS"
+      ],
+      "bore": [
+        "ABORE",
+        "LBORE",
+        "HBORE",
+        "BORE"
+      ]
+    },
+    "context_inheritance": [
+      "branchName",
+      "point",
+      "bore"
+    ],
+    "original_source_ownership": [
+      "ownerSite",
+      "ownerZone",
+      "parentOccurrence",
+      "branchOccurrence"
+    ],
+    "scope_alias_candidates": [
+      "OWNER_ZONE",
+      "ZONE_ID",
+      "OWNER_SITE",
+      "SITE",
+      "ZONE"
+    ],
+    "source_index_lookup_keys": [
+      "jsonNodeNo",
+      "PS-tag",
+      "coordinateBucket",
+      "branchOccurrence",
+      "componentRef"
+    ],
+    "support_tag_sources": [
+      "NAME",
+      "description",
+      "DTXR_PS",
+      "labeledDescriptor",
+      "PS alias"
+    ],
+    "outputs": [
+      "engineeringTrace",
+      "EvidenceTreeCSV",
+      "NodeWiseTraceCSV"
+    ],
+    "configuration_dependencies": [
+      "captureFields",
+      "sourceSchema.fields",
+      "sourceSchema.fieldConflictPolicy",
+      "sourceSchema.identity",
+      "sourceSchema.relationships",
+      "sourceSchema.coordinates",
+      "coordinateTolerance",
+      "dtxrPositionOffset",
+      "selectedHierarchyScope",
+      "sourceRevision",
+      "xmlRevision",
+      "mastersRevision"
+    ]
+  },
+  "enrichment": {
+    "consumer": "stagedjson-to-enriched-xml",
+    "source_context_types": [
+      "BRANCH",
+      "SITE",
+      "ZONE",
+      "GROUP",
+      "WORLD"
+    ],
+    "input_attribute_origins": [
+      "attributes",
+      "sourceAttributes"
+    ],
+    "attribute_merge_precedence": "sourceAttributes override matching attributes for context calculation",
+    "geometry_aliases": [
+      "APOS",
+      "LPOS",
+      "POS",
+      "CENTER"
+    ],
+    "bore_aliases": [
+      "ABORE",
+      "HBORE",
+      "HBOR",
+      "LBORE",
+      "BORE",
+      "NOMINAL_BORE_MM",
+      "NPS"
+    ],
+    "rating_aliases": [
+      "RATING",
+      "PRESSURE_RATING",
+      "CLASS"
+    ],
+    "schedule_aliases": [
+      "SCHEDULE",
+      "SCH"
+    ],
+    "length_aliases": [
+      "LENGTH_MM",
+      "LENGTH",
+      "COMPONENT_LENGTH_MM"
+    ],
+    "output_requirements": [
+      "unknownOriginalFieldsPreserved",
+      "unselectedBranchesPreserved",
+      "unchangedGeometry",
+      "approvedEnrichedAttributes",
+      "PSIandXMLandAuditIndependentOracle"
+    ]
+  },
+  "authority_boundaries": {
+    "lfj_index_rights": "SOURCE_FACTS_ONLY",
+    "engineering_readiness": false,
+    "preview_weight_policy": "LFJ cannot issue Preview/Weight review, physical occurrence basis, approval, unit conversion or output authority",
+    "reuse_policy": "source index may be reused; projection reuse requires exact consumer manifest and dependency digests",
+    "unknown_fields": "remain in immutable original bytes and must be available through authenticated span reads",
+    "duplicate_field_policy": "must reject source duplicate JSON object keys according to R04; aliases cannot silently merge conflicting values",
+    "wildcard_policy": "*SUP* is NOT universal support semantics; aliases and free-text support tag recognition come from downstream logic",
+    "missing_data_policy": "missing, unknown and malformed source must remain distinct"
+  },
+  "acceptance_falsifiers": [
+    "configured alias or capture switch changes but stale projection remains",
+    "same-name branch in different ancestry is collapsed",
+    "descendant OWNER_SITE/OWNER_ZONE leaks into ancestor",
+    "support tag in free-text description is missed by field-only matcher",
+    "malformed source returns an apparently valid empty engineering match",
+    "full source cannot be reconstructed for output due to dropped unknown fields",
+    "ALL selection materializes a second unnecessary copy of every source event"
+  ]
+}

@@ -1,0 +1,27 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: WIP-hp-kd320-published-oracle-prefill
+branch: agent/hp-kd320-published-oracle-prefill
+base_pr: 622
+base_head: ea3ca3281ee9f41beba664b99263ca1dbcc48756
+main_at_reground: eef94949961970171d1366f5b6a9d421b3cc0d9f
+workstream: HP_KD320_QUALIFICATION
+stage: Q2_PUBLISHED_NUMERICAL_ORACLE_PREFILL
+criticality: ENGINEERING_CRITICAL
+state: QUALIFIED_LOCAL_PENDING_PUBLICATION
+coordination: STACKED_DEPENDENCY_PR622_NO_EXISTING_FILE_OVERLAP
+execution_mode: AUTO
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  syntax: PASS
+  focused_published_prefill: PASS_5_OF_5
+  source_pdf_sha256: PENDING
+  controlled_2025_reconciliation: PENDING
+  independent_oracle_admission: PENDING
+authority:
+  q2_oracle_admission_ready: false
+  native_core_kd320: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+exact_next_action: Publish stacked draft PR, then retain source PDF hash and reconcile the selected paper against controlled VIII-3 2025 before QF-022 admission.

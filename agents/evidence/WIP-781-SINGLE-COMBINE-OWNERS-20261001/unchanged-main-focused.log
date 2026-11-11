@@ -1,0 +1,226 @@
+TAP version 13
+# Issue \#776 B31.3 central API parity verified.
+# (node:15872) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/b313-thickness/index.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-b313-central-api-parity.test.mjs
+ok 1 - tests\\xml-cii-issue-776-b313-central-api-parity.test.mjs
+  ---
+  duration_ms: 344.9082
+  type: 'test'
+  ...
+# Issue \#776 benchmark basis verified.
+# Subtest: tests\\xml-cii-issue-776-benchmark-basis.test.mjs
+ok 2 - tests\\xml-cii-issue-776-benchmark-basis.test.mjs
+  ---
+  duration_ms: 125.4469
+  type: 'test'
+  ...
+# Issue \#776 deployment mirror/cache chain verified.
+# Subtest: tests\\xml-cii-issue-776-deployment-parity.test.mjs
+ok 3 - tests\\xml-cii-issue-776-deployment-parity.test.mjs
+  ---
+  duration_ms: 199.9812
+  type: 'test'
+  ...
+# (node:18692) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 downstream Match-1 validation regression passed.
+# Subtest: tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+ok 4 - tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+  ---
+  duration_ms: 137.137
+  type: 'test'
+  ...
+# Issue \#776 flange weight geometry regression verified.
+# (node:24912) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/flange-weight-fallback.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-flange-weight-geometry.test.mjs
+ok 5 - tests\\xml-cii-issue-776-flange-weight-geometry.test.mjs
+  ---
+  duration_ms: 147.7041
+  type: 'test'
+  ...
+# Issue \#776 enrichment preserves canonical branch junction identity before renumbering.
+# Subtest: tests\\xml-cii-issue-776-junction-enrichment-authority.test.mjs
+ok 6 - tests\\xml-cii-issue-776-junction-enrichment-authority.test.mjs
+  ---
+  duration_ms: 178.53
+  type: 'test'
+  ...
+# Issue \#776 Match-1 acceptance paths carry provenance.
+# Subtest: tests\\xml-cii-issue-776-match1-acceptance-paths.test.mjs
+ok 7 - tests\\xml-cii-issue-776-match1-acceptance-paths.test.mjs
+  ---
+  duration_ms: 179.7522
+  type: 'test'
+  ...
+# Issue \#776 Match-1 provenance/fingerprint regression passed.
+# (node:21452) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-match1-provenance.test.mjs
+ok 8 - tests\\xml-cii-issue-776-match1-provenance.test.mjs
+  ---
+  duration_ms: 157.1856
+  type: 'test'
+  ...
+# Issue \#776 Mode-A accepted weights are labelled as Match-1 authority.
+# Subtest: tests\\xml-cii-issue-776-mode-a-acceptance-label.test.mjs
+ok 9 - tests\\xml-cii-issue-776-mode-a-acceptance-label.test.mjs
+  ---
+  duration_ms: 140.38
+  type: 'test'
+  ...
+# Issue \#776 Mode-A Weight Match uses canonical prepared geometry.
+# Subtest: tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+ok 10 - tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+  ---
+  duration_ms: 168.4122
+  type: 'test'
+  ...
+# Issue \#776 post-run Weight Match validator uses canonical Match-1 authority.
+# Subtest: tests\\xml-cii-issue-776-post-run-weight-authority.test.mjs
+ok 11 - tests\\xml-cii-issue-776-post-run-weight-authority.test.mjs
+  ---
+  duration_ms: 157.9832
+  type: 'test'
+  ...
+# Issue \#776 Regex governed-index/cache regression passed.
+# (node:30680) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-regex-index-cache.test.mjs
+ok 12 - tests\\xml-cii-issue-776-regex-index-cache.test.mjs
+  ---
+  duration_ms: 298.3085
+  type: 'test'
+  ...
+# (node:5516) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/weight-basis-xml-dom.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: accepted final weight writes without a matching master candidate, replacing prior XML value
+ok 13 - accepted final weight writes without a matching master candidate, replacing prior XML value
+  ---
+  duration_ms: 24.8402
+  type: 'test'
+  ...
+# Subtest: canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+ok 14 - canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+  ---
+  duration_ms: 20.1888
+  type: 'test'
+  ...
+# Subtest: accepted component removed during geometry preparation cannot silently disappear
+ok 15 - accepted component removed during geometry preparation cannot silently disappear
+  ---
+  duration_ms: 3.6797
+  type: 'test'
+  ...
+# Subtest: negative-number component custody cannot be satisfied by a different helper in the same branch
+ok 16 - negative-number component custody cannot be satisfied by a different helper in the same branch
+  ---
+  duration_ms: 8.5163
+  type: 'test'
+  ...
+# Subtest: UI job normalizes absent optional master arrays without inventing master values
+ok 17 - UI job normalizes absent optional master arrays without inventing master values
+  ---
+  duration_ms: 7.054
+  type: 'test'
+  ...
+# Issue \#776 stale Match-1 cannot silently auto-rerank during standalone CII run.
+# Issue \#776 final review explicitly surfaces stale Match-1 invalidation.
+# Subtest: tests\\xml-cii-issue-776-stale-match1-review-ux.test.mjs
+ok 14 - tests\\xml-cii-issue-776-stale-match1-review-ux.test.mjs
+  ---
+  duration_ms: 150.8944
+  type: 'test'
+  ...
+# Issue \#776 standalone run validates Match-1 before CII engine release.
+# Subtest: tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+ok 15 - tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+  ---
+  duration_ms: 161.8094
+  type: 'test'
+  ...
+# Issue \#776 runtime topology regression passed.
+# Subtest: tests\\xml-cii-issue-776-topology-runtime.test.mjs
+ok 16 - tests\\xml-cii-issue-776-topology-runtime.test.mjs
+  ---
+  duration_ms: 340.2112
+  type: 'test'
+  ...
+# Issue \#776 Weight Match acceptance/validation semantics verified.
+# Subtest: tests\\xml-cii-issue-776-weight-acceptance-validation.test.mjs
+ok 17 - tests\\xml-cii-issue-776-weight-acceptance-validation.test.mjs
+  ---
+  duration_ms: 141.6387
+  type: 'test'
+  ...
+# Issue \#776 final-review geometry authority regression passed.
+# Subtest: tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+ok 18 - tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+  ---
+  duration_ms: 155.8218
+  type: 'test'
+  ...
+# (node:34160) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/invocation-builder.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 kg→N unit custody verified.
+# Subtest: tests\\xml-cii-issue-776-weight-unit-custody.test.mjs
+ok 19 - tests\\xml-cii-issue-776-weight-unit-custody.test.mjs
+  ---
+  duration_ms: 193.1399
+  type: 'test'
+  ...
+# Issue \#776 workflow job preserves Weight Master revision in the Match-1 basis.
+# Subtest: tests\\xml-cii-issue-776-workflow-weight-master-revision.test.mjs
+ok 20 - tests\\xml-cii-issue-776-workflow-weight-master-revision.test.mjs
+  ---
+  duration_ms: 116.594
+  type: 'test'
+  ...
+# Subtest: Smart Map Unmapped Lines exposes literal Select All without inventing Map To values
+ok 25 - Smart Map Unmapped Lines exposes literal Select All without inventing Map To values
+  ---
+  duration_ms: 2.1223
+  type: 'test'
+  ...
+# Subtest: consolidated Mode A Preview restores DTXR and governed B31.3 actions source-locally
+ok 26 - consolidated Mode A Preview restores DTXR and governed B31.3 actions source-locally
+  ---
+  duration_ms: 0.8537
+  type: 'test'
+  ...
+# Subtest: individual Mode A Preview auto-build exposes native DTXR and B31.3 actions only after explicit expansion
+ok 27 - individual Mode A Preview auto-build exposes native DTXR and B31.3 actions only after explicit expansion
+  ---
+  duration_ms: 2.2939
+  type: 'test'
+  ...
+# Subtest: Preview hook repairs mapped-line process authority before rebuilding
+ok 28 - Preview hook repairs mapped-line process authority before rebuilding
+  ---
+  duration_ms: 0.7747
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 700.9243

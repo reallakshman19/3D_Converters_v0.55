@@ -1,0 +1,53 @@
+schema: AgentClaim.v1
+pr_or_wip: PR686
+pull_request: 686
+claim_state: ACTIVE
+branch: agent/vib-facility-mechanism-evidence-20260820
+authority_domains:
+  - VIBRATION_FACILITY_RUN_CUSTODY
+  - VIBRATION_FACILITY_MECHANISM_EVIDENCE
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/run-basis.js
+    - converters/vibration/facility/mechanism-evidence.js
+    - tabs/vibration-integrity-mechanical-controller.js
+    - tabs/vibration-integrity-run-evidence.js
+    - tabs/vibration-integrity-sbc-scenario-execution.js
+    - tabs/vibration-integrity-sbc-type3-controller.js
+    - tests/vibration-facility-mechanism-evidence.test.mjs
+    - tests/vibration-integrity-run-evidence.test.mjs
+    - tests/vibration-runtime-scenario-guard.test.mjs
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tabs/vibration-integrity-mechanical-controller.js
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tabs/vibration-integrity-run-evidence.js
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tabs/vibration-integrity-sbc-scenario-execution.js
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tabs/vibration-integrity-sbc-type3-controller.js
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tests/vibration-integrity-run-evidence.test.mjs
+    - .backups/connector-20260820-vib-facility-mechanism-evidence/tests/vibration-runtime-scenario-guard.test.mjs
+    - agents/PR686_workreport.md
+    - agents/status/PR686.yaml
+    - agents/claims/PR686.yaml
+exclusions:
+  - vibration mechanism equations and coefficients
+  - source/master qualification
+  - mechanism applicability authority
+  - AssessmentCompleteness.v1 authority
+  - EI main-line aggregation authority
+  - design authority
+  - process actualization
+  - Project v2 persistence semantics
+  - right-panel workflow/blocking semantics
+  - Product Freeze qualification
+coordination:
+  PR684: MERGED_AIV_FACILITY_SCENARIO_CUSTODY_FOUNDATION
+  PR685: CURRENT_MAIN_HP_ONLY_NO_EXACT_OVERLAP
+  PR665: OPEN_PROJECT_V2_NO_EXACT_OVERLAP
+  PR657: OPEN_T1_PRESENTATION_NO_EXACT_OVERLAP
+  PR653: OPEN_T24_T25_SOURCE_GATE_NO_EXACT_OVERLAP
+  PR655: OPEN_T4_SOURCE_GATE_NO_EXACT_OVERLAP
+  PR649: OPEN_BENCHMARK_WORKBENCH_NO_EXACT_OVERLAP
+  PR540: OPEN_FIT_AUTHORITY_UI_NO_EXACT_OVERLAP
+  PR508: OPEN_SBC_STAGE2_NO_EXACT_OVERLAP
+release_condition: EXPLICIT_OWNER_MERGE_AUTHORIZATION_AFTER_RECONCILIATION

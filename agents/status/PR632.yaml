@@ -1,0 +1,38 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR632
+mission: Preindex Preview Material Line List lookup and memoize repeated pure Material Map resolution.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-material-authority-index-20260818
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/632
+implementation_head: b7306c1acdbd1960725841776f3d7699656b3751
+github_state_checked_head: 1c3ee3127ed6a0de22f89c269c33def3c2a62d11
+main_head_last_checked: e3fa32bf3e6d919d9ed3e3e17aa32fae2beea14e
+merge_base: e3fa32bf3e6d919d9ed3e3e17aa32fae2beea14e
+base_drift: NONE_ZERO_BEHIND
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR632_workreport.md
+appendix_a_status: NOT_REQUIRED_NEW_WORK_ITEM
+current_stage: DRAFT_REVIEW
+blocker: NONE
+highest_risk: Complete repository/browser real-dependency Preview equivalence remains NOT_RUN; focused exact-byte invariants pass.
+validation:
+  source_trace: PASS
+  mandatory_backup: PASS_EXACT_BLOB
+  syntax: PASS
+  focused_equivalence: PASS_LOCAL_IMPLEMENTATION_COUPLED
+  exact_byte_custody: PASS
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+github_state_at_checked_head:
+  mergeable: true
+  behind_main: 0
+  workflow_runs: NONE_RETURNED_NOT_RUN
+  commit_status_contexts: NONE_RETURNED_NOT_RUN
+  reviews: 0
+  review_threads: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR632
+exact_next_action: Await owner/review or repository-native/browser qualification; keep draft and unmerged without new explicit owner merge authorization.
+last_updated: 2026-08-18T19:40:00+04:00

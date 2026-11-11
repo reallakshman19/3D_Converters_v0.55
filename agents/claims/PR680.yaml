@@ -1,0 +1,34 @@
+schema: AgentClaim.v1
+pr_or_wip: PR680
+claim_state: ACTIVE
+pull_request: 680
+branch: agent/vib-assessment-unit-scenario-binding-20260820
+files:
+  exact:
+    - converters/vibration/mechanisms/assessment-unit.js
+    - converters/vibration/mechanisms/index.js
+    - tests/vibration-assessment-unit-scenario.test.mjs
+    - agents/PR680_workreport.md
+    - agents/status/PR680.yaml
+    - agents/claims/PR680.yaml
+authority_domains:
+  - VIBRATION_ASSESSMENT_UNIT_SCENARIO_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - converters/vibration/mechanisms/fit.js
+  - converters/vibration/mechanisms/aiv.js
+  - converters/vibration/mechanisms/mechanical.js
+  - converters/vibration/mechanisms/sbc.js
+  - mechanism equations and applicability
+  - process actualization
+  - source/master qualification
+  - UI and project persistence
+  - workflow files
+coordination:
+  PR678: MERGED_OPERATING_SCENARIO_FOUNDATION
+  PR665: SAFE_NO_EXACT_FILE_OVERLAP_PROJECT_V2
+coordination_state: SAFE_NO_EXACT_CONFLICT
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR680
+release_condition: OWNER_REVIEW_AND_EXPLICIT_MERGE_AUTHORIZATION

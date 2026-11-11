@@ -1,0 +1,17 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR811
+claim_state: AWAITING_OWNER_REVIEW
+branch: agent/issue-781-weight-rating-20261001
+criticality: ENGINEERING_CRITICAL
+authority_domains: [XML_CII_WEIGHT_RATING_INPUT, XML_CII_REGEX_RATING_MAPPING_PERSISTENCE]
+protected_paths:
+  - converters/xml-cii2019-core/preview-rating-snapshot.js
+  - converters/xml-cii2019-core/weight-match-ranking-service.js
+  - tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js
+  - tabs/xml-cii-2019-standalone/workers/weight-basis-service.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-rating.js
+coordination_state: COORDINATION_REQUIRED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-10-01

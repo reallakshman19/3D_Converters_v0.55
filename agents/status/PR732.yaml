@@ -1,0 +1,30 @@
+pr: 732
+chain: ENGCALC-BOLTED-JOINTS
+leg: P3_LEG_04
+state: BLOCKED_VALIDATION_REQUIRED
+execution_mode: AUTO
+auto_state: BLOCKED_VALIDATION_REQUIRED
+base_sha: 78b361d1f649d41378f568ebe1a237c4bc140c73
+authority:
+  method: REFERENCE_KERNEL_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+  preload_combination: NOT_MODELED
+scope:
+  first_principles_productization: true
+  scalar_registry_modified: false
+  ui_modified: false
+  workflow_modified: false
+validation:
+  source_reconstructed_new_suite: PASS_10_OF_10
+  source_reconstructed_existing_suite: PASS_8_OF_8
+  source_reconstructed_combined: PASS_18_OF_18
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+sequencing:
+  owner_directed_p3_override: true
+  p2_pr731_exact_validation: STILL_NOT_RUN
+hard_stop: node --test tests/bolt-group-loads.test.mjs tests/bolt-group-assessment.test.mjs
+latest_endpoint: EP-0022
+merge_authority: OWNER_ONLY_NOT_GRANTED

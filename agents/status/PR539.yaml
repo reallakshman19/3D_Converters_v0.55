@@ -1,0 +1,36 @@
+schema: AgentStatus.v1
+pr: 539
+branch: agent/fit-production-authorized-freeze
+base: main
+live_main_basis: 3c3a01ebe00abaa739252c2e67bacb5126540182
+clean_linear_basis: a9e98258f8f85d7787ee643d59614485e32e3366
+state: IMPLEMENTED_AWAITING_PRODUCTION_FREEZE_EXECUTION_AND_OWNER_GATE
+execution_mode: AUTO
+auto_state: PHASE_COMPLETE_OWNER_MERGE_GATE
+criticality: ENGINEERING_CRITICAL
+takeover_disposition: SALVAGE_PARTIAL
+appendix_a: PASS_96_OF_100
+coordination_state: SAFE
+validation:
+  current_main_grounding: PASS_SOURCE_INSPECTION
+  stale_blob_replay_rejected: PASS_SOURCE_INSPECTION
+  branch_diff_reconciliation: PASS_11_INTENDED_ZERO_BEHIND_AT_CLEAN_LINEAR_BASIS
+  current_main_patch: PASS_SOURCE_INSPECTION
+  current_aiv_registration_test_repair: PASS_SOURCE_INSPECTION
+  qualification_composition: PASS_LOCAL_EXECUTION_RECONSTRUCTED_EXACT_LOGIC
+  focused_regression: NOT_RUN_NO_FULL_CHECKOUT
+  fit_release: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_freeze: NOT_RUN_ENVIRONMENT_BLOCKED
+  real_xlsx_e2e: NOT_RUN_ENVIRONMENT_BLOCKED
+  native_backup: NOT_RUN_NO_CHECKOUT
+  hosted_statuses: NOT_RUN_ZERO_ENTRIES_AT_CLEAN_LINEAR_BASIS
+  hosted_pr_workflows: NOT_RUN_ZERO_RUNS_AT_CLEAN_LINEAR_BASIS
+authority:
+  method_lifecycle: PRODUCTION_AUTHORIZED
+  effective_authority: SCREENING
+  screening_authority: AUTHORIZED_BOUNDED
+  design_authority: false
+  code_compliance: false
+  numerical_change: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR539
+exact_next_action: AUTO_PROGRESS_TO_PR517_KEEP_PR539_DRAFT_UNMERGED

@@ -1,0 +1,47 @@
+schema: AgentClaim.v1
+pr_or_wip: PR674
+claim_state: ACTIVE
+pull_request: 674
+branch: agent/vib-right-rail-mechanism-cockpit-20260820
+files:
+  exact:
+    - tabs/vibration-roadmap-mechanism-summary.js
+    - tabs/vibration-roadmap-mechanism-summary-view.js
+    - tabs/vibration-integrity-roadmap-bridge.js
+    - tabs/vibration-roadmap-panel.js
+    - tabs/vibration-roadmap-panel.css
+    - tests/vibration-roadmap-mechanism-summary.test.mjs
+    - agents/PR674_workreport.md
+    - agents/status/PR674.yaml
+    - agents/claims/PR674.yaml
+  prefixes:
+    - .backups/connector-20260820-vib-right-rail-mechanisms/
+authority_domains:
+  - VIBRATION_SELECTED_SCOPE_MECHANISM_SUMMARY_PROJECTION
+  - VIBRATION_RIGHT_RAIL_PRESENTATION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - vibration equations coefficients tolerances units and masters
+  - mechanism applicability determination
+  - T1 identification production semantics
+  - RequiredAssessmentSet MechanismCoverage and AssessmentCompleteness calculation semantics
+  - EI main-line aggregation semantics
+  - AIV FIT Mechanical SBC calculation authority
+  - T2.4 T2.5 T2.9 T4 source qualification
+  - project persistence or currentness
+  - runtime writer or canvas ownership
+  - Product Freeze
+  - screening design code safety or RCA authority
+  - workflow files
+coordination:
+  PR540: COORDINATION_REQUIRED_NO_EXACT_FILE_OVERLAP_DO_NOT_EDIT_CALCULATION_FAMILY_LANDING
+  PR665: SAFE_NO_EXACT_FILE_OVERLAP_NO_PERSISTENCE_DEPENDENCY
+  PR649: COORDINATION_REQUIRED_AUTHORITY_INDEPENDENT_DO_NOT_IMPORT_UNMERGED_RESULT_STATE
+  PR657: SAFE_SHARED_READ_T1_PRESENTATION_ONLY
+  PR653: SHARED_READ_T24_T25_SOURCE_GATE
+  PR655: SHARED_READ_T4_SOURCE_GATE
+coordination_state: COORDINATION_REQUIRED_NO_EXACT_CONFLICT
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR674
+release_condition: OWNER_REVIEW_AND_EXPLICIT_MERGE_AUTHORIZATION

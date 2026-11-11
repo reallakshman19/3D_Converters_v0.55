@@ -1,0 +1,30 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-C2V-20260818
+branch: agent/xml-cii-c2-virtual-preview-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C2_VIRTUALIZATION_ONLY
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-virtual-rows.js
+  - tests/xml-cii-standalone-preview-virtualization.test.mjs
+  - tests/xml-cii-standalone-preview-virtualization-integration.test.mjs
+  - agents/WIP-XMLCII-C2V-20260818_workreport.md
+  - agents/status/WIP-XMLCII-C2V-20260818.yaml
+  - agents/claims/WIP-XMLCII-C2V-20260818.yaml
+exclusions:
+  - .github/workflows/**
+  - workers
+  - persisted indexes
+  - source DOM cache
+  - mapping/master authority changes
+  - support/GAP semantics
+  - CII writer/runtime
+coordination:
+  PR602: HARD_STACK_BASE
+  PR598: SEPARATE_SALVAGE_SEARCH_OPTIMIZATION_NOT_C2_VIRTUALIZATION
+  PR599: SEPARATE_SALVAGE_SEARCH_OPTIMIZATION_NOT_C2_VIRTUALIZATION
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:21:00+04:00

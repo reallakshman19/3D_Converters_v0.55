@@ -1,0 +1,15 @@
+schema: AgentClaim.v1
+pr_or_wip: PR354
+claim_state: ACTIVE
+claim_modes: [COORDINATED]
+files:
+  exact:
+    - converters/scripts/xml_to_cii2019_patched.py
+    - converters/scripts/xml_to_cii2019_runtime_custody.py
+    - converters/xml-cii-2019-standalone/engine.js
+    - converters/xml-cii-2019-standalone/invocation-builder.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-cii-candidate-run.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-action.mjs
+authority_domains: [native enriched XML artifact retention]
+protected: [CII bytes, Final kg decisions, source identity, native release checks, workflows]
+last_verified_head: bdd5e581d7c3cc9f6b719454c3a75d395dbc5d3a

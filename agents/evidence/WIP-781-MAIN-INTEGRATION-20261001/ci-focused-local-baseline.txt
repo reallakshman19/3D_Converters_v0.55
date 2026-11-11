@@ -1,0 +1,874 @@
+TAP version 13
+# Issue \#776 B31.3 central API parity verified.
+# (node:26100) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/b313-thickness/index.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-b313-central-api-parity.test.mjs
+ok 1 - tests\\xml-cii-issue-776-b313-central-api-parity.test.mjs
+  ---
+  duration_ms: 317.5096
+  type: 'test'
+  ...
+# node:internal/fs/promises:639
+#   return new FileHandle(await PromisePrototypeThen(
+#                         ^
+# Error: ENOENT: no such file or directory, open 'C:\\CodeA\\3DC_live_acceptance\\Benchmarks\\WSW-2-RE-AFC.xml'
+#     at async open (node:internal/fs/promises:639:25)
+#     at async readFile (node:internal/fs/promises:1252:14)
+#     at async file:///C:/CodeA/3DC_live_acceptance/tests/xml-cii-issue-776-benchmark-basis.test.mjs:4:13 {
+#   errno: -4058,
+#   code: 'ENOENT',
+#   syscall: 'open',
+#   path: 'C:\\\\CodeA\\\\3DC_live_acceptance\\\\Benchmarks\\\\WSW-2-RE-AFC.xml'
+# }
+# Node.js v22.23.2
+# Subtest: tests\\xml-cii-issue-776-benchmark-basis.test.mjs
+not ok 2 - tests\\xml-cii-issue-776-benchmark-basis.test.mjs
+  ---
+  duration_ms: 98.7811
+  type: 'test'
+  location: 'C:\\CodeA\\3DC_live_acceptance\\tests\\xml-cii-issue-776-benchmark-basis.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Issue \#776 deployment mirror/cache chain verified.
+# Subtest: tests\\xml-cii-issue-776-deployment-parity.test.mjs
+ok 3 - tests\\xml-cii-issue-776-deployment-parity.test.mjs
+  ---
+  duration_ms: 166.749
+  type: 'test'
+  ...
+# (node:33752) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 downstream Match-1 validation regression passed.
+# Subtest: tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+ok 4 - tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+  ---
+  duration_ms: 119.3486
+  type: 'test'
+  ...
+# Issue \#776 flange weight geometry regression verified.
+# (node:23136) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/flange-weight-fallback.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-flange-weight-geometry.test.mjs
+ok 5 - tests\\xml-cii-issue-776-flange-weight-geometry.test.mjs
+  ---
+  duration_ms: 123.7582
+  type: 'test'
+  ...
+# Issue \#776 enrichment preserves canonical branch junction identity before renumbering.
+# Subtest: tests\\xml-cii-issue-776-junction-enrichment-authority.test.mjs
+ok 6 - tests\\xml-cii-issue-776-junction-enrichment-authority.test.mjs
+  ---
+  duration_ms: 147.0888
+  type: 'test'
+  ...
+# Issue \#776 Match-1 acceptance paths carry provenance.
+# Subtest: tests\\xml-cii-issue-776-match1-acceptance-paths.test.mjs
+ok 7 - tests\\xml-cii-issue-776-match1-acceptance-paths.test.mjs
+  ---
+  duration_ms: 146.2487
+  type: 'test'
+  ...
+# Issue \#776 Match-1 provenance/fingerprint regression passed.
+# (node:10340) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-match1-provenance.test.mjs
+ok 8 - tests\\xml-cii-issue-776-match1-provenance.test.mjs
+  ---
+  duration_ms: 124.4373
+  type: 'test'
+  ...
+# Issue \#776 Mode-A accepted weights are labelled as Match-1 authority.
+# Subtest: tests\\xml-cii-issue-776-mode-a-acceptance-label.test.mjs
+ok 9 - tests\\xml-cii-issue-776-mode-a-acceptance-label.test.mjs
+  ---
+  duration_ms: 114.7353
+  type: 'test'
+  ...
+# Issue \#776 Mode-A Weight Match uses canonical prepared geometry.
+# Subtest: tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+ok 10 - tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+  ---
+  duration_ms: 123.6823
+  type: 'test'
+  ...
+# Issue \#776 post-run Weight Match validator uses canonical Match-1 authority.
+# Subtest: tests\\xml-cii-issue-776-post-run-weight-authority.test.mjs
+ok 11 - tests\\xml-cii-issue-776-post-run-weight-authority.test.mjs
+  ---
+  duration_ms: 178.6775
+  type: 'test'
+  ...
+# Issue \#776 Regex governed-index/cache regression passed.
+# (node:26508) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-776-regex-index-cache.test.mjs
+ok 12 - tests\\xml-cii-issue-776-regex-index-cache.test.mjs
+  ---
+  duration_ms: 255.1466
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: The input did not match the regular expression /if \\(blockedWeightKeys\\.has\\(text\\(nr\\.key\\)\\)\\) continue/. Input:
+# '// Standalone XML→CII run parity\\r\\n' +
+#   '// -----------------------------\\r\\n' +
+#   '// The parent Model Converters workflow enriches the XML in the browser\\r\\n' +
+#   '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\r\\n' +
+#   '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\r\\n' +
+#   '// the Python conversion runs. This module reuses that enrichment authority and\\r\\n' +
+#   '// now emits deterministic evidence proving that the exact XML sent to Python\\r\\n' +
+#   '// contains the Preview and Weight Match facts that were selected.\\r\\n' +
+#   '\\r\\n' +
+#   "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\r\\n" +
+#   "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-2';\\r\\n" +
+#   "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\r\\n" +
+#   "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-2';\\r\\n" +
+#   '\\r\\n' +
+#   'const PARITY_MODULE_URL = new URL(\\r\\n' +
+#   "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-2',\\r\\n" +
+#   '  import.meta.url,\\r\\n' +
+#   ');\\r\\n' +
+#   '\\r\\n' +
+#   "function text(value) { return value === undefined || value === null ? '' : String(value); }\\r\\n" +
+#   '\\r\\n' +
+#   'function parseConfig(raw) {\\r\\n' +
+#   '  try {\\r\\n' +
+#   "    const value = JSON.parse(text(raw) || '{}');\\r\\n" +
+#   "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\r\\n" +
+#   '  } catch { return {}; }\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\r\\n" +
+#   'function elementChildren(parent) {\\r\\n' +
+#   '  return [...(parent?.childNodes || parent?.children || [])]\\r\\n' +
+#   '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\r\\n' +
+#   '}\\r\\n' +
+#   'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\r\\n' +
+#   'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\r\\n' +
+#   'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\r\\n' +
+#   '\\r\\n' +
+#   'function ensureChild(document, parent, name) {\\r\\n' +
+#   '  let element = firstChild(parent, name);\\r\\n' +
+#   '  if (element) return element;\\r\\n' +
+#   "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\r\\n" +
+#   '    ? document.createElementNS(parent.namespaceURI, name)\\r\\n' +
+#   '    : document.createElement(name);\\r\\n' +
+#   '  parent.appendChild(element);\\r\\n' +
+#   '  return element;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function setChildText(document, parent, name, value) {\\r\\n' +
+#   '  const clean = text(value).trim();\\r\\n' +
+#   '  if (!clean) return false;\\r\\n' +
+#   '  ensureChild(document, parent, name).textContent = clean;\\r\\n' +
+#   '  return true;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function numeric(value) {\\r\\n' +
+#   "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\r\\n" +
+#   '  return Number.isFinite(n) ? n : null;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function recordExpected(entries, {\\r\\n' +
+#   '  scope,\\r\\n' +
+#   '  branchName,\\r\\n' +
+#   "  nodeNumber = '',\\r\\n" +
+#   '  path,\\r\\n' +
+#   '  field,\\r\\n' +
+#   '  value,\\r\\n' +
+#   "  kind = 'text',\\r\\n" +
+#   "  source = 'preview',\\r\\n" +
+#   '}) {\\r\\n' +
+#   '  const expected = text(value).trim();\\r\\n' +
+#   '  if (!expected) return;\\r\\n' +
+#   '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics) {\\r\\n' +
+#   '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\r\\n' +
+#   "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\r\\n" +
+#   "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\r\\n" +
+#   '  }\\r\\n' +
+#   "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2');\\r\\n" +
+#   "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\r\\n" +
+#   '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\r\\n' +
+#   '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\r\\n' +
+#   '  if (!result.branchRows.length) return result;\\r\\n' +
+#   '\\r\\n' +
+#   '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\r\\n' +
+#   "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\r\\n" +
+#   "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\r\\n" +
+#   '\\r\\n' +
+#   "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\r\\n" +
+#   "    const branchName = childText(branch, 'Branchname');\\r\\n" +
+#   '    const row = byBranch.get(branchName);\\r\\n' +
+#   '    if (!row) continue;\\r\\n' +
+#   "    const pressure = ensureChild(document, branch, 'Pressure');\\r\\n" +
+#   "    const temperature = ensureChild(document, branch, 'Temperature');\\r\\n" +
+#   '\\r\\n' +
+#   '    const branchWrites = [\\r\\n' +
+#   "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\r\\n" +
+#   "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\r\\n" +
+#   "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\r\\n" +
+#   "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#   '    ];\\r\\n' +
+#   '\\r\\n' +
+#   '    for (const write of branchWrites) {\\r\\n' +
+#   "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#   '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\r\\n' +
+#   '      result.appliedFields += 1;\\r\\n' +
+#   '      recordExpected(result.expectedEntries, {\\r\\n' +
+#   "        scope: 'branch', branchName, path: write.path, field: write.field,\\r\\n" +
+#   "        value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#   '      });\\r\\n' +
+#   '    }\\r\\n' +
+#   '\\r\\n' +
+#   "    for (const node of childrenByName(branch, 'Node')) {\\r\\n" +
+#   "      const nodeNumber = childText(node, 'NodeNumber');\\r\\n" +
+#   '      const nodeWrites = [\\r\\n' +
+#   "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\r\\n" +
+#   "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\r\\n" +
+#   "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\r\\n" +
+#   "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#   "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\r\\n" +
+#   "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\r\\n" +
+#   '      ];\\r\\n' +
+#   '      for (const write of nodeWrites) {\\r\\n' +
+#   "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#   '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\r\\n' +
+#   '        result.appliedFields += 1;\\r\\n' +
+#   '        recordExpected(result.expectedEntries, {\\r\\n' +
+#   "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\r\\n" +
+#   "          value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#   '        });\\r\\n' +
+#   '      }\\r\\n' +
+#   '\\r\\n' +
+#   '    }\\r\\n' +
+#   '  }\\r\\n' +
+#   '\\r\\n' +
+#   '  if (!result.appliedFields) return result;\\r\\n' +
+#   '  diagnostics.push({\\r\\n' +
+#   "    type: 'standalone-process-parity-applied',\\r\\n" +
+#   '    fields: result.appliedFields,\\r\\n' +
+#   "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\r\\n" +
+#   '  });\\r\\n' +
+#   '  result.xmlText = new XMLSerializer().serializeToString(document);\\r\\n' +
+#   '  return result;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'const WEIGHT_MATCH_MODULE_URL = new URL(\\r\\n' +
+#   "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\r\\n" +
+#   '  import.meta.url,\\r\\n' +
+#   ');\\r\\n' +
+#   '\\r\\n' +
+#   'export async function loadParentWeightMatchModules() {\\r\\n' +
+#   '  const [renderer, parity] = await Promise.all([\\r\\n' +
+#   '    import(WEIGHT_MATCH_MODULE_URL.href),\\r\\n' +
+#   '    import(PARITY_MODULE_URL.href),\\r\\n' +
+#   '  ]);\\r\\n' +
+#   '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'export function standaloneParityOptions(supportConfigJson, options = {}) {\\r\\n' +
+#   '  const config = parseConfig(supportConfigJson);\\r\\n' +
+#   '  const split = options.splitCondensedValveFlange !== undefined\\r\\n' +
+#   '    ? options.splitCondensedValveFlange !== false\\r\\n' +
+#   '    : (config.splitCondensedValveFlange !== false);\\r\\n' +
+#   '  return {\\r\\n' +
+#   "    supportConfigJson: text(supportConfigJson) || '{}',\\r\\n" +
+#   '    splitCondensedValveFlange: split,\\r\\n' +
+#   '    split_condensed_valve_flange: split,\\r\\n' +
+#   '    condenseRigidXsd: config.condenseRigidXsd === true || config.condense_rigid_xsd === true,\\r\\n' +
+#   '  };\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'export async function prepareStandaloneWeightReviewXml(state = {}, config = {}) {\\r\\n' +
+#   '  const sourceText = text(state?.sourceText);\\r\\n' +
+#   '  const stagedJsonText = text(state?.stagedJsonText);\\r\\n' +
+#   "  if (!sourceText.trim()) return { xmlText: sourceText, config, diagnostics: [], stats: {}, error: 'Weight review requires non-empty XML source text.' };\\r\\n" +
+#   '  const parity = await import(PARITY_MODULE_URL.href);\\r\\n' +
+#   "  const supportConfigJson = JSON.stringify(config && typeof config === 'object' ? config : {});\\r\\n" +
+#   '  const options = standaloneParityOptions(supportConfigJson, state?.options || {});\\r\\n' +
+#   '  const authority = prepareStandaloneRigidWeightAuthority(parity, sourceText, stagedJsonText, config, options);\\r\\n' +
+#   '  const enriched = await parity.enrichXmlForCii2019(sourceText, stagedJsonText, {\\r\\n' +
+#   '    ...options, supportConfigJson: JSON.stringify(deferStandaloneRigidWeights(config)),\\r\\n' +
+#   '  });\\r\\n' +
+#   "  const preparedConfig = enriched?.config && typeof enriched.config === 'object'\\r\\n" +
+#   '    ? { ...enriched.config, ...config, overrides: { ...(enriched.config.overrides || {}), ...(config?.overrides || {}) } }\\r\\n' +
+#   '    : config;\\r\\n' +
+#   '  const geometry = applyXmlCiiStagedGeometryAuthority(\\r\\n' +
+#   '    enriched?.xmlText || sourceText,\\r\\n' +
+#   '    stagedJsonText,\\r\\n' +
+#   '    { config: preparedConfig },\\r\\n' +
+#   '  );\\r\\n' +
+#   '  return {\\r\\n' +
+#   '    xmlText: geometry.xmlText,'... 5456 more characters
+#     at file:///C:/CodeA/3DC_live_acceptance/tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs:6:8 {
+#   generatedMessage: true,
+#   code: 'ERR_ASSERTION',
+#   actual: '// Standalone XML→CII run parity\\r\\n' +
+#     '// -----------------------------\\r\\n' +
+#     '// The parent Model Converters workflow enriches the XML in the browser\\r\\n' +
+#     '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\r\\n' +
+#     '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\r\\n' +
+#     '// the Python conversion runs. This module reuses that enrichment authority and\\r\\n' +
+#     '// now emits deterministic evidence proving that the exact XML sent to Python\\r\\n' +
+#     '// contains the Preview and Weight Match facts that were selected.\\r\\n' +
+#     '\\r\\n' +
+#     "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\r\\n" +
+#     "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-2';\\r\\n" +
+#     "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\r\\n" +
+#     "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-2';\\r\\n" +
+#     '\\r\\n' +
+#     'const PARITY_MODULE_URL = new URL(\\r\\n' +
+#     "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-2',\\r\\n" +
+#     '  import.meta.url,\\r\\n' +
+#     ');\\r\\n' +
+#     '\\r\\n' +
+#     "function text(value) { return value === undefined || value === null ? '' : String(value); }\\r\\n" +
+#     '\\r\\n' +
+#     'function parseConfig(raw) {\\r\\n' +
+#     '  try {\\r\\n' +
+#     "    const value = JSON.parse(text(raw) || '{}');\\r\\n" +
+#     "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\r\\n" +
+#     '  } catch { return {}; }\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\r\\n" +
+#     'function elementChildren(parent) {\\r\\n' +
+#     '  return [...(parent?.childNodes || parent?.children || [])]\\r\\n' +
+#     '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\r\\n' +
+#     '}\\r\\n' +
+#     'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\r\\n' +
+#     'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\r\\n' +
+#     'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\r\\n' +
+#     '\\r\\n' +
+#     'function ensureChild(document, parent, name) {\\r\\n' +
+#     '  let element = firstChild(parent, name);\\r\\n' +
+#     '  if (element) return element;\\r\\n' +
+#     "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\r\\n" +
+#     '    ? document.createElementNS(parent.namespaceURI, name)\\r\\n' +
+#     '    : document.createElement(name);\\r\\n' +
+#     '  parent.appendChild(element);\\r\\n' +
+#     '  return element;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function setChildText(document, parent, name, value) {\\r\\n' +
+#     '  const clean = text(value).trim();\\r\\n' +
+#     '  if (!clean) return false;\\r\\n' +
+#     '  ensureChild(document, parent, name).textContent = clean;\\r\\n' +
+#     '  return true;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function numeric(value) {\\r\\n' +
+#     "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\r\\n" +
+#     '  return Number.isFinite(n) ? n : null;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function recordExpected(entries, {\\r\\n' +
+#     '  scope,\\r\\n' +
+#     '  branchName,\\r\\n' +
+#     "  nodeNumber = '',\\r\\n" +
+#     '  path,\\r\\n' +
+#     '  field,\\r\\n' +
+#     '  value,\\r\\n' +
+#     "  kind = 'text',\\r\\n" +
+#     "  source = 'preview',\\r\\n" +
+#     '}) {\\r\\n' +
+#     '  const expected = text(value).trim();\\r\\n' +
+#     '  if (!expected) return;\\r\\n' +
+#     '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics) {\\r\\n' +
+#     '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\r\\n' +
+#     "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\r\\n" +
+#     "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\r\\n" +
+#     '  }\\r\\n' +
+#     "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2');\\r\\n" +
+#     "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\r\\n" +
+#     '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\r\\n' +
+#     '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\r\\n' +
+#     '  if (!result.branchRows.length) return result;\\r\\n' +
+#     '\\r\\n' +
+#     '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\r\\n' +
+#     "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\r\\n" +
+#     "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\r\\n" +
+#     '\\r\\n' +
+#     "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\r\\n" +
+#     "    const branchName = childText(branch, 'Branchname');\\r\\n" +
+#     '    const row = byBranch.get(branchName);\\r\\n' +
+#     '    if (!row) continue;\\r\\n' +
+#     "    const pressure = ensureChild(document, branch, 'Pressure');\\r\\n" +
+#     "    const temperature = ensureChild(document, branch, 'Temperature');\\r\\n" +
+#     '\\r\\n' +
+#     '    const branchWrites = [\\r\\n' +
+#     "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\r\\n" +
+#     "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\r\\n" +
+#     "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\r\\n" +
+#     "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#     '    ];\\r\\n' +
+#     '\\r\\n' +
+#     '    for (const write of branchWrites) {\\r\\n' +
+#     "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#     '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\r\\n' +
+#     '      result.appliedFields += 1;\\r\\n' +
+#     '      recordExpected(result.expectedEntries, {\\r\\n' +
+#     "        scope: 'branch', branchName, path: write.path, field: write.field,\\r\\n" +
+#     "        value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#     '      });\\r\\n' +
+#     '    }\\r\\n' +
+#     '\\r\\n' +
+#     "    for (const node of childrenByName(branch, 'Node')) {\\r\\n" +
+#     "      const nodeNumber = childText(node, 'NodeNumber');\\r\\n" +
+#     '      const nodeWrites = [\\r\\n' +
+#     "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\r\\n" +
+#     "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\r\\n" +
+#     "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\r\\n" +
+#     "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#     "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\r\\n" +
+#     "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\r\\n" +
+#     '      ];\\r\\n' +
+#     '      for (const write of nodeWrites) {\\r\\n' +
+#     "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#     '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\r\\n' +
+#     '        result.appliedFields += 1;\\r\\n' +
+#     '        recordExpected(result.expectedEntries, {\\r\\n' +
+#     "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\r\\n" +
+#     "          value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#     '        });\\r\\n' +
+#     '      }\\r\\n' +
+#     '\\r\\n' +
+#     '    }\\r\\n' +
+#     '  }\\r\\n' +
+#     '\\r\\n' +
+#     '  if (!result.appliedFields) return result;\\r\\n' +
+#     '  diagnostics.push({\\r\\n' +
+#     "    type: 'standalone-process-parity-applied',\\r\\n" +
+#     '    fields: result.appliedFields,\\r\\n' +
+#     "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\r\\n" +
+#     '  });\\r\\n' +
+#     '  result.xmlText = new XMLSerializer().serializeToString(document);\\r\\n' +
+#     '  return result;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'const WEIGHT_MATCH_MODULE_URL = new URL(\\r\\n' +
+#     "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\r\\n" +
+#     '  import.meta.url,\\r\\n' +
+#     ');\\r\\n' +
+#     '\\r\\n' +
+#     'export async function loadParentWeightMatchModules() {\\r\\n' +
+#     '  const [renderer, parity] = await Promise.all([\\r\\n' +
+#     '    import(WEIGHT_MATCH_MODULE_URL.href),\\r\\n' +
+#     '    import(PARITY_MODULE_URL.href),\\r\\n' +
+#     '  ]);\\r\\n' +
+#     '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'export function standaloneParityOptions(supportConfigJson, options = {}) {\\r\\n' +
+#     '  const config = parseConfig(supportConfigJson);\\r\\n' +
+#     '  const split = options.splitCondensedValveFlange !== undefined\\r\\n' +
+#     '    ? options.splitCondensedValveFlange !== false\\r\\n' +
+#     '    : (config.splitCondensedValveFlange !== false);\\r\\n' +
+#     '  return {\\r\\n' +
+#     "    supportConfigJson: text(supportConfigJson) || '{}',\\r\\n" +
+#     '    splitCondensedValveFlange: split,\\r\\n' +
+#     '    split_condensed_valve_flange: split,\\r\\n' +
+#     '    condenseRigidXsd: config.condenseRigidXsd === true || config.condense_rigid_xsd === true,\\r\\n' +
+#     '  };\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'export async function prepareStandaloneWeightReviewXml(state = {}, config = {}) {\\r\\n' +
+#     '  const sourceText = text(state?.sourceText);\\r\\n' +
+#     '  const stagedJsonText = text(state?.stagedJsonText);\\r\\n' +
+#     "  if (!sourceText.trim()) return { xmlText: sourceText, config, diagnostics: [], stats: {}, error: 'Weight review requires non-empty XML source text.' };\\r\\n" +
+#     '  const parity = await import(PARITY_MODULE_URL.href);\\r\\n' +
+#     "  const supportConfigJson = JSON.stringify(config && typeof config === 'object' ? config : {});\\r\\n" +
+#     '  const options = standaloneParityOptions(supportConfigJson, state?.options || {});\\r\\n' +
+#     '  const authority = prepareStandaloneRigidWeightAuthority(parity, sourceText, stagedJsonText, config, options);\\r\\n' +
+#     '  const enriched = await parity.enrichXmlForCii2019(sourceText, stagedJsonText, {\\r\\n' +
+#     '    ...options, supportConfigJson: JSON.stringify(deferStandaloneRigidWeights(config)),\\r\\n' +
+#     '  });\\r\\n' +
+#     "  const preparedConfig = enriched?.config && typeof enriched.config === 'object'\\r\\n" +
+#     '    ? { ...enriched.config, ...config, overrides: { ...(enriched.config.overrides || {}), ...(config?.overrides || {}) } }\\r\\n' +
+#     '    : config;\\r\\n' +
+#     '  const geometry = applyXmlCiiStagedGeometryAuthority(\\r\\n' +
+#     '    enriched?.xmlText || sourceText,\\r\\n' +
+#     '    stagedJsonText,\\r\\n' +
+#     '    { config: preparedConfig },\\r\\n' +
+#     '  );\\r\\n' +
+#     '  return {\\r\\n' +
+#     '    xmlText: geometry.xmlText,'... 5456 more characters,
+#   expected: /if \\(blockedWeightKeys\\.has\\(text\\(nr\\.key\\)\\)\\) continue/,
+#   operator: 'match',
+#   diff: 'simple'
+# }
+# Node.js v22.23.2
+# Subtest: tests\\xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+not ok 13 - tests\\xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+  ---
+  duration_ms: 166.3028
+  type: 'test'
+  location: 'C:\\CodeA\\3DC_live_acceptance\\tests\\xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Issue \#776 final review explicitly surfaces stale Match-1 invalidation.
+# Subtest: tests\\xml-cii-issue-776-stale-match1-review-ux.test.mjs
+ok 14 - tests\\xml-cii-issue-776-stale-match1-review-ux.test.mjs
+  ---
+  duration_ms: 162.9227
+  type: 'test'
+  ...
+# Issue \#776 standalone run validates Match-1 before CII engine release.
+# Subtest: tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+ok 15 - tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+  ---
+  duration_ms: 150.1237
+  type: 'test'
+  ...
+# Issue \#776 runtime topology regression passed.
+# Subtest: tests\\xml-cii-issue-776-topology-runtime.test.mjs
+ok 16 - tests\\xml-cii-issue-776-topology-runtime.test.mjs
+  ---
+  duration_ms: 322.6016
+  type: 'test'
+  ...
+# Issue \#776 Weight Match acceptance/validation semantics verified.
+# Subtest: tests\\xml-cii-issue-776-weight-acceptance-validation.test.mjs
+ok 17 - tests\\xml-cii-issue-776-weight-acceptance-validation.test.mjs
+  ---
+  duration_ms: 186.8411
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: The input did not match the regular expression /await prepareStandaloneWeightReviewXml\\(state, config\\)/. Input:
+# "import { resolveStandaloneWeightReviewRating, standaloneWeightReviewRatingInfo } from './xml-cii-adapted-weight-rating-authority.js';\\r\\n" +
+#   "import { applyXmlCiiFlangeWeightFallbackToIssue } from '../../../converters/xml-cii2019-core/flange-weight-fallback.js';\\r\\n" +
+#   "import { rankXmlCiiWeightCandidates } from '../../../converters/xml-cii2019-core/weight-valve-hints.js';\\r\\n" +
+#   "import { flattenModeARigidReviewEntries } from './xml-cii-adapted-rigid-review-mode-a-state.js';\\r\\n" +
+#   "import { prepareStandaloneWeightReviewXml } from '../xml-cii-standalone-run-parity.js?v=20261001-weight-output-2';\\r\\n" +
+#   "import { materializeXmlCiiDatasetBackedConfig } from '../xml-cii-dataset-backed-config.js?v=20261001-weight-output-2';\\r\\n" +
+#   '\\r\\n' +
+#   `const esc = (value) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');\\r\\n` +
+#   "const attr = (value) => esc(value).replace(/'/g, '&\#39;');\\r\\n" +
+#   "const text = (value) => value === undefined || value === null ? '' : String(value).trim();\\r\\n" +
+#   '\\r\\n' +
+#   'export async function collectModeARigidWeightReviewIssues(state = {}, config = {}) {\\r\\n' +
+#   '  const effectiveConfig = await materializeXmlCiiDatasetBackedConfig(config, state);\\r\\n' +
+#   '  const prepared = await prepareStandaloneWeightReviewXml(state, effectiveConfig);\\r\\n' +
+#   '  if (prepared.error) throw new Error(prepared.error);\\r\\n' +
+#   '  const validated = prepared.weightAuthority;\\r\\n' +
+#   '  const basisRows = validated.basisRows;\\r\\n' +
+#   '  const authorityConfig = validated.config;\\r\\n' +
+#   '  return basisRows.map((issue) => {\\r\\n' +
+#   '    const staleMatch1 = validated.validation.stale?.[issue.key] || null;\\r\\n' +
+#   '    const savedWeight = Number(authorityConfig.overrides?.rigidWeight?.[issue.key]);\\r\\n' +
+#   '    const sourceWeight = Number(issue.originalWeight);\\r\\n' +
+#   '    const acceptedWeight = savedWeight > 0 ? savedWeight : (sourceWeight > 0 ? sourceWeight : null);\\r\\n' +
+#   '    const authority = resolveStandaloneWeightReviewRating(issue, authorityConfig);\\r\\n' +
+#   '    const rating = authority.rating;\\r\\n' +
+#   '    const ranking = rating\\r\\n' +
+#   '      ? rankXmlCiiWeightCandidates({\\r\\n' +
+#   '          boreMm: issue.boreMm,\\r\\n' +
+#   '          rating,\\r\\n' +
+#   '          lengthMm: issue.lengthMm,\\r\\n' +
+#   '          nodeName: issue.nodeName,\\r\\n' +
+#   '          componentType: issue.componentType,\\r\\n' +
+#   '          componentRefNo: issue.componentRefNo,\\r\\n' +
+#   '          dtxr: issue.dtxr,\\r\\n' +
+#   '        }, authorityConfig, { includeRejected: true })\\r\\n' +
+#   '      : { candidates: [], rejectedCandidates: [] };\\r\\n' +
+#   '    return applyXmlCiiFlangeWeightFallbackToIssue({\\r\\n' +
+#   '      ...issue,\\r\\n' +
+#   '      staleMatch1,\\r\\n' +
+#   '      acceptedWeight,\\r\\n' +
+#   "      acceptedWeightSource: savedWeight > 0 ? 'Saved weight' : (sourceWeight > 0 ? 'XML weight' : ''),\\r\\n" +
+#   '      rating,\\r\\n' +
+#   '      dtxrRating: authority.dtxrRating,\\r\\n' +
+#   '      ratingAuthority: authority,\\r\\n' +
+#   '      ratingConflict: authority.conflict,\\r\\n' +
+#   '      branchRating: issue.rating,\\r\\n' +
+#   '      candidates: ranking.candidates.slice(0, 5),\\r\\n' +
+#   '      rejectedCandidates: ranking.rejectedCandidates.slice(0, 3),\\r\\n' +
+#   '    }, authorityConfig);\\r\\n' +
+#   '  });\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function ratingInfo(issue) {\\r\\n' +
+#   '  const info = standaloneWeightReviewRatingInfo(issue);\\r\\n' +
+#   '  const title = info.conflict\\r\\n' +
+#   '    ? `DTXR rating ${info.dtxrRating}\# differs from resolved/override rating ${info.shownRating}.`\\r\\n' +
+#   '    : (info.missingWithDtxr\\r\\n' +
+#   '      ? `DTXR contains ${info.dtxrRating}\#, but normal execution does not auto-populate Rating.`\\r\\n' +
+#   "      : (info.derivedRating ? `Resolved Rating: ${info.derivedRating}` : 'Rating used for weight suggestions'));\\r\\n" +
+#   '  return { ...info, title };\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function staleMatch1Notice(issue) {\\r\\n' +
+#   '  const stale = issue?.staleMatch1;\\r\\n' +
+#   "  if (!stale) return '';\\r\\n" +
+#   '  const changed = Array.isArray(stale.changedFields) && stale.changedFields.length\\r\\n' +
+#   "    ? ` · changed: ${stale.changedFields.join(', ')}`\\r\\n" +
+#   "    : '';\\r\\n" +
+#   '  const prior = Number(stale.weightKg);\\r\\n' +
+#   "  const priorText = Number.isFinite(prior) && prior > 0 ? `Prior Match-1 ${prior} kg invalidated` : 'Prior Match-1 invalidated';\\r\\n" +
+#   '  return `<div data-stale-match1 title="${attr(`Match-1 was rejected because its accepted geometry/rating/master basis is stale (${stale.reason || \\'basis changed\\'}).${changed}`)}" style="margin-bottom:5px;color:\#fca5a5;font-size:10px;font-weight:700;">⚠ ${esc(priorText)}${esc(changed)}</div>`;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function candidateButtons(issue, rowIndex) {\\r\\n' +
+#   '  return (issue.candidates || []).map((candidate) => {\\r\\n' +
+#   '    const weight = candidate.suggestedWeight ?? candidate.selectedWeight ?? candidate.weight;\\r\\n' +
+#   '    const rawScore = Number(candidate.totalScore ?? candidate.score ?? 0);\\r\\n' +
+#   '    const score = Math.round((rawScore <= 1 ? rawScore * 100 : rawScore));\\r\\n' +
+#   '    const fallback = candidate.flangeWeightFallback === true;\\r\\n' +
+#   '    const method = fallback\\r\\n' +
+#   "      ? 'Flange length-scaled fallback'\\r\\n" +
+#   "      : (candidate.preferred ? 'Exact master match' : (candidate.weightMethod || (candidate.inferredWeight ? 'Inferred' : 'Review')));\\r\\n" +
+#   "    const scoreText = fallback ? '' : ` · confidence ${score}%`;\\r\\n" +
+#   "    const details = [method, fallback ? candidate.weightWarning : `confidence/rank score ${score}%`, candidate.typeDesc || candidate.valveType || candidate.type || ''].filter(Boolean).join(' · ');\\r\\n" +
+#   '    return `<button type="button" class="mc-rigid-review-candidate${candidate.preferred ? \\' best\\' : \\'\\'}" data-mode-a-rigid-candidate="${rowIndex}" data-mode-a-rigid-weight="${attr(weight)}" title="${attr(details)}" style="font-size:11px;padding:3px 6px;margin:2px;cursor:pointer;">${candidate.preferred ? \\'★ \\' : \\'\\'}${esc(weight)} kg · ${esc(method)}${scoreText}</button>`;\\r\\n' +
+#   "  }).join('');\\r\\n" +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function rowMarkup(issue, rowIndex) {\\r\\n' +
+#   '  const best = issue.candidates?.[0] || null;\\r\\n' +
+#   '  const info = ratingInfo(issue);\\r\\n' +
+#   '  const badge = info.conflict\\r\\n' +
+#   `    ? '<span title="Rating conflict with DTXR" style="color:\#fca5a5;font-weight:700;"> !</span>'\\r\\n` +
+#   `    : (info.missingWithDtxr ? '<span title="DTXR Rating available as evidence" style="color:\#fbbf24;font-weight:700;"> DTXR</span>' : '');\\r\\n` +
+#   "  const search = [issue.fileName, issue.alias, issue.branchName, issue.nodeNumberDisplay, issue.nodeNumber, issue.dtxr].map((value) => text(value).toLowerCase()).join(' ');\\r\\n" +
+#   '  return `<tr data-mode-a-rigid-review-row data-source-id="${attr(issue.sourceId)}" data-search="${attr(search)}">\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.fileName || issue.alias || issue.sourceId)}</td>\\r\\n' +
+#   '    <td title="${attr(issue.branchName)}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:260px;">${esc(issue.branchName)}</td>\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.boreMm == null ? \\'\\' : `${Number(issue.boreMm).toFixed(0)} mm`)}</td>\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="text" class="mc-rigid-review-rating-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(info.shownRating)}" title="${attr(info.title)}" style="width:64px;background:\#101827;color:\#fff;border:1px solid ${info.conflict || info.missingWithDtxr ? \\'\#ef4444\\' : \\'\#31455f\\'};border-radius:4px;padding:4px;font-size:11px;">${badge}</td>\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.nodeNumberDisplay || issue.nodeNumber)}</td>\\r\\n' +
+#   '    <td title="${attr(issue.dtxrSourcePath || \\'\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:180px;">${esc(issue.dtxr || \\'Not found\\')}</td>\\r\\n' +
+#   '    <td title="${attr(issue.elementLengthSource || \\'prepared component geometry\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.lengthMm == null ? \\'\\' : `${Number(issue.lengthMm).toFixed(1)} mm`)}</td>\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="number" min="0" step="0.001" class="mc-rigid-review-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(issue.acceptedWeight ?? (best ? (best.suggestedWeight ?? best.selectedWeight ?? best.weight ?? \\'\\') : \\'\\'))}" placeholder="kg" style="width:78px;background:\#101827;color:\#fff;border:1px solid \#31455f;border-radius:4px;padding:4px;"><small data-reviewed-weight-source style="display:block;color:\#94a3b8;">${esc(issue.acceptedWeightSource || (best ? `Proposed · ${best.weightMethod || \\'master\\'}` : \\'Unresolved\\'))}</small></td>\\r\\n' +
+#   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:300px;">${staleMatch1Notice(issue)}${candidateButtons(issue, rowIndex) || \\'<span style="color:\#64748b;">No suggestion</span>\\'}</td>\\r\\n' +
+#   '  </tr>`;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function popupMarkup(rows, entries) {\\r\\n' +
+#   '  const sourceOptions = entries.map((entry) => `<option value="${attr(entry.sourceId)}">${esc(entry.fileName)}</option>`).join(\\'\\');\\r\\n' +
+#   '  return `<div class="mc-rigid-review-dialog" role="dialog" aria-modal="true" aria-label="Consolidated rigid zero weight review" style="color:\#e2e8f0;max-height:90vh;overflow:auto;background:\#0f172a;border:1px solid \#253a55;border-radius:8px;padding:18px;max-width:1380px;width:96%;">\\r\\n' +
+#   '    <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid \#253a55;padding-bottom:12px;margin-bottom:12px;">\\r\\n' +
+#   '      <div><div style="font-size:18px;font-weight:700;color:\#9cc5ff;">Rigid Weights Need Review — Consolidated</div><div data-mode-a-rigid-summary style="font-size:12px;color:\#94a3b8;margin-top:4px;">${rows.length} rigid node(s) across ${entries.length} XML file(s).</div></div>\\r\\n' +
+#   '      <button type="button" data-mode-a-rigid-cancel style="cursor:pointer;background:transparent;border:1px solid \#475569;border-radius:6px;color:\#94a3b8;padding:6px 12px;">Cancel Batch Run</button>\\r\\n' +
+#   '    </div>\\r\\n' +
+#   '    <div style="background:\#2a210b;border:1px solid \#7c5a18;color:\#ffe7a3;padding:9px;border-radius:6px;font-size:12px;margin-bottom:10px;">Saved/XML weights are kept; suggestions populate only missing weights. Apply accepts the displayed values without clicking each suggestion. Bulk suggestions fill blank fields; selecting a row suggestion explicitly replaces that row.'... 8906 more characters
+#     at file:///C:/CodeA/3DC_live_acceptance/tests/xml-cii-issue-776-weight-review-authority.test.mjs:11:8 {
+#   generatedMessage: true,
+#   code: 'ERR_ASSERTION',
+#   actual: "import { resolveStandaloneWeightReviewRating, standaloneWeightReviewRatingInfo } from './xml-cii-adapted-weight-rating-authority.js';\\r\\n" +
+#     "import { applyXmlCiiFlangeWeightFallbackToIssue } from '../../../converters/xml-cii2019-core/flange-weight-fallback.js';\\r\\n" +
+#     "import { rankXmlCiiWeightCandidates } from '../../../converters/xml-cii2019-core/weight-valve-hints.js';\\r\\n" +
+#     "import { flattenModeARigidReviewEntries } from './xml-cii-adapted-rigid-review-mode-a-state.js';\\r\\n" +
+#     "import { prepareStandaloneWeightReviewXml } from '../xml-cii-standalone-run-parity.js?v=20261001-weight-output-2';\\r\\n" +
+#     "import { materializeXmlCiiDatasetBackedConfig } from '../xml-cii-dataset-backed-config.js?v=20261001-weight-output-2';\\r\\n" +
+#     '\\r\\n' +
+#     `const esc = (value) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');\\r\\n` +
+#     "const attr = (value) => esc(value).replace(/'/g, '&\#39;');\\r\\n" +
+#     "const text = (value) => value === undefined || value === null ? '' : String(value).trim();\\r\\n" +
+#     '\\r\\n' +
+#     'export async function collectModeARigidWeightReviewIssues(state = {}, config = {}) {\\r\\n' +
+#     '  const effectiveConfig = await materializeXmlCiiDatasetBackedConfig(config, state);\\r\\n' +
+#     '  const prepared = await prepareStandaloneWeightReviewXml(state, effectiveConfig);\\r\\n' +
+#     '  if (prepared.error) throw new Error(prepared.error);\\r\\n' +
+#     '  const validated = prepared.weightAuthority;\\r\\n' +
+#     '  const basisRows = validated.basisRows;\\r\\n' +
+#     '  const authorityConfig = validated.config;\\r\\n' +
+#     '  return basisRows.map((issue) => {\\r\\n' +
+#     '    const staleMatch1 = validated.validation.stale?.[issue.key] || null;\\r\\n' +
+#     '    const savedWeight = Number(authorityConfig.overrides?.rigidWeight?.[issue.key]);\\r\\n' +
+#     '    const sourceWeight = Number(issue.originalWeight);\\r\\n' +
+#     '    const acceptedWeight = savedWeight > 0 ? savedWeight : (sourceWeight > 0 ? sourceWeight : null);\\r\\n' +
+#     '    const authority = resolveStandaloneWeightReviewRating(issue, authorityConfig);\\r\\n' +
+#     '    const rating = authority.rating;\\r\\n' +
+#     '    const ranking = rating\\r\\n' +
+#     '      ? rankXmlCiiWeightCandidates({\\r\\n' +
+#     '          boreMm: issue.boreMm,\\r\\n' +
+#     '          rating,\\r\\n' +
+#     '          lengthMm: issue.lengthMm,\\r\\n' +
+#     '          nodeName: issue.nodeName,\\r\\n' +
+#     '          componentType: issue.componentType,\\r\\n' +
+#     '          componentRefNo: issue.componentRefNo,\\r\\n' +
+#     '          dtxr: issue.dtxr,\\r\\n' +
+#     '        }, authorityConfig, { includeRejected: true })\\r\\n' +
+#     '      : { candidates: [], rejectedCandidates: [] };\\r\\n' +
+#     '    return applyXmlCiiFlangeWeightFallbackToIssue({\\r\\n' +
+#     '      ...issue,\\r\\n' +
+#     '      staleMatch1,\\r\\n' +
+#     '      acceptedWeight,\\r\\n' +
+#     "      acceptedWeightSource: savedWeight > 0 ? 'Saved weight' : (sourceWeight > 0 ? 'XML weight' : ''),\\r\\n" +
+#     '      rating,\\r\\n' +
+#     '      dtxrRating: authority.dtxrRating,\\r\\n' +
+#     '      ratingAuthority: authority,\\r\\n' +
+#     '      ratingConflict: authority.conflict,\\r\\n' +
+#     '      branchRating: issue.rating,\\r\\n' +
+#     '      candidates: ranking.candidates.slice(0, 5),\\r\\n' +
+#     '      rejectedCandidates: ranking.rejectedCandidates.slice(0, 3),\\r\\n' +
+#     '    }, authorityConfig);\\r\\n' +
+#     '  });\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function ratingInfo(issue) {\\r\\n' +
+#     '  const info = standaloneWeightReviewRatingInfo(issue);\\r\\n' +
+#     '  const title = info.conflict\\r\\n' +
+#     '    ? `DTXR rating ${info.dtxrRating}\# differs from resolved/override rating ${info.shownRating}.`\\r\\n' +
+#     '    : (info.missingWithDtxr\\r\\n' +
+#     '      ? `DTXR contains ${info.dtxrRating}\#, but normal execution does not auto-populate Rating.`\\r\\n' +
+#     "      : (info.derivedRating ? `Resolved Rating: ${info.derivedRating}` : 'Rating used for weight suggestions'));\\r\\n" +
+#     '  return { ...info, title };\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function staleMatch1Notice(issue) {\\r\\n' +
+#     '  const stale = issue?.staleMatch1;\\r\\n' +
+#     "  if (!stale) return '';\\r\\n" +
+#     '  const changed = Array.isArray(stale.changedFields) && stale.changedFields.length\\r\\n' +
+#     "    ? ` · changed: ${stale.changedFields.join(', ')}`\\r\\n" +
+#     "    : '';\\r\\n" +
+#     '  const prior = Number(stale.weightKg);\\r\\n' +
+#     "  const priorText = Number.isFinite(prior) && prior > 0 ? `Prior Match-1 ${prior} kg invalidated` : 'Prior Match-1 invalidated';\\r\\n" +
+#     '  return `<div data-stale-match1 title="${attr(`Match-1 was rejected because its accepted geometry/rating/master basis is stale (${stale.reason || \\'basis changed\\'}).${changed}`)}" style="margin-bottom:5px;color:\#fca5a5;font-size:10px;font-weight:700;">⚠ ${esc(priorText)}${esc(changed)}</div>`;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function candidateButtons(issue, rowIndex) {\\r\\n' +
+#     '  return (issue.candidates || []).map((candidate) => {\\r\\n' +
+#     '    const weight = candidate.suggestedWeight ?? candidate.selectedWeight ?? candidate.weight;\\r\\n' +
+#     '    const rawScore = Number(candidate.totalScore ?? candidate.score ?? 0);\\r\\n' +
+#     '    const score = Math.round((rawScore <= 1 ? rawScore * 100 : rawScore));\\r\\n' +
+#     '    const fallback = candidate.flangeWeightFallback === true;\\r\\n' +
+#     '    const method = fallback\\r\\n' +
+#     "      ? 'Flange length-scaled fallback'\\r\\n" +
+#     "      : (candidate.preferred ? 'Exact master match' : (candidate.weightMethod || (candidate.inferredWeight ? 'Inferred' : 'Review')));\\r\\n" +
+#     "    const scoreText = fallback ? '' : ` · confidence ${score}%`;\\r\\n" +
+#     "    const details = [method, fallback ? candidate.weightWarning : `confidence/rank score ${score}%`, candidate.typeDesc || candidate.valveType || candidate.type || ''].filter(Boolean).join(' · ');\\r\\n" +
+#     '    return `<button type="button" class="mc-rigid-review-candidate${candidate.preferred ? \\' best\\' : \\'\\'}" data-mode-a-rigid-candidate="${rowIndex}" data-mode-a-rigid-weight="${attr(weight)}" title="${attr(details)}" style="font-size:11px;padding:3px 6px;margin:2px;cursor:pointer;">${candidate.preferred ? \\'★ \\' : \\'\\'}${esc(weight)} kg · ${esc(method)}${scoreText}</button>`;\\r\\n' +
+#     "  }).join('');\\r\\n" +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function rowMarkup(issue, rowIndex) {\\r\\n' +
+#     '  const best = issue.candidates?.[0] || null;\\r\\n' +
+#     '  const info = ratingInfo(issue);\\r\\n' +
+#     '  const badge = info.conflict\\r\\n' +
+#     `    ? '<span title="Rating conflict with DTXR" style="color:\#fca5a5;font-weight:700;"> !</span>'\\r\\n` +
+#     `    : (info.missingWithDtxr ? '<span title="DTXR Rating available as evidence" style="color:\#fbbf24;font-weight:700;"> DTXR</span>' : '');\\r\\n` +
+#     "  const search = [issue.fileName, issue.alias, issue.branchName, issue.nodeNumberDisplay, issue.nodeNumber, issue.dtxr].map((value) => text(value).toLowerCase()).join(' ');\\r\\n" +
+#     '  return `<tr data-mode-a-rigid-review-row data-source-id="${attr(issue.sourceId)}" data-search="${attr(search)}">\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.fileName || issue.alias || issue.sourceId)}</td>\\r\\n' +
+#     '    <td title="${attr(issue.branchName)}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:260px;">${esc(issue.branchName)}</td>\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.boreMm == null ? \\'\\' : `${Number(issue.boreMm).toFixed(0)} mm`)}</td>\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="text" class="mc-rigid-review-rating-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(info.shownRating)}" title="${attr(info.title)}" style="width:64px;background:\#101827;color:\#fff;border:1px solid ${info.conflict || info.missingWithDtxr ? \\'\#ef4444\\' : \\'\#31455f\\'};border-radius:4px;padding:4px;font-size:11px;">${badge}</td>\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.nodeNumberDisplay || issue.nodeNumber)}</td>\\r\\n' +
+#     '    <td title="${attr(issue.dtxrSourcePath || \\'\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:180px;">${esc(issue.dtxr || \\'Not found\\')}</td>\\r\\n' +
+#     '    <td title="${attr(issue.elementLengthSource || \\'prepared component geometry\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.lengthMm == null ? \\'\\' : `${Number(issue.lengthMm).toFixed(1)} mm`)}</td>\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="number" min="0" step="0.001" class="mc-rigid-review-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(issue.acceptedWeight ?? (best ? (best.suggestedWeight ?? best.selectedWeight ?? best.weight ?? \\'\\') : \\'\\'))}" placeholder="kg" style="width:78px;background:\#101827;color:\#fff;border:1px solid \#31455f;border-radius:4px;padding:4px;"><small data-reviewed-weight-source style="display:block;color:\#94a3b8;">${esc(issue.acceptedWeightSource || (best ? `Proposed · ${best.weightMethod || \\'master\\'}` : \\'Unresolved\\'))}</small></td>\\r\\n' +
+#     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:300px;">${staleMatch1Notice(issue)}${candidateButtons(issue, rowIndex) || \\'<span style="color:\#64748b;">No suggestion</span>\\'}</td>\\r\\n' +
+#     '  </tr>`;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function popupMarkup(rows, entries) {\\r\\n' +
+#     '  const sourceOptions = entries.map((entry) => `<option value="${attr(entry.sourceId)}">${esc(entry.fileName)}</option>`).join(\\'\\');\\r\\n' +
+#     '  return `<div class="mc-rigid-review-dialog" role="dialog" aria-modal="true" aria-label="Consolidated rigid zero weight review" style="color:\#e2e8f0;max-height:90vh;overflow:auto;background:\#0f172a;border:1px solid \#253a55;border-radius:8px;padding:18px;max-width:1380px;width:96%;">\\r\\n' +
+#     '    <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid \#253a55;padding-bottom:12px;margin-bottom:12px;">\\r\\n' +
+#     '      <div><div style="font-size:18px;font-weight:700;color:\#9cc5ff;">Rigid Weights Need Review — Consolidated</div><div data-mode-a-rigid-summary style="font-size:12px;color:\#94a3b8;margin-top:4px;">${rows.length} rigid node(s) across ${entries.length} XML file(s).</div></div>\\r\\n' +
+#     '      <button type="button" data-mode-a-rigid-cancel style="cursor:pointer;background:transparent;border:1px solid \#475569;border-radius:6px;color:\#94a3b8;padding:6px 12px;">Cancel Batch Run</button>\\r\\n' +
+#     '    </div>\\r\\n' +
+#     '    <div style="background:\#2a210b;border:1px solid \#7c5a18;color:\#ffe7a3;padding:9px;border-radius:6px;font-size:12px;margin-bottom:10px;">Saved/XML weights are kept; suggestions populate only missing weights. Apply accepts the displayed values without clicking each suggestion. Bulk suggestions fill blank fields; selecting a row suggestion explicitly replaces that row.'... 8906 more characters,
+#   expected: /await prepareStandaloneWeightReviewXml\\(state, config\\)/,
+#   operator: 'match',
+#   diff: 'simple'
+# }
+# Node.js v22.23.2
+# Subtest: tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+not ok 18 - tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+  ---
+  duration_ms: 139.9179
+  type: 'test'
+  location: 'C:\\CodeA\\3DC_live_acceptance\\tests\\xml-cii-issue-776-weight-review-authority.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# (node:28560) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/invocation-builder.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 kg→N unit custody verified.
+# Subtest: tests\\xml-cii-issue-776-weight-unit-custody.test.mjs
+ok 19 - tests\\xml-cii-issue-776-weight-unit-custody.test.mjs
+  ---
+  duration_ms: 188.3702
+  type: 'test'
+  ...
+# Issue \#776 workflow job preserves Weight Master revision in the Match-1 basis.
+# Subtest: tests\\xml-cii-issue-776-workflow-weight-master-revision.test.mjs
+ok 20 - tests\\xml-cii-issue-776-workflow-weight-master-revision.test.mjs
+  ---
+  duration_ms: 131.4908
+  type: 'test'
+  ...
+# Subtest: Smart Map Unmapped Lines exposes literal Select All without inventing Map To values
+ok 21 - Smart Map Unmapped Lines exposes literal Select All without inventing Map To values
+  ---
+  duration_ms: 1.5844
+  type: 'test'
+  ...
+# Subtest: consolidated Mode A Preview restores DTXR and governed B31.3 actions source-locally
+ok 22 - consolidated Mode A Preview restores DTXR and governed B31.3 actions source-locally
+  ---
+  duration_ms: 0.3628
+  type: 'test'
+  ...
+# Subtest: individual Mode A Preview auto-build exposes native DTXR and B31.3 actions only after explicit expansion
+ok 23 - individual Mode A Preview auto-build exposes native DTXR and B31.3 actions only after explicit expansion
+  ---
+  duration_ms: 1.7722
+  type: 'test'
+  ...
+# Subtest: Preview hook repairs mapped-line process authority before rebuilding
+ok 24 - Preview hook repairs mapped-line process authority before rebuilding
+  ---
+  duration_ms: 0.2993
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 21
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 629.9276

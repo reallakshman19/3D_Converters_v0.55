@@ -1,0 +1,29 @@
+schema: AgentClaims.v1
+pr: 689
+scope: HP_PIPING_CLASS_SINGLE_FILE_INTAKE
+claims:
+  - id: PR689-C01
+    claim: Single-file HP class intake package delegates products, transient data and per-product KD rows to the existing bulk validators.
+    status: IMPLEMENTED
+  - id: PR689-C02
+    claim: Package authority-like fields are rejected and CORE review-only authority remains fixed.
+    status: IMPLEMENTED_FALSIFIER_AUTHORED
+  - id: PR689-C03
+    claim: Candidate package projects run through the existing canonical HP orchestrator before workspace mutation.
+    status: IMPLEMENTED
+  - id: PR689-C04
+    claim: Canonical calculation inconsistencies block package admission while legitimate engineering result states remain admissible.
+    status: IMPLEMENTED_TEST_AUTHORED
+  - id: PR689-C05
+    claim: Native checkout package tests pass on the exact PR head.
+    status: NOT_RUN_CI_PENDING
+  - id: PR689-C06
+    claim: Routed browser interaction of the replacement package import has passed.
+    status: NOT_RUN
+  - id: PR689-C07
+    claim: Native CORE KD320 is qualified or the package establishes Code/design authority.
+    status: FALSE
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false

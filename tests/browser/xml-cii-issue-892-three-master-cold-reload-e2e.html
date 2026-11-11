@@ -1,0 +1,322 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 892 three-master cold reload lifecycle</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20261007-c05-6-1-combined-2';
+import { commitDatasetReadyMaster } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js?v=20261007-c05-6-1-combined-2';
+import { hydratePersistedMasterDatasets } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-startup-hydration.js?v=20261007-c05-6-1-combined-2';
+import { materializeMasterDatasetRows } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js?v=20261007-c05-6-1-combined-2';
+
+const DB_NAME = 'xml-cii-master-datasets-v1';
+const STAGE_KEY = 'xml-cii-issue-892-stage';
+const EXPECTED_KEY = 'xml-cii-issue-892-first-load-expected';
+
+const MASTERS = Object.freeze([
+  Object.freeze({
+    key: 'pipingClass',
+    sourceUrl: '../../docs/Masters/Piping_class_master.json',
+    sourceName: 'Piping_class_master.json',
+    expectedRows: 10699,
+  }),
+  Object.freeze({
+    key: 'materialMap',
+    sourceUrl: '../../docs/Masters/PCF_MAT_MAP.TXT',
+    sourceName: 'PCF_MAT_MAP.TXT',
+    expectedRows: 383,
+  }),
+  Object.freeze({
+    key: 'weight',
+    sourceUrl: '../../docs/Masters/wtValveweights.json',
+    sourceName: 'wtValveweights.json',
+    expectedRows: 1595,
+  }),
+]);
+
+function requireValue(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+function blankContext() {
+  return {
+    config: {},
+    rawRows: {},
+    mappingRows: {},
+    datasetRefs: {},
+    rowCounts: {},
+    previewRows: {},
+    sourceMetadata: {},
+    appliedMappingRevision: {},
+  };
+}
+
+function deleteDb(name) {
+  return new Promise((resolve) => {
+    const request = indexedDB.deleteDatabase(name);
+    request.onsuccess = () => resolve();
+    request.onerror = () => resolve();
+    request.onblocked = () => resolve();
+  });
+}
+
+function clearMasterStorage() {
+  localStorage.removeItem(STAGE_KEY);
+  localStorage.removeItem(EXPECTED_KEY);
+  for (const spec of MASTERS) {
+    for (const suffix of [
+      'xml-cii-master-source-' + spec.key,
+      'xml-cii-master-' + spec.key,
+      'xml-cii-master-raw-' + spec.key,
+      'xml-cii-master-workbook-' + spec.key,
+    ]) localStorage.removeItem(suffix);
+  }
+}
+
+function assertCompactCustody(spec, expectedEntry) {
+  const custody = JSON.parse(localStorage.getItem('xml-cii-master-source-' + spec.key) || '{}');
+  requireValue(custody.persistenceMode === 'indexeddb', spec.key + ' restart custody is not indexeddb');
+  requireValue(custody.datasetId === expectedEntry.datasetId, spec.key + ' restart custody datasetId mismatch');
+  requireValue(Number(custody.datasetRevision) === Number(expectedEntry.datasetRevision),
+    spec.key + ' restart custody datasetRevision mismatch');
+  requireValue(Number(custody.appliedRevision) === Number(expectedEntry.appliedRevision),
+    spec.key + ' restart custody appliedRevision mismatch');
+  requireValue(Number(custody.rowCount) === Number(expectedEntry.rowCount),
+    spec.key + ' restart custody rowCount mismatch');
+  requireValue(localStorage.getItem('xml-cii-master-' + spec.key) == null,
+    spec.key + ' normalized rows duplicated into localStorage');
+  requireValue(localStorage.getItem('xml-cii-master-raw-' + spec.key) == null,
+    spec.key + ' raw rows duplicated into localStorage');
+  if (spec.key === 'weight') {
+    requireValue(custody.masterFingerprint === expectedEntry.masterFingerprint,
+      'weight restart custody fingerprint mismatch');
+  }
+  return custody;
+}
+
+async function firstLoad() {
+  await deleteDb(DB_NAME);
+  clearMasterStorage();
+
+  const coordinator = createMasterDatasetImportCoordinator();
+  let context = blankContext();
+  let config = {};
+  const imported = [];
+
+  try {
+    for (const spec of MASTERS) {
+      const response = await fetch(spec.sourceUrl, { cache: 'no-store' });
+      requireValue(response.ok, spec.sourceName + ' fetch failed HTTP ' + response.status);
+      const buffer = await response.arrayBuffer();
+      const ready = await coordinator.openBuffer(spec.key, buffer, spec.sourceName, {
+        config,
+        currentMap: {},
+      });
+
+      requireValue(ready?.metadata?.datasetId, spec.key + ' datasetId missing');
+      requireValue(Number(ready?.metadata?.datasetRevision) > 0, spec.key + ' datasetRevision missing');
+      requireValue(Number(ready?.metadata?.rowCount) === spec.expectedRows,
+        spec.key + ' row count mismatch: ' + ready?.metadata?.rowCount + '/' + spec.expectedRows);
+      requireValue(ready?.metadata?.persistenceMode === 'indexeddb',
+        spec.key + ' worker persistenceMode is not indexeddb');
+      requireValue(ready?.persistence?.persisted === true,
+        spec.key + ' worker persistence did not succeed');
+      if (spec.key === 'weight') {
+        requireValue(String(ready?.metadata?.masterFingerprint || ''), 'weight masterFingerprint missing');
+      }
+
+      const liveRows = await coordinator.getRows(spec.key, 0, Math.min(3, spec.expectedRows));
+      requireValue((liveRows?.rows || []).length > 0, spec.key + ' active-session rows unreadable');
+
+      const committed = commitDatasetReadyMaster({
+        context,
+        config,
+        key: spec.key,
+        ready,
+        sourceMetadata: {
+          key: spec.key,
+          source: spec.sourceName,
+          sourceType: 'issue-892-browser',
+          status: 'loaded',
+          rowCount: spec.expectedRows,
+        },
+      });
+      context = committed.context;
+      config = committed.config;
+
+      const ref = context.datasetRefs?.[spec.key];
+      requireValue(ref?.datasetId === ready.metadata.datasetId, spec.key + ' runtime datasetId mismatch');
+      requireValue(Number(ref?.datasetRevision) === Number(ready.metadata.datasetRevision),
+        spec.key + ' runtime datasetRevision mismatch');
+      requireValue(ref?.persistence === 'indexeddb', spec.key + ' runtime persistence is not indexeddb');
+      requireValue(Number(ref?.rowCount) === spec.expectedRows, spec.key + ' runtime rowCount mismatch');
+      requireValue(Number(context.appliedMappingRevision?.[spec.key]) === Number(committed.revision),
+        spec.key + ' applied mapping revision mismatch');
+      requireValue(committed.persistence?.failures?.length === 0,
+        spec.key + ' restart custody persistence reported failure');
+
+      if (spec.key === 'weight') {
+        requireValue(ref.masterFingerprint === ready.metadata.masterFingerprint,
+          'weight runtime fingerprint mismatch');
+        requireValue(Number(config?.weight?.masterRevision) === Number(committed.revision),
+          'weight config masterRevision is not applied mapping revision');
+      }
+
+      const entry = {
+        key: spec.key,
+        source: spec.sourceName,
+        datasetId: ref.datasetId,
+        datasetRevision: ref.datasetRevision,
+        appliedRevision: context.appliedMappingRevision[spec.key],
+        rowCount: ref.rowCount,
+        persistence: ref.persistence,
+        masterFingerprint: ref.masterFingerprint || '',
+        firstRow: (liveRows?.rows || [])[0] || null,
+      };
+      entry.custody = {
+        ...assertCompactCustody(spec, entry),
+      };
+      imported.push(entry);
+
+      for (const prior of imported) {
+        requireValue(context.datasetRefs?.[prior.key]?.datasetId === prior.datasetId,
+          'sequential commit changed prior datasetRef ' + prior.key);
+      }
+    }
+
+    const datasetIds = imported.map((entry) => entry.datasetId);
+    requireValue(new Set(datasetIds).size === MASTERS.length,
+      'combined first load produced cross-master datasetId collision: ' + JSON.stringify(datasetIds));
+
+    localStorage.setItem(EXPECTED_KEY, JSON.stringify({
+      schema: 'XMLCII_ISSUE_892_THREE_MASTER_EXPECTED_V2',
+      masters: imported,
+    }));
+    localStorage.setItem(STAGE_KEY, 'hydrate');
+    location.reload();
+  } finally {
+    coordinator.dispose();
+  }
+}
+
+async function secondLoad() {
+  const expected = JSON.parse(localStorage.getItem(EXPECTED_KEY) || '{}');
+  requireValue(Array.isArray(expected.masters) && expected.masters.length === 3,
+    'combined first-load identity receipt missing after reload');
+
+  const stateRef = {
+    current: {
+      supportConfigJson: '{}',
+      masterContext: blankContext(),
+    },
+  };
+  const changed = await hydratePersistedMasterDatasets(stateRef);
+  requireValue(changed === true, 'combined cold hydration reported no change');
+
+  const context = stateRef.current.masterContext;
+  const restored = [];
+  for (const spec of MASTERS) {
+    const expectedEntry = expected.masters.find((entry) => entry.key === spec.key);
+    requireValue(expectedEntry, spec.key + ' expected identity missing');
+
+    const ref = context.datasetRefs?.[spec.key];
+    requireValue(ref, spec.key + ' datasetRef missing after cold hydration');
+    requireValue(ref.datasetId === expectedEntry.datasetId,
+      spec.key + ' datasetId changed across reload');
+    requireValue(Number(ref.datasetRevision) === Number(expectedEntry.datasetRevision),
+      spec.key + ' datasetRevision changed across reload');
+    requireValue(Number(ref.rowCount) === Number(expectedEntry.rowCount),
+      spec.key + ' rowCount changed across reload');
+    requireValue(ref.persistence === 'indexeddb',
+      spec.key + ' persistence changed across reload');
+    requireValue(Number(context.appliedMappingRevision?.[spec.key]) === Number(expectedEntry.appliedRevision),
+      spec.key + ' applied mapping revision changed across reload');
+    requireValue((context.previewRows?.[spec.key] || []).length > 0,
+      spec.key + ' preview rows missing after cold hydration');
+    requireValue(Number(context.sourceMetadata?.[spec.key]?.rowCount || 0) === Number(expectedEntry.rowCount),
+      spec.key + ' source metadata rowCount changed across reload');
+    requireValue(stateRef.current.masterRestoreFailures?.[spec.key] == null,
+      spec.key + ' cold hydration recorded restore failure');
+    requireValue(stateRef.current.masterRestoreFailureIdentity?.[spec.key] == null,
+      spec.key + ' cold hydration recorded restore failure identity');
+
+    if (spec.key === 'weight') {
+      requireValue(ref.masterFingerprint === expectedEntry.masterFingerprint,
+        'weight fingerprint changed across reload');
+      requireValue(context.config?.weight?.masterFingerprint === expectedEntry.masterFingerprint,
+        'weight config fingerprint changed across reload');
+      requireValue(Number(context.config?.weight?.masterRevision) === Number(expectedEntry.appliedRevision),
+        'weight config masterRevision changed across reload');
+    }
+
+    const custody = assertCompactCustody(spec, expectedEntry);
+    const materialized = await materializeMasterDatasetRows(spec.key, ref);
+    requireValue(materialized.length === Number(expectedEntry.rowCount),
+      spec.key + ' fresh worker materialized ' + materialized.length + '/' + expectedEntry.rowCount + ' rows');
+    requireValue(JSON.stringify(materialized[0] || null) === JSON.stringify(expectedEntry.firstRow || null),
+      spec.key + ' first normalized row changed across reload');
+
+    restored.push({
+      key: spec.key,
+      source: spec.sourceName,
+      datasetId: ref.datasetId,
+      datasetRevision: ref.datasetRevision,
+      appliedRevision: context.appliedMappingRevision[spec.key],
+      rowCount: ref.rowCount,
+      previewRows: (context.previewRows?.[spec.key] || []).length,
+      materializedRows: materialized.length,
+      persistence: ref.persistence,
+      masterFingerprint: ref.masterFingerprint || '',
+      custody: {
+        datasetId: custody.datasetId,
+        datasetRevision: custody.datasetRevision,
+        appliedRevision: custody.appliedRevision,
+        rowCount: custody.rowCount,
+        persistenceMode: custody.persistenceMode,
+        masterFingerprint: custody.masterFingerprint || '',
+      },
+    });
+  }
+
+  const ids = restored.map((entry) => entry.datasetId);
+  requireValue(new Set(ids).size === 3, 'cold hydration produced cross-master datasetId collision');
+
+  const result = {
+    schema: 'XMLCII_ISSUE_892_THREE_MASTER_COLD_RELOAD_V2',
+    ok: true,
+    masters: restored,
+    assertions: {
+      activeRuntimeDestroyedByReload: true,
+      coldHydrationRestoredAllThree: true,
+      distinctDatasetIdsPreserved: true,
+      datasetRevisionsPreserved: restored.every((entry) => Number(entry.datasetRevision) > 0),
+      appliedRevisionsPreserved: restored.every((entry) => Number(entry.appliedRevision) > 0),
+      previewsRestored: restored.every((entry) => Number(entry.previewRows) > 0),
+      indexedDbAuthorityPreserved: restored.every((entry) => entry.persistence === 'indexeddb'),
+      freshWorkerMaterializedAllRows: restored.every((entry) => Number(entry.materializedRows) === Number(entry.rowCount)),
+      compactRestartCustodyPreserved: true,
+      noNormalizedOrRawLocalStorageDuplicates: true,
+      weightFingerprintPreserved: !!restored.find((entry) => entry.key === 'weight')?.masterFingerprint,
+    },
+  };
+
+  localStorage.removeItem(STAGE_KEY);
+  globalThis.__XML_CII_ISSUE_892_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_892_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+
+try {
+  if (localStorage.getItem(STAGE_KEY) === 'hydrate') await secondLoad();
+  else await firstLoad();
+} catch (error) {
+  localStorage.removeItem(STAGE_KEY);
+  const result = {
+    schema: 'XMLCII_ISSUE_892_THREE_MASTER_COLD_RELOAD_V2',
+    ok: false,
+    error: String(error?.stack || error),
+  };
+  globalThis.__XML_CII_ISSUE_892_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_892_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

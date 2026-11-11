@@ -1,0 +1,53 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: ACTIVE_AUTO_BLOCKED_SOURCE_OR_INTEGRATION
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - converters/engineering-calculations/adapters/flange-ug44.js
+  - converters/engineering-calculations/flange/master-store.js
+  - converters/engineering-calculations/flange/ug44-master-resolver.js
+  - converters/engineering-calculations/bolts/short-form.js
+  - converters/engineering-calculations/bolts/master-store.js
+  - converters/engineering-calculations/bolts/short-form-master-resolver.js
+  - converters/engineering-calculations/bolts/group-loads.js
+  - tests/flange-ug44-core.test.mjs
+  - tests/flange-ug44-registry.test.mjs
+  - tests/flange-master-store.test.mjs
+  - tests/bolt-short-form.test.mjs
+  - tests/bolt-master-store.test.mjs
+  - tests/bolt-group-loads.test.mjs
+  - scripts/calc-flange-ug44.mjs
+  - scripts/calc-bolt-short-form.mjs
+  - scripts/calc-bolt-group-loads.mjs
+shared_paths_currently_modified:
+  - converters/engineering-calculations/default-registry.js
+  - converters/engineering-calculations/index.js
+evidence_paths:
+  - docs/engineering-calculations/flange-ug44-source-register.md
+  - docs/engineering-calculations/bolt-short-form-source-register.md
+authority_claims:
+  - flange-rated-load-ug44-benchmark-kernel
+  - flange-joint-local-load-resolution
+  - benchmark-only-ug44-engineering-calculation-registration
+  - non-authorizing-flange-master-custody
+  - bolt-short-form-reference-kernel
+  - non-authorizing-bolt-master-custody
+  - linear-bolt-group-reference-distribution
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+auto_state: OWNER_DECISION_OR_SOURCE_QUALIFICATION_REQUIRED
+protected_authority:
+  engineering_authority: NONE_FOR_NEW_BOLT_REFERENCE_METHODS
+  ug44_calculation_state: BENCHMARK_ONLY
+  bolt_short_form_state: REFERENCE_KERNEL_ONLY
+  master_authority_ceiling: ENGINEERING_SANDBOX
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+hard_stops:
+  - Detailed thread/bearing-friction torque model requires an inspectable/audited legacy workbook or controlled equation source; do not guess from binary strings.
+  - Central integration of new bolt calculators requires existing shared-file mutation while native backup/focused test gates remain unresolved/deferred.
+next_shared_mutation_gate: Re-ground open PR overlap and either satisfy native backup/focused validation or obtain explicit owner sequencing authorization before central registry/UI integration.
+exact_next_action: Qualify the detailed torque equation basis, then implement it as a separate non-authorizing solver with independent analytical fixtures; alternatively obtain explicit owner authorization to integrate current reference solvers first under deferred backup/test constraints.

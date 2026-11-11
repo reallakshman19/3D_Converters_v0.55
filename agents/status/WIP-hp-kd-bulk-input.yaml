@@ -1,0 +1,21 @@
+schema: AgentStatus.v1
+work_id: WIP-hp-kd-bulk-input
+pr: 659
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd-bulk-input
+base_sha: 767ccd16ff6f1f8cb286551c57b0043f88885c9b
+criticality: ENGINEERING_CRITICAL
+intent: IMPLEMENT
+state: OPEN_DRAFT_HANDOVER_READY
+calculation_mode: USER_CALCULATED_KD3
+native_core_kd3_qualified: false
+code_compliance: false
+design_authority: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR659
+coordination: PR649_SHARED_WORKSPACE_NON_OVERLAPPING_HUNK
+focused_validation: PASS_10_OF_10_LOCAL_EXECUTION
+original_workbench_unchanged: PASS_GITHUB_COMPARE
+full_repository_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+browser: NOT_RUN
+hosted_ci: NOT_RUN_PENDING_FINAL_REFRESH
+exact_next_action: refresh final GitHub truth and leave draft unmerged

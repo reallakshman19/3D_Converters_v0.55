@@ -1,0 +1,20 @@
+schema: AgentClaim.v1
+repository: reallakshman19/3D_Converters
+claim_id: WIP-XML229-APPLY-FAST-VISIBLE-20261018
+claim_state: ACTIVE_DRAFT_OWNER_SCOPED
+branch: fix/xml229-apply-fast-visible-20261018
+source_issue: 229
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML229_WEIGHT_MATCH_SOURCE_FACT_READ_PERFORMANCE
+  - XML229_APPLIED_WEIGHT_DRAFT_SESSION_UX
+protected_paths:
+  - converters/xml-cii2019-core/weight-facts-individual-review.js
+  - docs/converters/xml-cii2019-core/weight-facts-individual-review.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-unqualified-drafts.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-unqualified-drafts.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-p4-verified-weight-panel.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-p4-verified-weight-panel.js
+exclusions: [GC_PW_ENGINEERING_MASS_ACCEPTANCE, FINAL_APPROVAL, CII_WRITER, NATIVE_RELEASE, HISTORICAL_125_DECISIONS, WORKFLOWS]
+coordination: [PR308_OBSOLETE_OWNER_DIRECTIVE, PR272_OBSOLETE, PR273_OBSOLETE]
+merge_authority: OWNER_ONLY_NOT_GRANTED

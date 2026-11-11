@@ -1,0 +1,16 @@
+focused-regressions	Enforce applicable regression result	﻿2026-10-01T10:41:27.1785103Z ##[group]Run echo "focused=1 dataset=0 adjacent=0 classification=baseline-only-failures"
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1785908Z ^[[36;1mecho "focused=1 dataset=0 adjacent=0 classification=baseline-only-failures"^[[0m
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1786444Z ^[[36;1mtest "1" = "0"^[[0m
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1786742Z ^[[36;1mtest "0" = "0"^[[0m
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1787026Z ^[[36;1mtest "0" = "0"^[[0m
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1865971Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1866393Z env:
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1866724Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1867278Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1867831Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1868313Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1868797Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1869304Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1869784Z ##[endgroup]
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1972221Z focused=1 dataset=0 adjacent=0 classification=baseline-only-failures
+focused-regressions	Enforce applicable regression result	2026-10-01T10:41:27.1980046Z ##[error]Process completed with exit code 1.

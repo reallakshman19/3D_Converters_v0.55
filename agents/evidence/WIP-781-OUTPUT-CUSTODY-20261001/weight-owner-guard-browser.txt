@@ -1,0 +1,27 @@
+(node:21720) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\CodeA\3DC_live_acceptance\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Batch result Mode A (Draft) Batch Results — Separate Models
+0 succeeded · 1 failed · 0 blocked · 1 inspected
+Download Batch Manifest
+Source	Selected branches	Status	Artifacts
+EF-05-PRO.TEST.xml	41	FAILED: Converter exited with code 1. main() | File "/scripts/xml_to_cii2019_runtime_custody.py", line 351, in main | require_rigid_weight_owners(input_xml, model) | File "/scripts/xml_cii_weight_output_custody.py", line 53, in require_rigid_weight_owners | raise ValueError(f"CII_WEIGHT_OWNER_UNRESOLVED: {len(unresolved)} weighted components " | ValueError: CII_WEIGHT_OWNER_UNRESOLVED: 16 weighted components lack one matching CII owner. CII withheld; enriched XML retained. /ASIM-1836-4"-P8810032-31441C4-PP/B1::630 (14.152 kg); /ASIM-1836-4"-P8810034-31441C4-PP/B1::1210 (14.152 kg); /ASIM-1836-4"-P8810036-31441C4-PP/B1::1800 (14.152 kg); /ASIM-1836-4"-P8810038-31441C4-PP/B1::2410 (14.152 kg); /ASIM-1836-4"-P8810031-31441C4-PP/B4::4019 (14.152 kg); /ASIM-1836-4"-P8810033-31441C4-PP/B1::5080 (14.152 kg); /ASIM-1836-4"-P8810033-31441C4-PP/B4::4079 (14.152 kg); /ASIM-1836-4"-P8810035-31441C4-PP/B4::4139 (14.152 kg); /ASIM-1836-4"-P8810037-31441C4-PP/B4::4199 (14.152 kg); /ASIM-1836-4"-P8810039-31441C4-PP/B4::4299 (14.152 kg); /ASIM-1836-4"-P8810031-31441C4-PP/B1::7370 (14.152 kg); /ASIM-1836-4"-P8810032-31441C4-PP/B4::3079 (14.152 kg); /ASIM-1836-4"-P8810034-31441C4-PP/B4::3149 (14.152 kg); /ASIM-1836-4"-P8810036-31441C4-PP/B4::3219 (14.152 kg); /ASIM-1836-4"-P8810038-31441C4-PP/B4::3289 (14.152 kg); /ASIM-1836-4"-P8810040-31441C4-PP/B5::3359 (14.152 kg)	Enriched XML CII Diagnostics Manifest
+Canvas current output Geometry preview: 1124 segment(s), 1165 node(s), 173 support(s). Drag to orbit, scroll to zoom.
+{
+  "status": "PASS",
+  "scope": "CII withheld for16 unresolved owners; XML/canvas preserved. Full CII acceptance remains FAIL.",
+  "fixture": "41 branches",
+  "accepted": 174,
+  "entered": [
+    {
+      "key": "/ASIM-1836-8\"-P8810021-31441C4-PP/B4::300",
+      "weight": 57.25
+    },
+    {
+      "key": "/ASIM-1836-8\"-P8810021-31441C4-PP/B4::309",
+      "weight": 13.5
+    }
+  ],
+  "errors": []
+}

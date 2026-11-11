@@ -1,0 +1,78 @@
+CHAIN_STATE_VERSION: 3
+HANDOVER_PROTOCOL_VERSION: 2
+CHAIN_ID: XMLCII-ISSUE-769
+MISSION: Root-cause and robust fixes for Issue #769 XML→CII 2019 Standalone mapping/import/weight/regex/branch/B31.3 defects
+ACTIVE_ENDPOINT: EP-0001
+ACTIVE_ENDPOINT_FILE: agents/chains/XMLCII-ISSUE-769/endpoints/EP-0001.md
+PR: NONE
+BRANCH: issue-769/xml-cii-standalone-fixes
+HEAD: PREWORK_RELAY_HEAD
+MAIN: e16fe79fd0a2d542cc2475c9e4a40f9aa6fc701f
+STATE: IN_PROGRESS
+ENGINEERING_STATE: IN_PROGRESS
+CUSTODY_STATE: HELD
+QUALIFICATION_STATE: NOT_REQUIRED
+WRITE_AUTHORITY: WRITE_ALLOWED
+AUTO_STATE: NOT_APPLICABLE
+MERGE_AUTHORITY: OWNER_ONLY
+MERGE_AUTHORIZED: FALSE
+MERGEABILITY: UNKNOWN
+ACTIVE_CUSTODIAN: GPT-5.6-Sol
+AGENT_INSTANCE_ID: chatgpt:e683bcab-eb0a-4b6c-8ab1-c29d79aff4b0
+WORK_ITEM_SOURCE: GITHUB_ISSUE
+WORK_ITEM_KEY: github:reallaksh19/3D_Converters#769
+WORK_ITEM_MODE: EXCLUSIVE
+CUSTODY_EPOCH: 1
+COORDINATION_STATE: EXCLUSIVE_CLEAR
+DEPENDENCIES: Owner roadmap and governing fix plan; later weight/B31.3 scopes require refreshed qualification/oracles
+COMMON_PROTOCOL: engineering-pr-delivery-v2
+COMMON_PROTOCOL_BASIS: fed57820909f4984a97d67437340df952b73a5ab
+COMMON_PROTOCOL_STATUS: CURRENT
+ISSUE_BASIS_ID: IB-0001
+ISSUE_BASIS_FILE: agents/chains/XMLCII-ISSUE-769/issue-basis/IB-0001.md
+ISSUE_BASIS_STATUS: CURRENT
+ISSUE_CURRENT_STATE_FILE: agents/chains/XMLCII-ISSUE-769/issue-state/CURRENT.md
+ISSUE_CURRENT_STATE_BASIS: IB-0001
+ISSUE_CURRENT_STATE_ENDPOINT: EP-0001
+ISSUE_CHAIN_ROOT_COMMENT_ID: 5695050767
+ISSUE_ACTIVE_HANDOVER_COMMENT_ID: 5695048450
+ISSUE_LATEST_ENDPOINT_COMMENT_ID: 5695052974
+ISSUE_HANDOVER_SYNC_STATUS: IN_SYNC
+ROADMAPS: docs/Overall_roadmap.md@aaf0f2739a25a96b51ff193861b9b319b80f6c7f; docs/InputxmltoCII2019Fixplan.md@b2fd293775bc9bba61b7ee702333e8f007579ed8
+ROADMAP_REVIEW_STATUS: COMPLETE
+ROADMAP_ALIGNMENT: ROADMAP_STATUS_STALE_BUT_SCOPE_ALIGNED
+ROADMAP_MUTATION_AUTHORITY: NONE
+QUALIFICATION_SCOPE_ID: QSCOPE-ISSUE769-MAPPING-MASTER-IMPORT
+QUESTION_SET_ID: QS-XMLCII-769-MAPPING-001
+QUESTION_SET_STATUS: CURRENT
+QUESTION_PACK_ACTION: REFRESHED
+QUESTION_DISPLAY: HIDE
+TAKEOVER_QUALIFICATION_READY: TRUE
+CHAIN_HANDOVER_READY: TRUE
+HANDOVER_CONTENT_READY: TRUE
+HANDOVER_VALIDATION_STATUS: NOT_RUN
+HANDOVER_VALIDATION_EVIDENCE: NONE
+HANDOVER_READY: FALSE
+PREWORK_QUALIFICATION_READY: TRUE
+MATERIAL_HISTORY_ROOT_BASE: e16fe79fd0a2d542cc2475c9e4a40f9aa6fc701f
+MATERIAL_LEG_PREWORK_ENDPOINT_FILE: agents/chains/XMLCII-ISSUE-769/endpoints/EP-0001.md
+MATERIAL_LEG_IN_PROGRESS: LEG-001
+MATERIAL_SCOPE: TASK-001 line-list semantic mapping + TASK-004 large-master parse/persistence boundary
+
+# Active issue chain
+
+## Current bounded leg
+
+LEG-001 is restricted to TASK-001 and TASK-004. The current custodian may edit only the owning mapping/master-import code and focused tests after mandatory per-file backups. No weight, writer-scale, empirical-model, branch-family, Regex Tester, B31.3, roadmap, source-oracle, or release-authority mutation belongs in this leg.
+
+## Validation truth
+
+All issue benchmarks remain `NOT_RUN` at activation. Source inspection and pre-issue exploratory changes are evidence only.
+
+## Exact next action
+
+1. Inspect current owner code for TASK-001/TASK-004 and compare against pre-issue hypotheses.
+2. Run `node utils/backup.js save <file> "Issue #769 LEG-001 pre-edit"` for every existing file before editing; connector-reconstructed checkout is acceptable only if the exact branch blob and current `.backups/log.json` are used.
+3. Implement the smallest authority-owner fixes and focused regression tests.
+4. Execute available tests/qualification; preserve unavailable checks as `NOT_RUN`.
+5. Record LEG-001 material receipt and successor endpoint, then synchronize Issue comments before entering another material leg.

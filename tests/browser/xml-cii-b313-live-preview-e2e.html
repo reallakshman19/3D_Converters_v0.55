@@ -1,0 +1,91 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>B31.3 live Preview build acceptance</title>
+<main id="fixture"></main>
+<pre id="result">RUNNING</pre>
+<script type="module">
+import {
+  xmlCiiBuildAndRenderPreview,
+  xmlCiiRenderPreviewPhase,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js';
+import { installPreviewB313WallUpdateAuditController } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-wall-audit-controller.js';
+import { installPreviewB313AutoBasisPanel } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-auto-basis.js';
+
+const done = (result) => {
+  globalThis.__B313_LIVE_PREVIEW_RESULT__ = result;
+  document.querySelector('#result').textContent = JSON.stringify(result, null, 2);
+};
+const waitFor = async (check, label) => {
+  for (let attempt = 0; attempt < 200; attempt += 1) {
+    if (check()) return;
+    await new Promise((resolve) => setTimeout(resolve, 25));
+  }
+  throw new Error(`Timed out waiting for ${label}`);
+};
+const assert = (condition, message) => {
+  if (!condition) throw new Error(message);
+};
+
+try {
+  localStorage.clear();
+  const xmlText = await fetch('../../Benchmarks/EF-05-PRO.TEST.xml').then((response) => {
+    if (!response.ok) throw new Error(`Fixture HTTP ${response.status}`);
+    return response.text();
+  });
+  const config = {
+    linelist: { masterRows: [] },
+    pipingClass: { masterRows: [{ pipingClass: '31441C4', material: 'ASTM A106-B' }] },
+    overrides: {},
+  };
+  const card = document.querySelector('#fixture');
+  card.innerHTML = xmlCiiRenderPreviewPhase(new File([xmlText], 'EF-05-PRO.TEST.xml'), config);
+  const host = card.querySelector('#mc-preview-table-host');
+  assert(host, 'Preview host was not created');
+  const initial = await xmlCiiBuildAndRenderPreview(card, xmlText, config, {});
+  assert(initial.branchRows.length === 0, 'Expected manual idle Preview before Build');
+  installPreviewB313WallUpdateAuditController({ host, config, xmlText, rows: initial.branchRows });
+  queueMicrotask(() => installPreviewB313AutoBasisPanel({ host, config, rows: initial.branchRows }));
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert(!host.querySelector('[data-mc-b313-auto-basis-panel]'), 'Auto panel rendered before Build');
+
+  host.querySelector('[data-mc-preview-build]').click();
+  await waitFor(() => host.__xmlCiiPreviewResult?.branchRows?.length === 41, '41 live Preview branch rows');
+  await waitFor(() => host.querySelector('[data-mc-b313-auto-basis-panel]'), 'auto-basis panel after Build');
+  const legacy = host.querySelector('[data-mc-b313-basis-editor]');
+  assert(!legacy || legacy.hidden || legacy.style.display === 'none', 'Legacy B31.3 editor is visible');
+  const panel = host.querySelector('[data-mc-b313-auto-basis-panel]');
+  assert(panel.getClientRects().length > 0, 'Auto-basis panel is not visibly rendered');
+  const rows = host.__xmlCiiPreviewResult.branchRows;
+  const a106 = rows.find((row) => String(row.material || '').includes('A106'));
+  assert(a106, 'The 41-branch Preview did not resolve A106 material');
+  assert(panel.querySelector('[data-b313-auto-status]')?.textContent === 'T1 REQUIRED', 'Blank T1 did not fail closed');
+  assert([...panel.querySelectorAll('[data-b313-auto-refresh]')].every((button) => button.disabled), 'Blank T1 enabled fallback acceptance');
+
+  config.overrides.processData = { [a106.lineKey]: { t1: '82' } };
+  const previousResult = host.__xmlCiiPreviewResult;
+  host.querySelector('[data-mc-preview-build]').click();
+  await waitFor(() => host.__xmlCiiPreviewResult !== previousResult
+    && host.__xmlCiiPreviewResult?.branchRows?.some((row) => row.lineKey === a106.lineKey && row.t1 === '82'), 'authorized T1 Preview rebuild');
+  await waitFor(() => host.querySelector('[data-b313-auto-key$="T1=82"]'), 'T1 82 auto-basis row');
+  const seedRow = host.querySelector('[data-b313-auto-key$="T1=82"]');
+  const seedPanel = host.querySelector('[data-mc-b313-auto-basis-panel]');
+  assert(seedRow.textContent.includes('Seed 120 °C'), 'T1 82 did not show the 120 °C common seed');
+  assert(seedRow.querySelectorAll('[data-b313-auto-field]').length === 5, 'S/unit/E/W/Y fallback controls are incomplete');
+  assert(seedRow.querySelectorAll('[data-b313-factor-info-button]').length === 4, 'Factor provenance controls are incomplete');
+  assert(!seedRow.querySelector('[data-b313-auto-refresh]').disabled, 'The explicit fallback acceptance action is disabled');
+  assert(!config.b313WallUpdate?.bases?.[seedRow.dataset.b313AutoKey], 'Showing a seed silently persisted a basis');
+  const rebuiltLegacy = host.querySelector('[data-mc-b313-basis-editor]');
+  assert(!rebuiltLegacy || rebuiltLegacy.hidden || rebuiltLegacy.style.display === 'none', 'Legacy editor reappeared after rebuild');
+  done({ ok: true, branchCount: rows.length, a106Material: a106?.material || '',
+    firstLineKey: rows[0]?.lineKey || '', firstT1: rows[0]?.t1 || '',
+    autoPanelCount: host.querySelectorAll('[data-mc-b313-auto-basis-panel]').length,
+    legacyVisible: Boolean(rebuiltLegacy && !rebuiltLegacy.hidden && rebuiltLegacy.style.display !== 'none'),
+    blankT1Status: panel.querySelector('[data-b313-auto-status]')?.textContent || '',
+    seedStatus: seedRow.querySelector('[data-b313-auto-status]')?.textContent || '',
+    seedControls: seedRow.querySelectorAll('[data-b313-auto-field]').length,
+    infoControls: seedRow.querySelectorAll('[data-b313-factor-info-button]').length,
+    seedPanelVisible: seedPanel.getClientRects().length > 0 });
+} catch (error) {
+  done({ ok: false, error: error?.stack || String(error) });
+}
+</script>

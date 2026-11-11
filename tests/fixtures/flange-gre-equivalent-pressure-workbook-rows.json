@@ -1,0 +1,112 @@
+[
+  {
+    "row": 13,
+    "node": 90,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 764,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": -847, "bendingMomentNm": 22, "equivalentPressureBar": 10.020988489867708},
+    "sustained": {"axialForceN": -750, "bendingMomentNm": 15, "equivalentPressureBar": 10.018073145831986},
+    "hydro": {"axialForceN": -781, "bendingMomentNm": 11, "equivalentPressureBar": 15.018292536120411}
+  },
+  {
+    "row": 14,
+    "node": 380,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 765,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": 694, "bendingMomentNm": 121, "equivalentPressureBar": 10.028863789249197},
+    "sustained": {"axialForceN": 447, "bendingMomentNm": 14, "equivalentPressureBar": 10.011317741721596},
+    "hydro": {"axialForceN": 514, "bendingMomentNm": 38, "equivalentPressureBar": 15.015505637481702}
+  },
+  {
+    "row": 15,
+    "node": 420,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 657,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": -170, "bendingMomentNm": 44, "equivalentPressureBar": 10.012916319408925},
+    "sustained": {"axialForceN": -170, "bendingMomentNm": 8, "equivalentPressureBar": 10.006451200722543},
+    "hydro": {"axialForceN": -190, "bendingMomentNm": 15, "equivalentPressureBar": 15.008298249213915}
+  },
+  {
+    "row": 16,
+    "node": 690,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 657,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": -2588, "bendingMomentNm": 267, "equivalentPressureBar": 10.12428813542645},
+    "sustained": {"axialForceN": -265, "bendingMomentNm": 30, "equivalentPressureBar": 10.01320433146707},
+    "hydro": {"axialForceN": -494, "bendingMomentNm": 53, "equivalentPressureBar": 15.024089660778664}
+  },
+  {
+    "row": 17,
+    "node": 490,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 184,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": 753, "bendingMomentNm": 27, "equivalentPressureBar": 10.503924158702754},
+    "sustained": {"axialForceN": 660, "bendingMomentNm": 8, "equivalentPressureBar": 10.313613853918648},
+    "hydro": {"axialForceN": 687, "bendingMomentNm": 5, "equivalentPressureBar": 15.29924124820465}
+  },
+  {
+    "row": 18,
+    "node": 1170,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 353,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": 1727, "bendingMomentNm": 599, "equivalentPressureBar": 10.870004830311911},
+    "sustained": {"axialForceN": 595, "bendingMomentNm": 83, "equivalentPressureBar": 10.156896527949744},
+    "hydro": {"axialForceN": 1334, "bendingMomentNm": 143, "equivalentPressureBar": 15.301876636733502}
+  },
+  {
+    "row": 19,
+    "node": 1070,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 353,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": -396, "bendingMomentNm": 30, "equivalentPressureBar": 10.07519779203005},
+    "sustained": {"axialForceN": -361, "bendingMomentNm": 16, "equivalentPressureBar": 10.055411870146768},
+    "hydro": {"axialForceN": -427, "bendingMomentNm": 31, "equivalentPressureBar": 15.079523167360339}
+  },
+  {
+    "row": 20,
+    "node": 1130,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 353,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": 261, "bendingMomentNm": 20, "equivalentPressureBar": 10.04982532501697},
+    "sustained": {"axialForceN": 261, "bendingMomentNm": 9, "equivalentPressureBar": 10.037089159954219},
+    "hydro": {"axialForceN": 292, "bendingMomentNm": 13, "equivalentPressureBar": 15.044888034847075}
+  },
+  {
+    "row": 21,
+    "node": 700,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 184,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": 658, "bendingMomentNm": 121, "equivalentPressureBar": 11.23669813489484},
+    "sustained": {"axialForceN": 406, "bendingMomentNm": 17, "equivalentPressureBar": 10.291670694796707},
+    "hydro": {"axialForceN": 482, "bendingMomentNm": 41, "equivalentPressureBar": 15.516465442642044}
+  },
+  {
+    "row": 22,
+    "node": 900,
+    "systemDesignPressureBar": 10,
+    "systemTestPressureBar": 15,
+    "meanGasketDiameterMm": 184,
+    "qualifiedPressureBar": 40,
+    "design": {"axialForceN": -694, "bendingMomentNm": 123, "equivalentPressureBar": 11.266587922432029},
+    "sustained": {"axialForceN": -437, "bendingMomentNm": 17, "equivalentPressureBar": 10.303329020023194},
+    "hydro": {"axialForceN": -515, "bendingMomentNm": 42, "equivalentPressureBar": 15.53705146152023}
+  }
+]

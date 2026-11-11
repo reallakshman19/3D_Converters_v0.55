@@ -1,0 +1,322 @@
+contract	UNKNOWN STEP	﻿2026-10-01T10:51:02.2407594Z Current runner version: '2.337.0'
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2485971Z ##[group]Runner Image Provisioner
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2487493Z Hosted Compute Agent
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2488537Z Version: 20260901.588
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2489824Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2511631Z Build Date: 2026-09-01T19:56:44Z
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2512919Z Worker ID: {49927056-4e6e-4ad2-b96a-51b6be41b847}
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2514130Z Azure Region: eastus
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2515097Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2517640Z ##[group]Operating System
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2518684Z Ubuntu
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2519625Z 24.04.5
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2520813Z LTS
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2521669Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2522843Z ##[group]Runner Image
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2523853Z Image: ubuntu-24.04
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2524887Z Version: 20260927.320.1
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2527172Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2530278Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2552607Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2554801Z ##[group]GITHUB_TOKEN Permissions
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2557876Z Contents: read
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2559060Z Metadata: read
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2560072Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2563743Z Secret source: Actions
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2565362Z Cache mode: write
+contract	UNKNOWN STEP	2026-10-01T10:51:02.2566592Z Prepare workflow directory
+contract	UNKNOWN STEP	2026-10-01T10:51:02.3571554Z Prepare all required actions
+contract	UNKNOWN STEP	2026-10-01T10:51:02.3645737Z Getting action download info
+contract	UNKNOWN STEP	2026-10-01T10:51:02.6350491Z Download action repository 'actions/checkout@v6' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+contract	UNKNOWN STEP	2026-10-01T10:51:02.7431869Z Download action repository 'actions/setup-node@v6' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+contract	UNKNOWN STEP	2026-10-01T10:51:02.8701851Z Download action repository 'actions/upload-artifact@v7' (SHA:043fb46d1a93c77aae656e7c1c64a875d1fc6a0a)
+contract	UNKNOWN STEP	2026-10-01T10:51:03.0636481Z Complete job name: contract
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1487406Z ##[group]Run actions/checkout@v6
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1488869Z with:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1489720Z   repository: reallaksh19/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1497826Z   token: ***
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1498680Z   ssh-strict: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1499512Z   ssh-user: git
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1500632Z   persist-credentials: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1501587Z   clean: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1502420Z   sparse-checkout-cone-mode: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1503414Z   fetch-depth: 1
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1504269Z   fetch-tags: false
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1505135Z   show-progress: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1505987Z   lfs: false
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1506732Z   submodules: false
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1507580Z   set-safe-directory: true
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1508572Z   allow-unsafe-pr-checkout: false
+contract	UNKNOWN STEP	2026-10-01T10:51:03.1510017Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3823286Z Syncing repository: reallaksh19/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3826083Z ##[group]Getting Git version info
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3827447Z Working directory is '/home/runner/work/3D_Converters/3D_Converters'
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3829183Z [command]/usr/bin/git version
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3829978Z git version 2.55.0
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3833277Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3840140Z Temporarily overriding HOME='/home/runner/work/_temp/7eb76579-da96-4530-8daf-1ca279bedb94' before making global git config changes
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3842626Z Adding repository directory to the temporary git global config as a safe directory
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3844590Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3847409Z Deleting the contents of '/home/runner/work/3D_Converters/3D_Converters'
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3849285Z ##[group]Determining repository object format
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3851210Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3852812Z ##[group]Initializing the repository
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3854172Z [command]/usr/bin/git init /home/runner/work/3D_Converters/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3856083Z hint: Using 'master' as the name for the initial branch. This default branch name
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3857553Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3859041Z hint: to use in all of your new repositories, which will suppress this warning,
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3871001Z hint: call:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3871779Z hint:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3872693Z hint: 	git config --global init.defaultBranch <name>
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3873747Z hint:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3874792Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3876536Z hint: 'development'. The just-created branch can be renamed via this command:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3877792Z hint:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3878514Z hint: 	git branch -m <name>
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3879298Z hint:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3880731Z hint: Disable this message with "git config set advice.defaultBranchName false"
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3882527Z Initialized empty Git repository in /home/runner/work/3D_Converters/3D_Converters/.git/
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3885283Z [command]/usr/bin/git remote add origin https://github.com/reallaksh19/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3887905Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3889148Z ##[group]Disabling automatic garbage collection
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3890185Z [command]/usr/bin/git config --local gc.auto 0
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3930036Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3931734Z ##[group]Setting up auth
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3932576Z Removing SSH command configuration
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3933789Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+contract	UNKNOWN STEP	2026-10-01T10:51:03.3937298Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4744918Z Removing HTTP extra header
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4747386Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4754441Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4924906Z Removing includeIf entries pointing to credentials config files
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4927072Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+contract	UNKNOWN STEP	2026-10-01T10:51:03.4966264Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5305684Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5355566Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git.path /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5411314Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5454311Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5497936Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5534953Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5536634Z ##[group]Fetching the repository
+contract	UNKNOWN STEP	2026-10-01T10:51:03.5546182Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ccda22319670b5ac8a6ebd4e8be42b60361bc569:refs/remotes/pull/813/merge
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4893873Z From https://github.com/reallaksh19/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4895985Z  * [new ref]         ccda22319670b5ac8a6ebd4e8be42b60361bc569 -> pull/813/merge
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4900162Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4902865Z ##[group]Determining the checkout info
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4905346Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4911842Z [command]/usr/bin/git sparse-checkout disable
+contract	UNKNOWN STEP	2026-10-01T10:51:06.4968045Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+contract	UNKNOWN STEP	2026-10-01T10:51:06.5006088Z ##[group]Checking out the ref
+contract	UNKNOWN STEP	2026-10-01T10:51:06.5009636Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/813/merge
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5168823Z Updating files:  80% (8057/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5228084Z Updating files:  81% (8123/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5363887Z Updating files:  82% (8223/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5430166Z Updating files:  83% (8324/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5492632Z Updating files:  84% (8424/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5550730Z Updating files:  85% (8524/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5620149Z Updating files:  86% (8625/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5686858Z Updating files:  87% (8725/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5754806Z Updating files:  88% (8825/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5809278Z Updating files:  89% (8925/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5866398Z Updating files:  90% (9026/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5928834Z Updating files:  91% (9126/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.5991856Z Updating files:  92% (9226/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6055023Z Updating files:  93% (9327/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6112978Z Updating files:  94% (9427/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6168965Z Updating files:  95% (9527/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6229550Z Updating files:  96% (9627/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6286941Z Updating files:  97% (9728/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.6693857Z Updating files:  98% (9828/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7251988Z Updating files:  99% (9928/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7289749Z Updating files: 100% (10028/10028)
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7291505Z Updating files: 100% (10028/10028), done.
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7373300Z Note: switching to 'refs/remotes/pull/813/merge'.
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7374464Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7375335Z You are in 'detached HEAD' state. You can look around, make experimental
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7377189Z changes and commit them, and you can discard any commits you make in this
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7378378Z state without impacting any branches by switching back to a branch.
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7379176Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7379587Z If you want to create a new branch to retain commits you create, you may
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7380615Z do so (now or later) by using -c with the switch command. Example:
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7381373Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7381944Z   git switch -c <new-branch-name>
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7382308Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7382517Z Or undo this operation with:
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7382866Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7383065Z   git switch -
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7383326Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7383734Z Turn off this advice by setting config variable advice.detachedHead to false
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7384374Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7385051Z HEAD is now at ccda223 Merge 91c455dbd4dc1890e7f4133a8f9add8c5c110029 into e6e3458f51c3a680b413aa525c5e87fdae257533
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7437548Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7501073Z [command]/usr/bin/git log -1 --format=%H
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7535778Z ccda22319670b5ac8a6ebd4e8be42b60361bc569
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7994110Z ##[group]Run actions/setup-node@v6
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7994498Z with:
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7994754Z   node-version: 22
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7995030Z   check-latest: false
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7997559Z   token: ***
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7997838Z   package-manager-cache: true
+contract	UNKNOWN STEP	2026-10-01T10:51:07.7998146Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:07.9871235Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+contract	UNKNOWN STEP	2026-10-01T10:51:07.9911655Z ##[group]Environment details
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5062127Z node: v22.23.3
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5071214Z npm: 10.9.9
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5082931Z yarn: 1.22.22
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5101810Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5245265Z ##[group]Run set +e
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5245648Z ^[[36;1mset +e^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5246120Z ^[[36;1mnode tests/stagedjson-to-xml-envelope-contract.test.mjs > stagedjson-contract.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5246634Z ^[[36;1mstaged_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5247121Z ^[[36;1mnode tests/inputxml-pages-runtime-publication.test.mjs > pages-runtime-contract.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5247654Z ^[[36;1mpages_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5248140Z ^[[36;1mnode tests/inputxml-runtime-transient-recovery.test.mjs > inputxml-runtime-recovery.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5248658Z ^[[36;1mrecovery_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5249084Z ^[[36;1mnode tests/inputxml-runtime-cache.test.mjs > inputxml-runtime-cache.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5249557Z ^[[36;1mcache_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5250038Z ^[[36;1mnode tests/inputxml-blocked-diagnostics-ui.test.mjs > inputxml-blocked-diagnostics-ui.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5251082Z ^[[36;1mdiagnostics_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5251631Z ^[[36;1mnode --check tests/inputxml-pages-live-release.test.mjs > inputxml-pages-live-release-syntax.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5252175Z ^[[36;1mlive_syntax_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5252671Z ^[[36;1mnode tests/inputxml-live-release-static.test.mjs > inputxml-live-release-static.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5253165Z ^[[36;1mlive_static_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5253636Z ^[[36;1mnode tests/inputxml-browser-offline-smoke.test.mjs > inputxml-browser-offline-smoke.log 2>&1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5254150Z ^[[36;1msmoke_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5254381Z ^[[36;1mtest -f .nojekyll^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5254635Z ^[[36;1mnojekyll_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5254934Z ^[[36;1mtest -f scripts/inputxml_compiler/__init__.py^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5255263Z ^[[36;1minitializer_status=$?^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5255529Z ^[[36;1mcat stagedjson-contract.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5255815Z ^[[36;1mcat pages-runtime-contract.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5256134Z ^[[36;1mcat inputxml-runtime-recovery.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5256464Z ^[[36;1mcat inputxml-runtime-cache.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5256822Z ^[[36;1mcat inputxml-blocked-diagnostics-ui.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5257189Z ^[[36;1mcat inputxml-pages-live-release-syntax.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5257548Z ^[[36;1mcat inputxml-live-release-static.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5257884Z ^[[36;1mcat inputxml-browser-offline-smoke.log^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5258706Z ^[[36;1mif (( staged_status || pages_status || recovery_status || cache_status || diagnostics_status || live_syntax_status || live_static_status || smoke_status || nojekyll_status || initializer_status )); then^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5259480Z ^[[36;1m  exit 1^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5259684Z ^[[36;1mfi^[[0m
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5535052Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+contract	UNKNOWN STEP	2026-10-01T10:51:08.5535606Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4964950Z stagedjson-to-xml envelope contract passed
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4967227Z (node:2132) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/converters/stagedjson-to-xml.js is not specified and it doesn't parse as CommonJS.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4969551Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4973635Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4974915Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4975936Z InputXML Pages runtime publication contract passed
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4991883Z inputxml runtime transient recovery passed
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4994471Z (node:2150) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js is not specified and it doesn't parse as CommonJS.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4997422Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.4999563Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5001528Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5004729Z InputXML retryable runtime cache contract passed.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5007135Z (node:2158) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-runtime-cache.js is not specified and it doesn't parse as CommonJS.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5009600Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5011709Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5013240Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5014453Z InputXML blocked diagnostics UI contract passed.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5019158Z (node:2165) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/converters/inputxml-blocked-diagnostics.js is not specified and it doesn't parse as CommonJS.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5022243Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5024037Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5025593Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5038853Z node:internal/modules/run_main:123
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5039628Z     triggerUncaughtException(
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5041473Z     ^
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5042241Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5043579Z AssertionError [ERR_ASSERTION]: canonical model tab must bind ModelConvertersTab.js?v=20260928-rvm-full-scope-core-1
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5044712Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5045108Z false !== true
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5045610Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5046713Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-live-release-static.test.mjs:36:11 {
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5047985Z   generatedMessage: false,
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5048763Z   code: 'ERR_ASSERTION',
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5049450Z   actual: false,
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5050085Z   expected: true,
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5051656Z   operator: 'strictEqual',
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5052354Z   diff: 'simple'
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5052969Z }
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5053345Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5053671Z Node.js v22.23.3
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5055889Z (node:2190) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js is not specified and it doesn't parse as CommonJS.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5058829Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5060284Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5061802Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5063049Z file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:162
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5064241Z     throw new Error(`InputXML runtime asset verification failed for ${asset.url}.`);
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5064936Z           ^
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5065122Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5065861Z Error: InputXML runtime asset verification failed for ../converters/scripts/cii_syntax_check_2019.py.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5067159Z     at verifiedAssetBytes (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:162:11)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5068171Z     at async loadAsset (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:169:18)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5069563Z     at async loadVerifiedInputXmlRuntime (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:196:52)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5071123Z     at async runSmoke (file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:82:21)
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5072448Z     at async file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:119:1
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5072913Z 
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5073015Z Node.js v22.23.3
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5087069Z ##[error]Process completed with exit code 1.
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5178718Z ##[group]Run actions/upload-artifact@v7
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5179020Z with:
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5179242Z   name: stagedjson-pages-runtime-contract
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5180696Z   path: stagedjson-contract.log
+contract	UNKNOWN STEP	pages-runtime-contract.log
+contract	UNKNOWN STEP	inputxml-runtime-recovery.log
+contract	UNKNOWN STEP	inputxml-runtime-cache.log
+contract	UNKNOWN STEP	inputxml-blocked-diagnostics-ui.log
+contract	UNKNOWN STEP	inputxml-pages-live-release-syntax.log
+contract	UNKNOWN STEP	inputxml-live-release-static.log
+contract	UNKNOWN STEP	inputxml-browser-offline-smoke.log
+contract	UNKNOWN STEP	
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5181864Z   if-no-files-found: error
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5182103Z   compression-level: 6
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5182315Z   overwrite: false
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5182526Z   include-hidden-files: false
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5182754Z   archive: true
+contract	UNKNOWN STEP	2026-10-01T10:51:11.5182950Z ##[endgroup]
+contract	UNKNOWN STEP	2026-10-01T10:51:11.6960275Z Multiple search paths detected. Calculating the least common ancestor of all paths
+contract	UNKNOWN STEP	2026-10-01T10:51:11.7152477Z The least common ancestor is /home/runner/work/3D_Converters/3D_Converters. This will be the root directory of the artifact
+contract	UNKNOWN STEP	2026-10-01T10:51:11.7181191Z With the provided path, there will be 8 files uploaded
+contract	UNKNOWN STEP	2026-10-01T10:51:11.7216094Z Artifact name is valid!
+contract	UNKNOWN STEP	2026-10-01T10:51:11.7225114Z Root directory input is valid!
+contract	UNKNOWN STEP	2026-10-01T10:51:11.9071522Z Uploading artifact: stagedjson-pages-runtime-contract.zip
+contract	UNKNOWN STEP	2026-10-01T10:51:11.9142254Z Beginning upload of artifact content to blob storage
+contract	UNKNOWN STEP	2026-10-01T10:51:12.0034552Z Uploaded bytes 3533
+contract	UNKNOWN STEP	2026-10-01T10:51:12.0161668Z Finished uploading artifact content to blob storage!
+contract	UNKNOWN STEP	2026-10-01T10:51:12.0163366Z SHA256 digest of uploaded artifact is d14d4a8423567fb82704c9f3eb20e37d5f9581dbdba187725b4e95559fc6260e
+contract	UNKNOWN STEP	2026-10-01T10:51:12.0166812Z Finalizing artifact upload
+contract	UNKNOWN STEP	2026-10-01T10:51:12.2886448Z Artifact stagedjson-pages-runtime-contract successfully finalized. Artifact ID 11155787053
+contract	UNKNOWN STEP	2026-10-01T10:51:12.2888614Z Artifact stagedjson-pages-runtime-contract has been successfully uploaded! Final size is 3533 bytes. Artifact ID is 11155787053
+contract	UNKNOWN STEP	2026-10-01T10:51:12.2892179Z Artifact download URL: https://github.com/reallaksh19/3D_Converters/actions/runs/36851675574/artifacts/11155787053
+contract	UNKNOWN STEP	2026-10-01T10:51:12.3087713Z Post job cleanup.
+contract	UNKNOWN STEP	2026-10-01T10:51:12.4300833Z [command]/usr/bin/git version
+contract	UNKNOWN STEP	2026-10-01T10:51:12.4381379Z git version 2.55.0
+contract	UNKNOWN STEP	2026-10-01T10:51:12.4469650Z Temporarily overriding HOME='/home/runner/work/_temp/65362a30-24ae-47e0-947d-9da62f48600d' before making global git config changes
+contract	UNKNOWN STEP	2026-10-01T10:51:12.4502292Z Adding repository directory to the temporary git global config as a safe directory
+contract	UNKNOWN STEP	2026-10-01T10:51:12.4504177Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5045883Z Removing SSH command configuration
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5046942Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5049406Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5307388Z Removing HTTP extra header
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5308782Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5394375Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5843070Z Removing includeIf entries pointing to credentials config files
+contract	UNKNOWN STEP	2026-10-01T10:51:12.5844458Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0722142Z includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0723812Z includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git/worktrees/*.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0751250Z includeif.gitdir:/github/workspace/.git.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0759226Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0792855Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0811489Z /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0830965Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git.path /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0854751Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git/worktrees/*.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0902978Z /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0906862Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/3D_Converters/3D_Converters/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0953010Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0984050Z /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.0995691Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1041293Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1072062Z /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1096144Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1131036Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1431632Z Removing credentials config '/home/runner/work/_temp/git-credentials-0f577bc1-b56a-4d60-a3eb-962f709e9e85.config'
+contract	UNKNOWN STEP	2026-10-01T10:51:13.1590642Z Cleaning up orphan processes

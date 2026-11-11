@@ -1,0 +1,53 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P P2.2-B live Worker cancel / stale fence</title>
+<button id="start" type="button">Test worker cancellation and explicit retry</button>
+<pre id="record">IDLE</pre>
+<script type="module">
+import {createXmlCiiPreviewJobController} from
+ '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-job-controller.js';
+const done=(result)=>{globalThis.__P22B_RESULT__=result;
+ document.querySelector('#record').textContent=JSON.stringify(result,null,2);};
+document.querySelector('#start').addEventListener('click',async()=>{
+ const events=[],started=performance.now();
+ let controller;
+ try{
+   const xmlText=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml').then(r=>r.text());
+   const config={
+     linelist:{masterRows:[]},pipingClass:{masterRows:[]},
+     material:{mapRows:[]},weight:{masterRows:[]},overrides:{},
+   };
+   let cancelled=false;
+   controller=createXmlCiiPreviewJobController({
+     verifyBasis:async()=>true, // transport harness only; NOT an engineering attestation
+     maxRetries:1,
+   });
+   controller.subscribe(s=>{
+     events.push({state:s.state,stage:s.stage,requestId:s.requestId,generation:s.generation});
+     if(!cancelled && s.state==='running' && s.stage==='engineering-dryrun'){
+       cancelled=true;controller.cancel('Deliberate Worker mid-compute cancellation');
+     }
+   });
+   const spec={requestId:'browser-cancel',basis:{basisId:'a'.repeat(64)},
+     input:{xmlText,config,stagedJsonText:'',scope:{mode:'A',sourceId:'public'}}};
+   const one=controller.start(spec);
+   let firstCode='none';
+   try{await one.promise;}catch(e){firstCode=e.code||'UNKNOWN';}
+   if(!cancelled)throw Error('Actual Worker did not reach engineering stage for cancellation');
+   const second=controller.retry();
+   const result=await second.promise;
+   const state=controller.getSnapshot();
+   done({ok:firstCode==='CANCELLED' && state.state==='completed'
+      && state.attempt===1 && state.requestId==='browser-cancel:retry1'
+      && result.sourceOccurrences.branchCount===9 && result.sourceOccurrences.nodeCount===541,
+     transportOnly:true,firstCode,finalState:state,
+     sourceBranches:result.sourceOccurrences.branchCount,
+     originalNodes:result.sourceOccurrences.nodeCount,
+     engineeringAccepted:false,events,
+     elapsedMs:Number((performance.now()-started).toFixed(2))});
+ }catch(error){
+   done({ok:false,error:String(error?.stack||error),events,
+     elapsedMs:Number((performance.now()-started).toFixed(2))});
+ }finally{controller?.dispose();}
+},{once:true});
+globalThis.__P22B_READY__=true;
+</script>

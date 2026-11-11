@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-VERIFY-KERNEL-20260819
+claim_state: RELEASED_TO_PR661
+branch: agent/vibration-verification-kernel-20260819
+files:
+  exact: []
+  prefixes: []
+authority_domains: []
+claim_modes: []
+successor_pr: 661
+current_recovery_authority: agents/claims/PR661.yaml
+coordination_state: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED

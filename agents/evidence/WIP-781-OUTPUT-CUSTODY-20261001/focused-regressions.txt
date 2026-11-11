@@ -1,0 +1,687 @@
+TAP version 13
+# Issue \#776 deployment mirror/cache chain verified.
+# Subtest: tests\\xml-cii-issue-776-deployment-parity.test.mjs
+ok 1 - tests\\xml-cii-issue-776-deployment-parity.test.mjs
+  ---
+  duration_ms: 168.5264
+  type: 'test'
+  ...
+# (node:23332) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 downstream Match-1 validation regression passed.
+# Subtest: tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+ok 2 - tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+  ---
+  duration_ms: 109.6304
+  type: 'test'
+  ...
+# Issue \#776 Mode-A Weight Match uses canonical prepared geometry.
+# Subtest: tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+ok 3 - tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+  ---
+  duration_ms: 119.9952
+  type: 'test'
+  ...
+# node:internal/modules/run_main:123
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: The input did not match the regular expression /collectXmlCiiWeightMatchRows\\(\\s*geometry\\.xmlText/s. Input:
+# '// Standalone XML→CII run parity\\r\\n' +
+#   '// -----------------------------\\r\\n' +
+#   '// The parent Model Converters workflow enriches the XML in the browser\\r\\n' +
+#   '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\r\\n' +
+#   '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\r\\n' +
+#   '// the Python conversion runs. This module reuses that enrichment authority and\\r\\n' +
+#   '// now emits deterministic evidence proving that the exact XML sent to Python\\r\\n' +
+#   '// contains the Preview and Weight Match facts that were selected.\\r\\n' +
+#   '\\r\\n' +
+#   "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\r\\n" +
+#   "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-1';\\r\\n" +
+#   "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\r\\n" +
+#   "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-1';\\r\\n" +
+#   '\\r\\n' +
+#   'const PARITY_MODULE_URL = new URL(\\r\\n' +
+#   "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-1',\\r\\n" +
+#   '  import.meta.url,\\r\\n' +
+#   ');\\r\\n' +
+#   '\\r\\n' +
+#   "function text(value) { return value === undefined || value === null ? '' : String(value); }\\r\\n" +
+#   '\\r\\n' +
+#   'function parseConfig(raw) {\\r\\n' +
+#   '  try {\\r\\n' +
+#   "    const value = JSON.parse(text(raw) || '{}');\\r\\n" +
+#   "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\r\\n" +
+#   '  } catch { return {}; }\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\r\\n" +
+#   'function elementChildren(parent) {\\r\\n' +
+#   '  return [...(parent?.childNodes || parent?.children || [])]\\r\\n' +
+#   '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\r\\n' +
+#   '}\\r\\n' +
+#   'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\r\\n' +
+#   'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\r\\n' +
+#   'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\r\\n' +
+#   '\\r\\n' +
+#   'function ensureChild(document, parent, name) {\\r\\n' +
+#   '  let element = firstChild(parent, name);\\r\\n' +
+#   '  if (element) return element;\\r\\n' +
+#   "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\r\\n" +
+#   '    ? document.createElementNS(parent.namespaceURI, name)\\r\\n' +
+#   '    : document.createElement(name);\\r\\n' +
+#   '  parent.appendChild(element);\\r\\n' +
+#   '  return element;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function setChildText(document, parent, name, value) {\\r\\n' +
+#   '  const clean = text(value).trim();\\r\\n' +
+#   '  if (!clean) return false;\\r\\n' +
+#   '  ensureChild(document, parent, name).textContent = clean;\\r\\n' +
+#   '  return true;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function numeric(value) {\\r\\n' +
+#   "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\r\\n" +
+#   '  return Number.isFinite(n) ? n : null;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'function recordExpected(entries, {\\r\\n' +
+#   '  scope,\\r\\n' +
+#   '  branchName,\\r\\n' +
+#   "  nodeNumber = '',\\r\\n" +
+#   '  path,\\r\\n' +
+#   '  field,\\r\\n' +
+#   '  value,\\r\\n' +
+#   "  kind = 'text',\\r\\n" +
+#   "  source = 'preview',\\r\\n" +
+#   '}) {\\r\\n' +
+#   '  const expected = text(value).trim();\\r\\n' +
+#   '  if (!expected) return;\\r\\n' +
+#   '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   "const WEIGHT_BEARING_TYPES = new Set(['FLAN', 'VALV', 'RIGID', 'INST']);\\r\\n" +
+#   '\\r\\n' +
+#   'function mappedNodeWeights(nodeRows, config, blockedWeightKeys = new Set()) {\\r\\n' +
+#   '  const weights = new Map();\\r\\n' +
+#   '  for (const nr of nodeRows || []) {\\r\\n' +
+#   '    if (!WEIGHT_BEARING_TYPES.has(text(nr.componentType).toUpperCase())) continue;\\r\\n' +
+#   '    if (blockedWeightKeys.has(text(nr.key))) continue;\\r\\n' +
+#   '    const override = Number(config?.overrides?.rigidWeight?.[nr.key]);\\r\\n' +
+#   '    const weight = Number.isFinite(override) && override > 0 ? override : null;\\r\\n' +
+#   '    if (weight !== null) weights.set(`${text(nr.branchName)}|${text(nr.nodeNumber)}`, weight);\\r\\n' +
+#   '  }\\r\\n' +
+#   '  return weights;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics, options = {}) {\\r\\n' +
+#   '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\r\\n' +
+#   "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\r\\n" +
+#   "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\r\\n" +
+#   '  }\\r\\n' +
+#   "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-1');\\r\\n" +
+#   "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\r\\n" +
+#   '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\r\\n' +
+#   '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\r\\n' +
+#   '  if (!result.branchRows.length) return result;\\r\\n' +
+#   '\\r\\n' +
+#   '  const nodeWeights = mappedNodeWeights(\\r\\n' +
+#   '    result.nodeRows,\\r\\n' +
+#   '    config,\\r\\n' +
+#   '    options.blockedWeightKeys instanceof Set ? options.blockedWeightKeys : new Set(options.blockedWeightKeys || []),\\r\\n' +
+#   '  );\\r\\n' +
+#   '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\r\\n' +
+#   "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\r\\n" +
+#   "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\r\\n" +
+#   '\\r\\n' +
+#   "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\r\\n" +
+#   "    const branchName = childText(branch, 'Branchname');\\r\\n" +
+#   '    const row = byBranch.get(branchName);\\r\\n' +
+#   '    if (!row) continue;\\r\\n' +
+#   "    const pressure = ensureChild(document, branch, 'Pressure');\\r\\n" +
+#   "    const temperature = ensureChild(document, branch, 'Temperature');\\r\\n" +
+#   '\\r\\n' +
+#   '    const branchWrites = [\\r\\n' +
+#   "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\r\\n" +
+#   "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\r\\n" +
+#   "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\r\\n" +
+#   "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\r\\n" +
+#   "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#   '    ];\\r\\n' +
+#   '\\r\\n' +
+#   '    for (const write of branchWrites) {\\r\\n' +
+#   "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#   '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\r\\n' +
+#   '      result.appliedFields += 1;\\r\\n' +
+#   '      recordExpected(result.expectedEntries, {\\r\\n' +
+#   "        scope: 'branch', branchName, path: write.path, field: write.field,\\r\\n" +
+#   "        value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#   '      });\\r\\n' +
+#   '    }\\r\\n' +
+#   '\\r\\n' +
+#   "    for (const node of childrenByName(branch, 'Node')) {\\r\\n" +
+#   "      const nodeNumber = childText(node, 'NodeNumber');\\r\\n" +
+#   '      const nodeWrites = [\\r\\n' +
+#   "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\r\\n" +
+#   "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\r\\n" +
+#   "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\r\\n" +
+#   "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#   "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\r\\n" +
+#   "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\r\\n" +
+#   '      ];\\r\\n' +
+#   '      for (const write of nodeWrites) {\\r\\n' +
+#   "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#   '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\r\\n' +
+#   '        result.appliedFields += 1;\\r\\n' +
+#   '        recordExpected(result.expectedEntries, {\\r\\n' +
+#   "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\r\\n" +
+#   "          value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#   '        });\\r\\n' +
+#   '      }\\r\\n' +
+#   '\\r\\n' +
+#   '      const mapped = nodeWeights.get(`${branchName}|${nodeNumber}`);\\r\\n' +
+#   "      const existingWeight = numeric(childText(node, 'Weight'));\\r\\n" +
+#   "      if (mapped !== undefined && (existingWeight === null || existingWeight === 0) && setChildText(document, node, 'Weight', mapped)) {\\r\\n" +
+#   '        result.appliedFields += 1;\\r\\n' +
+#   '        recordExpected(result.expectedEntries, {\\r\\n' +
+#   "          scope: 'node', branchName, nodeNumber, path: ['Weight'], field: 'weight',\\r\\n" +
+#   "          value: mapped, kind: 'number', source: 'weight-match',\\r\\n" +
+#   '        });\\r\\n' +
+#   '      }\\r\\n' +
+#   '    }\\r\\n' +
+#   '  }\\r\\n' +
+#   '\\r\\n' +
+#   '  if (!result.appliedFields) return result;\\r\\n' +
+#   '  diagnostics.push({\\r\\n' +
+#   "    type: 'standalone-process-parity-applied',\\r\\n" +
+#   '    fields: result.appliedFields,\\r\\n' +
+#   "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\r\\n" +
+#   '  });\\r\\n' +
+#   '  result.xmlText = new XMLSerializer().serializeToString(document);\\r\\n' +
+#   '  return result;\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'const WEIGHT_MATCH_MODULE_URL = new URL(\\r\\n' +
+#   "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\r\\n" +
+#   '  import.meta.url,\\r\\n' +
+#   ');\\r\\n' +
+#   '\\r\\n' +
+#   'export async function loadParentWeightMatchModules() {\\r\\n' +
+#   '  const [renderer, parity] = await Promise.all([\\r\\n' +
+#   '    import(WEIGHT_MATCH_MODULE_URL.href),\\r\\n' +
+#   '    import(PARITY_MODULE_URL.href),\\r\\n' +
+#   '  ]);\\r\\n' +
+#   '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\r\\n' +
+#   '}\\r\\n' +
+#   '\\r\\n' +
+#   'export function standaloneParityOptions(supportConfigJson, options = {}) {\\r\\n' +
+#   '  const config = parseConfig(supportConfigJson);\\r\\n' +
+#   '  const split = options.splitCondensedValveFlange !== undefined\\r\\n' +
+#   '    ? options.splitCondensedValveFlange !== false\\r\\n' +
+#   '    : (config.splitCondensedValveFlange !== false);\\r\\n' +
+#   '  return {\\r\\n' +
+#   "    supportConfigJson: text(supportConfigJson) || '{}',\\r\\n" +
+#   '    splitCondensedValveFlange: split,\\r\\n' +
+#   '    split_condensed_valve_flange: split,\\r\\n' +
+#   '    '... 6971 more characters
+#     at file:///C:/CodeA/3DC_live_acceptance/tests/xml-cii-issue-776-standalone-run-match1-custody.test.mjs:7:8 {
+#   generatedMessage: true,
+#   code: 'ERR_ASSERTION',
+#   actual: '// Standalone XML→CII run parity\\r\\n' +
+#     '// -----------------------------\\r\\n' +
+#     '// The parent Model Converters workflow enriches the XML in the browser\\r\\n' +
+#     '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\r\\n' +
+#     '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\r\\n' +
+#     '// the Python conversion runs. This module reuses that enrichment authority and\\r\\n' +
+#     '// now emits deterministic evidence proving that the exact XML sent to Python\\r\\n' +
+#     '// contains the Preview and Weight Match facts that were selected.\\r\\n' +
+#     '\\r\\n' +
+#     "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\r\\n" +
+#     "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-1';\\r\\n" +
+#     "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\r\\n" +
+#     "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-1';\\r\\n" +
+#     '\\r\\n' +
+#     'const PARITY_MODULE_URL = new URL(\\r\\n' +
+#     "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-1',\\r\\n" +
+#     '  import.meta.url,\\r\\n' +
+#     ');\\r\\n' +
+#     '\\r\\n' +
+#     "function text(value) { return value === undefined || value === null ? '' : String(value); }\\r\\n" +
+#     '\\r\\n' +
+#     'function parseConfig(raw) {\\r\\n' +
+#     '  try {\\r\\n' +
+#     "    const value = JSON.parse(text(raw) || '{}');\\r\\n" +
+#     "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\r\\n" +
+#     '  } catch { return {}; }\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\r\\n" +
+#     'function elementChildren(parent) {\\r\\n' +
+#     '  return [...(parent?.childNodes || parent?.children || [])]\\r\\n' +
+#     '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\r\\n' +
+#     '}\\r\\n' +
+#     'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\r\\n' +
+#     'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\r\\n' +
+#     'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\r\\n' +
+#     '\\r\\n' +
+#     'function ensureChild(document, parent, name) {\\r\\n' +
+#     '  let element = firstChild(parent, name);\\r\\n' +
+#     '  if (element) return element;\\r\\n' +
+#     "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\r\\n" +
+#     '    ? document.createElementNS(parent.namespaceURI, name)\\r\\n' +
+#     '    : document.createElement(name);\\r\\n' +
+#     '  parent.appendChild(element);\\r\\n' +
+#     '  return element;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function setChildText(document, parent, name, value) {\\r\\n' +
+#     '  const clean = text(value).trim();\\r\\n' +
+#     '  if (!clean) return false;\\r\\n' +
+#     '  ensureChild(document, parent, name).textContent = clean;\\r\\n' +
+#     '  return true;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function numeric(value) {\\r\\n' +
+#     "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\r\\n" +
+#     '  return Number.isFinite(n) ? n : null;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'function recordExpected(entries, {\\r\\n' +
+#     '  scope,\\r\\n' +
+#     '  branchName,\\r\\n' +
+#     "  nodeNumber = '',\\r\\n" +
+#     '  path,\\r\\n' +
+#     '  field,\\r\\n' +
+#     '  value,\\r\\n' +
+#     "  kind = 'text',\\r\\n" +
+#     "  source = 'preview',\\r\\n" +
+#     '}) {\\r\\n' +
+#     '  const expected = text(value).trim();\\r\\n' +
+#     '  if (!expected) return;\\r\\n' +
+#     '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     "const WEIGHT_BEARING_TYPES = new Set(['FLAN', 'VALV', 'RIGID', 'INST']);\\r\\n" +
+#     '\\r\\n' +
+#     'function mappedNodeWeights(nodeRows, config, blockedWeightKeys = new Set()) {\\r\\n' +
+#     '  const weights = new Map();\\r\\n' +
+#     '  for (const nr of nodeRows || []) {\\r\\n' +
+#     '    if (!WEIGHT_BEARING_TYPES.has(text(nr.componentType).toUpperCase())) continue;\\r\\n' +
+#     '    if (blockedWeightKeys.has(text(nr.key))) continue;\\r\\n' +
+#     '    const override = Number(config?.overrides?.rigidWeight?.[nr.key]);\\r\\n' +
+#     '    const weight = Number.isFinite(override) && override > 0 ? override : null;\\r\\n' +
+#     '    if (weight !== null) weights.set(`${text(nr.branchName)}|${text(nr.nodeNumber)}`, weight);\\r\\n' +
+#     '  }\\r\\n' +
+#     '  return weights;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics, options = {}) {\\r\\n' +
+#     '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\r\\n' +
+#     "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\r\\n" +
+#     "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\r\\n" +
+#     '  }\\r\\n' +
+#     "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-1');\\r\\n" +
+#     "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\r\\n" +
+#     '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\r\\n' +
+#     '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\r\\n' +
+#     '  if (!result.branchRows.length) return result;\\r\\n' +
+#     '\\r\\n' +
+#     '  const nodeWeights = mappedNodeWeights(\\r\\n' +
+#     '    result.nodeRows,\\r\\n' +
+#     '    config,\\r\\n' +
+#     '    options.blockedWeightKeys instanceof Set ? options.blockedWeightKeys : new Set(options.blockedWeightKeys || []),\\r\\n' +
+#     '  );\\r\\n' +
+#     '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\r\\n' +
+#     "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\r\\n" +
+#     "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\r\\n" +
+#     '\\r\\n' +
+#     "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\r\\n" +
+#     "    const branchName = childText(branch, 'Branchname');\\r\\n" +
+#     '    const row = byBranch.get(branchName);\\r\\n' +
+#     '    if (!row) continue;\\r\\n' +
+#     "    const pressure = ensureChild(document, branch, 'Pressure');\\r\\n" +
+#     "    const temperature = ensureChild(document, branch, 'Temperature');\\r\\n" +
+#     '\\r\\n' +
+#     '    const branchWrites = [\\r\\n' +
+#     "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\r\\n" +
+#     "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\r\\n" +
+#     "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\r\\n" +
+#     "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\r\\n" +
+#     "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#     '    ];\\r\\n' +
+#     '\\r\\n' +
+#     '    for (const write of branchWrites) {\\r\\n' +
+#     "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#     '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\r\\n' +
+#     '      result.appliedFields += 1;\\r\\n' +
+#     '      recordExpected(result.expectedEntries, {\\r\\n' +
+#     "        scope: 'branch', branchName, path: write.path, field: write.field,\\r\\n" +
+#     "        value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#     '      });\\r\\n' +
+#     '    }\\r\\n' +
+#     '\\r\\n' +
+#     "    for (const node of childrenByName(branch, 'Node')) {\\r\\n" +
+#     "      const nodeNumber = childText(node, 'NodeNumber');\\r\\n" +
+#     '      const nodeWrites = [\\r\\n' +
+#     "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\r\\n" +
+#     "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\r\\n" +
+#     "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\r\\n" +
+#     "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\r\\n" +
+#     "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\r\\n" +
+#     "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\r\\n" +
+#     '      ];\\r\\n' +
+#     '      for (const write of nodeWrites) {\\r\\n' +
+#     "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\r\\n" +
+#     '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\r\\n' +
+#     '        result.appliedFields += 1;\\r\\n' +
+#     '        recordExpected(result.expectedEntries, {\\r\\n' +
+#     "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\r\\n" +
+#     "          value: write.value, kind: write.kind, source: 'standalone-preview',\\r\\n" +
+#     '        });\\r\\n' +
+#     '      }\\r\\n' +
+#     '\\r\\n' +
+#     '      const mapped = nodeWeights.get(`${branchName}|${nodeNumber}`);\\r\\n' +
+#     "      const existingWeight = numeric(childText(node, 'Weight'));\\r\\n" +
+#     "      if (mapped !== undefined && (existingWeight === null || existingWeight === 0) && setChildText(document, node, 'Weight', mapped)) {\\r\\n" +
+#     '        result.appliedFields += 1;\\r\\n' +
+#     '        recordExpected(result.expectedEntries, {\\r\\n' +
+#     "          scope: 'node', branchName, nodeNumber, path: ['Weight'], field: 'weight',\\r\\n" +
+#     "          value: mapped, kind: 'number', source: 'weight-match',\\r\\n" +
+#     '        });\\r\\n' +
+#     '      }\\r\\n' +
+#     '    }\\r\\n' +
+#     '  }\\r\\n' +
+#     '\\r\\n' +
+#     '  if (!result.appliedFields) return result;\\r\\n' +
+#     '  diagnostics.push({\\r\\n' +
+#     "    type: 'standalone-process-parity-applied',\\r\\n" +
+#     '    fields: result.appliedFields,\\r\\n' +
+#     "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\r\\n" +
+#     '  });\\r\\n' +
+#     '  result.xmlText = new XMLSerializer().serializeToString(document);\\r\\n' +
+#     '  return result;\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'const WEIGHT_MATCH_MODULE_URL = new URL(\\r\\n' +
+#     "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\r\\n" +
+#     '  import.meta.url,\\r\\n' +
+#     ');\\r\\n' +
+#     '\\r\\n' +
+#     'export async function loadParentWeightMatchModules() {\\r\\n' +
+#     '  const [renderer, parity] = await Promise.all([\\r\\n' +
+#     '    import(WEIGHT_MATCH_MODULE_URL.href),\\r\\n' +
+#     '    import(PARITY_MODULE_URL.href),\\r\\n' +
+#     '  ]);\\r\\n' +
+#     '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\r\\n' +
+#     '}\\r\\n' +
+#     '\\r\\n' +
+#     'export function standaloneParityOptions(supportConfigJson, options = {}) {\\r\\n' +
+#     '  const config = parseConfig(supportConfigJson);\\r\\n' +
+#     '  const split = options.splitCondensedValveFlange !== undefined\\r\\n' +
+#     '    ? options.splitCondensedValveFlange !== false\\r\\n' +
+#     '    : (config.splitCondensedValveFlange !== false);\\r\\n' +
+#     '  return {\\r\\n' +
+#     "    supportConfigJson: text(supportConfigJson) || '{}',\\r\\n" +
+#     '    splitCondensedValveFlange: split,\\r\\n' +
+#     '    split_condensed_valve_flange: split,\\r\\n' +
+#     '    '... 6971 more characters,
+#   expected: /collectXmlCiiWeightMatchRows\\(\\s*geometry\\.xmlText/s,
+#   operator: 'match',
+#   diff: 'simple'
+# }
+# Node.js v22.23.2
+# Subtest: tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+not ok 4 - tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+  ---
+  duration_ms: 155.8955
+  type: 'test'
+  location: 'C:\\CodeA\\3DC_live_acceptance\\tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Issue 781 auto authority follow-up checks passed.
+# (node:19604) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-suggestion-candidates.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+ok 5 - tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+  ---
+  duration_ms: 454.5386
+  type: 'test'
+  ...
+# (node:32592) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#781 post-merge screenshot acceptance regressions verified.
+# Subtest: tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+ok 6 - tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+  ---
+  duration_ms: 203.0959
+  type: 'test'
+  ...
+# (node:8096) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Weight ranking recovers once from worker message transport failure
+ok 7 - Weight ranking recovers once from worker message transport failure
+  ---
+  duration_ms: 45.2874
+  type: 'test'
+  ...
+# Subtest: Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+ok 8 - Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+  ---
+  duration_ms: 19.753
+  type: 'test'
+  ...
+# Subtest: mapping draft status explicitly prompts Apply mapping without modal interruption
+ok 9 - mapping draft status explicitly prompts Apply mapping without modal interruption
+  ---
+  duration_ms: 0.8026
+  type: 'test'
+  ...
+# Subtest: Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+ok 10 - Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+  ---
+  duration_ms: 1.0387
+  type: 'test'
+  ...
+# Subtest: worker Weight basis preserves split geometry and Preview rating authority
+ok 11 - worker Weight basis preserves split geometry and Preview rating authority
+  ---
+  duration_ms: 40.0501
+  type: 'test'
+  ...
+# Subtest: Weight basis applies the existing export cleanup and preserves staged length and bore
+ok 12 - Weight basis applies the existing export cleanup and preserves staged length and bore
+  ---
+  duration_ms: 5.5146
+  type: 'test'
+  ...
+# Subtest: Weight basis collector does not hydrate unrelated applied master datasets
+ok 13 - Weight basis collector does not hydrate unrelated applied master datasets
+  ---
+  duration_ms: 0.8408
+  type: 'test'
+  ...
+# Subtest: changed runtime files remain byte-identical to docs mirrors
+ok 14 - changed runtime files remain byte-identical to docs mirrors
+  ---
+  duration_ms: 5.2218
+  type: 'test'
+  ...
+# (node:20964) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/linelist-mapping.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+ok 15 - configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+  ---
+  duration_ms: 38.4908
+  type: 'test'
+  ...
+# Subtest: Preview wins over prefix; conflicting Preview cannot be silently filled
+ok 16 - Preview wins over prefix; conflicting Preview cannot be silently filled
+  ---
+  duration_ms: 2.8443
+  type: 'test'
+  ...
+# Subtest: manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+ok 17 - manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+  ---
+  duration_ms: 2.7094
+  type: 'test'
+  ...
+# Subtest: class fill replaces visible same-class line/branch overrides and preserves another class
+ok 18 - class fill replaces visible same-class line/branch overrides and preserves another class
+  ---
+  duration_ms: 14.125
+  type: 'test'
+  ...
+# Subtest: worker validates changed manual Rating before ranking or releasing accepted Match1
+ok 19 - worker validates changed manual Rating before ranking or releasing accepted Match1
+  ---
+  duration_ms: 37.2586
+  type: 'test'
+  ...
+# Subtest: candidate weights follow the configured/manual Rating instead of the incoming row Rating
+ok 20 - candidate weights follow the configured/manual Rating instead of the incoming row Rating
+  ---
+  duration_ms: 6.476
+  type: 'test'
+  ...
+# Subtest: APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+ok 21 - APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+  ---
+  duration_ms: 1.0556
+  type: 'test'
+  ...
+# Subtest: worker-resident Weight Match ranking equals shared pure ranking
+ok 22 - worker-resident Weight Match ranking equals shared pure ranking
+  ---
+  duration_ms: 3.1621
+  type: 'test'
+  ...
+# Subtest: Weight Match worker rejects a non-weight dataset
+ok 23 - Weight Match worker rejects a non-weight dataset
+  ---
+  duration_ms: 0.9878
+  type: 'test'
+  ...
+# Subtest: standalone dataset-backed Weight Build has no all-master materializer dependency
+ok 24 - standalone dataset-backed Weight Build has no all-master materializer dependency
+  ---
+  duration_ms: 16.8604
+  type: 'test'
+  ...
+# Subtest: source/docs mirrors are exact for changed runtime modules
+ok 25 - source/docs mirrors are exact for changed runtime modules
+  ---
+  duration_ms: 7.8527
+  type: 'test'
+  ...
+# xml-cii Mode A consolidated rigid review tests: PASS
+# (node:32356) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-mode-a-bulk-preview.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-mode-a-consolidated-rigid-review.test.mjs
+ok 9 - tests\\xml-cii-mode-a-consolidated-rigid-review.test.mjs
+  ---
+  duration_ms: 151.9771
+  type: 'test'
+  ...
+# xml-cii Mode A consolidated preview/weight tests: PASS
+# (node:28112) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-mode-a-consolidated.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-mode-a-consolidated.test.mjs
+ok 10 - tests\\xml-cii-mode-a-consolidated.test.mjs
+  ---
+  duration_ms: 320.2931
+  type: 'test'
+  ...
+# (node:8824) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: source, staged, scope, weight and Run options invalidate superseded output
+ok 28 - source, staged, scope, weight and Run options invalidate superseded output
+  ---
+  duration_ms: 10.9422
+  type: 'test'
+  ...
+# Subtest: navigation and newly supplied conversion results remain available
+ok 29 - navigation and newly supplied conversion results remain available
+  ---
+  duration_ms: 8.7256
+  type: 'test'
+  ...
+# Subtest: Mode A forwards result invalidation after direct replacement
+ok 30 - Mode A forwards result invalidation after direct replacement
+  ---
+  duration_ms: 56.9805
+  type: 'test'
+  ...
+# Subtest: shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+ok 31 - shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+  ---
+  duration_ms: 94.5948
+  type: 'test'
+  ...
+# (node:25680) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/weight-basis-xml-dom.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: accepted final weight writes without a matching master candidate, replacing prior XML value
+ok 32 - accepted final weight writes without a matching master candidate, replacing prior XML value
+  ---
+  duration_ms: 27.1347
+  type: 'test'
+  ...
+# Subtest: canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+ok 33 - canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+  ---
+  duration_ms: 14.9181
+  type: 'test'
+  ...
+# Subtest: accepted component removed during geometry preparation cannot silently disappear
+ok 34 - accepted component removed during geometry preparation cannot silently disappear
+  ---
+  duration_ms: 3.8224
+  type: 'test'
+  ...
+# Subtest: negative-number component custody cannot be satisfied by a different helper in the same branch
+ok 35 - negative-number component custody cannot be satisfied by a different helper in the same branch
+  ---
+  duration_ms: 11.0232
+  type: 'test'
+  ...
+# Subtest: UI job normalizes absent optional master arrays without inventing master values
+ok 36 - UI job normalizes absent optional master arrays without inventing master values
+  ---
+  duration_ms: 7.6643
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 35
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 618.0794

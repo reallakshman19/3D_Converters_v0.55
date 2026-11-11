@@ -1,0 +1,54 @@
+{
+  "schema": "kd320-pr1290-candidate-reconciliation/v1",
+  "sourceSnapshot": {
+    "repository": "reallaksh19/Advanced_Analysis",
+    "pullRequest": 1290,
+    "mergeCommit": "ef9445469fbddd3a34e51c83e295bb749ae79c73",
+    "path": "docs/High Pr/Hi PR",
+    "files": [
+      {"name": "ASME_VIII_3_KD2_Stress_Basis_Package.md", "gitBlobSha": "ffb7af75d6b4f569ea7e32077b5fa99da8cc0d1e", "required": true},
+      {"name": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "gitBlobSha": "98946a0c7563bcacc8a51ef81426540912fe483b", "required": true},
+      {"name": "B31_3_Chapter_IX_Authority_Package.md", "gitBlobSha": "da0b02f32fb6d39c222a5c7ff89c19c8219850d0", "required": true},
+      {"name": "README.md", "gitBlobSha": "6d5292e4b9dd9b626427150c84a044d77d5f8a45", "required": true},
+      {"name": "asme_viii_3_kd2_manifest.yaml", "gitBlobSha": "eed9e13ae68ee095dfaf14b5c05c9933ae44f76a", "required": true},
+      {"name": "asme_viii_3_kd3_manifest.yaml", "gitBlobSha": "84c823b72f5f2c6dc17350c8c689d0f5da85e548", "required": true},
+      {"name": "b31_3_chapter_ix_manifest.yaml", "gitBlobSha": "9d99b001fdf769127d382bf263ca450a88d69c48", "required": true},
+      {"name": "ilide.info-asme-sec-viii-d3-art-kd-2-pr_a7181b037b53d68c9b5f980d0bacce40.pdf", "gitBlobSha": "8f20cd0dab683d28359e02207f6f65b834144ec9", "required": true},
+      {"name": "kd-3.pdf", "gitBlobSha": "e6abaddb7833eb0a61c9460ae39201e2252dc596", "required": true},
+      {"name": "kd3_fatigue_curves_data.csv", "gitBlobSha": "d50b0dabe8aa679e0784bb4efa0d7ac3a884c407", "required": true}
+    ]
+  },
+  "target": {
+    "b313Edition": "2024",
+    "viii3Edition": "2025",
+    "b313ReceiptId": "Q1-SRC-B313-2024",
+    "viii3ReceiptId": "Q1-SRC-VIII3-2025"
+  },
+  "authority": {
+    "evidenceClass": "PROJECT_SOURCE_EXTRACTION_CANDIDATE",
+    "canSatisfyControlledSourceReceipt": false,
+    "canPromoteQ1SemanticItem": false,
+    "q1EvidenceStateMayChange": false,
+    "nativeCoreKd3Qualified": false,
+    "codeCompliance": false,
+    "canUseForDesignAuthority": false,
+    "productionKernelAllowed": false,
+    "automaticPromotionAllowed": false
+  },
+  "semanticCandidates": [
+    {"semanticId": "KD320-SEM-001", "candidateFile": "B31_3_Chapter_IX_Authority_Package.md", "candidateLocator": "Sections 1-5", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-002", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 2", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-003", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 2", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-004", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 3", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-005", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 3.2", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-006", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Sections 4.1 and 5.1", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-007", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 4", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-008", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 5.2", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-009", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Sections 5.3, 5.4 and 7", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-010", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Sections 5 and 7", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-011", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Sections 4, 5 and 7", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-012", "candidateFile": "ASME_VIII_3_KD2_Stress_Basis_Package.md", "candidateLocator": "Sections 1-5", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-013", "candidateFile": "ASME_VIII_3_KD3_Fatigue_Evaluation_Package.md", "candidateLocator": "Section 7", "status": "CANDIDATE_UNVERIFIED"},
+    {"semanticId": "KD320-SEM-014", "candidateFile": "README.md", "candidateLocator": "No independent result/release custody contract retained", "status": "NOT_ESTABLISHED"}
+  ]
+}

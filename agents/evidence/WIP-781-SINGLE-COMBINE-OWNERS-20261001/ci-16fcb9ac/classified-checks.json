@@ -1,0 +1,33 @@
+{
+  "head": "16fcb9ac87712ec6e59a94b8f5f9b89d72da8283",
+  "observedPass": 11,
+  "observedFail": 4,
+  "pending": [
+    "CII Ver14 Merge Qualification:queued"
+  ],
+  "remainingFail": [
+    {
+      "workflow": "CAESAR v11-v14 Dropdown Qualification",
+      "status": "FAIL",
+      "log": "caesar-v11-v14-dropdown-qualification.txt"
+    },
+    {
+      "workflow": "FBX Live UI Cache Chain",
+      "status": "FAIL",
+      "log": "fbx-live-ui-cache-chain.txt"
+    },
+    {
+      "workflow": "FBX2 Browser Managed Reference",
+      "status": "FAIL",
+      "log": "fbx2-browser-managed-reference.txt"
+    },
+    {
+      "workflow": "StagedJSON and Pages Runtime Contract",
+      "status": "FAIL",
+      "log": "stagedjson-and-pages-runtime-contract.txt"
+    }
+  ],
+  "classification": "INHERITED; matched actual earlier/base failures",
+  "newIncompatibilities": "CORRECTED; scope-tree and browser-worker-scale PASS",
+  "deployment": "NOT_RUN"
+}

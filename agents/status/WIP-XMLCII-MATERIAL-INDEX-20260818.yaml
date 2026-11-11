@@ -1,0 +1,23 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-MATERIAL-INDEX-20260818
+mission: Preindex Preview Material Line List lookup and memoize repeated pure Material Map resolution.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-material-authority-index-20260818
+criticality: ENGINEERING_CRITICAL
+agent_state: TERMINAL
+pr_recovery_state: SUPERSEDED_BY_PR632
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-MATERIAL-INDEX-20260818_workreport.md
+superseded_by: PR632
+current_stage: TERMINAL_PR_CUSTODY
+blocker: NONE
+validation:
+  source_trace: PASS
+  mandatory_backup: PASS_EXACT_BLOB
+  syntax: PASS
+  focused_equivalence: PASS_LOCAL_IMPLEMENTATION_COUPLED
+  exact_byte_custody: PASS
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+exact_next_action: Continue only from agents/PR632_workreport.md and agents/status/PR632.yaml.
+last_updated: 2026-08-18T19:38:00+04:00

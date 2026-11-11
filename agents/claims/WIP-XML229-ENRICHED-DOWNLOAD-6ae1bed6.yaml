@@ -1,0 +1,5 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-XML229-ENRICHED-DOWNLOAD-6ae1bed6
+claim_state: RELEASED
+superseded_by: PR354
+active_claim_record: agents/claims/PR354.yaml

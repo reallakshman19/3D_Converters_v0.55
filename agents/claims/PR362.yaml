@@ -1,0 +1,196 @@
+schema: AgentClaim.v1
+pr_or_wip: PR362
+claim_state: LOCAL_IMPLEMENTATION_VERIFIED_OWNER_RETRY_PENDING
+branch: fix/xml229-inst-rigid-20261031
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/xml-cii-workflow-engine-client.js
+    - converters/xml-cii-2019-standalone/engine-worker-client.mjs
+    - converters/xml-cii-2019-standalone/engine-worker.mjs
+    - converters/xml-cii-2019-standalone/engine-sif-result.mjs
+    - converters/xml-cii-2019-standalone/engine.js
+    - converters/xml-cii-2019-standalone/engine-progress.mjs
+    - converters/scripts/xml_to_cii2019_runtime_custody.py
+    - converters/scripts/xml229_prefinal_restraint_source.py
+    - tabs/xml-cii-2019-standalone/integration/xml229-run-hold-audit.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-action.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-cii-candidate-run.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-flow-trace-registry.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-debug.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+    - tests/xml-cii-engine-worker-client.test.mjs
+    - tests/xml-cii-engine-responsive-browser.mjs
+    - tests/xml229-native-run-action.test.mjs
+    - tests/xml229-native-run-debug.test.mjs
+    - tests/xml229-native-run-debug-browser.mjs
+    - tests/xml229-native-lineage-scale-browser.mjs
+    - tests/xml229-native-restraint-spatial.test.py
+    - tests/xml229-branch-format-hold-audit.test.mjs
+    - tests/xml229-json-restraint-body-transfer.test.mjs
+    - tests/xml229-owner-inputs-browser.mjs
+  mirrors:
+    - docs/tabs/xml-cii-2019-standalone/xml-cii-workflow-engine-client.js
+    - docs/converters/xml-cii-2019-standalone/engine-worker-client.mjs
+    - docs/converters/xml-cii-2019-standalone/engine-worker.mjs
+    - docs/converters/xml-cii-2019-standalone/engine-sif-result.mjs
+    - docs/converters/xml-cii-2019-standalone/engine.js
+    - docs/converters/xml-cii-2019-standalone/engine-progress.mjs
+    - docs/converters/scripts/xml_to_cii2019_runtime_custody.py
+    - docs/converters/scripts/xml229_prefinal_restraint_source.py
+    - docs/tabs/xml-cii-2019-standalone/integration/xml229-run-hold-audit.mjs
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-action.mjs
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-cii-candidate-run.mjs
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-flow-trace-registry.mjs
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-debug.mjs
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+authority_domains: [same converter background execution, bounded Run lifecycle, diagnostic phase reporting, equivalent native restraint spatial lookup]
+protected: [native writer and matching semantics, source and Final packet, geometry and mass guards, CII bytes, SIF semantics, workflows]
+merge_authority: OWNER_ONLY_NOT_GRANTED
+optional_json_preview_files:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-preview-json-source.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-button-session.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-preview-json-source.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-button-session.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js
+  - tests/xml229-preview-optional-json.test.mjs
+  - tests/xml229-preview-optional-json-browser.mjs
+optional_json_weight_scope: [verified XML-only review custody, current Weight controls, Applied Weight drafts, read-only Preview restore, guarded Final popup eligibility]
+optional_json_weight_modules: [xml229-review-source-input, xml229-original-blob-gcpw-client, xml229-original-blob-gcpw-worker, xml229-independent-engineering-preview-client, xml229-independent-engineering-preview-worker, xml229-live-preview-restoration, xml229-source-weight-review-transfer, xml229-p4-optional-json-custody, xml-cii-adapted-p4-verified-weight-panel, xml-cii-adapted-weight-match-v2, xml-cii-adapted-preview-diagnostics-audit-v7, xml-cii-adapted-preview-facts-button-session, xml229-p4-panel-shell, xml229-p4-weight-draft-workspace, xml229-run-unresolved-mass-popup, xml229-run-mass-review-button]
+optional_json_weight_mirrors: ALL_IDENTICAL_DOCS_COUNTERPARTS
+run_entry_timer_modules: [xml229-current-run-review, xml229-run-clock, xml-cii-adapted-run-workflow, xml-cii-adapted-run-workflow-atta-default, xml-cii-adapted-output-run, xml229-native-run-debug]
+run_entry_timer_mirrors: ALL_IDENTICAL_DOCS_COUNTERPARTS
+xml_only_native_handoff_scope: [full XML SHA identity, current accepted Final intent, native packet custody, source-bound readiness, existing native candidate, zero command provenance, duplicate popup async guard]
+xml_only_native_handoff_new: [tabs/xml-cii-2019-standalone/integration/xml229-xml-review-attestation.mjs, tests/xml229-xml-native-handoff.test.mjs]
+xml_only_native_handoff_mirrors: ALL_15_PAIRS_IDENTICAL
+xml_only_native_handoff_writer: SAME_CODER_AUTHOR_VALIDATION_ONLY
+publication_file_ledger: 46_ROOT_46_DOCS_20_TEST_6_RECORDS
+publication_excluded: LOCAL_BACKUP_REGISTRY_PRIVATE_INPUTS_GENERATED_CII_IGNORED_LOCAL_EVIDENCE
+publication_overlap: COORDINATION_REQUIRED_NOT_INTEGRATION_CLEARANCE
+
+pr_url: https://github.com/reallakshman19/3D_Converters/pull/362
+report_basis_head: 7bc9e21c0f3e53303b5a5d32e6286dcd6d1eeeb8
+ci_observation: FIVE_FAILURES_OTHERS_RUNNING_OR_PASSED_NOT_ALL_GREEN
+merge_authority: OWNER_ONLY_NOT_GRANTED
+publication_exact_files:
+  - agents/WIP-XML229-INST-RIGID-20261031_workreport.md
+  - agents/WIP-XML229-RUN-RESPONSIVE-20261031_workreport.md
+  - agents/claims/WIP-XML229-INST-RIGID-20261031.yaml
+  - agents/status/WIP-XML229-INST-RIGID-20261031.yaml
+  - converters/scripts/xml229_native_final_mass_binding.py
+  - converters/scripts/xml229_prefinal_restraint_source.py
+  - converters/scripts/xml_to_cii2019_runtime_custody.py
+  - converters/xml-cii-2019-standalone/engine-progress.mjs
+  - converters/xml-cii-2019-standalone/engine-sif-result.mjs
+  - converters/xml-cii-2019-standalone/engine-worker-client.mjs
+  - converters/xml-cii-2019-standalone/engine-worker.mjs
+  - converters/xml-cii-2019-standalone/engine.js
+  - converters/xml-cii2019-core/weight-facts-native-consumption-intent.js
+  - docs/converters/scripts/xml229_native_final_mass_binding.py
+  - docs/converters/scripts/xml229_prefinal_restraint_source.py
+  - docs/converters/scripts/xml_to_cii2019_runtime_custody.py
+  - docs/converters/xml-cii-2019-standalone/engine-progress.mjs
+  - docs/converters/xml-cii-2019-standalone/engine-sif-result.mjs
+  - docs/converters/xml-cii-2019-standalone/engine-worker-client.mjs
+  - docs/converters/xml-cii-2019-standalone/engine-worker.mjs
+  - docs/converters/xml-cii-2019-standalone/engine.js
+  - docs/converters/xml-cii2019-core/weight-facts-native-consumption-intent.js
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-finalized-weight-geometry.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-independent-engineering-preview-client.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-independent-engineering-preview-worker.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-live-preview-restoration.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-client.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-worker.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-review-source-input.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-run-hold-audit.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-source-weight-review-transfer.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-verified-output-readiness.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-weight-decision-provenance.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-xml-review-attestation.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-p4-verified-weight-panel.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-button-session.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-atta-default.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-current-run-review.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-flow-trace-registry.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-cii-candidate-run.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-action.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-context.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-debug.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-source-custody.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-optional-json-custody.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-panel-shell.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-weight-draft-workspace.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-preview-json-source.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-auto-native.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-clock.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-mass-review-button.mjs
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-unresolved-mass-popup.mjs
+  - docs/tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js
+  - docs/tabs/xml-cii-2019-standalone/xml-cii-workflow-engine-client.js
+  - tabs/xml-cii-2019-standalone/integration/xml229-finalized-weight-geometry.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-independent-engineering-preview-client.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-independent-engineering-preview-worker.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-live-preview-restoration.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-client.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-worker.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-review-source-input.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-run-hold-audit.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-source-weight-review-transfer.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-verified-output-readiness.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-weight-decision-provenance.mjs
+  - tabs/xml-cii-2019-standalone/integration/xml229-xml-review-attestation.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-p4-verified-weight-panel.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-button-session.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-atta-default.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-current-run-review.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-flow-trace-registry.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-cii-candidate-run.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-action.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-context.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-debug.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-source-custody.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-optional-json-custody.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-panel-shell.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-p4-weight-draft-workspace.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-preview-json-source.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-auto-native.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-clock.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-mass-review-button.mjs
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-unresolved-mass-popup.mjs
+  - tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js
+  - tabs/xml-cii-2019-standalone/xml-cii-workflow-engine-client.js
+  - tests/xml-cii-229-p4-real-engineering-fact-producer.test.mjs
+  - tests/xml-cii-engine-responsive-browser.mjs
+  - tests/xml-cii-engine-worker-client.test.mjs
+  - tests/xml229-branch-format-hold-audit.test.mjs
+  - tests/xml229-current-run-review.test.mjs
+  - tests/xml229-instrument-python-worker-cases.mjs
+  - tests/xml229-json-restraint-body-transfer.test.mjs
+  - tests/xml229-native-final-mass-consumption.test.py
+  - tests/xml229-native-lineage-scale-browser.mjs
+  - tests/xml229-native-restraint-spatial.test.py
+  - tests/xml229-native-run-action.test.mjs
+  - tests/xml229-native-run-debug-browser.mjs
+  - tests/xml229-native-run-debug.test.mjs
+  - tests/xml229-owner-inputs-browser.mjs
+  - tests/xml229-p4-producer-integrity-cases.mjs
+  - tests/xml229-preview-optional-json-browser.mjs
+  - tests/xml229-preview-optional-json.test.mjs
+  - tests/xml229-weight-optional-json-browser.mjs
+  - tests/xml229-weight-optional-json.test.mjs
+  - tests/xml229-xml-native-handoff.test.mjs
+  - agents/PR362_workreport.md
+  - agents/status/PR362.yaml
+  - agents/claims/PR362.yaml

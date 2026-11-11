@@ -1,0 +1,22 @@
+{
+  "baseMain": "e6e3458f51c3a680b413aa525c5e87fdae257533",
+  "salvagedProductionHead": "f30552b8d648fb12a697778f6d1c27bbe6ff533b",
+  "runtimeRelease": "20261001-weight-output-2",
+  "environment": {
+    "XML_CII_PLAYWRIGHT_MODULE": "C:/CodeA/3DC_776/node_modules/playwright",
+    "XML_CII_CHROMIUM_EXECUTABLE": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "XML_CII_41_BRANCH_FIXTURE": "C:/CodeA/3DC_809/Benchmarks/EF-05-PRO.TEST.xml"
+  },
+  "checks": [
+    {"status":"PASS","observation":"LOCAL_EXECUTION","oracle":"MIXED_INDEPENDENT_FIXTURES_AND_IMPLEMENTATION_COUPLED_CONTRACTS","command":"node --test using focused paths extracted unchanged from .github/workflows/issue-776-validation.yml","evidence":"ci-focused-local-repaired.txt","actual":"28/28PASS; only tracked WSW fixtures hydrated; no numerical oracle changes"},
+    {"status":"PASS","observation":"SOURCE_INSPECTION","oracle":"IMPLEMENTATION_COUPLED","actual":"committed README, Benchmarks, ValidationRecords and workflow trees equal main; integration production equals f30552b8"},
+    {"status":"FAIL","observation":"REMOTE_EXECUTION","oracle":"INDEPENDENT_REPRODUCTION","command":"XML_CII_MODE_B_BASE_URL=https://reallaksh19.github.io/3D_Converters/ node tests/browser/xml-cii-mode-b-release-smoke.mjs --observe-absence","evidence":"live-baseline.json","expected":"Mode B visible after two distinct XML uploads","actual":"zero Mode B controls","origin":"PREEXISTING_RELEASE_GAP"},
+    {"status":"PASS","observation":"LOCAL_EXECUTION","oracle":"INDEPENDENT_REPRODUCTION","command":"node tests/browser/xml-cii-mode-b-release-smoke.mjs","evidence":"main-integrated.json","actual":"native UI control and both downloads;82 branches3308 nodes;offsets0/100000"},
+    {"status":"PASS","observation":"LOCAL_EXECUTION","oracle":"INDEPENDENT_REPRODUCTION","command":"XML_CII_MODE_B_EVIDENCE_DIR=agents/evidence/WIP-781-MAIN-INTEGRATION-20261001 node tests/browser/xml-cii-mode-b-xml-export-e2e.mjs","evidence":"mode-b-acceptance.json","actual":"every non-number node field preserved;82 branches3308nodes;invalid inputs fail closed"},
+    {"status":"PASS","observation":"LOCAL_EXECUTION","oracle":"MIXED_INDEPENDENT_INPUTS_AND_IMPLEMENTATION_COUPLED_CONTRACTS","command":"focusedNodeCommand from ../WIP-781-OUTPUT-CUSTODY-20261001/validation-commands.json","evidence":"focused-regressions.txt","actual":"36/36 PASS"},
+    {"status":"PASS","observation":"LOCAL_EXECUTION","oracle":"INDEPENDENT_REPRODUCTION","command":"python tests/xml-cii-weight-owner-guard.test.py","evidence":"weight-owner-guard-native.txt","actual":"retained owners17.75/13.5 scale10 exact; missing/invalid owners block publication"},
+    {"status":"PASS","observation":"SOURCE_INSPECTION","oracle":"IMPLEMENTATION_COUPLED","actual":"production byte-equivalent f30552b8; source/docs mirrors match; no README, ValidationRecords or workflow diff"},
+    {"status":"FAIL","observation":"ARTIFACT_INSPECTION","oracle":"INDEPENDENT_REPRODUCTION","evidence":"../WIP-781-OUTPUT-CUSTODY-20261001/cii-weight-export-audit.json","actual":"inherited16 missing CII component owners; no repair authority granted"},
+    {"status":"NOT_RUN","observation":"NOT_OBSERVED","oracle":"NONE","actual":"repaired remote deployment requires owner merge into main"}
+  ]
+}

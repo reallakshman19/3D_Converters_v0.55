@@ -1,0 +1,29 @@
+schema: AgentClaim.v1
+pr_or_wip: PR682
+pull_request: 682
+claim_state: ACTIVE
+branch: agent/vib-runtime-scenario-guard-integration-20260820-r2
+authority_domains:
+  - VIBRATION_RUNTIME_SCENARIO_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  prefixes:
+    - converters/vibration/facility/
+    - converters/vibration/mechanical/
+    - converters/vibration/mechanisms/
+    - converters/vibration/sbc/
+    - tabs/vibration-integrity-mechanical-controller.js
+    - tabs/vibration-integrity-sbc-
+    - tests/vibration-runtime-scenario-guard.test.mjs
+exclusions:
+  - AIV standalone execution wiring
+  - mechanism equations and coefficients
+  - source/master qualification
+  - process actualization
+  - applicability and completeness authority
+  - design authority
+coordination:
+  PR680: MERGED_FOUNDATION
+release_condition: OWNER_GRANTED_MERGE_AFTER_PR_RECONCILIATION

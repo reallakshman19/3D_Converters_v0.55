@@ -1,0 +1,33 @@
+schema: AgentStatus.v1
+pr_or_wip: PR696
+pull_request: 696
+branch: agent/hp-review-disposition-custody
+base: main
+base_sha_after_replay: 55eade922b061830db70b45a22e8f328ef005e02
+predecessor_pr: 694
+predecessor_merge: c5c3fa6f1c20ad3e0d046b8e2b9565569600d425
+state: READY_FOR_REVIEW_PENDING_NATIVE_VALIDATION
+criticality: HP_PRODUCTION_REVIEW_CUSTODY
+authority:
+  purpose: REVIEW_CUSTODY_ONLY
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  can_authorize_release: false
+  actor_identity_authority: USER_DECLARED
+  digital_signature: false
+validation:
+  main_replay: PASS
+  branch_ancestry_last_reconciled: PASS_BEHIND_0
+  implementation_test_ci_paths: PASS_6_INTENDED_BEFORE_RECOVERY
+  numerical_ownership_source_audit: PASS
+  authority_source_audit: PASS
+  content_vs_identity_source_audit: PASS
+  authored_disposition_suite: AUTHORED_NOT_EXECUTED
+  native_disposition_node_suite: NOT_RUN
+  hp_real_workbench_workflow: NOT_RUN_ZERO_RETURNED
+  full_app_disposition_interaction: NOT_RUN
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED_FOR_PR696
+next_action: EXECUTE_NATIVE_DISPOSITION_TESTS_IF_AVAILABLE_AND_RECONCILE_EXACT_HEAD

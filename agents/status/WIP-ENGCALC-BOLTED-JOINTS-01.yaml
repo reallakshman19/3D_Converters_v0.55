@@ -1,0 +1,18 @@
+id: WIP-ENGCALC-BOLTED-JOINTS-01
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+state: ACTIVE
+branch: agent/engcalc-bolted-joints-phase1-20260902
+base_main: bff53e336bdbddbe0fb829b7991ca5ed27fc836a
+engineering_critical: true
+authority_domain: flange-rated-load-and-bolted-joint-foundation
+coordination_state: SAFE_FOR_NEW_FILES
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  source_inspection: PASS
+  reconstructed_node_test: PASS_6_OF_6
+  repository_native_test: NOT_RUN
+  hosted_ci: NOT_RUN
+  browser: NOT_APPLICABLE
+  independent_engineering_review: NOT_RUN
+exact_next_action: Reconcile live main, open a draft PR, and publish a post-validation relay endpoint.

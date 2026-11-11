@@ -1,0 +1,28 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-C6SRC-20260818
+mission: "C6 exact-source DOM parse custody for Source Mode"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c6-source-parse-custody-20260818
+stack_base_pr: 606
+stack_base_sha: e37896041a513d407f6a6af6a92c58f98279fd34
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-C6SRC-20260818_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+worker_admission: NOT_ADMITTED_NO_REAL_TIMING_EVIDENCE
+validation:
+  focused_source_cache_tests: PASS_6_OF_6_LOCAL_IMPLEMENTATION_COUPLED
+  browser_source_mode_timing: NOT_RUN
+  mandatory_pre_edit_backup: PASS_BACKUPS_16_19
+protected_authority:
+  - SOURCE_TEXT_REMAINS_AUTHORITATIVE
+  - DERIVED_DOM_RUNTIME_ONLY
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+highest_risk: "Stale source document surviving source clear/change."
+exact_next_action: "Publish C6 seven-file delta and open stacked draft PR."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T07:01:00+04:00

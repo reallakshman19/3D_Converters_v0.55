@@ -1,0 +1,10 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-COMPLETENESS-20260818
+claim_state: RELEASED_TO_PR627
+replacement: PR627
+authority_domains:
+  - VIBRATION_RESULT_PRESENTATION_HIERARCHY
+  - VIBRATION_COMPLETENESS_PRESENTATION
+last_verified_head: 37991012c02f4c23f98912fe09a01f14d5a2da5f
+coordination_state: MIGRATED_TO_PR627
+merge_authority: OWNER_ONLY_NOT_GRANTED

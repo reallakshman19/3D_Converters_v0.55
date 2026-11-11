@@ -1,0 +1,185 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 781 worker-resident Weight Match scale qualification</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20260930-issue781-worker-weight-api-1';
+
+const SIZES = [10000, 50000, 100000];
+const ISSUE_COUNT = 6;
+const MAX_FRAME_GAP_MS = 250;
+const MAX_RANK_WALL_MS = 5000;
+const encoder = new TextEncoder();
+const coordinator = createMasterDatasetImportCoordinator();
+
+function weightRows(count) {
+  return Array.from({ length: count }, (_, index) => {
+    const isTarget = index === count - 1;
+    return {
+      Bore: isTarget ? 254 : 50 + (index % 100),
+      Rating: isTarget ? '150' : '300',
+      Length: isTarget ? 300 : 200 + (index % 80),
+      'Valve Type': isTarget ? 'GATE VALVE' : 'GENERIC VALVE',
+      Weight: isTarget ? 55 : 10 + (index % 40),
+      marker: isTarget ? `target-${count}` : `row-${index}`,
+    };
+  });
+}
+
+function issues() {
+  return Array.from({ length: ISSUE_COUNT }, (_, index) => ({
+    key: `B1:N${index + 1}`,
+    branchName: 'B1',
+    lineKey: 'P0310051',
+    pipingClass: '61440',
+    nodeNumber: `N${index + 1}`,
+    componentType: 'VALVE',
+    componentRefNo: `VGT-${index + 1}`,
+    nodeName: `VGT-${index + 1}`,
+    boreMm: 254,
+    lengthMm: 300,
+    dtxr: 'GATE VALVE',
+  }));
+}
+
+function previewSnapshot(count) {
+  return {
+    schema: 'xml-cii-preview-rating-snapshot/v2',
+    revision: `scale-${count}`,
+    records: [{
+      branchName: 'B1',
+      branchIdentity: 'B1',
+      lineKey: 'P0310051',
+      lineKeyIdentity: 'P0310051',
+      pipingClass: '61440',
+      pipingClassIdentity: '61440',
+      sizeMm: '254',
+      rating: '150',
+      ratingSource: 'scale-fixture',
+    }],
+  };
+}
+
+async function responsiveMeasure(operation) {
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  let running = true;
+  let last = performance.now();
+  let maxFrameGapMs = 0;
+  let frames = 0;
+  const tick = (now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - last);
+    last = now;
+    frames += 1;
+    if (running) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  const started = performance.now();
+  const value = await operation();
+  const elapsedMs = performance.now() - started;
+  await new Promise((resolve) => requestAnimationFrame((now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - last);
+    frames += 1;
+    running = false;
+    resolve();
+  }));
+  return { value, elapsedMs, maxFrameGapMs, frames };
+}
+
+try {
+  const scales = [];
+  for (const count of SIZES) {
+    const fixtureStarted = performance.now();
+    const payload = encoder.encode(JSON.stringify(weightRows(count)));
+    const fixturePrepMs = performance.now() - fixtureStarted;
+    const buffer = payload.buffer.slice(payload.byteOffset, payload.byteOffset + payload.byteLength);
+
+    const imported = await responsiveMeasure(() => coordinator.openBuffer(
+      'weight',
+      buffer,
+      `weight-scale-${count}.json`,
+      {
+        fieldMapOverride: {
+          bore: 'Bore',
+          rating: 'Rating',
+          length: 'Length',
+          valveType: 'Valve Type',
+          weight: 'Weight',
+        },
+      },
+    ));
+    const ready = imported.value;
+    if (Number(ready?.metadata?.rowCount || 0) !== count) throw new Error(`weight row count mismatch at ${count}`);
+    if (!ready?.metadata?.datasetId) throw new Error(`missing weight datasetId at ${count}`);
+
+    const config = {
+      weight: {
+        masterFingerprint: ready.metadata.masterFingerprint || '',
+        masterRevision: Number(ready.metadata.datasetRevision || 1),
+        useNodeNameValveHints: true,
+        showLengthRejectedSemanticMatches: true,
+      },
+    };
+    const ranked = await responsiveMeasure(() => coordinator.rankWeightIssues(
+      'weight',
+      issues(),
+      config,
+      { ratingMode: 'preview', previewRatingSnapshot: previewSnapshot(count) },
+      ready.metadata.datasetId,
+    ));
+    const result = ranked.value;
+    if (String(result?.datasetId || '') !== String(ready.metadata.datasetId)) throw new Error(`worker dataset mismatch at ${count}`);
+    if (!Array.isArray(result?.issues) || result.issues.length !== ISSUE_COUNT) throw new Error(`worker issue count mismatch at ${count}`);
+    for (const issue of result.issues) {
+      if (issue.rating !== '150') throw new Error(`preview rating not preserved at ${count}: ${issue.rating}`);
+      const best = issue.candidates?.[0];
+      if (!best) throw new Error(`missing Weight Match candidate at ${count}`);
+      if (Number(best.selectedWeight ?? best.weight) !== 55) throw new Error(`unexpected selected weight at ${count}: ${best.selectedWeight ?? best.weight}`);
+      if (best.rowData?.marker !== `target-${count}`) throw new Error(`candidate did not reach final master row at ${count}`);
+      if (Number(best.rowData?._rowIndex || 0) !== count) throw new Error(`final-row index mismatch at ${count}`);
+    }
+
+    const scale = {
+      rows: count,
+      issues: ISSUE_COUNT,
+      payloadBytes: payload.byteLength,
+      fixturePrepMs,
+      workerImportMs: imported.elapsedMs,
+      workerImportMaxFrameGapMs: imported.maxFrameGapMs,
+      workerImportFrames: imported.frames,
+      workerRankMs: ranked.elapsedMs,
+      workerRankMaxFrameGapMs: ranked.maxFrameGapMs,
+      workerRankFrames: ranked.frames,
+      returnedIssues: result.issues.length,
+      candidateMarker: result.issues[0]?.candidates?.[0]?.rowData?.marker || '',
+      candidateRowIndex: Number(result.issues[0]?.candidates?.[0]?.rowData?._rowIndex || 0),
+    };
+    scale.responsive = scale.workerRankMaxFrameGapMs <= MAX_FRAME_GAP_MS;
+    scale.rankCompleted = scale.workerRankMs <= MAX_RANK_WALL_MS;
+    if (!scale.responsive) throw new Error(`Weight worker frame-gap threshold exceeded at ${count}: ${JSON.stringify(scale)}`);
+    if (!scale.rankCompleted) throw new Error(`Weight worker ranking exceeded ${MAX_RANK_WALL_MS}ms at ${count}: ${JSON.stringify(scale)}`);
+    scales.push(scale);
+    await coordinator.releaseMaster('weight');
+  }
+
+  const evidence = {
+    schema: 'XMLCII_ISSUE_781_WORKER_WEIGHT_SCALE_E2E_V1',
+    ok: true,
+    issueCount: ISSUE_COUNT,
+    responsivenessThresholdMs: MAX_FRAME_GAP_MS,
+    rankWallClockThresholdMs: MAX_RANK_WALL_MS,
+    fixturePreparationExcludedFromProductTiming: true,
+    custody: 'Weight master remains worker-resident; browser sends six bounded issue rows and receives ranked results only.',
+    scales,
+  };
+  globalThis.__XML_CII_WORKER_WEIGHT_SCALE_RESULT__ = evidence;
+  globalThis.__XML_CII_WORKER_WEIGHT_SCALE_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} catch (error) {
+  const evidence = { schema: 'XMLCII_ISSUE_781_WORKER_WEIGHT_SCALE_E2E_V1', ok: false, error: String(error?.stack || error) };
+  globalThis.__XML_CII_WORKER_WEIGHT_SCALE_RESULT__ = evidence;
+  globalThis.__XML_CII_WORKER_WEIGHT_SCALE_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} finally {
+  coordinator.dispose();
+}
+</script>

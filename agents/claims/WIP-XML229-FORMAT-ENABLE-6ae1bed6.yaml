@@ -1,0 +1,4 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-XML229-FORMAT-ENABLE-6ae1bed6
+claim_state: FORWARDED
+canonical_claim: agents/claims/PR361.yaml

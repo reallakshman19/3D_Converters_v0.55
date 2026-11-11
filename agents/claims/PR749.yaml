@@ -1,0 +1,24 @@
+schema: engineering-pr-claims-v2
+pr: 749
+claims:
+  - id: p8-source-intake-workflow
+    statement: Repository intake fields now capture the controlled facts required to review one real FlangeFaceBindingSourceRecord.v1 source candidate.
+    classification: PASS_DOCUMENT_INSPECTION
+  - id: p8-no-semantic-inference
+    statement: The intake explicitly prohibits substituting geometry/topology heuristics for controlled physical flange, calculation-face, opening-direction or mating-side semantics.
+    classification: PASS_DOCUMENT_INSPECTION
+  - id: p8-source-authority
+    statement: Source acceptance remains PROJECT_SOURCE_CUSTODY_ONLY and does not grant Code compliance, design authority, governing eligibility, automatic producer authority or solver execution.
+    classification: PASS_DOCUMENT_INSPECTION
+  - id: p8-real-record
+    statement: A real controlled and independently accepted project source record exists.
+    classification: FAIL_NOT_SUPPLIED
+  - id: p8-runtime-producer
+    statement: An automatic FlangeFaceBinding.v1 producer is admitted.
+    classification: NOT_APPLICABLE_NOT_IMPLEMENTED
+  - id: native-validation
+    statement: Exact native numerical validation was run for this documentation-only acquisition leg.
+    classification: NOT_APPLICABLE
+  - id: merge-authority
+    statement: Owner authorized merge of PR749.
+    classification: FALSE_OWNER_AUTHORITY_NOT_GRANTED

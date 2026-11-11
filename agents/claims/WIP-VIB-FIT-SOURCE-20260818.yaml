@@ -1,0 +1,7 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-FIT-SOURCE-20260818
+claim_state: RELEASED
+superseded_by: PR639
+branch: agent/vibration-fit-source-authority-20260818
+coordination_state: MIGRATED_TO_PR639
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,74 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P B3B2-A real Chromium Mode B Worker source custody</title>
+<pre id="report">RUNNING</pre>
+<script type="module">
+import {combineXmlWithNodeOffsets} from '../../converters/xml-cii2019-core/xml-node-offset-combine.js';
+import {startAttestedModeBPreviewWorkerSession} from
+ '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-modeb-session.js';
+import {assertBasisDigest,assertContentDigest,digestUtf8,digestCanonical,canonicalJson}
+ from '../../contracts/gc-pw-v1/contract.mjs';
+const ports={assertBasisDigest,assertContentDigest,digestUtf8,digestCanonical,canonicalJson};
+let heartbeat=[],prev=performance.now();
+const timer=setInterval(()=>{let now=performance.now();heartbeat.push(Math.max(0,now-prev-25));prev=now;},25);
+const complete=result=>{
+ clearInterval(timer);
+ const value={...result,maxHeartbeatGapMs:Math.max(0,...heartbeat)};
+ globalThis.__P3B2A_NATIVE_WORKER_RESULT__=value;
+ document.querySelector('#report').textContent=JSON.stringify(value,null,2);
+};
+try{
+ const response=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml');
+ if(!response.ok)throw Error('Public XML unavailable: '+response.status);
+ const xml=await response.text();
+ const doc=new DOMParser().parseFromString(xml,'application/xml');
+ const rawBranch=doc.getElementsByTagName('Branch').length;
+ const rawNodes=doc.getElementsByTagName('Node').length;
+ if(rawBranch!==9||rawNodes!==541)throw Error('Independent public XML census drift');
+ const originalSources=[
+  {sourceId:'SYS001-A',fileName:'SYS001-A.xml',xmlText:xml},
+  {sourceId:'SYS001-B',fileName:'SYS001-B.xml',xmlText:xml},
+ ];
+ const combined=combineXmlWithNodeOffsets(originalSources,{offsetStep:100000});
+ const combinedSource={sourceId:'SYS001-COMBINED',xmlText:combined.xmlText};
+ const config={
+  modeBManifest:combined.manifest,
+  linelist:{masterRows:Array.from({length:385},(_,i)=>({
+   Service:'SYS','Line Number':String(200000+i),'Piping Class':'P'+String(i%40).padStart(2,'0'),
+   Rating:'150',Material:'A106-B',DN:String(50+(i%10)*25)
+  })),fieldMap:{lineKey1:'Service',lineKey2:'Line Number',lineSeqNo:'Line Number',
+   pipingClass:'Piping Class',rating:'Rating',material:'Material',convertedBore:'DN'}},
+  pipingClass:{masterRows:Array.from({length:10699},(_,i)=>({
+   pipingClass:'P'+String(i%40).padStart(2,'0'),convertedBore:50+(i%10)*25,
+   componentType:'PIPE',rating:'150',materialName:'A106-B',schedule:'40',
+   wallThickness:6+(i%3),corrosion:1.5
+  })),fieldMap:{}},
+  material:{mapRows:Array.from({length:383},(_,i)=>({code:String(1000+i),material:'A106-B'}))},
+  weight:{masterRows:Array.from({length:1595},(_,i)=>({
+   componentType:'VALV',bore:50+(i%10)*25,rating:'150',length:100+(i%8),weight:10+i/10
+  }))},overrides:{},
+ };
+ const progress=[],began=performance.now();
+ const session=await startAttestedModeBPreviewWorkerSession({
+  originalSources,combinedSource,manifest:combined.manifest,config,
+  stagedJsonText:'',ports,requestId:'modeb-real-chromium-1',
+  onProgress:e=>progress.push([e.state,e.stage]),
+ });
+ const result=await session.promise;
+ const first=await result.sourcePages.model.getFacts({basisId:result.basis.basisId,limit:200});
+ const expectedFacts=rawBranch*2*2+rawNodes*2*5;
+ if(first.totalCount!==expectedFacts||first.complete!==false
+   ||result.sourcePages.branchCount!==rawBranch*2
+   ||result.sourcePages.nodeCount!==rawNodes*2
+   ||result.result.branchRows.length!==rawBranch*2
+   ||result.result.fullFactPopulationAccepted!==false
+   ||!progress.some(e=>e[0]==='completed'))
+     throw Error('Full original-source worker custody incomplete');
+ complete({ok:true,elapsedMs:performance.now()-began,
+  branchCount:result.sourcePages.branchCount,nodeCount:result.sourcePages.nodeCount,
+  sourceFactTotalCount:first.totalCount,visiblePageCount:first.items.length,
+  engineeringReady:result.sourcePages.engineeringReady,
+  fullFactPopulationAccepted:result.result.fullFactPopulationAccepted,
+  inputMasterRows:[385,10699,383,1595],
+  sourceType:'PUBLIC_SYS001_DUPLICATED',ownerPrivateAcceptance:false});
+}catch(error){complete({ok:false,error:String(error?.stack||error)})}
+</script>

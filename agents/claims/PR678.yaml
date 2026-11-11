@@ -1,0 +1,37 @@
+schema: AgentClaim.v1
+pr_or_wip: PR678
+claim_state: ACTIVE
+pull_request: 678
+branch: agent/vib-operating-scenario-m5-20260820
+files:
+  exact:
+    - converters/vibration/dataset/operating-scenario.js
+    - converters/vibration/dataset/index.js
+    - tests/vibration-operating-scenario.test.mjs
+    - agents/PR678_workreport.md
+    - agents/status/PR678.yaml
+    - agents/claims/PR678.yaml
+  prefixes:
+    - .backups/connector-20260820-vib-operating-scenario-m5/
+authority_domains:
+  - VIBRATION_OPERATING_SCENARIO_IDENTITY_PROVENANCE
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - converters/vibration/project/*
+  - mechanism equations/applicability/adapters
+  - process actualization/conversion
+  - geometry consistency tolerance
+  - source/master qualification
+  - EI aggregation/coverage/completeness
+  - UI behavior
+  - workflow files
+coordination:
+  PR665: SAFE_NO_EXACT_FILE_OVERLAP_PROJECT_V2
+  ISSUE586: SHARED_READ_GEOMETRY_CONSISTENCY
+  ISSUE588: SHARED_READ_PROCESS_ACTUALIZATION
+  ISSUE429: PARENT_M5_ORCHESTRATOR
+coordination_state: SAFE_NO_EXACT_CONFLICT
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR678
+release_condition: OWNER_REVIEW_AND_EXPLICIT_MERGE_AUTHORIZATION

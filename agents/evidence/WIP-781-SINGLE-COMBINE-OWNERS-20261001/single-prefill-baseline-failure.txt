@@ -1,0 +1,451 @@
+AssertionError [ERR_ASSERTION]: Suggestions must remain populated without a per-row click
+    at file:///C:/CodeA/3DC_live_acceptance/tests/browser/xml-cii-single-combine-owners-e2e.mjs:103:10
+FORMATCONVERTERS
+CONVERTERS, EXCHANGE, MAPPING
+CONVERTERS
+3D Model Converters
+XML→CII 2019 Standalone
+XML Builder
+Basic GLB-PCF
+Universal XML
+Universal Enrichment Workbench
+stagedJson Properties
+StagedJSON→Enriched XML
+EXCHANGE
+Model Exchange
+Interchange Config
+Support Mapping
+Adapter Mapping
+ENGINEERING
+Engineering Calculations
+XML→CII 2019 Standalone
+
+Mode A processes multiple XML files as isolated models; no node or branch identities are merged across files.
+
+Source Mode: XML
+Active Source: Loaded (228.0 KB)
+Separate Models: 1/1
+Branches: 7/7
+Masters: 1/4 loaded
+Master Readiness: Loaded
+Diagnostics: not built
+1 Source & Masters
+2 Regex Tester
+3 Resolver / JSON Trace
+4 Preview
+5 Diagnostics
+6 Weight Match
+7 Support Type Mapper
+8 Config
+9 Propagation Audit
+10 Output / Run
+Processing scope: 7 of 7 branches selected.Review selection
+5 Run
+Run the conversion — optionally analyze PSI116 topology, generate a reviewed TopoFix sidecar, and use only a committed fix for CII.
+Pre-run Summary
+Source	Status	Message
+source mode	xml	0 blocking items
+artifacts	0	available artifacts
+Pre-run Checklist
+ID	Label	Status	Severity	Blocking	Message
+source-loaded	Source loaded	ready	ok	false	Source text or file is available.
+source-kind	Source kind resolved	ready	ok	false	Resolved source kind: xml.
+support-config-valid	Support config valid	ready	ok	false	Support/config JSON is parseable.
+output-mode	Output mode selected	ready	ok	false	Output mode: both.
+import-masters	Import Masters status	ready	ok	false	Master context is available.
+preview-audit	Preview / Diagnostics / Matched Audit status	missing	warning	false	Preview has not been built yet.
+weight-match	Weight Match status	missing	warning	false	Weight Match result is not available.
+support-mapper	Support Type Mapper status	missing	warning	false	Support mapper result is not available.
+run-result	Run result available after run	pending	warning	false	No run result yet.
+regex	Regex status for XML mode	missing	warning	false	Regex tester has not been run yet.
+resolver-json	Resolver / JSON Trace status for XML mode	missing	warning	false	Resolver / JSON Trace has not been built yet.
+manual-restraints	Manual restraints status for XML mode	missing	warning	false	Manual restraint review has not been run yet.
+Readiness
+!
+Line List
+not loaded
+!
+Piping Class Master
+not loaded
+!
+Material Map
+not loaded
+OK
+Valve Weights
+1595 row(s)
+OK
+Sample line key from
+/ASIM-1885-10"-S8810101-91261M7-HC/B1
+S8810101
+Run Options
+Coords Mode
+first
+all
+none
+Create enriched XML before CII
+kg -> N weight conversion (x10)
+PSI116 Topology Sidecar
+Analyze PSI116 topology
+Generate reviewed TopoFix XML
+Use committed TopoFix XML for CII
+Reviewed TopoFix action IDs
+Analysis is non-mutating. TopoFix requires explicit reviewed action IDs and is used for CII only after the atomic transaction commits.
+Run Conversion
+Run - Review Weight Matches
+Opens 4A Weight Match to review approximate weights, then Finalize and Run.
+Refresh readiness / checklist
+Finalise and Run Conversion
+Output Artifacts / Downloads
+Kind	Artifact	Available	Filename	Bytes
+enriched	Enriched XML/InputXML	false		0
+cii	CII	false		0
+diagnostics	Diagnostics JSON	false		0
+manifest	Run Manifest JSON	false		0
+Download Enriched XML/InputXML
+Download CII
+Download Diagnostics JSON
+Download Run Manifest JSON
+CII Preview Canvas
+Download .cii
+Refresh geometry
+Geometry preview: 445 segment(s), 452 node(s), 120 support(s). Drag to orbit, scroll to zoom.
+Run conversion to enable the .cii preview and download.
+Logs
+Level	Source	Message
+warning	readiness	Preview / Diagnostics / Matched Audit status: Preview has not been built yet.
+warning	readiness	Weight Match status: Weight Match result is not available.
+warning	readiness	Support Type Mapper status: Support mapper result is not available.
+warning	readiness	Run result available after run: No run result yet.
+warning	readiness	Regex status for XML mode: Regex tester has not been run yet.
+warning	readiness	Resolver / JSON Trace status for XML mode: Resolver / JSON Trace has not been built yet.
+warning	readiness	Manual restraints status for XML mode: Manual restraint review has not been run yet.
+Run Manifest
+{
+  "schema": "xml-cii-2019-output-run-manifest/v1",
+  "sourceMode": "xml",
+  "outputMode": "both",
+  "sourceBytes": 233472,
+  "masterRowCounts": {
+    "lineList": 0,
+    "pipingClass": 0,
+    "materialMap": 0,
+    "weight": 1595
+  },
+  "regex": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "resolver": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "manualOrSideLoad": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "previewAudit": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "weightMatch": {
+    "issues": 0,
+    "finalized": 0
+  },
+  "supportMapper": {
+    "previewRows": 0,
+    "diagnostics": 0
+  },
+  "topology": {
+    "analyze": false,
+    "generateTopoFix": false,
+    "useTopoFixForCii": false,
+    "selectedActionIds": [],
+    "committed": false,
+    "ciiInputSource": "original"
+  },
+  "artifacts": {
+    "enriched": false,
+    "cii": false,
+    "topologyFindings": false,
+    "topologyPlan": false,
+    "topoFixXml": false,
+    "diagnostics": false,
+    "manifest": false
+  },
+  "branchSelection": {
+    "mode": "all",
+    "sourceBranchCount": 7,
+    "selectedBranchCount": 7,
+    "excludedBranchCount": 0,
+    "selectedGroupCount": 4,
+    "selectedBranches": [
+      "/ASIM-1836-6\"-S8810010-91261M7-HC-01/B1",
+      "/ASIM-1836-2\"-D8810083-91261M7-PP-01/B1",
+      "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B1",
+      "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B6",
+      "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B1",
+      "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B2",
+      "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B6"
+    ],
+    "excludedBranches": [],
+    "selectedBranchOccurrenceIds": [
+      "fnv1a-0fe89c6b-233472::BR-0001",
+      "fnv1a-0fe89c6b-233472::BR-0002",
+      "fnv1a-0fe89c6b-233472::BR-0003",
+      "fnv1a-0fe89c6b-233472::BR-0004",
+      "fnv1a-0fe89c6b-233472::BR-0005",
+      "fnv1a-0fe89c6b-233472::BR-0006",
+      "fnv1a-0fe89c6b-233472::BR-0007"
+    ],
+    "excludedBranchOccurrenceIds": [],
+    "branchOccurrences": [
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0001",
+        "branchIndex": 0,
+        "branchName": "/ASIM-1836-6\"-S8810010-91261M7-HC-01/B1",
+        "displayBranchName": "/ASIM-1836-6\"-S8810010-91261M7-HC-01/B1"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0002",
+        "branchIndex": 1,
+        "branchName": "/ASIM-1836-2\"-D8810083-91261M7-PP-01/B1",
+        "displayBranchName": "/ASIM-1836-2\"-D8810083-91261M7-PP-01/B1"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0003",
+        "branchIndex": 2,
+        "branchName": "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B1",
+        "displayBranchName": "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B1"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0004",
+        "branchIndex": 3,
+        "branchName": "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B6",
+        "displayBranchName": "/ASIM-1836-6\"-S8810011-91261M7-HC-01/B6"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0005",
+        "branchIndex": 4,
+        "branchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B1",
+        "displayBranchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B1"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0006",
+        "branchIndex": 5,
+        "branchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B2",
+        "displayBranchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B2"
+      },
+      {
+        "branchOccurrenceId": "fnv1a-0fe89c6b-233472::BR-0007",
+        "branchIndex": 6,
+        "branchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B6",
+        "displayBranchName": "/ASIM-1836-6\"-S8811956-91261M7-HC-01/B6"
+      }
+    ],
+    "sourceDigest": "fnv1a-0fe89c6b-233472",
+    "selectionDigest": "fnv1a-1994578a-216"
+  }
+}
+Raw JSON advanced/debug
+3D converters
+
+Loading workspace...
+
+🐞
+0 0 0 0 XML 0 Built 0 Guide 0 Stop 0 Rendered 0 Cfg XML(PCFX1) Tol 0.5
+Clear Export
+Logs Trace Supports Events Conversion Scene
+Time	Severity	Category	Message
+Rigid Weights Need Review
+42 rigid node(s) have zero weight and length greater than 6 mm.
+Cancel
+Enter missing weights before conversion. Suggestions use the resolved Rating from explicit overrides, Piping Class master, or Regex extraction. DTXR Rating is comparison evidence only unless explicitly fetched in Preview.
+42
+39
+0
+0
+3
+93%
+Branch	Bore	Rating	Node	DTXR	Length	Manual Weight	Nearest Suggestions
+
+/ASIM-1836-6"-S8810010-91261M7-HC-01 · DN150 · 1 node(s)
+
+/ASIM-1836-6"-S8810010-91261M7-HC-01/B1	150 mm		20	Not found	147.0 mm		
+⚠ Prior Match-1 57.25 kg invalidated · changed: rating
+* 59 kg · Exact master match · confidence 100%
+
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01 · DN50 · 6 node(s)
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		606	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		608	Not found	368.0 mm		
+* 75.001 kg · Exact master match · confidence 100%
+* 56.001 kg · Exact master match · confidence 100%
+* 47.001 kg · Exact master match · confidence 100%
+* 95.001 kg · Exact master match · confidence 100%
+* 93.001 kg · Exact master match · confidence 100%
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		610	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		646	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		648	Not found	368.0 mm		
+* 74.999 kg · Exact master match · confidence 100%
+* 55.999 kg · Exact master match · confidence 100%
+* 46.999 kg · Exact master match · confidence 100%
+* 94.999 kg · Exact master match · confidence 100%
+* 92.999 kg · Exact master match · confidence 100%
+
+/ASIM-1836-2"-D8810083-91261M7-PP-01/B1	50 mm		650	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01 · DN150 · 15 node(s)
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100070	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100070	Not found	610.0 mm		
+* 365 kg · Exact master match · confidence 100%
+* 327 kg · Exact master match · confidence 100%
+* 263 kg · Exact master match · confidence 100%
+* 378 kg · Exact master match · confidence 100%
+* 538 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100070	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100190	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100190	Not found	610.0 mm		
+* 365 kg · Exact master match · confidence 100%
+* 327 kg · Exact master match · confidence 100%
+* 263 kg · Exact master match · confidence 100%
+* 378 kg · Exact master match · confidence 100%
+* 538 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100190	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100280	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100280	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	508.0 mm		
+303.967 kg · flange-length-extrapolated · confidence 45%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	508.0 mm		
+303.967 kg · flange-length-extrapolated · confidence 45%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B1	150 mm		~100340	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8810011-91261M7-HC-01/B6	150 mm		~100730	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01 · DN150 · 11 node(s)
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200060	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200060	Not found	610.0 mm		
+* 365 kg · Exact master match · confidence 100%
+* 327 kg · Exact master match · confidence 100%
+* 263 kg · Exact master match · confidence 100%
+* 378 kg · Exact master match · confidence 100%
+* 538 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200060	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200180	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200180	Not found	610.0 mm		
+* 365 kg · Exact master match · confidence 100%
+* 327 kg · Exact master match · confidence 100%
+* 263 kg · Exact master match · confidence 100%
+* 378 kg · Exact master match · confidence 100%
+* 538 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200180	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200270	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200270	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01 · DN80 · 3 node(s)
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	80 mm		~200340	Not found	109.0 mm		
+* 17 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	80 mm		~200340	Not found	400.0 mm		
+112.336 kg · flange-length-extrapolated · confidence 45%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	80 mm		~200340	Not found	109.0 mm		
+* 17 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B1	150 mm		~200410	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01 · DN50 · 6 node(s)
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200070	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200070	Not found	368.0 mm		
+* 75 kg · Exact master match · confidence 100%
+* 56 kg · Exact master match · confidence 100%
+* 47 kg · Exact master match · confidence 100%
+* 95 kg · Exact master match · confidence 100%
+* 93 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200070	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200520	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200520	Not found	368.0 mm		
+* 75 kg · Exact master match · confidence 100%
+* 56 kg · Exact master match · confidence 100%
+* 47 kg · Exact master match · confidence 100%
+* 95 kg · Exact master match · confidence 100%
+* 93 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B2	50 mm		~200520	Not found	109.0 mm		
+* 15 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B6	150 mm		~200420	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+
+/ASIM-1836-6"-S8811956-91261M7-HC-01/B6	150 mm		~200840	Not found	147.0 mm		
+* 59 kg · Exact master match · confidence 100%
+BLOCKED: 39 safe, 0 review, 3 blocked.
+Apply Rating as per DTXR
+Apply nearest suggestions
+Skip Review
+Apply Weights and Continue
+Errors: 

@@ -1,0 +1,48 @@
+schema: AgentClaim.v1
+pr_or_wip: PR668
+claim_state: ACTIVE
+pull_request: 668
+branch: agent/vibration-right-rail-case-action-20260819
+files:
+  exact:
+    - tabs/vibration-roadmap-workspace-routing.js
+    - tabs/vibration-roadmap-panel.js
+    - tabs/vibration-roadmap-controller.js
+    - tests/vibration-roadmap-case-action-routing.test.mjs
+    - .backups/connector-20260819-vib-right-rail-case-action/tabs/vibration-roadmap-panel.js
+    - .backups/connector-20260819-vib-right-rail-case-action/tabs/vibration-roadmap-controller.js
+    - agents/PR668_workreport.md
+    - agents/status/PR668.yaml
+    - agents/claims/PR668.yaml
+    - agents/WIP-VIB-RIGHT-RAIL-CASE-ACTION-20260819_workreport.md
+    - agents/status/WIP-VIB-RIGHT-RAIL-CASE-ACTION-20260819.yaml
+    - agents/claims/WIP-VIB-RIGHT-RAIL-CASE-ACTION-20260819.yaml
+  prefixes: []
+authority_domains:
+  - RIGHT_RAIL_CASE_ACTION_NAVIGATION
+  - ROADMAP_CONTROLLER_EXISTING_WORKSPACE_TAB_ROUTING
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - next-action engineering semantics
+  - mechanism applicability
+  - AssessmentCompleteness.v1 semantics
+  - project persistence or case identity
+  - numerical calculations or masters
+  - AIV readiness/calculator authority
+  - FIT production-freeze adapter authority
+  - engineering disposition verification design code safety root-cause authority
+  - shared UI cache custody owned by PR649
+  - workflow files
+coordination:
+  PR658: MERGED_SELECTED_CASE_STATUS_PREDECESSOR
+  PR667: MERGED_RIGHT_RAIL_PREDECESSOR
+  PR649: ACTIVE_SHARED_UI_CACHE_CUSTODY_OVERLAP_REMOVED_BYTE_FOR_BYTE
+  PR665: OPEN_PROJECT_V2_NO_FILE_OVERLAP
+  PR517: OPEN_AIV_PF02_NO_FILE_OVERLAP
+  PR539: OPEN_FIT_FREEZE_NO_FILE_OVERLAP
+  PR615: MERGED_STALE_ROADMAP_CONTROLLER_CLAIM
+  PR669: MERGED_HP_KD320_NO_FINAL_PATH_OVERLAP
+coordination_state: SAFE_AFTER_CURRENT_MAIN_RECONCILIATION
+merge_authority: OWNER_GRANTED_FOR_PR668_2026_08_19

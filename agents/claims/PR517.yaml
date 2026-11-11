@@ -1,0 +1,35 @@
+schema: AgentClaim.v1
+pr_or_wip: PR517
+claim_state: ACTIVE_BLOCKED_PRODUCTION_MUTATION
+branch: agent/aiv-pf02-readiness-contract-20260815
+files:
+  exact:
+    - converters/vibration/aiv/aiv-readiness.js
+    - converters/vibration/aiv/aiv-calculator.js
+    - tests/vibration-aiv-executable-contract.test.mjs
+    - ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-manifest.json
+    - ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-before.json
+    - ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-after.json
+    - ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-benchmark.json
+    - ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-current-head-source-reproduction.json
+    - agents/PR517_workreport.md
+    - agents/status/PR517.yaml
+    - agents/claims/PR517.yaml
+  conditional_candidates:
+    - converters/vibration/aiv/aiv-executable-contract.js
+authority_domains:
+  - AIV_READINESS_EXECUTABLE_PARITY
+  - AIV_PRODUCTION_FREEZE_EVIDENCE
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+production_mutation_gate: LIVE_CURRENT_HEAD_REPRODUCTION_REQUIRED
+notes:
+  - "Current takeover Appendix A is PASS 95/100 but scope-limited to evidence/recovery work; production mutation remains blocked by PF-02's live-product-first gate."
+  - "Current source contracts show concrete unit and pressure-order readiness/execution parity mismatches; supporting extracted source-logic execution is not a browser or registered-API PASS."
+  - "PR #506 overlaps readiness/calculator and remains SALVAGE_CANDIDATE only. Its executable-contract candidate contains PF-03 simultaneous-group semantics and must not be replayed wholesale."
+  - "Do not modify the shared engineering-calculation engine unless live reproduction proves the AIV-specific validation hook is insufficient."
+  - "No claim over PF-01 canvas filter, PF-03 group semantics, master authority, stale async custody, export lineage, numerical equations, frozen benchmark values, SVG physical-distance authority, screening result scope or design authority."
+  - "No SOURCE_INSPECTION or extracted-logic result may be promoted to FULL_BROWSER_PASS."
+backup_branch: backup/pr517-pre-reground-20260819
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR517

@@ -1,0 +1,31 @@
+pr: 733
+chain_id: ENGCALC-BOLTED-JOINTS
+endpoint: EP-0023
+state: BLOCKED_AUTO
+mission: P4_P5_FLANGE_SOURCE_QUALIFICATION
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+branch: docs/engcalc-p4-p5-source-qualification-20260904
+authority:
+  source_role: LEGACY_REFERENCE_AND_BENCHMARK
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+  production_authorized: false
+p4:
+  source: docs/flange/flange design to BS5500.xls
+  state: BLOCKED_SOURCE_DETAIL
+  next_gate: exact_formula_level_controlled_source_and_independent_benchmark
+p5:
+  source: docs/flange/Integral-type Flange Rigidity Calc - ASME VIII Div 2 App M - UNCHECKED.xls
+  state: BLOCKED_UNCHECKED_SOURCE_AND_EQUATIONS
+  next_gate: checked_source_complete_equations_current_applicability_and_independent_benchmark
+prior_gates:
+  p2_pr731_exact_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  p3_pr732_supporting: PASS_18_OF_18_SOURCE_RECONSTRUCTED
+  p3_pr732_exact_native: NOT_RUN_ENVIRONMENT_BLOCKED
+workflow_change: false
+calculation_code_change: false
+registry_change: false
+master_data_change: false
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Recover or obtain formula-level controlled P4 source before detailed flange-strength implementation; keep P5 blocked until its unchecked embedded-equation source is qualified.

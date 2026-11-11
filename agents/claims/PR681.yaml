@@ -1,0 +1,32 @@
+schema: AgentClaim.v1
+pr_or_wip: PR681
+claim_state: ACTIVE
+pull_request: 681
+branch: agent/hp-production-browser-qualification
+authority_domains:
+  - HP_PIPING_CLASS_PRODUCTION_BROWSER_QUALIFICATION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - package.json
+    - scripts/validate-hp-piping-class-production-browser.mjs
+    - tests/hp-piping-class-production-browser-script.test.mjs
+    - agents/PR681_workreport.md
+    - agents/status/PR681.yaml
+    - agents/claims/PR681.yaml
+exclusions:
+  - HP engineering equations
+  - native KD320 implementation or qualification
+  - Code compliance authority
+  - design authority
+  - evidence/source/custody gate promotion
+  - HP workbench production behavior
+  - vibration production files
+claims:
+  - Chromium/CDP browser qualification infrastructure added without Playwright or Puppeteer dependency.
+  - FULL_APP, SOURCE_INJECTION and SELF_TEST_ONLY evidence levels are explicitly distinct.
+  - Current-environment Chromium CDP self-test passed but does not qualify the full HP product flow.
+  - Full HP browser qualification remains NOT_RUN until a native checkout executes FULL_APP mode.
+merge_authority: OWNER_AUTHORIZED_FOR_BOUNDED_NEXT_INCREMENT

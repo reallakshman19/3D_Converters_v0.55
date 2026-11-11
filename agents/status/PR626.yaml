@@ -1,0 +1,34 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR626
+mission: Remove duplicated vibration capability-state truth without changing numerical or governing authority.
+workstream: VIBRATION_CAPABILITY_PROJECTION
+branch: agent/vibration-capability-consistency-20260818
+pr_head: fea73c209ba4653d56b73caa2ba0d8aafa08a958
+implementation_head: c7b8442621ed1e1b67c4abe507a29fc44390fb50
+main_head_last_checked: bca7fc9390c018753d09161052b0bf2fd54e33ce
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE_DRAFT_HANDOVER
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR626_workreport.md
+report_head: c7b8442621ed1e1b67c4abe507a29fc44390fb50
+appendix_a_status: NOT_REQUIRED_NEW_OWNER_DIRECTED_WORK
+grounding_epoch: GE-003
+current_stage: DRAFT_HANDOVER
+blocker: REPOSITORY_NATIVE_EXECUTION_UNAVAILABLE
+highest_risk: Calculator availability must never imply AIV matrix or governing screening authority.
+dependencies:
+  - merged PR615 EIT/registry architecture
+  - landed mechanism coverage architecture
+validation:
+  source_and_diff_inspection: PASS
+  focused_node_regression: NOT_RUN
+  matrix_node_regression: NOT_RUN
+  hosted_statuses: NOT_RUN_ZERO_RETURNED
+  hosted_pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+  browser: NOT_RUN
+exact_next_action: Execute focused capability and matrix Node regressions in a complete checkout; keep PR draft pending executable validation/review.
+last_updated: 2026-08-18T13:56:00Z
+merge_authority: OWNER_ONLY_NOT_GRANTED

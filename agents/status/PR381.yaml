@@ -1,0 +1,14 @@
+schema: AgentStatus.v1
+pr: 381
+branch: fix/xml229-pr380-native-mainline-20261102
+base: main
+state: DRAFT_MAINLINE_INTEGRATION_FIX_NOT_FINAL_RELEASE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+source_gap: PR380_MERGED_TO_ALREADY_MERGED_FEATURE_BRANCH_NOT_MAIN
+validation_record: ValidationRecords/xml229-pr381-mainline-native-scope-recovery.json
+native_scope_patch: COPIED_FROM_PR380_EXACT_BLOBS
+local_synthetic_test: INHERITED_PR380_PASS_NOT_RERUN_PR381
+exact_head_ci: PENDING
+governed_native_output: NOT_RUN
+cii_release_authority: HELD
+exact_next_action: Complete CI and rerun exact 139-owner governed source basis to distinguish 38 conflicts by mandatory/excluded scope, then independently verify native CII.

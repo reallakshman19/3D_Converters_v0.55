@@ -1,0 +1,60 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: ACTIVE_AUTO
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - converters/engineering-calculations/adapters/flange-ug44.js
+  - converters/engineering-calculations/flange/master-store.js
+  - converters/engineering-calculations/flange/ug44-master-resolver.js
+  - converters/engineering-calculations/bolts/short-form.js
+  - converters/engineering-calculations/bolts/master-store.js
+  - converters/engineering-calculations/bolts/short-form-master-resolver.js
+  - converters/engineering-calculations/bolts/group-loads.js
+  - converters/engineering-calculations/bolts/detailed-friction.js
+  - tests/flange-ug44-core.test.mjs
+  - tests/flange-ug44-registry.test.mjs
+  - tests/flange-master-store.test.mjs
+  - tests/bolt-short-form.test.mjs
+  - tests/bolt-master-store.test.mjs
+  - tests/bolt-group-loads.test.mjs
+  - tests/bolt-detailed-friction.test.mjs
+  - scripts/calc-flange-ug44.mjs
+  - scripts/calc-bolt-short-form.mjs
+  - scripts/calc-bolt-group-loads.mjs
+  - scripts/calc-bolt-detailed-friction.mjs
+shared_paths_currently_modified:
+  - converters/engineering-calculations/default-registry.js
+  - converters/engineering-calculations/index.js
+evidence_paths:
+  - docs/engineering-calculations/flange-ug44-source-register.md
+  - docs/engineering-calculations/bolt-short-form-source-register.md
+  - docs/engineering-calculations/bolt-detailed-friction-source-register.md
+authority_claims:
+  - flange-rated-load-ug44-benchmark-kernel
+  - flange-joint-local-load-resolution
+  - benchmark-only-ug44-engineering-calculation-registration
+  - non-authorizing-flange-master-custody
+  - bolt-short-form-reference-kernel
+  - non-authorizing-bolt-master-custody
+  - linear-bolt-group-reference-distribution
+  - detailed-v-thread-friction-reference-kernel
+  - legacy-linearized-detailed-torque-comparator
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+auto_state: DETAILED_FRICTION_REFERENCE_COMPLETE
+protected_authority:
+  engineering_authority: NONE_FOR_NEW_BOLT_REFERENCE_METHODS
+  ug44_calculation_state: BENCHMARK_ONLY
+  bolt_short_form_state: REFERENCE_KERNEL_ONLY
+  bolt_detailed_friction_state: REFERENCE_KERNEL_ONLY
+  master_authority_ceiling: ENGINEERING_SANDBOX
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+hard_stops:
+  - Real bolt thread/material/friction master data remain unqualified.
+  - Exact native full-repository execution remains unavailable; source-reconstructed PASS must not be relabeled native PASS.
+next_shared_mutation_gate: Central registration/UI remains a separate shared-file patch; re-ground overlap and backup/validation constraints before that mutation.
+exact_next_action: Implement installation torsional stress plus combined axial/torsional von-Mises utilization using thread torque only and explicit stress-section diameter, with independent analytical fixtures and no central registration in the same patch.

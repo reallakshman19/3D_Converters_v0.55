@@ -1,0 +1,12 @@
+schema: AgentStatus.v1
+pr_or_wip: PR357
+state: SUBMITTED_DRAFT_REVIEW_HELD
+report: agents/PR357_workreport.md
+branch: fix/xml229-json-restraints-body-bore-6ae1bed6
+wbs: [CIIFR-R4-6.6-M30, CIIFR-R4-6.7-M31]
+report_basis_head: e754779ff4f6155021b8fa312cec5151be8338c9
+exact_next_action: Review PR357 and historical CI holds; complete separately authorized Owner live/native CAESAR acceptance. Page84 Test artifacts prepared, not deployed.
+merge_authority: OWNER_ONLY_NOT_GRANTED
+ci_source_head: e754779ff4f6155021b8fa312cec5151be8338c9
+ci_summary: 71_PASS_16_HISTORICAL_PREFLIGHT_FAIL
+page_draft_head: 5fc417c42a205f9cbea5610ac5d029db3f08c018

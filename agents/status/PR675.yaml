@@ -1,0 +1,30 @@
+schema: AgentStatus.v1
+pr_or_wip: PR675
+pull_request: 675
+branch: agent/vib-source-campaign-runner-20260820
+base: main
+base_sha: 9404e7d0da6a47337ee3910c9d86bcf4ce1a979f
+report_basis_head: c374b4eccc34ada01b63cd6eb531c7e0032b0539
+state: OWNER_AUTHORIZED_READY_TO_MERGE
+criticality: ENGINEERING_CRITICAL_SOURCE_CUSTODY
+coordination_state: REPLAYED_ON_CURRENT_MAIN_NO_EXACT_CONFLICT
+validation:
+  grounding: PASS_SOURCE_INSPECTION
+  stale_base_detection: PASS_DIVERGED_2_BEHIND
+  replay_on_current_main: PASS
+  exact_changed_file_negative_assurance: PENDING_FINAL_RECONCILIATION
+  reconstructed_campaign_suite: PASS_7_OF_7_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  source_preflight_before_pdftotext: PASS_RECONSTRUCTED_AND_SOURCE_INSPECTION
+  controlled_pdf_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  repository_native_test: NOT_RUN_ENVIRONMENT_BLOCKED
+authority:
+  purpose: SOURCE_EXTRACTION_CAMPAIGN_EVIDENCE_ONLY
+  engineering_authority_changed: false
+  screening_authority_changed: false
+  design_authority_changed: false
+  master_values_published: false
+  page_inference_allowed: false
+  anchor_inference_allowed: false
+  partial_campaign_authoritative: false
+merge_authority: OWNER_AUTHORIZED_FOR_PR675_2026_08_20
+exact_next_action: FINAL_RECONCILIATION_THEN_SQUASH_MERGE_EXPECTED_HEAD

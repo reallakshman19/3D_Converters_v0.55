@@ -1,0 +1,54 @@
+{
+  "schema": "kd320-high-pr-reconciliation/v1",
+  "sourceSnapshot": {
+    "repository": "reallaksh19/Advanced_Analysis",
+    "commit": "0b3d73393fcec4b6052e0ea18c3733b8e192e90d",
+    "path": "docs/High Pr",
+    "files": [
+      {"name": "B313_CHAPTER_IX_MASTER_DATA_SPECIFICATION.md", "gitBlobSha": "fac06a0098b637bd1ad1031df95b861209727020", "required": true},
+      {"name": "method_manifest.csv", "gitBlobSha": "a34af2063105db4dae59003ebe77704b95541e81", "required": true},
+      {"name": "fatigue_route.csv", "gitBlobSha": "6a7b603951c34586da292812e7e38a3a19499aae", "required": true},
+      {"name": "fatigue_curve.csv", "gitBlobSha": "997fa0a863c9887d64472aabab1d3ac58be60ad4", "required": true},
+      {"name": "fatigue_curve_point.csv", "gitBlobSha": "d773a01bf550e343dddf5b3ac85f328d859116f9", "required": true},
+      {"name": "material_property.csv", "gitBlobSha": "b168183e579e72849842a50a607d8d8f0067d85d", "required": true},
+      {"name": "benchmark_case.csv", "gitBlobSha": "b9837c7e66529b71d5af9c946affb9e6e4967dd3", "required": true},
+      {"name": "code_source_revision.csv", "gitBlobSha": "33367b2e471ccb5189327a9d06c38ac34cd72582", "required": true}
+    ]
+  },
+  "target": {
+    "methodId": "B313-CH9-PF-2024-R1",
+    "methodRevision": "1.0.0",
+    "b313Edition": "2024",
+    "viii3SourceId": "SRC-VIII3-2025",
+    "kd3MethodId": "KD3-FATIGUE-001",
+    "routeId": "ROUTE-KD3-2024",
+    "stressBasis": "TRESCA_STRESS_INTENSITY",
+    "seqRoute": "KD320_MEAN_STRESS_CORRECTION",
+    "meanStressRoute": "ALGEBRAIC_MEAN_STRESS",
+    "carbonCurveId": "VIII3-KD3-CS-001",
+    "stainlessCurveId": "VIII3-KD3-SS-001",
+    "nickelCurveId": "VIII3-KD3-NICKEL-001",
+    "interpolationRule": "LOG_LOG",
+    "extrapolationAllowed": "FALSE",
+    "applicability": "STRAIGHT_PIPE_REMOTE_FROM_DISCONTINUITY"
+  },
+  "authority": {
+    "evidenceClass": "PROJECT_MASTER_DEVELOPMENT_EVIDENCE",
+    "canSatisfyControlledSourceReceipt": false,
+    "canPromoteQ1SemanticItem": false,
+    "q1EvidenceStateMayChange": false,
+    "nativeCoreKd3Qualified": false,
+    "codeCompliance": false,
+    "canUseForDesignAuthority": false
+  },
+  "nativeSemanticBlockers": [
+    "CONTROLLED_VIII3_SOURCE_RECEIPT_PENDING",
+    "KD320_GOVERNING_STRESS_PAIR_OR_PLANE_RULE_NOT_CONTROLLED",
+    "KD320_ASSOCIATED_MEAN_STRESS_DEFINITION_NOT_CONTROLLED",
+    "KD320_COMPRESSION_AND_ZERO_MEAN_BRANCH_NOT_CONTROLLED",
+    "KD320_CORRECTION_PARAMETER_SELECTION_NOT_CONTROLLED",
+    "KD320_YIELD_STRENGTH_ROLE_AND_TEMPERATURE_BASIS_NOT_CONTROLLED",
+    "KD320_SEQ_VALIDITY_LIMITS_NOT_CONTROLLED",
+    "CLASS_E_NUMERICAL_KD320_ORACLE_NOT_RETAINED"
+  ]
+}

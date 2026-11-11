@@ -1,0 +1,34 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: PR611
+pull_request: 611
+branch: agent/xml-cii-c4b-config-routing-20260818-0759
+base_main: e93cf16b9670a9876135a659b4f26506857b2c36
+workstream: XML_CII_STANDALONE_PERFORMANCE
+stage: C4B_COMPLETE_ACTIVE_CONFIG_REVISION_ROUTING
+criticality: ENGINEERING_CRITICAL
+state: QUALIFIED_DRAFT_PENDING_OWNER_MERGE_AUTHORITY
+coordination: SAFE_EXACT_FILES_SEMANTIC_COORDINATION_REQUIRED
+appendix_a: 98/100
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_THIS_NEW_STAGE_PR
+validation:
+  pre_edit_blob_verification: PASS_7_OF_7
+  native_backup_gate: PASS_7_OF_7
+  syntax: PASS_BOUNDED_PRODUCTION_MODULES
+  original_c4b_routing_suite: PASS_5_OF_5
+  expanded_active_save_routing_suite: PASS_4_OF_4
+  existing_c4_revision_suite: PASS_9_OF_9
+  mode_a_dependency_routing_suite: PASS_2_OF_2
+  combined_focused_validation: PASS_20_OF_20
+  browser_lifecycle: NOT_RUN
+  broader_release_qualification: NOT_RUN
+  github_checks: REFRESH_REQUIRED_FINAL_HEAD
+  reviews: REFRESH_REQUIRED_FINAL_HEAD
+  mergeability: REFRESH_REQUIRED_FINAL_HEAD
+negative_assurance:
+  - NO_SUPPORT_GAP_SEMANTIC_CHANGE
+  - NO_CII_WRITER_OR_RUNTIME_CHANGE
+  - NO_FORMULA_UNIT_TOPOLOGY_CHANGE
+  - NO_WORKER_ADMISSION
+  - NO_WORKFLOW_FILE_CHANGE
+exact_next_action: Refresh live PR611 diff, checks, reviews and mergeability. Leave unmerged absent explicit PR611 merge authorization; after landing continue C5 dependency-specific Preview recomputation.

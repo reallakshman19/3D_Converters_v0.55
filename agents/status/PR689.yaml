@@ -1,0 +1,25 @@
+schema: AgentStatus.v1
+pr_or_wip: PR689
+pull_request: 689
+branch: agent/hp-class-intake-package
+base: main
+base_sha_at_normalization: 1d0e9245f9a6333ce43fb8085602ec112241a411
+predecessor_pr: 687
+predecessor_merge: 2fc9f593bd235a92df6589919f7f21e02b366311
+state: DRAFT_NATIVE_CI_PENDING
+criticality: HP_PRODUCTION_PRODUCTIVITY
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+validation:
+  main_normalization: PASS
+  implementation_paths: PASS_9_INTENDED_BEFORE_RECOVERY
+  package_native_node_suite: NOT_RUN_CI_PENDING
+  hp_real_workbench_gate: NOT_RUN_CI_PENDING
+  hp_i1_i3_gate: NOT_RUN_CI_PENDING
+  full_app_browser: NOT_RUN
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED_FOR_PR689
+next_action: TRIGGER_AND_RECONCILE_NATIVE_PR_CI

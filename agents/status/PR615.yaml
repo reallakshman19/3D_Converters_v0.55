@@ -1,0 +1,40 @@
+id: PR615
+state: CLOSURE_READY
+criticality: ENGINEERING_CRITICAL
+branch: agent/vibration-eit-roadmap-20260818
+base_branch: main
+report_basis_head: 23046ac38fbfb269d264999d86a35034eda9de2a
+live_main_at_merge_gate: eef94949961970171d1366f5b6a9d421b3cc0d9f
+mission: Generic EIT/project/source/roadmap integration, fail-closed mechanism reduction/EI aggregation, FIT natural-frequency custody, field measurement evidence custody/persistence, and measurement-driven resizable right-roadmap presentation.
+overlap: COORDINATION_REQUIRED_KNOWN
+merge_authority: GRANTED_BY_OWNER_2026-08-18T12:14:19Z
+handover_readiness: READY
+validation:
+  stage7_focused_reconstruction: PASS_10_OF_10
+  stage7_exact_modified_blob_parity: PASS
+  stage7_size_guard_controller: PASS_269_LINES
+  stage7_browser_interaction: NOT_RUN
+  repository_native_complete_checkout: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+  commit_statuses: NONE_RETURNED_NOT_PASS
+  pr_workflow_runs: NONE_RETURNED_NOT_PASS
+merge_gate:
+  preclosure_head: ccc0a92becbb2b605dcdf00b373851789e5199f7
+  closure_record_commit: 23046ac38fbfb269d264999d86a35034eda9de2a
+  relation_before_closure_record: AHEAD_96_BEHIND_8_DIVERGED
+  base_drift: NON_OVERLAPPING_XML_CII_ONLY
+  reviews: 0
+  review_threads: 0
+coordination:
+  shared_tab_overlap: PR506_KNOWN_NO_NEW_STAGE7_SHARED_TAB_MUTATION
+  mechanism_workspaces: PR479_PR506_PR508_OPEN_NEIGHBORING_WORK
+  mechanism_coverage: PR571_OPEN_NEIGHBORING_WORK
+invariants:
+  - MEASUREMENT_EVIDENCE_NE_SCREENING_RESULT
+  - ROADMAP_DATA_STATE_NE_ASSESSMENT_COMPLETE
+  - SELECTED_LINE_ONLY_MEASUREMENT_PRESENTATION
+  - ROADMAP_RESIZE_NE_ENGINEERING_STATE
+  - NO_SIGNAL_PROCESSING_MATH
+  - NO_UNQUALIFIED_MULTI_ITEM_REDUCER
+  - NO_DESIGN_AUTHORITY_PROMOTION
+exact_next_action: Mark PR615 ready if required by GitHub, merge using expected current head, then verify merged PR state and live main SHA. Missing native/browser/independent-review evidence remains NOT_RUN after merge.

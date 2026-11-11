@@ -1,0 +1,18 @@
+schema: AgentStatus.v1
+pr_or_wip: PR378
+state: DRAFT_PARTIAL_E2E_PROVEN_GOVERNED_FINAL_HELD
+report: agents/PR378_workreport.md
+issue: https://github.com/reallakshman19/3D_Converters/issues/376
+pr_url: https://github.com/reallakshman19/3D_Converters/pull/378
+branch: fix/xml229-preview-substage-timing-20261101
+base: 2477a6fdee1002d5063bc51e94777ba940e6fa82
+implementation_tested_head: 182218290fbce6624d322ffb156434c8eb567100
+report_basis_head: 182218290fbce6624d322ffb156434c8eb567100
+criticality: ENGINEERING_CRITICAL
+validation: FOCUSED_NODE_PASS_7_REAL_PYTHON_PASS_REAL_CHROMIUM_WORKER_2_PASS_UI_CLICK_CII_DOWNLOAD_PASS_SYNTAX_PASS_FULL_JSON_WEIGHT_UI_FAIL_GOVERNED_NATIVE_FINAL_NOT_PROVEN
+evidence_run: https://github.com/reallakshman19/3D_Converters/actions/runs/41361694868
+cii_sha256: b4b563854f5ad647cd72d8a985436961a855b0a5f731c7b2a50f06eea227e32a
+review_mode: AUTHOR_IMPLEMENTATION_ONLY
+merge_authority: OWNER_ONLY_NOT_GRANTED
+coordination: COORDINATION_REQUIRED_PRS_260_253
+next_action: Keep draft; coordinate overlapping Worker PR260; independently resolve remaining full JSON Weight UI advisory and verify actual accepted Final packet native mass/geometry release in separate approved scope

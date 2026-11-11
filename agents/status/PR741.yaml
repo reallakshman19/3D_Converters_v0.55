@@ -1,0 +1,29 @@
+pr: 741
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8-3D-INTEGRATION-CONTRACT
+state: BLOCKED_AUTO
+base_pr: 739
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+predecessor_merge: 7943f5a4eab762d34de94264652da4a88742faca
+material_head: 4b91ccfc4aecc3249910a8782bd246fd27362207
+latest_endpoint: EP-0030
+authority:
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_inspection: PASS
+  contract_definition: PASS
+  production_execution: NOT_APPLICABLE
+  browser: NOT_APPLICABLE
+  independent_engineering_review: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+boundaries:
+  automatic_model_route: false
+  flange_face_frame: BLOCKED
+  signed_six_dof_load_source: BLOCKED
+  exact_master_binding: BLOCKED
+  p3_dependency_in_stack: false
+next_action: Reconcile common P3 mechanics into P8 ancestry and qualify explicit flange-face frame plus signed six-DOF load-case source, then implement a pure resolver/transform layer only.
+merge_authority: OWNER_ONLY
+merge_authorized: false

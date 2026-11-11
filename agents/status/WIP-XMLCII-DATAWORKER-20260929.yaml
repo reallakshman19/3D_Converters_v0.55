@@ -1,0 +1,21 @@
+work_id: WIP-XMLCII-DATAWORKER-20260929
+state: ACTIVE
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: MANUAL
+repository: reallaksh19/3D_Converters
+base_branch: main
+base_sha: cd8e32d97f0a52d3ec40ed6b3a7112f16b8db520
+branch: agent/xml-cii-master-dataset-worker-20260929
+source_issue: 776
+merge_authority: OWNER_ONLY_NOT_GRANTED
+mutation_authority: WRITE_ALLOWED
+coordination: COORDINATION_REQUIRED_NOT_BLOCKED
+appendix_a:
+  total: 96
+  minimum: 18
+  disposition: QUALIFIED_FOR_BOUNDED_XMLCII_DATASET_WORKER_IMPLEMENTATION
+current_stage: DRAFT_PR_ALLOCATION
+highest_risk: master-data custody changes accidentally alter APPLIED engineering authority
+existing_file_backup_gate: REQUIRED_NOT_RUN
+next_action: open draft PR and implement additive worker protocol/client/worker tests only

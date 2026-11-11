@@ -1,0 +1,30 @@
+schema: AgentStatus.v1
+pr_or_wip: PR697
+pull_request: 697
+branch: agent/vib-m14-action-verification-custody-20260821
+base: main
+base_sha_at_start: 55eade922b061830db70b45a22e8f328ef005e02
+predecessor_pr: 695
+predecessor_state: MERGED
+state: DRAFT_READY_FOR_OWNER_REVIEW
+criticality: ENGINEERING_CRITICAL_MEASUREMENT_VERIFICATION_CUSTODY
+validation:
+  current_main_grounding: PASS_MAIN_55EADE92
+  existing_measurement_verification_contract_audit: PASS
+  exact_changed_path_scope: PASS_5_INTENDED
+  line_policy: PASS_298_266
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  browser: NOT_APPLICABLE_FOUNDATION_SLICE
+  independent_numerical: NOT_APPLICABLE
+hosted_reconciliation:
+  observed_head: 3cf179da94f5119b5e1f07bbbd943681712d61ce
+  changed_files: 5
+  mergeable: true
+  branch_relation: AHEAD_15_BEHIND_0
+  commit_status_checks: NOT_RUN_ZERO_RETURNED
+  pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+  reviews: 0
+  review_threads: 0
+  comments: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: OWNER_REVIEW_OR_MERGE_PR697

@@ -1,0 +1,37 @@
+schema: AgentStatus.v1
+pr_or_wip: PR667
+pull_request: 667
+branch: agent/vibration-roadmap-workflow-20260819
+base: main
+base_sha_at_allocation: 7f7ce459c8f059b503b045bbdebbe10d303b1044
+report_basis_head: fdaae41897d5252ae1da2deda84ceb3173e82e62
+state: MERGE_AUTHORIZED_PENDING_READY
+criticality: ENGINEERING_CRITICAL_PRESENTATION
+coordination_state: SAFE_WITH_STALE_CLAIM_RECONCILIATION
+reconciliation:
+  ahead_by: 18
+  behind_by: 0
+  changed_files: 12
+  unexplained_files: 0
+  reviews_or_comments: 0
+  review_threads: 0
+  commit_status_entries: 0
+  commit_status_classification: NOT_RUN
+  pr_triggered_workflow_runs: 0
+  workflow_classification: NOT_RUN
+validation:
+  focused_exact_byte: PASS_4_OF_4_LOCAL_EXECUTION
+  syntax: PASS_LOCAL_EXECUTION
+  source_size: PASS
+  repository_native_full_roadmap: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+authority:
+  engineering_authority_changed: false
+  screening_authority_changed: false
+  applicability_or_completeness_authority_changed: false
+  phase_completion_authority_changed: false
+  project_persistence_changed: false
+  workflow_files_changed: false
+merge_authority: OWNER_GRANTED_FOR_PR667_2026-08-19
+merge_authorization_source: USER_MESSAGE_FIX_667_AND_MERGE
+exact_next_action: MARK_READY_RECHECK_HEAD_MAIN_CHECKS_AND_SQUASH_MERGE_IF_CLEAN

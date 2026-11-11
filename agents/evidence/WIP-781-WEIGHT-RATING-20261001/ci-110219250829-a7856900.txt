@@ -1,0 +1,745 @@
+browser-worker-scale	Set up job	﻿2026-10-01T04:30:09.1853074Z Current runner version: '2.337.0'
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1891615Z ##[group]Runner Image Provisioner
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1893418Z Hosted Compute Agent
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1894571Z Version: 20260901.588
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1895669Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1897237Z Build Date: 2026-09-01T19:56:44Z
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1898464Z Worker ID: {ce93862c-39eb-4b1f-b1d0-56bc5f3b8eee}
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1899767Z Azure Region: eastus
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1900909Z ##[endgroup]
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1903628Z ##[group]Operating System
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1904809Z Ubuntu
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1905742Z 24.04.5
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1906753Z LTS
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1907693Z ##[endgroup]
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1908620Z ##[group]Runner Image
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1909921Z Image: ubuntu-24.04
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1910997Z Version: 20260927.320.1
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1913204Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1916457Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1918454Z ##[endgroup]
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1920318Z ##[group]GITHUB_TOKEN Permissions
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1923621Z Contents: read
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1924650Z Metadata: read
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1925698Z ##[endgroup]
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1928774Z Secret source: Actions
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1930472Z Cache mode: write
+browser-worker-scale	Set up job	2026-10-01T04:30:09.1931723Z Prepare workflow directory
+browser-worker-scale	Set up job	2026-10-01T04:30:09.2421241Z Prepare all required actions
+browser-worker-scale	Set up job	2026-10-01T04:30:09.2492985Z Getting action download info
+browser-worker-scale	Set up job	2026-10-01T04:30:09.4932078Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+browser-worker-scale	Set up job	2026-10-01T04:30:09.6025075Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+browser-worker-scale	Set up job	2026-10-01T04:30:09.7177979Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+browser-worker-scale	Set up job	2026-10-01T04:30:09.9365364Z Complete job name: browser-worker-scale
+browser-worker-scale	Checkout literal source head	﻿2026-10-01T04:30:10.0391826Z ##[group]Run actions/checkout@v4
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0392990Z with:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0393548Z   ref: a78569001a26b136860d142b34ed2c9f123592fe
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0394220Z   repository: reallaksh19/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0399577Z   token: ***
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0400451Z   ssh-strict: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0401285Z   ssh-user: git
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0402123Z   persist-credentials: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0403246Z   clean: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0404106Z   sparse-checkout-cone-mode: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0405099Z   fetch-depth: 1
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0405927Z   fetch-tags: false
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0406796Z   show-progress: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0407670Z   lfs: false
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0408448Z   submodules: false
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0409329Z   set-safe-directory: true
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0410333Z   allow-unsafe-pr-checkout: false
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.0411786Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2927004Z Syncing repository: reallaksh19/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2929927Z ##[group]Getting Git version info
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2931339Z Working directory is '/home/runner/work/3D_Converters/3D_Converters'
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2935609Z [command]/usr/bin/git version
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2938109Z git version 2.55.0
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2949566Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2956553Z Temporarily overriding HOME='/home/runner/work/_temp/d4522793-ab3c-4a72-854a-bcc6ac3438b2' before making global git config changes
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2959011Z Adding repository directory to the temporary git global config as a safe directory
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2961146Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2964409Z Deleting the contents of '/home/runner/work/3D_Converters/3D_Converters'
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2966362Z ##[group]Initializing the repository
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2967612Z [command]/usr/bin/git init /home/runner/work/3D_Converters/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2969549Z hint: Using 'master' as the name for the initial branch. This default branch name
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2971191Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2981335Z hint: to use in all of your new repositories, which will suppress this warning,
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2983104Z hint: call:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2983838Z hint:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2984684Z hint: 	git config --global init.defaultBranch <name>
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2985695Z hint:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2986675Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2988231Z hint: 'development'. The just-created branch can be renamed via this command:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2989470Z hint:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2990165Z hint: 	git branch -m <name>
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2990940Z hint:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.2991973Z hint: Disable this message with "git config set advice.defaultBranchName false"
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3007698Z Initialized empty Git repository in /home/runner/work/3D_Converters/3D_Converters/.git/
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3010750Z [command]/usr/bin/git remote add origin https://github.com/reallaksh19/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3013691Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3014909Z ##[group]Disabling automatic garbage collection
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3015978Z [command]/usr/bin/git config --local gc.auto 0
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3018235Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3019360Z ##[group]Setting up auth
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3020512Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3027522Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3268359Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3330568Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3839745Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.3844432Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.4039266Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.4093649Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.4095634Z ##[group]Fetching the repository
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:10.4106923Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin a78569001a26b136860d142b34ed2c9f123592fe
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0975545Z From https://github.com/reallaksh19/3D_Converters
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0986182Z  * branch            a78569001a26b136860d142b34ed2c9f123592fe -> FETCH_HEAD
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0991358Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0993804Z ##[group]Determining the checkout info
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0997040Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.0999065Z [command]/usr/bin/git sparse-checkout disable
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.1083280Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.1121577Z ##[group]Checking out the ref
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:13.1125085Z [command]/usr/bin/git checkout --progress --force a78569001a26b136860d142b34ed2c9f123592fe
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1266630Z Updating files:  87% (8688/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1330635Z Updating files:  88% (8731/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1383001Z Updating files:  89% (8830/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1441936Z Updating files:  90% (8929/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1501821Z Updating files:  91% (9029/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1658235Z Updating files:  92% (9128/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1676295Z Updating files:  93% (9227/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1708527Z Updating files:  94% (9326/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1763807Z Updating files:  95% (9425/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1816819Z Updating files:  96% (9525/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.1870613Z Updating files:  97% (9624/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2625256Z Updating files:  98% (9723/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2786174Z Updating files:  99% (9822/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2787095Z Updating files: 100% (9921/9921)
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2788141Z Updating files: 100% (9921/9921), done.
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2883804Z Note: switching to 'a78569001a26b136860d142b34ed2c9f123592fe'.
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2884411Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2884989Z You are in 'detached HEAD' state. You can look around, make experimental
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2886275Z changes and commit them, and you can discard any commits you make in this
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2887639Z state without impacting any branches by switching back to a branch.
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2888500Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2889062Z If you want to create a new branch to retain commits you create, you may
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2890107Z do so (now or later) by using -c with the switch command. Example:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2890835Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2891249Z   git switch -c <new-branch-name>
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2891722Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2892042Z Or undo this operation with:
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2892480Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2893016Z   git switch -
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2893420Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2893975Z Turn off this advice by setting config variable advice.detachedHead to false
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2894690Z
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2895248Z HEAD is now at a785690 test(xml-cii): gate real Rating UI and reconcile PR811 custody
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2926465Z ##[endgroup]
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.2975439Z [command]/usr/bin/git log -1 --format=%H
+browser-worker-scale	Checkout literal source head	2026-10-01T04:30:14.3004916Z a78569001a26b136860d142b34ed2c9f123592fe
+browser-worker-scale	Run actions/setup-node@v4	﻿2026-10-01T04:30:14.3285743Z ##[group]Run actions/setup-node@v4
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3286163Z with:
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3286424Z   node-version: 22
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3286710Z   always-auth: false
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3286995Z   check-latest: false
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3290042Z   token: ***
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.3290313Z ##[endgroup]
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.4799647Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.4801843Z (node:2066) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.4803625Z (Use `node --trace-deprecation ...` to show where the warning was created)
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.4806255Z ##[group]Environment details
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.9755168Z node: v22.23.3
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.9756063Z npm: 10.9.9
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.9756799Z yarn: 1.22.22
+browser-worker-scale	Run actions/setup-node@v4	2026-10-01T04:30:14.9757786Z ##[endgroup]
+browser-worker-scale	Install Chromium	﻿2026-10-01T04:30:14.9914248Z ##[group]Run npm install --no-save --ignore-scripts playwright@1.52.0
+browser-worker-scale	Install Chromium	2026-10-01T04:30:14.9914872Z ^[[36;1mnpm install --no-save --ignore-scripts playwright@1.52.0^[[0m
+browser-worker-scale	Install Chromium	2026-10-01T04:30:14.9915319Z ^[[36;1mnpx playwright install --with-deps chromium^[[0m
+browser-worker-scale	Install Chromium	2026-10-01T04:30:15.0176581Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Install Chromium	2026-10-01T04:30:15.0176963Z ##[endgroup]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.2778086Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.2788694Z added 15 packages, and audited 16 packages in 3s
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3126064Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3127119Z 2 high severity vulnerabilities
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3127905Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3128627Z To address all issues possible, run:
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3129573Z   npm audit fix --force
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3130174Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3130901Z Some issues need review, and may require choosing
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3131960Z a different dependency.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3132555Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:18.3133330Z Run `npm audit` for details.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.1999110Z Installing dependencies...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.2132092Z Switching to root user to install dependencies...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.3780063Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.4165361Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.4423878Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.4453849Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.4581477Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.4673035Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.6160146Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [509 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.6554270Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [456 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7369171Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1342 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7464070Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [302 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7551271Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7612562Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1699 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7797038Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7904281Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.7932191Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1697 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.8174441Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [388 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.8223919Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.8474123Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5760 B]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.8919374Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9510284Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1066 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9614466Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [220 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9650492Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9684052Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1216 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9819464Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [244 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9850553Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:19.9894054Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1566 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:20.0105447Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [361 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:26.8448808Z Fetched 12.5 MB in 2s (7484 kB/s)
+browser-worker-scale	Install Chromium	2026-10-01T04:30:27.7175153Z Reading package lists...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:27.8049399Z Reading package lists...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.0020777Z Building dependency tree...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.0064103Z Reading state information...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1467858Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1468983Z libasound2t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1470182Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1471258Z libatk-bridge2.0-0t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1472198Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1473369Z libatk1.0-0t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1474318Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1475300Z libatspi2.0-0t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1476199Z libcairo2 is already the newest version (1.18.0-3build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1477048Z libcairo2 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1478092Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1479614Z libcups2t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1480553Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1481433Z libdbus-1-3 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1482288Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1483433Z libdrm2 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1484371Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1485302Z libglib2.0-0t64 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1486213Z libnspr4 is already the newest version (2:4.35-1.1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1487063Z libnspr4 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1488152Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1489132Z libnss3 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1490180Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1491235Z libpango-1.0-0 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1492282Z libx11-6 is already the newest version (2:1.8.7-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1493572Z libx11-6 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1494468Z libxcb1 is already the newest version (1.15-1ubuntu2).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1495392Z libxcb1 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1496355Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1497351Z libxcomposite1 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1498348Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1499321Z libxdamage1 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1500262Z libxext6 is already the newest version (2:1.3.4-1build2).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1501200Z libxext6 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1502196Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1503551Z libxfixes3 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1504779Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1511703Z libxkbcommon0 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1513187Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1514308Z libxrandr2 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1515299Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1516519Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1517843Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1518865Z libfontconfig1 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1519924Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1521268Z libfreetype6 set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1522295Z fonts-liberation is already the newest version (1:2.1.5-3).
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1523570Z fonts-liberation set to manually installed.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1524603Z The following additional packages will be installed:
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1525770Z   libgl1-mesa-dri libglx-mesa0 libwayland-server0 mesa-libgallium
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1526737Z   xfonts-encodings xfonts-utils
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1527582Z Recommended packages:
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1528435Z   fonts-ipafont-mincho fonts-tlwg-loma
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1854044Z The following NEW packages will be installed:
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1855154Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1857565Z   fonts-wqy-zenhei libwayland-server0 xfonts-cyrillic xfonts-encodings
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1858529Z   xfonts-scalable xfonts-utils
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1863014Z The following packages will be upgraded:
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.1873493Z   libgbm1 libgl1-mesa-dri libglx-mesa0 mesa-libgallium
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.2037538Z 4 upgraded, 10 newly installed, 0 to remove and 19 not upgraded.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.2038629Z Need to get 32.1 MB of archives.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.2039901Z After this operation, 79.7 MB of additional disk space will be used.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.2041073Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.2383353Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.5221606Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:28.9853922Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.0112984Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.2626890Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.8659634Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgl1-mesa-dri amd64 25.2.8-0ubuntu0.24.04.3 [37.9 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.8831532Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwayland-server0 amd64 1.22.0-2.1build1 [33.9 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.8998484Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglx-mesa0 amd64 25.2.8-0ubuntu0.24.04.3 [110 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.9234458Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgbm1 amd64 25.2.8-0ubuntu0.24.04.3 [34.3 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:29.9419616Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-libgallium amd64 25.2.8-0ubuntu0.24.04.3 [10.8 MB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:30.7608734Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:30.8244402Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:30.8481774Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:30.8960793Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.1755912Z Fetched 32.1 MB in 3s (11.8 MB/s)
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2122018Z Selecting previously unselected package fonts-ipafont-gothic.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2804146Z (Reading database ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2804789Z (Reading database ... 5%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2805385Z (Reading database ... 10%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2806202Z (Reading database ... 15%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2807386Z (Reading database ... 20%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2807700Z (Reading database ... 25%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2807984Z (Reading database ... 30%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2808254Z (Reading database ... 35%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2808516Z (Reading database ... 40%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2809052Z (Reading database ... 45%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.2809313Z (Reading database ... 50%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.3316168Z (Reading database ... 55%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:31.8496414Z (Reading database ... 60%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:32.1272895Z (Reading database ... 65%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:32.3947937Z (Reading database ... 70%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:32.6662457Z (Reading database ... 75%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:33.5985164Z (Reading database ... 80%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:35.3208441Z (Reading database ... 85%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:35.8520959Z (Reading database ... 90%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.4584739Z (Reading database ... 95%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.4585580Z (Reading database ... 100%
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.4586446Z (Reading database ... 202296 files and directories currently installed.)
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.4618680Z Preparing to unpack .../00-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.4738601Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.7090599Z Selecting previously unselected package fonts-freefont-ttf.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.7215929Z Preparing to unpack .../01-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.7232625Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8073559Z Selecting previously unselected package fonts-tlwg-loma-otf.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8199454Z Preparing to unpack .../02-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8207710Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8461980Z Selecting previously unselected package fonts-unifont.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8587917Z Preparing to unpack .../03-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.8595221Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.9784738Z Selecting previously unselected package fonts-wqy-zenhei.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:36.9911691Z Preparing to unpack .../04-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.0017634Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.4890940Z Preparing to unpack .../05-libgl1-mesa-dri_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.5042128Z Unpacking libgl1-mesa-dri:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.5525912Z Selecting previously unselected package libwayland-server0:amd64.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.5651435Z Preparing to unpack .../06-libwayland-server0_1.22.0-2.1build1_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.5679909Z Unpacking libwayland-server0:amd64 (1.22.0-2.1build1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6003129Z Preparing to unpack .../07-libglx-mesa0_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6029132Z Unpacking libglx-mesa0:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6439948Z Preparing to unpack .../08-libgbm1_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6519113Z Unpacking libgbm1:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6935086Z Preparing to unpack .../09-mesa-libgallium_25.2.8-0ubuntu0.24.04.3_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.6963541Z Unpacking mesa-libgallium:amd64 (25.2.8-0ubuntu0.24.04.3) over (25.2.8-0ubuntu0.24.04.2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.8766937Z Selecting previously unselected package xfonts-encodings.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.8893809Z Preparing to unpack .../10-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.8899912Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9223996Z Selecting previously unselected package xfonts-utils.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9342100Z Preparing to unpack .../11-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9355216Z Unpacking xfonts-utils (1:7.7+6build3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9754503Z Selecting previously unselected package xfonts-cyrillic.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9878553Z Preparing to unpack .../12-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:37.9885731Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0247868Z Selecting previously unselected package xfonts-scalable.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0373322Z Preparing to unpack .../13-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0381484Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0853342Z Setting up libwayland-server0:amd64 (1.22.0-2.1build1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0901523Z Setting up mesa-libgallium:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0921795Z Setting up libgbm1:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.0940558Z Setting up libgl1-mesa-dri:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1016211Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1134554Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1150380Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1168076Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1188353Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1255040Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1274713Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1292252Z Setting up libglx-mesa0:amd64 (25.2.8-0ubuntu0.24.04.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1311911Z Setting up xfonts-utils (1:7.7+6build3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1353347Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.1704784Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.2068570Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.2537935Z Processing triggers for man-db (2.12.0-4build2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.2559567Z Not building database; man-db/auto-update is not 'true'.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:38.2571560Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7015944Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7016867Z Running kernel seems to be up-to-date.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7017688Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7018235Z No services need to be restarted.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7018783Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7019298Z No containers need to be restarted.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7019826Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7020310Z No user sessions are running outdated binaries.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7020864Z
+browser-worker-scale	Install Chromium	2026-10-01T04:30:39.7021552Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+browser-worker-scale	Install Chromium	2026-10-01T04:30:40.6289626Z Downloading Chromium 136.0.7103.25 (playwright build v1169) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1169/chromium-linux.zip
+browser-worker-scale	Install Chromium	2026-10-01T04:30:40.7774861Z |                                                                                |   0% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:40.9499420Z |■■■■■■■■                                                                        |  10% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.0714562Z |■■■■■■■■■■■■■■■■                                                                |  20% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.1790191Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.2618915Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.3651169Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.4885003Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.5698012Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.7091964Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.7864373Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:41.8624393Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 167.7 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.0124600Z Chromium 136.0.7103.25 (playwright build v1169) downloaded to /home/runner/.cache/ms-playwright/chromium-1169
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.0144335Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.1980473Z |                                                                                |   0% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2044790Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2085097Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2240054Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2400506Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2495884Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2523988Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2553848Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2581495Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2612029Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.2634475Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.3415013Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.3443232Z Downloading Chromium Headless Shell 136.0.7103.25 (playwright build v1169) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1169/chromium-headless-shell-linux.zip
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.5162220Z |                                                                                |   0% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.6604780Z |■■■■■■■■                                                                        |  10% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.7750329Z |■■■■■■■■■■■■■■■■                                                                |  20% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.8582176Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:46.9444180Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.0235757Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.1127034Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.1732297Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.2429816Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.3205782Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:47.3693918Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 101.4 MiB
+browser-worker-scale	Install Chromium	2026-10-01T04:30:50.0931004Z Chromium Headless Shell 136.0.7103.25 (playwright build v1169) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1169
+browser-worker-scale	Start static server	﻿2026-10-01T04:30:50.9216344Z ##[group]Run python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/issue-781-worker-http.log 2>&1 &
+browser-worker-scale	Start static server	2026-10-01T04:30:50.9217111Z ^[[36;1mpython3 -m http.server 4173 --bind 127.0.0.1 > /tmp/issue-781-worker-http.log 2>&1 &^[[0m
+browser-worker-scale	Start static server	2026-10-01T04:30:50.9283715Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Start static server	2026-10-01T04:30:50.9284062Z ##[endgroup]
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	﻿2026-10-01T04:30:50.9451677Z ##[group]Run node scripts/run-xml-cii-master-dataset-scale-e2e.mjs
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:50.9452632Z ^[[36;1mnode scripts/run-xml-cii-master-dataset-scale-e2e.mjs^[[0m
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:50.9547911Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:50.9548426Z ##[endgroup]
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1674382Z XML_CII_MASTER_DATASET_SCALE_E2E_RESULT
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1701826Z {
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1733679Z   "schema": "XMLCII_MASTER_DATASET_SCALE_E2E_V2",
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1763752Z   "ok": true,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1764780Z   "responsivenessThresholdMs": 250,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1769204Z   "retainedSampleLimit": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1772123Z   "fixturePreparationExcludedFromProductTiming": true,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1783452Z   "custodyDefinition": "Dataset-backed retained application state is metadata plus bounded preview/mapping samples; full-row materialization is measured separately as transient operation data.",
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1785189Z   "scales": [
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1785952Z     {
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1786508Z       "rows": 10000,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1787205Z       "payloadBytes": 966754,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1787973Z       "fixturePrepMs": 19.20000000001164,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1788746Z       "workerImportMs": 196.80000000001746,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1789670Z       "workerImportMaxFrameGapMs": 16.700000000000045,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1790588Z       "workerImportFrames": 14,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1791501Z       "metadataOnlyCommitMs": 2.1999999999825377,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1792484Z       "metadataOnlyCommitMaxFrameGapMs": 16.39999999997673,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1793845Z       "metadataOnlyCommitFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1794717Z       "retainedNormalizedRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1795496Z       "retainedRawRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1796318Z       "retainedPreviewRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1797154Z       "retainedMappingRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1798184Z       "transientOperationMaterializationMs": 70.20000000001164,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1799524Z       "transientOperationMaterializationMaxFrameGapMs": 16.700000000000045,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1800813Z       "transientOperationMaterializationFrames": 6,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1801823Z       "workerSearchMs": 3.1000000000058208,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1803389Z       "workerSearchMaxFrameGapMs": 16.39999999998838,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1804459Z       "workerSearchFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1805156Z       "matchCount": 1,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1805897Z       "lastMatchIndex": 9999,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1806581Z       "metadataOnlyCustody": true,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1807319Z       "responsive": true
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1807971Z     },
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1808553Z     {
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1809317Z       "rows": 50000,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1833371Z       "payloadBytes": 4922633,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1843525Z       "fixturePrepMs": 102.10000000000582,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1844940Z       "workerImportMs": 217.5,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1845728Z       "workerImportMaxFrameGapMs": 16.700000000000045,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1846546Z       "workerImportFrames": 16,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1847530Z       "metadataOnlyCommitMs": 0.39999999999417923,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1851548Z       "metadataOnlyCommitMaxFrameGapMs": 16.39999999997667,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1853075Z       "metadataOnlyCommitFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1854054Z       "retainedNormalizedRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1854745Z       "retainedRawRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1856761Z       "retainedPreviewRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1890767Z       "retainedMappingRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1899695Z       "transientOperationMaterializationMs": 47.20000000001164,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1901887Z       "transientOperationMaterializationMaxFrameGapMs": 16.700000000000045,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1903230Z       "transientOperationMaterializationFrames": 4,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1904149Z       "workerSearchMs": 2.3999999999941792,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1904903Z       "workerSearchMaxFrameGapMs": 16.299999999976762,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1905650Z       "workerSearchFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1906321Z       "matchCount": 1,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1907454Z       "lastMatchIndex": 49999,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1908125Z       "metadataOnlyCustody": true,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1908761Z       "responsive": true
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1909309Z     },
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1909790Z     {
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1910279Z       "rows": 100000,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1910868Z       "payloadBytes": 9867486,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1911541Z       "fixturePrepMs": 90.29999999998836,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1912250Z       "workerImportMs": 271.3999999999942,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1913228Z       "workerImportMaxFrameGapMs": 16.799999999999955,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1914145Z       "workerImportFrames": 19,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1914913Z       "metadataOnlyCommitMs": 0.29999999998835847,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1915796Z       "metadataOnlyCommitMaxFrameGapMs": 16.399999999982583,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1916702Z       "metadataOnlyCommitFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1917540Z       "retainedNormalizedRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1918243Z       "retainedRawRows": 0,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1918967Z       "retainedPreviewRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1919655Z       "retainedMappingRows": 150,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1920410Z       "transientOperationMaterializationMs": 82.5,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1921447Z       "transientOperationMaterializationMaxFrameGapMs": 16.700000000000045,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1922489Z       "transientOperationMaterializationFrames": 6,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1923883Z       "workerSearchMs": 3.5,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1924623Z       "workerSearchMaxFrameGapMs": 16.49999999999409,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1925381Z       "workerSearchFrames": 2,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1925981Z       "matchCount": 1,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1926662Z       "lastMatchIndex": 99999,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1927309Z       "metadataOnlyCustody": true,
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1927927Z       "responsive": true
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1928472Z     }
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1928952Z   ]
+browser-worker-scale	Requalify dataset worker 10k / 50k / 100k responsiveness	2026-10-01T04:30:53.1929436Z }
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	﻿2026-10-01T04:30:53.2270520Z ##[group]Run node scripts/run-xml-cii-worker-weight-scale-e2e.mjs
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:53.2271099Z ^[[36;1mnode scripts/run-xml-cii-worker-weight-scale-e2e.mjs^[[0m
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:53.2333604Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:53.2333897Z ##[endgroup]
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9527163Z XML_CII_ISSUE_781_WORKER_WEIGHT_SCALE_E2E_RESULT
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9528251Z {
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9531503Z   "schema": "XMLCII_ISSUE_781_WORKER_WEIGHT_SCALE_E2E_V1",
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9533087Z   "ok": true,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9533777Z   "issueCount": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9534532Z   "responsivenessThresholdMs": 250,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9535412Z   "rankWallClockThresholdMs": 5000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9536642Z   "fixturePreparationExcludedFromProductTiming": true,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9538231Z   "custody": "Weight master remains worker-resident; browser sends six bounded issue rows and receives ranked results only.",
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9539489Z   "scales": [
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9541050Z     {
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9541718Z       "rows": 10000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9542438Z       "issues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9543296Z       "payloadBytes": 1013892,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9543949Z       "fixturePrepMs": 13.39999999999418,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9544917Z       "workerImportMs": 337.1000000000058,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9545664Z       "workerImportMaxFrameGapMs": 16.80000000000001,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9546443Z       "workerImportFrames": 23,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9547110Z       "workerRankMs": 38.69999999998254,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9547878Z       "workerRankMaxFrameGapMs": 16.69999999999999,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9548597Z       "workerRankFrames": 4,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9549203Z       "returnedIssues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9550386Z       "candidateMarker": "target-10000",
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9551307Z       "candidateRowIndex": 10000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9551940Z       "responsive": true,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9552569Z       "rankCompleted": true
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9553532Z     },
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9554063Z     {
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9554604Z       "rows": 50000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9555278Z       "issues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9555938Z       "payloadBytes": 5113891,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9556703Z       "fixturePrepMs": 124.10000000000582,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9557494Z       "workerImportMs": 532,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9558318Z       "workerImportMaxFrameGapMs": 16.799999999999955,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9559170Z       "workerImportFrames": 35,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9559905Z       "workerRankMs": 38.60000000000582,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9560804Z       "workerRankMaxFrameGapMs": 16.799999999999955,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9561628Z       "workerRankFrames": 4,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9562389Z       "returnedIssues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9563599Z       "candidateMarker": "target-50000",
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9564546Z       "candidateRowIndex": 50000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9565383Z       "responsive": true,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9566214Z       "rankCompleted": true
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9566980Z     },
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9567524Z     {
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9568084Z       "rows": 100000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9568773Z       "issues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9569462Z       "payloadBytes": 10238892,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9570195Z       "fixturePrepMs": 62.80000000001746,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9571029Z       "workerImportMs": 762.2000000000116,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9571819Z       "workerImportMaxFrameGapMs": 16.799999999999955,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9572611Z       "workerImportFrames": 49,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9573861Z       "workerRankMs": 71.29999999998836,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9574671Z       "workerRankMaxFrameGapMs": 16.800000000000182,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9575699Z       "workerRankFrames": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9576318Z       "returnedIssues": 6,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9576979Z       "candidateMarker": "target-100000",
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9577664Z       "candidateRowIndex": 100000,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9578269Z       "responsive": true,
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9578864Z       "rankCompleted": true
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9579405Z     }
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9579858Z   ]
+browser-worker-scale	Qualify six-issue Weight ranking at 10k / 50k / 100k	2026-10-01T04:30:55.9580297Z }
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	﻿2026-10-01T04:30:56.0073925Z ##[group]Run node scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:56.0074505Z ^[[36;1mnode scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs^[[0m
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:56.0137841Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:56.0138136Z ##[endgroup]
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7460074Z XML_CII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_RESULT
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7465622Z {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7471737Z   "schema": "XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V4",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7472402Z   "ok": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7476204Z   "elapsedMs": 607.0999999999767,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7476956Z   "maxWallMs": 5000,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7477632Z   "maxFrameGapMs": 33.499999999988404,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7478229Z   "maxFrameGapLimitMs": 250,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7478853Z   "branchCount": 41,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7479376Z   "pipeNodes": 1653,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7479897Z   "totalXmlNodes": 1654,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7480432Z   "sourceBytes": 891826,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7480968Z   "stagedRows": 8001,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7481564Z   "stagedBytes": 1268838,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7483486Z   "unrelatedAuthorityDatasetRows": 300000,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7484341Z   "unrelatedAuthorityDatasetsSkipped": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7485674Z   "rawPayloadPreserved": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7486457Z   "dtxrResolvedText": "GATE VALVE",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7487058Z   "rows": 1,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7487516Z   "inputValue": "25",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7488029Z   "lineKey": "P0310051",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7488560Z   "rating": "150",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7490127Z   "status": "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7491643Z   "statusHistory": [
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7492378Z     "Reading XML source…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7493314Z     "Resolving staged JSON…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7494098Z     "Preparing Weight Match basis in worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7494986Z     "Loading Weight basis runtime…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7495836Z     "Preparing split/inline geometry in Weight worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7496776Z     "Collecting Weight basis in worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7497655Z     "Validating Match-1 in worker · 1 component(s)…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7499124Z     "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json"
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7500204Z   ]
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7500659Z }
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7909314Z (node:3227) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js is not specified and it doesn't parse as CommonJS.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7912365Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7928627Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:30:57.7944277Z (Use `node --trace-warnings ...` to show where the warning was created)
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5183589Z {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5203504Z   "status": "PASS",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5213666Z   "fixture": "41 branches / 1654 nodes",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5231520Z   "rows": 180,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5243952Z   "editedPrefix": [
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5263764Z     "3",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5313350Z     "600"
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5314176Z   ],
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5358302Z   "manual": [
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5373296Z     "900",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5410508Z     "450"
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5433712Z   ],
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5453337Z   "classFill": {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5453993Z     "pipingClass": "31441C4",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5473268Z     "rating": "300",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5493185Z     "rows": 178
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5513234Z   },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5513848Z   "match1BecameStale": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5534433Z   "repeatBuild": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5553505Z   "reopen": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5573740Z   "timings": [
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5593090Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5593801Z       "label": "prefix build without Preview",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5653206Z       "maxFrameGapMs": 100
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5673358Z     },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5693329Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5722139Z       "label": "manual Rating 900",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5743263Z       "maxFrameGapMs": 117
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5776747Z     },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5804308Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5830577Z       "label": "second manual Rating",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5853273Z       "maxFrameGapMs": 117
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5863504Z     },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5873196Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5893302Z       "label": "class fill Rating 300",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5913268Z       "maxFrameGapMs": 100
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5913915Z     },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5933375Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5933847Z       "label": "repeat Build after class fill",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5934391Z       "maxFrameGapMs": 117
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5934807Z     },
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5935126Z     {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5935521Z       "label": "reopen persisted Rating",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5936098Z       "maxFrameGapMs": 217
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5936548Z     }
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5936869Z   ],
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5937199Z   "errors": []
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T04:31:11.5937565Z }
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	﻿2026-10-01T04:31:11.6439163Z ##[group]Run node scripts/run-xml-cii-line-list-remap-preview-e2e.mjs
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:11.6440154Z ^[[36;1mnode scripts/run-xml-cii-line-list-remap-preview-e2e.mjs^[[0m
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:11.6582027Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:11.6582509Z ##[endgroup]
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6781308Z XML_CII_ISSUE_781_LINE_LIST_REMAP_PREVIEW_E2E_RESULT
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6823339Z {
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6850489Z   "schema": "XMLCII_ISSUE_781_LINE_LIST_REMAP_PREVIEW_E2E_V1",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6855570Z   "ok": true,
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6901867Z   "originalDatasetId": "import-1790829072467-f45dc624-7e30-439d-a7e7-5f1452eda719:lineList:rows:r1",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6923701Z   "remappedDatasetId": "import-1790829072467-f45dc624-7e30-439d-a7e7-5f1452eda719:lineList:rows:r2",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6924642Z   "datasetRevision": 2,
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6925059Z   "appliedFieldMap": {
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6925471Z     "lineSeqNo": "__EMPTY_0",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6925899Z     "lineKey1": "__EMPTY_1",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6926396Z     "lineKey2": "__EMPTY_2",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6926811Z     "phase": "__EMPTY_7",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6927276Z     "convertedBore": "__EMPTY_20",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6927777Z     "pipingClass": "__EMPTY_21",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6928222Z     "p1": "__EMPTY_22",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6928607Z     "t1": "__EMPTY_24",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6928979Z     "t3": "__EMPTY_25",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6929367Z     "material": "__EMPTY_26",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6929853Z     "hydroPressure": "__EMPTY_31"
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6930281Z   },
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6930616Z   "projected": {
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6930980Z     "lineSeqNo": "7",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6931366Z     "lineKey1": "P",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6931753Z     "lineKey2": "0310051",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6932306Z     "lineKey": "P0310051",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6943240Z     "pipingClass": "61440",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6944033Z     "material": "CS",
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6944586Z     "convertedBore": "10"
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6945093Z   }
+browser-worker-scale	Prove APPLIED Key1/Key2 survives worker remap and Preview fetch	2026-10-01T04:31:12.6945632Z }
+browser-worker-scale	Upload worker-scale evidence	﻿2026-10-01T04:31:12.7454465Z ##[group]Run actions/upload-artifact@v4
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7455005Z with:
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7455715Z   name: issue-781-worker-weight-scale
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7457993Z   path: ValidationRecords/xml-cii-master-dataset-scale-e2e.json
+browser-worker-scale	Upload worker-scale evidence	ValidationRecords/xml-cii-issue-781-worker-weight-scale-e2e.json
+browser-worker-scale	Upload worker-scale evidence	ValidationRecords/xml-cii-issue-781-weight-basis-fastpath-e2e.json
+browser-worker-scale	Upload worker-scale evidence	ValidationRecords/xml-cii-issue-781-line-list-remap-preview-e2e.json
+browser-worker-scale	Upload worker-scale evidence	/tmp/issue-781-worker-http.log
+browser-worker-scale	Upload worker-scale evidence
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7460302Z   if-no-files-found: warn
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7460719Z   compression-level: 6
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7461104Z   overwrite: false
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7461486Z   include-hidden-files: false
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:12.7461910Z ##[endgroup]
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0267427Z (node:3550) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0272400Z (Use `node --trace-deprecation ...` to show where the warning was created)
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0546832Z Multiple search paths detected. Calculating the least common ancestor of all paths
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0704028Z The least common ancestor is /. This will be the root directory of the artifact
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0704965Z With the provided path, there will be 5 files uploaded
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0705815Z Artifact name is valid!
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.0720998Z Root directory input is valid!
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.3067831Z Beginning upload of artifact content to blob storage
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.3957347Z (node:3550) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.4247188Z Uploaded bytes 5771
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.4411757Z Finished uploading artifact content to blob storage!
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.4429228Z SHA256 digest of uploaded artifact zip is 25aa23b30c13770c9df16124b3c29ccc89d5cf01de4ff711d37d63104348bfdd
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.4430512Z Finalizing artifact upload
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.6284091Z Artifact issue-781-worker-weight-scale.zip successfully finalized. Artifact ID 11141306648
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.6286016Z Artifact issue-781-worker-weight-scale has been successfully uploaded! Final size is 5771 bytes. Artifact ID is 11141306648
+browser-worker-scale	Upload worker-scale evidence	2026-10-01T04:31:13.6304077Z Artifact download URL: https://github.com/reallaksh19/3D_Converters/actions/runs/36815402429/artifacts/11141306648
+browser-worker-scale	Post Run actions/setup-node@v4	﻿2026-10-01T04:31:13.6560365Z Post job cleanup.
+browser-worker-scale	Post Run actions/setup-node@v4	2026-10-01T04:31:13.8528135Z (node:3562) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+browser-worker-scale	Post Run actions/setup-node@v4	2026-10-01T04:31:13.8565062Z (Use `node --trace-deprecation ...` to show where the warning was created)
+browser-worker-scale	Post Checkout literal source head	﻿2026-10-01T04:31:13.9175974Z Post job cleanup.
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1110238Z [command]/usr/bin/git version
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1173740Z git version 2.55.0
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1284273Z Temporarily overriding HOME='/home/runner/work/_temp/e942cefa-fc56-43b8-8543-d8e3023f4a61' before making global git config changes
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1314088Z Adding repository directory to the temporary git global config as a safe directory
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1348945Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1369649Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.1372672Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2095605Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2131752Z http.https://github.com/.extraheader
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2156144Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2283497Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2742245Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+browser-worker-scale	Post Checkout literal source head	2026-10-01T04:31:14.2884086Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+browser-worker-scale	Complete job	﻿2026-10-01T04:31:14.3417038Z Cleaning up orphan processes
+browser-worker-scale	Complete job	2026-10-01T04:31:14.3866594Z Terminate orphan process: pid (2944) (python3)
+browser-worker-scale	Complete job	2026-10-01T04:31:14.3952079Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

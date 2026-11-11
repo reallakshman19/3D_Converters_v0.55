@@ -1,0 +1,27 @@
+schema: AgentStatus.v1
+pr_or_wip: PR681
+pull_request: 681
+branch: agent/hp-production-browser-qualification
+base: main
+base_sha_at_branch: 68511e14b594eab9e21d06da3ddfc0836e92295b
+state: OWNER_AUTHORIZED_READY_TO_MERGE
+criticality: PRODUCTION_BROWSER_QUALIFICATION
+validation:
+  runner_syntax: PASS_LOCAL_EXECUTION
+  runner_contract_tests: PASS_8_OF_8_LOCAL_EXECUTION
+  chromium_cdp_self_test: PASS_REAL_CHROMIUM
+  chromium_runtime_exceptions_self_test: 0
+  full_app_hp_browser: NOT_RUN_NO_NATIVE_CHECKOUT
+  source_injection_repo_browser: NOT_RUN_NO_NATIVE_CHECKOUT
+  full_repository_regression: NOT_RUN
+  hosted_status_checks: NOT_RUN_ZERO_STATUS_ENTRIES
+  pr_workflows: NOT_RUN_ZERO_PR_TRIGGERED_RUNS
+  reviews: ZERO
+  review_threads: ZERO
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  numerical_authority_changed: false
+merge_authority: OWNER_AUTHORIZED_FOR_BOUNDED_NEXT_INCREMENT
+exact_next_action: SQUASH_MERGE_ONLY_IF_FINAL_HEAD_UNCHANGED_AND_BEHIND_ZERO

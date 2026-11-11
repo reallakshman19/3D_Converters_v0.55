@@ -1,0 +1,121 @@
+{
+  "_instructions": [
+    "Keep licensed ASME source text outside the public repository. Use secure-storage references and exact locators; approved public paraphrases are optional.",
+    "Fill both controlled source receipts and all 14 Q1 semantic items. Extractor/verifier and independent checker identities must be distinct after trim/case normalization.",
+    "Q2 must not infer formal Q1 completion from receipts and semantics alone. Populate q1ExitAttestation only after the controlled Q1 evidence ledger has E01-E08 and G0-G1 PASS and a distinct independent checker has attested the exact receipt hashes and semantic bindings.",
+    "Use kd320-q1/formal-exit-attestation.template.json for the redacted public-safe Q1 exit record. Do not place licensed Code text in this candidate.",
+    "Both QF022 and QF023 must explicitly cite KD320-SEM-002 through KD320-SEM-013 so the numerical chain retains method-semantic custody.",
+    "QF023 must cite both controlled Q1 receipts. QF022 must cite Q1-SRC-VIII3-2025 after direct 2025 sourcing or controlled edition reconciliation.",
+    "projectOracle is the independently checked project-style KD-3 case (KD3-QF-023) and must retain Salt -> associated mean stress -> correction parameters -> Seq -> N.",
+    "publishedOracle is the primary published numerical example (KD3-QF-022). Q2 admission is not ready until both oracle slots are complete.",
+    "Passing this candidate does not authorize production KD320, Code compliance, design authority, or automatic publication into the oracle catalog."
+  ],
+  "schema": "kd320-q2-admission-candidate/v1",
+  "target": {
+    "b313Edition": "2024",
+    "viii3Edition": "2025",
+    "methodId": "KD3-FATIGUE-001",
+    "routeId": "ROUTE-KD3-2024"
+  },
+  "authority": {
+    "nativeCoreKd3Qualified": false,
+    "codeCompliance": false,
+    "canUseForDesignAuthority": false,
+    "productionKernelAllowed": false,
+    "automaticPromotionAllowed": false
+  },
+  "sourceReceipts": [
+    {
+      "receiptId": "Q1-SRC-B313-2024",
+      "status": "PENDING_CONTROLLED_SOURCE_RECEIPT",
+      "secureStorageRef": null,
+      "documentSha256": null,
+      "exactLocators": [],
+      "verifiedBy": null,
+      "verifiedAt": null,
+      "independentCheckBy": null,
+      "independentCheckedAt": null
+    },
+    {
+      "receiptId": "Q1-SRC-VIII3-2025",
+      "status": "PENDING_CONTROLLED_SOURCE_RECEIPT",
+      "secureStorageRef": null,
+      "documentSha256": null,
+      "exactLocators": [],
+      "verifiedBy": null,
+      "verifiedAt": null,
+      "independentCheckBy": null,
+      "independentCheckedAt": null
+    }
+  ],
+  "semanticItems": [
+    {"semanticId":"KD320-SEM-001","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-B313-2024","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-002","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-003","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-004","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-005","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-006","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-007","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-008","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-009","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-010","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-011","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-012","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-013","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null},
+    {"semanticId":"KD320-SEM-014","status":"PENDING_CONTROLLED_SOURCE","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null,"units":null,"signConvention":null,"selectionRule":null,"interpolationRule":null,"applicabilityRule":null,"extractedBy":null,"extractedAt":null,"independentCheckBy":null,"independentCheckedAt":null}
+  ],
+  "q1ExitAttestation": null,
+  "projectOracle": {
+    "benchmarkId": "KD3-QF-023",
+    "calculationRef": null,
+    "locationId": null,
+    "b313Edition": "2024",
+    "viii3Edition": "2025",
+    "controlledSourceReceiptRefs": ["Q1-SRC-B313-2024", "Q1-SRC-VIII3-2025"],
+    "semanticRefs": [
+      "KD320-SEM-002", "KD320-SEM-003", "KD320-SEM-004", "KD320-SEM-005",
+      "KD320-SEM-006", "KD320-SEM-007", "KD320-SEM-008", "KD320-SEM-009",
+      "KD320-SEM-010", "KD320-SEM-011", "KD320-SEM-012", "KD320-SEM-013"
+    ],
+    "chain": {
+      "alternatingStressIntensityMpa": null,
+      "associatedMeanStressMpa": null,
+      "correctionParameters": [{"name":null,"value":null,"units":null,"semanticRef":"KD320-SEM-006"}],
+      "equivalentAlternatingStressMpa": null,
+      "permissibleCycles": null
+    },
+    "calculatedBy": null,
+    "calculatedAt": null,
+    "checkedBy": null,
+    "checkedAt": null,
+    "evidenceClass": "INDEPENDENT_CHECKED_PROJECT_CALCULATION",
+    "methodId": "KD3-FATIGUE-001",
+    "routeId": "ROUTE-KD3-2024"
+  },
+  "publishedOracle": {
+    "benchmarkId": "KD3-QF-022",
+    "bibliographicRef": null,
+    "exactLocator": null,
+    "sourceSha256": null,
+    "controlledSourceReceiptRefs": ["Q1-SRC-VIII3-2025"],
+    "semanticRefs": [
+      "KD320-SEM-002", "KD320-SEM-003", "KD320-SEM-004", "KD320-SEM-005",
+      "KD320-SEM-006", "KD320-SEM-007", "KD320-SEM-008", "KD320-SEM-009",
+      "KD320-SEM-010", "KD320-SEM-011", "KD320-SEM-012", "KD320-SEM-013"
+    ],
+    "chain": {
+      "alternatingStressIntensityMpa": null,
+      "associatedMeanStressMpa": null,
+      "correctionParameters": [{"name":null,"value":null,"units":null,"semanticRef":"KD320-SEM-006"}],
+      "equivalentAlternatingStressMpa": null,
+      "permissibleCycles": null
+    },
+    "extractedBy": null,
+    "extractedAt": null,
+    "admittedBy": null,
+    "admittedAt": null,
+    "evidenceClass": "PRIMARY_PUBLISHED_NUMERICAL_ORACLE",
+    "viii3Edition": "2025",
+    "methodId": "KD3-FATIGUE-001"
+  }
+}

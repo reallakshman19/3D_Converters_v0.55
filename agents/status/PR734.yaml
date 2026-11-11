@@ -1,0 +1,36 @@
+pr: 734
+chain_id: ENGCALC-BOLTED-JOINTS
+endpoint: EP-0025
+state: BLOCKED_AUTO
+mission: P4_LEGACY_BS5500_WORKBOOK_BENCHMARK
+base_pr: 733
+base_head: 948c539c2a6803d324e14a626e1834a05c259377
+branch: feat/engcalc-p4-legacy-bs5500-benchmark-20260904
+authority:
+  source_authority: LEGACY_BENCHMARK_ONLY
+  acceptance_evaluated: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+implementation:
+  source: converters/engineering-calculations/flange/legacy-bs5500-workbook.js
+  test: tests/flange-legacy-bs5500-workbook.test.mjs
+  source_register: docs/engineering-calculations/flange-legacy-bs5500-benchmark-source-register.md
+  central_registered: false
+  ui_integrated: false
+validation:
+  workbook_formula_recovery: PASS_50_OF_50
+  focused_source_reconstructed: PASS_13_OF_13_EXACT_GITHUB_BLOBS
+  source_syntax: PASS_SOURCE_RECONSTRUCTED_EXACT_BLOB
+  test_syntax: PASS_SOURCE_RECONSTRUCTED_EXACT_BLOB
+  source_physical_lines: PASS_206_LT_300
+  native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr_head_workflow_runs: ZERO_RETURNED
+  independent_engineering_review: NOT_RUN
+prior_gates:
+  pr731_p2_exact_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr732_p3_source_reconstructed: PASS_18_OF_18
+  pr732_p3_exact_native: NOT_RUN_ENVIRONMENT_BLOCKED
+p5_state: BLOCKED_UNCHECKED_SOURCE_AND_EQUATIONS
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Attempt exact PR734 native focused execution; if unavailable preserve NOT_RUN. Do not central-register this legacy benchmark. Seek controlled current detailed-flange source or owner sequencing for P6.

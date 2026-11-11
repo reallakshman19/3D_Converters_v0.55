@@ -1,0 +1,115 @@
+qualify	Prove full startup chain and rendered Converter dropdown	﻿2026-10-01T15:51:41.4289724Z ##[group]Run node tests/cii-v11-v14-ui-static.test.mjs
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4290258Z ^[[36;1mnode tests/cii-v11-v14-ui-static.test.mjs^[[0m
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4362630Z shell: /usr/bin/bash -e {0}
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4363030Z env:
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4363454Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4364147Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4364791Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4365370Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4365943Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4366955Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.4367475Z ##[endgroup]
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6360321Z node:internal/modules/run_main:123
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6361396Z     triggerUncaughtException(
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6362252Z     ^
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6362695Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6364027Z AssertionError [ERR_ASSERTION]: The input did not match the regular expression /main-rhbg-fitguard\.js\?v=20260929-pr780-metadata-1/. Input:
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6365549Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6365938Z '<!doctype html>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6366954Z   '<html lang="en">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6367697Z   '<head>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6387410Z   '<meta charset="utf-8">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6412001Z   '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6413178Z   '<title>3D converters</title>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6414121Z   '<meta name="application-name" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6415357Z   '<meta name="apple-mobile-web-app-title" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6417237Z   '<meta name="theme-color" content="#0f172a">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6418349Z   '<link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6419590Z   '<link rel="manifest" href="./site.webmanifest?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6420582Z   '<link rel="stylesheet" href="styles/base.css">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6422827Z   '<link rel="stylesheet" href="styles/tabs.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6427584Z   '<link rel="stylesheet" href="styles/app-shell-header-fix.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6429489Z   '<link rel="stylesheet" href="styles/viewer3d.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6430835Z   '<link rel="stylesheet" href="tabs/model-converters-tab.css?v=standalone-2">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6432321Z   '<link rel="stylesheet" href="tabs/model-converters-css-fix.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6433875Z   '<link rel="stylesheet" href="tabs/model-converters-weight-ranking.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6435459Z   '<link rel="stylesheet" href="tabs/universal-xml-converter-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6437436Z   '<link rel="stylesheet" href="tabs/model-exchange-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6438831Z   '<link rel="stylesheet" href="tabs/interchange-config-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6440531Z   '<link rel="stylesheet" href="tabs/support-mapping-config-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6441629Z   '<link rel="stylesheet" href="styles/app-content-scroll.css?v=2">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6442477Z   '<link rel="preconnect" href="//unpkg.com" crossorigin>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6443201Z   '<link rel="preconnect" href="//cdn.sheetjs.com" crossorigin>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6446421Z   '<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.1/examples/jsm/","gltf-exporter":"https://unpkg.com/three@0.160.1/examples/jsm/exporters/GLTFExporter.js","mdb-reader":"https://esm.sh/mdb-reader@2","buffer":"https://esm.sh/buffer@6","xlsx":"https://cdn.sheetjs.com/xlsx-latest/package/xlsx.mjs","node:crypto":"./core/browser-node-crypto.js?v=20260902-vib-pages-crypto-1"}}</script>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6449633Z   '</head>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6449952Z   '<body data-standalone-app="format-converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6450704Z   '<div id="app-layout" role="application" aria-label="3D converters"></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6452024Z   '<div id="app-loading-overlay" class="app-loading-overlay is-visible" aria-live="polite" aria-hidden="false">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6452656Z   '  <div class="app-loading-card">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6453061Z   '    <div class="app-loading-spinner" aria-hidden="true"></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6453457Z   '    <div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6453719Z   '      <strong>3D converters</strong>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6454057Z   '      <p>Loading workspace...</p>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6454368Z   '    </div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6454594Z   '  </div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6454921Z   '</div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6455175Z   '<div id="app-toast" hidden></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6455740Z   '<script type="module" src="./main-rhbg-fitguard.js?v=20261001-single-weight-owners-1"></script>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6456292Z   '</body>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6456819Z   '</html>\n'
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6456996Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6457349Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/cii-v11-v14-ui-static.test.mjs:31:8
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6457998Z     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6458569Z     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6459221Z     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6459723Z   generatedMessage: true,
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6460013Z   code: 'ERR_ASSERTION',
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6460292Z   actual: '<!doctype html>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6460572Z     '<html lang="en">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6460833Z     '<head>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6461068Z     '<meta charset="utf-8">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6461469Z     '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6461922Z     '<title>3D converters</title>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6462295Z     '<meta name="application-name" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6462785Z     '<meta name="apple-mobile-web-app-title" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6463243Z     '<meta name="theme-color" content="#0f172a">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6463743Z     '<link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6464336Z     '<link rel="manifest" href="./site.webmanifest?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6464813Z     '<link rel="stylesheet" href="styles/base.css">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6465262Z     '<link rel="stylesheet" href="styles/tabs.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6465821Z     '<link rel="stylesheet" href="styles/app-shell-header-fix.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6466427Z     '<link rel="stylesheet" href="styles/viewer3d.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6467685Z     '<link rel="stylesheet" href="tabs/model-converters-tab.css?v=standalone-2">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6468568Z     '<link rel="stylesheet" href="tabs/model-converters-css-fix.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6469254Z     '<link rel="stylesheet" href="tabs/model-converters-weight-ranking.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6469954Z     '<link rel="stylesheet" href="tabs/universal-xml-converter-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6470583Z     '<link rel="stylesheet" href="tabs/model-exchange-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6471179Z     '<link rel="stylesheet" href="tabs/interchange-config-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6471843Z     '<link rel="stylesheet" href="tabs/support-mapping-config-tab.css?v=standalone-1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6472497Z     '<link rel="stylesheet" href="styles/app-content-scroll.css?v=2">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6472992Z     '<link rel="preconnect" href="//unpkg.com" crossorigin>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6473611Z     '<link rel="preconnect" href="//cdn.sheetjs.com" crossorigin>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6475729Z     '<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.1/examples/jsm/","gltf-exporter":"https://unpkg.com/three@0.160.1/examples/jsm/exporters/GLTFExporter.js","mdb-reader":"https://esm.sh/mdb-reader@2","buffer":"https://esm.sh/buffer@6","xlsx":"https://cdn.sheetjs.com/xlsx-latest/package/xlsx.mjs","node:crypto":"./core/browser-node-crypto.js?v=20260902-vib-pages-crypto-1"}}</script>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6477930Z     '</head>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6478234Z     '<body data-standalone-app="format-converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6478728Z     '<div id="app-layout" role="application" aria-label="3D converters"></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6479471Z     '<div id="app-loading-overlay" class="app-loading-overlay is-visible" aria-live="polite" aria-hidden="false">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6480108Z     '  <div class="app-loading-card">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6480524Z     '    <div class="app-loading-spinner" aria-hidden="true"></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6480935Z     '    <div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6481210Z     '      <strong>3D converters</strong>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6481557Z     '      <p>Loading workspace...</p>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6481867Z     '    </div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6482113Z     '  </div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6482332Z     '</div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6482581Z     '<div id="app-toast" hidden></div>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6483133Z     '<script type="module" src="./main-rhbg-fitguard.js?v=20261001-single-weight-owners-1"></script>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6483693Z     '</body>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6483916Z     '</html>\n',
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6484259Z   expected: /main-rhbg-fitguard\.js\?v=20260929-pr780-metadata-1/,
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6484665Z   operator: 'match',
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6484905Z   diff: 'simple'
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6485126Z }
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6485240Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6485331Z Node.js v22.23.3
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T15:51:41.6494720Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,171 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 836 Piping Class cold reload</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20261006-c05-2-pc-1';
+import { commitDatasetReadyMaster } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js?v=20261006-c05-2-pc-1';
+import { hydratePersistedMasterDatasets } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-startup-hydration.js?v=20261006-c05-2-pc-1';
+import { materializeMasterDatasetRows } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js?v=20261006-c05-2-pc-1';
+
+const STAGE_KEY = 'xml-cii-issue-836-stage';
+const EXPECTED_KEY = 'xml-cii-issue-836-expected';
+const SOURCE_URL = '../../docs/Masters/Piping_class_master.json';
+const SOURCE_NAME = 'Piping_class_master.json';
+
+function requireValue(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+function blankContext() {
+  return {
+    config: {},
+    rawRows: {},
+    mappingRows: {},
+    datasetRefs: {},
+    rowCounts: {},
+    previewRows: {},
+    sourceMetadata: {},
+    appliedMappingRevision: {},
+  };
+}
+
+function deleteDb(name) {
+  return new Promise((resolve) => {
+    const request = indexedDB.deleteDatabase(name);
+    request.onsuccess = () => resolve();
+    request.onerror = () => resolve();
+    request.onblocked = () => resolve();
+  });
+}
+
+async function firstLoad() {
+  await deleteDb('xml-cii-master-datasets-v1');
+  for (const suffix of [
+    'xml-cii-master-source-pipingClass',
+    'xml-cii-master-pipingClass',
+    'xml-cii-master-raw-pipingClass',
+    'xml-cii-master-workbook-pipingClass',
+  ]) localStorage.removeItem(suffix);
+  localStorage.removeItem(EXPECTED_KEY);
+
+  const coordinator = createMasterDatasetImportCoordinator();
+  try {
+    const response = await fetch(SOURCE_URL, { cache: 'no-store' });
+    requireValue(response.ok, `Piping Class fixture fetch failed HTTP ${response.status}`);
+    const buffer = await response.arrayBuffer();
+    const ready = await coordinator.openBuffer('pipingClass', buffer, SOURCE_NAME, {
+      config: {},
+      currentMap: {},
+    });
+
+    requireValue(ready?.metadata?.datasetId, 'Piping Class dataset id missing');
+    requireValue(Number(ready?.metadata?.datasetRevision) > 0, 'worker datasetRevision missing');
+    requireValue(Number(ready?.metadata?.rowCount) > 0, 'Piping Class dataset is empty');
+
+    const liveRows = await coordinator.getRows('pipingClass', 0, Math.min(3, ready.metadata.rowCount));
+    requireValue((liveRows?.rows || []).length > 0, 'active-session Piping Class rows are not readable');
+
+    const committed = commitDatasetReadyMaster({
+      context: blankContext(),
+      config: {},
+      key: 'pipingClass',
+      ready,
+      sourceMetadata: {
+        key: 'pipingClass',
+        source: SOURCE_NAME,
+        sourceType: 'issue-836-browser',
+        status: 'loaded',
+        rowCount: Number(ready.metadata.rowCount || 0),
+      },
+    });
+
+    requireValue(
+      Number(committed.datasetRef?.datasetRevision) === Number(ready.metadata.datasetRevision),
+      'runtime datasetRef lost Piping Class datasetRevision',
+    );
+    const custody = JSON.parse(localStorage.getItem('xml-cii-master-source-pipingClass') || '{}');
+    requireValue(custody.persistenceMode === 'indexeddb', 'restart custody is not indexeddb');
+    requireValue(custody.datasetId === committed.datasetRef.datasetId, 'restart dataset id mismatch');
+    requireValue(
+      Number(custody.datasetRevision) === Number(ready.metadata.datasetRevision),
+      'restart custody lost Piping Class datasetRevision',
+    );
+    requireValue(localStorage.getItem('xml-cii-master-pipingClass') == null, 'normalized rows duplicated into localStorage');
+    requireValue(localStorage.getItem('xml-cii-master-raw-pipingClass') == null, 'raw rows duplicated into localStorage');
+
+    localStorage.setItem(EXPECTED_KEY, JSON.stringify({
+      datasetId: committed.datasetRef.datasetId,
+      datasetRevision: committed.datasetRef.datasetRevision,
+      appliedRevision: committed.revision,
+      rowCount: committed.datasetRef.rowCount,
+      firstMarker: JSON.stringify((liveRows?.rows || [])[0] || {}),
+    }));
+    localStorage.setItem(STAGE_KEY, 'hydrate');
+    location.reload();
+  } finally {
+    coordinator.dispose();
+  }
+}
+
+async function secondLoad() {
+  const expected = JSON.parse(localStorage.getItem(EXPECTED_KEY) || '{}');
+  requireValue(expected.datasetId, 'expected first-load custody missing');
+  const stateRef = { current: { supportConfigJson: '{}', masterContext: blankContext() } };
+  const changed = await hydratePersistedMasterDatasets(stateRef);
+  requireValue(changed === true, 'cold hydration reported no change');
+
+  const ref = stateRef.current.masterContext.datasetRefs?.pipingClass;
+  requireValue(ref, 'Piping Class datasetRef missing after cold hydration');
+  requireValue(ref.datasetId === expected.datasetId, 'dataset id changed across reload');
+  requireValue(Number(ref.datasetRevision) === Number(expected.datasetRevision), 'dataset revision changed across reload');
+  requireValue(
+    Number(stateRef.current.masterContext.appliedMappingRevision?.pipingClass) === Number(expected.appliedRevision),
+    'applied mapping revision changed across reload',
+  );
+  requireValue(Number(ref.rowCount) === Number(expected.rowCount), 'row count changed across reload');
+
+  const materialized = await materializeMasterDatasetRows('pipingClass', ref);
+  requireValue(materialized.length === Number(expected.rowCount), `fresh worker materialized ${materialized.length}/${expected.rowCount} rows`);
+  requireValue(JSON.stringify(materialized[0] || {}) === expected.firstMarker, 'first normalized row changed across reload');
+
+  const result = {
+    schema: 'XMLCII_ISSUE_836_PIPING_CLASS_COLD_RELOAD_V1',
+    ok: true,
+    source: SOURCE_NAME,
+    datasetId: ref.datasetId,
+    datasetRevision: ref.datasetRevision,
+    appliedRevision: stateRef.current.masterContext.appliedMappingRevision.pipingClass,
+    rowCount: ref.rowCount,
+    materializedRows: materialized.length,
+    persistence: ref.persistence,
+    assertions: {
+      activeSessionReadable: true,
+      compactCustody: true,
+      coldReloadRestoredIdentity: true,
+      coldReloadRestoredDatasetRevision: true,
+      coldReloadRestoredMappingRevision: true,
+      freshWorkerMaterializedPersistedRows: true,
+    },
+  };
+  localStorage.removeItem(STAGE_KEY);
+  globalThis.__XML_CII_ISSUE_836_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_836_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+
+try {
+  if (localStorage.getItem(STAGE_KEY) === 'hydrate') await secondLoad();
+  else await firstLoad();
+} catch (error) {
+  localStorage.removeItem(STAGE_KEY);
+  const result = {
+    schema: 'XMLCII_ISSUE_836_PIPING_CLASS_COLD_RELOAD_V1',
+    ok: false,
+    error: String(error?.stack || error),
+  };
+  globalThis.__XML_CII_ISSUE_836_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_836_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

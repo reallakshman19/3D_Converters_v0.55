@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>R10 Real Browser Worker LFJ Source Parity</title>
+<script type="module">
+  // Test-only hosted page: the actual R03/R04/R05 work runs inside native Worker.
+  window.runR10SourceWorker = async (json) => {
+    const sourceRefId='SOURCE-ORIGINAL', revision='source-one';
+    const blob = new Blob([new TextEncoder().encode(json)],{type:'application/json'});
+    const expected=Array.from(new Uint8Array(
+      await crypto.subtle.digest('SHA-256',new TextEncoder().encode(json))
+    ),b=>b.toString(16).padStart(2,'0')).join('');
+    const worker=new Worker(new URL('./source-browser-worker.mjs',import.meta.url),{type:'module'});
+    try{
+      let rows=[];
+      const result=await new Promise((resolve,reject)=>{
+        const timer=setTimeout(()=>reject(new Error('real Chromium Worker timed out')),15000);
+        worker.addEventListener('error',e=>{clearTimeout(timer);reject(new Error('browser Worker error'));});
+        worker.addEventListener('message',e=>{
+          const m=e.data;
+          if(m?.kind==='PROVISIONAL_PAGE'){
+            if(m.schema!=='LFJ.CrossRuntimeSourcePort.v1'||m.rows?.length>2){
+              clearTimeout(timer);reject(new Error('unbounded page'));return;
+            }
+            rows.push(...m.rows);
+            worker.postMessage({schema:'LFJ.CrossRuntimeSourcePort.v1',
+              kind:'PAGE_ACK',jobId:'R10-BROWSER-JOB',
+              sourceRefId,sequence:m.sequence});
+          }
+          if(m?.kind==='SCAN_DONE'||m?.kind==='FAILED'){clearTimeout(timer);resolve(m);}
+        });
+        worker.postMessage({
+          schema:'LFJ.CrossRuntimeSourcePort.v1',kind:'SCAN',
+          jobId:'R10-BROWSER-JOB',sourceRefId,revision,blob,
+          expectedSha256:expected,pageEvents:2
+        });
+      });
+      return {result,rows,independentBrowserSha256:expected};
+    }finally{worker.terminate();}
+  };
+</script>

@@ -1,0 +1,24 @@
+{
+  "runId": "SYNTHETIC-EXAMPLE-NOT-OWNER-EVIDENCE",
+  "basisId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "sourceId": "SYNTHETIC-P4",
+  "originalJsonSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "sourceGenerationId": "TEST-GENERATION",
+  "originalPhysicalRows": [
+    {
+      "sourceId": "SYNTHETIC-P4",
+      "occurrenceId": "[\"SYNTHETIC-P4\",0,1,\"[\\\"RIGID\\\",\\\"SYNTHETIC-REF\\\",\\\"2\\\",\\\"\\\"]\"]",
+      "branchOccurrenceIndex": 0,
+      "nodeOrdinal": 1,
+      "componentSignature": "[\"RIGID\",\"SYNTHETIC-REF\",\"2\",\"\"]",
+      "sourceKg": null,
+      "match1Kg": null,
+      "finalKg": null,
+      "effectiveKg": null
+    }
+  ],
+  "finalIntent": null,
+  "engineWitness": null,
+  "transferManifest": null,
+  "nativeSlotReceipt": null
+}

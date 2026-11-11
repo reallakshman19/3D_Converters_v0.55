@@ -1,0 +1,4 @@
+schema: AgentStatus.v1
+pr_or_wip: WIP-XML229-SUGGESTION-6ae1bed6
+state: FORWARDED_TO_PR358
+report: agents/PR358_workreport.md

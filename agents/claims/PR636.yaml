@@ -1,0 +1,36 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR636
+claim_state: ACTIVE
+branch: agent/xml-cii-parent-branch-only-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+files:
+  exact:
+    - tabs/model-converters/converters/xmltocii2019_helper/preview-renderer.js
+    - tabs/model-converters/converters/xmltocii2019_helper/xml-cii-parent-run-parity-weight-scope.js
+    - tests/xml-cii-parent-run-parity-weight-scan.test.mjs
+    - agents/PR636_workreport.md
+    - agents/status/PR636.yaml
+    - agents/claims/PR636.yaml
+  prefixes: []
+authority_domains:
+  - XML_CII_PARENT_RUN_PARITY_EXECUTION_GRANULARITY
+claim_modes:
+  - EXCLUSIVE
+predecessor_coordination:
+  PR630: MERGED_STALE_ACTIVE_METADATA_SUPERSEDED
+exclusions:
+  - tabs/xml-cii-2019-standalone/ui-adapted/**
+  - converters/xml-cii2019-core/weight-valve-hints.js
+  - support/GAP semantics
+  - CII writer/runtime
+  - Python conversion
+  - .github/workflows/**
+coordination:
+  PR616: NO_EXACT_FILE_OVERLAP
+  C5_C5M: ADAPTED_PREVIEW_FILES_EXCLUDED
+coordination_state: SAFE_SUCCESSOR_TO_MERGED_PR630
+implementation_head: 18ffc7480b12d9c3b69db3d3b3ddb2bb305ea561
+last_verified_main: 765d15e87def22291792ddb533df9ea532fb3f67
+last_updated: 2026-08-18T20:33:00+04:00

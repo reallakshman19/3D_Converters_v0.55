@@ -1,0 +1,27 @@
+schema: AgentStatus.v1
+work_id: WIP-hp-kd-review-compact
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd-review-compact
+base: main
+base_sha: 95ee50ff78d81465f3e4968f62767d866f8b9da8
+pr: 656
+criticality: ENGINEERING_CRITICAL
+intent: IMPLEMENT
+state: OPEN_DRAFT_HANDOVER_READY
+coordination: COORDINATION_REQUIRED_PR649_SHARED_WORKSPACE_NON_OVERLAPPING_HUNK
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_SUCCESSOR
+validation:
+  productivity_helper: PASS_3_OF_3_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  compact_ui_contract: PASS_SOURCE_INSPECTION
+  diff_normalization: PASS_GITHUB_COMPARE_WORKBENCH_PLUS36_MINUS34
+  non_kd_workbench_preservation: PASS_GITHUB_PATCH_INSPECTION
+  full_repository_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  workbench_module_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+  hosted_ci: NOT_RUN_PENDING_FINAL_REFRESH
+exact_next_action: finalize PR656 recovery artifacts and refresh GitHub truth

@@ -1,0 +1,29 @@
+pr: 730
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO
+scope:
+  issue: 721
+  phase: P1_CONTROLLED_SOURCE_QUALIFICATION
+  paths:
+    - docs/engineering-calculations/bolted-joints-p1-controlled-source-qualification.md
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0020.md
+    - agents/agentchain.md
+protected_authority:
+  ug44: BENCHMARK_ONLY
+  bolt_scalar_methods: REFERENCE_KERNEL_ONLY
+  real_master_data: NOT_ESTABLISHED
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+evidence:
+  p0_exact_numeric: PASS_64_OF_64_AT_541D92B_NODE_22_22_2
+  p0_console: FAIL_18_OF_20_PRE_EXISTING_VIB_PRESENTATION_SCOPE
+  current_main_bridge: RELEVANT_NUMERICAL_PATHS_UNCHANGED_541D92B_TO_78B361D
+  official_metadata: ASME_EDITION_SCOPE_IDENTITY_ONLY
+hard_stops:
+  - NO_REAL_STANDARD_MASTER_VALUES_WITHOUT_CONTROLLED_SOURCE
+  - NO_AUTHORITY_PROMOTION
+  - NO_CLAIMED_CODE_QUALIFIED_LEG04_WITHOUT_METHOD_BASIS
+  - NO_VIBRATION_CONSOLE_SCOPE_MUTATION
+next_shared_mutation_gate: P2_SCHEMA_CUSTODY_ONLY_AFTER_FRESH_REGROUND
+merge_authority: OWNER_ONLY_NOT_GRANTED

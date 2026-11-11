@@ -1,0 +1,59 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+state: BLOCKED_SOURCE_OR_INTEGRATION_DECISION
+execution_mode: AUTO
+auto_state: OWNER_DECISION_OR_SOURCE_QUALIFICATION_REQUIRED
+scope_authority: LOCKED_TO_APPROVED_MISSION
+branch: agent/engcalc-bolted-joints-phase1-20260902
+base_main: bff53e336bdbddbe0fb829b7991ca5ed27fc836a
+latest_material_head: dc861a714491bbaec801fbd03fb9a91bb3491ebc
+latest_endpoint: EP-0010
+engineering_critical: true
+authority_domain: flange-and-bolted-joint-calculations
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+flange:
+  ug44_registry_integrated: true
+  calculation_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  master_store_state: SANDBOX_SCHEMA_SYNTHETIC_ONLY
+  master_resolver_integrated_into_ug44: false
+bolts:
+  short_form_state: REFERENCE_KERNEL_ONLY
+  short_form_registry_integrated: false
+  master_store_state: SANDBOX_SCHEMA_SYNTHETIC_ONLY
+  master_resolver_integrated_into_short_form: false
+  bolt_group_state: LINEAR_REFERENCE_ONLY
+  detailed_friction_state: BLOCKED_BY_SOURCE_QUALIFICATION
+source_authority:
+  asme_bpvc_viii_1_2025_edition_identity: PASS_OFFICIAL_PUBLIC_METADATA
+  exact_ug44b_2025_clause_table: UNRESOLVED_LICENSED_SOURCE_REQUIRED
+  flange_real_master_data: UNRESOLVED
+  bolt_real_thread_material_friction_data: UNRESOLVED
+  legacy_detailed_torque_formula: UNRESOLVED_XLS_AUDIT_REQUIRED
+validation:
+  source_inspection: PASS
+  base_drift: PASS_ZERO_BEHIND
+  reconstructed_ug44_kernel_test: PASS_6_OF_6_SUPPORTING_ONLY
+  hosted_checkout_node22: PASS
+  hosted_registry_initialization: PASS_INDIRECT_INTEGRATION_EVIDENCE
+  hosted_hp_suite: FAIL_14_OF_15_OUT_OF_SCOPE_HP_PARITY
+  hosted_failure_run: 33605997593
+  hosted_failure_job: 100169984905
+  focused_ug44_repository_native_test: NOT_RUN_OWNER_DEFERRED_FOR_NOW
+  flange_master_store_test: NOT_RUN
+  bolt_short_form_test: NOT_RUN
+  bolt_master_store_test: NOT_RUN
+  bolt_group_test: NOT_RUN
+  browser: NOT_RUN
+  independent_engineering_review: NOT_RUN
+backup:
+  central_registry_index_native_pre_edit: NOT_RUN_ENVIRONMENT_BLOCKED
+  central_registry_index_connector_exact_copy: PRESENT_NOT_POLICY_EQUIVALENT
+  relay_connector_exact_copies: PRESENT_NOT_POLICY_EQUIVALENT
+hard_stop:
+  detailed_friction: Exact detailed thread/bearing-friction equation chain is not qualified from the legacy xls or a controlled source.
+  central_integration: Existing shared registry/UI mutation remains gated by unavailable native backup execution and unexecuted focused bolt tests.
+exact_next_action: Convert/audit Bolt Torque Calc.xls or provide a controlled detailed torque source, then implement a separate detailed-friction torque solver with independent analytical fixtures. If central integration is preferred first, obtain explicit owner authorization for that existing-file/deferred-validation sequence.

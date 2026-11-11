@@ -1,0 +1,40 @@
+pr: 744
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8_SEALED_FLANGE_FACE_BINDING
+state: BLOCKED_VALIDATION_AND_BINDING_PRODUCER_REQUIRED
+execution_mode: AUTO
+auto_state: BLOCKED_VALIDATION_AND_BINDING_PRODUCER_REQUIRED
+base_pr: 743
+base_sha: 92e016146a63f926449ecad525ee549d6495f336
+source:
+  model_schema: rvm-converter-stage/v1
+  analysis_repository: reallaksh19/Advanced_Analysis
+  analysis_commit: eabb93cd44c59ce182d73284cb707653917e07c8
+  binding_schema: FlangeFaceBinding.v1
+authority:
+  source: CONTROLLED_PROJECT_SEMANTIC_BINDING_NON_AUTHORIZING
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+scope:
+  automatic_3d_extraction: false
+  geometry_inference_used: false
+  physical_flange_role_explicit: true
+  flange_face_point_explicit: true
+  opening_direction_explicit: true
+  mating_side_explicit: true
+  automatic_binding_producer_qualified: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  central_registry_modified: false
+  ui_modified: false
+validation:
+  source_blob_custody: PASS
+  test_blob_custody: PASS
+  focused_suite: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+hard_stop: node --test tests/flange-face-binding.test.mjs
+latest_endpoint: EP-0033
+merge_authority: OWNER_ONLY_NOT_GRANTED

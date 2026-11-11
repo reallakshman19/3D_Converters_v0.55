@@ -1,0 +1,17 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-781-P2-WEIGHT-UX-20260929
+claim_state: ACTIVE
+branch: agent/issue-781-p2-weight-ux-20260929
+workstream: XML_CII_STANDALONE_ISSUE_781_P2_WEIGHT_UX
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_WEIGHT_MATCH_PRESENTATION
+  - XML_CII_MATCH1_ACCEPTANCE_UX
+protected_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-authority-ui.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-authority-ui.js
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-09-30

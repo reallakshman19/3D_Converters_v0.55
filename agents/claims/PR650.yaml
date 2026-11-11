@@ -1,0 +1,37 @@
+schema: AgentClaim.v1
+pr: 650
+claim_state: ACTIVE
+branch: agent/hp-kd320-four-record-intake-r2
+claim_modes:
+  - EXCLUSIVE
+  - COORDINATED
+files:
+  exact:
+    - engineering/hp-class-standardization/qualification/kd320-q2/csv-four-record-intake.js
+    - tabs/hp-kd320-evidence-intake-tab.js
+    - tabs/engineering-workspace-tab.js
+    - tests/b313-chapter-ix-kd320-csv-four-record-intake.test.mjs
+    - tests/b313-chapter-ix-kd320-csv-edition-reference.test.mjs
+    - tests/hp-kd320-evidence-intake-ui.test.mjs
+    - agents/PR650_workreport.md
+    - agents/status/PR650.yaml
+    - agents/claims/PR650.yaml
+authority_domains:
+  - KD320_QUALIFICATION_EVIDENCE_TRANSPORT
+  - KD320_PREVIEW_PRESENTATION
+exclusions:
+  - NATIVE_KD320_ARITHMETIC
+  - FATIGUE_CURVE_DATA
+  - LICENSED_SOURCE_TEXT
+  - PRODUCTION_QUALIFICATION
+  - DESIGN_AUTHORITY
+  - AUTOMATIC_EVIDENCE_ADMISSION
+  - .github/workflows/*
+coordination:
+  PR649:
+    shared_file: tabs/engineering-workspace-tab.js
+    classification: COORDINATED_NON_OVERLAPPING_CACHE_HUNKS
+    pr649_hunk: Calculations loader cache identity
+    pr650_hunk: KD320 Evidence Intake loader cache identity
+    required_before_second_merge: LIVE_REGROUND_AND_PRESERVE_BOTH_CACHE_IDENTITIES
+merge_authority: OWNER_ONLY_NOT_GRANTED

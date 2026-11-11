@@ -1,0 +1,40 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR630
+mission: Remove discarded Weight-Master scoring from parent Run-parity Preview without changing branch facts or final standalone Weight authority.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-run-parity-weight-scan-20260818
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/630
+pr_head_last_validated: 253907664283793cb384a34adce137b0fad27358
+main_head_last_checked: 1d5930638e6f9714a2c29af328fe15a4e6b8b7f6
+merge_base: bca7fc9390c018753d09161052b0bf2fd54e33ce
+base_drift: SAFE_TO_CONTINUE_ONE_UNRELATED_COMMIT
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE_DRAFT
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR630_workreport.md
+appendix_a_status: NOT_REQUIRED_NEW_WORK_ITEM
+grounding_epoch: GE-004
+current_stage: DRAFT_REVIEW
+blocker: FULL_REPOSITORY_BROWSER_EQUIVALENCE_NOT_RUN
+highest_risk: Full repository/browser real parent Preview branch-row equivalence remains NOT_RUN; focused exact-byte invariants pass.
+dependencies:
+  - COORDINATED_WITH_STALE_C5W_WEIGHT_AUTHORITY_NO_EXACT_FILE_OVERLAP
+  - INDEPENDENT_OF_PR628_BORE_WALL
+  - INDEPENDENT_OF_PR616_PREVIEW_SEARCH
+validation_summary:
+  source_dependency_trace: PASS
+  mandatory_backup: PASS
+  syntax: PASS
+  focused_weight_scan_suppression: PASS_IMPLEMENTATION_COUPLED
+  exact_byte_custody: PASS
+  full_parent_preview_equivalence: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr_workflow_runs: ZERO_RETURNED_NOT_RUN
+  commit_statuses: ZERO_RETURNED_NOT_RUN
+  reviews: ZERO
+  review_threads: ZERO
+  mergeable: TRUE_AT_VALIDATED_HEAD
+exact_next_action: Keep PR630 draft; await independent evidence or start the next roadmap slice as a separate WIP after fresh coordination grounding. Never merge without explicit owner authorization.
+last_updated: 2026-08-18T19:07:00+04:00

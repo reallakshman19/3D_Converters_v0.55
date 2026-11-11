@@ -1,0 +1,83 @@
+{
+  "schema": "MechanicalT23DirectScreeningQualification.v1",
+  "methodId": "VIB.MECHANICAL.T2_3.BASELINE",
+  "methodRevision": "ei-aviff2-t2-3-direct-baseline-v1",
+  "qualificationDecision": {
+    "state": "SCREENING",
+    "engineeringAuthority": "SCREENING",
+    "screeningAuthority": "AUTHORIZED",
+    "authorityScope": "DIRECT_TABLE_T2_3_BASELINE_ONLY",
+    "designAuthority": false,
+    "ownerAuthorization": {
+      "pullRequest": 640,
+      "mergeCommit": "d6524db920641d45f7e9536c2024a8eae5f290be",
+      "decision": "BOUND_DIRECT_TABLE_T2_3_SCREENING_ONLY"
+    }
+  },
+  "controlledSource": {
+    "publisher": "Energy Institute",
+    "publication": "Guidelines for the avoidance of vibration induced fatigue failure in process pipework",
+    "edition": "2nd",
+    "publicationDate": "2008-01",
+    "isbn": "9780852934630",
+    "repository": "reallaksh19/Common",
+    "commit": "aef163a5def3bfe04ca0ba860da05728a27daf42",
+    "path": "EI - AVIFF Guidelines 2nd Edition.pdf",
+    "gitBlobSha1": "9d3eccc56429411e17c07a579bdebbd13cb0bdc5",
+    "sectionId": "T2.3",
+    "tableId": "T2-3",
+    "printedPage": 54
+  },
+  "directTableBaselines": [
+    { "sourceKey": "RECIP_PD_COMPRESSOR_OR_PUMP", "expectedLof": 0.9 },
+    { "sourceKey": "DIESEL_OR_GAS_ENGINE_DRIVE", "expectedLof": 0.8 },
+    { "sourceKey": "SCREW_COMPRESSOR_OR_PUMP", "expectedLof": 0.6 },
+    { "sourceKey": "CENTRIFUGAL_PUMP", "expectedLof": 0.4 },
+    { "sourceKey": "ELECTRIC_MOTOR_OR_ALTERNATOR_GE_15KW", "expectedLof": 0.4 },
+    { "sourceKey": "ELECTRIC_MOTOR_OR_ALTERNATOR_LT_15KW", "expectedLof": 0.2 },
+    { "sourceKey": "CENTRIFUGAL_COMPRESSOR", "expectedLof": 0.2 },
+    { "sourceKey": "GAS_TURBINE", "expectedLof": 0.2 },
+    { "sourceKey": "FAN_OR_BLOWER", "expectedLof": 0.2 }
+  ],
+  "independentOracle": {
+    "id": "VIB-MECH-PROC-ORACLE-01",
+    "basis": "EI worked example D2.4 retained independently from the production direct-baseline evaluator",
+    "retainedValidationRecord": "ValidationRecords/VibrationIntegrity/ei-aviff-multimechanism-validation-v1.json",
+    "retainedValidationRecordGitBlobSha1": "2709ea8796d7f0c799f2a55d1d119236bd7ce383",
+    "case": "EI-D2.4-MECHANICAL-EXCITATION",
+    "inputs": [
+      { "sourceKey": "CENTRIFUGAL_COMPRESSOR", "expectedLof": 0.2 },
+      { "sourceKey": "ELECTRIC_MOTOR_OR_ALTERNATOR_GE_15KW", "expectedLof": 0.4 }
+    ],
+    "expectedGoverningLof": 0.4,
+    "expectedGoverningSourceKey": "ELECTRIC_MOTOR_OR_ALTERNATOR_GE_15KW",
+    "absoluteTolerance": 0
+  },
+  "excludedRules": {
+    "sharedSupportTransfer": {
+      "sourceKey": "PIPEWORK_SHARING_SUPPORTS_WITH_LINE_LOF_GE_0_50",
+      "adjacentLofThreshold": 0.5,
+      "expectedImplementationState": "NOT_IMPLEMENTED_IN_DIRECT_BASELINE_SCREENING",
+      "screeningAuthority": "NOT_AUTHORIZED"
+    },
+    "postDynamicAnalysisReduction": {
+      "applicableSourceKeys": [
+        "RECIP_PD_COMPRESSOR_OR_PUMP",
+        "DIESEL_OR_GAS_ENGINE_DRIVE"
+      ],
+      "reducedLof": 0.4,
+      "prerequisite": "DETAILED_STRUCTURAL_DYNAMIC_ANALYSIS_NO_EXCITATION_FREQUENCY_COINCIDENCE",
+      "expectedImplementationState": "NOT_IMPLEMENTED_IN_DIRECT_BASELINE_SCREENING",
+      "screeningAuthority": "NOT_AUTHORIZED"
+    },
+    "genericEiMainLineAggregation": "NOT_PROMOTED_BY_THIS_QUALIFICATION",
+    "designAuthority": false
+  },
+  "validationPolicy": {
+    "productionMustNotImportThisRecord": true,
+    "repositoryNativeFocusedTests": "REQUIRED_AT_RELEASE_GATE",
+    "fullRepositoryNodeSuite": "REQUIRED_AT_RELEASE_GATE",
+    "benchmarkedChromiumJourney": "REQUIRED_AT_RELEASE_GATE",
+    "missingExecutionEvidence": "NOT_FROZEN"
+  }
+}

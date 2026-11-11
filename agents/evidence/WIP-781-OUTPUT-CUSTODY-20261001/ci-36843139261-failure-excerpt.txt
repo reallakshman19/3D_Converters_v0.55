@@ -1,0 +1,13 @@
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1832538Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1833174Z AssertionError [ERR_ASSERTION]: The input did not match the regular expression /main-rhbg-fitguard\.js\?v=20260929-pr780-metadata-1/. Input:
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1840416Z 
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1840917Z '<!doctype html>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1841327Z   '<html lang="en">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1842596Z   '<head>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1843399Z   '<meta charset="utf-8">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1843883Z   '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1844509Z   '<title>3D converters</title>\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1844898Z   '<meta name="application-name" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1845361Z   '<meta name="apple-mobile-web-app-title" content="3D converters">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1845775Z   '<meta name="theme-color" content="#0f172a">\n' +
+qualify	Prove full startup chain and rendered Converter dropdown	2026-10-01T09:30:18.1846263Z   '<link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg?v=standalone-1">\n' +

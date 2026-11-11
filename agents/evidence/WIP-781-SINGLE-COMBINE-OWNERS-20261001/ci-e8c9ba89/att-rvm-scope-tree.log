@@ -1,0 +1,64 @@
+scope-tree	Validate ATT/RVM scope tree	﻿2026-10-01T15:38:26.2022072Z ##[group]Run node --check tabs/model-converters/rvmattr-scope-tree-model.js
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2023069Z ^[[36;1mnode --check tabs/model-converters/rvmattr-scope-tree-model.js^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2023611Z ^[[36;1mnode --check tabs/model-converters/rvmattr-scope-tree-addon.js^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2024106Z ^[[36;1mnode --check tabs/model-converters/ModelConvertersTab.js^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2024572Z ^[[36;1mnode --check tabs/model-converters/index.js^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2024967Z ^[[36;1mnode --check tabs/model-converters-tab.js^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2025433Z ^[[36;1mnode tests/model-converters/test-rvmattr-scope-tree.mjs^[[0m
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2250849Z shell: /usr/bin/bash -e {0}
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.2251480Z ##[endgroup]
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3642560Z (node:2035) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/rvmattr-scope-tree-model.js is not specified and it doesn't parse as CommonJS.
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3645364Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3647451Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3648623Z (Use `node --trace-warnings ...` to show where the warning was created)
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3677728Z node:internal/modules/run_main:123
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3678714Z     triggerUncaughtException(
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3680845Z     ^
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3681485Z 
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3682363Z AssertionError [ERR_ASSERTION]: The input did not match the regular expression /20260802-rvm-full-scope-tree-1/. Input:
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3683143Z 
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3683414Z '/**\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3684504Z   ' * index.js — canonical public entry point for the model-converters module.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3685221Z   ' *\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3685941Z   ' * All consumers (viewer shell, tests, other tabs) should import from here\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3686990Z   ' * rather than from legacy-adapter.js, ModelConvertersTab.js, or any other\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3687696Z   ' * internal file.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3688310Z   ' *\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3688965Z   ' * The exports from sub-modules (WorkflowShell, ConverterSelector,\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3689857Z   ' * ConverterRunner) are available here for convenience.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3690767Z   ' */\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3691266Z   '\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3692260Z   "export { renderModelConvertersTab } from './ModelConvertersTab-fbx2-managed-reference.js?v=20261001-single-weight-owners-1';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3693277Z   '\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3694013Z   '// Re-export reusable module surfaces so external consumers have one import target.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3695379Z   "export { XML_CII_WORKFLOW_PHASES, normalizeWorkflowPhaseId, getWorkflowPhase } from './WorkflowShell.js?v=20260928-tabperf1';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3696965Z   "export { getDefaultConverterId, isValidConverterId, getConverterById } from './ConverterSelector.js';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3698072Z   "export { runConverter, buildNoopLogger } from './ConverterRunner.js';\n"
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3698617Z 
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3699379Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/model-converters/test-rvmattr-scope-tree.mjs:66:8 {
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3700706Z   generatedMessage: true,
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3703502Z   code: 'ERR_ASSERTION',
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3704099Z   actual: '/**\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3717477Z     ' * index.js — canonical public entry point for the model-converters module.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3718387Z     ' *\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3719304Z     ' * All consumers (viewer shell, tests, other tabs) should import from here\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3721286Z     ' * rather than from legacy-adapter.js, ModelConvertersTab.js, or any other\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3721939Z     ' * internal file.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3722317Z     ' *\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3722743Z     ' * The exports from sub-modules (WorkflowShell, ConverterSelector,\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3723516Z     ' * ConverterRunner) are available here for convenience.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3723949Z     ' */\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3724222Z     '\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3724857Z     "export { renderModelConvertersTab } from './ModelConvertersTab-fbx2-managed-reference.js?v=20261001-single-weight-owners-1';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3725425Z     '\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3725887Z     '// Re-export reusable module surfaces so external consumers have one import target.\n' +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3726688Z     "export { XML_CII_WORKFLOW_PHASES, normalizeWorkflowPhaseId, getWorkflowPhase } from './WorkflowShell.js?v=20260928-tabperf1';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3727470Z     "export { getDefaultConverterId, isValidConverterId, getConverterById } from './ConverterSelector.js';\n" +
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3728124Z     "export { runConverter, buildNoopLogger } from './ConverterRunner.js';\n",
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3728624Z   expected: /20260802-rvm-full-scope-tree-1/,
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3729022Z   operator: 'match',
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3729333Z   diff: 'simple'
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3729631Z }
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3729778Z 
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3730534Z Node.js v22.23.3
+scope-tree	Validate ATT/RVM scope tree	2026-10-01T15:38:26.3741390Z ##[error]Process completed with exit code 1.

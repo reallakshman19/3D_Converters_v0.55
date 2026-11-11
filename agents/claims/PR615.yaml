@@ -1,0 +1,89 @@
+id: PR615
+branch: agent/vibration-eit-roadmap-20260818
+criticality: ENGINEERING_CRITICAL
+claim_state: ACTIVE
+paths:
+  - converters/vibration/eit/**
+  - converters/vibration/project/**
+  - converters/vibration/source/**
+  - converters/vibration/roadmap/**
+  - converters/vibration/measurement/**
+  - converters/vibration/mechanisms/result-contracts.js
+  - converters/vibration/mechanisms/reducers.js
+  - converters/vibration/ei-mainline-aggregation.js
+  - converters/vibration/facility/fit-frequency-custody.js
+  - converters/vibration/facility/fit-engineering-basis.js
+  - converters/vibration/facility/fit-plan-item.js
+  - tabs/vibration-roadmap-panel.js
+  - tabs/vibration-roadmap-controller.js
+  - tabs/vibration-roadmap-panel.css
+  - tabs/engineering-calculations-tab.js
+  - scripts/inspect-vibration-eit-roadmap.mjs
+  - tests/vibration-eit-generic.test.mjs
+  - tests/vibration-project-eit.test.mjs
+  - tests/vibration-project-measurement-persistence.test.mjs
+  - tests/vibration-method-source.test.mjs
+  - tests/vibration-roadmap-*.test.mjs
+  - tests/vibration-mechanism-line-result.test.mjs
+  - tests/vibration-ei-mainline-aggregation.test.mjs
+  - tests/vibration-facility-fit-frequency-custody.test.mjs
+  - tests/vibration-measurement-contract.test.mjs
+  - agents/PR615_stage2_source_identity.md
+  - agents/PR615_stage3_mechanism_reduction.md
+  - agents/PR615_stage4_fit_frequency_custody.md
+  - agents/PR615_stage5_measurement_custody.md
+  - agents/PR615_stage6_measurement_persistence.md
+  - agents/PR615_stage7_measurement_roadmap_resize.md
+authority_domains:
+  - EIT_COMPATIBILITY_IMPORT_NORMALIZATION
+  - VIBRATION_PROJECT_PERSISTENCE
+  - VIBRATION_PROJECT_MEASUREMENT_EVIDENCE_PERSISTENCE
+  - SOURCE_IDENTITY_LOCATOR_CUSTODY
+  - ROADMAP_PRESENTATION_PROJECTION
+  - ROADMAP_MEASUREMENT_EVIDENCE_PRESENTATION
+  - ROADMAP_UI_MOUNT
+  - ROADMAP_COLLAPSE_RESIZE_PRESENTATION
+  - PROJECT_UI_IMPORT_OPEN_SAVE
+  - MECHANISM_RESULT_REDUCTION_CUSTODY
+  - EI_MAINLINE_AGGREGATION_V2
+  - FIT_NATURAL_FREQUENCY_PROVENANCE_CUSTODY
+  - FIELD_MEASUREMENT_EVIDENCE_CUSTODY
+exclusions:
+  - engineering equations or coefficients
+  - FIT method or applicability numerical mutation
+  - natural-frequency source-method inference
+  - signal-processing algorithms or numerical methods
+  - measurement-to-LOF or measurement-to-screening promotion
+  - measurement evidence as assessment-complete state
+  - persisted measurement evidence as current engineering authority
+  - automatic root-cause conclusion
+  - mechanism applicability authority
+  - unqualified multi-item mechanism reduction rules
+  - benchmark oracle values or tolerances
+  - persisted current-result authority
+  - active AIV/FIT/SBC mechanism workspace files
+  - further shared Engineering Calculations tab mutation
+  - generic multi-module EIT export authority
+  - process reference actualization inference
+  - geometry DN/schedule inference
+  - design or code authority promotion
+  - Product Freeze promotion
+  - workflow files
+coordination:
+  PR571: mechanism coverage and identification; coverage/contracts files untouched
+  PR539_PR540: FIT adapter/family/console authority presentation; exact files avoided
+  PR479: FIT workspace integration blocked
+  PR506: shared Engineering Calculations tab and AIV runtime; historical overlap acknowledged, no further shared-tab edit permitted
+  PR508: SBC facility/workspace paths avoided
+  PR582_PR584_PR586_PR588: merged M5 basis/geometry/process authorities reused, not duplicated
+stage7_invariants:
+  - MEASUREMENT_EVIDENCE_NE_SCREENING_RESULT
+  - ROADMAP_DATA_STATE_NE_ASSESSMENT_COMPLETE
+  - SELECTED_LINE_ONLY_MEASUREMENT_PRESENTATION
+  - EXPLICIT_MECHANISM_STATE_SEPARATE_FROM_PROJECT_DERIVED_EVIDENCE
+  - ROADMAP_RESIZE_NE_ENGINEERING_STATE
+  - COLLAPSE_RESIZE_PRESENTATION_ONLY
+  - RIGHT_RAIL_WIDTH_CLAMP_260_320_520
+  - NO_SHARED_TAB_MUTATION
+  - NO_MECHANISM_WORKSPACE_MUTATION
+  - NO_SIGNAL_PROCESSING_MATH

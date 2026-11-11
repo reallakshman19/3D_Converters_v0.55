@@ -1,0 +1,266 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>XML CII semantic-core browser timing</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { xmlCiiDryRunPreview } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js';
+import {
+  resetIncrementalPreviewRuntime,
+  snapshotIncrementalPreviewRuntime,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-incremental.js';
+import {
+  resetSourceDocumentContextCache,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-source-derived-context.js';
+import {
+  resetXmlCiiPerfMetrics,
+  snapshotXmlCiiPerfMetrics,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf.js';
+
+globalThis.__XML_CII_PERF__ = true;
+
+function median(values) {
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+function percentile(values, fraction) {
+  const sorted = [...values].sort((a, b) => a - b);
+  if (!sorted.length) return 0;
+  return sorted[Math.min(sorted.length - 1, Math.ceil(fraction * sorted.length) - 1)];
+}
+
+function summary(values) {
+  return {
+    samples: values.map((value) => Number(value.toFixed(3))),
+    minMs: Number(Math.min(...values).toFixed(3)),
+    medianMs: Number(median(values).toFixed(3)),
+    p95Ms: Number(percentile(values, 0.95).toFixed(3)),
+    maxMs: Number(Math.max(...values).toFixed(3)),
+  };
+}
+
+function countXml(xmlText) {
+  const document = new DOMParser().parseFromString(xmlText, 'application/xml');
+  return {
+    branches: document.getElementsByTagName('Branch').length,
+    nodes: document.getElementsByTagName('Node').length,
+  };
+}
+
+function scaledXml(xmlText, factor) {
+  if (factor === 1) return xmlText;
+  const document = new DOMParser().parseFromString(xmlText, 'application/xml');
+  const branches = [...document.getElementsByTagName('Branch')];
+  const serializer = new XMLSerializer();
+  const copies = [];
+  for (let copy = 0; copy < factor; copy += 1) {
+    for (const branch of branches) {
+      const clone = branch.cloneNode(true);
+      const name = clone.getElementsByTagName('Branchname')[0];
+      if (name) {
+        const original = String(name.textContent || '');
+        name.textContent = original.replace(/\/B(\d+)$/i, `-PERF${copy}/B$1`) || `${original}-PERF${copy}`;
+      }
+      copies.push(serializer.serializeToString(clone));
+    }
+  }
+  return `<Root>${copies.join('')}</Root>`;
+}
+
+function masterConfig(masterRows, version, materialCode = '001', weightVersion = 1) {
+  const lineRows = Array.from({ length: masterRows }, (_, index) => ({
+    Service: 'PERF',
+    'Line Number': String(90000000 + index),
+    'Piping Class': `P${String(index % 40).padStart(2, '0')}`,
+    Rating: index === 0 && version > 1 ? '300' : '150',
+    Material: 'A106-B',
+    DN: String(50 + (index % 10) * 25),
+    P1: index === 0 && version > 1 ? '250' : '100',
+    T1: '80',
+    T2: '60',
+    T3: '-10',
+    Density: '850',
+  }));
+  const pipingRows = Array.from({ length: masterRows }, (_, index) => ({
+    pipingClass: `P${String(index % 40).padStart(2, '0')}`,
+    convertedBore: 50 + (index % 10) * 25,
+    componentType: 'PIPE',
+    rating: index === 0 && version > 1 ? '300' : '150',
+    materialName: 'A106-B',
+    schedule: '40',
+    wallThickness: 6 + (index % 3),
+    corrosion: 1.5,
+  }));
+  return {
+    linelist: {
+      masterRows: lineRows,
+      fieldMap: {
+        lineKey1: 'Service',
+        lineKey2: 'Line Number',
+        lineSeqNo: 'Line Number',
+        pipingClass: 'Piping Class',
+        rating: 'Rating',
+        material: 'Material',
+        convertedBore: 'DN',
+        p1: 'P1',
+        t1: 'T1',
+        t2: 'T2',
+        t3: 'T3',
+        density: 'Density',
+      },
+    },
+    pipingClass: { masterRows: pipingRows, fieldMap: {} },
+    material: { mapRows: [{ code: materialCode, material: 'A106-B' }] },
+    weight: {
+      masterRows: weightVersion === 1 ? [] : [{
+        bore: 100,
+        rating: '150',
+        length: 100,
+        valveType: 'PERF',
+        weight: 25,
+      }],
+    },
+    rating: { ratingSequence: [] },
+    overrides: {},
+    processDefaults: {},
+  };
+}
+
+function timeCall(fn) {
+  const started = performance.now();
+  const result = fn();
+  return { result, elapsed: performance.now() - started };
+}
+
+function runSequence(xmlText, masterRows) {
+  resetIncrementalPreviewRuntime();
+  resetSourceDocumentContextCache();
+  resetXmlCiiPerfMetrics();
+
+  const v1 = masterConfig(masterRows, 1, '001', 1);
+  const cold = timeCall(() => xmlCiiDryRunPreview(xmlText, v1, ''));
+
+  const v2 = masterConfig(masterRows, 2, '001', 1);
+  const semantic = timeCall(() => xmlCiiDryRunPreview(xmlText, v2, ''));
+
+  const v3 = masterConfig(masterRows, 2, '002', 1);
+  const material = timeCall(() => xmlCiiDryRunPreview(xmlText, v3, ''));
+
+  const v4 = masterConfig(masterRows, 2, '002', 2);
+  const weight = timeCall(() => xmlCiiDryRunPreview(xmlText, v4, ''));
+
+  const perf = snapshotXmlCiiPerfMetrics();
+  const runtime = snapshotIncrementalPreviewRuntime();
+  if (perf.sourceParseCount !== 1 || perf.sourceParseCacheHitCount !== 1) {
+    throw new Error(`source custody violation: ${JSON.stringify(perf)}`);
+  }
+  if (runtime.fullBuilds !== 2 || runtime.materialOnlyBuilds !== 1 || runtime.weightOnlyBuilds !== 1) {
+    throw new Error(`incremental routing violation: ${JSON.stringify(runtime)}`);
+  }
+  return {
+    coldMs: cold.elapsed,
+    semanticMs: semantic.elapsed,
+    materialMs: material.elapsed,
+    weightMs: weight.elapsed,
+    branchRows: cold.result?.branchRows?.length || 0,
+    nodeRows: cold.result?.nodeRows?.length || 0,
+    perf,
+    runtime,
+  };
+}
+
+async function runCase(baseXml, { name, factor, masterRows, repetitions }) {
+  const xmlText = scaledXml(baseXml, factor);
+  const xmlCounts = countXml(xmlText);
+  const samples = [];
+  for (let index = 0; index < repetitions; index += 1) {
+    await new Promise((resolve) => setTimeout(resolve, 25));
+    samples.push(runSequence(xmlText, masterRows));
+  }
+  return {
+    name,
+    factor,
+    masterRows,
+    repetitions,
+    xmlCounts,
+    resultRows: {
+      branchRows: samples[0]?.branchRows || 0,
+      nodeRows: samples[0]?.nodeRows || 0,
+    },
+    cold: summary(samples.map((sample) => sample.coldMs)),
+    semanticDomReuse: summary(samples.map((sample) => sample.semanticMs)),
+    materialOnly: summary(samples.map((sample) => sample.materialMs)),
+    weightOnly: summary(samples.map((sample) => sample.weightMs)),
+    lastPerf: samples.at(-1).perf,
+    lastRuntime: samples.at(-1).runtime,
+  };
+}
+
+function workerDecision(cases) {
+  const actual250 = cases.find((item) => item.name === 'SYS0010_250_MASTERS');
+  const actual1000 = cases.find((item) => item.name === 'SYS0010_1000_MASTERS');
+  const scaled = cases.find((item) => item.name === 'SYS0010_X3_250_MASTERS');
+  const longTaskMs = 50;
+
+  if ((actual250?.semanticDomReuse?.medianMs || 0) >= longTaskMs) {
+    return {
+      decision: 'WORKER_CANDIDATE_AFTER_INDEX_AUDIT',
+      reason: 'Representative 250-row master semantic rebuild crosses the 50 ms browser long-task boundary. Audit/index O(branches×masterRows) lookup before worker implementation.',
+      longTaskMs,
+    };
+  }
+  if ((actual1000?.semanticDomReuse?.medianMs || 0) >= longTaskMs) {
+    return {
+      decision: 'NOT_ADMITTED_INDEX_FIRST',
+      reason: 'Only the 1000-row master stress case crosses 50 ms; scaling implicates master lookup/indexing before thread offload.',
+      longTaskMs,
+    };
+  }
+  if ((scaled?.semanticDomReuse?.medianMs || 0) >= longTaskMs) {
+    return {
+      decision: 'NOT_ADMITTED_SCALE_ONLY',
+      reason: 'Only the 3× XML scale case crosses 50 ms; keep workers deferred until a representative production model reproduces the long task.',
+      longTaskMs,
+    };
+  }
+  return {
+    decision: 'NOT_ADMITTED',
+    reason: 'Measured representative and controlled stress semantic rebuilds remain below the 50 ms long-task boundary.',
+    longTaskMs,
+  };
+}
+
+try {
+  const response = await fetch('../../Benchmarks/css/SYS-0010.xml', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`SYS-0010 fetch failed: HTTP ${response.status}`);
+  const baseXml = await response.text();
+
+  const caseSpecs = [
+    { name: 'SYS0010_0_MASTERS', factor: 1, masterRows: 0, repetitions: 5 },
+    { name: 'SYS0010_250_MASTERS', factor: 1, masterRows: 250, repetitions: 3 },
+    { name: 'SYS0010_1000_MASTERS', factor: 1, masterRows: 1000, repetitions: 2 },
+    { name: 'SYS0010_X3_250_MASTERS', factor: 3, masterRows: 250, repetitions: 2 },
+  ];
+  const cases = [];
+  for (const spec of caseSpecs) cases.push(await runCase(baseXml, spec));
+
+  const result = {
+    schema: 'XMLCII_BROWSER_SEMANTIC_TIMING_V1',
+    benchmark: 'Benchmarks/css/SYS-0010.xml',
+    userAgent: navigator.userAgent,
+    hardwareConcurrency: navigator.hardwareConcurrency,
+    generatedAt: new Date().toISOString(),
+    cases,
+    worker: workerDecision(cases),
+  };
+  globalThis.__XML_CII_BROWSER_PERF_RESULT__ = result;
+  globalThis.__XML_CII_BROWSER_PERF_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+} catch (error) {
+  const result = { error: String(error?.stack || error) };
+  globalThis.__XML_CII_BROWSER_PERF_RESULT__ = result;
+  globalThis.__XML_CII_BROWSER_PERF_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

@@ -1,0 +1,22 @@
+# PR706 Work Report
+
+CHAIN_ID: ENGCALC-BOLTED-JOINTS
+LEG_ID: LEG-01
+PR: 706
+BRANCH: agent/engcalc-bolted-joints-phase1-20260902
+BASE_MAIN: bff53e336bdbddbe0fb829b7991ca5ed27fc836a
+LATEST_MATERIAL_HEAD: dc861a714491bbaec801fbd03fb9a91bb3491ebc
+LATEST_ENDPOINT: EP-0010
+STATE: BLOCKED_SOURCE_OR_INTEGRATION_DECISION
+EXECUTION_MODE: AUTO
+AUTO_STATE: OWNER_DECISION_OR_SOURCE_QUALIFICATION_REQUIRED
+SCOPE_AUTHORITY: LOCKED_TO_APPROVED_MISSION
+MERGE_AUTHORITY: OWNER_ONLY_NOT_GRANTED
+
+## Mission
+
+Implement the approved `Engineering Calculations -> Flanges & Joints / Bolts` critical path with source-traceable numerical kernels, explicit 3D/load mechanics, non-authorizing master-data custody, independent analytical fixtures, and fail-closed authority semantics.
+
+## Current summary
+
+Detailed thread/bearing-friction torque was previously blocked by source qualification; central bolt registry/UI integration was separately gated. See the original workreport blob preserved by this backup for the full pre-sync state.

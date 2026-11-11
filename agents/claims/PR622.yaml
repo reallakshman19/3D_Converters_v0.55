@@ -1,0 +1,33 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: PR622
+branch: agent/hp-kd320-q2-admission-intake
+stacked_on_pr: 619
+workstream: HP_KD320_QUALIFICATION
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_Q2_ADMISSION_INTAKE_ONLY
+qualification: APPENDIX_A_99_OF_100
+claimed_paths:
+  - engineering/hp-class-standardization/qualification/kd320-q2/**
+  - scripts/verify-b313-ch9-kd320-q2-candidate.mjs
+  - tests/b313-chapter-ix-kd320-q2-candidate.test.mjs
+  - agents/WIP-hp-kd320-q2-admission_workreport.md
+  - agents/status/WIP-hp-kd320-q2-admission.yaml
+  - agents/claims/WIP-hp-kd320-q2-admission.yaml
+  - agents/PR622_workreport.md
+  - agents/status/PR622.yaml
+  - agents/claims/PR622.yaml
+exclusions:
+  - engineering/hp-class-standardization/qualification/kd320-q1/**
+  - engineering/hp-class-standardization/qualification/kd3-oracle/catalog.json
+  - converters/**
+  - tabs/**
+  - engineering/hp-class-standardization/app.js
+  - package.json
+  - .github/workflows/**
+  - native KD320 equations
+  - production calculation authority
+  - Code/design authority promotion
+coordination:
+  PR619: STACKED_DEPENDENCY_NO_EXACT_FILE_OVERLAP
+merge_authority: OWNER_ONLY_NOT_GRANTED

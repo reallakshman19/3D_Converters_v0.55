@@ -1,0 +1,11 @@
+# XML229 G2 actual-Worker cold Preview timing evidence (draft)
+
+**PR:** G2 qualification-only, against the held combined integration branch after #282/#283 were merged. No changes to Preview scorer, original JSON ownership, GC-PW Final decisions, or native Run.
+
+The existing Chromium actual original-Blob scenario (`tests/xml-cii-229-p4-worker-held-blob-review-browser.mjs`) now records a monotonic `performance.now()` trace of the same `onProgress` stages that the production Worker emits and the time until the authentic source-bound Preview/Weight Worker reports ready. It expects the new child-only stage `preview-json-byte-sha256`, proving the live child was invoked in this scenario. The test retains independent original physical census, 7-per-physical FactRecords, Match-1/Final CAS, engine-input transfer and native release HOLD assertions.
+
+**Measured fields:** `previewReadyElapsedMs`, ordered `stageTimings` with stage/elapsed-ms. No wall-clock source date, no filenames/raw JSON, no Master rows, no unreviewed proposed kg, no fabricated speedup. Real JavaScript `performance.now()` is a monotonic userland signal, not a CPU profiler or a certified performance SLO. These measured durations cover **the synthetic public 3-physical-component input only**, not the 41/423/2961 private Owner workload.
+
+**Not measured:** true maximum browser/Worker RSS or heap, cold 385/10,699/383/1,595 Owner master scale, 100MiB/2m workload worst case, full native CII physical-slot consumption. A browser's `performance.memory` normally represents the page only, not all Worker backing buffers, and must not be described as total peak RAM.
+
+**Gate:** require Node22/24 + genuine Chromium hosted run on exact PR head. Record elapsed stage metrics without inventing constant absolute thresholds; compare owner exact input across the previous #280 head and this change in the approved private test setup with selected branch physical totals, source SHA/generation, and byte-identical facts/decisions. Failure or unavailable Owner data => HELD and NOT_VERIFIED. No deployment/release authority.

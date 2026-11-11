@@ -1,0 +1,77 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>J02 Regex bounded evidence scale</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  masterDatasetCoordinator,
+  searchMasterDatasetRows,
+  getMasterDatasetRowsByIndexes,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js';
+import { resolveRegexSmartEvidence } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-evidence.js';
+
+const SIZES=[10000,50000,100000], FRAME_MS=250, encoder=new TextEncoder();
+const config={activeFormatIndex:0,formats:[{tokenDelimiter:'-',lineKey:{tokenPosition:''},pipingClass:{tokenPosition:''},rating:{tokenPosition:''},bore:{tokenPosition:''}},{}],ratingSequence:[]};
+const sizeFamily=Array.from({length:15},(_,i)=>({branchName:`/ASIM-1885-PL-3"-S881${String(1000+i).padStart(4,'0')}-91261M7-HC-01/B${i+1}`}));
+const hotFamily=Array.from({length:13},(_,i)=>({branchName:`/ASIM-1885-PL-HOT-S882${String(2000+i).padStart(4,'0')}-91261M7-HC-01/B${i+1}`}));
+const rare=[{branchName:'/AREA-DN100-P4110003-93833/B1'},{branchName:'/AREA-DN150-P4110004-93833/B2'}];
+const branchSamples=[...sizeFamily,...hotFamily,...rare];
+const lineKeys=[...sizeFamily,...hotFamily].map(x=>x.branchName.match(/-([SP]\d{7})-/)?.[1]).filter(Boolean);
+const lineFieldMap={lineKey1:'Service',lineKey2:'Line Number'};
+const classFieldMap={pipingClass:'Piping Class',convertedBore:'DN'};
+
+function rowsFor(count,key){
+  const rows=Array.from({length:count},(_,i)=>key==='lineList'
+    ? {Service:'', 'Line Number':`X${String(i).padStart(7,'0')}`}
+    : {'Piping Class':`FILL${i}`,DN:80});
+  if(key==='lineList') lineKeys.forEach((value,i)=>{rows[i]={'Service':'','Line Number':value};});
+  else rows[0]={'Piping Class':'91261M7',DN:80};
+  return rows;
+}
+function buffer(rows){const bytes=encoder.encode(JSON.stringify(rows));return bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength);}
+async function responsive(operation){
+  await new Promise(r=>requestAnimationFrame(r)); let active=true,last=performance.now(),gap=0,frames=0;
+  const tick=now=>{gap=Math.max(gap,now-last);last=now;frames+=1;if(active)requestAnimationFrame(tick);}; requestAnimationFrame(tick);
+  const started=performance.now(),value=await operation(),elapsedMs=performance.now()-started;
+  await new Promise(r=>requestAnimationFrame(now=>{gap=Math.max(gap,now-last);frames+=1;active=false;r();}));
+  return {value,elapsedMs,maxFrameGapMs:gap,frames};
+}
+try{
+  const scales=[];
+  for(const count of SIZES){
+    const lineReady=await masterDatasetCoordinator.openBuffer('lineList',buffer(rowsFor(count,'lineList')),`j02-lines-${count}.json`,{fieldMapOverride:lineFieldMap});
+    const classReady=await masterDatasetCoordinator.openBuffer('pipingClass',buffer(rowsFor(count,'pipingClass')),`j02-class-${count}.json`,{fieldMapOverride:classFieldMap});
+    let searchCalls=0,indexedFetchCalls=0,indexedRows=0;
+    const search=async (...args)=>{searchCalls+=1;return searchMasterDatasetRows(...args);};
+    const getRowsByIndexes=async (...args)=>{indexedFetchCalls+=1;indexedRows+=args[2]?.length||0;return getMasterDatasetRowsByIndexes(...args);};
+    const state={regexTesterConfig:config,regexTesterResult:{branchSamples,matchedRows:[],rejectedRows:branchSamples},masterContext:{
+      config:{linelist:{fieldMap:lineFieldMap},pipingClass:{fieldMap:classFieldMap}},
+      datasetRefs:{
+        lineList:{...lineReady.metadata,fieldMap:lineFieldMap},
+        pipingClass:{...classReady.metadata,fieldMap:classFieldMap},
+      },
+      rowCounts:{lineList:count,pipingClass:count},
+    }};
+    const measured=await responsive(()=>resolveRegexSmartEvidence(state,{search,getRowsByIndexes}));
+    const result=measured.value, receipt=result.receipt;
+    if(result.selectedBucketCount!==2||result.analysisSampleCount!==28) throw new Error(`bucket selection mismatch at ${count}`);
+    if(receipt.metrics.sampleCount!==30) throw new Error(`full coverage sample count lost at ${count}`);
+    if(result.boundedEvidence?.mode!=='BOUNDED_MASTER_EVIDENCE'||result.boundedEvidence?.complete!==true) throw new Error(`bounded evidence incomplete at ${count}`);
+    if(searchCalls>192||indexedRows>2400) throw new Error(`bounded evidence exceeded constant caps at ${count}`);
+    if(measured.maxFrameGapMs>FRAME_MS) throw new Error(`evidence frame gap ${measured.maxFrameGapMs}ms > ${FRAME_MS}ms at ${count}`);
+    scales.push({rowsPerMaster:count,sourceSamples:30,analysisSamples:result.analysisSampleCount,selectedBuckets:result.selectedBucketCount,
+      lineRowsHydrated:result.lineRowCount,pipingClassRowsHydrated:result.pipingClassRowCount,searchCalls,indexedFetchCalls,indexedRows,
+      evidenceElapsedMs:measured.elapsedMs,evidenceMaxFrameGapMs:measured.maxFrameGapMs,coverage:receipt.metrics.coverage});
+    await masterDatasetCoordinator.releaseMaster('lineList'); await masterDatasetCoordinator.releaseMaster('pipingClass');
+  }
+  const evidence={schema:'XMLCII_REGEX_BOUNDED_EVIDENCE_SCALE_V1',ok:true,responsivenessThresholdMs:FRAME_MS,
+    asimFamilies:{dominant:15,alternative:13,rareFullCoverage:2},scales};
+  globalThis.__XML_CII_REGEX_BOUNDED_SCALE_RESULT__=evidence;
+  document.querySelector('#out').textContent=JSON.stringify(evidence,null,2);
+}catch(error){
+  globalThis.__XML_CII_REGEX_BOUNDED_SCALE_RESULT__={schema:'XMLCII_REGEX_BOUNDED_EVIDENCE_SCALE_V1',ok:false,error:String(error?.stack||error)};
+  document.querySelector('#out').textContent=JSON.stringify(globalThis.__XML_CII_REGEX_BOUNDED_SCALE_RESULT__,null,2);
+}finally{
+  globalThis.__XML_CII_REGEX_BOUNDED_SCALE_DONE__=true; masterDatasetCoordinator.dispose();
+}
+</script>

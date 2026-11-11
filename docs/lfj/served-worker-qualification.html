@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><title>V4.1 deployed docs LFJ Worker import smoke</title>
+<script type="module">
+import {runCommittedSourceQuery} from './ports/committed-worker-query.mjs';
+window.runServedDocsWorker=async json=>{
+  if(typeof runCommittedSourceQuery!=='function')throw Error('DEPLOY_COORDINATOR_IMPORT_MISSING');
+  const bytes=new TextEncoder().encode(json);
+  const blob=new Blob([bytes],{type:'application/json'});
+  const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),
+    b=>b.toString(16).padStart(2,'0')).join('');
+  const worker=new Worker(new URL('./ports/source-browser-worker.mjs',import.meta.url),{type:'module'});
+  const schema='LFJ.CrossRuntimeSourcePort.v1',jobId='DEPLOY-SMOKE',sourceRefId='DEPLOY-SRC';
+  try{
+    const events=[];
+    const result=await new Promise((resolve,reject)=>{
+      const timer=setTimeout(()=>reject(Error('DEPLOY_REAL_WORKER_TIMEOUT')),15000);
+      worker.addEventListener('error',()=>{clearTimeout(timer);reject(Error('DEPLOY_REAL_WORKER_MODULE_FAILED'));});
+      worker.addEventListener('message',event=>{
+        const msg=event.data;
+        if(msg.kind==='PROVISIONAL_PAGE'){
+          events.push(...msg.rows);
+          worker.postMessage({schema,kind:'PAGE_ACK',jobId,sourceRefId,sequence:msg.sequence});
+        }else if(msg.kind==='SCAN_DONE'||msg.kind==='FAILED'){
+          clearTimeout(timer);resolve(msg);
+        }
+      });
+      worker.postMessage({schema,kind:'SCAN',jobId,sourceRefId,revision:'r1',
+        blob,expectedSha256:hash,pageEvents:2});
+    });
+    return {result,eventPaths:events.filter(x=>x.kind==='OPEN').map(x=>x.path),sha:hash};
+  }finally{worker.terminate();}
+};
+</script>

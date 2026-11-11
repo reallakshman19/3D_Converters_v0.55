@@ -1,0 +1,25 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: WIP-hp-kd320-edition-reconciliation
+branch: agent/hp-kd320-edition-reconciliation
+base_pr: 623
+workstream: HP_KD320_QUALIFICATION
+stage: Q2_TARGET_EDITION_RECONCILIATION_GATE
+criticality: ENGINEERING_CRITICAL
+state: IMPLEMENTED_PENDING_PUBLICATION
+execution_mode: AUTO
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  syntax: PASS
+  focused_edition_reconciliation: PASS_10_OF_10
+  template_audit: PASS_PENDING
+  template_strict_ready: FAIL_CLOSED_EXIT_2
+  actual_controlled_2025_reconciliation: NOT_RUN_EVIDENCE_PENDING
+authority:
+  target_qf022_ready: false
+  q2_oracle_admission_ready: false
+  native_core_kd320: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+exact_next_action: Publish the gate, then populate it only from controlled VIII-3 2025 evidence and independent checking.

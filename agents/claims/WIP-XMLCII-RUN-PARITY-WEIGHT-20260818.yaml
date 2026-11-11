@@ -1,0 +1,16 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-RUN-PARITY-WEIGHT-20260818
+claim_state: RELEASED_TO_PR630
+branch: agent/xml-cii-run-parity-weight-scan-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_PARENT_RUN_PARITY_DISCARDED_WEIGHT_COMPUTATION
+claim_modes:
+  - RELEASED
+successor: PR630
+successor_claim: agents/claims/PR630.yaml
+coordination_state: SUPERSEDED_BY_PR_CUSTODY
+last_verified_head: a06e59e1b92607365182085fd9418d01e8939b22
+last_updated: 2026-08-18T19:04:00+04:00

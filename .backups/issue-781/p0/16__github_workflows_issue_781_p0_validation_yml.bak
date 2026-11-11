@@ -1,0 +1,42 @@
+name: Issue 781 P0 XML-CII Validation
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p0-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate B31.3 live Preview row custody
+        run: node tests/xml-cii-issue-781-b313-live-row-custody.test.js
+
+      - name: Validate explicit REST custody to CII writer
+        run: python3 tests/xml-cii-issue-781-explicit-restraint-custody.test.py
+
+      - name: Run adjacent B31.3 and restraint regressions
+        run: |
+          node --test \
+            tests/xml-cii-b313-preview-ui-static.test.js \
+            tests/xml-cii-b313-preview-od-selection.test.mjs \
+            tests/xml-cii-b313-preview-pressure-unit.test.mjs \
+            tests/xml-cii-b313-preview-blocker-ui-static.test.mjs \
+            tests/xml-cii-unmatched-atta-default-rest-closure.test.mjs

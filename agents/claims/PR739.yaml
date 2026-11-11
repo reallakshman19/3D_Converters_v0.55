@@ -1,0 +1,24 @@
+pr: 739
+chain: ENGCALC-BOLTED-JOINTS
+claims:
+  - id: P7-SOURCE-ROLE
+    statement: The Abid/Khan paper is admissible as assembly-behavior and study-specific benchmark evidence only.
+    validation: PASS
+  - id: P7-CANONICAL-STATE
+    statement: Target clamp/preload remains the canonical assembled joint state; torque is an assembly-control method/output.
+    validation: PASS
+  - id: P7-METHOD-EFFECTS
+    statement: The paper supports qualitative sensitivity of preload scatter, elastic interaction, bolt bending and gasket stress to tightening method and sequence.
+    validation: PASS
+  - id: P7-NO-UNIVERSAL-SCATTER
+    statement: Study numerical scatter values are not universal defaults or acceptance criteria.
+    validation: PASS
+  - id: P7-SEQUENCE-SOLVER
+    statement: A deterministic arbitrary-joint sequence-interaction solver is not qualified by the current source package.
+    validation: FAIL_SOURCE_NOT_SUFFICIENT
+  - id: P7-PROJECT-AUTHORITY
+    statement: Project assembly/design authority is not established without controlled procedure, current PCC-1 basis and qualified uncertainty inputs.
+    validation: FAIL_CONTROLLED_PROCEDURE_MISSING
+  - id: P7-AUTHORITY-CEILING
+    statement: This PR changes no production calculation, registry, UI, workflow, master data, Code compliance, design authority or governing eligibility.
+    validation: PASS

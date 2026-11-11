@@ -1,0 +1,19 @@
+pr: 737
+chain: ENGCALC-BOLTED-JOINTS
+claims:
+  - id: gre-source-byte-custody
+    statement: Owner-uploaded FLANGE LEAKAGE CHECK GRE.xls bytes reproduce repository blob 2ba444cf85d0130b86a2e079c11c5bc4f06a72b0 and SHA-256 44dd5e17daac62274f75bced45532b8c3344e293630c8a99226b996ca496d49f.
+    validation: PASS
+  - id: gre-equivalent-pressure-formula-recovery
+    statement: BIFF8 records recover Pq=2*PN, bending/axial equivalent-pressure terms, PFD addition, named f2 factors and PFD<=f2*Pq check for the populated Equivalent FLG sheet.
+    validation: PASS
+  - id: gre-workbook-fixture-replay
+    statement: Independent replay matches 100/100 populated numeric cached values and 30/30 pass/fail inequalities for rows 13-22.
+    validation: PASS
+  - id: gre-no-physical-leak-rate
+    statement: Recovered workbook mathematics is an equivalent-pressure screen and does not contain a qualified physical leak-rate model.
+    validation: PASS_SOURCE_INTERPRETATION
+  - id: gre-authority-boundary
+    statement: Controlled memo/project applicability is unresolved; codeCompliance, designAuthority and governingEligible remain false.
+    validation: PASS
+next_action: New-file-only SCREENING_REFERENCE_ONLY kernel with explicit inputs and workbook regression; no leak-rate/contact/separation/registry/UI in same patch.

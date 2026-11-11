@@ -1,0 +1,28 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR606
+mission: "C5 Weight-only incremental Preview recomputation"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c5-weight-incremental-20260818
+stack_base_pr: 604
+report_basis_head: 0075da914e905adb0ec4195342bd935c19bdb59d
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/PR606_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+worker_admission: NOT_ADMITTED_NO_REAL_TIMING_EVIDENCE
+validation:
+  focused_incremental_tests: PASS_6_OF_6_LOCAL_IMPLEMENTATION_COUPLED
+  changed_file_reconciliation: PASS_REMOTE_8_DECLARED_PATHS
+  browser_full_preview_equivalence: NOT_RUN
+  status_checks: NOT_RUN_NONE_OBSERVED
+protected_authority:
+  - NON_WEIGHT_PREVIEW_FACTS_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+highest_risk: "Weight-only reuse occurring after a hidden non-Weight authority change."
+exact_next_action: "Recheck mergeability/reviews/active-PR overlap; keep draft; no workers."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:55:00+04:00

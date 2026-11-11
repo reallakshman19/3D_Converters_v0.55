@@ -1,0 +1,31 @@
+schema: AgentStatus.v1
+pr_or_wip: PR694
+pull_request: 694
+branch: agent/hp-engineering-review-report
+base: main
+base_sha_after_replay: 54a4f56e36c2025320ea464630fbffac9accc71d
+predecessor_pr: 692
+predecessor_merge: 82cd3ddf5562f3fe990fe5f718d7d8e13e23357a
+state: READY_FOR_REVIEW_PENDING_NATIVE_VALIDATION
+criticality: HP_PRODUCTION_REPORTING
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  report_purpose: ENGINEERING_REVIEW_ONLY
+validation:
+  main_replay: PASS
+  branch_ancestry_last_reconciled: PASS_BEHIND_0
+  implementation_test_ci_paths: PASS_6_INTENDED_BEFORE_RECOVERY
+  numerical_ownership_source_audit: PASS
+  authority_source_audit: PASS
+  context_project_custody_source_audit: PASS
+  product_input_basis_completeness_source_audit: PASS
+  authored_report_contract_suite: AUTHORED_NOT_EXECUTED
+  native_report_node_suite: NOT_RUN
+  hp_real_workbench_workflow: NOT_RUN_ZERO_RETURNED
+  full_app_report_download: NOT_RUN
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED_FOR_PR694
+next_action: EXECUTE_NATIVE_REPORT_TESTS_IF_AVAILABLE_AND_RECONCILE_EXACT_HEAD

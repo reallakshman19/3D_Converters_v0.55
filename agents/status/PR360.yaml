@@ -1,0 +1,14 @@
+schema: AgentStatus.v1
+pr_or_wip: PR360
+state: SUBMITTED_REVIEW_HELD
+report: agents/PR360_workreport.md
+branch: fix/xml229-instrument-active-source-download-6ae1bed6
+base: 9c26b17e7eef77388ebaa53de56f6573c3825a48
+next_action: Review tested CII download repair and16historical CI holds; merge and deploy only with Owner authorization
+merge_authority: OWNER_ONLY_NOT_GRANTED
+tested_source_head: 55554b4227d622c21152990522dee74d0328823a
+focused_ci: REAL_NATIVE_AUTO_MANUAL_AND_STALE_FINAL_PASS
+native_cases: 105_PASS_NODE22_AND24
+known_failed_gates: 16_HISTORICAL_PREFLIGHT
+page_draft_head: b5e7ee32551e0028092be265a36130cc0096ee4a
+aggregate_ci: 75_PASS_16_HISTORICAL_PREFLIGHT_FAIL_ALL_COMPLETED

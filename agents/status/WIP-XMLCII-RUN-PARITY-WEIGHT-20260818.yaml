@@ -1,0 +1,21 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-RUN-PARITY-WEIGHT-20260818
+mission: Remove discarded Weight-Master scoring from parent Run-parity Preview without changing branch facts or final standalone Weight authority.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-run-parity-weight-scan-20260818
+work_intent: SUPERSEDED_BY_PR630
+criticality: ENGINEERING_CRITICAL
+agent_state: COMPLETE_WIP_MIGRATION
+pr_recovery_state: SUPERSEDED
+handover_readiness: READY
+report_path: agents/PR630_workreport.md
+appendix_a_status: NOT_REQUIRED_NEW_WORK_ITEM
+grounding_epoch: GE-003
+current_stage: MIGRATED_TO_PR630
+blocker: NONE
+successor: PR630
+successor_status: agents/status/PR630.yaml
+successor_claim: agents/claims/PR630.yaml
+exact_next_action: Continue only from PR630 custody records.
+last_updated: 2026-08-18T19:04:00+04:00

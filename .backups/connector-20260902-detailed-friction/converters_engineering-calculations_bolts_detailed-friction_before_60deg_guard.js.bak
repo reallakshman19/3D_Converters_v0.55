@@ -1,0 +1,142 @@
+const PI = Math.PI;
+const DEG_TO_RAD = PI / 180;
+
+function finite(value, name) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) throw new TypeError(`${name} must be finite.`);
+  return number;
+}
+
+function positive(value, name) {
+  const number = finite(value, name);
+  if (number <= 0) throw new RangeError(`${name} must be greater than zero.`);
+  return number;
+}
+
+function nonNegative(value, name) {
+  const number = finite(value, name);
+  if (number < 0) throw new RangeError(`${name} must be greater than or equal to zero.`);
+  return number;
+}
+
+function positiveInteger(value, name) {
+  const number = finite(value, name);
+  if (!Number.isInteger(number) || number <= 0) {
+    throw new RangeError(`${name} must be a positive integer.`);
+  }
+  return number;
+}
+
+function threadHalfAngle(value) {
+  const degrees = nonNegative(value, 'threadHalfAngleDeg');
+  if (degrees >= 90) throw new RangeError('threadHalfAngleDeg must be less than 90 degrees.');
+  return { degrees, radians: degrees * DEG_TO_RAD };
+}
+
+function frictionInputs(input = {}) {
+  const thread = nonNegative(input.threadFrictionCoefficient, 'threadFrictionCoefficient');
+  const bearing = nonNegative(input.bearingFrictionCoefficient, 'bearingFrictionCoefficient');
+  return { thread, bearing };
+}
+
+function torqueBase(input = {}) {
+  const preloadN = positive(input.preloadN, 'preloadN');
+  const nominalDiameterM = positive(input.nominalDiameterM, 'nominalDiameterM');
+  const pitchDiameterM = positive(input.pitchDiameterM, 'pitchDiameterM');
+  const leadM = positive(input.leadM, 'leadM');
+  const bearingFrictionRadiusM = positive(input.bearingFrictionRadiusM, 'bearingFrictionRadiusM');
+  const angle = threadHalfAngle(input.threadHalfAngleDeg);
+  const friction = frictionInputs(input);
+  const tanHelixAngle = leadM / (PI * pitchDiameterM);
+  const helixAngleRad = Math.atan(tanHelixAngle);
+  const threadFrictionSecant = friction.thread / Math.cos(angle.radians);
+
+  return {
+    preloadN,
+    nominalDiameterM,
+    pitchDiameterM,
+    leadM,
+    bearingFrictionRadiusM,
+    threadHalfAngleDeg: angle.degrees,
+    threadHalfAngleRad: angle.radians,
+    threadFrictionCoefficient: friction.thread,
+    bearingFrictionCoefficient: friction.bearing,
+    tanHelixAngle,
+    helixAngleRad,
+    threadFrictionSecant,
+  };
+}
+
+function torqueShares({ pitchTorqueNm, threadTorqueNm, bearingTorqueNm, totalTorqueNm }) {
+  if (!(totalTorqueNm > 0)) {
+    return {
+      pitchMechanical: 0,
+      threadFrictionAndCoupling: 0,
+      bearingFriction: 0,
+    };
+  }
+  return {
+    pitchMechanical: pitchTorqueNm / totalTorqueNm,
+    threadFrictionAndCoupling: (threadTorqueNm - pitchTorqueNm) / totalTorqueNm,
+    bearingFriction: bearingTorqueNm / totalTorqueNm,
+  };
+}
+
+export function calculateBearingFrictionRadiusUniformWear({
+  innerBearingDiameterM,
+  outerBearingDiameterM,
+} = {}) {
+  const inner = nonNegative(innerBearingDiameterM, 'innerBearingDiameterM');
+  const outer = positive(outerBearingDiameterM, 'outerBearingDiameterM');
+  if (inner >= outer) {
+    throw new RangeError('innerBearingDiameterM must be less than outerBearingDiameterM.');
+  }
+  return {
+    bearingFrictionRadiusM: (outer + inner) / 4,
+    assumption: 'UNIFORM_WEAR_ARITHMETIC_MEAN_RADIUS',
+  };
+}
+
+export function calculateLegacyThreadGeometry({
+  nominalDiameterM,
+  pitchM,
+  includedThreadAngleDeg = 60,
+  starts = 1,
+} = {}) {
+  const diameter = positive(nominalDiameterM, 'nominalDiameterM');
+  const pitch = positive(pitchM, 'pitchM');
+  const includedAngle = positive(includedThreadAngleDeg, 'includedThreadAngleDeg');
+  if (includedAngle >= 180) {
+    throw new RangeError('includedThreadAngleDeg must be less than 180 degrees.');
+  }
+  const threadStarts = positiveInteger(starts, 'starts');
+  const halfAngleRad = includedAngle * DEG_TO_RAD / 2;
+  const fundamentalTriangleHeightM = pitch * Math.cos(halfAngleRad);
+  const pitchDiameterM = diameter - 0.75 * fundamentalTriangleHeightM;
+  const minorDiameterM = diameter - (17 / 12) * fundamentalTriangleHeightM;
+  if (!(pitchDiameterM > 0) || !(minorDiameterM > 0)) {
+    throw new RangeError('Derived thread diameters must remain greater than zero.');
+  }
+  const tensileStressAreaM2 = PI * (pitchDiameterM + minorDiameterM) ** 2 / 16;
+  const leadM = pitch * threadStarts;
+  const tanHelixAngle = leadM / (PI * pitchDiameterM);
+
+  return {
+    method: 'LEGACY_BOLT_TORQUE_CALC_THREAD_GEOMETRY_REFERENCE',
+    nominalDiameterM: diameter,
+    pitchM: pitch,
+    includedThreadAngleDeg: includedAngle,
+    threadHalfAngleDeg: includedAngle / 2,
+    starts: threadStarts,
+    leadM,
+    fundamentalTriangleHeightM,
+    pitchDiameterM,
+    minorDiameterM,
+    tensileStressAreaM2,
+    tanHelixAngle,
+    helixAngleRad: Math.atan(tanHelixAngle),
+    canUseForDesignAuthority: false,
+  };
+}
+
+// Remainder preserved in GitHub blob 3bab8ffa37af88062886e32c2ce57868ce0ff0d4.

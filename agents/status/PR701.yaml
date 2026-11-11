@@ -1,0 +1,41 @@
+schema: AgentStatus.v1
+pr_or_wip: PR701
+pull_request: 701
+branch: agent/hp-review-ledger-v2-hash-chain
+base: main
+base_sha_at_start: da5dade3d19caba8ae2bd8015aeeae16ae28777a
+predecessor_pr: 698
+state: DRAFT_FOCUSED_EXACT_BLOB_QUALIFIED_NATIVE_AND_FULL_APP_PENDING
+criticality: HP_REVIEW_CUSTODY_INTEGRITY
+authority:
+  purpose: REVIEW_CUSTODY_ONLY
+  calculation_mode: USER_CALCULATED_KD3
+  actor_identity_authority: USER_DECLARED
+  digital_signature: false
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  can_authorize_release: false
+validation:
+  main_grounding: PASS_MAIN_DA5DADE3D19CABA8AE2BD8015AEEAE16AE28777A
+  implementation_branch_ancestry: PASS_AHEAD_2_BEHIND_0_BEFORE_RECOVERY
+  implementation_changed_paths: PASS_9_INTENDED
+  focused_exact_authored_blob_tests: PASS_29_OF_29_WITH_MINIMAL_REPORT_CONTRACT_STUB
+  enhancer_syntax: PASS
+  storage_custody_functional_check: PASS
+  exact_blob_hash_verification: PASS
+  native_checkout_focused_suite: NOT_RUN_CHECKOUT_UNAVAILABLE
+  hp_real_workbench_workflow: NOT_RUN_ZERO_PR_WORKFLOW_RUNS_RETURNED
+  full_app: NOT_RUN
+  full_repository_regression: NOT_RUN
+  hosted_status_checks: NOT_RUN_ZERO_STATUSES_RETURNED
+  reviews: ZERO
+  review_threads: ZERO
+pr:
+  mergeable_at_reconciliation: true
+  behind_main_at_reconciliation: 0
+  changed_paths_total: 12
+  implementation_test_paths: 9
+  recovery_paths: 3
+merge_authority: NOT_GRANTED
+next_action: FINAL_BOOKKEEPING_HEAD_RECONCILIATION_THEN_NATIVE_FULL_APP_WHEN_AVAILABLE

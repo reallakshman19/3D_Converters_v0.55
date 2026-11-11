@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Preview V7 observer cache feedback oracle</title>
+<div id="root"><div id="mc-preview-table-host"><table><tbody id="body"><tr><td>initial source branch</td></tr></tbody></table></div></div>
+<pre id="evidence">RUNNING</pre>
+<script type="module">
+import {installInternalRebuildCapture} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js';
+const host=document.querySelector('#mc-preview-table-host');
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+let updates=0;
+const counter=new MutationObserver(records=>{
+  for(const record of records)for(const node of record.addedNodes)
+    if(node.nodeType===1 && node.matches('[data-mc-preview-cache-evidence]'))updates++;
+});
+counter.observe(host,{childList:true,subtree:true});
+const done=result=>{host.__xmlCiiPreviewCacheV7Observer?.disconnect();
+  counter.disconnect();globalThis.__PREVIEW_V7_OBSERVER_RESULT__=result;
+  document.querySelector('#evidence').textContent=JSON.stringify(result,null,2);
+};
+try{
+  localStorage.clear();
+  host.__xmlCiiPreviewResult={branchRows:[{branchName:'ORIGINAL-BRANCH'}],nodeRows:[]};
+  installInternalRebuildCapture(host,document.querySelector('#root'),
+    '<PipeStressExport><Pipe><Branch><Branchname>ORIGINAL-BRANCH</Branchname></Branch></Pipe></PipeStressExport>',
+    {linelist:{masterRows:[]},pipingClass:{masterRows:[]},material:{mapRows:[]},weight:{masterRows:[]},overrides:{}},
+    {resolveStagedJsonText:async()=>''});
+  const newRow=document.createElement('tr');newRow.innerHTML='<td>genuine table rebuild</td>';
+  host.querySelector('tbody').appendChild(newRow);
+  await sleep(400);
+  const first=updates;
+  await sleep(300);
+  const late=updates-first;
+  done({ok:first>=1&&first<=2&&late===0,first,late,total:updates,
+    cacheEvidencePresent:!!host.querySelector('[data-mc-preview-cache-evidence]')});
+}catch(error){done({ok:false,error:String(error?.stack||error),total:updates});}
+</script></html>

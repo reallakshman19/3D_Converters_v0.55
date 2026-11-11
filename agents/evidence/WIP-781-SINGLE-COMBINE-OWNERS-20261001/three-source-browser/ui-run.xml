@@ -1,0 +1,4479 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PipeStressExport xmlns="http://aveva.com/pipeStress116.xsd">
+<DateTime>09:39:52 28 September 2026</DateTime>
+<Source>AVEVA PSI</Source>
+<Version>3.1.7.0</Version>
+<UserName>MUCE828</UserName>
+<Purpose>Preliminary stress run</Purpose>
+<ProjectName>AML</ProjectName>
+ <MDBName>/AMF1</MDBName>
+<TitleLine>PSI stress Output</TitleLine>
+
+<Units>
+<DistanceUnits>mm</DistanceUnits>
+<BoreUnits>mm</BoreUnits>
+<PressureUnits>pascal</PressureUnits>
+<TemperatureUnits>degC</TemperatureUnits>
+<WeightUnits>kg</WeightUnits>
+<ForceUnits>newton</ForceUnits>
+<WallThicknessUnits>mm</WallThicknessUnits>
+<FluidDensityUnits>kg/m3</FluidDensityUnits>
+</Units>
+<RestrainOpenEnds>Yes</RestrainOpenEnds>
+<AmbientTemperature>21</AmbientTemperature>
+
+<Pipe>
+<FullName>/SYS-6-S8810010-01</FullName>
+<Ref>=1006649783/410520</Ref>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8810010-91261M7-HC-01/B1</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121515</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1496894.18 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+<Node>
+<NodeNumber>20</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>57.25</Weight>
+<ComponentRefNo>=1006649732/121566</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1496743.98 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>30</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121567</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1496390.98 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>353.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+<Node>
+<NodeNumber>40</NodeNumber>
+<NodeName>PS-14295/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121568</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1495072.62 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1318.360</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+
+
+
+<Node>
+<NodeNumber>110</NodeNumber>
+<NodeName>PS-14394/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121576</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1491869.80 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>3202.820</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121578</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1491346.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>120</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121578</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440065.00 -1491117.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>752.800</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121578</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>439836.00 -1491117.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>130</NodeNumber>
+<NodeName>PS-14396.3</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/71</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>438623.00 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1442.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/70</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>434426.22 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/70</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>434426.22 -1491117.00 101061.90</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>170</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/70</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>434426.22 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>4196.780</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/70</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>434426.22 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>180</NodeNumber>
+<NodeName>PS-14389.6</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121517</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>433273.22 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1153.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/69</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432352.22 -1491117.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>210</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/69</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1491117.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1150.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/69</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1491117.00 101413.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121522</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1491117.00 102255.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>220</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121522</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1491117.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1300.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121522</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1490888.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121523</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1489947.00 102484.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121523</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1489947.00 102657.29</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>230</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121523</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1489947.00 102484.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1170.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121523</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1489947.00 102484.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+
+
+<Node>
+<NodeNumber>290</NodeNumber>
+<NodeName>PS-14340.14</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121532</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1482577.00 102484.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>7370.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+
+<Node>
+<NodeNumber>320</NodeNumber>
+<NodeName>PS-14255/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121534</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1478577.00 102484.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>4000.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121537</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1476450.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>350</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121537</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432123.22 -1476221.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2356.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121537</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>431894.22 -1476221.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>360</NodeNumber>
+<NodeName>PS-14296/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121538</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>430926.22 -1476221.00 102484.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1197.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>390</NodeNumber>
+<NodeName>PS-14240/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121541</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>425226.22 -1476221.00 102484.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>5700.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+
+<Node>
+<NodeNumber>440</NodeNumber>
+<NodeName>PS-14241/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121546</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418526.22 -1476221.00 102484.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>6700.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45728</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418002.22 -1476221.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>470</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45728</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417773.22 -1476221.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>753.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45728</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417773.22 -1475992.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45727</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417773.22 -1475250.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>480</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45727</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417773.22 -1475021.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1200.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45727</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417544.22 -1475021.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121553</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416502.22 -1475021.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>490</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121553</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 102484.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1500.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121553</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 102255.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45729</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101629.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45729</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1474898.75 101629.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>500</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45729</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101629.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>855.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45729</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101629.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45730</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101512.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45730</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475194.14 101512.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>510</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45730</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101512.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>117.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45730</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101512.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>TEE</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45726</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101327.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>143.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>TEE</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45726</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475164.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>143.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>520</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>TEE</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45726</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475021.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>143.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>TEE</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45726</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1474878.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>143.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>530</NodeNumber>
+<NodeName>PS-14243/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121555</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1474421.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>600.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>570</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121515</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1472750.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1671.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8810010</PipelineReference><LineNo>S8810010</LineNo></Branch>
+<Branch>
+<Branchname>/ASIM-1836-2"-D8810083-91261M7-PP-01/B1</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>170</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119309</ComponentRefNo>
+<ConnectionType>OLET</ConnectionType>
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.22 -1491117.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119310</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.21 -1491117.01 100946.69</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>580</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119310</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.21 -1491117.01 100871.07</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>313.080</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119310</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.21 -1491192.63 100870.69</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119311</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.21 -1491596.00 100868.67</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>590</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119311</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434426.21 -1491671.99 100868.29</Position>
+<BendType>1</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>554.987</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119311</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434350.22 -1491671.99 100867.91</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>600</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119312</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434350.22 -1491671.99 100867.91</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>75.991</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>606</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/119312</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>434241.22 -1491671.99 100867.37</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>109.001</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>608</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>75.001</Weight>
+<ComponentRefNo>=1006649732/119314</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>433870.02 -1491671.99 100865.51</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>368.005</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>610</NodeNumber>
+<NodeName>=1006649732/119314</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/119316</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>433757.82 -1491671.99 100864.95</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>109.001</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>620</NodeNumber>
+<NodeName>PS-14389/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119317</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>433273.21 -1491671.99 100862.52</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>484.616</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+<Node>
+<NodeNumber>640</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119320</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>432530.22 -1491671.99 100858.81</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>742.999</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>646</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/119320</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>432421.22 -1491671.99 100858.26</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>109.001</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>648</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>74.999</Weight>
+<ComponentRefNo>=1006649732/119322</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>432050.03 -1491671.99 100856.41</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>367.995</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>650</NodeNumber>
+<NodeName>=1006649732/119322</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/119324</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431937.83 -1491671.99 100855.85</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>109.001</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119326</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431598.57 -1491671.99 100854.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>660</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119326</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491671.99 100853.77</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>415.255</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119326</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491596.00 100853.39</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119328</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491398.12 100852.40</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>670</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119328</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491322.50 100852.02</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>349.494</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119328</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491322.50 100776.40</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>680</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/119309</ComponentRefNo>
+<ConnectionType>TEE</ConnectionType>
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>25.4</InsulationThickness>
+<Position>431522.58 -1491322.50 100776.02</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>50.000</BoreMm><ElementLengthMm>76.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>D8810083</PipelineReference><LineNo>D8810083</LineNo></Branch>
+</Pipe><Pipe>
+<FullName>/SYS-6-S8810011-01</FullName>
+<Ref>=1006649783/410236</Ref>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8810011-91261M7-HC-01/B1</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>100010</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45557</ComponentRefNo>
+<ConnectionType>TEE</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1475164.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45558</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1477292.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100020</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45558</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1477521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2357.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45558</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416502.22 -1477521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45559</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45559</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1477521.00 101357.29</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100030</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45559</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>547.770</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45559</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100040</NodeNumber>
+<NodeName>PS-14242.1</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45560</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>850.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45563</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45563</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1477521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45563</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100099</NodeNumber>
+<NodeName>88-VGT-20120</NodeName>
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45564</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418470.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100041</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45564</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418617.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45566</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418621.19 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>610.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>365</Weight>
+<ComponentRefNo>=1006657924/45566</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>419231.19 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>610.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10000</NodeNumber>
+<NodeName>88-VGT-20120</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45568</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>419381.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45569</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45569</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1477521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100100</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45569</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>800.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45569</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45573</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45573</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1477521.00 101061.90</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100150</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45573</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>830.270</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45573</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100160</NodeNumber>
+<NodeName>PS-14293.2</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45574</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422015.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1003.730</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>100239</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45577</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422390.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100161</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45577</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422537.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10010</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>365</Weight>
+<ComponentRefNo>=1006657924/45579</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423150.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>610.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-2</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45583</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423150.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>10020</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45585</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423300.79 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100240</NodeNumber>
+<NodeName>PS-14226.2</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45586</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>425300.77 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1999.980</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+
+<Node>
+<NodeNumber>100309</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45592</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426056.79 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100241</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45592</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426203.79 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>PCOM</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45594</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426206.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>25.400</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>PCOM</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45594</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426232.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>25.400</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10030</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45596</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426382.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100310</NodeNumber>
+<NodeName>PS-14227.5</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45598</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>427432.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1050.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>100389</NodeNumber>
+<NodeName>88-YCH-20062</NodeName>
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6272</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>427932.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100311</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006666116/6272</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>428079.59 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6274</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>428082.79 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>508.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>303.967</Weight>
+<ComponentRefNo>=1006666116/6274</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>428590.79 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>508.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10040</NodeNumber>
+<NodeName>88-YCH-20062</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006666116/6276</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>428740.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>10050</NodeNumber>
+<NodeName>88-YCH-20063</NodeName>
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6277</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429240.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>10060</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006666116/6277</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429387.99 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6279</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429391.19 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>508.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>303.967</Weight>
+<ComponentRefNo>=1006666116/6279</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429899.19 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>508.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10070</NodeNumber>
+<NodeName>88-YCH-20063</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006666116/6281</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>430049.39 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100390</NodeNumber>
+<NodeName>PS-14331.1</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45606</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>430973.02 -1477521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>923.630</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6268</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432294.22 -1477521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100420</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6268</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1477521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1550.200</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006666116/6268</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1477750.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100430</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45557</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1477750.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>229.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8810011</PipelineReference><LineNo>S8810011</LineNo></Branch>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8810011-91261M7-HC-01/B6</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>100430</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45669</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1477750.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100440</NodeNumber>
+<NodeName>PS-14255.9</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45672</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1478574.20 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>824.200</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>100480</NodeNumber>
+<NodeName>PS-14340.8</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45680</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1482577.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>4002.800</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>100520</NodeNumber>
+<NodeName>PS-14233.2</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/86</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1487097.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>4520.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45683</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1490088.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100550</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45683</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1490317.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>3220.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45683</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432752.22 -1490317.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100560</NodeNumber>
+<NodeName>PS-14389.7</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45684</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>433273.22 -1490317.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>750.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/88</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>435473.22 -1490317.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/88</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>435473.22 -1490317.00 101061.90</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100590</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/88</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>435473.22 -1490317.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2200.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006674308/88</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>435473.22 -1490317.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100600</NodeNumber>
+<NodeName>PS-14396.4</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45690</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>438623.00 -1490317.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>3149.780</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45693</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440436.15 -1490317.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100640</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45693</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1490317.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2042.150</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45693</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1490546.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>100650</NodeNumber>
+<NodeName>PS-14394.8</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45694</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1491867.82 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1550.820</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>100680</NodeNumber>
+<NodeName>PS-14295.7</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45699</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1495072.62 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>3204.800</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+
+
+
+<Node>
+<NodeNumber>100730</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45705</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1496391.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1318.380</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+<Node>
+<NodeNumber>100731</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45706</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1496743.98 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>10080</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006657924/45706</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1496890.98 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>10090</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006657924/45669</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1496894.18 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>20803.621</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8810011</PipelineReference><LineNo>S8810011</LineNo></Branch>
+</Pipe><Pipe>
+<FullName>/SYS-S8811956-01</FullName>
+<Ref>=1006649783/409862</Ref>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8811956-91261M7-HC-01/B1</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121345</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1472750.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200010</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121346</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1472750.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200020</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121346</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416273.22 -1472521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>229.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121346</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416502.22 -1472521.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200029</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121347</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>547.770</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121347</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1472521.00 101357.29</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200030</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121347</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>547.770</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121347</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>416820.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200040</NodeNumber>
+<NodeName>PS-14244/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121348</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.97 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>849.980</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121351</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121351</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1472521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121351</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>417670.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200099</NodeNumber>
+<NodeName>88-VGT-25065</NodeName>
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121352</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418470.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200041</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121352</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418617.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121354</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>418621.19 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>610.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>365</Weight>
+<ComponentRefNo>=1006649732/121354</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>419231.19 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>610.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10100</NodeNumber>
+<NodeName>88-VGT-25065</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121356</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>419381.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121357</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121357</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1472521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200100</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121357</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>800.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121357</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>420181.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121361</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121361</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1472521.00 101061.90</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200140</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121361</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>830.270</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121361</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>421011.66 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200150</NodeNumber>
+<NodeName>PS-14247.2</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121362</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422015.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1003.730</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>200229</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121365</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422390.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200151</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121365</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>422537.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10110</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>365</Weight>
+<ComponentRefNo>=1006649732/121367</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423150.59 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>610.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-2</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121371</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423150.59 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>10120</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121373</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>423300.79 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200230</NodeNumber>
+<NodeName>PS-14248/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121374</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>425300.77 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1999.980</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+
+<Node>
+<NodeNumber>200299</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121380</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426056.79 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200231</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121380</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426203.79 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>PCOM</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121382</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426206.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>25.400</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>PCOM</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121382</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426232.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>25.400</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10130</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121384</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426382.59 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>REDU</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121385</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>426382.59 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200300</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>REDU</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121385</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<AlphaAngle>24.45</AlphaAngle>
+<InsulationThickness>80</InsulationThickness>
+<Position>426522.59 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>145.520</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200310</NodeNumber>
+<NodeName>PS-14249/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121386</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>427432.59 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>910.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>200369</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121389</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429621.62 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200311</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>17</Weight>
+<ComponentRefNo>=1006649732/121389</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429730.62 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>109.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>INST</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121391</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>429733.82 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>400.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>INST</ComponentType>
+<Weight>112.336</Weight>
+<ComponentRefNo>=1006649732/121391</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>430133.82 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>400.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10140</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>17</Weight>
+<ComponentRefNo>=1006649732/121393</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>430246.02 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200370</NodeNumber>
+<NodeName>PS-14250/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121394</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>431073.02 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>827.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>200400</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>REDU</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121397</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>88.9</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>431933.02 -1472521.00 101144.45</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>860.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200410</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>REDU</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121397</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<AlphaAngle>24.45</AlphaAngle>
+<InsulationThickness>80</InsulationThickness>
+<Position>432073.02 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>145.520</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200411</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121398</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432073.02 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>10150</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121398</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432220.02 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+
+
+<Node>
+<NodeNumber>10160</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121345</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1472221.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>16258.608</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8811956</PipelineReference><LineNo>S8811956</LineNo></Branch>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8811956-91261M7-HC-01/B2</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>200070</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121401</ComponentRefNo>
+<ConnectionType>OLET</ConnectionType>
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-2</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121402</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>122.250</ElementLengthMm><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+<Node>
+<NodeNumber>200449</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121403</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101406.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200071</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/121403</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101515.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>109.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121405</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101518.60</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>368.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>75</Weight>
+<ComponentRefNo>=1006649732/121405</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101886.60</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>368.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10170</NodeNumber>
+<NodeName>=1006649732/121405</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/121407</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 101998.80</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121408</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 102102.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200450</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121408</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472521.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>179.200</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121408</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1472597.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121409</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1473045.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200460</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121409</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417670.99 -1473121.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>600.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121409</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>417746.99 -1473121.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200470</NodeNumber>
+<NodeName>PS-14245/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121410</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>418745.97 -1473121.00 102178.00</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1074.980</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121413</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420105.39 -1473121.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200510</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121413</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1473121.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1435.420</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121413</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1473045.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121414</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472597.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200520</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121414</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 102178.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>600.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121414</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 102102.00</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200521</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121415</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 102002.00</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>10180</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/121415</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101893.00</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>109.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121417</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101889.80</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>368.000</ElementLengthMm></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>VALV</ComponentType>
+<Weight>75</Weight>
+<ComponentRefNo>=1006649732/121417</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101521.80</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>368.000</ElementLengthMm></Node>
+
+
+
+<Node>
+<NodeNumber>10190</NodeNumber>
+<NodeName>=1006649732/121417</NodeName>
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>15</Weight>
+<ComponentRefNo>=1006649732/121419</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101409.60</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>109.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-2</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121420</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>103.200</ElementLengthMm><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+<Node>
+<NodeNumber>200100</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121401</ComponentRefNo>
+<ConnectionType>OLET</ConnectionType>
+<OutsideDiameter>60.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>70</InsulationThickness>
+<Position>420181.39 -1472521.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>122.250</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8811956</PipelineReference><LineNo>S8811956</LineNo></Branch>
+<Branch>
+<Branchname>/ASIM-1836-6"-S8811956-91261M7-HC-01/B6</Branchname>
+<Temperature>
+<Temperature1>120</Temperature1>
+<Temperature2>309</Temperature2>
+<Temperature3>-5</Temperature3>
+<Temperature4>-100000</Temperature4>
+<Temperature5>-100000</Temperature5>
+<Temperature6>-100000</Temperature6>
+<Temperature7>-100000</Temperature7>
+<Temperature8>-100000</Temperature8>
+<Temperature9>-100000</Temperature9>
+</Temperature>
+<Pressure>
+<Pressure1>700</Pressure1>
+<Pressure2>0</Pressure2>
+<Pressure3>0</Pressure3>
+<Pressure4>0</Pressure4>
+<Pressure5>0</Pressure5>
+<Pressure6>0</Pressure6>
+<Pressure7>0</Pressure7>
+<Pressure8>0</Pressure8>
+<Pressure9>0</Pressure9>
+<HydroPressure>0</HydroPressure></Pressure>
+<MaterialNumber>106</MaterialNumber>
+<InsulationDensity>210.0</InsulationDensity>
+<FluidDensity>100</FluidDensity>
+<Node>
+<NodeNumber>200420</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>BRAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121457</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1472221.00 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+<Node>
+<NodeNumber>200559</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121459</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1472070.80 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200560</NodeNumber>
+<NodeName>PS-14231/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121460</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1471467.80 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>603.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121465</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1470618.20 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121465</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1470618.20 101357.29</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200600</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121465</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1470618.20 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>849.600</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121465</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1470618.20 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121466</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1469817.80 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121466</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1469817.80 101306.40</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200610</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121466</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1469817.80 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>800.400</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121466</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1469817.80 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121467</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1468587.15 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>3</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121467</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1468587.15 101061.90</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200620</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121467</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1468587.15 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1230.650</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>OLET</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121467</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1468587.15 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200630</NodeNumber>
+<NodeName>PS-14311/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121468</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1467518.76 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1068.390</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121471</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1466700.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200660</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121471</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432523.22 -1466471.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1047.760</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121471</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>432752.22 -1466471.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+
+
+
+
+<Node>
+<NodeNumber>200710</NodeNumber>
+<NodeName>PS-14321/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121476</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>433185.00 -1466471.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>661.780</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+<Node>
+<NodeNumber>200720</NodeNumber>
+<NodeName>PS-14225/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121478</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>438523.01 -1466471.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>5338.010</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121481</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440436.15 -1466471.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200750</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121481</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1466471.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2142.140</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>-1</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<ComponentType>ELBO</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121481</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1466242.00 101184.15</Position>
+<BendType>0</BendType>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>200760</NodeNumber>
+<NodeName>PS-14308/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121483</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1465296.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1175.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+
+
+
+
+
+
+<Node>
+<NodeNumber>200830</NodeNumber>
+<NodeName>PS-14435/DATUM</NodeName>
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121491</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1463071.00 101184.15</Position>
+<SIF>0</SIF>
+
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>2225.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270031350</Stiffness><Gap>0</Gap><Friction>0.3</Friction></Restraint></Node>
+<Node>
+<NodeNumber>200840</NodeNumber>
+<NodeName />
+<Endpoint>0</Endpoint>
+<ComponentType>ATTA</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121493</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1461901.02 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>1169.980</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><Restraint><Type>+Y</Type><Stiffness>1751270000000</Stiffness><Gap>0</Gap><Friction>0.3</Friction><DirectionCosineX>0.000000000</DirectionCosineX><DirectionCosineY>1.000000000</DirectionCosineY><DirectionCosineZ>0.000000000</DirectionCosineZ></Restraint></Node>
+<Node>
+<NodeNumber>200841</NodeNumber>
+<NodeName />
+<Endpoint>1</Endpoint>
+<Rigid>1</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121494</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1461748.02 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>147.000</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<Node>
+<NodeNumber>10200</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint><Rigid>2</Rigid>
+<ComponentType>FLAN</ComponentType>
+<Weight>59</Weight>
+<ComponentRefNo>=1006649732/121494</ComponentRefNo>
+<ConnectionType />
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1461601.02 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode><ElementLengthMm>147.000</ElementLengthMm></Node>
+
+
+<Node>
+<NodeNumber>10210</NodeNumber>
+<NodeName />
+<Endpoint>2</Endpoint>
+<Rigid>2</Rigid>
+<ComponentType>RIGID</ComponentType>
+<Weight>0</Weight>
+<ComponentRefNo>=1006649732/121457</ComponentRefNo>
+<ConnectionType>BRAN</ConnectionType>
+<OutsideDiameter>168.3</OutsideDiameter>
+<WallThickness>0</WallThickness>
+<CorrosionAllowance>0</CorrosionAllowance>
+<InsulationThickness>80</InsulationThickness>
+<Position>440665.15 -1461597.82 101184.15</Position>
+<SIF>0</SIF>
+<PipingClass>91261M7</PipingClass><Rating>900</Rating><BoreMm>150.000</BoreMm><ElementLengthMm>13384.430</ElementLengthMm><MaterialName>ASTM A106-B</MaterialName><MaterialCode>106</MaterialCode></Node>
+<PipelineReference>S8811956</PipelineReference><LineNo>S8811956</LineNo></Branch>
+</Pipe></PipeStressExport>

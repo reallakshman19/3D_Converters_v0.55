@@ -1,0 +1,6 @@
+work_id: WIP-AIV-CANVAS-INTERACTION-20260818
+claim_state: RELEASED
+released_to: PR643
+branch: agent/vibration-aiv-canvas-interaction-hardening-20260818
+scope: AIV unified canvas interaction hardening stacked on PR642
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_THIS_REPAIR_SET

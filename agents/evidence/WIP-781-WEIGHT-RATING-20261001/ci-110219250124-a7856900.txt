@@ -1,0 +1,494 @@
+focused	Set up job	﻿2026-10-01T04:30:09.2791990Z Current runner version: '2.337.0'
+focused	Set up job	2026-10-01T04:30:09.2811712Z ##[group]Runner Image Provisioner
+focused	Set up job	2026-10-01T04:30:09.2812521Z Hosted Compute Agent
+focused	Set up job	2026-10-01T04:30:09.2813011Z Version: 20260828.587
+focused	Set up job	2026-10-01T04:30:09.2813596Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+focused	Set up job	2026-10-01T04:30:09.2814223Z Build Date: 2026-08-28T16:44:25Z
+focused	Set up job	2026-10-01T04:30:09.2814832Z Worker ID: {22989ffd-06f2-4af5-a14f-4996eef4f1df}
+focused	Set up job	2026-10-01T04:30:09.2815491Z Azure Region: centralus
+focused	Set up job	2026-10-01T04:30:09.2815980Z ##[endgroup]
+focused	Set up job	2026-10-01T04:30:09.2817309Z ##[group]Operating System
+focused	Set up job	2026-10-01T04:30:09.2817874Z Ubuntu
+focused	Set up job	2026-10-01T04:30:09.2818337Z 24.04.5
+focused	Set up job	2026-10-01T04:30:09.2818791Z LTS
+focused	Set up job	2026-10-01T04:30:09.2819234Z ##[endgroup]
+focused	Set up job	2026-10-01T04:30:09.2819719Z ##[group]Runner Image
+focused	Set up job	2026-10-01T04:30:09.2820249Z Image: ubuntu-24.04
+focused	Set up job	2026-10-01T04:30:09.2820786Z Version: 20260920.314.1
+focused	Set up job	2026-10-01T04:30:09.2821690Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+focused	Set up job	2026-10-01T04:30:09.2823119Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+focused	Set up job	2026-10-01T04:30:09.2823947Z ##[endgroup]
+focused	Set up job	2026-10-01T04:30:09.2824916Z ##[group]GITHUB_TOKEN Permissions
+focused	Set up job	2026-10-01T04:30:09.2826658Z Contents: read
+focused	Set up job	2026-10-01T04:30:09.2827344Z Metadata: read
+focused	Set up job	2026-10-01T04:30:09.2827850Z ##[endgroup]
+focused	Set up job	2026-10-01T04:30:09.2829533Z Secret source: Actions
+focused	Set up job	2026-10-01T04:30:09.2830325Z Cache mode: write
+focused	Set up job	2026-10-01T04:30:09.2830934Z Prepare workflow directory
+focused	Set up job	2026-10-01T04:30:09.3128493Z Prepare all required actions
+focused	Set up job	2026-10-01T04:30:09.3168578Z Getting action download info
+focused	Set up job	2026-10-01T04:30:09.5636000Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+focused	Set up job	2026-10-01T04:30:09.7056445Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+focused	Set up job	2026-10-01T04:30:09.9768368Z Complete job name: focused
+focused	Checkout literal source head	﻿2026-10-01T04:30:10.0344121Z ##[group]Run actions/checkout@v4
+focused	Checkout literal source head	2026-10-01T04:30:10.0344853Z with:
+focused	Checkout literal source head	2026-10-01T04:30:10.0345444Z   ref: a78569001a26b136860d142b34ed2c9f123592fe
+focused	Checkout literal source head	2026-10-01T04:30:10.0346047Z   repository: reallaksh19/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:10.0349724Z   token: ***
+focused	Checkout literal source head	2026-10-01T04:30:10.0350210Z   ssh-strict: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0350666Z   ssh-user: git
+focused	Checkout literal source head	2026-10-01T04:30:10.0351161Z   persist-credentials: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0351802Z   clean: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0352246Z   sparse-checkout-cone-mode: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0352782Z   fetch-depth: 1
+focused	Checkout literal source head	2026-10-01T04:30:10.0353226Z   fetch-tags: false
+focused	Checkout literal source head	2026-10-01T04:30:10.0353698Z   show-progress: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0354197Z   lfs: false
+focused	Checkout literal source head	2026-10-01T04:30:10.0354609Z   submodules: false
+focused	Checkout literal source head	2026-10-01T04:30:10.0355090Z   set-safe-directory: true
+focused	Checkout literal source head	2026-10-01T04:30:10.0355598Z   allow-unsafe-pr-checkout: false
+focused	Checkout literal source head	2026-10-01T04:30:10.0356341Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:10.1362147Z Syncing repository: reallaksh19/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:10.1364785Z ##[group]Getting Git version info
+focused	Checkout literal source head	2026-10-01T04:30:10.1368711Z Working directory is '/home/runner/work/3D_Converters/3D_Converters'
+focused	Checkout literal source head	2026-10-01T04:30:10.1370698Z [command]/usr/bin/git version
+focused	Checkout literal source head	2026-10-01T04:30:10.1414537Z git version 2.55.0
+focused	Checkout literal source head	2026-10-01T04:30:10.1419880Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:10.1427274Z Temporarily overriding HOME='/home/runner/work/_temp/75b0cc10-5bb5-46a9-82dc-42603d59d325' before making global git config changes
+focused	Checkout literal source head	2026-10-01T04:30:10.1429861Z Adding repository directory to the temporary git global config as a safe directory
+focused	Checkout literal source head	2026-10-01T04:30:10.1432024Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:10.1520374Z Deleting the contents of '/home/runner/work/3D_Converters/3D_Converters'
+focused	Checkout literal source head	2026-10-01T04:30:10.1522368Z ##[group]Initializing the repository
+focused	Checkout literal source head	2026-10-01T04:30:10.1523483Z [command]/usr/bin/git init /home/runner/work/3D_Converters/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:10.1598663Z hint: Using 'master' as the name for the initial branch. This default branch name
+focused	Checkout literal source head	2026-10-01T04:30:10.1600465Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+focused	Checkout literal source head	2026-10-01T04:30:10.1602395Z hint: to use in all of your new repositories, which will suppress this warning,
+focused	Checkout literal source head	2026-10-01T04:30:10.1603798Z hint: call:
+focused	Checkout literal source head	2026-10-01T04:30:10.1604744Z hint:
+focused	Checkout literal source head	2026-10-01T04:30:10.1605655Z hint: 	git config --global init.defaultBranch <name>
+focused	Checkout literal source head	2026-10-01T04:30:10.1607160Z hint:
+focused	Checkout literal source head	2026-10-01T04:30:10.1608254Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+focused	Checkout literal source head	2026-10-01T04:30:10.1609770Z hint: 'development'. The just-created branch can be renamed via this command:
+focused	Checkout literal source head	2026-10-01T04:30:10.1610986Z hint:
+focused	Checkout literal source head	2026-10-01T04:30:10.1611883Z hint: 	git branch -m <name>
+focused	Checkout literal source head	2026-10-01T04:30:10.1612742Z hint:
+focused	Checkout literal source head	2026-10-01T04:30:10.1613886Z hint: Disable this message with "git config set advice.defaultBranchName false"
+focused	Checkout literal source head	2026-10-01T04:30:10.1615518Z Initialized empty Git repository in /home/runner/work/3D_Converters/3D_Converters/.git/
+focused	Checkout literal source head	2026-10-01T04:30:10.1619143Z [command]/usr/bin/git remote add origin https://github.com/reallaksh19/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:10.1767807Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:10.1769475Z ##[group]Disabling automatic garbage collection
+focused	Checkout literal source head	2026-10-01T04:30:10.1770855Z [command]/usr/bin/git config --local gc.auto 0
+focused	Checkout literal source head	2026-10-01T04:30:10.1773586Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:10.1774849Z ##[group]Setting up auth
+focused	Checkout literal source head	2026-10-01T04:30:10.1778100Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+focused	Checkout literal source head	2026-10-01T04:30:10.1793174Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+focused	Checkout literal source head	2026-10-01T04:30:10.2298174Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+focused	Checkout literal source head	2026-10-01T04:30:10.2448262Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+focused	Checkout literal source head	2026-10-01T04:30:10.2453985Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+focused	Checkout literal source head	2026-10-01T04:30:10.2456399Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+focused	Checkout literal source head	2026-10-01T04:30:10.2722159Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+focused	Checkout literal source head	2026-10-01T04:30:10.2726067Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:10.2727355Z ##[group]Fetching the repository
+focused	Checkout literal source head	2026-10-01T04:30:10.2728869Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin a78569001a26b136860d142b34ed2c9f123592fe
+focused	Checkout literal source head	2026-10-01T04:30:13.9544741Z From https://github.com/reallaksh19/3D_Converters
+focused	Checkout literal source head	2026-10-01T04:30:13.9546574Z  * branch            a78569001a26b136860d142b34ed2c9f123592fe -> FETCH_HEAD
+focused	Checkout literal source head	2026-10-01T04:30:13.9550431Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:13.9551679Z ##[group]Determining the checkout info
+focused	Checkout literal source head	2026-10-01T04:30:13.9553272Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:13.9554427Z [command]/usr/bin/git sparse-checkout disable
+focused	Checkout literal source head	2026-10-01T04:30:14.0697240Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+focused	Checkout literal source head	2026-10-01T04:30:14.0887445Z ##[group]Checking out the ref
+focused	Checkout literal source head	2026-10-01T04:30:14.0890083Z [command]/usr/bin/git checkout --progress --force a78569001a26b136860d142b34ed2c9f123592fe
+focused	Checkout literal source head	2026-10-01T04:30:15.1003607Z Updating files:  97% (9673/9921)
+focused	Checkout literal source head	2026-10-01T04:30:15.1768960Z Updating files:  98% (9723/9921)
+focused	Checkout literal source head	2026-10-01T04:30:15.1926273Z Updating files:  99% (9822/9921)
+focused	Checkout literal source head	2026-10-01T04:30:15.1929217Z Updating files: 100% (9921/9921)
+focused	Checkout literal source head	2026-10-01T04:30:15.1930045Z Updating files: 100% (9921/9921), done.
+focused	Checkout literal source head	2026-10-01T04:30:15.2688204Z Note: switching to 'a78569001a26b136860d142b34ed2c9f123592fe'.
+focused	Checkout literal source head	2026-10-01T04:30:15.2690020Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2708198Z You are in 'detached HEAD' state. You can look around, make experimental
+focused	Checkout literal source head	2026-10-01T04:30:15.2709616Z changes and commit them, and you can discard any commits you make in this
+focused	Checkout literal source head	2026-10-01T04:30:15.2711164Z state without impacting any branches by switching back to a branch.
+focused	Checkout literal source head	2026-10-01T04:30:15.2711734Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2712359Z If you want to create a new branch to retain commits you create, you may
+focused	Checkout literal source head	2026-10-01T04:30:15.2713026Z do so (now or later) by using -c with the switch command. Example:
+focused	Checkout literal source head	2026-10-01T04:30:15.2713450Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2714241Z   git switch -c <new-branch-name>
+focused	Checkout literal source head	2026-10-01T04:30:15.2714524Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2714769Z Or undo this operation with:
+focused	Checkout literal source head	2026-10-01T04:30:15.2715012Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2715213Z   git switch -
+focused	Checkout literal source head	2026-10-01T04:30:15.2715416Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2715868Z Turn off this advice by setting config variable advice.detachedHead to false
+focused	Checkout literal source head	2026-10-01T04:30:15.2716340Z
+focused	Checkout literal source head	2026-10-01T04:30:15.2716678Z HEAD is now at a785690 test(xml-cii): gate real Rating UI and reconcile PR811 custody
+focused	Checkout literal source head	2026-10-01T04:30:15.3115128Z ##[endgroup]
+focused	Checkout literal source head	2026-10-01T04:30:15.3775537Z [command]/usr/bin/git log -1 --format=%H
+focused	Checkout literal source head	2026-10-01T04:30:15.3789254Z a78569001a26b136860d142b34ed2c9f123592fe
+focused	Run actions/setup-node@v4	﻿2026-10-01T04:30:15.4016001Z ##[group]Run actions/setup-node@v4
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4016325Z with:
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4016675Z   node-version: 22
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4017248Z   always-auth: false
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4017586Z   check-latest: false
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4019611Z   token: ***
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.4019853Z ##[endgroup]
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.5284223Z Found in cache @ /opt/hostedtoolcache/node/22.23.2/x64
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.5285564Z (node:1924) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.5286710Z (Use `node --trace-deprecation ...` to show where the warning was created)
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.5289015Z ##[group]Environment details
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.9705128Z node: v22.23.2
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.9705896Z npm: 10.9.8
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.9706277Z yarn: 1.22.22
+focused	Run actions/setup-node@v4	2026-10-01T04:30:15.9707600Z ##[endgroup]
+focused	Syntax-check worker API runtime	﻿2026-10-01T04:30:16.0464710Z ##[group]Run node --check converters/xml-cii2019-core/linelist-mapping.js
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0465445Z ^[[36;1mnode --check converters/xml-cii2019-core/linelist-mapping.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0465973Z ^[[36;1mnode --check converters/xml-cii2019-core/weight-match-ranking-service.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0466490Z ^[[36;1mnode --check converters/xml-cii2019-core/weight-match-model.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0467189Z ^[[36;1mnode --check converters/xml-cii2019-core/piping-class-resolver.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0467719Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/master-dataset-protocol.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0468258Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/weight-basis-xml-dom.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0468785Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/weight-basis-service.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0469344Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/master-dataset-service.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0469886Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/master-dataset-client.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0470530Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0471188Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0471829Z ^[[36;1mnode --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0472471Z ^[[36;1mnode --check tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js^[[0m
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0682345Z shell: /usr/bin/bash -e {0}
+focused	Syntax-check worker API runtime	2026-10-01T04:30:16.0682802Z ##[endgroup]
+focused	Run Issue 781 worker/projection regressions	﻿2026-10-01T04:30:16.5697688Z ##[group]Run node --test \
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5698091Z ^[[36;1mnode --test \^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5698447Z ^[[36;1m  tests/xml-cii-issue-781-worker-weight-api.test.mjs \^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5698895Z ^[[36;1m  tests/xml-cii-issue-781-weight-liveness.test.mjs \^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5699342Z ^[[36;1m  tests/xml-cii-issue-781-weight-build-performance.test.mjs \^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5699789Z ^[[36;1m  tests/xml-cii-master-worker-metadata-import.test.mjs \^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5700308Z ^[[36;1m  tests/xml-cii-master-preview-worker-search.test.mjs^[[0m
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5733354Z shell: /usr/bin/bash -e {0}
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.5733703Z ##[endgroup]
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.6521644Z TAP version 13
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8059150Z # (node:2057) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/xml-cii2019-core/weight-valve-hints.js is not specified and it doesn't parse as CommonJS.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8074211Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8098327Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8100824Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8108194Z # Subtest: indexed Weight eligibility preserves exact existing bore/rating semantics and source order
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8124620Z ok 1 - indexed Weight eligibility preserves exact existing bore/rating semantics and source order
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8147737Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8198404Z   duration_ms: 1.695149
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8215396Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8228006Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8229005Z # Subtest: indexed full-master ranking is semantically identical to brute-force eligible subset ranking
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8230326Z ok 2 - indexed full-master ranking is semantically identical to brute-force eligible subset ranking
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8231248Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8231763Z   duration_ms: 5.440942
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8232301Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8232775Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8233682Z # Subtest: repeated ranking reuses the master eligibility index instead of rescanning 10k master rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8235002Z ok 3 - repeated ranking reuses the master eligibility index instead of rescanning 10k master rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8235784Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8236278Z   duration_ms: 36.181188
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8237213Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8238490Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8239510Z # Subtest: normal Build Weight Data no longer arms empirical validation; Build report remains explicit authority
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8240950Z ok 4 - normal Build Weight Data no longer arms empirical validation; Build report remains explicit authority
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8242886Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8243500Z   duration_ms: 0.422355
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8244055Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8275296Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8276281Z # Subtest: shared Weight Match compute is single-flight and exposes busy state
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8277696Z ok 5 - shared Weight Match compute is single-flight and exposes busy state
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8278333Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8278712Z   duration_ms: 0.467047
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8279180Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8279507Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8280136Z # Subtest: standalone Weight Build delegates basis to the worker without changing the fallback authority path
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8280901Z ok 6 - standalone Weight Build delegates basis to the worker without changing the fallback authority path
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8281378Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8281675Z   duration_ms: 0.387582
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8281940Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8282222Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8282686Z # Subtest: Piping Class index construction is linear in row count and preserves class order
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8283333Z ok 7 - Piping Class index construction is linear in row count and preserves class order
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8283953Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8284232Z   duration_ms: 72.098037
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8284536Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8284790Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8285300Z # Subtest: Weight basis skips master resolution and rejects known non-review nodes before DTXR lookup
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8285980Z ok 8 - Weight basis skips master resolution and rejects known non-review nodes before DTXR lookup
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8286525Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8296214Z   duration_ms: 0.357457
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8297062Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8297526Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8298194Z # Subtest: Weight basis never runs the full staged-geometry rewrite pipeline
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8298767Z ok 9 - Weight basis never runs the full staged-geometry rewrite pipeline
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8299216Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8299500Z   duration_ms: 0.595632
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8299780Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8300047Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8300581Z # Subtest: Weight Line List lookup is indexed once per collection
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8301231Z ok 10 - Weight Line List lookup is indexed once per collection
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8301641Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8301897Z   duration_ms: 0.589157
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8302246Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8302617Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8303287Z # Subtest: Weight forward element length scan is linear rather than backward rescanning
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8304276Z ok 11 - Weight forward element length scan is linear rather than backward rescanning
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8304943Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8305317Z   duration_ms: 0.84947
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8327556Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8328154Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8328909Z # Subtest: modified Weight Build runtime files remain byte-identical to docs mirrors
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8329950Z ok 12 - modified Weight Build runtime files remain byte-identical to docs mirrors
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8330589Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8331046Z   duration_ms: 1.319975
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8331524Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.8331947Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9648982Z # (node:2064) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js is not specified and it doesn't parse as CommonJS.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9671072Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9693057Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9707980Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9709101Z # Subtest: Weight ranking recovers once from worker message transport failure
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9720821Z ok 13 - Weight ranking recovers once from worker message transport failure
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9737590Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9742800Z   duration_ms: 26.260045
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9770913Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9787677Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9938159Z # Subtest: Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:16.9995266Z ok 14 - Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0017490Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0017950Z   duration_ms: 11.68581
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0018372Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0018800Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0019422Z # Subtest: mapping draft status explicitly prompts Apply mapping without modal interruption
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0020290Z ok 15 - mapping draft status explicitly prompts Apply mapping without modal interruption
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0020974Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0021327Z   duration_ms: 1.29988
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0021806Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0022160Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0022786Z # Subtest: Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0024006Z ok 16 - Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0024629Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0024985Z   duration_ms: 0.598263
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0025395Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0025712Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0026366Z # Subtest: worker Weight basis preserves split geometry and Preview rating authority
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0027647Z ok 17 - worker Weight basis preserves split geometry and Preview rating authority
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0028476Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0028816Z   duration_ms: 15.315255
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0029212Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0029562Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0030273Z # Subtest: Weight basis resolves staged length and bore lazily without a full XML rewrite
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0039617Z ok 18 - Weight basis resolves staged length and bore lazily without a full XML rewrite
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0040593Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0055411Z   duration_ms: 2.785681
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0055991Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0056506Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0057324Z # Subtest: Weight basis collector does not hydrate unrelated applied master datasets
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0057955Z ok 19 - Weight basis collector does not hydrate unrelated applied master datasets
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0058348Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0058663Z   duration_ms: 0.366137
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0058976Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0059240Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0059635Z # Subtest: changed runtime files remain byte-identical to docs mirrors
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0060126Z ok 20 - changed runtime files remain byte-identical to docs mirrors
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0060529Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0060783Z   duration_ms: 2.25886
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0061097Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.0061341Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1128625Z # (node:2071) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/xml-cii2019-core/linelist-mapping.js is not specified and it doesn't parse as CommonJS.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1138247Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1162445Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1207909Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1262005Z # Subtest: configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1263335Z ok 21 - configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1264303Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1264848Z   duration_ms: 14.684535
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1265350Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1265775Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1266567Z # Subtest: Preview wins over prefix; conflicting Preview cannot be silently filled
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1284420Z ok 22 - Preview wins over prefix; conflicting Preview cannot be silently filled
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1285356Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1285794Z   duration_ms: 1.872882
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1286294Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1286783Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1287929Z # Subtest: manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1289138Z ok 23 - manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1289920Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1290341Z   duration_ms: 1.266258
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1290866Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1291312Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1292152Z # Subtest: class fill replaces visible same-class line/branch overrides and preserves another class
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1293257Z ok 24 - class fill replaces visible same-class line/branch overrides and preserves another class
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1294047Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1294515Z   duration_ms: 4.066838
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1295048Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1295705Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1296471Z # Subtest: worker validates changed manual Rating before ranking or releasing accepted Match1
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1297785Z ok 25 - worker validates changed manual Rating before ranking or releasing accepted Match1
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1298548Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1299048Z   duration_ms: 9.565299
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1299567Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1300038Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1301021Z # Subtest: candidate weights follow the configured/manual Rating instead of the incoming row Rating
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1302128Z ok 26 - candidate weights follow the configured/manual Rating instead of the incoming row Rating
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1302888Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1303359Z   duration_ms: 4.444674
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1303886Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1304361Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1305194Z # Subtest: APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1306288Z ok 27 - APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1307338Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1307822Z   duration_ms: 0.741899
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1308419Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1308866Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1309553Z # Subtest: worker-resident Weight Match ranking equals shared pure ranking
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1310548Z ok 28 - worker-resident Weight Match ranking equals shared pure ranking
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1311254Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1311745Z   duration_ms: 1.674687
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1312227Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1312655Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1313309Z # Subtest: Weight Match worker rejects a non-weight dataset
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1314113Z ok 29 - Weight Match worker rejects a non-weight dataset
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1314748Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1315181Z   duration_ms: 0.838977
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1315630Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1316106Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1317139Z # Subtest: standalone dataset-backed Weight Build has no all-master materializer dependency
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1318332Z ok 30 - standalone dataset-backed Weight Build has no all-master materializer dependency
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1319096Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1319540Z   duration_ms: 18.27184
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1320129Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1320568Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1367432Z # Subtest: source/docs mirrors are exact for changed runtime modules
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1378492Z ok 31 - source/docs mirrors are exact for changed runtime modules
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1397506Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1410512Z   duration_ms: 8.927767
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1432104Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1436048Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1783981Z # Subtest: dataset-backed Preview search is worker-owned and fail-closed
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1789061Z ok 32 - dataset-backed Preview search is worker-owned and fail-closed
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1789941Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1790469Z   duration_ms: 4.156808
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1791018Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1791488Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1800041Z # Subtest: Preview and import share one coordinator singleton including persisted dataset ids
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1808962Z ok 33 - Preview and import share one coordinator singleton including persisted dataset ids
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1809920Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1810434Z   duration_ms: 1.486536
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1810953Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1811399Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1833148Z # Subtest: worker-search runtime mirrors are byte-identical in docs deployment
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1834412Z ok 34 - worker-search runtime mirrors are byte-identical in docs deployment
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1835280Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1835774Z   duration_ms: 3.287558
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1836242Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.1836760Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2189303Z # Subtest: worker import commits DATASET_READY metadata without full materialization
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2190475Z ok 35 - worker import commits DATASET_READY metadata without full materialization
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2191168Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2191620Z   duration_ms: 3.753935
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2192047Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2192403Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2241954Z # Subtest: dataset-backed mapping apply routes through worker remap rather than resident full raw rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2243443Z ok 36 - dataset-backed mapping apply routes through worker remap rather than resident full raw rows
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2244511Z   ---
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2244908Z   duration_ms: 1.664575
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2245347Z   type: 'test'
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2245779Z   ...
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2259641Z 1..36
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2260361Z # tests 36
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2260887Z # suites 0
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2261259Z # pass 36
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2261671Z # fail 0
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2262056Z # cancelled 0
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2262546Z # skipped 0
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2262944Z # todo 0
+focused	Run Issue 781 worker/projection regressions	2026-10-01T04:30:17.2263373Z # duration_ms 590.699772
+focused	Run Weight / Match-1 authority regressions	﻿2026-10-01T04:30:17.2321556Z ##[group]Run node --test \
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2321909Z ^[[36;1mnode --test \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2322286Z ^[[36;1m  tests/xml-cii-issue-776-weight-review-authority.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2322800Z ^[[36;1m  tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2323259Z ^[[36;1m  tests/xml-cii-issue-776-weight-unit-custody.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2323699Z ^[[36;1m  tests/xml-cii-issue-776-match1-provenance.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2324145Z ^[[36;1m  tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2324635Z ^[[36;1m  tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2357205Z shell: /usr/bin/bash -e {0}
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.2357522Z ##[endgroup]
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.3847722Z TAP version 13
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4072639Z # Issue \#776 Match-1 acceptance paths carry provenance.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4118294Z # Subtest: tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4127797Z ok 1 - tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4141612Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4142106Z   duration_ms: 30.861912
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4142532Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4142960Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4368632Z # Issue \#776 Match-1 provenance/fingerprint regression passed.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4374005Z # (node:2122) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4375715Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4376767Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4387805Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4405330Z # Subtest: tests/xml-cii-issue-776-match1-provenance.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4405923Z ok 2 - tests/xml-cii-issue-776-match1-provenance.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4406268Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4406527Z   duration_ms: 28.962991
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4407087Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4407430Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4655887Z # Issue \#776 stale Match-1 cannot silently auto-rerank during standalone CII run.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4691423Z # Subtest: tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4692487Z ok 3 - tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4693124Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4693587Z   duration_ms: 28.856337
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4694108Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4694516Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4918685Z # Issue \#776 Weight Match acceptance/validation semantics verified.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4953879Z # Subtest: tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4955005Z ok 4 - tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4955648Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4956129Z   duration_ms: 26.061939
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4956545Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.4957130Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5171020Z # Issue \#776 final-review geometry authority regression passed.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5209741Z # Subtest: tests/xml-cii-issue-776-weight-review-authority.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5210817Z ok 5 - tests/xml-cii-issue-776-weight-review-authority.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5211689Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5212083Z   duration_ms: 25.639483
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5212567Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5212969Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5662680Z # (node:2162) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/invocation-builder.js is not specified and it doesn't parse as CommonJS.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5664454Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5666007Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5667320Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5682489Z # Issue \#776 kg→N unit custody verified.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5708055Z # Subtest: tests/xml-cii-issue-776-weight-unit-custody.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5709181Z ok 6 - tests/xml-cii-issue-776-weight-unit-custody.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5709965Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5710512Z   duration_ms: 50.706585
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5710979Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5711451Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5711874Z 1..6
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5712321Z # tests 6
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5712784Z # suites 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5713268Z # pass 6
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5713718Z # fail 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5714180Z # cancelled 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5714671Z # skipped 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5715148Z # todo 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T04:30:17.5715630Z # duration_ms 199.50942
+focused	Post Run actions/setup-node@v4	﻿2026-10-01T04:30:17.5920472Z Post job cleanup.
+focused	Post Run actions/setup-node@v4	2026-10-01T04:30:17.6954078Z (node:2173) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+focused	Post Run actions/setup-node@v4	2026-10-01T04:30:17.6955258Z (Use `node --trace-deprecation ...` to show where the warning was created)
+focused	Post Checkout literal source head	﻿2026-10-01T04:30:17.7144669Z Post job cleanup.
+focused	Post Checkout literal source head	2026-10-01T04:30:17.8015619Z [command]/usr/bin/git version
+focused	Post Checkout literal source head	2026-10-01T04:30:17.8067594Z git version 2.55.0
+focused	Post Checkout literal source head	2026-10-01T04:30:17.8113794Z Temporarily overriding HOME='/home/runner/work/_temp/db4f12a6-f40a-4601-b9f5-3d0857b76232' before making global git config changes
+focused	Post Checkout literal source head	2026-10-01T04:30:17.8115020Z Adding repository directory to the temporary git global config as a safe directory
+focused	Post Checkout literal source head	2026-10-01T04:30:17.8116112Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+focused	Post Checkout literal source head	2026-10-01T04:30:17.9691345Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+focused	Post Checkout literal source head	2026-10-01T04:30:17.9716527Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+focused	Post Checkout literal source head	2026-10-01T04:30:18.0010742Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+focused	Post Checkout literal source head	2026-10-01T04:30:18.1117134Z http.https://github.com/.extraheader
+focused	Post Checkout literal source head	2026-10-01T04:30:18.1160888Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+focused	Post Checkout literal source head	2026-10-01T04:30:18.1558759Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+focused	Post Checkout literal source head	2026-10-01T04:30:18.1806091Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+focused	Post Checkout literal source head	2026-10-01T04:30:18.1876251Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+focused	Complete job	﻿2026-10-01T04:30:18.2208023Z Cleaning up orphan processes
+focused	Complete job	2026-10-01T04:30:18.2413748Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

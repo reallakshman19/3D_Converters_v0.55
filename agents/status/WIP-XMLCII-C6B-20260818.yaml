@@ -1,0 +1,22 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: WIP-XMLCII-C6B-20260818
+branch: agent/xml-cii-c6b-preview-source-custody-20260818
+base_main: e93cf16b9670a9876135a659b4f26506857b2c36
+workstream: XML_CII_STANDALONE_PERFORMANCE
+stage: C6B_PREVIEW_SOURCE_CUSTODY
+criticality: ENGINEERING_CRITICAL
+state: QUALIFIED_LOCAL_PENDING_PUBLICATION
+coordination: SAFE_EXACT_FILES
+appendix_a: 98/100
+merge_authority: OWNER_ONLY_NOT_GRANTED
+worker_admission: NOT_ADMITTED
+validation:
+  pre_edit_blob_verification: PASS_4_OF_4
+  backup_gate: PASS_4_OF_4
+  syntax: PASS_4_OF_4
+  focused_c6b: PASS_6_OF_6
+  landed_c6: PASS_6_OF_6
+  landed_c5_weight_incremental: PASS_6_OF_6
+  browser_timing: NOT_RUN
+exact_next_action: Publish exact tested blobs and open draft PR; do not merge without explicit owner authority.

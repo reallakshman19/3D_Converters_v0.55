@@ -1,0 +1,52 @@
+TAP version 13
+# (node:30068) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/weight-basis-xml-dom.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: accepted final weight writes without a matching master candidate, replacing prior XML value
+ok 1 - accepted final weight writes without a matching master candidate, replacing prior XML value
+  ---
+  duration_ms: 19.4869
+  type: 'test'
+  ...
+# Subtest: canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+ok 2 - canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+  ---
+  duration_ms: 12.9015
+  type: 'test'
+  ...
+# Subtest: accepted component removed during geometry preparation cannot silently disappear
+ok 3 - accepted component removed during geometry preparation cannot silently disappear
+  ---
+  duration_ms: 2.1459
+  type: 'test'
+  ...
+# Subtest: negative-number component custody cannot be satisfied by a different helper in the same branch
+ok 4 - negative-number component custody cannot be satisfied by a different helper in the same branch
+  ---
+  duration_ms: 8.3495
+  type: 'test'
+  ...
+# Subtest: UI job normalizes absent optional master arrays without inventing master values
+ok 5 - UI job normalizes absent optional master arrays without inventing master values
+  ---
+  duration_ms: 5.9822
+  type: 'test'
+  ...
+# Issue \#776 stale Match-1 cannot silently auto-rerank during standalone CII run.
+# Issue \#776 final-review geometry authority regression passed.
+# Subtest: tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+ok 2 - tests\\xml-cii-issue-776-weight-review-authority.test.mjs
+  ---
+  duration_ms: 82.2493
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 243.0067

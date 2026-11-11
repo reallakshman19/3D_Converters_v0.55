@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "baselineId": "QB-ISSUE-769-A",
+  "source": "github:reallaksh19/3D_Converters#769",
+  "sourceAuthority": "OWNER",
+  "activeQuestionSetId": "QS-XMLCII-769-MAPPING-001",
+  "questions": [
+    {
+      "baselineQuestion": "Q1",
+      "coveredBy": ["Q1"],
+      "requiredLiterals": ["From", "To", "Density Mixed", "Density Gas", "Density Liquid", "Line Seq No"],
+      "requiredConcepts": ["synthetic multi-row header", "semantic revalidation", "authority"],
+      "requiredObligations": ["trace", "identify", "reject"]
+    },
+    {
+      "baselineQuestion": "Q2",
+      "coveredBy": ["Q2"],
+      "requiredLiterals": ["10k", "Failed to parse file"],
+      "requiredConcepts": ["parse", "normalize", "session commit", "persistence", "quota"],
+      "requiredObligations": ["reconstruct", "isolate", "falsify"]
+    },
+    {
+      "baselineQuestion": "Q3",
+      "coveredBy": ["Q3"],
+      "requiredLiterals": ["generic Density", "phase-specific density"],
+      "requiredConcepts": ["no permissive fallback", "explicit semantic evidence"],
+      "requiredObligations": ["state", "protect", "falsify"]
+    },
+    {
+      "baselineQuestion": "Q4",
+      "coveredBy": ["Q4"],
+      "requiredLiterals": ["10k", "50k", "100k"],
+      "requiredConcepts": ["fault injection", "independent expected behavior", "NOT_RUN"],
+      "requiredObligations": ["validate", "measure", "distinguish"]
+    },
+    {
+      "baselineQuestion": "Q5",
+      "coveredBy": ["Q5"],
+      "requiredLiterals": ["no broad refactor", "no storage exception relabeled as parse failure"],
+      "requiredConcepts": ["safe patch boundary", "rollback", "negative test"],
+      "requiredObligations": ["bound", "test", "stop"]
+    }
+  ]
+}

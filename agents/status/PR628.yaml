@@ -1,0 +1,41 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR628
+mission: Index Preview Bore/Wall staged evidence and exact Piping Class walls once per Preview without authority change.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-bore-wall-index-20260818
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/628
+pr_head_last_checked: 24377670067e0ada1ec7b0f6632a1c03b6fb23cf
+main_head_last_checked: bca7fc9390c018753d09161052b0bf2fd54e33ce
+merge_base: bca7fc9390c018753d09161052b0bf2fd54e33ce
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR628_workreport.md
+appendix_a_status: NOT_REQUIRED_NEW_WORK_ITEM
+grounding_epoch: GE-004
+current_stage: DRAFT_REVIEW_WAITING_FOR_EXTERNAL_EVIDENCE
+blocker: NONE
+highest_risk: Repository-native real-core execution has not been observed.
+dependencies:
+  - INDEPENDENT_OF_PR616_PREVIEW_SEARCH
+  - NO_HARD_DEPENDENCY
+validation_summary:
+  syntax: PASS
+  focused_index_equivalence: PASS
+  structural_complexity_invariant: PASS
+  focused_integration: PASS_WITH_STUBBED_IMPORT_BOUNDARY
+  native_local_repository_suite: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr_workflow_runs_at_checked_head: NOT_OBSERVED
+  commit_statuses_at_checked_head: NOT_OBSERVED
+  reviews_at_checked_head: NOT_OBSERVED
+  review_threads_at_checked_head: NOT_OBSERVED
+coordination:
+  branch_behind_main: 0
+  changed_files: 11
+  unexpected_files: 0
+  workflows_changed: false
+exact_next_action: Keep PR draft; reconcile future actionable CI/review evidence; do not merge without explicit Owner authorization.
+last_updated: 2026-08-18T18:34:00+04:00

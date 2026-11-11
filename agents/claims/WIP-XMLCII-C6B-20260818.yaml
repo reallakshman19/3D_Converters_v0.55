@@ -1,0 +1,27 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-C6B-20260818
+branch: agent/xml-cii-c6b-preview-source-custody-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C6B_PREVIEW_SOURCE_CUSTODY
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun-core.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-bore-wall-authority.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-rating-authority.js
+  - tests/xml-cii-standalone-preview-source-custody.test.mjs
+exclusions:
+  - .github/workflows/**
+  - converters/scripts/inputxml_to_cii2019.py
+  - support/GAP semantics
+  - CII writer/runtime
+  - formulas/units/topology/result publication
+  - workers
+  - persisted cache/index authority
+coordination:
+  PR611: SAFE_NO_EXACT_FILE_OVERLAP
+  PR605: SAFE_NO_EXACT_FILE_OVERLAP
+  PR589: SAFE_NO_EXACT_FILE_OVERLAP
+merge_authority: OWNER_ONLY_NOT_GRANTED

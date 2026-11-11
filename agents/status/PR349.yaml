@@ -1,0 +1,17 @@
+schema: AgentPrStatus.v1
+pr_or_wip: PR349
+repository: reallakshman19/3D_Converters
+branch: fix/xml229-cii-fixed-column-verification-20261028
+mission: Decode valid signed scientific CII records without relaxing numeric or mass authority
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+pr_head: e548d314a1ddc5f4488d80c0daf2a5245df1d741
+main_head_last_checked: bc823becf208187a1fdb819518d28d7938eafe8b
+report_path: agents/PR349_workreport.md
+report_basis_head: e548d314a1ddc5f4488d80c0daf2a5245df1d741
+handover_readiness: READY
+pr_recovery_state: HEALTHY
+agent_state: DRAFT_REVIEW
+appendix_a_status: CURRENT
+blocker: Native Python + Node22/24 exact-head checks PASS; private Owner trial pending
+exact_next_action: Review and authorize integration, then retry private source; retain release gates

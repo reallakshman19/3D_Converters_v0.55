@@ -1,0 +1,35 @@
+pr: 746
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8_CONTROLLED_BINDING_SOURCE_REGISTER
+state: BLOCKED_REAL_CONTROLLED_BINDING_RECORD_REQUIRED
+execution_mode: AUTO
+auto_state: BLOCKED_REAL_CONTROLLED_BINDING_RECORD_REQUIRED
+base_pr: 745
+base_sha: 6d92e7937a392fa6434b25ac093a3e99cdb61bf5
+authority:
+  source: PROJECT_SOURCE_CUSTODY_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+scope:
+  register_schema_defined: true
+  real_project_record_admitted: false
+  automatic_binding_producer: false
+  automatic_3d_extraction: false
+  geometry_inference_used: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  central_registry_modified: false
+  ui_modified: false
+validation:
+  source_blob_custody: PASS
+  test_blob_custody: PASS
+  source_lines: 230
+  focused_test_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+  connector_backup: EVIDENCE_ONLY
+hard_stop: REAL_CONTROLLED_BINDING_RECORD_AND_EXACT_NATIVE_PR746_FOCUSED_TEST
+latest_endpoint: EP-0035
+merge_authority: OWNER_ONLY_NOT_GRANTED

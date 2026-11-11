@@ -1,0 +1,64 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+state: ACTIVE_AUTO
+execution_mode: AUTO
+auto_state: DETAILED_FRICTION_REFERENCE_COMPLETE
+scope_authority: LOCKED_TO_APPROVED_MISSION
+branch: agent/engcalc-bolted-joints-phase1-20260902
+base_main: bff53e336bdbddbe0fb829b7991ca5ed27fc836a
+latest_material_head: c6f5b2117bf4b98428227105227119117362f77d
+latest_endpoint: EP-0013
+engineering_critical: true
+authority_domain: flange-and-bolted-joint-calculations
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+flange:
+  ug44_registry_integrated: true
+  calculation_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  master_store_state: SANDBOX_SCHEMA_SYNTHETIC_ONLY
+  master_resolver_integrated_into_ug44: false
+bolts:
+  short_form_state: REFERENCE_KERNEL_ONLY
+  short_form_registry_integrated: false
+  master_store_state: SANDBOX_SCHEMA_SYNTHETIC_ONLY
+  master_resolver_integrated_into_short_form: false
+  bolt_group_state: LINEAR_REFERENCE_ONLY
+  detailed_friction_state: REFERENCE_KERNEL_ONLY
+  detailed_friction_registry_integrated: false
+  installation_combined_stress_state: NOT_IMPLEMENTED
+source_authority:
+  asme_bpvc_viii_1_2025_edition_identity: PASS_OFFICIAL_PUBLIC_METADATA
+  exact_ug44b_2025_clause_table: UNRESOLVED_LICENSED_SOURCE_REQUIRED
+  flange_real_master_data: UNRESOLVED
+  bolt_real_thread_material_friction_data: UNRESOLVED
+  nasa_rp_1228_detailed_torque_equation: QUALIFIED_FOR_REFERENCE_EQUATION
+  legacy_detailed_torque_formula_banner: QUALIFIED_AS_LEGACY_DISPLAYED_EQUATION_EVIDENCE
+validation:
+  source_inspection: PASS
+  base_drift: PASS_ZERO_BEHIND
+  focused_existing_flange_bolt_source_reconstructed: PASS_36_OF_36
+  ug44_registry_equivalent_source_reconstructed: PASS_3_OF_3
+  detailed_friction_source_reconstructed: PASS_8_OF_8
+  detailed_friction_cli_source_reconstructed: PASS
+  hosted_checkout_node22: PASS
+  hosted_registry_initialization: PASS_INDIRECT_INTEGRATION_EVIDENCE
+  hosted_hp_suite: FAIL_14_OF_15_OUT_OF_SCOPE_HP_PARITY
+  hosted_failure_run: 33605997593
+  hosted_failure_job: 100169984905
+  exact_native_full_repository_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+  independent_engineering_review: NOT_RUN
+backup:
+  native_pre_edit: NOT_RUN_ENVIRONMENT_BLOCKED
+  connector_exact_copies: PRESENT_NOT_POLICY_EQUIVALENT
+authority_boundary:
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+hard_stop:
+  real_master_data: Real flange and bolt thread/material/friction data remain unresolved.
+  native_validation: Exact native full-repository execution remains unavailable.
+exact_next_action: Implement installation torsional stress and combined axial/torsional von-Mises utilization as a separate non-authorizing bolt-strength reference using thread torque only and an explicit stress-section diameter, with independent analytical fixtures. Do not central-register in the same minimal patch.

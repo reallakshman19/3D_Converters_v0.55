@@ -1,0 +1,13 @@
+schema: AgentStatus.v1
+pr_or_wip: PR359
+state: SUBMITTED_REVIEW_HELD
+report: agents/PR359_workreport.md
+branch: fix/xml229-browser-instrument-model-review-6ae1bed6
+report_basis_head: 3295444f208cf3cb1fbd5966ea1a3d1570c194fd
+base: efe57c03b2c7f70d3a38ef1ea0b0acd7cd1142a6
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: Review candidate and16historical CI gates; read remaining aggregate browser jobs
+tested_source_head: 3295444f208cf3cb1fbd5966ea1a3d1570c194fd
+focused_ci: BROWSER_AND_NATIVE99_PASS
+aggregate_ci: 70_PASS_16_HISTORICAL_FAIL_2_RUNNING
+page_draft_head: 496793b5e8922be6c0aca8e0c008e72c2d75852e

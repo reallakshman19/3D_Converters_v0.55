@@ -1,0 +1,14 @@
+work_id: WIP-XML229-TOPOLOGY-RUN-20261027
+status: REVIEW_READY_UNMERGED
+base: 0d4908eb3af1fcafee4436671675d7790f6322b2
+actor: Oracle standalone UNKNOWN
+owner_authorization: fix it
+native_release: PRIVATE_OWNER_PROOF_HELD
+merge_authority: NOT_GRANTED_FOR_NEW_PR
+next: independent review and explicit new merge authorization; private Owner proof remains held
+
+pr_number: 344
+branch: oracle/xml229-topology-fresh-run-20261027
+report: agents/PR344_workreport.md
+ci_state: FULL_BROWSER_JOURNEY_PASS
+tested_head: 2033d03fda2401a078f2d17d881626c05451bb9e

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "baselineId": "QB-ISSUE-769-B",
+  "source": "github:reallaksh19/3D_Converters#769",
+  "sourceAuthority": "OWNER",
+  "activeQuestionSetId": "QS-XMLCII-769-REGEX-BRANCH-001",
+  "questions": [
+    {
+      "baselineQuestion": "Q1",
+      "coveredBy": ["Q1"],
+      "requiredLiterals": ["P4110010", "50%", "70%"],
+      "requiredConcepts": ["composite confidence", "exact master coverage", "sample bucketing"],
+      "requiredObligations": ["trace", "calculate", "distinguish"]
+    },
+    {
+      "baselineQuestion": "Q2",
+      "coveredBy": ["Q2"],
+      "requiredLiterals": ["P411001X", "P41100XX", "B4110004"],
+      "requiredConcepts": ["progressive family mask", "unique authority", "ambiguity"],
+      "requiredObligations": ["resolve", "block", "falsify"]
+    },
+    {
+      "baselineQuestion": "Q3",
+      "coveredBy": ["Q3"],
+      "requiredLiterals": ["$1", "loaded Line List"],
+      "requiredConcepts": ["exact-key authority", "regex discovery", "mutation guard"],
+      "requiredObligations": ["state", "prove", "protect"]
+    },
+    {
+      "baselineQuestion": "Q4",
+      "coveredBy": ["Q4"],
+      "requiredLiterals": ["6/10", "7/10", "19/20"],
+      "requiredConcepts": ["independent arithmetic", "representative buckets", "LOW MEDIUM HIGH thresholds"],
+      "requiredObligations": ["validate", "count", "distinguish"]
+    },
+    {
+      "baselineQuestion": "Q5",
+      "coveredBy": ["Q5"],
+      "requiredLiterals": ["no non-loaded key", "exact match remains highest authority"],
+      "requiredConcepts": ["safe patch boundary", "negative tests", "rollback"],
+      "requiredObligations": ["bound", "test", "stop"]
+    }
+  ]
+}

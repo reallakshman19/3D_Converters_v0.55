@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "observation": "LOCAL_EXECUTION",
+  "oracle": "INDEPENDENT_REPRODUCTION",
+  "coreResult": {
+    "ids": [
+      10,
+      20,
+      -1,
+      20,
+      110,
+      120,
+      -1,
+      120
+    ],
+    "failures": [],
+    "offsets": [
+      0,
+      100
+    ],
+    "weights": [
+      17.75,
+      17.75
+    ]
+  },
+  "pipeCount": 2,
+  "branchCount": 82,
+  "nodeCount": 3308,
+  "differences": [],
+  "errors": []
+}

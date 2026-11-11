@@ -1,0 +1,385 @@
+managed-reference	Run managed-reference qualification	﻿2026-10-01T15:38:26.5806736Z ##[group]Run node tests/fbx/run-fbx2-browser-managed-reference.mjs
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.5807171Z ^[[36;1mnode tests/fbx/run-fbx2-browser-managed-reference.mjs^[[0m
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.5866475Z shell: /usr/bin/bash -e {0}
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.5866728Z ##[endgroup]
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6485365Z (node:2061) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/converters/fbx/browser-zip.js is not specified and it doesn't parse as CommonJS.
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6487417Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6488575Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6489626Z (Use `node --trace-warnings ...` to show where the warning was created)
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6633642Z FBX2 browser input and ZIP qualification: PASS
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6652653Z FBX2 managed-reference promotion cleanup: PASS
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6792971Z node:internal/modules/run_main:123
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6805266Z     triggerUncaughtException(
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6806028Z     ^
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6806396Z 
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6807218Z AssertionError [ERR_ASSERTION]: The input did not match the regular expression /primaryAccept = '\.fbx,\.FBX,\.zip,\.ZIP'/. Input:
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6808365Z 
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6808961Z "import { getConverterById } from './converter-registry.js?v=20260617-basic-glb-3';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6810069Z   "import { run as runBaseFbxToStagedJson } from './converters/fbx-to-stagedjson.js?v=20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6811086Z   "import { canonicalJson } from './converters/fbx/canonical-json.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6812368Z   "import { resolveBrowserFbxPrimary } from './converters/fbx/fbx2-browser-inputs.js?v=20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6813635Z   "import { buildMappingWorklist } from './converters/fbx/mapping-worklist.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6814642Z   "import { buildReviewBundle } from './converters/fbx/mapping-review-bundle.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6815602Z   "import { parseFbxInWorker } from './converters/fbx/parser-client.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6816590Z   "import { loadBrowserParserEvidence } from './converters/fbx/parser-provenance.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6817616Z   "import { reviewShardCsv } from './converters/fbx/review-execution/review-csv.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6818328Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6818965Z   "export const FBX_CONVERT_OPERATION = 'Convert with approved mapping';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6819844Z   "export const FBX_REVIEW_OPERATION = 'Create mapping review bundle';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6820729Z   "export const FBX_REVIEW_UI_VERSION = '20260802-fbx2-managed-reference-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6821644Z   "export const FBX_REVIEW_UI_BUILD = '20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6822509Z   'const DEFAULT_REVIEW_SHARD_SIZE = 500;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6823093Z   "const PRIMARY_ACCEPT = '.fbx,.FBX,.zip,.ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6823894Z   "const SECONDARY_ACCEPT = '.fbxmap.json,.json,.JSON,.zip,.ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6824633Z   "const PRIMARY_LABEL = 'FBX Input or governed FBX2 source ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6825456Z   "const SECONDARY_LABEL = 'Mapping JSON or managed-stage JSON/ZIP (optional)';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6826102Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6826567Z   'function findInput(context, role) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6827223Z   '  return context.inputFiles?.find((file) => file.role === role);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6827813Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6828481Z   'function baseName(name) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6829248Z   "  return String(name || 'model.fbx').replace(/\\.[^.]+$/, '') || 'model';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6829922Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6830405Z   'function positiveInteger(value, fallback) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6831031Z   '  const parsed = Number(value ?? fallback);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6832191Z   '  if (!Number.isSafeInteger(parsed) || parsed < 1) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6833003Z   "    throw new Error('Review Items per Shard must be a positive integer.');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6833788Z   '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6834329Z   '  return parsed;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6834919Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6835620Z   'function jsonOutput(name, value) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6836549Z   "  return { name, text: canonicalJson(value), mime: 'application/json;charset=utf-8' };\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6837259Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6837729Z   'function csvOutput(name, text) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6838391Z   "  return { name, text, mime: 'text/csv;charset=utf-8' };\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6839006Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6839464Z   'function reviewDiagnostics() {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6839971Z   '  return [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6840410Z   "    'PARSE_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6840921Z   "    'MAPPING_WORKLIST_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6841479Z   "    'REVIEW_BUNDLE_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6842479Z   "    'BROWSER_REFERENCE_EXECUTION',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6843146Z   "    'BOUNDED_MEMORY_CLI_NOT_EXECUTED',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6843660Z   '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6844245Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6844770Z   'function reviewReport(worklist, bundle, shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6845334Z   '  return {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6845828Z   "    schema: 'FbxBrowserReviewReport.v1',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6846422Z   "    status: 'MAPPING_REVIEW_READY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6847054Z   "    executionStrategy: 'BROWSER_REFERENCE_IN_MEMORY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6847663Z   '    boundedMemory: false,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6848202Z   '    worklistId: worklist.worklistId,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6848765Z   '    bundleId: bundle.bundleId,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6849355Z   '    workItemCount: worklist.workItems.length,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6849944Z   '    shardCount: shards.length,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6850485Z   '    diagnostics: reviewDiagnostics(),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6850967Z   '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6851357Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6852179Z   'function appendShardOutputs(outputs, bundle, shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6852898Z   '  for (const shard of shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6853689Z   '    const metadata = bundle.shards.find((entry) => entry.shardId === shard.shardId);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6854706Z   '    if (!metadata) throw new Error(`Review bundle lacks shard metadata for ${shard.shardId}.`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6855633Z   '    outputs.push(jsonOutput(metadata.fileName, shard));\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6856678Z   "    outputs.push(csvOutput(metadata.fileName.replace(/\\.json$/i, '.csv'), reviewShardCsv(shard)));\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6857446Z   '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6857816Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6858277Z   'async function createBrowserReview(context) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6859041Z   "  const primary = await resolveBrowserFbxPrimary(findInput(context, 'primary'));\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6859749Z   '  const bytes = primary.bytes;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6860280Z   '  const stem = baseName(primary.name);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6861240Z   '  const maxItems = positiveInteger(context.options?.reviewMaxItemsPerShard, DEFAULT_REVIEW_SHARD_SIZE);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6862432Z   "  context.setStatus?.('Parsing FBX for mapping review...', 'running');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6863276Z   '  const parserEvidence = await loadBrowserParserEvidence();\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6864156Z   '  const graph = await parseFbxInWorker(bytes, { signal: context.signal });\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6865126Z   "  context.setStatus?.('Building deterministic mapping review bundle...', 'running');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6866115Z   '  const worklist = await buildMappingWorklist({ bytes, graph, parserEvidence });\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6867006Z   '  const { bundle, shards } = await buildReviewBundle(worklist, maxItems);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6867895Z   '  const outputs = [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6868532Z   '    jsonOutput(`${stem}.fbx-source-graph.json`, graph),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6869318Z   '    jsonOutput(`${stem}.fbx-mapping-worklist.json`, worklist),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6870069Z   "    jsonOutput('manifest.json', bundle),\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6870942Z   '    jsonOutput(`${stem}.fbx-browser-review-report.json`, reviewReport(worklist, bundle, shards)),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6871679Z   '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6872345Z   '  appendShardOutputs(outputs, bundle, shards);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6873079Z   "  context.setStatus?.('MAPPING_REVIEW_READY', 'ok');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6873913Z   '  return {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6874327Z   '    ok: true,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6874850Z   "    conversionStatus: 'MAPPING_REVIEW_READY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6875355Z   '    outputs,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6875872Z   '    logs: { stdout: reviewDiagnostics(), stderr: [] },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6876423Z   '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6876802Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6877163Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6877883Z   'export async function runFbxWithReviewUi(context = {}, baseRun = runBaseFbxToStagedJson) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6878931Z   '  const operation = context.options?.fbxOperation || FBX_CONVERT_OPERATION;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6880041Z   '  if (operation === FBX_CONVERT_OPERATION) return baseRun(context);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6881021Z   '  if (operation !== FBX_REVIEW_OPERATION) throw new Error(`Unsupported FBX operation: ${operation}`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6881969Z   '  try {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6882493Z   '    return await createBrowserReview(context);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6883054Z   '  } catch (error) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6883706Z   '    const detail = error instanceof Error ? error.message : String(error);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6884569Z   "    context.setStatus?.('BLOCKED_MAPPING_REVIEW', 'error');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6885326Z   '    throw new Error(`BLOCKED_MAPPING_REVIEW ${detail}`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6885975Z   '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6886406Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6886804Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6887291Z   'function appendReviewOptions(converter) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6888078Z   '  const existing = Array.isArray(converter.options) ? converter.options : [];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6888859Z   '  const retained = existing.filter((option) => ![\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6889617Z   "    'fbxOperation', 'reviewMaxItemsPerShard', 'fbxSelectedZoneLabel',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6890320Z   '  ].includes(option.key));\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6890841Z   '  converter.options = [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6891320Z   '    ...retained,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6891766Z   '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6892629Z   "      key: 'fbxOperation',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6893163Z   "      label: 'FBX Workflow',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6893654Z   "      type: 'select',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6894273Z   '      options: [FBX_CONVERT_OPERATION, FBX_REVIEW_OPERATION],\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6894945Z   '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6895461Z   '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6896008Z   "      key: 'reviewMaxItemsPerShard',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6896609Z   "      label: 'Review Items per Shard',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6897091Z   "      type: 'number',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6897544Z   "      step: '1',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6898054Z   '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6898439Z   '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6898894Z   "      key: 'fbxSelectedZoneLabel',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6899486Z   "      label: 'Managed Reference Zone Label',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6900013Z   "      type: 'text',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6900557Z   "      placeholder: '/GLRD-1000-CU-PI-P',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6901083Z   '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6901455Z   '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6902696Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6903101Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6903828Z   'function synchronizeInput(converter, role, label, accept, required) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6904977Z   '  const inputs = Array.isArray(converter.inputs) ? converter.inputs : [];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6905751Z   '  let input = inputs.find((entry) => entry?.role === role);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6906296Z   '  if (!input) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6922329Z   '    input = { role };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6925746Z   '    inputs.push(input);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6926343Z   '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6926818Z   '  input.label = label;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6927359Z   '  input.accept = accept;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6927913Z   '  input.required = required;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6928498Z   '  converter.inputs = inputs;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6928996Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6929396Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6929876Z   'export function configureManagedReferenceInputs(converter) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6930652Z   '  converter.primaryAccept = PRIMARY_ACCEPT;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6931288Z   '  converter.primaryLabel = PRIMARY_LABEL;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6932117Z   '  converter.secondaryLabel = SECONDARY_LABEL;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6932887Z   '  converter.secondaryAccept = SECONDARY_ACCEPT;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6933832Z   "  synchronizeInput(converter, 'primary', PRIMARY_LABEL, PRIMARY_ACCEPT, true);\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6935240Z   "  synchronizeInput(converter, 'secondary', SECONDARY_LABEL, SECONDARY_ACCEPT, false);\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6935993Z   '  return converter;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6936443Z   '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6936837Z   '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6937342Z   'export function installFbxReviewUiAddon() {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6938050Z   "  const converter = getConverterById('fbx_to_stagedjson');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6939043Z   '  if (!converter || converter.__fbxReviewUiAddonInstalled === FBX_REVIEW_UI_VERSION) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6939768Z   '    return false;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6940201Z   '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6940645Z   '  converter.defaults = {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6941181Z   '    ...(converter.defaults || {}),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6941775Z   '    fbxOperation: FBX_CONVERT_OPERATION,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6942835Z   '    reviewMaxItemsPerShard: DEFAULT_REVIEW_SHARD_SIZE,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6943495Z   "    fbxSelectedZoneLabel: '',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6943988Z   '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6944476Z   '  appendReviewOptions(converter);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6945146Z   '  configureManagedReferenceInputs(converter);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6946944Z   "  converter.description = 'Convert FBX with mapping JSON, or reconcile a managed-stage JSON/ZIP against an explicit zone. The exact governed FBX2 ZIP pair is identity-bound to /GLRD-1000-CU-PI-P. Mapping review bundles remain non-authoritative.';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6948774Z   '  converter.run = (context = {}) => runFbxWithReviewUi(context, runBaseFbxToStagedJson);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6949728Z   '  converter.__fbxReviewUiAddonInstalled = FBX_REVIEW_UI_VERSION;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6950441Z   '  converter.reviewUiBuild = FBX_REVIEW_UI_BUILD;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6951007Z   '  return true;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6951465Z   '}\n'
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6951760Z 
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6952625Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-managed-reference-static.mjs:25:8 {
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6953545Z   generatedMessage: true,
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6954033Z   code: 'ERR_ASSERTION',
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6954844Z   actual: "import { getConverterById } from './converter-registry.js?v=20260617-basic-glb-3';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6956019Z     "import { run as runBaseFbxToStagedJson } from './converters/fbx-to-stagedjson.js?v=20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6957112Z     "import { canonicalJson } from './converters/fbx/canonical-json.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6958386Z     "import { resolveBrowserFbxPrimary } from './converters/fbx/fbx2-browser-inputs.js?v=20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6959618Z     "import { buildMappingWorklist } from './converters/fbx/mapping-worklist.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6960795Z     "import { buildReviewBundle } from './converters/fbx/mapping-review-bundle.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6961750Z     "import { parseFbxInWorker } from './converters/fbx/parser-client.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6963007Z     "import { loadBrowserParserEvidence } from './converters/fbx/parser-provenance.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6964121Z     "import { reviewShardCsv } from './converters/fbx/review-execution/review-csv.js';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6964820Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6965471Z     "export const FBX_CONVERT_OPERATION = 'Convert with approved mapping';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6966333Z     "export const FBX_REVIEW_OPERATION = 'Create mapping review bundle';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6967247Z     "export const FBX_REVIEW_UI_VERSION = '20260802-fbx2-managed-reference-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6968165Z     "export const FBX_REVIEW_UI_BUILD = '20260804-fbx-multifamily-release-1';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6968933Z     'const DEFAULT_REVIEW_SHARD_SIZE = 500;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6969585Z     "const PRIMARY_ACCEPT = '.fbx,.FBX,.zip,.ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6970362Z     "const SECONDARY_ACCEPT = '.fbxmap.json,.json,.JSON,.zip,.ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6971362Z     "const PRIMARY_LABEL = 'FBX Input or governed FBX2 source ZIP';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6982665Z     "const SECONDARY_LABEL = 'Mapping JSON or managed-stage JSON/ZIP (optional)';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6984062Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6984592Z     'function findInput(context, role) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6985165Z     '  return context.inputFiles?.find((file) => file.role === role);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6985688Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6986014Z     'function baseName(name) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6986574Z     "  return String(name || 'model.fbx').replace(/\\.[^.]+$/, '') || 'model';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6987081Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6987444Z     'function positiveInteger(value, fallback) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6987957Z     '  const parsed = Number(value ?? fallback);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6988482Z     '  if (!Number.isSafeInteger(parsed) || parsed < 1) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6989144Z     "    throw new Error('Review Items per Shard must be a positive integer.');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6989677Z     '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6989956Z     '  return parsed;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6990261Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6990600Z     'function jsonOutput(name, value) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6991278Z     "  return { name, text: canonicalJson(value), mime: 'application/json;charset=utf-8' };\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6991965Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6992280Z     'function csvOutput(name, text) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6992794Z     "  return { name, text, mime: 'text/csv;charset=utf-8' };\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6993235Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6993563Z     'function reviewDiagnostics() {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6993938Z     '  return [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6994243Z     "    'PARSE_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6994613Z     "    'MAPPING_WORKLIST_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6995016Z     "    'REVIEW_BUNDLE_PASS',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6995425Z     "    'BROWSER_REFERENCE_EXECUTION',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6995889Z     "    'BOUNDED_MEMORY_CLI_NOT_EXECUTED',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6996268Z     '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6996525Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6996910Z     'function reviewReport(worklist, bundle, shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6997338Z     '  return {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6997723Z     "    schema: 'FbxBrowserReviewReport.v1',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6998188Z     "    status: 'MAPPING_REVIEW_READY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6998708Z     "    executionStrategy: 'BROWSER_REFERENCE_IN_MEMORY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6999197Z     '    boundedMemory: false,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.6999610Z     '    worklistId: worklist.worklistId,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7000051Z     '    bundleId: bundle.bundleId,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7000533Z     '    workItemCount: worklist.workItems.length,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7001194Z     '    shardCount: shards.length,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7001638Z     '    diagnostics: reviewDiagnostics(),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7002230Z     '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7002493Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7002936Z     'function appendShardOutputs(outputs, bundle, shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7003515Z     '  for (const shard of shards) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7004685Z     '    const metadata = bundle.shards.find((entry) => entry.shardId === shard.shardId);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7005591Z     '    if (!metadata) throw new Error(`Review bundle lacks shard metadata for ${shard.shardId}.`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7006370Z     '    outputs.push(jsonOutput(metadata.fileName, shard));\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7007239Z     "    outputs.push(csvOutput(metadata.fileName.replace(/\\.json$/i, '.csv'), reviewShardCsv(shard)));\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7007884Z     '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7008140Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7008537Z     'async function createBrowserReview(context) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7009257Z     "  const primary = await resolveBrowserFbxPrimary(findInput(context, 'primary'));\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7009905Z     '  const bytes = primary.bytes;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7010526Z     '  const stem = baseName(primary.name);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7011340Z     '  const maxItems = positiveInteger(context.options?.reviewMaxItemsPerShard, DEFAULT_REVIEW_SHARD_SIZE);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7012418Z     "  context.setStatus?.('Parsing FBX for mapping review...', 'running');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7013116Z     '  const parserEvidence = await loadBrowserParserEvidence();\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7013856Z     '  const graph = await parseFbxInWorker(bytes, { signal: context.signal });\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7014720Z     "  context.setStatus?.('Building deterministic mapping review bundle...', 'running');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7015629Z     '  const worklist = await buildMappingWorklist({ bytes, graph, parserEvidence });\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7016434Z     '  const { bundle, shards } = await buildReviewBundle(worklist, maxItems);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7016968Z     '  const outputs = [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7017427Z     '    jsonOutput(`${stem}.fbx-source-graph.json`, graph),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7018027Z     '    jsonOutput(`${stem}.fbx-mapping-worklist.json`, worklist),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7018581Z     "    jsonOutput('manifest.json', bundle),\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7019345Z     '    jsonOutput(`${stem}.fbx-browser-review-report.json`, reviewReport(worklist, bundle, shards)),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7019955Z     '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7020348Z     '  appendShardOutputs(outputs, bundle, shards);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7020911Z     "  context.setStatus?.('MAPPING_REVIEW_READY', 'ok');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7021352Z     '  return {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7021643Z     '    ok: true,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7031352Z     "    conversionStatus: 'MAPPING_REVIEW_READY',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7031945Z     '    outputs,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7032405Z     '    logs: { stdout: reviewDiagnostics(), stderr: [] },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7032846Z     '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7033108Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7033369Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7033989Z     'export async function runFbxWithReviewUi(context = {}, baseRun = runBaseFbxToStagedJson) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7034914Z     '  const operation = context.options?.fbxOperation || FBX_CONVERT_OPERATION;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7035676Z     '  if (operation === FBX_CONVERT_OPERATION) return baseRun(context);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7036543Z     '  if (operation !== FBX_REVIEW_OPERATION) throw new Error(`Unsupported FBX operation: ${operation}`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7037180Z     '  try {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7037576Z     '    return await createBrowserReview(context);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7038008Z     '  } catch (error) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7038559Z     '    const detail = error instanceof Error ? error.message : String(error);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7039391Z     "    context.setStatus?.('BLOCKED_MAPPING_REVIEW', 'error');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7039981Z     '    throw new Error(`BLOCKED_MAPPING_REVIEW ${detail}`);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7040385Z     '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7040642Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7040903Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7041246Z     'function appendReviewOptions(converter) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7041997Z     '  const existing = Array.isArray(converter.options) ? converter.options : [];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7042650Z     '  const retained = existing.filter((option) => ![\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7043126Z     "    'fbxOperation', 'reviewMaxItemsPerShard', 'fbxSelectedZoneLabel',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7043490Z     '  ].includes(option.key));\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7043738Z     '  converter.options = [\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7043965Z     '    ...retained,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7044162Z     '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7044376Z     "      key: 'fbxOperation',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7044632Z     "      label: 'FBX Workflow',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7044887Z     "      type: 'select',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7045198Z     '      options: [FBX_CONVERT_OPERATION, FBX_REVIEW_OPERATION],\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7045649Z     '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7045824Z     '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7046047Z     "      key: 'reviewMaxItemsPerShard',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7046335Z     "      label: 'Review Items per Shard',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7046597Z     "      type: 'number',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7046804Z     "      step: '1',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7046993Z     '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7047161Z     '    {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7047373Z     "      key: 'fbxSelectedZoneLabel',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7047668Z     "      label: 'Managed Reference Zone Label',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7047918Z     "      type: 'text',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7048174Z     "      placeholder: '/GLRD-1000-CU-PI-P',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7048421Z     '    },\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7048591Z     '  ];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7048762Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7048934Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7049251Z     'function synchronizeInput(converter, role, label, accept, required) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7049728Z     '  const inputs = Array.isArray(converter.inputs) ? converter.inputs : [];\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7050142Z     '  let input = inputs.find((entry) => entry?.role === role);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7050433Z     '  if (!input) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7050656Z     '    input = { role };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7050901Z     '    inputs.push(input);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7051112Z     '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7051310Z     '  input.label = label;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7051551Z     '  input.accept = accept;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7051960Z     '  input.required = required;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7052420Z     '  converter.inputs = inputs;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7052839Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7053287Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7054126Z     'export function configureManagedReferenceInputs(converter) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7054961Z     '  converter.primaryAccept = PRIMARY_ACCEPT;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7055300Z     '  converter.primaryLabel = PRIMARY_LABEL;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7055628Z     '  converter.secondaryLabel = SECONDARY_LABEL;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7055954Z     '  converter.secondaryAccept = SECONDARY_ACCEPT;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7056370Z     "  synchronizeInput(converter, 'primary', PRIMARY_LABEL, PRIMARY_ACCEPT, true);\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7056885Z     "  synchronizeInput(converter, 'secondary', SECONDARY_LABEL, SECONDARY_ACCEPT, false);\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7057255Z     '  return converter;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7057463Z     '}\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7057625Z     '\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7057851Z     'export function installFbxReviewUiAddon() {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7058215Z     "  const converter = getConverterById('fbx_to_stagedjson');\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7058823Z     '  if (!converter || converter.__fbxReviewUiAddonInstalled === FBX_REVIEW_UI_VERSION) {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7059188Z     '    return false;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7059396Z     '  }\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7059601Z     '  converter.defaults = {\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7059858Z     '    ...(converter.defaults || {}),\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7060142Z     '    fbxOperation: FBX_CONVERT_OPERATION,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7060472Z     '    reviewMaxItemsPerShard: DEFAULT_REVIEW_SHARD_SIZE,\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7060789Z     "    fbxSelectedZoneLabel: '',\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7061010Z     '  };\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7061225Z     '  appendReviewOptions(converter);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7061535Z     '  configureManagedReferenceInputs(converter);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7062633Z     "  converter.description = 'Convert FBX with mapping JSON, or reconcile a managed-stage JSON/ZIP against an explicit zone. The exact governed FBX2 ZIP pair is identity-bound to /GLRD-1000-CU-PI-P. Mapping review bundles remain non-authoritative.';\n" +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7063605Z     '  converter.run = (context = {}) => runFbxWithReviewUi(context, runBaseFbxToStagedJson);\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7064082Z     '  converter.__fbxReviewUiAddonInstalled = FBX_REVIEW_UI_VERSION;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7064577Z     '  converter.reviewUiBuild = FBX_REVIEW_UI_BUILD;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7064846Z     '  return true;\n' +
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7065048Z     '}\n',
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7065376Z   expected: /primaryAccept = '\.fbx,\.FBX,\.zip,\.ZIP'/,
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7065701Z   operator: 'match',
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7065896Z   diff: 'simple'
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7066075Z }
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7066172Z 
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7066251Z Node.js v22.23.3
+managed-reference	Run managed-reference qualification	2026-10-01T15:38:26.7077082Z ##[error]Process completed with exit code 1.

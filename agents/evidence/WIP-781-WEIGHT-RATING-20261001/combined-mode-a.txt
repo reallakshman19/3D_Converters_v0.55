@@ -1,0 +1,57 @@
+(node:7792) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\CodeA\3DC_live_acceptance\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Weight entry evidence {"elapsedMs":381,"maxFrameGapMs":83}
+Weight click evidence {"elapsedMs":524,"maxFrameGapMs":166,"rows":180,"decoratedRows":180}
+{
+  "ok": true,
+  "source": "41 branches / 1654 nodes / APPLIED piping, line, weight masters",
+  "regex": {
+    "line": "rgba(255, 255, 255, 0.06)",
+    "bore": "rgb(249, 115, 22)",
+    "status": "Auto-analyzed authoritative master evidence and selected lineKey, pipingClass. Stale unlocked Rating mapping was cleared."
+  },
+  "preview": {
+    "visible": true,
+    "text": "B31.3 automatic basis\n2 material-temperature groups\nPrimary path remains strict VERIFIED / PROJECT_APPROVED factors at Preview T1. When exact strict factors are unavailable, S/E/W/Y below are a non-interpolated controlled fallback seed from one common active-master temperature. Values do not become calculation input until ↻ is clicked. A106 carbon steel defaults to SEAMLESS.\nPreview Material / T1\tB31.3 identity / status\tRoute\tFallback S\tS unit\tE\tW\tY\tRecalc / Table\nASTM A106-B\nsource piping-class-fallback · T1 unresolved\n\tCS-A106-B\nT1 REQUIRED\nS/E/W/Y not evaluated until Preview T1 is resolved\n\tSEAMLESS\nA106 carbon-steel default\n\t—\t—\t—\t—\t—\t↻ ▦\n—\nsource unresolved · T1 unresolved\n\tB313_PREVIEW_MATERIAL_REQUIRED\nMATERIAL UNRESOLVED\n\t—\nunresolved\n\t—\t—\t—\t—\t—\t↻ ▦",
+    "legacyHidden": true
+  },
+  "entry": {
+    "elapsedMs": 381,
+    "maxFrameGapMs": 83
+  },
+  "weight": {
+    "elapsedMs": 524,
+    "maxFrameGapMs": 166,
+    "rows": 180,
+    "decoratedRows": 180
+  },
+  "changedModuleRequests": [
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone-tab.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-workflow-shell-mode-a-easy-bulk-v6.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-phase-panels-mode-a.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-rating.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-evidence.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-auto-basis.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-authority-ui.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-events.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-mapping-events.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/workers/master-dataset-worker.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/workers/master-dataset-service.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/xml-cii-2019-standalone/workers/weight-basis-service.js?v=20261001-weight-rating-1",
+    "http://127.0.0.1:58260/docs/tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1"
+  ],
+  "errors": []
+}

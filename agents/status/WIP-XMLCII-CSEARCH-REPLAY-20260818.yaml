@@ -1,0 +1,27 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-CSEARCH-REPLAY-20260818
+mission: Replay PR616 lazy Preview-search preparation cleanly onto current main with mandatory backup-command compliance.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-preview-search-lazy-replay-20260818
+criticality: ENGINEERING_CRITICAL
+agent_state: TERMINAL_SUPERSEDED
+pr_recovery_state: SUPERSEDED_BY_PR637
+handover_readiness: COMPLETE
+report_path: agents/WIP-XMLCII-CSEARCH-REPLAY-20260818_workreport.md
+current_stage: PR_CUSTODY_MIGRATED
+blocker: NONE
+successor:
+  pr: 637
+  report_path: agents/PR637_workreport.md
+  status_path: agents/status/PR637.yaml
+  claim_path: agents/claims/PR637.yaml
+validation:
+  source_dependency_no_drift: PASS
+  mandatory_backup: PASS_EXACT_BLOB_PRE_EDIT
+  focused_100k: PASS_4_OF_4_LOCAL_STUBBED_NORMALIZER_BOUNDARY
+  exact_byte_custody: PASS
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+merge_authority: OWNER_AUTO_MODE_GRANTED_FOR_SUCCESSOR_PR637
+exact_next_action: Use PR637 custody for final reconciliation and merge decision; close historical PR616 as superseded.
+last_updated: 2026-08-18T20:43:00+04:00

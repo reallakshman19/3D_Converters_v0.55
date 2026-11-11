@@ -1,0 +1,29 @@
+schema: AgentClaim.v1
+repository: reallakshman19/3D_Converters
+claim_id: WIP-XML229-SOURCE-BINDING-20261026
+claim_state: ACTIVE_DRAFT_OWNER_SCOPED
+branch: fix/xml229-topofix-source-binding-20261026
+pr: 343
+criticality: ENGINEERING_CRITICAL
+authority_domains: [XML229_TOPOFIX_FRESH_WORKER_IMMUTABLE_SOURCE_BINDING]
+protected_paths:
+  - tabs/xml-cii-2019-standalone/integration/xml229-topofix-fresh-worker-handoff.mjs
+  - docs/tabs/xml-cii-2019-standalone/integration/xml229-topofix-fresh-worker-handoff.mjs
+  - tests/xml229-topofix-fresh-worker-handoff.test.mjs
+exclusions: [ENGINEERING_MASS_RULES, GEOMETRY_TOPOLOGY_CHANGES, MASTERS, FINAL_ACCEPTANCE, NATIVE_WRITER, NATIVE_RELEASE, WORKFLOWS, MERGE]
+coordination:
+  parent_pr: 342
+  other_open_prs_checked: 90
+  other_open_pr_exact_file_overlap: none
+  relevant_claim_status_records_checked: 32
+  matching_claim_paths: none
+  shared_authority_classification: COORDINATION_REQUIRED_ISOLATED_OWNER_APPROVED_DRAFT
+qualification:
+  status: OWNER_SCOPED_EXCEPTION
+  owner_response: "approved, proceed"
+  date: "2026-10-26"
+  formal_appendix_a_score: NOT_AWARDED
+  runtime_effort: UNKNOWN_ROLLOUT_MISSING_CHECK_WAIVED_FOR_THIS_TASK
+  allowed: EXACT_REVIEWED_THREE_FILE_FIX_AND_RECOVERY_METADATA_ONLY
+merge_authority: OWNER_ONLY_NOT_GRANTED
+native_release_authority: NOT_GRANTED

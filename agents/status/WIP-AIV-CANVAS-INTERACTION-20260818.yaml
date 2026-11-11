@@ -1,0 +1,20 @@
+work_id: WIP-AIV-CANVAS-INTERACTION-20260818
+branch: agent/vibration-aiv-canvas-interaction-hardening-20260818
+base_pr: 642
+base_sha: 26d6c6800300a9fecf50c88664469070a3f67562
+agent_state: INACTIVE
+current_stage: MIGRATED_TO_PR643
+execution_mode: AUTO
+auto_state: MIGRATED
+criticality: ENGINEERING_CRITICAL
+mutation_authority: RELEASED_TO_PR643
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_THIS_REPAIR_SET
+coordination_state: STACKED_ON_PR642
+blockers: []
+protected_authority:
+  aiv_numerical_kernel: NO_CHANGE
+  stage9_reduction_rule: NO_CHANGE
+  line_case_screening_authority: NOT_AUTHORIZED
+  generic_ei_mainline_aiv: BLOCKED
+  design_authority: false
+exact_next_action: recover from PR643 artifacts

@@ -1,0 +1,29 @@
+schema: AgentStatus.v1
+pr_or_wip: PR683
+pull_request: 683
+branch: agent/hp-product-matrix-bulk-intake
+base: main
+base_sha_at_pr_open: 1f8f12daf3846780341ad34ab56f9dc0bde05593
+implementation_test_head_before_recovery_sync: 0d08aaf9773224cdf097c961f868b18d810a2a47
+state: DRAFT_EXACT_BLOB_QUALIFIED_FULL_APP_PENDING
+criticality: HP_PRODUCTION_PRODUCTIVITY
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+validation:
+  current_main_grounding: PASS
+  changed_path_reconciliation: PASS
+  independent_wall_arithmetic: PASS
+  focused_exact_committed_blob_tests: PASS_15_OF_15
+  exact_blob_hash_verification: PASS
+  chromium_source_injection: PASS_REAL_CHROMIUM
+  chromium_runtime_exceptions: 0
+  pr681_source_inventory_compatibility: PASS
+  repository_native_checkout_tests: NOT_RUN_DNS_ENVIRONMENT_BLOCKED
+  hp_regression_suite: NOT_RUN
+  full_app_chromium_bulk_import: NOT_RUN_NO_NATIVE_CHECKOUT
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED
+next_action: FINAL_DRAFT_RECONCILIATION_THEN_FULL_APP_IN_NATIVE_CHECKOUT

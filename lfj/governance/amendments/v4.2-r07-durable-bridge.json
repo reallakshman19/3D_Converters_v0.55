@@ -1,0 +1,38 @@
+{
+  "schema": "LFJ.V4.2.SuccessorWriterAmendment.v1",
+  "authority": "OWNER_CHAT_APPROVAL_2026-10-09",
+  "predecessorV41": {
+    "path": "lfj/governance/amendments/v4.1-store-deploy.json",
+    "gitBlob": "e4f5ac1ae7e4fe64d2d2ef22870c4cf3f5f5f2d4"
+  },
+  "historicalOriginal": {
+    "responsibilities": 24,
+    "points": 130,
+    "proposalDigest": "sha256:a52f221e3ba736fe2f76c203ce5608b8b8fb612daa067f9d84958ceab8e11c9d"
+  },
+  "issue": "reallaksh19/3D_Converters#1101",
+  "purpose": "Atomic asynchronous IndexedDB durability before R07 SOURCE_INDEX_COMPLETE",
+  "weight": 0,
+  "writerType": "EXPLICIT_SUCCESSOR_SOURCE_LEASE",
+  "supersedesCompletedOwners": [
+    {
+      "responsibility": "R07",
+      "issue": "reallaksh19/3D_Converters#1078",
+      "exactPath": "lfj/transport/lifecycle/lifecycle-session.mjs"
+    },
+    {
+      "responsibility": "R10",
+      "issue": "reallaksh19/3D_Converters#1088",
+      "exactPath": "lfj/ports/committed-worker-query.mjs"
+    }
+  ],
+  "additionalTestPaths": [
+    "lfj/transport/lifecycle/lifecycle-durable-acceptance.test.mjs",
+    ".github/workflows/lfj-v42-durable-bridge.yml"
+  ],
+  "acceptedOldApiMustRemain": true,
+  "newApi": "Explicit async commitDurably with R05 summary and R06 consumed receipt vetted prior to IDB head acceptance",
+  "completion": "NOT_VERIFIED",
+  "releaseGateAffected": "STORE-GATE",
+  "scopeRestriction": "No permission to modify any other transport, Worker, docs, Resolver, CII or original execution-graph code"
+}

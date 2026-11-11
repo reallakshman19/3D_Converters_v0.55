@@ -1,0 +1,17 @@
+schema: AgentClaim.v1
+pr: 669
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd320-q1-package-preview
+base_sha_at_allocation: b9ffa16180a1fea017505f8e39775fb9f87523ac
+scope:
+  - engineering/hp-class-standardization/qualification/kd320-q1/package-preview.js
+  - tabs/hp-kd320-evidence-intake-tab.js
+  - tabs/engineering-workspace-tab.js
+  - tests/hp-kd320-evidence-intake-ui.test.mjs
+  - tests/b313-chapter-ix-kd320-q1-package-preview.test.mjs
+purpose: formal Q1 exit intake and combined browser-memory Q1 package preview
+exclusive_authority_claim: false
+production_route: USER_CALCULATED_KD3
+native_core_kd3_qualified: false
+design_authority: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR669

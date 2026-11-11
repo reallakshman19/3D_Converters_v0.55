@@ -1,0 +1,21 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-STACKLAND-20260818
+branch: agent/xml-cii-post-batch-a-stack-landing-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_EXACT_QUALIFIED_TREE_LANDING
+qualification: APPENDIX_A_100_OF_100
+source_tree: 090283c05291ac3f8883497b6e2c5834eaa7e673
+provenance_prs: [602, 603, 604, 606, 607]
+exclusions:
+  - .github/workflows/**
+  - tabs/xml-cii-2019-standalone/xml-cii-mds-restraint-closure.js
+  - support/GAP semantic changes
+  - CII writer/runtime
+  - workers
+  - new engineering behavior
+coordination:
+  PR601: MERGED_EXACT_TREE_BASE
+  PR605: INDEPENDENT_DO_NOT_MERGE
+merge_authority: OWNER_GRANTED_2026-08-18

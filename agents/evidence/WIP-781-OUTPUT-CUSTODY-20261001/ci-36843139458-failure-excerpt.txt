@@ -1,0 +1,13 @@
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3718769Z 
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3738890Z AssertionError [ERR_ASSERTION]: index.html lacks main-rhbg-fitguard.js?v=20260929-pr780-metadata-1
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3758338Z 
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3760281Z false !== true
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3760535Z 
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3761434Z     at requires (file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:40:10)
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3763096Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:43:1 {
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3764138Z   generatedMessage: false,
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3764653Z   code: 'ERR_ASSERTION',
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3765118Z   actual: false,
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3765539Z   expected: true,
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3765976Z   operator: 'strictEqual',
+live-ui	Live UI chain regression	2026-10-01T09:30:20.3766447Z   diff: 'simple'

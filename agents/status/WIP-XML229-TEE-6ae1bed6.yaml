@@ -1,0 +1,4 @@
+schema: AgentStatus.v1
+pr_or_wip: WIP-XML229-TEE-6ae1bed6
+state: RELEASED_TO_PR356
+successor: agents/status/PR356.yaml

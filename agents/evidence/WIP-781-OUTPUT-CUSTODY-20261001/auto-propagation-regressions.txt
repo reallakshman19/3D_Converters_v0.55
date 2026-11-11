@@ -1,0 +1,270 @@
+TAP version 13
+# Issue \#776 deployment mirror/cache chain verified.
+# Subtest: tests\\xml-cii-issue-776-deployment-parity.test.mjs
+ok 1 - tests\\xml-cii-issue-776-deployment-parity.test.mjs
+  ---
+  duration_ms: 273.9409
+  type: 'test'
+  ...
+# (node:32972) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 downstream Match-1 validation regression passed.
+# Subtest: tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+ok 2 - tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+  ---
+  duration_ms: 202.3459
+  type: 'test'
+  ...
+# Issue \#776 Mode-A Weight Match uses canonical prepared geometry.
+# Subtest: tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+ok 3 - tests\\xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs
+  ---
+  duration_ms: 145.7597
+  type: 'test'
+  ...
+# Issue \#776 standalone run validates Match-1 before CII engine release.
+# Subtest: tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+ok 4 - tests\\xml-cii-issue-776-standalone-run-match1-custody.test.mjs
+  ---
+  duration_ms: 201.7422
+  type: 'test'
+  ...
+# Issue 781 auto authority follow-up checks passed.
+# (node:31388) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-suggestion-candidates.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+ok 5 - tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+  ---
+  duration_ms: 531.1333
+  type: 'test'
+  ...
+# (node:32080) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#781 post-merge screenshot acceptance regressions verified.
+# Subtest: tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+ok 6 - tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+  ---
+  duration_ms: 227.1562
+  type: 'test'
+  ...
+# (node:32688) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Weight ranking recovers once from worker message transport failure
+ok 7 - Weight ranking recovers once from worker message transport failure
+  ---
+  duration_ms: 99.7159
+  type: 'test'
+  ...
+# Subtest: Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+ok 8 - Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+  ---
+  duration_ms: 21.386
+  type: 'test'
+  ...
+# Subtest: mapping draft status explicitly prompts Apply mapping without modal interruption
+ok 9 - mapping draft status explicitly prompts Apply mapping without modal interruption
+  ---
+  duration_ms: 1.0508
+  type: 'test'
+  ...
+# Subtest: Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+ok 10 - Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+  ---
+  duration_ms: 1.3039
+  type: 'test'
+  ...
+# Subtest: worker Weight basis preserves split geometry and Preview rating authority
+ok 11 - worker Weight basis preserves split geometry and Preview rating authority
+  ---
+  duration_ms: 43.7292
+  type: 'test'
+  ...
+# Subtest: Weight basis applies the existing export cleanup and preserves staged length and bore
+ok 12 - Weight basis applies the existing export cleanup and preserves staged length and bore
+  ---
+  duration_ms: 9.7158
+  type: 'test'
+  ...
+# Subtest: Weight basis collector does not hydrate unrelated applied master datasets
+ok 13 - Weight basis collector does not hydrate unrelated applied master datasets
+  ---
+  duration_ms: 0.9485
+  type: 'test'
+  ...
+# Subtest: changed runtime files remain byte-identical to docs mirrors
+ok 14 - changed runtime files remain byte-identical to docs mirrors
+  ---
+  duration_ms: 5.1902
+  type: 'test'
+  ...
+# (node:32860) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/linelist-mapping.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+ok 15 - configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+  ---
+  duration_ms: 50.4565
+  type: 'test'
+  ...
+# Subtest: Preview wins over prefix; conflicting Preview cannot be silently filled
+ok 16 - Preview wins over prefix; conflicting Preview cannot be silently filled
+  ---
+  duration_ms: 2.7045
+  type: 'test'
+  ...
+# Subtest: manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+ok 17 - manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+  ---
+  duration_ms: 2.7474
+  type: 'test'
+  ...
+# Subtest: class fill replaces visible same-class line/branch overrides and preserves another class
+ok 18 - class fill replaces visible same-class line/branch overrides and preserves another class
+  ---
+  duration_ms: 11.768
+  type: 'test'
+  ...
+# Subtest: worker validates changed manual Rating before ranking or releasing accepted Match1
+ok 19 - worker validates changed manual Rating before ranking or releasing accepted Match1
+  ---
+  duration_ms: 39.5759
+  type: 'test'
+  ...
+# Subtest: candidate weights follow the configured/manual Rating instead of the incoming row Rating
+ok 20 - candidate weights follow the configured/manual Rating instead of the incoming row Rating
+  ---
+  duration_ms: 9.9261
+  type: 'test'
+  ...
+# Subtest: APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+ok 21 - APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+  ---
+  duration_ms: 1.1385
+  type: 'test'
+  ...
+# Subtest: worker-resident Weight Match ranking equals shared pure ranking
+ok 22 - worker-resident Weight Match ranking equals shared pure ranking
+  ---
+  duration_ms: 2.1369
+  type: 'test'
+  ...
+# Subtest: Weight Match worker rejects a non-weight dataset
+ok 23 - Weight Match worker rejects a non-weight dataset
+  ---
+  duration_ms: 0.9189
+  type: 'test'
+  ...
+# Subtest: standalone dataset-backed Weight Build has no all-master materializer dependency
+ok 24 - standalone dataset-backed Weight Build has no all-master materializer dependency
+  ---
+  duration_ms: 15.9489
+  type: 'test'
+  ...
+# Subtest: source/docs mirrors are exact for changed runtime modules
+ok 25 - source/docs mirrors are exact for changed runtime modules
+  ---
+  duration_ms: 9.453
+  type: 'test'
+  ...
+# xml-cii Mode A consolidated rigid review tests: PASS
+# (node:26748) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-mode-a-bulk-preview.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-mode-a-consolidated-rigid-review.test.mjs
+ok 9 - tests\\xml-cii-mode-a-consolidated-rigid-review.test.mjs
+  ---
+  duration_ms: 300.9467
+  type: 'test'
+  ...
+# xml-cii Mode A consolidated preview/weight tests: PASS
+# (node:29284) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-mode-a-consolidated.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-mode-a-consolidated.test.mjs
+ok 10 - tests\\xml-cii-mode-a-consolidated.test.mjs
+  ---
+  duration_ms: 416.4323
+  type: 'test'
+  ...
+# (node:16796) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: source, staged, scope, weight and Run options invalidate superseded output
+ok 28 - source, staged, scope, weight and Run options invalidate superseded output
+  ---
+  duration_ms: 11.4711
+  type: 'test'
+  ...
+# Subtest: navigation and newly supplied conversion results remain available
+ok 29 - navigation and newly supplied conversion results remain available
+  ---
+  duration_ms: 5.975
+  type: 'test'
+  ...
+# Subtest: Mode A forwards result invalidation after direct replacement
+ok 30 - Mode A forwards result invalidation after direct replacement
+  ---
+  duration_ms: 47.0625
+  type: 'test'
+  ...
+# Subtest: shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+ok 31 - shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+  ---
+  duration_ms: 97.2181
+  type: 'test'
+  ...
+# (node:32892) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/weight-basis-xml-dom.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: accepted final weight writes without a matching master candidate, replacing prior XML value
+ok 32 - accepted final weight writes without a matching master candidate, replacing prior XML value
+  ---
+  duration_ms: 28.9068
+  type: 'test'
+  ...
+# Subtest: canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+ok 33 - canonical source basis preserves accepted length authority; real length/Rating/master changes invalidate
+  ---
+  duration_ms: 18.1816
+  type: 'test'
+  ...
+# Subtest: accepted component removed during geometry preparation cannot silently disappear
+ok 34 - accepted component removed during geometry preparation cannot silently disappear
+  ---
+  duration_ms: 2.6725
+  type: 'test'
+  ...
+# Subtest: negative-number component custody cannot be satisfied by a different helper in the same branch
+ok 35 - negative-number component custody cannot be satisfied by a different helper in the same branch
+  ---
+  duration_ms: 11.2627
+  type: 'test'
+  ...
+# Subtest: UI job normalizes absent optional master arrays without inventing master values
+ok 36 - UI job normalizes absent optional master arrays without inventing master values
+  ---
+  duration_ms: 8.5264
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 833.7526

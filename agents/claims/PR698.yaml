@@ -1,0 +1,23 @@
+schema: AgentClaims.v1
+pr_or_wip: PR698
+pull_request: 698
+branch: agent/hp-review-package-verifier
+claims:
+  - id: PR698-C1
+    statement: The independent verifier recomputes the embedded engineering-review report SHA-256 using the existing review-disposition package verifier.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR698-C2
+    statement: The verifier independently recomputes the package summary from the embedded report and ledger and rejects semantic mismatch.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR698-C3
+    statement: The verifier does not mutate or import HP engineering project state or review-custody storage.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR698-C4
+    statement: Verification receipts cannot promote native KD qualification, Code compliance, design authority, release authority, reviewer authentication or ledger-entry cryptographic integrity.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR698-C5
+    statement: V1 review-entry cryptographic integrity is explicitly NOT_AVAILABLE_V1 rather than represented as PASS.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR698-C6
+    statement: Native verifier Node tests and FULL_APP verifier interaction have executed successfully.
+    status: NOT_CLAIMED_NOT_RUN

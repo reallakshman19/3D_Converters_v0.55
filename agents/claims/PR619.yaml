@@ -1,0 +1,32 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: PR619
+branch: agent/hp-kd320-high-pr-reconciliation
+workstream: HP_CHAPTER_IX_KD320_QUALIFICATION
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_QUALIFICATION_EVIDENCE_ONLY
+qualification: APPENDIX_A_99_OF_100
+claimed_paths:
+  - engineering/hp-class-standardization/qualification/kd320-q1/high-pr-reconciliation.json
+  - scripts/audit-b313-ch9-kd320-high-pr-evidence.mjs
+  - tests/b313-chapter-ix-kd320-high-pr-evidence.test.mjs
+  - agents/WIP-hp-kd320-high-pr-reconciliation_workreport.md
+  - agents/status/WIP-hp-kd320-high-pr-reconciliation.yaml
+  - agents/claims/WIP-hp-kd320-high-pr-reconciliation.yaml
+  - agents/PR619_workreport.md
+  - agents/status/PR619.yaml
+  - agents/claims/PR619.yaml
+exclusions:
+  - .github/workflows/**
+  - converters/b313-chapter-ix/fatigue-equivalent.js
+  - converters/b313-chapter-ix/fatigue-spectrum.js
+  - converters/engineering-calculations/**
+  - engineering/hp-class-standardization/masters/**
+  - tabs/**
+  - native KD320 arithmetic
+  - Code/design authority promotion
+coordination:
+  PR530: SAFE_STATIC_ONLY_NO_EXACT_FILE_OVERLAP
+  PR544: MERGED_PREDECESSOR_Q1_CONTRACT
+  PR533: MERGED_PREDECESSOR_ORACLE_FOUNDATION
+merge_authority: OWNER_ONLY_NOT_GRANTED

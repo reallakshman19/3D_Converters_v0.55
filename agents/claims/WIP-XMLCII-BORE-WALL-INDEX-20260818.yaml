@@ -1,0 +1,21 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-BORE-WALL-INDEX-20260818
+claim_state: RELEASED
+branch: agent/xml-cii-bore-wall-index-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+files:
+  exact: []
+  prefixes:
+    - agents/WIP-XMLCII-BORE-WALL-INDEX-20260818_workreport.md
+    - agents/status/WIP-XMLCII-BORE-WALL-INDEX-20260818.yaml
+    - agents/claims/WIP-XMLCII-BORE-WALL-INDEX-20260818.yaml
+authority_domains: []
+claim_modes:
+  - OBSERVE_ONLY
+release_reason: Custody migrated to active PR628 claim.
+superseded_by: PR628
+coordination_state: SAFE
+last_verified_head: 5df70e09a2e822e822c32460823e008c2f445877
+last_updated: 2026-08-18T18:30:00+04:00

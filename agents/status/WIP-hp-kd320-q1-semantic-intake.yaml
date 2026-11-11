@@ -1,0 +1,24 @@
+schema: AgentStatus.v1
+work_id: WIP-hp-kd320-q1-semantic-intake
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd320-q1-semantic-intake
+base: main
+base_sha: 6c3109935eb2d30652eab441080464777091b1bb
+criticality: ENGINEERING_CRITICAL
+intent: IMPLEMENT
+state: READY_FOR_DRAFT_PR
+coordination: COORDINATION_REQUIRED_PR649_NON_OVERLAPPING_HUNK
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+  automatic_promotion_allowed: false
+validation:
+  semantic_transport_harness: PASS_8_OF_8_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  module_syntax: PASS_LOCAL_EXECUTION
+  full_repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  ui_static_contract: PASS_SOURCE_INSPECTION
+  browser: NOT_RUN
+  hosted_ci: NOT_RUN
+exact_next_action: reground main and open draft PR for eight-file Q1 semantic intake increment

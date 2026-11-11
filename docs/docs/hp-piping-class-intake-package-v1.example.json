@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "hp-piping-class-intake-package/v1",
+  "metadata": {
+    "projectId": "HP-CLASS-001",
+    "classId": "HP-A",
+    "revision": "A"
+  },
+  "method": {
+    "b313Edition": "2024",
+    "viii3Edition": "2025"
+  },
+  "classBasis": {
+    "designPressureMpa": 20
+  },
+  "spectrum": {
+    "spectrumId": "OPS-20Y",
+    "designLifeYears": 20,
+    "preparedBy": "Engineer A",
+    "status": "ENGINEERING_REVIEW"
+  },
+  "tables": {
+    "products": {
+      "headers": [
+        "product_id",
+        "nominal_size",
+        "od_mm",
+        "allowable_stress_mpa",
+        "nominal_wall_mm",
+        "minus_tolerance_pct",
+        "internal_allowance_mm",
+        "external_allowance_mm",
+        "fatigue_wall_basis",
+        "measured_current_wall_mm",
+        "future_internal_loss_mm",
+        "future_external_loss_mm"
+      ],
+      "rows": [
+        ["NPS4-S160", "NPS 4", 114.3, 138, 13.49, 12.5, 3, 0, "END_OF_LIFE_EFFECTIVE", null, null, null],
+        ["NPS6-XXS", "NPS 6", 168.3, 138, 18.26, 12.5, 3, 0, "END_OF_LIFE_EFFECTIVE", null, null, null]
+      ]
+    },
+    "states": {
+      "headers": ["state_id", "pressure_mpa", "material_temperature_c", "structural_temperature_c"],
+      "rows": [
+        ["LOW", 2, 40, 45],
+        ["HIGH", 20, 80, 75]
+      ]
+    },
+    "cycles": {
+      "headers": ["cycle_id", "from_state_id", "to_state_id", "total_cycles", "cycles_per_year", "category", "provenance_id"],
+      "rows": [
+        ["C1", "LOW", "HIGH", 500, 25, "PRESSURE_CYCLE", "OPS-001"]
+      ]
+    },
+    "kd": [
+      {
+        "productId": "NPS4-S160",
+        "headers": ["cycle_id", "location_id", "user_salt_mpa", "seq_mpa", "permissible_cycles"],
+        "rows": [
+          ["C1", "BORE_INNER_SURFACE", null, 70, 10000]
+        ]
+      }
+    ]
+  }
+}

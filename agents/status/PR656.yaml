@@ -1,0 +1,32 @@
+schema: AgentStatus.v1
+pr: 656
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd-review-compact
+base: main
+base_sha: 95ee50ff78d81465f3e4968f62767d866f8b9da8
+criticality: ENGINEERING_CRITICAL
+intent: IMPLEMENT
+state: OPEN_DRAFT_HANDOVER_READY
+coordination: COORDINATION_REQUIRED_PR649_SHARED_WORKSPACE_NON_OVERLAPPING_HUNK
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_SUCCESSOR
+validation:
+  productivity_helper: PASS_3_OF_3_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  basis_copy_negative_assurance: PASS_LOCAL_EXECUTION
+  compact_ui_contract: PASS_SOURCE_INSPECTION
+  diff_normalization: PASS_GITHUB_COMPARE_WORKBENCH_PLUS36_MINUS34
+  non_kd_workbench_preservation: PASS_GITHUB_PATCH_INSPECTION
+  changed_files: PASS_11_OF_11_EXPECTED
+  pre_recovery_mergeability: PASS_GITHUB_MERGEABLE
+  commit_statuses: NOT_RUN_ZERO_STATUSES
+  pr_workflow_runs: NOT_RUN_ZERO_RUNS
+  reviews: ZERO
+  review_threads: ZERO
+  full_repository_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  workbench_module_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+exact_next_action: leave draft unmerged; on owner merge authorization re-ground main and PR649 then refresh all GitHub truth

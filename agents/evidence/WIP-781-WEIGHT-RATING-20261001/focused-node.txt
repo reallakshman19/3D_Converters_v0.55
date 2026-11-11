@@ -1,0 +1,270 @@
+TAP version 13
+# Issue \#776 deployment mirror/cache chain verified.
+# Subtest: tests\\xml-cii-issue-776-deployment-parity.test.mjs
+ok 1 - tests\\xml-cii-issue-776-deployment-parity.test.mjs
+  ---
+  duration_ms: 222.7391
+  type: 'test'
+  ...
+# (node:30884) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#776 downstream Match-1 validation regression passed.
+# Subtest: tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+ok 2 - tests\\xml-cii-issue-776-downstream-match1-validation.test.mjs
+  ---
+  duration_ms: 145.3374
+  type: 'test'
+  ...
+# Issue 781 auto authority follow-up checks passed.
+# (node:7116) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-suggestion-candidates.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+ok 3 - tests\\xml-cii-issue-781-auto-authority-followup.test.mjs
+  ---
+  duration_ms: 543.9639
+  type: 'test'
+  ...
+# (node:22576) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Issue \#781 post-merge screenshot acceptance regressions verified.
+# Subtest: tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+ok 4 - tests\\xml-cii-issue-781-postmerge-screenshot-repair.test.mjs
+  ---
+  duration_ms: 248.0925
+  type: 'test'
+  ...
+# (node:32528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Weight ranking recovers once from worker message transport failure
+ok 5 - Weight ranking recovers once from worker message transport failure
+  ---
+  duration_ms: 56.7911
+  type: 'test'
+  ...
+# Subtest: Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+ok 6 - Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+  ---
+  duration_ms: 24.367
+  type: 'test'
+  ...
+# Subtest: mapping draft status explicitly prompts Apply mapping without modal interruption
+ok 7 - mapping draft status explicitly prompts Apply mapping without modal interruption
+  ---
+  duration_ms: 1.2897
+  type: 'test'
+  ...
+# Subtest: Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+ok 8 - Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+  ---
+  duration_ms: 2.018
+  type: 'test'
+  ...
+# Subtest: worker Weight basis preserves split geometry and Preview rating authority
+ok 9 - worker Weight basis preserves split geometry and Preview rating authority
+  ---
+  duration_ms: 35.3183
+  type: 'test'
+  ...
+# Subtest: Weight basis resolves staged length and bore lazily without a full XML rewrite
+ok 10 - Weight basis resolves staged length and bore lazily without a full XML rewrite
+  ---
+  duration_ms: 4.8156
+  type: 'test'
+  ...
+# Subtest: Weight basis collector does not hydrate unrelated applied master datasets
+ok 11 - Weight basis collector does not hydrate unrelated applied master datasets
+  ---
+  duration_ms: 1.028
+  type: 'test'
+  ...
+# Subtest: changed runtime files remain byte-identical to docs mirrors
+ok 12 - changed runtime files remain byte-identical to docs mirrors
+  ---
+  duration_ms: 6.3798
+  type: 'test'
+  ...
+# (node:33656) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/linelist-mapping.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+ok 13 - APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+  ---
+  duration_ms: 54.3625
+  type: 'test'
+  ...
+# Subtest: worker-resident Weight Match ranking equals shared pure ranking
+ok 14 - worker-resident Weight Match ranking equals shared pure ranking
+  ---
+  duration_ms: 16.0545
+  type: 'test'
+  ...
+# Subtest: Weight Match worker rejects a non-weight dataset
+ok 15 - Weight Match worker rejects a non-weight dataset
+  ---
+  duration_ms: 14.7324
+  type: 'test'
+  ...
+# Subtest: standalone dataset-backed Weight Build has no all-master materializer dependency
+ok 16 - standalone dataset-backed Weight Build has no all-master materializer dependency
+  ---
+  duration_ms: 11.4405
+  type: 'test'
+  ...
+# Subtest: source/docs mirrors are exact for changed runtime modules
+ok 17 - source/docs mirrors are exact for changed runtime modules
+  ---
+  duration_ms: 9.6899
+  type: 'test'
+  ...
+# Subtest: Preview exposes the explicit DTXR Rating fetch action
+ok 18 - Preview exposes the explicit DTXR Rating fetch action
+  ---
+  duration_ms: 19.46
+  type: 'test'
+  ...
+# Subtest: run review does not auto-populate Rating from DTXR or defaults
+ok 19 - run review does not auto-populate Rating from DTXR or defaults
+  ---
+  duration_ms: 11.4298
+  type: 'test'
+  ...
+# Subtest: Weight Match consumes Preview Rating and exposes explicit DTXR mode
+ok 20 - Weight Match consumes Preview Rating and exposes explicit DTXR mode
+  ---
+  duration_ms: 6.2595
+  type: 'test'
+  ...
+# Subtest: standalone Weight Match routes only through the shared renderer authority
+ok 21 - standalone Weight Match routes only through the shared renderer authority
+  ---
+  duration_ms: 16.1703
+  type: 'test'
+  ...
+# Subtest: Piping Class import declares separate NPS and Bore mm columns
+ok 22 - Piping Class import declares separate NPS and Bore mm columns
+  ---
+  duration_ms: 3.8116
+  type: 'test'
+  ...
+# Subtest: Preview cache schema publishes and clears Weight Match Rating snapshots atomically
+ok 23 - Preview cache schema publishes and clears Weight Match Rating snapshots atomically
+  ---
+  duration_ms: 5.4839
+  type: 'test'
+  ...
+# (node:30984) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/preview-rating-snapshot.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Weight Match uses exact Preview branch Rating instead of node Rating
+ok 24 - Weight Match uses exact Preview branch Rating instead of node Rating
+  ---
+  duration_ms: 4.5056
+  type: 'test'
+  ...
+# Subtest: overridden piping-class Preview Rating wins despite stale Weight Match class and node Rating
+ok 25 - overridden piping-class Preview Rating wins despite stale Weight Match class and node Rating
+  ---
+  duration_ms: 0.8797
+  type: 'test'
+  ...
+# Subtest: line plus bore selects the displayed Preview Rating when branch serialization differs
+ok 26 - line plus bore selects the displayed Preview Rating when branch serialization differs
+  ---
+  duration_ms: 1.0485
+  type: 'test'
+  ...
+# Subtest: Preview line-key fallback is allowed only when unambiguous
+ok 27 - Preview line-key fallback is allowed only when unambiguous
+  ---
+  duration_ms: 0.8168
+  type: 'test'
+  ...
+# Subtest: displayed Preview table is captured as the Rating authority
+ok 28 - displayed Preview table is captured as the Rating authority
+  ---
+  duration_ms: 0.9444
+  type: 'test'
+  ...
+# Subtest: live Preview publication outranks an older deterministic envelope
+ok 29 - live Preview publication outranks an older deterministic envelope
+  ---
+  duration_ms: 0.9842
+  type: 'test'
+  ...
+# Subtest: deterministic Preview cache envelope remains a fallback authority
+ok 30 - deterministic Preview cache envelope remains a fallback authority
+  ---
+  duration_ms: 0.816
+  type: 'test'
+  ...
+# Subtest: DTXR Rating is used only in explicit DTXR mode
+ok 31 - DTXR Rating is used only in explicit DTXR mode
+  ---
+  duration_ms: 0.6561
+  type: 'test'
+  ...
+# Subtest: missing Preview Rating remains unresolved rather than re-derived
+ok 32 - missing Preview Rating remains unresolved rather than re-derived
+  ---
+  duration_ms: 1.5977
+  type: 'test'
+  ...
+# (node:19640) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/preview-rating-snapshot.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+ok 33 - configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+  ---
+  duration_ms: 43.8394
+  type: 'test'
+  ...
+# Subtest: Preview wins over prefix; conflicting Preview cannot be silently filled
+ok 34 - Preview wins over prefix; conflicting Preview cannot be silently filled
+  ---
+  duration_ms: 4.1966
+  type: 'test'
+  ...
+# Subtest: manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+ok 35 - manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+  ---
+  duration_ms: 2.8002
+  type: 'test'
+  ...
+# Subtest: class fill replaces visible same-class line/branch overrides and preserves another class
+ok 36 - class fill replaces visible same-class line/branch overrides and preserves another class
+  ---
+  duration_ms: 13.9039
+  type: 'test'
+  ...
+# Subtest: worker validates changed manual Rating before ranking or releasing accepted Match1
+ok 37 - worker validates changed manual Rating before ranking or releasing accepted Match1
+  ---
+  duration_ms: 69.8778
+  type: 'test'
+  ...
+# Subtest: candidate weights follow the configured/manual Rating instead of the incoming row Rating
+ok 38 - candidate weights follow the configured/manual Rating instead of the incoming row Rating
+  ---
+  duration_ms: 9.3417
+  type: 'test'
+  ...
+1..38
+# tests 38
+# suites 0
+# pass 38
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 707.5949

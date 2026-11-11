@@ -1,0 +1,5 @@
+PASS: actual negative predecessors, distinct sentinel owners, 1mm weighted component, 3mm junction hop, CLI masses
+WEIGHT_COMPONENT_NODE_ID branch=/HEAD source_node=-1 runtime_node=520 reference=REF-1
+WEIGHT_COMPONENT_NODE_ID branch=/SENTINEL source_node=-1 runtime_node=530 reference=V1
+WEIGHT_COMPONENT_NODE_ID branch=/SENTINEL source_node=-1 runtime_node=540 reference=F1
+WEIGHT_COMPONENT_NODE_ID branch=/START source_node=-1 runtime_node=550 reference=VS

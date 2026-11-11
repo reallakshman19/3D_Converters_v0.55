@@ -1,0 +1,37 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR-786
+mission: Surface existing material-code candidate evidence in Preview without promoting it to engineering authority.
+workstream: XML_CII_STANDALONE_ISSUE_781_P2_MATERIAL_UX
+branch: agent/issue-781-p2-material-ux-20260930
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/WIP-781-P2-MATERIAL-UX-20260930_workreport.md
+current_stage: PR_REVIEW_HANDOFF
+blocker: NONE
+protocol_basis:
+  protocol: V3.1
+  common_sha: 1ced68258afeaf50df113b1d38a4ceb9193587e3
+  two_pass_revision: TPG-2P-2026-09-28-R3
+plan:
+  issue: 781
+  step: STEP-781-05
+  publication: IMPLEMENTATION_PLAN rev 1
+  issue_comment_id: 5893573324
+validation:
+  validated_material_head: 46fd79d8882f63d673acad2311597b25f97f48b3
+  issue_781_material_workflow: PASS_RUN_36639335513
+  material_authority_regressions: PASS
+  b313_fail_closed_material_provenance: PASS
+  issue_776_authority_workflow: PASS_RUN_36639334481
+  exact_head_wsw_browser: PASS
+  browser_dataset_scale_10k_50k_100k: PASS
+implementation:
+  candidate_source: EXISTING_materialCodeCandidates
+  authoritative_field: materialCode_UNCHANGED
+  parallel_suggestion_field: NONE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Publish TASK_RESULT for STEP-781-05, confirm report-only final-head CI, mark PR #786 ready for Owner review, then create the dedicated STEP-781-06 Mode B child issue/workstream.
+last_updated: 2026-09-30

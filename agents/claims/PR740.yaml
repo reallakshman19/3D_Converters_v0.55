@@ -1,0 +1,32 @@
+pr: 740
+claims:
+  - id: explicit_preload_bounds_only
+    status: PASS
+    statement: Every bolt minimum, target and maximum preload is an explicit caller/project input; no method-specific scatter default is introduced.
+  - id: deterministic_joint_clamp_envelope
+    status: PASS
+    statement: Joint minimum, target and maximum clamp are arithmetic sums of simultaneous explicit per-bolt extrema.
+  - id: no_probabilistic_interpretation
+    status: PASS
+    statement: Bound widths and ratios are descriptive only and are not confidence intervals or statistical predictions.
+  - id: no_predictive_assembly_physics
+    status: PASS
+    statement: Elastic interaction, sequence effects, tool scatter, friction scatter, gasket relaxation and tensioning transfer loss are explicitly not modeled.
+  - id: focused_source_reconstructed_execution
+    status: PASS
+    statement: Exact GitHub source/test blobs matched reconstructed Git blob SHA values and passed 10 of 10 tests under Node v22.16.0.
+  - id: native_pr_head_execution
+    status: NOT_RUN
+    statement: Exact native PR-head checkout execution is unavailable in the connector-only environment.
+  - id: central_registry
+    status: NOT_APPLICABLE
+    statement: The array-valued helper is intentionally not registered in the central scalar Engineering Calculations registry.
+  - id: engineering_authority
+    status: PASS
+    statement: codeCompliance, design authority and governing eligibility remain false.
+  - id: independent_engineering_review
+    status: NOT_RUN
+    statement: Independent engineering review has not been completed.
+merge:
+  authority: OWNER_ONLY
+  authorized: false

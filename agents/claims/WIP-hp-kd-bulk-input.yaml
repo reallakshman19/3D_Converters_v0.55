@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+work_id: WIP-hp-kd-bulk-input
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd-bulk-input
+base_sha: 767ccd16ff6f1f8cb286551c57b0043f88885c9b
+intent: IMPLEMENT
+files:
+  - tabs/hp-piping-class-kd-bulk-input.js
+  - tabs/hp-piping-class-kd-bulk-workbench-tab.js
+  - tabs/engineering-workspace-tab.js
+  - tests/hp-piping-class-kd-bulk-input.test.mjs
+  - tests/hp-piping-class-kd-bulk-ui.test.mjs
+  - agents/WIP-hp-kd-bulk-input_workreport.md
+  - agents/status/WIP-hp-kd-bulk-input.yaml
+  - agents/claims/WIP-hp-kd-bulk-input.yaml
+authority_domains:
+  - HP_KD_BULK_ENGINEERING_INPUT
+  - USER_CALCULATED_KD3_PRODUCTIVITY
+exclusions:
+  - KD320_NATIVE_ARITHMETIC
+  - Q1_Q2_QUALIFICATION_EVIDENCE
+  - HP_PROJECT_SCHEMA
+  - NUMERICAL_KERNELS
+  - FATIGUE_CURVE_DATA
+  - DESIGN_AUTHORITY
+  - .github/workflows/*
+coordination:
+  pr649: tabs/engineering-workspace-tab.js shared; independent loader hunk; preserve both changes when either branch re-grounds

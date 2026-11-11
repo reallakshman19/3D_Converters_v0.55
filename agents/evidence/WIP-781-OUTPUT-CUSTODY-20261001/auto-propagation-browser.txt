@@ -1,0 +1,64 @@
+{
+  "regex": {
+    "automaticPipingClass": "5",
+    "automaticBore": "3",
+    "editedPipingClass": "6",
+    "renders": 2
+  },
+  "initial": [
+    57.25,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterExact": [
+    57.25,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterAll": [
+    57.25,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterBlankFill": [
+    57.25,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterManual": [
+    58.75,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterExplicit": [
+    58.75,
+    20,
+    30,
+    91.25
+  ],
+  "accepted": {
+    "cancelled": false,
+    "updates": {
+      "A": {
+        "ratingsByKey": {},
+        "weightsByKey": {
+          "/B1::20": 58.75,
+          "/B1::21": 20,
+          "/B1::22": 30
+        }
+      },
+      "B": {
+        "ratingsByKey": {},
+        "weightsByKey": {
+          "/B1::20": 91.25
+        }
+      }
+    }
+  },
+  "errors": []
+}

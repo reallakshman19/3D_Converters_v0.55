@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-VISUAL-20260819
+claim_state: RELEASED_TO_PR662
+branch: agent/vibration-visual-inspection-20260819
+files:
+  exact: []
+  prefixes: []
+authority_domains: []
+claim_modes: []
+successor_pr: 662
+current_recovery_authority: agents/claims/PR662.yaml
+coordination_state: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,11 @@
+schema: AgentStatus.v1
+pr_or_wip: WIP-VIB-ROADMAP-WORKFLOW-20260819
+branch: agent/vibration-roadmap-workflow-20260819
+state: RELEASED_TO_PR667
+successor: PR667
+validation:
+  focused_exact_byte: PASS_4_OF_4_LOCAL_EXECUTION
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: USE_PR667_RECOVERY_ARTIFACTS

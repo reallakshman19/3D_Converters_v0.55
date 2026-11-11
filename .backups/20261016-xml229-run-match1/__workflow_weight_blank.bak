@@ -1,0 +1,46 @@
+name: XML CII 229 R03 Blank Weight Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'converters/xml-cii2019-core/weight-blank-fill-policy.js'
+      - 'docs/converters/xml-cii2019-core/weight-blank-fill-policy.js'
+      - 'tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js'
+      - 'docs/tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js'
+      - 'tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match.js'
+      - 'docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match.js'
+      - 'tests/xml-cii-229-weight-blank-only.test.mjs'
+      - 'tests/xml-cii-229-weight-run-cache.test.mjs'
+      - 'tests/xml-cii-229-weight-blank-browser.mjs'
+      - '.github/workflows/xml-cii-229-weight-blank.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  weight-blank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit policy tests
+        run: node --test tests/xml-cii-229-weight-blank-only.test.mjs tests/xml-cii-229-weight-run-cache.test.mjs
+      - name: Source and served copy parity
+        run: |
+          diff -u converters/xml-cii2019-core/weight-blank-fill-policy.js docs/converters/xml-cii2019-core/weight-blank-fill-policy.js
+          diff -u tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js docs/tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js
+          diff -u tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match.js docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match.js
+      - name: Real Chromium browser
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.52.0
+          npx playwright install --with-deps chromium
+          node tests/xml-cii-229-weight-blank-browser.mjs

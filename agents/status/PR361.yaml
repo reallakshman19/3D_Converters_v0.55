@@ -1,0 +1,15 @@
+schema: AgentStatus.v1
+pr_or_wip: PR361
+state: SUBMITTED_REVIEW_HELD
+report: agents/PR361_workreport.md
+branch: fix/xml229-explicit-format-enable-6ae1bed6
+base: d98723600c11df8fa13f010cb1080b9eb76d2749
+tested_source_head: 81080af8569057a08f1fa6d4dddadc4ae7ca6313
+next_action: Owner review; merge and deploy only with explicit authorization
+focused_ci: ROOT_DOCS_41_FORMAT_PERSISTENCE_PASS
+regex_regressions: 59_PASS
+historical_failures: 15_PREFLIGHT
+ci_completed_snapshot: 71_PASS_15_PREFLIGHT_FAIL
+owner_governed_output: NOT_OBSERVED
+page_head: 56ea92738c2508acd9091bedf28c53431660ea5c
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,58 @@
+test_cross_version_merge_is_rejected (__main__.TestCii14ProfileAndMerge.test_cross_version_merge_is_rejected) ... ok
+test_node_collision_is_rejected_by_default (__main__.TestCii14ProfileAndMerge.test_node_collision_is_rejected_by_default) ... FAIL
+test_paired_archive_locks_ver14_record_deltas (__main__.TestCii14ProfileAndMerge.test_paired_archive_locks_ver14_record_deltas) ... ok
+test_real_ver14_benchmark_self_merge_with_5000_offset (__main__.TestCii14ProfileAndMerge.test_real_ver14_benchmark_self_merge_with_5000_offset) ... ERROR
+test_unqualified_nonzero_section_fails_closed (__main__.TestCii14ProfileAndMerge.test_unqualified_nonzero_section_fails_closed) ... ok
+
+======================================================================
+ERROR: test_real_ver14_benchmark_self_merge_with_5000_offset (__main__.TestCii14ProfileAndMerge.test_real_ver14_benchmark_self_merge_with_5000_offset)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 112, in _float
+    value = float(text.strip())
+            ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '5.556000E-01-1.777778E+01'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\test_cii14_multi_merge.py", line 66, in test_real_ver14_benchmark_self_merge_with_5000_offset
+    output, summary = merge.merge_cii14_texts(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 448, in merge_cii14_texts
+    units_ref = _units(models[0].sections["UNITS"], models[0].label)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 264, in _units
+    numeric.extend(_float(token, f"{label}: UNITS") for token in row.split())
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 264, in <genexpr>
+    numeric.extend(_float(token, f"{label}: UNITS") for token in row.split())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 114, in _float
+    raise MergeError(f"{label}: invalid numeric token {text!r}") from exc
+cii14_multi_merge.MergeError: SYS-v14-A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'
+
+======================================================================
+FAIL: test_node_collision_is_rejected_by_default (__main__.TestCii14ProfileAndMerge.test_node_collision_is_rejected_by_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\cii14_multi_merge.py", line 112, in _float
+    value = float(text.strip())
+            ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '5.556000E-01-1.777778E+01'
+
+The above exception was the direct cause of the following exception:
+
+cii14_multi_merge.MergeError: A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\reall\AppData\Local\Temp\xml-cii-base-alkg3h1m\converters\scripts\test_cii14_multi_merge.py", line 113, in test_node_collision_is_rejected_by_default
+    with self.assertRaisesRegex(merge.MergeError, "node collision"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "node collision" does not match "A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'"
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.039s
+
+FAILED (failures=1, errors=1)

@@ -1,0 +1,123 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>XML #229 P1/P2 browser witness — synthetic only</title>
+<main id="regex-ui"></main>
+<section id="run-ui"></section>
+<pre id="result">RUNNING</pre>
+<script type="module">
+import { createDefaultRegexTesterConfig, runStandaloneRegexTester } from '../../docs/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js';
+import { createXmlCiiAdaptedWorkflowState, applyStandaloneRegexTesterResult } from '../../docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js';
+import { renderStandaloneRegexTesterPanel } from '../../docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js';
+import { renderStandaloneOutputRunPanel } from '../../docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js';
+import { buildStandaloneOutputRunReadiness } from '../../docs/tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js';
+import { createDefaultRegexSuggestionProfile } from '../../docs/tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js';
+
+const regexApp = document.querySelector('#regex-ui');
+const runApp = document.querySelector('#run-ui');
+const output = document.querySelector('#result');
+const runtimeErrors = [];
+window.addEventListener('error', e => runtimeErrors.push(String(e.message)));
+window.addEventListener('unhandledrejection', e => runtimeErrors.push(String(e.reason)));
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const base = '/ASIM-1885-3-S8811000-91261M7-HC-01';
+const names = Array.from({length: 28}, (_, i) => base + '/B' + (i + 1));
+const sourceText = '<Plant>' + names.map(name => '<Branch><Branchname>' + name + '</Branchname></Branch>').join('') + '</Plant>';
+const config = createDefaultRegexTesterConfig();
+config.formats = config.formats.map(f => structuredClone(f));
+config.formats[0].lineKey.regex = '(NEVER)';
+config.formats[0].lineKey.tokenPosition = '3';
+config.formats[0].pipingClass.tokenPosition = '5';
+config.formats[0].rating.tokenPosition = '';
+config.formats[0].bore.tokenPosition = '';
+const stateRef = {current: {
+  ...createXmlCiiAdaptedWorkflowState(),
+  sourceKind: 'xml', sourceText, regexTesterConfig: config,
+  regexSuggestionProfile: {...createDefaultRegexSuggestionProfile(), operatingMode:'SUGGEST_ONLY'},
+  options: {outputMode:'both'},
+}};
+function renderRegex() {
+  regexApp.replaceChildren();
+  renderStandaloneRegexTesterPanel(regexApp, stateRef.current, stateRef, renderRegex);
+}
+function runReport() {
+  const state = stateRef.current;
+  const testerResult = runStandaloneRegexTester({...state, extractionConfig:state.regexTesterConfig});
+  stateRef.current = applyStandaloneRegexTesterResult(state, testerResult);
+  const report = buildStandaloneOutputRunReadiness(stateRef.current);
+  stateRef.current.outputRunReadinessReport = report;
+  renderStandaloneOutputRunPanel(runApp, stateRef, () => {});
+  return {result:testerResult,report,gate:report.checklistRows.find(r=>r.id==='branch-format-authority')};
+}
+function tokenCards() {
+  const builder = [...regexApp.querySelectorAll('.xml-cii-regex-rule-card')]
+    .find(node => /Interactive Click-to-Map Token Builder/.test(node.querySelector('h4')?.textContent || ''));
+  assert(builder, 'Token builder absent from actual rendered Regex UI');
+  const row = [...builder.children].find(node => node.style?.overflowX === 'auto');
+  assert(row, 'Token horizontal list absent');
+  return [...row.children];
+}
+function clickRole(pos,label) {
+  const button = [...tokenCards()[pos-1].querySelectorAll('button')]
+    .find(node => node.textContent.trim()===label);
+  assert(button, 'Token '+pos+' / '+label+' absent');
+  button.click();
+}
+function editRegex(value) {
+  const input = regexApp.querySelector('input[data-field="regex-line-key-regex"]');
+  assert(input, 'Regex author input missing');
+  input.value=value;
+  input.dispatchEvent(new Event('change',{bubbles:true}));
+}
+try {
+  renderRegex();
+  let outcome = runReport();
+  assert(outcome.gate.blocking, 'Stale authored regex must fail closed on baseline');
+  assert(outcome.gate.message.includes('28 of 28'), 'Expected initial 28/28 veto');
+  assert(runApp.querySelector('[data-action="run"]')?.disabled, 'Blocked Run button enabled');
+  assert(outcome.result.rejectedRows.length===28, 'Initial Regex Tester must reject stale regex');
+  // A real DOM click selects token authority while preserving the authored regex for undo.
+  clickRole(4,'Line Key');
+  assert(stateRef.current.outputRunReadinessReport===null, 'Token click must invalidate cached blocked Run report');
+  let f1 = stateRef.current.regexTesterConfig.formats[0];
+  assert(f1.lineKey.extractMode==='TOKEN' && f1.lineKey.regex==='(NEVER)', 'Click failed explicit TOKEN override');
+  outcome=runReport();
+  assert(outcome.result.matchedRows.length===28, 'Live Regex Tester fails to agree with selected token extraction');
+  assert(!outcome.gate.blocking && outcome.gate.message.includes('28 selected branch occurrences'), 'Run gate must accept resolved formats');
+  const saved=JSON.parse(localStorage.getItem('xml-cii-regex-config-v1'));
+  assert(saved.formats[0].lineKey.extractMode==='TOKEN','Saved config lost effective token mode');
+  const support=JSON.parse(stateRef.current.supportConfigJson);
+  assert(support.regexTester.formats[0].lineKey.extractMode==='TOKEN','Effective Run config lost TOKEN');
+  assert(support.linelist.branchNameRegex==='','Legacy regex projection should be disabled');
+  assert(!runApp.textContent.includes('Branch format diagnosis (first 20 failed occurrences)'), 'Passed gate retained stale diagnosis panel');
+  // Rehydrate the exact persisted config, not just the in-memory editor state.
+  stateRef.current.regexTesterConfig=saved;
+  outcome=runReport();
+  assert(!outcome.gate.blocking,'Saved/reloaded TOKEN authority failed Run readiness');
+  // A manual regex edit switches effective method back to regex; missing capture remains a hard veto.
+  renderRegex();
+  editRegex('(NEVER)');
+  assert(stateRef.current.outputRunReadinessReport===null, 'Regex edit must invalidate cached ready Run report');
+  assert(stateRef.current.regexTesterConfig.formats[0].lineKey.extractMode==='REGEX','Regex edit did not take authority');
+  outcome=runReport();
+  assert(outcome.gate.blocking,'Invalid authored regex bypassed Run refusal');
+  assert(outcome.gate.message.includes('28 UNMATCHED; 0 AMBIGUOUS'),'Wrong diagnosed failure mode');
+  const detailed=JSON.parse(outcome.gate.detail);
+  assert(detailed.length===20,'Run diagnostics must be bounded to first 20');
+  assert(detailed[0].formatCandidates?.[0]?.reasons?.lineKey==='REGEX_NO_MATCH_OR_CAPTURE','Missing per-format Line Key cause');
+  assert(runApp.textContent.includes('Branch format diagnosis (first 20 failed occurrences)'),'Rendered Run diagnosis absent');
+  assert(runApp.textContent.includes('lineKey: REGEX_NO_MATCH_OR_CAPTURE'),'Rendered UI lacks exact cause');
+  assert(runApp.querySelector('[data-action="run"]')?.disabled,'Failed Run gate enabled conversion');
+  assert(runApp.querySelectorAll('script,img,iframe').length===0,'Diagnostics injected markup');
+  renderRegex();
+  editRegex('(S8811000)');
+  assert(stateRef.current.outputRunReadinessReport===null, 'Corrected regex must drop cached blocker');
+  outcome=runReport();
+  assert(!outcome.gate.blocking && outcome.result.matchedRows.length===28,'Correct regex did not restore ready authority');
+  assert(runtimeErrors.length===0,'Browser errors '+runtimeErrors.join(' | '));
+  globalThis.__XML229_BROWSER_RESULT__={ok:true,syntheticOccurrences:28,afterToken:'MATCHED',afterReload:'MATCHED',afterStaleRegex:'28 UNMATCHED',boundedDiagnosticRows:20,afterFixedRegex:'MATCHED',runtimeErrors};
+} catch (err) {
+  globalThis.__XML229_BROWSER_RESULT__={ok:false,error:err?.stack||String(err),runtimeErrors};
+}
+output.textContent=JSON.stringify(globalThis.__XML229_BROWSER_RESULT__,null,2);
+globalThis.__XML229_BROWSER_DONE__=true;
+</script>

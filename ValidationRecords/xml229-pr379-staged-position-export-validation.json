@@ -1,0 +1,50 @@
+{
+  "schema": "XML229.PR379.SafePositionExportValidation.v1",
+  "date": "2026-11-02",
+  "scope": "Safe bounded staged position error evidence in native converter failure and execution debug downloads",
+  "tests": [
+    {
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "NODE_PARSER",
+      "name": "source-compatible native failure diagnostic and execution debug modules parse"
+    },
+    {
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "SYNTHETIC_TYPED_NATIVE_FAILURE",
+      "name": "typed Python STAGED_POSITION_TRANSFER receipt + safe JSON stdout marker returns bounded ambiguous claim positions, no proprietary source metadata, nativeCiiReleaseAuthorized false"
+    },
+    {
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "PYTHON_SYNTHETIC_SOURCE",
+      "name": "two coincident source Node positions produce one explicit ambiguous staged claim with candidate row indices"
+    },
+    {
+      "status": "PASS",
+      "observation": "GITHUB_CONNECTOR_EXACT_BYTES",
+      "oracle": "BYTE_EQUALITY",
+      "name": "eight production root/docs module mirrors"
+    },
+    {
+      "status": "NOT_RUN",
+      "observation": "NOT_OBSERVED",
+      "oracle": "REAL_BROWSER",
+      "name": "Owner's persisted private JSON source + accepted 249 Final mass native execution with exported sample"
+    },
+    {
+      "status": "NOT_RUN",
+      "observation": "NOT_OBSERVED",
+      "oracle": "GOVERNED_CII_OUTPUT",
+      "name": "emitted native source-to-Final physical mass reconciliation and CII download"
+    }
+  ],
+  "sourceBasisWarning": "Public EF05 source + public staged JSON original source produced 0 ambiguous, 320 mandatory unmatched; user's accepted Final geometry and offset are a different basis and not available for exact reproduction",
+  "result": "DRAFT_PARTIAL_FIX_NATIVE_DOWNLOAD_HELD",
+  "release": {
+    "nativeCiiReleaseAuthorized": false,
+    "ciiDownloadAuthorized": false
+  },
+  "relatedPR": "https://github.com/reallakshman19/3D_Converters/pull/379"
+}

@@ -1,0 +1,25 @@
+schema: AgentClaim.v1
+pr_or_wip: PR683
+pull_request: 683
+claim_state: ACTIVE
+branch: agent/hp-product-matrix-bulk-intake
+authority_domains:
+  - HP_PIPING_CLASS_PRODUCTIVITY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - tabs/engineering-workspace-tab.js
+    - tabs/hp-piping-class-product-bulk-input.js
+    - tabs/hp-piping-class-product-bulk-workbench-tab.js
+    - tests/hp-piping-class-product-bulk-input.test.mjs
+    - tests/hp-piping-class-product-bulk-failclosed.test.mjs
+    - tests/hp-piping-class-product-bulk-ui.test.mjs
+exclusions:
+  - native KD320 implementation or qualification
+  - Code compliance authority
+  - design authority
+  - source/evidence qualification
+  - vibration mechanism work
+release_condition: OWNER_EXPLICIT_MERGE_AUTHORIZATION_AFTER_QUALIFICATION_RECONCILIATION

@@ -1,0 +1,15 @@
+id: WIP-VIB-EIT-ROADMAP-20260818
+state: IMPLEMENTING
+criticality: ENGINEERING_CRITICAL
+branch: agent/vibration-eit-roadmap-20260818
+base_branch: main
+base_main_sha: be618ecdfbb11df21e3c16cc1b18d96e5a2472a9
+mission: Generic multi-module EIT import plus non-binding Phase x Scope x Specialty roadmap projection/panel.
+overlap: COORDINATION_REQUIRED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  live_grounding: PASS
+  reconstructed_node: PASS_9_OF_9
+  repository_native: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+exact_next_action: Checkpoint new files, create draft PR, then integrate project context and shared UI mount without overlapping active FIT UI claims.

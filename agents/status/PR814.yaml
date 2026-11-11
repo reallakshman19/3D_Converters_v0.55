@@ -1,0 +1,26 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR814
+branch: agent/issue-781-single-combine-owners-20261001
+criticality: ENGINEERING_CRITICAL
+base_main: bebf552e6d45eaefb1d2dc878a8e7a172d1bfd22
+current_stage: READY_FOR_OWNER_REVIEW_WITH_INHERITED_CI_FAILURES
+takeover_authority: WRITE_ALLOWED_BOUNDED_QUALIFIED_UI_AND_GEOMETRY
+owner_geometry_repair_authorization: EXPLICIT_LATEST_ERROR_TO_BE_FIXED_REQUEST
+exact8_artifact: REQUESTED_NOT_YET_RECEIVED
+user_three_original_sources: RECEIVED_REPOSITORY_FIXTURES
+geometry_native_cli: PASS
+real41_model_positive_owners: 174
+real41_model_unresolved: 0
+single_prefill_baseline: FAIL_PRESERVED_CORRECTED_NATIVE_REPLAY_PASS
+three_source_positive_cii_owners: 42
+real41_downloaded_cii_owners: 174
+independent_physical_delta_and_mass_audits: PASS_BOTH
+focused_tests: PASS_28_MAIN_25_DATASET_38_MISSION
+remote_successor_deployment: NOT_RUN
+merge_authority: OWNER_ONLY_NOT_GRANTED
+report_path: agents/PR814_workreport.md
+
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/814
+code_checkpoint: 16fcb9ac87712ec6e59a94b8f5f9b89d72da8283
+remote_checks: 11PASS/4FAIL/1PENDING_INHERITED_FAILURES

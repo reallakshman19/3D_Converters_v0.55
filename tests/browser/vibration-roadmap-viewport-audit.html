@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vibration roadmap viewport audit</title>
+  <link rel="stylesheet" href="../../tabs/vibration-roadmap-panel.css">
+  <style>
+    :root { color-scheme: dark; --text-muted: #aab5c4; }
+    html, body { margin: 0; min-height: 100%; background: #0b1220; color: #e5edf6; font-family: system-ui, sans-serif; }
+    body { overflow-y: auto; }
+    .page-spacer { min-height: 460px; padding: 24px; box-sizing: border-box; }
+    .page-spacer.after { min-height: 1200px; }
+    #host { padding: 16px; }
+    .engineering-console-layout { display: grid; gap: 12px; align-items: start; }
+    .mock-pane { min-height: 260px; padding: 12px; border: 1px solid #334155; border-radius: 8px; box-sizing: border-box; }
+    .mock-main { min-height: 1100px; }
+    .mock-controls { display: flex; gap: 8px; flex-wrap: wrap; }
+    .mock-controls button { padding: 6px 8px; }
+  </style>
+</head>
+<body>
+  <section class="page-spacer before" aria-hidden="true">Viewport audit spacer before workspace.</section>
+  <main id="host">
+    <div class="engineering-console-layout">
+      <section class="mock-pane">Navigation</section>
+      <section class="mock-pane mock-main">
+        <div class="mock-controls" id="mock-controls">
+          <button type="button" data-vi-workspace-tab="screening" id="workspace-screening">Screening workspace</button>
+          <button type="button" data-vi-workspace-tab="identification" id="workspace-identification">Identification workspace</button>
+          <button type="button" data-vi-row="row-a" id="assessment-row-a">Assessment A</button>
+          <button type="button" data-vi-row="row-b" id="assessment-row-b">Assessment B</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <section class="page-spacer after" aria-hidden="true">Viewport audit spacer after workspace.</section>
+
+  <script type="module">
+    import {
+      createVibrationRoadmapController,
+      VIBRATION_ROADMAP_STATE_EVENT,
+    } from '../../tabs/vibration-roadmap-controller.js';
+    import { buildVibrationRoadmapScopeChoices } from '../../tabs/vibration-roadmap-scope-selection.js';
+
+    const host = document.querySelector('#host');
+    const counters = { workspace: 0, rowA: 0, rowB: 0 };
+
+    document.querySelector('#workspace-screening').addEventListener('click', () => { counters.workspace += 1; });
+    document.querySelector('#assessment-row-a').addEventListener('click', () => { counters.rowA += 1; });
+    document.querySelector('#assessment-row-b').addEventListener('click', () => { counters.rowB += 1; });
+
+    const selectedAssessment = Object.freeze({
+      schema: 'VibrationIntegrityRoadmapAssessmentContext.v1',
+      authority: Object.freeze({
+        purpose: 'SELECTED_REGISTER_SCOPE_WORKFLOW_CONTEXT_ONLY',
+        determinesApplicability: false,
+        determinesCompleteness: false,
+        createsCaseIdentity: false,
+        persistenceAuthority: 'NONE',
+      }),
+      scopeChoices: buildVibrationRoadmapScopeChoices([
+        { rowKey: 'row-a', line: 'L-100', caseId: 'NORMAL', canonicalId: 'ASMT-A' },
+        { rowKey: 'row-b', line: 'L-100', caseId: 'STARTUP', canonicalId: 'ASMT-B' },
+      ], 'row-a'),
+      lineCaseAssessmentStatus: Object.freeze({
+        schema: 'VibrationLineCaseAssessmentStatus.v1',
+        state: 'ASSESSMENT_INCOMPLETE',
+        scope: Object.freeze({ line: 'L-100', caseId: 'NORMAL', canonicalId: 'ASMT-A' }),
+        nextActionCode: 'COMPLETE_REQUIRED_ASSESSMENTS',
+        completeness: Object.freeze({ state: 'INCOMPLETE' }),
+        screeningEvidence: Object.freeze({ state: 'NONE' }),
+        authority: Object.freeze({
+          purpose: 'LINE_CASE_WORKFLOW_STATUS_PROJECTION_ONLY',
+          determinesApplicability: false,
+          determinesCompleteness: false,
+        }),
+      }),
+    });
+
+    const controller = createVibrationRoadmapController(host, {
+      initialState: {
+        roadmapWidth: 320,
+        collapsed: false,
+        mechanismStates: {
+          fit: { state: 'ASSESSMENT_COMPLETE' },
+          mechanical: { state: 'REQUIRED_NOT_READY' },
+          aiv: { state: 'ASSESSMENT_COMPLETE' },
+          sbc: { state: 'REQUIRED_NOT_IMPLEMENTED' },
+          thermowell: { state: 'NOT_APPLICABLE' },
+        },
+        context: { selectedAssessment },
+      },
+    });
+    controller.render({ definition: { id: 'vibration-integrity', family: 'VIB' }, state: { familyLanding: 'VIB' } });
+
+    globalThis.__VIBRATION_ROADMAP_UI012__ = {
+      counters,
+      dispatchState(detail = {}) {
+        host.dispatchEvent(new CustomEvent(VIBRATION_ROADMAP_STATE_EVENT, { detail }));
+      },
+      destroy() { controller.destroy(); },
+    };
+    globalThis.__VIBRATION_ROADMAP_UI012_READY__ = true;
+  </script>
+</body>
+</html>

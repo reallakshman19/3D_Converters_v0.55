@@ -1,0 +1,142 @@
+<!doctype html><meta charset="utf-8">
+<title>LFJ 1108 U02 independent IndexedDB corruption and transaction failure matrix</title>
+<script type="module">
+import {openIndexedRecordStore} from '../storage/browser/indexed-record-store.mjs';
+import {openIndexedOccurrencePairStore,createPairedIndexStore}
+  from './indexed-occurrence-pairs.mjs';
+
+// These hand-constructed rows are NEGATIVE storage-port fault fixtures, not
+// independent source token facts. The separate genuine Worker/original-byte
+// browser harness proves positive original-source behavior.
+window.runPairFaultMatrix=async()=>{
+  const outcomes={};
+  const prefix='lfj-u02-fault-'+crypto.randomUUID();
+  const basis={sourceRefId:'FAULT-SOURCE',
+    sourceSha256:'a'.repeat(64),sourceRevision:'FAULT-REVISION'};
+  const identity=JSON.stringify(['lfj-json-value/v1',
+    basis.sourceRefId,basis.sourceRevision,'']);
+  const open={schema:'LFJ.JSON.OccurrenceEvent.v1',...basis,
+    kind:'OPEN',occurrenceId:identity,ordinal:0,path:'',
+    parentId:null,type:'string',startByte:0};
+  const seal={schema:'LFJ.JSON.OccurrenceEvent.v1',...basis,
+    kind:'SEAL',occurrenceId:identity,ordinal:0,endByteExclusive:4};
+  const manifest={schema:'LFJ.JSON.OccurrenceIndexSummary.v1',...basis,
+    complete:true,occurrenceCount:1,eventCount:2,byteLength:4,
+    rightsBasis:'SOURCE_FACTS_ONLY',engineeringReady:false};
+  async function make(suffix,opts={}){
+    const dbName=prefix+'-'+suffix,sideDb=dbName+'-pair',generation='generation';
+    const source=await openIndexedRecordStore({
+      databaseName:dbName,namespace:'source',generation,basis,kind:'source'
+    });
+    const pair=await openIndexedOccurrencePairStore({
+      databaseName:sideDb,namespace:'source',generation,basis,...opts
+    });
+    const combined=createPairedIndexStore({indexStore:source,pairPort:pair});
+    return {dbName,sideDb,generation,source,pair,combined};
+  }
+  async function reopenStatus(c){
+    const probe=await openIndexedRecordStore({
+      databaseName:c.dbName,namespace:'source',generation:c.generation,basis,kind:'source'
+    });
+    try{
+      try{
+        const it=probe.readOrdered()[Symbol.asyncIterator]();
+        await it.next();
+        return 'UNEXPECTED_COMMITTED';
+      }catch(e){return e?.code;}
+    }finally{probe.close();}
+  }
+  async function cleanup(c){
+    try{c.source.close();}catch{}
+    try{c.pair.close();}catch{}
+    indexedDB.deleteDatabase(c.dbName);
+    indexedDB.deleteDatabase(c.sideDb);
+  }
+  // A source manifest with even event count is not enough: wrong occurrence
+  // identity for SEAL must not release either source or pair committed heads.
+  const broken=await make('mismatched-id');
+  try{
+    await broken.combined.stagePage([open,{...seal,
+      occurrenceId:identity+'-wrong'}]);
+    try{await broken.combined.commitDurably(manifest);
+      outcomes.mismatched='UNEXPECTED_COMMITTED';
+    }catch(e){outcomes.mismatched=e?.code;}
+    outcomes.mismatchedSourceVisible=await reopenStatus(broken);
+  }finally{await cleanup(broken);}
+
+  // Abort the pair HEAD transaction after its put was enqueued but before
+  // IDB transaction.complete. Original source head MUST be rolled back too.
+  let injectionCalled=false;
+  const interrupted=await make('abort-before-complete',{
+    beforeHeadCommit:tx=>{injectionCalled=true;tx.abort();}
+  });
+  try{
+    await interrupted.combined.stagePage([open,seal]);
+    try{await interrupted.combined.commitDurably(manifest);
+      outcomes.headAbort='UNEXPECTED_COMMITTED';
+    }catch(e){outcomes.headAbort=e?.code;}
+    outcomes.headAbortInjectionCalled=injectionCalled;
+    outcomes.headAbortSourceVisible=await reopenStatus(interrupted);
+    try{await interrupted.pair.lookupCommittedPair(identity);
+      outcomes.headAbortPairVisible='UNEXPECTED_COMMITTED';
+    }catch(e){outcomes.headAbortPairVisible=e?.code;}
+  }finally{await cleanup(interrupted);}
+
+  // A fully committed pair must survive closing both IndexedDB connections.
+  const persisted=await make('reopen');
+  try{
+    await persisted.combined.stagePage([open,seal]);
+    await persisted.combined.commitDurably(manifest);
+    // An orphaned pair head must NEVER be usable through the qualified
+    // SourceSession port once the original R07 durable head is revoked.
+    const accepted=await persisted.combined.lookupCommittedPair(identity);
+    outcomes.pairedBeforeSourceAbort=accepted.seal.endByteExclusive===4;
+    await persisted.source.abort();
+    try{await persisted.combined.lookupCommittedPair(identity);
+      outcomes.orphanPairRefused='UNEXPECTED_ACCEPTED';
+    }catch(e){outcomes.orphanPairRefused=e?.code;}
+    persisted.pair.close();persisted.source.close();
+    const again=await openIndexedOccurrencePairStore({
+      databaseName:persisted.sideDb,namespace:'source',
+      generation:persisted.generation,basis
+    });
+    try{
+      const result=await again.lookupCommittedPair(identity);
+      outcomes.reopenedPairValid=result.open.startByte===0&&
+        result.seal.endByteExclusive===4;
+    }finally{again.close();}
+
+    // Poison one independently persisted SEAL span. A corrupted record must
+    // be refused by the lookup, not returned as original-byte authority.
+    const connection=await new Promise((resolve,reject)=>{
+      const request=indexedDB.open(persisted.sideDb,1);
+      request.onsuccess=()=>resolve(request.result);
+      request.onerror=()=>reject(request.error);
+    });
+    try{
+      await new Promise((resolve,reject)=>{
+        const tx=connection.transaction('events','readwrite');
+        const store=tx.objectStore('events');
+        const request=store.get(['source',persisted.generation,identity,'SEAL']);
+        request.onsuccess=()=>{
+          const found=request.result;
+          found.row={...found.row,endByteExclusive:0};
+          store.put(found);
+        };
+        tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);
+        tx.onabort=()=>reject(new Error('fault edit aborted'));
+      });
+    }finally{connection.close();}
+    const poisoned=await openIndexedOccurrencePairStore({
+      databaseName:persisted.sideDb,namespace:'source',
+      generation:persisted.generation,basis
+    });
+    try{
+      try{await poisoned.lookupCommittedPair(identity);
+        outcomes.corruptPair='UNEXPECTED_ACCEPTED';
+      }catch(e){outcomes.corruptPair=e?.code;}
+    }finally{poisoned.close();}
+  }finally{await cleanup(persisted);}
+  return outcomes;
+};
+</script>

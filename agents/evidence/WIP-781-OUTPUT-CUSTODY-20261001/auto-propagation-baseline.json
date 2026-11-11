@@ -1,0 +1,64 @@
+{
+  "regex": {
+    "automaticPipingClass": "9",
+    "automaticBore": "9",
+    "editedPipingClass": "9",
+    "renders": 1
+  },
+  "initial": [
+    57.25,
+    13.5,
+    30,
+    91.25
+  ],
+  "afterExact": [
+    10,
+    20,
+    30,
+    99
+  ],
+  "afterAll": [
+    10,
+    20,
+    30,
+    99
+  ],
+  "afterBlankFill": [
+    10,
+    20,
+    30,
+    99
+  ],
+  "afterManual": [
+    10,
+    20,
+    30,
+    99
+  ],
+  "afterExplicit": [
+    10,
+    20,
+    30,
+    99
+  ],
+  "accepted": {
+    "cancelled": false,
+    "updates": {
+      "A": {
+        "ratingsByKey": {},
+        "weightsByKey": {
+          "/B1::20": 10,
+          "/B1::21": 20,
+          "/B1::22": 30
+        }
+      },
+      "B": {
+        "ratingsByKey": {},
+        "weightsByKey": {
+          "/B1::20": 99
+        }
+      }
+    }
+  },
+  "errors": []
+}

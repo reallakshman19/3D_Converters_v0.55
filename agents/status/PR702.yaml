@@ -1,0 +1,52 @@
+schema: engineering-pr-status/v1
+pr: 702
+repository: reallaksh19/3D_Converters
+branch: agent/cii-fortran-format-authority-fix-20260826
+base_branch: main
+base_sha: ca8d391ac5f829f53bebb3c37adf0547c34a67b4
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: AUTO
+auto_state: STOPPED_ENVIRONMENT_BOUNDARY
+mutation_authority: WRITE_ALLOWED_BOUNDED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+recovery_state: HANDOVER_READY
+coordination: SAFE
+stage: DRAFT_HANDOVER_READY_RUNTIME_NOT_RUN
+pr_state: OPEN_DRAFT
+mission: >-
+  Reconcile stale CAESAR CII fixed-FORTRAN row-count and physical-row custody authorities
+  with already-qualified V11/V14 converter, validator, native-pair and CII2019 section-rule evidence.
+production_authority:
+  cii14_section_rules_allowbls_width: CORRECT_26_TO_28
+  cii2019_syntax_forcmnt_width: CORRECT_13_TO_20
+  cii2019_syntax_flanges_width: CORRECT_11_TO_12
+  cii2019_aux_physical_blank_row_counting: PRESERVE_PHYSICAL_ROWS
+  converter_semantics: NO_CHANGE
+  writer_runtime: NO_CHANGE
+  topology: NO_CHANGE
+  units: NO_CHANGE
+  generic_numeric_semantics: NO_CHANGE
+  workflows: NO_CHANGE
+hosted_reconciliation:
+  main_sha: ca8d391ac5f829f53bebb3c37adf0547c34a67b4
+  changed_files: 8
+  reviews: 0
+  review_threads: 0
+  pr_triggered_workflow_runs: 0
+  draft: true
+  merged: false
+  mergeable: true
+validation:
+  exact_backup_blob_identity: PASS_REMOTE
+  hosted_production_patch_scope: PASS_REMOTE
+  blank_row_patch_minimality: PASS_REMOTE
+  seven_test_python_compile: PASS_LOCAL_RECONSTRUCTED
+  source_authority_crosscheck: PASS_SOURCE_INSPECTION
+  repository_native_focused_tests: NOT_RUN_ENVIRONMENT
+  repository_native_full_tests: NOT_RUN_ENVIRONMENT
+  actual_caesar_import: NOT_RUN_ENVIRONMENT
+exact_next_action: >-
+  On an exact checkout, run converters/scripts/test_cii_format_authority_convergence.py and
+  the adjacent CII V11/V14 regression suites; record actual PASS/FAIL. Keep PR702 draft and
+  do not merge unless Owner authorization is explicitly granted.

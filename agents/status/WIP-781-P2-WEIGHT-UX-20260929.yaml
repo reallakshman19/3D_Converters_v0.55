@@ -1,0 +1,36 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR-785
+mission: Clarify Issue 781 Weight Match suggestion versus accepted Match-1 authority without changing numerical authority logic.
+workstream: XML_CII_STANDALONE_ISSUE_781_P2_WEIGHT_UX
+branch: agent/issue-781-p2-weight-ux-20260929
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/WIP-781-P2-WEIGHT-UX-20260929_workreport.md
+current_stage: PR_REVIEW_HANDOFF
+blocker: NONE
+protocol_basis:
+  protocol: V3.1
+  common_sha: 1ced68258afeaf50df113b1d38a4ceb9193587e3
+  two_pass_revision: TPG-2P-2026-09-28-R3
+plan:
+  issue: 781
+  step: STEP-781-04
+  publication: IMPLEMENTATION_PLAN rev 1
+  issue_comment_id: 5893573324
+validation:
+  validated_material_head: 5d9b70b1509ab77ef91bbe86ebd9fb80c0867f65
+  issue_781_weight_ux_workflow: PASS_RUN_36638336460
+  rigid_weight_lifecycle: PASS
+  issue_776_authority_workflow: PASS_RUN_36638336512
+  exact_head_wsw_browser: PASS
+  browser_dataset_scale_10k_50k_100k: PASS
+implementation:
+  presentation_helper: tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-authority-ui.js
+  acceptance_authority_path: EXISTING_WITH_XML_CII_RIGID_WEIGHT_MATCH1_UNCHANGED
+  numerical_authority_change: NONE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Publish TASK_RESULT for STEP-781-04, confirm report-only final-head CI, mark PR #785 ready for Owner review, then start STEP-781-05 on a separate branch.
+last_updated: 2026-09-30

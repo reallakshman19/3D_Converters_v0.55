@@ -1,0 +1,31 @@
+pr: 739
+chain: ENGCALC-BOLTED-JOINTS
+leg: P7-ASSEMBLY-SOURCE-QUALIFICATION
+state: BLOCKED_AUTO
+base_pr: 738
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+material_head: f34ea75cb31adac5fa0ccb5736c6621d2a50147f
+latest_endpoint: EP-0028
+authority:
+  source_role: ASSEMBLY_BEHAVIOR_REFERENCE
+  method_authority: QUALITATIVE_AND_STUDY_SPECIFIC_BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_identity_review: PASS
+  qualitative_behavior_mapping: PASS
+  study_specific_benchmark_admission: PASS
+  universal_numerical_scatter_model: FAIL_SOURCE_NOT_SUFFICIENT
+  sequence_interaction_prediction: FAIL_SOURCE_NOT_SUFFICIENT
+  project_assembly_authority: FAIL_CONTROLLED_PROCEDURE_MISSING
+  calculation_implementation: NOT_RUN_NOT_ADMITTED
+  browser_validation: NOT_APPLICABLE
+boundaries:
+  canonical_joint_state: TARGET_CLAMP_PRELOAD
+  project_assembly_procedure: MISSING
+  controlled_pcc1_basis: UNRESOLVED
+  method_specific_default_scatter: PROHIBITED
+next_action: Obtain controlled project assembly/PCC-1 basis and uncertainty inputs; absent those, only a separately scoped explicit-input non-authorizing uncertainty envelope may proceed.
+merge_authority: OWNER_ONLY
+merge_authorized: false

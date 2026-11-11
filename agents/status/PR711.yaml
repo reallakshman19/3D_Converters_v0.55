@@ -1,0 +1,61 @@
+id: PR711
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-03
+state: BLOCKED_AUTO
+execution_mode: AUTO
+auto_state: VALIDATION_REQUIRED_NO_FURTHER_ENGINEERING_MUTATION
+scope_authority: LOCKED_TO_APPROVED_MISSION
+branch: agent/engcalc-bolt-registry-integration-20260902
+stacked_base: agent/engcalc-bolt-installation-strength-20260902
+base_dependency_pr: 709
+base_dependency_head: 0e1a50da4674e88d11ec38196e8d8d6f3680ec8d
+material_head: c7395422dd2d306681b9b2ece3e6071ca8957247
+latest_endpoint: EP-0018
+main_head_observed: fd3e08ee0a352f526073cd2a9aa91fae360286fd
+engineering_critical: true
+authority_domain: bolted-joint-central-registry-integration
+coordination_state: STACKED_DEPENDENCY_STALE_MAIN_VALIDATION_GATE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+registered_calculations:
+  short_form: BOLT.PRELOAD_TORQUE.SHORT_FORM
+  detailed_friction: BOLT.TORQUE.DETAILED_FRICTION
+  installation_strength: BOLT.STRENGTH.INSTALLATION_AXIAL_TORSION
+registry:
+  family: FLANGE
+  family_label: Flanges & Joints
+  new_contract_family_added: false
+  generic_console_ui_changed: false
+  bolt_group_integrated: false
+authority_boundary:
+  method_state: IMPLEMENTED
+  data_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+  real_master_data: UNRESOLVED
+validation:
+  overlap_grounding: PASS_SOURCE_INSPECTION
+  contract_compatibility: PASS_SOURCE_INSPECTION
+  unit_service_support: PASS_SOURCE_INSPECTION
+  pending_id_collision: PASS_SOURCE_INSPECTION
+  independent_fixture_recalculation: PASS_INDEPENDENT_ANALYTICAL
+  committed_registry_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_native_stacked_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_pr711_workflow: NOT_RUN_ZERO_OBSERVED
+  pr709_hosted_exact_pr_checkout: OBSERVED_RUN_33615022066
+  pr709_hosted_executed_scope: HP_PIPING_CLASS_I1_I3_ONLY
+  pr709_hosted_result: FAIL_14_OF_15_UNRELATED_HP_SCOPE
+  pr709_bolt_focused_test: NOT_RUN
+  browser_console: NOT_RUN
+  independent_engineering_review: NOT_RUN
+backup:
+  default_registry_exact_connector_copy: PRESENT
+  agentchain_reground_exact_connector_copy: PRESENT
+  native_backup_command: NOT_RUN_ENVIRONMENT_BLOCKED
+hard_stops:
+  - PR711 is stacked on unmerged PR709.
+  - Exact native or hosted execution of the three bolt-focused tests is not available.
+  - Current main has advanced independently and must be reconciled after dependency disposition.
+  - Browser console acceptance is not run.
+  - Real project bolt/material/thread/friction/reference-stress master authority remains unresolved.
+exact_next_action: Execute tests/bolt-installation-strength.test.mjs, tests/bolt-installation-strength-detailed-torque.test.mjs and tests/bolt-engineering-calculations-registry.test.mjs on an exact PR711 stacked checkout. If unavailable, preserve NOT_RUN and stop. Do not add CI without authorization and do not merge PR709 or PR711 without explicit owner authorization.

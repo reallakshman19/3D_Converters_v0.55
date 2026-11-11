@@ -1,0 +1,27 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-C4REV-20260818
+mission: "C4 explicit revision-keyed dependency custody"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c4-dependency-revisions-20260818
+stack_base_pr: 603
+stack_base_sha: 0dc15b701fa82182d75409e0a1b4c1866c6f1ae6
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-C4REV-20260818_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+worker_admission: NOT_ADMITTED_NO_REAL_TIMING_EVIDENCE
+validation:
+  focused_revision_tests: PASS_8_OF_8_LOCAL_IMPLEMENTATION_COUPLED
+  browser_computation_invalidation: NOT_RUN
+  mandatory_pre_edit_backup: PASS_BACKUP_7
+protected_authority:
+  - ENGINEERING_RESULTS_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+highest_risk: "Revision ledger over/under-invalidating future C5 computations."
+exact_next_action: "Publish C4 module/state integration/tests and open stacked draft PR."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:31:00+04:00

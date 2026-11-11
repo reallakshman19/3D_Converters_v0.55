@@ -1,0 +1,30 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR607
+mission: "C6 exact-source DOM parse custody for Source Mode"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c6-source-parse-custody-20260818
+stack_base_pr: 606
+report_basis_head: e4c5979705244f94baef552160eed4d780510db9
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/PR607_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+worker_admission: NOT_ADMITTED_NO_REAL_TIMING_EVIDENCE
+validation:
+  focused_source_cache_tests: PASS_6_OF_6_LOCAL_IMPLEMENTATION_COUPLED
+  changed_file_reconciliation: PASS_REMOTE_10_DECLARED_PATHS
+  mergeability: PASS_REMOTE_TRUE
+  browser_source_mode_timing: NOT_RUN
+  status_checks: NOT_RUN_NONE_OBSERVED
+protected_authority:
+  - SOURCE_TEXT_REMAINS_AUTHORITATIVE
+  - DERIVED_DOM_RUNTIME_ONLY
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+highest_risk: "Stale source document surviving source clear/change."
+exact_next_action: "Keep draft; close PR600 as superseded; next safe stage is C4b config-save routing."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T07:08:00+04:00

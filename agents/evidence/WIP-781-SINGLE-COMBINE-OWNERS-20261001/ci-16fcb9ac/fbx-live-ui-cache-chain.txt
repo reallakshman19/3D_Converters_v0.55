@@ -1,0 +1,28 @@
+live-ui	Live UI chain regression	﻿2026-10-01T15:51:36.9420425Z ##[group]Run node tests/fbx/test-fbx2-runtime-cache-chain.mjs
+live-ui	Live UI chain regression	2026-10-01T15:51:36.9420810Z ^[[36;1mnode tests/fbx/test-fbx2-runtime-cache-chain.mjs^[[0m
+live-ui	Live UI chain regression	2026-10-01T15:51:36.9480234Z shell: /usr/bin/bash -e {0}
+live-ui	Live UI chain regression	2026-10-01T15:51:36.9480475Z ##[endgroup]
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1309865Z (node:2157) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/fbx-selected-zone-preview-bridge.js is not specified and it doesn't parse as CommonJS.
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1311614Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1315608Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1316335Z (Use `node --trace-warnings ...` to show where the warning was created)
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1422445Z node:internal/modules/run_main:123
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1428110Z     triggerUncaughtException(
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1428742Z     ^
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1430343Z 
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1430889Z AssertionError [ERR_ASSERTION]: index.html lacks main-rhbg-fitguard.js?v=20260929-pr780-metadata-1
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1431618Z 
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1431732Z false !== true
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1431883Z 
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1432428Z     at requires (file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:40:10)
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1433458Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:43:1 {
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1434087Z   generatedMessage: false,
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1434386Z   code: 'ERR_ASSERTION',
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1434653Z   actual: false,
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1434938Z   expected: true,
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1435203Z   operator: 'strictEqual',
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1435481Z   diff: 'simple'
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1435719Z }
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1435836Z 
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1435943Z Node.js v22.23.3
+live-ui	Live UI chain regression	2026-10-01T15:51:37.1476356Z ##[error]Process completed with exit code 1.

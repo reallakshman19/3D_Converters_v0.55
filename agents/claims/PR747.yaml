@@ -1,0 +1,23 @@
+pr: 747
+claims:
+  - id: P8-CROSS-REPO-SOURCE-AUDIT
+    statement: Connected owner repositories were audited for a controlled source capable of populating FlangeFaceBindingSourceRecord.v1 without inferred physical flange semantics.
+    result: PASS
+  - id: P8-NATIVE-RVM-AUTHORITY
+    statement: Native RVM primitive geometry and affine transforms are sufficient by themselves to authorize the engineering calculation face, opening direction and mating side.
+    result: FAIL
+    disposition: EVIDENCE_ONLY
+  - id: P8-ATT-FLANGE-AUTHORITY
+    statement: ATT-derived flange recipes are exact native geometry suitable for project binding authority.
+    result: FAIL
+    disposition: DERIVED_SCHEMATIC_ONLY
+  - id: P8-TOPOLOGY-AUTHORITY
+    statement: UXML or PCF endpoint order/connectivity establishes the physical flange calculation face and opening sign.
+    result: FAIL
+    disposition: TOPOLOGY_ONLY
+  - id: P8-AA-CROSS-BINDING
+    statement: The reviewed Advanced_Analysis source contains a real project physical-flange-to-interface cross-binding record.
+    result: FAIL_NOT_FOUND
+  - id: P8-PRODUCER-ADMISSION
+    statement: An automatic FlangeFaceBinding.v1 producer is admitted by the audited evidence.
+    result: FAIL_NOT_ADMITTED

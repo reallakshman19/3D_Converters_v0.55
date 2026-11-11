@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "baselineId": "QB-ISSUE-769-C",
+  "source": "github:reallaksh19/3D_Converters#769",
+  "sourceAuthority": "OWNER",
+  "activeQuestionSetId": "QS-XMLCII-769-WEIGHT-001",
+  "questions": [
+    {
+      "baselineQuestion": "Q1",
+      "coveredBy": ["Q1"],
+      "requiredLiterals": ["12.5 kg", "125 CII", "--weight-scale 10"],
+      "requiredConcepts": ["unit custody", "single writer conversion", "effective weight"],
+      "requiredObligations": ["trace", "calculate", "falsify"]
+    },
+    {
+      "baselineQuestion": "Q2",
+      "coveredBy": ["Q2"],
+      "requiredLiterals": ["rigidWeight", "125", "12.5"],
+      "requiredConcepts": ["stale override", "lifecycle ambiguity", "first wrong boundary"],
+      "requiredObligations": ["reconstruct", "isolate", "distinguish"]
+    },
+    {
+      "baselineQuestion": "Q3",
+      "coveredBy": ["Q3"],
+      "requiredLiterals": ["rigidWeightFinal", "rigidWeightMatch1", "rigidWeight"],
+      "requiredConcepts": ["precedence", "invalidation", "kg authority"],
+      "requiredObligations": ["state", "protect", "preserve"]
+    },
+    {
+      "baselineQuestion": "Q4",
+      "coveredBy": ["Q4"],
+      "requiredLiterals": ["70 kg", "130 kg", "69.9 kg", "130.1 kg", "±30%"],
+      "requiredConcepts": ["read-only empirical validation", "row health", "UNVALIDATED"],
+      "requiredObligations": ["validate", "display", "not mutate"]
+    },
+    {
+      "baselineQuestion": "Q5",
+      "coveredBy": ["Q5"],
+      "requiredLiterals": ["no numeric correction", "legacy-only configs", "writer scale 10"],
+      "requiredConcepts": ["shared resolver", "minimal patch", "rollback"],
+      "requiredObligations": ["bound", "test", "stop"]
+    }
+  ]
+}

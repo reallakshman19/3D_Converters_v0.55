@@ -1,0 +1,24 @@
+Batch result Mode A (Draft) Batch Results — Separate Models
+1 succeeded · 0 failed · 0 blocked · 1 inspected
+Download Batch ManifestSave All CII Files (.zip) · 1
+ZIP contains 1 successful CII output only; each XML remains an independent CII model.
+Source	Selected branches	Status	Artifacts
+EF-05-PRO.TEST.xml	41	SUCCEEDED	Enriched XML CII Diagnostics Manifest
+Canvas current output Geometry preview: 1124 segment(s), 1165 node(s), 173 support(s). Drag to orbit, scroll to zoom.
+{
+  "status": "PASS",
+  "scope": "Reviewed XML weights and canvas; full CII ownership remains FAIL16",
+  "fixture": "41 branches",
+  "accepted": 174,
+  "entered": [
+    {
+      "key": "/ASIM-1836-8\"-P8810021-31441C4-PP/B4::300",
+      "weight": 57.25
+    },
+    {
+      "key": "/ASIM-1836-8\"-P8810021-31441C4-PP/B4::309",
+      "weight": 13.5
+    }
+  ],
+  "errors": []
+}

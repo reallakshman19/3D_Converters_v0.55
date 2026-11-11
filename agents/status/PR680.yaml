@@ -1,0 +1,42 @@
+schema: AgentStatus.v1
+pr_or_wip: PR680
+pull_request: 680
+branch: agent/vib-assessment-unit-scenario-binding-20260820
+base: main
+base_sha: 68511e14b594eab9e21d06da3ddfc0836e92295b
+implementation_basis_head: 13c3b4ddba1474cda0959f95afd6dab4b6cc749b
+pr_head_observed_before_recovery_sync: 33168e85df7aed876bdad80bd14abd3b55025eed
+state: DRAFT_READY_FOR_OWNER_REVIEW
+criticality: ENGINEERING_CRITICAL_ORCHESTRATION_CONTRACT
+coordination_state: SAFE_NO_EXACT_CONFLICT
+remote_state:
+  open: true
+  draft: true
+  mergeable: true
+  changed_files: 7
+  reviews: 0
+  review_threads: 0
+  status_contexts: 0
+  pr_workflow_runs: 0
+  main_drift: NONE_OBSERVED
+validation:
+  grounding: PASS_SOURCE_INSPECTION
+  pr678_trace: PASS_SOURCE_INSPECTION
+  assessment_contract_trace: PASS_SOURCE_INSPECTION
+  exact_changed_path_scope: PASS_7_OF_7_INTENDED
+  line_policy: PASS_252_223
+  source_level_falsifiers: PASS_ENCODED
+  native_checkout: NOT_RUN_ENVIRONMENT_BLOCKED_GITHUB_DNS
+  repository_native_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_head_status_contexts: NOT_RUN_ZERO_RETURNED
+  exact_head_workflow_runs: NOT_RUN_ZERO_RETURNED
+  browser: NOT_APPLICABLE_DATA_CONTRACT_ONLY
+authority:
+  purpose: ASSESSMENT_UNIT_SCENARIO_CUSTODY_ONLY
+  engineering_authority_changed: false
+  screening_authority_changed: false
+  design_authority_changed: false
+  numerical_authority_changed: false
+  execution_authority_changed: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR680
+exact_next_action: OWNER_REVIEW_OR_MERGE_THEN_SUCCESSOR_RUNTIME_ADAPTER_WIRING

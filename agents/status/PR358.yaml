@@ -1,0 +1,11 @@
+schema: AgentStatus.v1
+pr_or_wip: PR358
+state: SUBMITTED_REVIEW_HELD
+report: agents/PR358_workreport.md
+base: c6cb6ef2c7c62ee716e806aa6dd3d0ad5f8aa405
+production_head: 53337245e570017f6eaa81427b7a27b42e914ba7
+exact_next_action: Verify actual Worker candidate-basis transport, reconcile CI/reviews and existing WBS return; retain native model holds.
+merge_authority: OWNER_ONLY_NOT_GRANTED
+tested_source_head: dd76d9a86d344a0ee357418676297118ad51af80
+ci_summary: 70_PASS_16_HISTORICAL_PREFLIGHT_FAIL
+page_draft_head: e513af36cf84a9c59121be9773c4033089703802

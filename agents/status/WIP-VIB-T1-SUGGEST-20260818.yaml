@@ -1,0 +1,14 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-VIB-T1-SUGGEST-20260818
+workstream: VIBRATION_T1_SUGGESTIONS
+branch: agent/vibration-t1-suggestions-20260818
+agent_state: CLOSED
+auto_state: MIGRATED
+pr_recovery_state: SUPERSEDED_BY_PR638
+handover_readiness: READY
+report_path: agents/PR638_workreport.md
+current_stage: HANDOVER
+blocker: REPOSITORY_NATIVE_EXECUTION_UNAVAILABLE
+coordination_state: MIGRATED_TO_PR638
+merge_authority: OWNER_ONLY_NOT_GRANTED

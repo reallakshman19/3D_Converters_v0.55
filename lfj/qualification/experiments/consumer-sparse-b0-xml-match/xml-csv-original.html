@@ -1,0 +1,255 @@
+<!doctype html><meta charset="utf-8">
+<title>#1147 B0-05 Native Chromium original XML → sparse JSON matching and CSV oracle</title>
+<script type="module">
+const fail=(code,message)=>Object.assign(new Error(message),{code});
+// Independent browser-side corruption control. The test deliberately edits
+// IndexedDB AFTER a successful source-matched ledger result, then requires the
+// production Resolver entrypoint to FAIL CLOSED before computing CSV hashes.
+async function mutateFactPage(databaseName,generation,mutate){
+  const db=await new Promise((resolve,reject)=>{
+    const r=indexedDB.open(databaseName);
+    r.onsuccess=()=>resolve(r.result);
+    r.onerror=()=>reject(r.error);
+    r.onupgradeneeded=()=>r.transaction.abort();
+  });
+  try{
+    const original=await new Promise((resolve,reject)=>{
+      const t=db.transaction('pages','readonly');
+      const r=t.objectStore('pages').get([generation,0]);
+      r.onsuccess=()=>resolve(r.result);
+      r.onerror=()=>reject(r.error);
+    });
+    if(!original?.rows?.length)
+      throw fail('CORRUPTION_SETUP','first original consumer page absent');
+    const changed=structuredClone(original);
+    mutate(changed.rows[0]);
+    await new Promise((resolve,reject)=>{
+      const t=db.transaction('pages','readwrite');
+      t.objectStore('pages').put(changed);
+      t.oncomplete=resolve;t.onerror=()=>reject(t.error);
+      t.onabort=()=>reject(t.error);
+    });
+    return async()=>{
+      try{
+        await new Promise((resolve,reject)=>{
+          const t=db.transaction('pages','readwrite');
+          t.objectStore('pages').put(original);
+          t.oncomplete=resolve;t.onerror=()=>reject(t.error);
+          t.onabort=()=>reject(t.error);
+        });
+      }finally{db.close();}
+    };
+  }catch(err){db.close();throw err;}
+}
+// Simulate an in-flight, authoritative generation switch AFTER the matching
+// Worker has validated its original source+consumer HEAD and complete page
+// digests. Both originals are restored before the next native Worker test.
+async function replaceActiveHead(databaseName,mutate){
+  const db=await new Promise((resolve,reject)=>{
+    const r=indexedDB.open(databaseName);
+    r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
+    r.onupgradeneeded=()=>r.transaction.abort();
+  });
+  try{
+    const original=await new Promise((resolve,reject)=>{
+      const t=db.transaction('heads','readonly');
+      const r=t.objectStore('heads').get('active');
+      r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
+    });
+    if(!original||!original.complete)
+      throw fail('HEAD_TEST_SETUP','expected active committed source head');
+    const changed=structuredClone(original);
+    mutate(changed);
+    if(JSON.stringify(changed)===JSON.stringify(original))
+      throw fail('HEAD_TEST_SETUP','test must actually change HEAD identity');
+    await new Promise((resolve,reject)=>{
+      const t=db.transaction('heads','readwrite');
+      t.objectStore('heads').put(changed,'active');
+      t.oncomplete=resolve;t.onerror=()=>reject(t.error);
+      t.onabort=()=>reject(t.error);
+    });
+    return async()=>{
+      try{
+        await new Promise((resolve,reject)=>{
+          const t=db.transaction('heads','readwrite');
+          t.objectStore('heads').put(original,'active');
+          t.oncomplete=resolve;t.onerror=()=>reject(t.error);
+          t.onabort=()=>reject(t.error);
+        });
+      }finally{db.close();}
+    };
+  }catch(err){db.close();throw err;}
+}
+async function expectHeadSwitchFailure(payload,databaseName,expectedCode){
+  const w=new Worker(new URL('./matching.worker.mjs',location.href),
+    {type:'module'});
+  let restore=null,paused=false;
+  try{
+    const result=await new Promise((resolve,reject)=>{
+      w.onerror=event=>reject(fail('WORKER_ERROR',event.message));
+      w.onmessage=async({data})=>{
+        try{
+          if(data?.type==='PAUSED'){
+            if(paused)throw fail('DOUBLE_PAUSE','test hook entered twice');
+            paused=true;
+            if(data.stage!=='BEFORE_RESOLVE')
+              throw fail('UNEXPECTED_BARRIER','wrong Worker test synchronization');
+            restore=await replaceActiveHead(databaseName,head=>{
+              head.generation=String(head.generation)+'-SUPERSEDED';
+            });
+            w.postMessage({type:'RESUME'});
+          }else if(data?.type==='DONE'){
+            resolve({code:'SUCCESS',paused});
+          }else if(data?.type==='ERROR'){
+            resolve({code:data.code||'UNKNOWN',paused});
+          }
+        }catch(error){reject(error);}
+      };
+      w.postMessage({...payload,testBarrier:'BEFORE_RESOLVE'});
+    });
+    if(!result.paused||result.code!==expectedCode)
+      throw fail('STALE_HEAD_ACCEPTED',JSON.stringify({expectedCode,...result}));
+    return result.code;
+  }finally{
+    w.terminate();
+    if(restore)await restore();
+  }
+}
+const run=(file,payload)=>new Promise((resolve,reject)=>{
+  const w=new Worker(new URL(file,location.href),{type:'module'});
+  w.onmessage=({data})=>{
+    if(data?.type==='DONE'){w.terminate();resolve(data.result);}
+    else if(data?.type==='ERROR'){w.terminate();reject(fail(data.code,data.message));}
+  };
+  w.onerror=e=>{w.terminate();reject(fail('WORKER_ERROR',e.message));};
+  w.postMessage(payload);
+});
+window.runB0RealXmlCsv=async({jsonUrl,xmlUrl,oracle,config={},
+  xmlTextOverride=null,mode='AUTHENTIC'})=>{
+  if(!jsonUrl.startsWith('/Benchmarks/')||!xmlUrl.startsWith('/Benchmarks/'))
+    throw fail('AUTHENTIC_ONLY','original tracked fixture required');
+  const j=await fetch(jsonUrl,{cache:'no-store'});
+  const x=await fetch(xmlUrl,{cache:'no-store'});
+  if(!j.ok||!x.ok)throw fail('FIXTURE_MISSING','expected original fixture HTTP');
+  const blob=await j.blob();
+  if(xmlTextOverride!==null&&mode!=='SOURCE_DERIVED_CONTROL')
+    throw fail('XML_CONTROL_MODE','source-derived XML must be explicitly labeled');
+  const xmlText=xmlTextOverride??await x.text();
+  const xmlSHA=[...new Uint8Array(await crypto.subtle.digest('SHA-256',
+    new TextEncoder().encode(xmlText)))]
+    .map(x=>x.toString(16).padStart(2,'0')).join('');
+  if(xmlSHA!==oracle.xmlSha256)throw fail('XML_SHA','XML source or control mismatched');
+  if(blob.size!==oracle.originalBytes||new TextEncoder().encode(xmlText).length!==oracle.xmlBytes)
+    throw fail('SOURCE_BYTES','original source or XML differs');
+  const id=crypto.randomUUID(),sourceDb='lfj-b0-match-source-'+id;
+  const projectionDb='lfj-b0-match-facts-'+id;
+  const longTasks=[],before=(await navigator.storage.estimate()).usage??null;
+  const observer=new PerformanceObserver(list=>{
+    for(const t of list.getEntries())if(t.duration>=50)longTasks.push(t.duration);
+  });
+  try{observer.observe({entryTypes:['longtask']});}catch{}
+  const started=performance.now();
+  try{
+    const source=await run('../consumer-sparse-b0/compact-paged.worker.mjs',{
+      type:'START',blob,expectedSha256:oracle.originalSha256,
+      generation:id,databaseName:sourceDb,revision:'B0-XML-CSV'
+    });
+    if(source.occurrenceCount!==oracle.sourceOccurrences)
+      throw fail('SOURCE_CENSUS','original source catalog does not equal golden');
+    const projection=await run('../consumer-sparse-b0-consumer/projection.worker.mjs',{
+      type:'PROJECT',sourceDatabaseName:sourceDb,sourceGeneration:id,
+      projectionDatabaseName:projectionDb,projectionGeneration:id,blob,
+      expectedSha256:oracle.originalSha256,config,toleranceMm:6
+    });
+    if(projection.factCount!==oracle.sourceFacts||
+       projection.domainSha256!==oracle.projectionSha256)
+      throw fail('PROJECTED_SOURCE','complete projection does not match real golden');
+    const result=await run('./matching.worker.mjs',{
+      type:'MATCH',sourceDatabaseName:sourceDb,sourceGeneration:id,
+      projectionDatabaseName:projectionDb,projectionGeneration:id,
+      blob,expectedSha256:oracle.originalSha256,xmlText,config
+    });
+    const checks=[
+      ['xmlNodes',result.xmlNodes,oracle.xmlNodes],
+      ['matchedXmlNodes',result.matchedXmlNodes,oracle.matchedXmlNodes],
+      ['xmlRecordsSha256',result.xmlRecordsSha256,oracle.xmlRecordsSha256],
+      ['nodeWiseCsvSha256',result.nodeWiseCsvSha256,oracle.nodeWiseCsvSha256],
+      ['evidenceTreeCsvSha256',result.evidenceTreeCsvSha256,oracle.evidenceTreeCsvSha256],
+      ['nodeWiseCsvBytes',result.nodeWiseCsvBytes,oracle.nodeWiseCsvBytes],
+      ['evidenceTreeCsvBytes',result.evidenceTreeCsvBytes,oracle.evidenceTreeCsvBytes]
+    ];
+    const mismatches=checks.filter(([,actual,expected])=>actual!==expected);
+    if(mismatches.length)
+      throw fail('XML_CSV_SEMANTIC_MISMATCH',JSON.stringify({mismatches,
+        actual:result,expected:oracle}));
+    if(JSON.stringify(result.statusCounts)!==JSON.stringify(oracle.statusCounts))
+      throw fail('XML_STATUS_MISMATCH','status count mismatch');
+    if(result.engineeringReady!==false||result.downloadAuthorized!==false||
+       result.appWired!==false)
+      throw fail('RIGHTS','research is not product ready/export authorized');
+    // Exact config digest is part of the engineering result identity. Reusing
+    // old consumer facts with newly enabled source aliases MUST reject.
+    const changedConfig={...config,
+      captureFields:[{name:'SPREF',enabled:true},{name:'DTXR',enabled:false}]};
+    let configError='';
+    try{
+      await run('./matching.worker.mjs',{
+        type:'MATCH',sourceDatabaseName:sourceDb,sourceGeneration:id,
+        projectionDatabaseName:projectionDb,projectionGeneration:id,
+        blob,expectedSha256:oracle.originalSha256,xmlText,
+        config:changedConfig
+      });
+    }catch(error){configError=error.code||'';}
+    if(configError!=='PROJECTION_CONFIG_STALE')
+      throw fail('CONFIG_STALE_ACCEPTED','changed aliases/capture config must reject, got '+(configError||'SUCCESS'));
+    // A damaged page with correct sourceSHA/config/row count must be rejected
+    // by the actual matching Worker. Both attacks preserve the record census.
+    const runCorruptionNegative=async(kind,mutate)=>{
+      const restore=await mutateFactPage(projectionDb,id,mutate);
+      let code='';
+      try{
+        await run('./matching.worker.mjs',{
+          type:'MATCH',sourceDatabaseName:sourceDb,sourceGeneration:id,
+          projectionDatabaseName:projectionDb,projectionGeneration:id,
+          blob,expectedSha256:oracle.originalSha256,xmlText,config
+        });
+      }catch(err){code=err.code||'';}
+      finally{await restore();}
+      if(code!=='PROJECTION_PAGE_INTEGRITY')
+        throw fail('CORRUPT_PAGE_ACCEPTED',kind+' must reject before matching: '+(code||'SUCCESS'));
+      return code;
+    };
+    const tamperedMatchingEvidence=await runCorruptionNegative(
+      'matchingEvidence',fact=>{
+        if(!fact.matchingEvidence||typeof fact.matchingEvidence!=='object')
+          throw fail('CORRUPTION_SETUP','expected original evidence');
+        fact.matchingEvidence.attributes={
+          ...fact.matchingEvidence.attributes,SPREF:'FORGED-PS-AUTHORITY'
+        };
+      });
+    const tamperedNormalizedFact=await runCorruptionNegative(
+      'normalizedFact',fact=>{
+        fact.jsonNodeNo=String(fact.jsonNodeNo)+'-FORGED';
+      });
+    const baseMatch={type:'MATCH',sourceDatabaseName:sourceDb,
+      sourceGeneration:id,projectionDatabaseName:projectionDb,
+      projectionGeneration:id,blob,expectedSha256:oracle.originalSha256,
+      xmlText,config};
+    const supersededSourceHead=await expectHeadSwitchFailure(
+      baseMatch,sourceDb,'SOURCE_SUPERSEDED');
+    const supersededProjectionHead=await expectHeadSwitchFailure(
+      baseMatch,projectionDb,'PROJECTION_SUPERSEDED');
+    const after=(await navigator.storage.estimate()).usage??null;
+    return {schema:'LFJ.B0.RealXmlCsvOriginalOracle.v1',source,
+      projection,matching:result,measurementMs:performance.now()-started,
+      storageDelta:before===null||after===null?null:after-before,
+      negatives:{configurationChanged:configError,
+        tamperedMatchingEvidence,tamperedNormalizedFact,
+        supersededSourceHead,supersededProjectionHead},
+      mainThreadLongTasks:longTasks.length,
+      mainThreadMaxLongTaskMs:Math.max(0,...longTasks),
+      qualification:'REAL_XML_CSV_SEMANTIC_PARITY_NOT_UI_PRODUCTION'};
+  }finally{observer.disconnect();}
+};
+window.__b0XmlCsvReady=true;
+</script>

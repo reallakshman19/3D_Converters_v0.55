@@ -1,0 +1,30 @@
+schema: AgentClaim.v1
+pr_or_wip: PR626
+claim_state: ACTIVE_DRAFT_HANDOVER
+files:
+  exact:
+    - converters/vibration/mechanisms/capability.js
+    - tabs/vibration-integrity-mechanisms.js
+    - tests/vibration-mechanism-capability.test.mjs
+    - tests/vibration-integrity-mechanism-matrix.test.mjs
+    - agents/PR626_workreport.md
+    - agents/status/PR626.yaml
+    - agents/claims/PR626.yaml
+  prefixes: []
+authority_domains:
+  - VIBRATION_CAPABILITY_PROJECTION
+  - VIBRATION_CALCULATOR_AVAILABILITY_PROJECTION
+claim_modes:
+  - EXCLUSIVE
+exclusions:
+  - vibration equations or coefficients
+  - AIV assessment integration or line aggregation
+  - screening or design authority promotion
+  - mechanism applicability authority
+  - EI main-line governing changes
+  - FIT Mechanical SBC numerical behavior
+  - workflow files
+last_verified_head: fea73c209ba4653d56b73caa2ba0d8aafa08a958
+implementation_head: c7b8442621ed1e1b67c4abe507a29fc44390fb50
+coordination_state: SAFE_TO_PROCEED_WITH_STALE_OVERLAP_RECORDED
+merge_authority: OWNER_ONLY_NOT_GRANTED

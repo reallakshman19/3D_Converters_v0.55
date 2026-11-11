@@ -1,0 +1,35 @@
+pr: 730
+chain: ENGCALC-BOLTED-JOINTS
+state: ACTIVE_P1_SOURCE_QUALIFICATION
+execution_mode: AUTO
+auto_state: RUNNING
+base_sha: 78b361d1f649d41378f568ebe1a237c4bc140c73
+latest_endpoint: EP-0020
+authority:
+  ug44: BENCHMARK_ONLY
+  bolt_scalar_methods: REFERENCE_KERNEL_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+  real_master_data: NOT_ESTABLISHED
+validation:
+  p0_exact_numeric: PASS_64_OF_64_AT_541D92B
+  p0_numeric_byte_drift: PASS_RELEVANT_PATHS_UNCHANGED_TO_CURRENT_MAIN
+  p0_console: FAIL_18_OF_20_PRE_EXISTING_VIB_PRESENTATION_SCOPE
+  pr730_runtime: NOT_APPLICABLE_DOCUMENTATION_ONLY
+  independent_engineering_review: NOT_RUN
+backup:
+  native_required_command: NOT_RUN_ENVIRONMENT_BLOCKED
+  connector_pre_edit_backup: EVIDENCE_ONLY_NOT_POLICY_EQUIVALENT
+p1:
+  bpvc_viii_1_edition: VERIFIED_2025_IDENTITY_ONLY
+  b16_5_edition: VERIFIED_2025_IDENTITY_SCOPE_ONLY
+  b16_47_edition: VERIFIED_2025_IDENTITY_SCOPE_ONLY
+  pcc_1_edition: VERIFIED_2022_IDENTITY_SCOPE_ONLY
+  code_case_2901: HISTORICAL_IDENTITY_CURRENT_REVISION_UNRESOLVED
+  licensed_ug44_content: UNRESOLVED
+  controlled_rating_rows: UNRESOLVED
+  controlled_fm_g: UNRESOLVED
+  controlled_bolt_assembly_procedure: UNRESOLVED
+next_action: P2_SCHEMA_CUSTODY_ONLY
+merge_authority: OWNER_ONLY_NOT_GRANTED

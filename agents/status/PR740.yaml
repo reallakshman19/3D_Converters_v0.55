@@ -1,0 +1,28 @@
+pr: 740
+chain: ENGCALC-BOLTED-JOINTS
+leg: P7-EXPLICIT-PRELOAD-ENVELOPE
+state: BLOCKED_AUTO
+base_pr: 739
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+material_head: 7cf121c66347b3b99d2b69516ac6fd8af9142aa9
+latest_endpoint: EP-0029
+authority:
+  source_authority: EXPLICIT_INPUT_BOUND_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_reconstructed_exact_github_blobs: PASS_10_OF_10
+  native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr_head_workflow_runs: 0
+  independent_engineering_review: NOT_RUN
+boundaries:
+  probabilistic_interpretation: false
+  predicts_elastic_interaction: false
+  predicts_sequence_effects: false
+  predicts_tool_scatter: false
+  predicts_friction_scatter: false
+  central_registry: NOT_REGISTERED
+next_action: Run tests/bolt-preload-uncertainty-envelope.test.mjs on an exact PR-head checkout. Preserve NOT_RUN if unavailable; do not add hidden scatter defaults, predictive sequence physics, registry/UI authority, or merge without owner authorization.
+merge_authority: OWNER_ONLY
+merge_authorized: false

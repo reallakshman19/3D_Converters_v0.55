@@ -1,0 +1,37 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR601
+mission: "Clean superseding replay of XML→CII Standalone Performance Batch A"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-batch-a-replay-20260818
+report_basis_head: 8c3cce7ffa90512ba96e147312a50fbc996ca1a1
+main_head_last_checked: 00a3296f4b860ab1acb49ed690a4122122394d56
+merge_base: 00a3296f4b860ab1acb49ed690a4122122394d56
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: MANUAL_CONTINUATION
+agent_state: VALIDATING
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/PR601_workreport.md
+appendix_a_status: CURRENT
+grounding_epoch: GE-XMLCII-BA-002
+predecessor_pr: 595
+predecessor_disposition: SALVAGE_PARTIAL_SUPERSEDED_BY_601
+protected_authority:
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+  - INPUTXML_TO_CII2019_IMMUTABLE_CORE_UNCHANGED
+validation:
+  local_authority_and_restart: PASS_IMPLEMENTATION_COUPLED
+  changed_file_reconciliation: PASS_REMOTE_EXECUTION
+  branch_lineage: PASS_REMOTE_EXECUTION
+  repository_pr_checks: NOT_RUN_NO_RUN_OBSERVED
+  browser_acceptance: NOT_RUN
+  support_gap_equivalence: NOT_RUN
+mergeability: RECHECK_REQUIRED_INITIAL_FALSE
+highest_risk: "Draft mapping accidentally becoming APPLIED engineering authority before explicit Apply."
+exact_next_action: "Recheck PR mergeability/reviews/checks, run any available integrated qualification without workflow changes, then update predecessor supersession state."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:02:00+04:00

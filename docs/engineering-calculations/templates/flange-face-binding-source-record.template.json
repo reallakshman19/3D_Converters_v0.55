@@ -1,0 +1,68 @@
+{
+  "templateOnly": true,
+  "runtimeSchema": "FlangeFaceBindingSourceRecord.v1",
+  "admissionRule": "DO_NOT_USE_AS_RUNTIME_RECORD",
+  "instructions": "Replace every __REQUIRED_CONTROLLED_SOURCE__ token from controlled project evidence, remove templateOnly/runtimeSchema/admissionRule/instructions, set schema exactly to FlangeFaceBindingSourceRecord.v1, set semanticHash to empty string before sealing, then independently review and seal with sealFlangeFaceBindingSourceRecord().",
+  "record": {
+    "schema": "FlangeFaceBindingSourceRecord.v1-TEMPLATE-ONLY",
+    "recordId": "__REQUIRED_CONTROLLED_SOURCE__",
+    "recordRevisionId": "__REQUIRED_CONTROLLED_SOURCE__",
+    "recordState": "DRAFT",
+    "projectId": "__REQUIRED_CONTROLLED_SOURCE__",
+    "model": {
+      "modelId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "modelRevisionId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "globalFrameId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "lengthUnit": "m",
+      "sourceSchema": "rvm-converter-stage/v1",
+      "sourceKind": "__REQUIRED_CONTROLLED_SOURCE__",
+      "sourceFile": "__REQUIRED_CONTROLLED_SOURCE__",
+      "sourceRef": "__REQUIRED_CONTROLLED_SOURCE__",
+      "sourcePath": "__REQUIRED_CONTROLLED_SOURCE__",
+      "nativeKind": "__REQUIRED_CONTROLLED_SOURCE_EVIDENCE_ONLY__",
+      "componentRole": "PHYSICAL_FLANGE"
+    },
+    "joint": {
+      "jointId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "componentId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "selectedFaceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "selectedPortId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "matingSideId": "__REQUIRED_CONTROLLED_SOURCE__"
+    },
+    "geometry": {
+      "referencePointGlobalM": {
+        "x": "__REQUIRED_CONTROLLED_SOURCE__",
+        "y": "__REQUIRED_CONTROLLED_SOURCE__",
+        "z": "__REQUIRED_CONTROLLED_SOURCE__"
+      },
+      "openingDirection": "__REQUIRED_ONE_OF_POSITIVE_LOCAL_X_Y_Z__"
+    },
+    "analysisInterface": {
+      "sourceRepository": "reallaksh19/Advanced_Analysis",
+      "sourceCommit": "eabb93cd44c59ce182d73284cb707653917e07c8",
+      "interfaceSetSemanticHash": "__REQUIRED_CONTROLLED_SOURCE__",
+      "interfaceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "interfaceSemanticHash": "__REQUIRED_CONTROLLED_SOURCE__",
+      "frameSemanticHash": "__REQUIRED_CONTROLLED_SOURCE__",
+      "reportingSignConvention": "__REQUIRED_CONTROLLED_SOURCE__"
+    },
+    "sourceControl": {
+      "bindingSourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "modelEntitySourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "calculationFaceSourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "openingDirectionSourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "matingSideSourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "globalFrameSourceId": "__REQUIRED_CONTROLLED_SOURCE__",
+      "analysisInterfaceSourceId": "__REQUIRED_CONTROLLED_SOURCE__"
+    },
+    "ambiguityPolicy": {
+      "identityPolicy": "EXACT_IDENTIFIERS_ONLY",
+      "ambiguityDisposition": "UNAMBIGUOUS_REQUIRED",
+      "candidateCount": 1,
+      "positionToleranceM": "__REQUIRED_CONTROLLED_SOURCE__",
+      "orientationToleranceRad": "__REQUIRED_CONTROLLED_SOURCE__",
+      "toleranceSourceId": "__REQUIRED_CONTROLLED_SOURCE__"
+    },
+    "semanticHash": ""
+  }
+}

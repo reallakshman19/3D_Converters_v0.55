@@ -1,0 +1,32 @@
+pr: 734
+chain_id: ENGCALC-BOLTED-JOINTS
+claims:
+  - id: recovered-workbook-formulas-migrated-without-code-authority
+    status: SUPPORTED
+    evidence:
+      - docs/engineering-calculations/flange-bs5500-workbook-formula-map.md
+      - converters/engineering-calculations/flange/legacy-bs5500-workbook.js
+    boundary: LEGACY_BENCHMARK_ONLY
+  - id: exact-workbook-fixture-reproduction
+    status: SUPPORTED
+    evidence:
+      - tests/flange-legacy-bs5500-workbook.test.mjs
+    validation: PASS_13_OF_13_SOURCE_RECONSTRUCTED_EXACT_GITHUB_BLOBS
+  - id: reduced-stress-moment-has-force-units
+    status: SUPPORTED
+    evidence:
+      - docs/engineering-calculations/flange-legacy-bs5500-benchmark-source-register.md
+      - tests/flange-legacy-bs5500-workbook.test.mjs
+    boundary: API exposes reducedMomentN and does not label M*Cf/B as torque.
+  - id: no-authority-promotion
+    status: SUPPORTED
+    values:
+      acceptanceEvaluated: false
+      codeCompliance: false
+      canUseForDesignAuthority: false
+      governingEligible: false
+  - id: native-pr-head-validation
+    status: NOT_RUN_ENVIRONMENT_BLOCKED
+  - id: p5-rigidity
+    status: BLOCKED_UNCHECKED_SOURCE_AND_EQUATIONS
+next_action: Exact PR734 focused execution if available; otherwise preserve NOT_RUN and seek controlled current detailed-flange source or an owner sequencing decision for P6.

@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR814
+branch: agent/issue-781-single-combine-owners-20261001
+claim_state: ACTIVE
+authority_domains: [XML_CII_SINGLE_BATCH_MODE_DISPATCH, XML_COMBINE_SINGLE_HANDOFF, XML_CII_COMPONENT_WEIGHT_OWNERSHIP_REPAIR]
+coordination_state: COORDINATION_REQUIRED
+protected_paths: [tabs/xml-cii-2019-standalone/ui-adapted, tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js, converters/scripts/xml_to_cii2019.py, converters/scripts/xml_cii_weight_output_custody.py, converters/scripts/xml_cii_weighted_geometry.py, docs/tabs/xml-cii-2019-standalone, docs/converters/scripts]
+merge_authority: OWNER_ONLY_NOT_GRANTED
+
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/814
+code_checkpoint: 16fcb9ac87712ec6e59a94b8f5f9b89d72da8283
+remote_checks: 11PASS/4FAIL/1PENDING_INHERITED_FAILURES

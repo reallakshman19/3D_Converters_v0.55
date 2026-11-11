@@ -1,0 +1,25 @@
+pr: 642
+branch: agent/vibration-aiv-canvas-hardening-20260818
+base_branch: main
+base_sha: b2aaa2ebea54bf568f340c62b2bb767d2ce061ae
+agent_state: INACTIVE
+current_stage: MERGED_TO_MAIN
+execution_mode: AUTO
+auto_state: COMPLETE
+criticality: ENGINEERING_CRITICAL
+mutation_authority: CLOSED
+merge_authority: OWNER_GRANTED_AND_EXECUTED
+merge:
+  final_main_sha: 79546f988b18686459a68103b4675bbba9bcf434
+  merged_at: 2026-08-19T01:33:19Z
+  merge_method: SQUASH
+validation_truth:
+  repository_native_node_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_journey: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_statuses: NOT_RUN_EMPTY
+  pr_workflow_runs: NOT_RUN_EMPTY
+protected_authority:
+  aiv_line_case_screening_authority: NOT_AUTHORIZED
+  generic_ei_mainline_aiv: BLOCKED
+  design_authority: false
+next_action: NONE_REPAIR_SET_MERGED

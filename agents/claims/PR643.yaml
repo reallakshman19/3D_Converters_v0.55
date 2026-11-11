@@ -1,0 +1,26 @@
+pr: 643
+claim_state: RELEASED
+branch: agent/vibration-aiv-canvas-interaction-hardening-20260818
+scope: AIV unified canvas interaction hardening stacked on PR642
+released_by: OWNER_AUTHORIZED_MERGE
+released_to: main@79546f988b18686459a68103b4675bbba9bcf434
+exact_files:
+  - tabs/vibration-aiv-unified-canvas-workflow.js
+  - tabs/vibration-aiv-ui-context.js
+  - tabs/vibration-aiv-unified-canvas-author-view.js
+  - tabs/vibration-aiv-state.js
+  - tabs/vibration-aiv-unified-canvas-editor-controller.js
+  - tabs/vibration-aiv-unified-canvas-controller.js
+  - tabs/vibration-aiv-unified-canvas-view.js
+  - tabs/vibration-aiv-qualification-tab.js
+  - tests/vibration-aiv-unified-canvas-interaction-hardening.test.mjs
+  - agents/PR643_workreport.md
+  - agents/status/PR643.yaml
+  - agents/claims/PR643.yaml
+exclusions:
+  - AIV numerical equations/constants
+  - Stage-9 reduction rule
+  - line/case authority promotion
+  - generic EI main-line governing aggregation
+  - workflow files
+merge_authority: OWNER_GRANTED_AND_EXECUTED

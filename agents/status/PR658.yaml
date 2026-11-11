@@ -1,0 +1,50 @@
+schema: AgentStatus.v1
+pr_or_wip: PR658
+pull_request: 658
+branch: agent/vibration-line-case-status-20260819
+base: main
+base_sha_at_replay: 2c65a77368fbc8db61d77209b36871d985ff4b55
+pre_takeover_head: b8488028541665ca888f7f6030bb26f51d59c44b
+product_test_basis_head: bcdf9160f8a2e3cd6f940c9e2e887af8e70950b6
+hosted_reconciliation_basis: edc9c33c3868874de5b3fab63190420a01d4ec59
+state: MERGE_AUTHORIZED_PENDING
+criticality: ENGINEERING_CRITICAL_PRESENTATION_INTEGRATION
+coordination_state: SAFE_WITH_EXPLICIT_IDENTITY_BOUNDARY
+replay:
+  outcome: CONTINUE_BYTE_PRESERVING_REPLAY
+  replay_commit: 839d5bb310f694b869b7bf59a75b26ed81fcbea3
+reconciliation:
+  main_sha: 2c65a77368fbc8db61d77209b36871d985ff4b55
+  ahead_by: 14
+  behind_by: 0
+  changed_files: 16
+  unexplained_files: 0
+  mergeable: true
+  draft: true
+  reviews: 0
+  comments: 0
+  review_threads: 0
+  commit_status_entries: 0
+  commit_status_classification: NOT_RUN
+  pr_triggered_workflow_runs: 0
+  workflow_classification: NOT_RUN
+validation:
+  inherited_status_contract: PASS_9_OF_9_LOCAL_EXECUTION_EXACT_UNCHANGED_BLOBS
+  current_head_source_inspection: PASS
+  authority_envelope_fail_closed: PASS_SOURCE_INSPECTION
+  new_linecase_right_rail_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  repository_native_regressions: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  native_backup: NOT_RUN_ENVIRONMENT_BLOCKED
+authority:
+  engineering_authority_changed: false
+  numerical_authority_changed: false
+  screening_authority_changed: false
+  applicability_authority_changed: false
+  completeness_authority_changed: false
+  case_identity_authority_created: false
+  project_persistence_changed: false
+  workflow_files_changed: false
+merge_authority: OWNER_GRANTED_FOR_PR658_2026-08-19
+merge_authorization_source: USER_MESSAGE_MERGE_PROCEED_NEXT
+exact_next_action: MARK_READY_RECONCILE_EXACT_HEAD_AND_SQUASH_MERGE_PR658

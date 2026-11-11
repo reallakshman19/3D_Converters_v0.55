@@ -1,0 +1,282 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 781 Weight Build basis fast-path qualification</title>
+<div id="root"></div>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  bindXmlCiiWeightMatchPhase,
+  invalidateXmlCiiWeightCache,
+  xmlCiiRenderWeightMatchPhase,
+  xmlCiiWeightRawPayloadText,
+} from '../../tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20260930-issue781-weight-no-staged-rewrite-1';
+import { publishXmlCiiPreviewRatingSnapshot } from '../../converters/xml-cii2019-core/preview-rating-snapshot.js';
+import {
+  validateXmlCiiRigidWeightMatch1,
+  withXmlCiiRigidWeightMatch1,
+} from '../../converters/xml-cii2019-core/rigid-weight-authority.js';
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20260930-issue781-screenshot-repair-1';
+
+const MAX_WALL_MS = 5000;
+const MAX_FRAME_GAP_MS = 250;
+const BRANCH_COUNT = 41;
+const TARGET_PIPE_COUNT = 53;
+const OTHER_BRANCH_PIPE_COUNT = 40;
+const PIPE_COUNT = TARGET_PIPE_COUNT + (BRANCH_COUNT - 1) * OTHER_BRANCH_PIPE_COUNT;
+const TOTAL_XML_NODES = PIPE_COUNT + 1;
+const STAGED_FILLER_COUNT = 8000;
+const DTXR_RAW = 'GATE   VALVE';
+const SOURCE_NOTE_PADDING = 'X'.repeat(384);
+const AUTHORITY_DATASET_ROWS = 100000;
+const UNRELATED_DATASET_REFS = {
+  lineList: { datasetId: 'must-not-hydrate-line-list', rowCount: AUTHORITY_DATASET_ROWS },
+  pipingClass: { datasetId: 'must-not-hydrate-piping-class', rowCount: AUTHORITY_DATASET_ROWS },
+  materialMap: { datasetId: 'must-not-hydrate-material-map', rowCount: AUTHORITY_DATASET_ROWS },
+};
+
+function pipeNodes(count) {
+  return Array.from({ length: count }, (_, index) => {
+    const nodeNo = (index + 1) * 10;
+    const x = index * 10;
+    return `<Node><NodeNumber>${nodeNo}</NodeNumber><NodeName>P-${nodeNo}</NodeName><ComponentType>PIPE</ComponentType><Position>${x} 0 0</Position><SourceNote>${SOURCE_NOTE_PADDING}</SourceNote></Node>`;
+  }).join('');
+}
+
+function targetX() {
+  return (TARGET_PIPE_COUNT - 1) * 10 + 100;
+}
+
+function sourceXml() {
+  const target = `<Branch><Branchname>B1</Branchname>${pipeNodes(TARGET_PIPE_COUNT)}<Node><NodeNumber>-1</NodeNumber><NodeName>GATE VALVE</NodeName><ComponentType>VALV</ComponentType><ComponentRefNo>V-FAST-1</ComponentRefNo><Endpoint>2</Endpoint><Position>${targetX()} 0 0</Position></Node></Branch>`;
+  const others = Array.from({ length: BRANCH_COUNT - 1 }, (_, index) => (
+    `<Branch><Branchname>B${index + 2}</Branchname>${pipeNodes(OTHER_BRANCH_PIPE_COUNT)}</Branch>`
+  )).join('');
+  return `<Model>${target}${others}</Model>`;
+}
+
+function stagedPayload() {
+  const filler = Array.from({ length: STAGED_FILLER_COUNT }, (_, index) => ({
+    type: 'PIPE',
+    attributes: {
+      REF: `NOISE-${index}`,
+      APOS: `${index} 0 0`,
+      LPOS: `${index + 1} 0 0`,
+      DTXR_POS: 'PIPE',
+    },
+  }));
+  const x = targetX();
+  filler.push({
+    type: 'VALV',
+    attributes: {
+      REF: 'V-FAST-1',
+      APOS: `${x - 100} 0 0`,
+      LPOS: `${x} 0 0`,
+      DTXR_POS: DTXR_RAW,
+    },
+  });
+  return JSON.stringify(filler, null, 2);
+}
+
+function ensureOverrides(config) {
+  if (!config.overrides || typeof config.overrides !== 'object') config.overrides = {};
+  return config.overrides;
+}
+
+async function build() {
+  invalidateXmlCiiWeightCache();
+  const coordinator = createMasterDatasetImportCoordinator();
+  publishXmlCiiPreviewRatingSnapshot([{
+    branchName: 'B1',
+    lineKey: 'P0310051',
+    pipingClass: '61440',
+    sizeMm: 100,
+    rating: '150',
+    ratingSource: 'fast-path-e2e',
+  }], { authorityDigest: 'fast-path-e2e' });
+
+  const config = {
+    dropGasketNodes: true,
+    dropGasketsInEnrichment: true,
+    splitCondensedValveFlange: false,
+    weight: {
+      valveHintLengthToleranceMm: 6,
+      useNodeNameValveHints: true,
+      masterRows: [{
+        id: 'target',
+        boreMm: 100,
+        rating: '150',
+        lengthMm: 100,
+        weight: 25,
+        typeDesc: 'GATE VALVE',
+      }],
+    },
+    overrides: {},
+  };
+
+  const sourceXmlText = sourceXml();
+  const stagedJson = stagedPayload();
+  const rawPayloadPreserved = xmlCiiWeightRawPayloadText(stagedJson) === stagedJson
+    && xmlCiiWeightRawPayloadText(DTXR_RAW) === DTXR_RAW;
+  let savedWeightConfig = null;
+  const root = document.querySelector('#root');
+  root.innerHTML = xmlCiiRenderWeightMatchPhase();
+  bindXmlCiiWeightMatchPhase(root, {
+    xmlFile: new File([sourceXmlText], 'weight-fast-path.xml', { type: 'application/xml' }),
+    stagedJsonText: stagedJson,
+    config,
+    onSaveConfig(nextConfig) { savedWeightConfig = structuredClone(nextConfig); },
+    ensureOverrides,
+    resolveStagedJsonText: async () => ({ text: stagedJson, label: 'inline-fast-path.json' }),
+    prepareWeightBasis: (request = {}) => coordinator.prepareWeightBasis({
+      xmlText: request.xmlText || '',
+      stagedJsonText: request.stagedJsonText || '',
+      config: request.config || {},
+      datasetRefs: UNRELATED_DATASET_REFS,
+      ratingMode: request.ratingMode || 'preview',
+      previewRatingSnapshot: request.snapshot || {},
+    }, { onProgress: request.onProgress }),
+  });
+
+  const button = root.querySelector('#mc-wm-refresh');
+  const statusEl = root.querySelector('#mc-wm-status');
+  const statusHistory = [];
+  const statusObserver = new MutationObserver(() => {
+    const value = statusEl.textContent || '';
+    if (value && statusHistory.at(-1) !== value) statusHistory.push(value);
+  });
+  statusObserver.observe(statusEl, { childList: true, subtree: true, characterData: true });
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  let running = true;
+  let lastFrame = performance.now();
+  let maxFrameGapMs = 0;
+  const tick = (now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - lastFrame);
+    lastFrame = now;
+    if (running) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  const started = performance.now();
+  button.click();
+
+  while (button.dataset.wmBusy === 'true' && performance.now() - started < MAX_WALL_MS) {
+    await new Promise((resolve) => setTimeout(resolve, 20));
+  }
+  const elapsedMs = performance.now() - started;
+  await new Promise((resolve) => requestAnimationFrame((now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - lastFrame);
+    running = false;
+    resolve();
+  }));
+  const status = statusEl.textContent || '';
+  statusObserver.disconnect();
+  if (status && statusHistory.at(-1) !== status) statusHistory.push(status);
+  const rows = root.querySelectorAll('#mc-wm-content tbody tr').length;
+  const weightInput = root.querySelector('.mc-rigid-review-input');
+  const inputValue = weightInput?.value || '';
+  // Proposal is not acceptance. Exercise the actual UI click, then validate
+  // the accepted Match-1 source basis (including a stale-input negative).
+  const candidateButton = root.querySelector('[data-wm-candidate]');
+  const proposedWeightKg = Number(candidateButton?.dataset.wmWeight);
+  const initiallyUnaccepted = inputValue === ''
+    && weightInput?.dataset.wmAccepted !== 'true'
+    && !savedWeightConfig;
+  candidateButton?.click();
+  const acceptedWeightKg = Number(weightInput?.value);
+  const acceptedKey = weightInput?.getAttribute('data-wm-key') || '';
+  const provenance = savedWeightConfig?.overrides?.rigidWeightProposalMeta?.[acceptedKey];
+  const explicitlyAccepted = weightInput?.dataset.wmAccepted === 'true'
+    && acceptedWeightKg === 25
+    && proposedWeightKg === 25
+    && provenance?.acceptanceMethod === 'candidate'
+    && provenance?.acceptedWeightKg === 25
+    && savedWeightConfig?.overrides?.rigidWeight?.[acceptedKey] === 25
+    && !savedWeightConfig?.overrides?.rigidWeightFinal?.[acceptedKey];
+  const match1 = provenance && savedWeightConfig
+    ? withXmlCiiRigidWeightMatch1(savedWeightConfig,
+      { [acceptedKey]: acceptedWeightKg }, { [acceptedKey]: provenance })
+    : null;
+  const originalIssue = provenance?.basis
+    ? { ...provenance.basis, elementLengthSource: provenance.basis.lengthAuthority }
+    : null;
+  const acceptedAuthority = match1 && originalIssue
+    ? validateXmlCiiRigidWeightMatch1(match1, [originalIssue])
+    : null;
+  const staleAuthority = match1 && originalIssue
+    ? validateXmlCiiRigidWeightMatch1(match1, [
+      { ...originalIssue, componentRefNo: '=CHANGED-SOURCE-REF' },
+    ])
+    : null;
+  const sourceBoundAcceptance = acceptedAuthority?.validCount === 1
+    && acceptedAuthority.validWeights[acceptedKey] === 25
+    && staleAuthority?.validCount === 0
+    && staleAuthority.stale[acceptedKey]?.reason === 'basis-changed'
+    && staleAuthority.stale[acceptedKey]?.changedFields.includes('componentRefNo');
+  const lineKey = root.querySelector('#mc-wm-content tbody tr td:nth-child(3)')?.textContent?.trim() || '';
+  const rating = root.querySelector('#mc-wm-content tbody tr .mc-wm-rating-input')?.value || '';
+  const dtxr = root.querySelector('#mc-wm-content tbody tr td:nth-child(9)')?.textContent || '';
+  const ok = rawPayloadPreserved
+    && button.dataset.wmBusy !== 'true'
+    && elapsedMs < MAX_WALL_MS
+    && maxFrameGapMs <= MAX_FRAME_GAP_MS
+    && status !== 'Error'
+    && !/Loading Weight basis runtime/i.test(status)
+    && !/Preparing Weight Match basis/i.test(status)
+    && !statusHistory.some((value) => /Applying staged geometry/i.test(value))
+    && rows === 1
+    && initiallyUnaccepted
+    && explicitlyAccepted
+    && sourceBoundAcceptance
+    && lineKey === 'P0310051'
+    && rating === '150';
+
+  coordinator.dispose();
+  return {
+    schema: 'XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V4',
+    ok,
+    elapsedMs,
+    maxWallMs: MAX_WALL_MS,
+    maxFrameGapMs,
+    maxFrameGapLimitMs: MAX_FRAME_GAP_MS,
+    branchCount: BRANCH_COUNT,
+    pipeNodes: PIPE_COUNT,
+    totalXmlNodes: TOTAL_XML_NODES,
+    sourceBytes: sourceXmlText.length,
+    stagedRows: STAGED_FILLER_COUNT + 1,
+    stagedBytes: stagedJson.length,
+    unrelatedAuthorityDatasetRows: AUTHORITY_DATASET_ROWS * 3,
+    unrelatedAuthorityDatasetsSkipped: true,
+    rawPayloadPreserved,
+    dtxrResolvedText: dtxr,
+    rows,
+    inputValue,
+    proposedWeightKg,
+    initiallyUnaccepted,
+    acceptedWeightKg,
+    explicitlyAccepted,
+    sourceBoundAcceptance,
+    validMatch1Count: acceptedAuthority?.validCount ?? 0,
+    staleMatch1Count: staleAuthority?.staleCount ?? 0,
+    lineKey,
+    rating,
+    status,
+    statusHistory,
+  };
+}
+
+try {
+  const result = await build();
+  if (!result.ok) throw new Error(`Weight fast-path qualification failed: ${JSON.stringify(result)}`);
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_RESULT__ = result;
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+} catch (error) {
+  const result = {
+    schema: 'XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V4',
+    ok: false,
+    error: String(error?.stack || error),
+  };
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_RESULT__ = result;
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

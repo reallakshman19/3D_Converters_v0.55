@@ -1,0 +1,18 @@
+schema: AgentClaim.v1
+pr_or_wip: PR381
+claim_state: DRAFT_MAINLINE_SCOPE
+branch: fix/xml229-pr380-native-mainline-20261102
+issue: https://github.com/reallakshman19/3D_Converters/issues/376
+pr_url: https://github.com/reallakshman19/3D_Converters/pull/381
+files:
+  exact:
+    - converters/scripts/xml_to_cii2019_master_addon.py
+    - converters/scripts/xml_to_cii2019_patched.py
+    - tests/test_xml229_staged_position_scope.py
+  mirrors:
+    - docs/converters/scripts/xml_to_cii2019_master_addon.py
+    - docs/converters/scripts/xml_to_cii2019_patched.py
+authority_domains: [fatal_staged_support_scope_classification, native_ambiguous_position_diagnostic]
+protected: [source_owner_identity, mandatory_staged_supports, accepted_final_mass, native_output_ownership, independent_cii_release]
+coordination: MAINLINE_RECOVERY_OF_PR380_AFTER_FEATURE_MERGE_TARGET_ERROR
+merge_authority: OWNER_ONLY_NOT_GRANTED

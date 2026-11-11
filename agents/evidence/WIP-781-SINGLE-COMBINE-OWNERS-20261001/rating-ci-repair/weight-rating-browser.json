@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "fixture": "41 branches / 1654 nodes",
+  "rows": 174,
+  "editedPrefix": [
+    "3",
+    "600"
+  ],
+  "manual": [
+    "900",
+    "450"
+  ],
+  "classFill": {
+    "pipingClass": "31441C4",
+    "rating": "300",
+    "rows": 173
+  },
+  "manualFinalPreservedAfterRatingChange": 10.5,
+  "typedCandidateMatchAbsent": true,
+  "repeatBuild": true,
+  "reopen": true,
+  "timings": [
+    {
+      "label": "prefix build without Preview",
+      "maxFrameGapMs": 100
+    },
+    {
+      "label": "manual Rating 900",
+      "maxFrameGapMs": 201
+    },
+    {
+      "label": "second manual Rating",
+      "maxFrameGapMs": 134
+    },
+    {
+      "label": "class fill Rating 300",
+      "maxFrameGapMs": 117
+    },
+    {
+      "label": "repeat Build after class fill",
+      "maxFrameGapMs": 100
+    },
+    {
+      "label": "reopen persisted Rating",
+      "maxFrameGapMs": 200
+    }
+  ],
+  "errors": []
+}

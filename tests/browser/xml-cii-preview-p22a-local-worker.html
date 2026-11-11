@@ -1,0 +1,70 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P P2.2-A dedicated Preview worker runtime</title>
+<button id="start" type="button">Run worker preview</button>
+<pre id="result">UNSTARTED</pre>
+<script type="module">
+import {executeXmlCiiPreviewLocally} from
+  '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-local-execution.js';
+const finish=(result)=>{
+  globalThis.__P22A_WORKER_RESULT__=result;
+  document.querySelector('#result').textContent=JSON.stringify(result,null,2);
+};
+document.querySelector('#start').addEventListener('click',async()=>{
+  const stageProgress=[];
+  const started=performance.now();
+  let heartbeat=performance.now(),maxGap=0;
+  const timer=setInterval(()=>{
+    const now=performance.now();
+    maxGap=Math.max(maxGap,Math.max(0,now-heartbeat-25));
+    heartbeat=now;
+  },25);
+  try{
+    const response=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml');
+    if(!response.ok)throw new Error('Fixture HTTP '+response.status);
+    const xmlText=await response.text();
+    const config={
+      linelist:{masterRows:Array.from({length:385},(_,i)=>({
+        Service:'SYS','Line Number':String(200000+i),
+        'Piping Class':'P'+String(i%40).padStart(2,'0'),
+        Rating:'150',Material:'A106-B',DN:String(50+(i%10)*25),
+      })),fieldMap:{lineKey1:'Service',lineKey2:'Line Number',lineSeqNo:'Line Number',
+        pipingClass:'Piping Class',rating:'Rating',material:'Material',convertedBore:'DN'}},
+      pipingClass:{masterRows:Array.from({length:10699},(_,i)=>({
+        pipingClass:'P'+String(i%40).padStart(2,'0'),
+        convertedBore:50+(i%10)*25,componentType:'PIPE',rating:'150',
+        materialName:'A106-B',schedule:'40',wallThickness:6+(i%3),corrosion:1.5,
+      })),fieldMap:{}},
+      material:{mapRows:Array.from({length:383},(_,i)=>({code:String(1000+i),material:'A106-B'}))},
+      weight:{masterRows:Array.from({length:1595},(_,i)=>({
+        componentType:'VALV',bore:50+(i%10)*25,rating:'150',length:100+(i%8),weight:10+i/10,
+      }))},
+      overrides:{},
+    };
+    const inputBuildMs=Number((performance.now()-started).toFixed(2));
+    const job=executeXmlCiiPreviewLocally({
+      requestId:'p22a-browser',basisId:'a'.repeat(64),xmlText,config,
+      scope:{mode:'A',sourceId:'SYS001-public'},onProgress:e=>stageProgress.push(e),
+    });
+    const result=await job.promise;
+    clearInterval(timer);
+    finish({ok:result.coverage.sourceBranchCount===9
+      && result.coverage.originalNodeCount===541
+      && result.coverage.engineeringBranchCount===9
+      && result.fullFactPopulationAccepted===false
+      && stageProgress.length>=3,
+      kind:'PUBLIC_XML_SYNTHETIC_OWNER_ROW_COUNTS',
+      stageProgress,sourceCoverage:result.coverage,timings:result.timings,
+      maxHeartbeatGapMs:Number(maxGap.toFixed(2)),
+      elapsedMs:Number((performance.now()-started).toFixed(2)),inputBuildMs,
+      productUiButtonMigrated:false,engineeringAcceptance:result.engineeringAcceptance,
+    });
+  }catch(error){
+    clearInterval(timer);
+    finish({ok:false,error:{code:error?.code||'UNCLASSIFIED',stage:error?.stage||'runtime',
+      message:String(error?.message||error),stack:String(error?.stack||'')},
+      stageProgress,maxHeartbeatGapMs:Number(maxGap.toFixed(2)),
+      elapsedMs:Number((performance.now()-started).toFixed(2))});
+  }
+},{once:true});
+globalThis.__P22A_WORKER_READY__=true;
+</script>

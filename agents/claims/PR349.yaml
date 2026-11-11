@@ -1,0 +1,14 @@
+schema: AgentClaim.v1
+pr_or_wip: PR349
+claim_state: ACTIVE
+claim_modes: [COORDINATED]
+files:
+  exact:
+    - converters/scripts/xml229_native_final_mass_binding.py
+    - docs/converters/scripts/xml229_native_final_mass_binding.py
+    - converters/xml-cii2019-core/xml229-native-cii-independent-reconciliation.mjs
+    - docs/converters/xml-cii2019-core/xml229-native-cii-independent-reconciliation.mjs
+authority_domains: [native output verification record decoding]
+protected: [writer formatting, output bytes, source masses, pointer and owner checks, Final decisions, release authority, workflows]
+coordination: Older PR312 native verification overlap disclosed; its branch unchanged
+last_verified_head: e548d314a1ddc5f4488d80c0daf2a5245df1d741

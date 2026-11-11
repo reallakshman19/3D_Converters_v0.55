@@ -1,0 +1,230 @@
+live-ui	UNKNOWN STEP	﻿2026-10-01T10:51:01.1879878Z Current runner version: '2.337.0'
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1917313Z ##[group]Runner Image Provisioner
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1918651Z Hosted Compute Agent
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1919723Z Version: 20260828.587
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1920789Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1922419Z Build Date: 2026-08-28T16:44:25Z
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1923714Z Worker ID: {9a3a15d7-0a38-4554-99cd-a8b30aba9523}
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1924912Z Azure Region: eastus
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1926170Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1928540Z ##[group]Operating System
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1929672Z Ubuntu
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1930660Z 24.04.5
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1931472Z LTS
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1932914Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1933924Z ##[group]Runner Image
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1934973Z Image: ubuntu-24.04
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1936057Z Version: 20260920.314.1
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1938200Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1941132Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1943347Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1945257Z ##[group]GITHUB_TOKEN Permissions
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1948277Z Contents: read
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1949252Z Metadata: read
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1950213Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1953717Z Secret source: Actions
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1955235Z Cache mode: write
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.1956563Z Prepare workflow directory
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.2446970Z Prepare all required actions
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.2518444Z Getting action download info
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.4910622Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.5791626Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.7944152Z Complete job name: live-ui
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8733629Z ##[group]Run actions/checkout@v4
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8734609Z with:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8735153Z   repository: reallaksh19/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8739372Z   token: ***
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8739852Z   ssh-strict: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8740336Z   ssh-user: git
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8740820Z   persist-credentials: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8741344Z   clean: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8741820Z   sparse-checkout-cone-mode: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8742587Z   fetch-depth: 1
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8743054Z   fetch-tags: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8743527Z   show-progress: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8744006Z   lfs: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8744452Z   submodules: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8744934Z   set-safe-directory: true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8745473Z   allow-unsafe-pr-checkout: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:01.8746283Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0112594Z Syncing repository: reallaksh19/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0115918Z ##[group]Getting Git version info
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0125941Z Working directory is '/home/runner/work/3D_Converters/3D_Converters'
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0127821Z [command]/usr/bin/git version
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0128696Z git version 2.55.0
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0131593Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0160198Z Temporarily overriding HOME='/home/runner/work/_temp/b4af5cca-966d-431c-aa18-650719b20e2f' before making global git config changes
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0173096Z Adding repository directory to the temporary git global config as a safe directory
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0175156Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0212693Z Deleting the contents of '/home/runner/work/3D_Converters/3D_Converters'
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0215526Z ##[group]Initializing the repository
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0233783Z [command]/usr/bin/git init /home/runner/work/3D_Converters/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0349196Z hint: Using 'master' as the name for the initial branch. This default branch name
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0351828Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0355418Z hint: to use in all of your new repositories, which will suppress this warning,
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0357491Z hint: call:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0359226Z hint:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0360880Z hint: 	git config --global init.defaultBranch <name>
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0363300Z hint:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0365112Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0367704Z hint: 'development'. The just-created branch can be renamed via this command:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0369361Z hint:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0370646Z hint: 	git branch -m <name>
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0371850Z hint:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0374237Z hint: Disable this message with "git config set advice.defaultBranchName false"
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0376518Z Initialized empty Git repository in /home/runner/work/3D_Converters/3D_Converters/.git/
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0393455Z [command]/usr/bin/git remote add origin https://github.com/reallaksh19/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0468845Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0470717Z ##[group]Disabling automatic garbage collection
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0472821Z [command]/usr/bin/git config --local gc.auto 0
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0606234Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0613649Z ##[group]Setting up auth
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0631211Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.0648687Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.1103239Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.1400369Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.1614211Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.1620958Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.2683738Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.2686811Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.2688058Z ##[group]Fetching the repository
+live-ui	UNKNOWN STEP	2026-10-01T10:51:02.2690444Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ccda22319670b5ac8a6ebd4e8be42b60361bc569:refs/remotes/pull/813/merge
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2044626Z From https://github.com/reallaksh19/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2047705Z  * [new ref]         ccda22319670b5ac8a6ebd4e8be42b60361bc569 -> pull/813/merge
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2050261Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2051150Z ##[group]Determining the checkout info
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2052613Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2068117Z [command]/usr/bin/git sparse-checkout disable
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2118644Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2167268Z ##[group]Checking out the ref
+live-ui	UNKNOWN STEP	2026-10-01T10:51:05.2170575Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/813/merge
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2300951Z Updating files:  82% (8310/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2395794Z Updating files:  83% (8324/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2455461Z Updating files:  84% (8424/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2515416Z Updating files:  85% (8524/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2583038Z Updating files:  86% (8625/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2655560Z Updating files:  87% (8725/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2735994Z Updating files:  88% (8825/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2791287Z Updating files:  89% (8925/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2863821Z Updating files:  90% (9026/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2927696Z Updating files:  91% (9126/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.2999120Z Updating files:  92% (9226/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3060311Z Updating files:  93% (9327/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3115663Z Updating files:  94% (9427/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3168772Z Updating files:  95% (9527/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3226396Z Updating files:  96% (9627/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3286593Z Updating files:  97% (9728/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.3686296Z Updating files:  98% (9828/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4204124Z Updating files:  99% (9928/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4210500Z Updating files: 100% (10028/10028)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4211802Z Updating files: 100% (10028/10028), done.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4304590Z Note: switching to 'refs/remotes/pull/813/merge'.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4305561Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4306300Z You are in 'detached HEAD' state. You can look around, make experimental
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4307474Z changes and commit them, and you can discard any commits you make in this
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4310461Z state without impacting any branches by switching back to a branch.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4310976Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4311301Z If you want to create a new branch to retain commits you create, you may
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4312378Z do so (now or later) by using -c with the switch command. Example:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4312845Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4313046Z   git switch -c <new-branch-name>
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4313352Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4313548Z Or undo this operation with:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4313829Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4313994Z   git switch -
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4314217Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4314613Z Turn off this advice by setting config variable advice.detachedHead to false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4315154Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4315789Z HEAD is now at ccda223 Merge 91c455dbd4dc1890e7f4133a8f9add8c5c110029 into e6e3458f51c3a680b413aa525c5e87fdae257533
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4352293Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4401353Z [command]/usr/bin/git log -1 --format=%H
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4431638Z ccda22319670b5ac8a6ebd4e8be42b60361bc569
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4845976Z ##[group]Run actions/setup-node@v4
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4846527Z with:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4846920Z   node-version: 22
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4847327Z   always-auth: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4847728Z   check-latest: false
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4853971Z   token: ***
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.4854417Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.6625899Z (node:2027) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.6628106Z (Use `node --trace-deprecation ...` to show where the warning was created)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.6637093Z Found in cache @ /opt/hostedtoolcache/node/22.23.2/x64
+live-ui	UNKNOWN STEP	2026-10-01T10:51:06.6638365Z ##[group]Environment details
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1608065Z node: v22.23.2
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1632710Z npm: 10.9.8
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1633102Z yarn: 1.22.22
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1652903Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1793672Z ##[group]Run node --check core/app.js
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1794113Z ^[[36;1mnode --check core/app.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1794449Z ^[[36;1mnode --check main-rhbg-fitguard.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1794821Z ^[[36;1mnode --check tabs/model-converters-tab.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1795338Z ^[[36;1mnode --check tabs/model-converters/ModelConvertersTab-fbx2-managed-reference.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1795903Z ^[[36;1mnode --check tabs/model-converters/fbx-review-ui-addon.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1796400Z ^[[36;1mnode --check tabs/model-converters/fbx-live-runner-addon.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1796901Z ^[[36;1mnode --check tabs/model-converters/fbx-multifamily-release-addon.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1797461Z ^[[36;1mnode --check tabs/model-converters/fbx-selected-zone-preview-bridge.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1798020Z ^[[36;1mnode --check tabs/model-converters/fbx-preview-zone-selector.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1798574Z ^[[36;1mnode --check tabs/model-converters/fbx-staged-json-zone-export.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1799164Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/mapped-stage-output.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1799825Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/mapped-stage-capture.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1800666Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/mapped-stage-scope.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1801301Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/zone-downloads.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1802255Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/zone-review-panels.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1802953Z ^[[36;1mnode --check tabs/model-converters/converters/fbx/zone-geometry/zone-toolbar.js^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1803864Z ^[[36;1mnode --check tests/fbx/test-fbx-multifamily-selected-zone-release.mjs^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.1804665Z ^[[36;1mnode --check tests/fbx/test-fbx2-runtime-cache-chain.mjs^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.2119791Z shell: /usr/bin/bash -e {0}
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.2120146Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.6710072Z ##[group]Run node tests/fbx/test-fbx-multifamily-selected-zone-release.mjs
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.6710738Z ^[[36;1mnode tests/fbx/test-fbx-multifamily-selected-zone-release.mjs^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.6779386Z shell: /usr/bin/bash -e {0}
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.6779687Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9452638Z (node:2189) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/fbx-multifamily-release-addon.js is not specified and it doesn't parse as CommonJS.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9462226Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9464349Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9465848Z (Use `node --trace-warnings ...` to show where the warning was created)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9611561Z test-fbx-multifamily-selected-zone-release: PASS
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9756782Z ##[group]Run node tests/fbx/test-fbx2-runtime-cache-chain.mjs
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9757292Z ^[[36;1mnode tests/fbx/test-fbx2-runtime-cache-chain.mjs^[[0m
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9828961Z shell: /usr/bin/bash -e {0}
+live-ui	UNKNOWN STEP	2026-10-01T10:51:07.9829265Z ##[endgroup]
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2354615Z (node:2201) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/fbx-selected-zone-preview-bridge.js is not specified and it doesn't parse as CommonJS.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2368750Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2413174Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2433554Z (Use `node --trace-warnings ...` to show where the warning was created)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2535422Z node:internal/modules/run_main:123
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2548151Z     triggerUncaughtException(
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2548952Z     ^
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2549390Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2550387Z AssertionError [ERR_ASSERTION]: index.html lacks main-rhbg-fitguard.js?v=20260929-pr780-metadata-1
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2551348Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2551764Z false !== true
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2552659Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2553567Z     at requires (file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:40:10)
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2555078Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/fbx/test-fbx2-runtime-cache-chain.mjs:43:1 {
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2555999Z   generatedMessage: false,
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2556450Z   code: 'ERR_ASSERTION',
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2556924Z   actual: false,
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2557306Z   expected: true,
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2557713Z   operator: 'strictEqual',
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2558135Z   diff: 'simple'
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2558528Z }
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2558735Z 
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2558905Z Node.js v22.23.2
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2641359Z ##[error]Process completed with exit code 1.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.2796719Z Post job cleanup.
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.3793626Z [command]/usr/bin/git version
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.3882974Z git version 2.55.0
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.3915396Z Temporarily overriding HOME='/home/runner/work/_temp/2a9b517f-4df2-413c-bb6e-2f565a8ef0a0' before making global git config changes
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.3925575Z Adding repository directory to the temporary git global config as a safe directory
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.3927189Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/3D_Converters/3D_Converters
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4000146Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4051464Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4431824Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4456905Z http.https://github.com/.extraheader
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4472521Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4557343Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4926616Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.4972313Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.5534369Z Cleaning up orphan processes
+live-ui	UNKNOWN STEP	2026-10-01T10:51:08.5804666Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

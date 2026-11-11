@@ -1,0 +1,30 @@
+work_id: WIP-hp-kd320-four-record-intake-r2
+branch: agent/hp-kd320-four-record-intake-r2
+status: ACTIVE
+claim_modes:
+  - EXCLUSIVE
+  - COORDINATED
+paths:
+  - engineering/hp-class-standardization/qualification/kd320-q2/csv-four-record-intake.js
+  - tabs/hp-kd320-evidence-intake-tab.js
+  - tabs/engineering-workspace-tab.js
+  - tests/b313-chapter-ix-kd320-csv-four-record-intake.test.mjs
+  - tests/b313-chapter-ix-kd320-csv-edition-reference.test.mjs
+  - tests/hp-kd320-evidence-intake-ui.test.mjs
+authority_domains:
+  - KD320_QUALIFICATION_EVIDENCE_TRANSPORT
+  - KD320_PREVIEW_PRESENTATION
+excluded_authority:
+  - native KD320 arithmetic
+  - fatigue curve data
+  - production qualification
+  - design authority
+  - automatic evidence admission
+  - licensed source text
+coordination:
+  PR649:
+    shared_file: tabs/engineering-workspace-tab.js
+    classification: COORDINATED_NON_OVERLAPPING_CACHE_HUNKS
+    pr649_hunk: engineering-calculations loader cache identity
+    this_work_hunk: KD320 evidence-intake loader cache identity
+    required_before_second_merge: preserve both cache identities after live re-ground

@@ -1,0 +1,14 @@
+schema: AgentClaim.v1
+pr_or_wip: PR361
+claim_state: SUBMITTED_REVIEW_HELD
+branch: fix/xml229-explicit-format-enable-6ae1bed6
+files:
+  exact:
+    - converters/xml-cii2019-core/branch-format-extraction.js
+    - tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js
+  mirrors: [docs/converters/xml-cii2019-core, docs/tabs/xml-cii-2019-standalone]
+authority_domains: [explicit configured format participation]
+protected: [Final decisions, native runtime, writer, output reconciliation, geometry, masters, workflows]
+merge_authority: OWNER_ONLY_NOT_GRANTED

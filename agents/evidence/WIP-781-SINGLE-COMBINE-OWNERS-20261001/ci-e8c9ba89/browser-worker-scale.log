@@ -1,0 +1,63 @@
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	﻿2026-10-01T15:41:32.3746498Z ##[group]Run node scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:32.3746943Z ^[[36;1mnode scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs^[[0m
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:32.3803493Z shell: /usr/bin/bash -e {0}
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:32.3803723Z ##[endgroup]
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9139508Z XML_CII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_RESULT
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9140933Z {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9142203Z   "schema": "XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V4",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9142815Z   "ok": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9143306Z   "elapsedMs": 767.7999999999884,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9143956Z   "maxWallMs": 5000,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9145053Z   "maxFrameGapMs": 16.800000000000068,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9147780Z   "maxFrameGapLimitMs": 250,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9148533Z   "branchCount": 41,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9149148Z   "pipeNodes": 1653,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9149549Z   "totalXmlNodes": 1654,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9149969Z   "sourceBytes": 891826,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9150403Z   "stagedRows": 8001,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9151653Z   "stagedBytes": 1268838,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9154853Z   "unrelatedAuthorityDatasetRows": 300000,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9156204Z   "unrelatedAuthorityDatasetsSkipped": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9156904Z   "rawPayloadPreserved": true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9160069Z   "dtxrResolvedText": "GATE VALVE",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9161310Z   "rows": 1,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9161690Z   "inputValue": "25",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9162106Z   "lineKey": "P0310051",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9162561Z   "rating": "150",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9163774Z   "status": "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9164700Z   "statusHistory": [
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9165648Z     "Reading XML source…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9166315Z     "Resolving staged JSON…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9166906Z     "Preparing Weight Match basis in worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9167582Z     "Loading Weight basis runtime…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9168451Z     "Preparing split/inline geometry in Weight worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9169372Z     "Collecting Weight basis in worker…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9170787Z     "Validating Match-1 in worker · 1 component(s)…",
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9172192Z     "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json"
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9172987Z   ]
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9173313Z }
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9499824Z (node:3277) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js is not specified and it doesn't parse as CommonJS.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9501774Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9502937Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:33.9505478Z (Use `node --trace-warnings ...` to show where the warning was created)
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0350290Z node:internal/modules/run_main:123
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0379946Z     triggerUncaughtException(
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0385561Z     ^
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0385864Z 
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0386454Z AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0387778Z + actual - expected
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0388198Z 
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0388488Z + undefined
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0389535Z - 10.5
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0389850Z 
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0390629Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/browser/xml-cii-weight-rating-input-e2e.mjs:110:10 {
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0391904Z   generatedMessage: true,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0392304Z   code: 'ERR_ASSERTION',
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0392705Z   actual: undefined,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0393082Z   expected: 10.5,
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0393455Z   operator: 'strictEqual',
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0393844Z   diff: 'simple'
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0394169Z }
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0394411Z 
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0394640Z Node.js v22.23.3
+browser-worker-scale	Qualify master-independent Weight Build basis in Chromium	2026-10-01T15:41:46.0566115Z ##[error]Process completed with exit code 1.

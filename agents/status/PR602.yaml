@@ -1,0 +1,27 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR602
+mission: "C1 incremental rendering + C7 aggregate performance evidence"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c1-c7-replay-20260818
+stack_base_pr: 601
+report_basis_head: 1774d89a4b02b06406ec9f974c2f35984ac988ed
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/PR602_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+validation:
+  focused_node_tests: PASS_8_OF_8_LOCAL_IMPLEMENTATION_COUPLED
+  mergeability: PASS_REMOTE_TRUE
+  browser_acceptance: NOT_RUN
+  status_checks: NOT_RUN_NONE_OBSERVED
+protected_authority:
+  - APPLIED_MAPPING_AUTHORITY_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+highest_risk: "Partial renderer suppressing a required authority or UI refresh."
+exact_next_action: "Keep PR602 draft and start actual C2 viewport virtualization in a separate stacked branch."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:14:00+04:00

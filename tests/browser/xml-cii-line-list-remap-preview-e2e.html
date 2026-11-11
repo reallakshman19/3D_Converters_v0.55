@@ -1,0 +1,110 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 781 applied line-list mapping worker remap qualification</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20260930-issue781-worker-weight-api-1';
+
+const coordinator = createMasterDatasetImportCoordinator();
+const encoder = new TextEncoder();
+
+try {
+  const rawRows = [
+    {
+      __EMPTY_0: '7',
+      __EMPTY_1: 'P',
+      __EMPTY_2: '0310051',
+      __EMPTY_7: 'HC',
+      __EMPTY_20: '10',
+      __EMPTY_21: '61440',
+      __EMPTY_22: '9440',
+      __EMPTY_24: '82',
+      __EMPTY_25: '5',
+      __EMPTY_26: 'CS',
+      __EMPTY_31: '15315',
+    },
+  ];
+  const payload = encoder.encode(JSON.stringify(rawRows));
+  const buffer = payload.buffer.slice(payload.byteOffset, payload.byteOffset + payload.byteLength);
+
+  const opened = await coordinator.openBuffer('lineList', buffer, 'reported-linelist.json', {
+    currentMap: {},
+    fieldMapOverride: {},
+  });
+  if (!opened?.metadata?.datasetId) throw new Error('Initial line-list dataset did not open.');
+
+  const appliedMap = {
+    lineSeqNo: '__EMPTY_0',
+    lineKey1: '__EMPTY_1',
+    lineKey2: '__EMPTY_2',
+    phase: '__EMPTY_7',
+    convertedBore: '__EMPTY_20',
+    pipingClass: '__EMPTY_21',
+    p1: '__EMPTY_22',
+    t1: '__EMPTY_24',
+    t3: '__EMPTY_25',
+    material: '__EMPTY_26',
+    hydroPressure: '__EMPTY_31',
+  };
+
+  const remapped = await coordinator.remapDataset('lineList', opened.metadata.datasetId, appliedMap);
+  if (!remapped?.metadata?.datasetId) throw new Error('REMAP_DATASET did not return a dataset.');
+  if (remapped.metadata.datasetId === opened.metadata.datasetId) throw new Error('REMAP_DATASET did not create a new immutable revision.');
+
+  const result = await coordinator.getRows('lineList', 0, 15, remapped.metadata.datasetId);
+  const row = result?.rows?.[0];
+  if (!row) throw new Error('GET_ROWS returned no remapped preview row.');
+
+  // This is the Import Masters projection boundary: mapped source values must be
+  // preserved exactly. Engineering unit conversion (for example NPS inch -> mm)
+  // belongs to the later Preview/enrichment authority path, not this worker table.
+  const expected = {
+    lineSeqNo: '7',
+    lineKey1: 'P',
+    lineKey2: '0310051',
+    lineKey: 'P0310051',
+    pipingClass: '61440',
+    material: 'CS',
+    convertedBore: '10',
+  };
+  for (const [key, value] of Object.entries(expected)) {
+    if (String(row[key] ?? '') !== String(value)) {
+      throw new Error(`${key} projection mismatch: expected ${JSON.stringify(value)}, got ${JSON.stringify(row[key])}`);
+    }
+  }
+  if (String(remapped?.metadata?.fieldMap?.lineKey1 || '') !== '__EMPTY_1') throw new Error('Applied Key1 mapping metadata was not preserved.');
+  if (String(remapped?.metadata?.fieldMap?.lineKey2 || '') !== '__EMPTY_2') throw new Error('Applied Key2 mapping metadata was not preserved.');
+
+  const evidence = {
+    schema: 'XMLCII_ISSUE_781_LINE_LIST_REMAP_PREVIEW_E2E_V1',
+    ok: true,
+    originalDatasetId: opened.metadata.datasetId,
+    remappedDatasetId: remapped.metadata.datasetId,
+    datasetRevision: remapped.metadata.datasetRevision,
+    appliedFieldMap: remapped.metadata.fieldMap,
+    projected: {
+      lineSeqNo: row.lineSeqNo,
+      lineKey1: row.lineKey1,
+      lineKey2: row.lineKey2,
+      lineKey: row.lineKey,
+      pipingClass: row.pipingClass,
+      material: row.material,
+      convertedBore: row.convertedBore,
+    },
+  };
+  globalThis.__XML_CII_LINE_LIST_REMAP_PREVIEW_RESULT__ = evidence;
+  globalThis.__XML_CII_LINE_LIST_REMAP_PREVIEW_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} catch (error) {
+  const evidence = {
+    schema: 'XMLCII_ISSUE_781_LINE_LIST_REMAP_PREVIEW_E2E_V1',
+    ok: false,
+    error: String(error?.stack || error),
+  };
+  globalThis.__XML_CII_LINE_LIST_REMAP_PREVIEW_RESULT__ = evidence;
+  globalThis.__XML_CII_LINE_LIST_REMAP_PREVIEW_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} finally {
+  coordinator.dispose();
+}
+</script>

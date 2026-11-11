@@ -1,0 +1,33 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR637
+claim_state: ACTIVE
+branch: agent/xml-cii-preview-search-lazy-replay-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-preview-search.js
+    - tests/xml-cii-preview-search-lazy-preparation.test.mjs
+    - agents/PR637_workreport.md
+    - agents/status/PR637.yaml
+    - agents/claims/PR637.yaml
+  prefixes: []
+authority_domains:
+  - XML_CII_PREVIEW_SEARCH_LAZY_PREPARATION
+claim_modes:
+  - EXCLUSIVE_SUCCESSOR_REPLAY
+predecessor_coordination:
+  PR616: SUPERSEDED_BY_OWNER_AUTHORIZED_CURRENT_MAIN_REPLAY
+exclusions:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun-core.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-incremental.js
+  - support/GAP semantics
+  - CII writer/runtime
+  - Python conversion
+  - .github/workflows/**
+coordination_state: SAFE_OWNER_AUTHORIZED_SUCCESSOR_TO_PR616
+implementation_head: fc1fd9437c1b23f2b10837054fae66211987cd5d
+last_verified_main: d9d14d13b089c968c989544ddbdf023063b43e67
+last_updated: 2026-08-18T20:42:00+04:00

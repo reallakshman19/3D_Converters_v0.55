@@ -1,0 +1,17 @@
+pr: 748
+claims:
+  - id: P8-ACQUISITION-TEMPLATE
+    statement: A machine-readable acquisition template exists for every required FlangeFaceBindingSourceRecord.v1 field without inventing project facts.
+    result: PASS
+  - id: P8-TEMPLATE-RUNTIME-SAFETY
+    statement: The acquisition template is directly admissible as a runtime FlangeFaceBindingSourceRecord.v1.
+    result: FAIL_BY_DESIGN
+  - id: P8-INDEPENDENT-REVIEW-GATE
+    statement: The acquisition package defines independent review checks for physical flange, calculation face, opening direction, mating side, model revision, analysis interface identity, provenance and explicit tolerances.
+    result: PASS
+  - id: P8-REAL-SOURCE-AVAILABLE
+    statement: A real controlled and independently accepted project binding source record is available in this leg.
+    result: FAIL_NOT_SUPPLIED
+  - id: P8-PRODUCER-ADMISSION
+    statement: The automatic binding producer may now be implemented under AUTO without additional source input.
+    result: FAIL_HARD_STOP

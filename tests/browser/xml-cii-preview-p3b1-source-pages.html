@@ -1,0 +1,63 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P P3-B1 full original source FactRecord pagination</title>
+<main id="fixture"></main><pre id="record">RUNNING</pre>
+<script type="module">
+import {xmlCiiRenderPreviewPhase,xmlCiiBuildAndRenderPreview} from
+ '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js';
+const done=r=>{globalThis.__P3B1_BROWSER_RESULT__=r;
+ document.querySelector('#record').textContent=JSON.stringify(r,null,2);};
+async function until(fn,label,ms=30000){
+ const limit=performance.now()+ms;
+ while(performance.now()<limit){
+   if(fn())return;await new Promise(resolve=>setTimeout(resolve,25));
+ }throw Error('TIMEOUT: '+label);
+}
+try{
+ localStorage.clear();
+ const xml=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml').then(r=>r.text());
+ const config={
+  linelist:{masterRows:[{Service:'SYS','Line Number':'200000','Piping Class':'P01'}],
+   fieldMap:{lineKey1:'Service',lineKey2:'Line Number',pipingClass:'Piping Class'}},
+  pipingClass:{masterRows:[{pipingClass:'P01',convertedBore:150,materialName:'A106-B'}]},
+  material:{mapRows:[{material:'A106-B',code:'001'}]},weight:{masterRows:[]},overrides:{},
+ };
+ const root=document.querySelector('#fixture');
+ root.innerHTML=xmlCiiRenderPreviewPhase(new File([xml],'SYS-001_Single.xml'),config);
+ const host=root.querySelector('#mc-preview-table-host');
+ await xmlCiiBuildAndRenderPreview(root,xml,config,{
+  ensureOverrides:c=>c.overrides,onSaveConfig(){},openOverridePopup(){},
+ });
+ host.querySelector('[data-mc-preview-build]').click();
+ await until(()=>Boolean(host.__xmlCiiPreviewFactReadModel),'source facts model');
+ const model=host.__xmlCiiPreviewFactReadModel;
+ const info=model.info;
+ if(info.engineeringReady)throw Error('Source-only facts falsely marked engineering complete');
+ const panel=host.querySelector('[data-mc-preview-source-facts]');
+ if(!panel)throw Error('Source fact inspector missing');
+ panel.querySelector('[data-mc-preview-source-facts-open]').click();
+ await until(()=>panel.querySelector('[data-mc-preview-source-facts-page] tbody tr'),'source page render');
+ const firstCount=panel.querySelectorAll('tbody tr').length;
+ const next=panel.querySelector('[data-mc-preview-facts-next]');
+ if(!next||next.disabled)throw Error('Next page missing');
+ next.click();
+ await until(()=>panel.querySelector('[data-mc-preview-facts-prev]:not([disabled])'),'second page');
+ const secondCount=panel.querySelectorAll('tbody tr').length;
+ const pages=[];let cursor=null;
+ do{
+  const page=await model.getFacts({basisId:info.basisId,limit:200,cursor});
+  if(page.complete)throw Error('Source-only page falsely complete');
+  pages.push(page);cursor=page.nextCursor;
+ }while(cursor);
+ const all=pages.flatMap(x=>x.items);
+ const unique=new Set(all.map(x=>JSON.stringify([x.sourceId,x.occurrenceId,x.fieldId])));
+ done({ok:info.expectedOccurrenceCount===550&&info.totalFactCount===2723
+   &&firstCount===50&&secondCount===50&&all.length===2723&&unique.size===2723,
+  expectedOccurrenceCount:info.expectedOccurrenceCount,
+  branchCount:host.__xmlCiiPreviewOriginalOccurrences?.branchCount,
+  originalNodeCount:host.__xmlCiiPreviewOriginalOccurrences?.nodeCount,
+  totalFactCount:info.totalFactCount,
+  traversedFacts:all.length,uniqueFacts:unique.size,
+  pages:pages.length,firstPageRows:firstCount,secondPageRows:secondCount,
+  engineeringReady:info.engineeringReady,ownerPrivateAcceptance:false});
+}catch(error){done({ok:false,error:String(error?.stack||error)})}
+</script>

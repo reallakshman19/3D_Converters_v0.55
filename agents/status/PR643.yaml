@@ -1,0 +1,25 @@
+pr: 643
+branch: agent/vibration-aiv-canvas-interaction-hardening-20260818
+base_pr: 642
+base_sha: 26d6c6800300a9fecf50c88664469070a3f67562
+agent_state: INACTIVE
+current_stage: MERGED_VIA_PR642
+execution_mode: AUTO
+auto_state: COMPLETE
+criticality: ENGINEERING_CRITICAL
+mutation_authority: CLOSED
+merge_authority: OWNER_GRANTED_AND_EXECUTED
+merge:
+  intermediate_squash_sha: 09af60652a16fe576de96a49b516ca8a432c5309
+  final_main_sha: 79546f988b18686459a68103b4675bbba9bcf434
+  merge_method: STACKED_SQUASH
+validation_truth:
+  repository_native_node_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_journey: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_statuses: NOT_RUN_EMPTY
+  pr_workflow_runs: NOT_RUN_EMPTY
+protected_authority:
+  aiv_line_case_screening_authority: NOT_AUTHORIZED
+  generic_ei_mainline_aiv: BLOCKED
+  design_authority: false
+next_action: NONE_REPAIR_SET_MERGED

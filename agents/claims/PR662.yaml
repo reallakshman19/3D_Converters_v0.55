@@ -1,0 +1,39 @@
+schema: AgentClaim.v1
+pr_or_wip: PR662
+claim_state: ACTIVE
+branch: agent/vibration-visual-inspection-20260819
+files:
+  exact:
+    - converters/vibration/visual-inspection/contracts.js
+    - converters/vibration/visual-inspection/evaluate.js
+    - converters/vibration/project/visual-inspection.js
+    - tests/vibration-visual-inspection.test.mjs
+    - tests/vibration-project-visual-inspection.test.mjs
+    - agents/PR662_workreport.md
+    - agents/status/PR662.yaml
+    - agents/claims/PR662.yaml
+    - agents/WIP-VIB-VISUAL-20260819_workreport.md
+    - agents/status/WIP-VIB-VISUAL-20260819.yaml
+    - agents/claims/WIP-VIB-VISUAL-20260819.yaml
+  prefixes: []
+authority_domains:
+  - VIBRATION_VISUAL_FIELD_EVIDENCE
+  - VIBRATION_VISUAL_REVIEW_PROJECTION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - EI T5/T6 checklist transcription or completeness claim
+  - measurement waveform/signal evidence
+  - automatic mechanism applicability
+  - screening/root-cause/design/code/safety authority
+  - AssessmentCompleteness.v1 semantics
+  - project persistence schema migration
+  - UI/runtime/writer/canvas/workflow files
+  - corrective action/confirmation lifecycle
+coordination:
+  PR661: INDEPENDENT_MEASUREMENT_VERIFICATION
+  PR658: INDEPENDENT_LINE_CASE_STATUS_PRESENTATION
+  PR660: MERGED_HP_ONLY_MAIN_DRIFT_REPLAYED
+coordination_state: SAFE
+merge_authority: OWNER_ONLY_NOT_GRANTED

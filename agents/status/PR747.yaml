@@ -1,0 +1,26 @@
+pr: 747
+chain: ENGCALC-BOLTED-JOINTS
+endpoint: EP-0036
+state: BLOCKED / AUTO
+execution_mode: AUTO
+scope: P8_CROSS_REPOSITORY_BINDING_SOURCE_AUDIT
+base_pr: 746
+main_sha: 78b361d1f649d41378f568ebe1a237c4bc140c73
+material_head: 1881c2c09bfe6a755710f3863de22bea2f864c7c
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  source_grounding: PASS
+  source_inspection: PASS
+  controlled_binding_record_found: FAIL_NOT_FOUND
+  native_execution: NOT_APPLICABLE
+  independent_engineering_review: NOT_RUN
+  native_backup: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+  connector_backup: EVIDENCE_ONLY
+authority:
+  automatic_binding_producer: false
+  automatic_3d_extraction: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false

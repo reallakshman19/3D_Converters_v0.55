@@ -1,0 +1,1 @@
+refer masters for piping class, MAT_MAP etc in https://github.com/reallakshman19/3D_Converters/tree/25db94769994751bb0fb6e6d83a578efd9ac8162/docs/docs/Masters

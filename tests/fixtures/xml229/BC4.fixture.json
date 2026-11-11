@@ -1,0 +1,29 @@
+{
+  "schema": "XML229.BC4.LineListFixture.v1",
+  "sourceFile": "BC4.xlsx",
+  "sizeBytes": 241036,
+  "sha256": "3e3b8494f9e70bffd92f5c13492c8c0421739c29a086d41f41306f0d386f240a",
+  "gitBlobSha1": "eea68736e57bb3a25de7a4cdd094916c61b6e665",
+  "sheetNames": [
+    "LineList",
+    "A3 Coversheet",
+    "Legend",
+    "Sheet1",
+    "ValueList_Helper"
+  ],
+  "selectedSheet": "LineList",
+  "physicalNonemptyRowsExcludingFirstRow": 385,
+  "sheetRange": "A1:AO390",
+  "historicalExpectedNormalizedRows": 385,
+  "historicalContentDigestProven": false,
+  "historicalMappingDigestProven": false,
+  "historicalDecisionUpdates": 0,
+  "nativeCiiReleaseAuthorized": false,
+  "convertedJson": {
+    "path": "tests/fixtures/xml229/BC4.LineList.json",
+    "bytes": 199182,
+    "sha256": "53b322405795dc7a74c1154043c31bf9c8b2a1763f207cabf0c7f1888fd9c1bb",
+    "gitBlobSha1": "6b84b5e350e76de05db0c4a858da39114cddbc70",
+    "recordCount": 385
+  }
+}

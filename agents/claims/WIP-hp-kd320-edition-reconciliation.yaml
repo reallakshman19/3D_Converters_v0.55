@@ -1,0 +1,20 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+work_id: WIP-hp-kd320-edition-reconciliation
+branch: agent/hp-kd320-edition-reconciliation
+base_pr: 623
+claim: Implement a target-edition reconciliation gate for PVP2025-154710 VIII-3 2023 evidence against controlled VIII-3 2025 without admitting QF022 or enabling native KD320.
+files:
+  - engineering/hp-class-standardization/qualification/kd320-q2/edition-reconciliation/evaluator.js
+  - engineering/hp-class-standardization/qualification/kd320-q2/edition-reconciliation/candidate.template.json
+  - engineering/hp-class-standardization/qualification/kd320-q2/edition-reconciliation/README.md
+  - scripts/verify-b313-ch9-kd320-edition-reconciliation.mjs
+  - tests/b313-chapter-ix-kd320-edition-reconciliation.test.mjs
+invariants:
+  - source publication Code edition remains 2023
+  - target Code edition remains 2025
+  - all KD320-SEM-002..013 are reconciled individually
+  - changed or non-comparable semantics require a new oracle
+  - no automatic QF022 admission
+  - no native KD320 or production authority promotion
+merge_authority: OWNER_ONLY_NOT_GRANTED

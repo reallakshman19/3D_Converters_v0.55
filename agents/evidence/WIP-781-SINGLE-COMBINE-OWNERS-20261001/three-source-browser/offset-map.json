@@ -1,0 +1,955 @@
+{
+  "schema": "xml-node-offset-combine/v1",
+  "offsetStep": 100000,
+  "headerSource": "SYS-6-S8810010-01.xml",
+  "sourceCount": 3,
+  "sourceOrder": [
+    {
+      "sourceId": "SRC-09482285-69620",
+      "fileName": "SYS-6-S8810010-01.xml",
+      "basis": "source",
+      "offset": 0,
+      "positiveIdCount": 68,
+      "pipeCount": 1,
+      "numberMap": [
+        {
+          "sourceNumber": 10,
+          "outputNumber": 10
+        },
+        {
+          "sourceNumber": 20,
+          "outputNumber": 20
+        },
+        {
+          "sourceNumber": 30,
+          "outputNumber": 30
+        },
+        {
+          "sourceNumber": 40,
+          "outputNumber": 40
+        },
+        {
+          "sourceNumber": 50,
+          "outputNumber": 50
+        },
+        {
+          "sourceNumber": 60,
+          "outputNumber": 60
+        },
+        {
+          "sourceNumber": 70,
+          "outputNumber": 70
+        },
+        {
+          "sourceNumber": 80,
+          "outputNumber": 80
+        },
+        {
+          "sourceNumber": 90,
+          "outputNumber": 90
+        },
+        {
+          "sourceNumber": 100,
+          "outputNumber": 100
+        },
+        {
+          "sourceNumber": 110,
+          "outputNumber": 110
+        },
+        {
+          "sourceNumber": 120,
+          "outputNumber": 120
+        },
+        {
+          "sourceNumber": 130,
+          "outputNumber": 130
+        },
+        {
+          "sourceNumber": 140,
+          "outputNumber": 140
+        },
+        {
+          "sourceNumber": 150,
+          "outputNumber": 150
+        },
+        {
+          "sourceNumber": 160,
+          "outputNumber": 160
+        },
+        {
+          "sourceNumber": 170,
+          "outputNumber": 170
+        },
+        {
+          "sourceNumber": 180,
+          "outputNumber": 180
+        },
+        {
+          "sourceNumber": 190,
+          "outputNumber": 190
+        },
+        {
+          "sourceNumber": 200,
+          "outputNumber": 200
+        },
+        {
+          "sourceNumber": 210,
+          "outputNumber": 210
+        },
+        {
+          "sourceNumber": 220,
+          "outputNumber": 220
+        },
+        {
+          "sourceNumber": 230,
+          "outputNumber": 230
+        },
+        {
+          "sourceNumber": 240,
+          "outputNumber": 240
+        },
+        {
+          "sourceNumber": 250,
+          "outputNumber": 250
+        },
+        {
+          "sourceNumber": 260,
+          "outputNumber": 260
+        },
+        {
+          "sourceNumber": 270,
+          "outputNumber": 270
+        },
+        {
+          "sourceNumber": 280,
+          "outputNumber": 280
+        },
+        {
+          "sourceNumber": 290,
+          "outputNumber": 290
+        },
+        {
+          "sourceNumber": 300,
+          "outputNumber": 300
+        },
+        {
+          "sourceNumber": 310,
+          "outputNumber": 310
+        },
+        {
+          "sourceNumber": 320,
+          "outputNumber": 320
+        },
+        {
+          "sourceNumber": 330,
+          "outputNumber": 330
+        },
+        {
+          "sourceNumber": 340,
+          "outputNumber": 340
+        },
+        {
+          "sourceNumber": 350,
+          "outputNumber": 350
+        },
+        {
+          "sourceNumber": 360,
+          "outputNumber": 360
+        },
+        {
+          "sourceNumber": 370,
+          "outputNumber": 370
+        },
+        {
+          "sourceNumber": 380,
+          "outputNumber": 380
+        },
+        {
+          "sourceNumber": 390,
+          "outputNumber": 390
+        },
+        {
+          "sourceNumber": 400,
+          "outputNumber": 400
+        },
+        {
+          "sourceNumber": 410,
+          "outputNumber": 410
+        },
+        {
+          "sourceNumber": 420,
+          "outputNumber": 420
+        },
+        {
+          "sourceNumber": 430,
+          "outputNumber": 430
+        },
+        {
+          "sourceNumber": 440,
+          "outputNumber": 440
+        },
+        {
+          "sourceNumber": 450,
+          "outputNumber": 450
+        },
+        {
+          "sourceNumber": 460,
+          "outputNumber": 460
+        },
+        {
+          "sourceNumber": 470,
+          "outputNumber": 470
+        },
+        {
+          "sourceNumber": 480,
+          "outputNumber": 480
+        },
+        {
+          "sourceNumber": 490,
+          "outputNumber": 490
+        },
+        {
+          "sourceNumber": 500,
+          "outputNumber": 500
+        },
+        {
+          "sourceNumber": 510,
+          "outputNumber": 510
+        },
+        {
+          "sourceNumber": 520,
+          "outputNumber": 520
+        },
+        {
+          "sourceNumber": 530,
+          "outputNumber": 530
+        },
+        {
+          "sourceNumber": 540,
+          "outputNumber": 540
+        },
+        {
+          "sourceNumber": 550,
+          "outputNumber": 550
+        },
+        {
+          "sourceNumber": 560,
+          "outputNumber": 560
+        },
+        {
+          "sourceNumber": 570,
+          "outputNumber": 570
+        },
+        {
+          "sourceNumber": 580,
+          "outputNumber": 580
+        },
+        {
+          "sourceNumber": 590,
+          "outputNumber": 590
+        },
+        {
+          "sourceNumber": 600,
+          "outputNumber": 600
+        },
+        {
+          "sourceNumber": 610,
+          "outputNumber": 610
+        },
+        {
+          "sourceNumber": 620,
+          "outputNumber": 620
+        },
+        {
+          "sourceNumber": 630,
+          "outputNumber": 630
+        },
+        {
+          "sourceNumber": 640,
+          "outputNumber": 640
+        },
+        {
+          "sourceNumber": 650,
+          "outputNumber": 650
+        },
+        {
+          "sourceNumber": 660,
+          "outputNumber": 660
+        },
+        {
+          "sourceNumber": 670,
+          "outputNumber": 670
+        },
+        {
+          "sourceNumber": 680,
+          "outputNumber": 680
+        }
+      ]
+    },
+    {
+      "sourceId": "SRC-2734B131-79557",
+      "fileName": "SYS-6-S8810011-01.xml",
+      "basis": "source",
+      "offset": 100000,
+      "positiveIdCount": 75,
+      "pipeCount": 1,
+      "numberMap": [
+        {
+          "sourceNumber": 10,
+          "outputNumber": 100010
+        },
+        {
+          "sourceNumber": 20,
+          "outputNumber": 100020
+        },
+        {
+          "sourceNumber": 30,
+          "outputNumber": 100030
+        },
+        {
+          "sourceNumber": 40,
+          "outputNumber": 100040
+        },
+        {
+          "sourceNumber": 50,
+          "outputNumber": 100050
+        },
+        {
+          "sourceNumber": 60,
+          "outputNumber": 100060
+        },
+        {
+          "sourceNumber": 70,
+          "outputNumber": 100070
+        },
+        {
+          "sourceNumber": 80,
+          "outputNumber": 100080
+        },
+        {
+          "sourceNumber": 90,
+          "outputNumber": 100090
+        },
+        {
+          "sourceNumber": 100,
+          "outputNumber": 100100
+        },
+        {
+          "sourceNumber": 110,
+          "outputNumber": 100110
+        },
+        {
+          "sourceNumber": 120,
+          "outputNumber": 100120
+        },
+        {
+          "sourceNumber": 130,
+          "outputNumber": 100130
+        },
+        {
+          "sourceNumber": 140,
+          "outputNumber": 100140
+        },
+        {
+          "sourceNumber": 150,
+          "outputNumber": 100150
+        },
+        {
+          "sourceNumber": 160,
+          "outputNumber": 100160
+        },
+        {
+          "sourceNumber": 170,
+          "outputNumber": 100170
+        },
+        {
+          "sourceNumber": 180,
+          "outputNumber": 100180
+        },
+        {
+          "sourceNumber": 190,
+          "outputNumber": 100190
+        },
+        {
+          "sourceNumber": 200,
+          "outputNumber": 100200
+        },
+        {
+          "sourceNumber": 210,
+          "outputNumber": 100210
+        },
+        {
+          "sourceNumber": 220,
+          "outputNumber": 100220
+        },
+        {
+          "sourceNumber": 230,
+          "outputNumber": 100230
+        },
+        {
+          "sourceNumber": 240,
+          "outputNumber": 100240
+        },
+        {
+          "sourceNumber": 250,
+          "outputNumber": 100250
+        },
+        {
+          "sourceNumber": 260,
+          "outputNumber": 100260
+        },
+        {
+          "sourceNumber": 270,
+          "outputNumber": 100270
+        },
+        {
+          "sourceNumber": 280,
+          "outputNumber": 100280
+        },
+        {
+          "sourceNumber": 290,
+          "outputNumber": 100290
+        },
+        {
+          "sourceNumber": 300,
+          "outputNumber": 100300
+        },
+        {
+          "sourceNumber": 310,
+          "outputNumber": 100310
+        },
+        {
+          "sourceNumber": 320,
+          "outputNumber": 100320
+        },
+        {
+          "sourceNumber": 330,
+          "outputNumber": 100330
+        },
+        {
+          "sourceNumber": 340,
+          "outputNumber": 100340
+        },
+        {
+          "sourceNumber": 350,
+          "outputNumber": 100350
+        },
+        {
+          "sourceNumber": 360,
+          "outputNumber": 100360
+        },
+        {
+          "sourceNumber": 370,
+          "outputNumber": 100370
+        },
+        {
+          "sourceNumber": 380,
+          "outputNumber": 100380
+        },
+        {
+          "sourceNumber": 390,
+          "outputNumber": 100390
+        },
+        {
+          "sourceNumber": 400,
+          "outputNumber": 100400
+        },
+        {
+          "sourceNumber": 410,
+          "outputNumber": 100410
+        },
+        {
+          "sourceNumber": 420,
+          "outputNumber": 100420
+        },
+        {
+          "sourceNumber": 430,
+          "outputNumber": 100430
+        },
+        {
+          "sourceNumber": 440,
+          "outputNumber": 100440
+        },
+        {
+          "sourceNumber": 450,
+          "outputNumber": 100450
+        },
+        {
+          "sourceNumber": 460,
+          "outputNumber": 100460
+        },
+        {
+          "sourceNumber": 470,
+          "outputNumber": 100470
+        },
+        {
+          "sourceNumber": 480,
+          "outputNumber": 100480
+        },
+        {
+          "sourceNumber": 490,
+          "outputNumber": 100490
+        },
+        {
+          "sourceNumber": 500,
+          "outputNumber": 100500
+        },
+        {
+          "sourceNumber": 510,
+          "outputNumber": 100510
+        },
+        {
+          "sourceNumber": 520,
+          "outputNumber": 100520
+        },
+        {
+          "sourceNumber": 530,
+          "outputNumber": 100530
+        },
+        {
+          "sourceNumber": 540,
+          "outputNumber": 100540
+        },
+        {
+          "sourceNumber": 550,
+          "outputNumber": 100550
+        },
+        {
+          "sourceNumber": 560,
+          "outputNumber": 100560
+        },
+        {
+          "sourceNumber": 570,
+          "outputNumber": 100570
+        },
+        {
+          "sourceNumber": 580,
+          "outputNumber": 100580
+        },
+        {
+          "sourceNumber": 590,
+          "outputNumber": 100590
+        },
+        {
+          "sourceNumber": 600,
+          "outputNumber": 100600
+        },
+        {
+          "sourceNumber": 610,
+          "outputNumber": 100610
+        },
+        {
+          "sourceNumber": 620,
+          "outputNumber": 100620
+        },
+        {
+          "sourceNumber": 630,
+          "outputNumber": 100630
+        },
+        {
+          "sourceNumber": 640,
+          "outputNumber": 100640
+        },
+        {
+          "sourceNumber": 650,
+          "outputNumber": 100650
+        },
+        {
+          "sourceNumber": 660,
+          "outputNumber": 100660
+        },
+        {
+          "sourceNumber": 670,
+          "outputNumber": 100670
+        },
+        {
+          "sourceNumber": 680,
+          "outputNumber": 100680
+        },
+        {
+          "sourceNumber": 690,
+          "outputNumber": 100690
+        },
+        {
+          "sourceNumber": 700,
+          "outputNumber": 100700
+        },
+        {
+          "sourceNumber": 710,
+          "outputNumber": 100710
+        },
+        {
+          "sourceNumber": 720,
+          "outputNumber": 100720
+        },
+        {
+          "sourceNumber": 730,
+          "outputNumber": 100730
+        },
+        {
+          "sourceNumber": 740,
+          "outputNumber": 100740
+        },
+        {
+          "sourceNumber": 750,
+          "outputNumber": 100750
+        }
+      ]
+    },
+    {
+      "sourceId": "SRC-2E5ED4E4-103765",
+      "fileName": "SYS-S8811956-01.xml",
+      "basis": "source",
+      "offset": 200000,
+      "positiveIdCount": 86,
+      "pipeCount": 1,
+      "numberMap": [
+        {
+          "sourceNumber": 10,
+          "outputNumber": 200010
+        },
+        {
+          "sourceNumber": 20,
+          "outputNumber": 200020
+        },
+        {
+          "sourceNumber": 30,
+          "outputNumber": 200030
+        },
+        {
+          "sourceNumber": 40,
+          "outputNumber": 200040
+        },
+        {
+          "sourceNumber": 50,
+          "outputNumber": 200050
+        },
+        {
+          "sourceNumber": 60,
+          "outputNumber": 200060
+        },
+        {
+          "sourceNumber": 70,
+          "outputNumber": 200070
+        },
+        {
+          "sourceNumber": 80,
+          "outputNumber": 200080
+        },
+        {
+          "sourceNumber": 90,
+          "outputNumber": 200090
+        },
+        {
+          "sourceNumber": 100,
+          "outputNumber": 200100
+        },
+        {
+          "sourceNumber": 110,
+          "outputNumber": 200110
+        },
+        {
+          "sourceNumber": 120,
+          "outputNumber": 200120
+        },
+        {
+          "sourceNumber": 130,
+          "outputNumber": 200130
+        },
+        {
+          "sourceNumber": 140,
+          "outputNumber": 200140
+        },
+        {
+          "sourceNumber": 150,
+          "outputNumber": 200150
+        },
+        {
+          "sourceNumber": 160,
+          "outputNumber": 200160
+        },
+        {
+          "sourceNumber": 170,
+          "outputNumber": 200170
+        },
+        {
+          "sourceNumber": 180,
+          "outputNumber": 200180
+        },
+        {
+          "sourceNumber": 190,
+          "outputNumber": 200190
+        },
+        {
+          "sourceNumber": 200,
+          "outputNumber": 200200
+        },
+        {
+          "sourceNumber": 210,
+          "outputNumber": 200210
+        },
+        {
+          "sourceNumber": 220,
+          "outputNumber": 200220
+        },
+        {
+          "sourceNumber": 230,
+          "outputNumber": 200230
+        },
+        {
+          "sourceNumber": 240,
+          "outputNumber": 200240
+        },
+        {
+          "sourceNumber": 250,
+          "outputNumber": 200250
+        },
+        {
+          "sourceNumber": 260,
+          "outputNumber": 200260
+        },
+        {
+          "sourceNumber": 270,
+          "outputNumber": 200270
+        },
+        {
+          "sourceNumber": 280,
+          "outputNumber": 200280
+        },
+        {
+          "sourceNumber": 290,
+          "outputNumber": 200290
+        },
+        {
+          "sourceNumber": 300,
+          "outputNumber": 200300
+        },
+        {
+          "sourceNumber": 310,
+          "outputNumber": 200310
+        },
+        {
+          "sourceNumber": 320,
+          "outputNumber": 200320
+        },
+        {
+          "sourceNumber": 330,
+          "outputNumber": 200330
+        },
+        {
+          "sourceNumber": 340,
+          "outputNumber": 200340
+        },
+        {
+          "sourceNumber": 350,
+          "outputNumber": 200350
+        },
+        {
+          "sourceNumber": 360,
+          "outputNumber": 200360
+        },
+        {
+          "sourceNumber": 370,
+          "outputNumber": 200370
+        },
+        {
+          "sourceNumber": 380,
+          "outputNumber": 200380
+        },
+        {
+          "sourceNumber": 390,
+          "outputNumber": 200390
+        },
+        {
+          "sourceNumber": 400,
+          "outputNumber": 200400
+        },
+        {
+          "sourceNumber": 410,
+          "outputNumber": 200410
+        },
+        {
+          "sourceNumber": 420,
+          "outputNumber": 200420
+        },
+        {
+          "sourceNumber": 430,
+          "outputNumber": 200430
+        },
+        {
+          "sourceNumber": 440,
+          "outputNumber": 200440
+        },
+        {
+          "sourceNumber": 450,
+          "outputNumber": 200450
+        },
+        {
+          "sourceNumber": 460,
+          "outputNumber": 200460
+        },
+        {
+          "sourceNumber": 470,
+          "outputNumber": 200470
+        },
+        {
+          "sourceNumber": 480,
+          "outputNumber": 200480
+        },
+        {
+          "sourceNumber": 490,
+          "outputNumber": 200490
+        },
+        {
+          "sourceNumber": 500,
+          "outputNumber": 200500
+        },
+        {
+          "sourceNumber": 510,
+          "outputNumber": 200510
+        },
+        {
+          "sourceNumber": 520,
+          "outputNumber": 200520
+        },
+        {
+          "sourceNumber": 530,
+          "outputNumber": 200530
+        },
+        {
+          "sourceNumber": 540,
+          "outputNumber": 200540
+        },
+        {
+          "sourceNumber": 550,
+          "outputNumber": 200550
+        },
+        {
+          "sourceNumber": 560,
+          "outputNumber": 200560
+        },
+        {
+          "sourceNumber": 570,
+          "outputNumber": 200570
+        },
+        {
+          "sourceNumber": 580,
+          "outputNumber": 200580
+        },
+        {
+          "sourceNumber": 590,
+          "outputNumber": 200590
+        },
+        {
+          "sourceNumber": 600,
+          "outputNumber": 200600
+        },
+        {
+          "sourceNumber": 610,
+          "outputNumber": 200610
+        },
+        {
+          "sourceNumber": 620,
+          "outputNumber": 200620
+        },
+        {
+          "sourceNumber": 630,
+          "outputNumber": 200630
+        },
+        {
+          "sourceNumber": 640,
+          "outputNumber": 200640
+        },
+        {
+          "sourceNumber": 650,
+          "outputNumber": 200650
+        },
+        {
+          "sourceNumber": 660,
+          "outputNumber": 200660
+        },
+        {
+          "sourceNumber": 670,
+          "outputNumber": 200670
+        },
+        {
+          "sourceNumber": 680,
+          "outputNumber": 200680
+        },
+        {
+          "sourceNumber": 690,
+          "outputNumber": 200690
+        },
+        {
+          "sourceNumber": 700,
+          "outputNumber": 200700
+        },
+        {
+          "sourceNumber": 710,
+          "outputNumber": 200710
+        },
+        {
+          "sourceNumber": 720,
+          "outputNumber": 200720
+        },
+        {
+          "sourceNumber": 730,
+          "outputNumber": 200730
+        },
+        {
+          "sourceNumber": 740,
+          "outputNumber": 200740
+        },
+        {
+          "sourceNumber": 750,
+          "outputNumber": 200750
+        },
+        {
+          "sourceNumber": 760,
+          "outputNumber": 200760
+        },
+        {
+          "sourceNumber": 770,
+          "outputNumber": 200770
+        },
+        {
+          "sourceNumber": 780,
+          "outputNumber": 200780
+        },
+        {
+          "sourceNumber": 790,
+          "outputNumber": 200790
+        },
+        {
+          "sourceNumber": 800,
+          "outputNumber": 200800
+        },
+        {
+          "sourceNumber": 810,
+          "outputNumber": 200810
+        },
+        {
+          "sourceNumber": 820,
+          "outputNumber": 200820
+        },
+        {
+          "sourceNumber": 830,
+          "outputNumber": 200830
+        },
+        {
+          "sourceNumber": 840,
+          "outputNumber": 200840
+        },
+        {
+          "sourceNumber": 850,
+          "outputNumber": 200850
+        },
+        {
+          "sourceNumber": 860,
+          "outputNumber": 200860
+        }
+      ]
+    }
+  ],
+  "automaticCrossSourceJoins": 0
+}

@@ -1,0 +1,45 @@
+pr: 745
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8_BINDING_PRODUCER_SOURCE_QUALIFICATION
+state: BLOCKED_CONTROLLED_SEMANTIC_SOURCE_MISSING
+execution_mode: AUTO
+auto_state: BLOCKED_SOURCE_REQUIRED
+base_pr: 743
+base_sha: 86120e4384f33fb950737e50899b38aea5be2d29
+predecessor_merge:
+  pr: 744
+  owner_authorized: true
+  squash_merge_sha: 86120e4384f33fb950737e50899b38aea5be2d29
+source_review:
+  custom_input_seljson_source: EVIDENCE_ONLY_NOT_ADMITTED
+  rvm_rows_to_uxml_adapter: TOPOLOGY_SOURCE_NOT_ADMITTED
+  uxml_face_model: FACE_TOPOLOGY_EVIDENCE_NOT_ADMITTED
+  uxml_universal_topo_graph: CONNECTIVITY_EVIDENCE_NOT_ADMITTED
+producer_admission:
+  physical_flange_authority: FAIL_SOURCE_NOT_SUFFICIENT
+  calculation_face_authority: FAIL_SOURCE_NOT_SUFFICIENT
+  opening_direction_authority: FAIL_SOURCE_NOT_SUFFICIENT
+  mating_side_authority: FAIL_SOURCE_NOT_SUFFICIENT
+  advanced_analysis_cross_binding: FAIL_SOURCE_NOT_PRESENT
+  automatic_flange_face_binding_producer: NOT_ADMITTED
+authority:
+  source_role: P8_BINDING_PRODUCER_SOURCE_QUALIFICATION
+  automatic_binding_producer: false
+  automatic_3d_extraction: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_seam_inspection: PASS
+  producer_admission: FAIL_SOURCE_NOT_SUFFICIENT
+  calculation_implementation: NOT_RUN_NOT_ADMITTED
+  native_pr_head_execution: NOT_APPLICABLE_NO_EXECUTABLE_CHANGE
+  browser_validation: NOT_APPLICABLE
+  independent_engineering_review: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+  connector_pre_edit_backup: EVIDENCE_ONLY
+hard_stop: CONTROLLED_FLANGE_FACE_OPENING_DIRECTION_MATING_SIDE_SOURCE_REQUIRED
+latest_endpoint: EP-0034
+merge_authority: OWNER_ONLY_NOT_GRANTED

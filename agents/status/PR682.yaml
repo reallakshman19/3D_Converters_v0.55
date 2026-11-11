@@ -1,0 +1,30 @@
+schema: AgentStatus.v1
+pr_or_wip: PR682
+pull_request: 682
+branch: agent/vib-runtime-scenario-guard-integration-20260820-r2
+base: main
+base_sha: 5dd7e1d239c64e57c4cc0e07b51a0c63af7fb845
+implementation_basis_head: 37030eeda506ac441d824d65ea37cc7a29af1bb4
+pr_head_observed_before_final_sync: 7c09015f850951f22596877b530ff855ee8c540b
+state: FINAL_RECONCILED_OWNER_MERGE_AUTHORIZED
+criticality: ENGINEERING_CRITICAL_ORCHESTRATION
+predecessor_pr: 680
+predecessor_state: MERGED
+remote_state:
+  mergeable: true
+  changed_files: 17
+  implementation_test_paths: 14
+  recovery_paths: 3
+  pr_workflow_runs: 0
+validation:
+  current_main_grounding: PASS
+  normalized_ancestry: PASS
+  implementation_changed_paths: PASS_14_INTENDED
+  final_pr_paths: PASS_17_INTENDED
+  focused_falsifiers: ENCODED_NOT_RUN
+  repository_native_tests: NOT_RUN_CONNECTOR_ONLY_RUNTIME
+  hosted_pr_workflows: NOT_RUN_ZERO_RETURNED
+  browser: NOT_RUN_NOT_REQUIRED
+  independent_numerical: NOT_APPLICABLE
+merge_authority: OWNER_GRANTED_2026_08_20
+next_action: MARK_READY_AND_SQUASH_MERGE

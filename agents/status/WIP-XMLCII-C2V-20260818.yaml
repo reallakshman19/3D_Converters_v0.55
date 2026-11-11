@@ -1,0 +1,26 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-C2V-20260818
+mission: "Actual C2 virtualized master Preview without row truncation"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c2-virtual-preview-20260818
+stack_base_pr: 602
+stack_base_sha: 5a6dbd87e361b83d2b17edc3c9d3302bff919f9f
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-C2V-20260818_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+validation:
+  focused_virtualization_tests: PASS_5_OF_5_LOCAL_IMPLEMENTATION_COUPLED
+  browser_scroll_search: NOT_RUN
+  mandatory_pre_edit_backup: PASS_BACKUP_6
+protected_authority:
+  - APPLIED_MASTER_ROWS_UNCHANGED
+  - MAPPING_AUTHORITY_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+highest_risk: "Virtual window hiding logical rows or mapping filtered rows to wrong APPLIED source identity."
+exact_next_action: "Publish C2 production/tests and open stacked draft PR."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:20:00+04:00

@@ -1,0 +1,204 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 821 P2810042 rigid-weight lifecycle</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  collectXmlCiiWeightMatchRows,
+} from '../../converters/xml-cii2019-core/weight-match-model.js';
+import {
+  prepareStandaloneWeightReviewXml,
+  enrichStandaloneXmlForRun,
+} from '../../tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js';
+
+const CONFIG = {
+  splitCondensedValveFlange: true,
+  split_condensed_valve_flange: true,
+  dropGasketNodes: true,
+  dropGasketsInEnrichment: true,
+  dropShortElementLengthNodes: false,
+  rating: { defaultRating: '600' },
+  weight: { masterRows: [] },
+};
+
+const TARGETS = [
+  {
+    id: 'reported-149-150',
+    branchSuffix: 'B3',
+    nodeNumber: '150',
+    ref: '=67127481/44',
+    componentType: 'RIGID',
+    connectionType: 'BRAN',
+    acceptedWeight: 42.25,
+  },
+  {
+    id: 'reported-480-10',
+    branchSuffix: 'EXE/B2',
+    nodeNumber: '10',
+    ref: '=67127432/19',
+    componentType: 'RIGID',
+    connectionType: 'BRAN',
+    acceptedWeight: 51.5,
+  },
+];
+
+function text(value) { return value == null ? '' : String(value).trim(); }
+function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }
+function children(parent, name) {
+  return [...(parent?.childNodes || [])].filter((child) => child.nodeType === 1 && localName(child) === name);
+}
+function childText(parent, name) { return text(children(parent, name)[0]?.textContent); }
+function parse(xmlText) {
+  const doc = new DOMParser().parseFromString(String(xmlText || ''), 'application/xml');
+  if (doc.getElementsByTagName('parsererror').length) throw new Error('XML parse failed');
+  return doc;
+}
+function branchSuffix(name) {
+  const raw = text(name);
+  if (/EXE\/B2$/i.test(raw)) return 'EXE/B2';
+  return raw.match(/\/(B\d+)$/i)?.[1]?.toUpperCase() || '';
+}
+function rowId(row) {
+  return `${branchSuffix(row.branchName)}::${text(row.nodeNumber)}`;
+}
+function findNode(xmlText, suffix, number) {
+  const doc = parse(xmlText);
+  for (const branch of [...doc.getElementsByTagName('Branch')]) {
+    if (branchSuffix(childText(branch, 'Branchname')) !== suffix) continue;
+    for (const node of children(branch, 'Node')) {
+      if (childText(node, 'NodeNumber') === String(number)) return {
+        nodeNumber: childText(node, 'NodeNumber'),
+        componentType: childText(node, 'ComponentType'),
+        ref: childText(node, 'ComponentRefNo'),
+        connectionType: childText(node, 'ConnectionType'),
+        rigid: childText(node, 'Rigid'),
+        weight: Number(childText(node, 'Weight') || 0),
+      };
+    }
+  }
+  return null;
+}
+function requireValue(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+let observed = {};
+try {
+  const response = await fetch('../fixtures/xml-cii-p2810042-c04-rigid-weight.xml', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`fixture fetch failed: HTTP ${response.status}`);
+  const sourceText = await response.text();
+
+  observed.sourceTargets = TARGETS.map((target) => ({
+    ...target,
+    source: findNode(sourceText, target.branchSuffix, target.nodeNumber),
+  }));
+
+  const weightMatchRows = collectXmlCiiWeightMatchRows(sourceText, '', structuredClone(CONFIG));
+  observed.weightMatchRows = weightMatchRows.map((row) => ({
+    id: rowId(row),
+    key: row.key,
+    componentType: row.componentType,
+    componentRefNo: row.componentRefNo,
+    connectionType: row.connectionType || '',
+    weight: row.weight,
+    originalWeight: row.originalWeight,
+    status: row.status,
+  }));
+
+  for (const target of TARGETS) {
+    const row = weightMatchRows.find((item) => rowId(item) === `${target.branchSuffix}::${target.nodeNumber}`);
+    requireValue(row, `${target.id}: target Rigid=2 node is missing from Weight Match`);
+    requireValue(row.componentType === 'RIGID', `${target.id}: Weight Match component type drift`);
+    requireValue(row.componentRefNo === target.ref, `${target.id}: Weight Match component ref drift`);
+  }
+
+  const prepared = await prepareStandaloneWeightReviewXml(
+    { sourceText, stagedJsonText: '', options: { splitCondensedValveFlange: true } },
+    structuredClone(CONFIG),
+  );
+  if (prepared.error) throw new Error(`prepareStandaloneWeightReviewXml failed: ${prepared.error}`);
+
+  const basisRows = prepared.weightAuthority?.basisRows || [];
+  observed.reviewBasisRows = basisRows.map((row) => ({
+    id: rowId(row),
+    key: row.key,
+    componentType: row.componentType,
+    componentRefNo: row.componentRefNo,
+    weight: row.weight,
+    originalWeight: row.originalWeight,
+    status: row.status,
+  }));
+
+  const accepted = {};
+  for (const target of TARGETS) {
+    const row = basisRows.find((item) => rowId(item) === `${target.branchSuffix}::${target.nodeNumber}`);
+    requireValue(row, `${target.id}: target is missing from Rigids-need-review basis`);
+    accepted[row.key] = target.acceptedWeight;
+  }
+
+  const runConfig = structuredClone(CONFIG);
+  runConfig.overrides = { rigidWeight: accepted };
+  const final = await enrichStandaloneXmlForRun({
+    sourceText,
+    stagedJsonText: '',
+    supportConfigJson: JSON.stringify(runConfig),
+    options: { splitCondensedValveFlange: true },
+  });
+  if (!final.applied) {
+    throw new Error(`enrichStandaloneXmlForRun failed: ${final.error || 'not applied'}\n${(final.logs || []).join('\n')}`);
+  }
+
+  observed.finalStats = final.stats || {};
+  observed.finalEvidence = final.evidence || null;
+  observed.finalTargets = TARGETS.map((target) => ({
+    ...target,
+    final: findNode(final.xmlText, target.branchSuffix, target.nodeNumber),
+  }));
+
+  for (const target of TARGETS) {
+    const node = findNode(final.xmlText, target.branchSuffix, target.nodeNumber);
+    requireValue(node, `${target.id}: final target node missing`);
+    requireValue(node.componentType === 'RIGID' && node.rigid === '2', `${target.id}: rigid identity changed`);
+    requireValue(node.ref === target.ref, `${target.id}: final component ref changed`);
+    requireValue(Math.abs(node.weight - target.acceptedWeight) < 1e-9,
+      `${target.id}: accepted weight ${target.acceptedWeight} was not written; got ${node.weight}`);
+  }
+
+  const control = findNode(final.xmlText, 'B2', '20');
+  requireValue(control, 'control B2::20 missing');
+  requireValue(Math.abs(control.weight - 17.75) < 1e-9,
+    `existing populated rigid weight changed: expected 17.75, got ${control.weight}`);
+  observed.control = control;
+
+  const nonRigidBranchConnector = weightMatchRows.find((row) => rowId(row) === 'B3::100');
+  requireValue(!nonRigidBranchConnector, 'non-rigid TEE/BRAN connector must remain excluded from Weight Match');
+
+  const result = {
+    schema: 'XMLCII_ISSUE_821_P2810042_RIGID_WEIGHT_LIFECYCLE_V1',
+    ok: true,
+    fixture: 'source-derived from SYS-24-P2810042_PSI.xml',
+    assertions: {
+      reported149to150PresentInWeightMatch: true,
+      reported480to10PresentInWeightMatch: true,
+      bothPresentInRigidReviewBasis: true,
+      acceptedWeightsWrittenToExactRigidOwners: true,
+      existingRigidWeightUnchanged: true,
+      nonRigidConnectionNodeStillExcluded: true,
+    },
+    ...observed,
+  };
+  globalThis.__XML_CII_ISSUE_821_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_821_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+} catch (error) {
+  const result = {
+    schema: 'XMLCII_ISSUE_821_P2810042_RIGID_WEIGHT_LIFECYCLE_V1',
+    ok: false,
+    error: String(error?.stack || error),
+    ...observed,
+  };
+  globalThis.__XML_CII_ISSUE_821_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_821_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

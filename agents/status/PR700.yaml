@@ -1,0 +1,46 @@
+schema: AgentStatus.v1
+pr_or_wip: PR700
+pull_request: 700
+branch: agent/vib-m15-rca-authoring-20260821
+base: main
+base_sha_at_start: 7aabe404c6f58db1b78756de9412ab93e867b5fe
+predecessor_pr: 699
+predecessor_state: MERGED
+state: DRAFT_HANDOVER_READY_UNMERGED
+criticality: ENGINEERING_CRITICAL_RCA_AND_VERIFICATION_EVIDENCE_CUSTODY
+validation:
+  predecessor_grounding: PASS_PR699_MERGED_7AABE404
+  roadmap_rca_authority_audit: PASS_SOURCE_INSPECTION
+  m14_status_integrity_audit: PASS_SOURCE_INSPECTION
+  m14_full_measurement_provenance_binding: PASS_SOURCE_INSPECTION
+  rca_conclusion_revision_attestation: PASS_SOURCE_INSPECTION
+  backup_custody: PASS_CONNECTOR_GIT_BLOB_OR_EXACT_COPY
+  line_policy: PASS_ALL_PRODUCTION_AND_TEST_FILES_UNDER_300
+  open_pr_coordination: PASS_PR665_ZERO_EXACT_OVERLAP_PR698_PR701_HP_ONLY
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  vibration_regressions: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_numerical: NOT_APPLICABLE_NO_EQUATION_VALUE_CHANGE
+hosted_reconciliation:
+  source_basis_head: 47434cbfdd29b537bd1eaf29dc44ec1b9b797060
+  current_main: ca8d391ac5f829f53bebb3c37adf0547c34a67b4
+  branch_relation: AHEAD_45_BEHIND_2_HP_ONLY_AT_SOURCE_BASIS
+  behind_commit_overlap: NONE_VIBRATION_PATHS_PR698_PR701_HP_ONLY
+  mergeable: true
+  reviews: 0
+  review_threads: 0
+  comments: 0
+  commit_status_checks: NOT_RUN_ZERO_RETURNED
+  pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+integrity_boundary:
+  attachment_schema_current: VibrationActionVerificationAttachment.v2
+  evidence_fingerprint: SHA256_BINDS_COMPACT_HASH_TRACE_PLUS_FULL_SESSION_PRODUCT_RECORD_FINGERPRINTS
+  verification_status_fingerprint: SHA256_DETERMINISTIC_SELF_CONSISTENCY
+  full_measurement_provenance_binding: CALIBRATION_ACQUISITION_SENSOR_SOURCE_PROCESSING_INCLUDED_VIA_RECORD_FINGERPRINTS
+  concluded_hypothesis_reopen_rule: EXPLICIT_ENGINEER_CONCLUSION_REQUIRED_FOR_ANY_POST_CONCLUSION_REVISION
+  reviewer_identity_authentication: NOT_AVAILABLE_USER_DECLARED
+  engineer_identity_authentication: NOT_AVAILABLE_USER_DECLARED
+  digital_signature: false
+  signer_authenticity: NOT_AVAILABLE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: KEEP_DRAFT_FINAL_HEAD_RECONCILIATION_THEN_NATIVE_VALIDATE_BROWSER_AND_REQUIRE_NEW_OWNER_MERGE_AUTHORIZATION

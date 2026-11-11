@@ -1,0 +1,129 @@
+<!doctype html><meta charset="utf-8">
+<title>#1147 B0 opt-in native Worker sparse-catalog qualification (NOT docs app)</title>
+<script type="module">
+const fail=(code,detail)=>Object.assign(new Error(detail),{code});
+const readOne=(db,store,key)=>new Promise((resolve,reject)=>{
+  const req=db.transaction(store,'readonly').objectStore(store).get(key);
+  req.onsuccess=()=>resolve(req.result??null);
+  req.onerror=()=>reject(req.error);
+});
+const openDb=name=>new Promise((resolve,reject)=>{
+  const req=indexedDB.open(name,1);
+  req.onsuccess=()=>resolve(req.result);
+  req.onerror=()=>reject(req.error);
+});
+async function runWorker(blob,expectedSha256,databaseName,generation,backend='ROW'){
+  if(!['ROW','PAGED'].includes(backend))throw fail('BACKEND_INVALID','unknown research backend');
+  const file=backend==='PAGED'?'./compact-paged.worker.mjs':'./compact.worker.mjs';
+  const worker=new Worker(new URL(file,location.href),{type:'module'});
+  return await new Promise((resolve,reject)=>{
+    worker.onmessage=event=>{
+      if(event.data?.type==='DONE'){
+        worker.terminate();resolve(event.data.result);
+      }else if(event.data?.type==='ERROR'){
+        worker.terminate();reject(fail(event.data.code,event.data.message));
+      }
+    };
+    worker.onerror=e=>{worker.terminate();reject(fail('WORKER_ERROR',e.message||'native Worker errored'));};
+    worker.postMessage({type:'START',blob,expectedSha256,databaseName,generation,
+      revision:'B0-ORIGINAL'});
+  });
+}
+window.runCompactOriginalProbe=async({url,oracle,backend='ROW'})=>{
+  if(!url.startsWith('/Benchmarks/'))throw fail('TEST_URL','original tracked fixture required');
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok)throw fail('TEST_MISSING','original fixture HTTP '+response.status);
+  const blob=await response.blob();
+  if(blob.size!==oracle.bytes)throw fail('FIXTURE_BYTES','original byte count changed');
+  const generation=crypto.randomUUID(),databaseName='lfj-b0-1147-'+generation;
+  const before=(await navigator.storage.estimate()).usage??null;
+  const longTasks=[],observer=typeof PerformanceObserver!=='undefined'?
+    new PerformanceObserver(list=>{
+      for(const e of list.getEntries())if(e.duration>=50)longTasks.push(e.duration);
+    }):null;
+  try{observer?.observe({entryTypes:['longtask']});}catch{}
+  const started=performance.now();
+  let db;
+  try{
+    const result=await runWorker(blob,oracle.sha256,databaseName,generation,backend);
+    const expectedSchema=backend==='PAGED'?'LFJ.B0.PagedOccurrenceResearch.v1':
+      'LFJ.B0.CompactOccurrenceResearch.v1';
+    if(result.schema!==expectedSchema||
+       result.occurrenceCount!==oracle.occurrenceCount||
+       result.sourceSha256!==oracle.sha256||result.originalBytes!==oracle.bytes||
+       result.appWired!==false||result.sourceOnly!==true)
+      throw fail('SOURCE_ORACLE','complete original source mismatch');
+    db=await openDb(databaseName);
+    const head=await readOne(db,'heads','active');
+    if(!head?.complete||head.generation!==generation||
+       head.sourceSha256!==oracle.sha256||head.occurrenceCount!==oracle.occurrenceCount)
+      throw fail('HEAD_INVALID','source generation not durably committed');
+    const decoder=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true});
+    const verified=[];
+    const directoryCache=new Map(),pageCache=new Map();
+    const row=async ord=>{
+      let x;
+      if(backend==='PAGED'){
+        const bucket=Math.floor(ord/4096);
+        let dir=directoryCache.get(bucket);
+        if(!dir){
+          dir=await readOne(db,'directory',[generation,bucket]);
+          if(!dir)throw fail('DIRECTORY_MISSING','source ordinal has no directory');
+          directoryCache.set(bucket,dir);
+        }
+        const slot=ord%4096,pageId=dir.pageRefs[slot]-1;
+        if(pageId<0||!Number.isSafeInteger(pageId))
+          throw fail('DIRECTORY_MISSING','source ordinal has no page');
+        let page=pageCache.get(pageId);
+        if(!page){
+          page=await readOne(db,'pages',[generation,pageId]);
+          if(!page)throw fail('PAGE_MISSING','directory references missing page');
+          pageCache.set(pageId,page);
+        }
+        x=page.rows[dir.rowRefs[slot]];
+      }else x=await readOne(db,'records',[generation,ord]);
+      if(!x||x.ordinal!==ord)
+        throw fail('ORIGINAL_ROW_MISSING','missing source occurrence '+ord);
+      return x;
+    };
+    for(const sample of oracle.scalarSamples){
+      const hit=await row(sample.ordinal);
+      const bytes=new Uint8Array(await blob.slice(hit.startByte,hit.endByteExclusive).arrayBuffer());
+      const decoded=decoder.decode(bytes);
+      if(JSON.stringify(JSON.parse(decoded))!==JSON.stringify(sample.expected))
+        throw fail('SOURCE_BYTES_MISMATCH','original scalar byte span does not match '+sample.path);
+      let path='',cur=hit,depth=0;
+      while(cur.parent!==null){
+        const member=String(cur.member).replaceAll('~','~0').replaceAll('/','~1');
+        path='/'+member+path;
+        if(++depth>256)throw fail('PATH_DEPTH','invalid parent chain');
+        cur=await row(cur.parent);
+      }
+      if(path!==sample.path)throw fail('SOURCE_PATH_MISMATCH',path+' != '+sample.path);
+      verified.push({ordinal:sample.ordinal,path,byteCount:bytes.length,exact:true});
+    }
+    const after=(await navigator.storage.estimate()).usage??null;
+    return {...result,schema:'LFJ.B0.SourceBrowserOracle.v1',backend,verified,
+      measurementMs:performance.now()-started,
+      storageDelta:before===null||after===null?null:after-before,
+      longTaskCount:longTasks.length,longTaskMaxMs:Math.max(0,...longTasks),
+      originalSource:'tracked fixture',appWired:false};
+  }finally{
+    db?.close();observer?.disconnect();
+  }
+};
+window.runCompactMalformedNegative=async(backend='ROW')=>{
+  const generation=crypto.randomUUID(),dbName='lfj-b0-bad-'+generation;
+  let error=null;
+  try{await runWorker(new Blob(['{"broken": [1,}']),undefined,dbName,generation,backend);}
+  catch(e){error=e.code;}
+  if(!error)throw fail('MALFORMED_ACCEPTED','invalid JSON was accepted');
+  const db=await openDb(dbName);
+  try{
+    const head=await readOne(db,'heads','active');
+    if(head!==null)throw fail('INVALID_HEAD_PUBLISHED','malformed source committed a HEAD');
+  }finally{db.close();}
+  return {rejected:true,code:error,headPublished:false};
+};
+window.__b0Ready=true;
+</script>

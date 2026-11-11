@@ -1,0 +1,711 @@
+{
+  "baseRefOid": "d6f19bdd3bf2c07e339d5e549d1b82795aa0fb4c",
+  "files": [
+    {
+      "path": ".backups/log.json",
+      "additions": 498,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "agents/PR810_workreport.md",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "agents/PR811_workreport.md",
+      "additions": 163,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/claims/PR810.yaml",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "agents/claims/PR811.yaml",
+      "additions": 17,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/ci-worker-gate.txt",
+      "additions": 132,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/combined-mode-a.txt",
+      "additions": 57,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/focused-node.txt",
+      "additions": 270,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/new-rating-live.txt",
+      "additions": 52,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/pr-body.md",
+      "additions": 24,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/weight-rating-browser.json",
+      "additions": 48,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/evidence/WIP-781-WEIGHT-RATING-20261001/weight-rating-class-fill.png",
+      "additions": 0,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "agents/status/PR810.yaml",
+      "additions": 4,
+      "deletions": 4,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "agents/status/PR811.yaml",
+      "additions": 14,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "converters/xml-cii2019-core/preview-rating-snapshot.js",
+      "additions": 14,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "converters/xml-cii2019-core/weight-match-ranking-service.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "converters/xml-cii2019-core/weight-rating-input.js",
+      "additions": 51,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "core/app.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/converters/xml-cii2019-core/preview-rating-snapshot.js",
+      "additions": 14,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/converters/xml-cii2019-core/weight-match-ranking-service.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/converters/xml-cii2019-core/weight-rating-input.js",
+      "additions": 51,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "docs/core/app.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/index.html",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/main-rhbg-fitguard.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js",
+      "additions": 59,
+      "deletions": 27,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/model-converters/legacy-adapter.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/model-converters/xml-cii-post-run-validator-standalone.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone-tab.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-events.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-events.js",
+      "additions": 3,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-mapping-events.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js",
+      "additions": 3,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-phase-panels-mode-a.js",
+      "additions": 4,
+      "deletions": 4,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-phase-panels.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-rating.js",
+      "additions": 11,
+      "deletions": 5,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-evidence.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js",
+      "additions": 4,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-workflow-shell-mode-a-easy-bulk-v6.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/workers/master-dataset-service.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/workers/master-dataset-worker.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/workers/weight-basis-service.js",
+      "additions": 4,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/xml-cii-dataset-backed-config.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "docs/tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "index.html",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "main-rhbg-fitguard.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs",
+      "additions": 3,
+      "deletions": 0,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js",
+      "additions": 59,
+      "deletions": 27,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/model-converters/legacy-adapter.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/model-converters/xml-cii-post-run-validator-standalone.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone-tab.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-events.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-events.js",
+      "additions": 3,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-mapping-events.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js",
+      "additions": 3,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-phase-panels-mode-a.js",
+      "additions": 4,
+      "deletions": 4,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-phase-panels.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-rating.js",
+      "additions": 11,
+      "deletions": 5,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-evidence.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js",
+      "additions": 4,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-workflow-shell-mode-a-easy-bulk-v6.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/workers/master-dataset-client.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/workers/master-dataset-service.js",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/workers/master-dataset-worker.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/workers/weight-basis-service.js",
+      "additions": 4,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/xml-cii-dataset-backed-config.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/browser/xml-cii-issue-781-mode-a-live-e2e.mjs",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/browser/xml-cii-weight-basis-fastpath-e2e.html",
+      "additions": 1,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/browser/xml-cii-weight-rating-input-e2e.mjs",
+      "additions": 143,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "tests/xml-cii-issue-776-deployment-parity.test.mjs",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/xml-cii-issue-781-auto-authority-followup.test.mjs",
+      "additions": 3,
+      "deletions": 3,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/xml-cii-issue-781-postmerge-screenshot-repair.test.mjs",
+      "additions": 2,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/xml-cii-issue-781-worker-weight-api.test.mjs",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/xml-cii-rating-consumer-policy.test.mjs",
+      "additions": 4,
+      "deletions": 2,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/xml-cii-weight-rating-input.test.mjs",
+      "additions": 89,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "a78569001a26b136860d142b34ed2c9f123592fe",
+  "mergeable": "MERGEABLE",
+  "reviewDecision": "",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:16Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402405/job/110219250127",
+      "name": "qualify",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "CAESAR v11-v14 Dropdown Qualification"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:18Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402435/job/110219250256",
+      "name": "live-ui",
+      "startedAt": "2026-10-01T04:30:08Z",
+      "status": "COMPLETED",
+      "workflowName": "FBX Live UI Cache Chain"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:21Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402342/job/110219250323",
+      "name": "contract",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "StagedJSON and Pages Runtime Contract"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:28Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402338/job/110219250457",
+      "name": "focused-regressions",
+      "startedAt": "2026-10-01T04:30:08Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 776 XML-CII Authority Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:19Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402367/job/110219250212",
+      "name": "auto-authority-followup",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Auto Authority Follow-up Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:21Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402390/job/110219250178",
+      "name": "b313-auto-basis",
+      "startedAt": "2026-10-01T04:30:09Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 B31.3 Auto Basis Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:22Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402340/job/110219250283",
+      "name": "linelist-sheet-selection",
+      "startedAt": "2026-10-01T04:30:09Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Line-list Sheet Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:24Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402423/job/110219250356",
+      "name": "p0-custody",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 P0 XML-CII Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:21Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402440/job/110219250218",
+      "name": "screenshot-acceptance",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Post-merge Screenshot Repair Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:19Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402354/job/110219249953",
+      "name": "regex-master-evidence",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Regex Master Evidence Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:18Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402406/job/110219250200",
+      "name": "weight-build",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Weight Build Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:16Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402449/job/110219250155",
+      "name": "weight-match-authority-ux",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Weight Match Authority UX Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:20Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402429/job/110219250124",
+      "name": "focused",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Worker Weight API Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:30:56Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402427/job/110219249984",
+      "name": "chromium-timing",
+      "startedAt": "2026-10-01T04:30:09Z",
+      "status": "COMPLETED",
+      "workflowName": "XML CII Browser Semantic Core Timing"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:31:17Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402338/job/110219250139",
+      "name": "wsw-browser-e2e",
+      "startedAt": "2026-10-01T04:30:09Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 776 XML-CII Authority Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T04:31:15Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36815402429/job/110219250829",
+      "name": "browser-worker-scale",
+      "startedAt": "2026-10-01T04:30:07Z",
+      "status": "COMPLETED",
+      "workflowName": "Issue 781 Worker Weight API Validation"
+    }
+  ],
+  "fileCount": 90
+}

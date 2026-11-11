@@ -1,0 +1,39 @@
+schema: AgentClaim.v1
+pr_or_wip: PR697
+pull_request: 697
+claim_state: ACTIVE
+branch: agent/vib-m14-action-verification-custody-20260821
+authority_domains:
+  - VIBRATION_ACTION_VERIFICATION_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/action-verification.js
+    - tests/vibration-facility-action-verification.test.mjs
+exclusions:
+  - measurement acquisition contract changes
+  - verification numerical/status logic changes
+  - mechanism equations and coefficients
+  - applicability and AssessmentCompleteness authority
+  - EI aggregation authority
+  - root-cause authority
+  - design authority
+  - direct action completion mutation
+claims:
+  - id: PR697-001
+    statement: Existing vibration verification scope is bound exactly to the M13 action occurrence line/case/scenario identity and snapshot hash.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR697-002
+    statement: Matched measurement evidence hashes are committed by a deterministic evidenceFingerprint included in attachment identity.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR697-003
+    statement: Optional completion evidence must reference the exact same action occurrence and cannot be carried across facility runs by logical action identity alone.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR697-004
+    statement: The M14 attachment cannot determine action completion, assessment completeness, screening, design, root cause, code compliance or safety authority.
+    status: SOURCE_CONFIRMED
+coordination:
+  PR695: MERGED_M13_COMPLETION_AUTHORING_FOUNDATION
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

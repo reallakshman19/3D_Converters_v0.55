@@ -1,0 +1,42 @@
+{
+  "schema": "kd320-q1-exit-attestation/v1",
+  "recordId": "VR-B313-CH9-KD320-NATIVE-001-Q1",
+  "status": null,
+  "controlledEvidenceLedgerRef": null,
+  "controlledEvidenceLedgerSha256": null,
+  "q1AuditReportRef": null,
+  "q1AuditReportSha256": null,
+  "sourceReceipts": [
+    {"receiptId":"Q1-SRC-B313-2024","documentSha256":null},
+    {"receiptId":"Q1-SRC-VIII3-2025","documentSha256":null}
+  ],
+  "semanticBindings": [
+    {"semanticId":"KD320-SEM-001","controlledSourceRef":"Q1-SRC-B313-2024","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-002","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-003","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-004","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-005","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-006","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-007","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-008","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-009","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-010","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-011","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-012","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-013","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null},
+    {"semanticId":"KD320-SEM-014","controlledSourceRef":"Q1-SRC-VIII3-2025","exactSourceLocator":null,"controlledSemanticRef":null}
+  ],
+  "evidencePassRefs": ["E01","E02","E03","E04","E05","E06","E07","E08"],
+  "gatePassRefs": ["G0","G1"],
+  "attestedBy": null,
+  "attestedAt": null,
+  "independentCheckBy": null,
+  "independentCheckedAt": null,
+  "authority": {
+    "nativeCoreKd3Qualified": false,
+    "codeCompliance": false,
+    "canUseForDesignAuthority": false,
+    "productionKernelAllowed": false,
+    "automaticPromotionAllowed": false
+  }
+}

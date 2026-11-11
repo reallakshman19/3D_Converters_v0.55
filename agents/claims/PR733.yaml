@@ -1,0 +1,29 @@
+pr: 733
+chain_id: ENGCALC-BOLTED-JOINTS
+claims:
+  - id: p4-source-is-not-yet-implementation-authority
+    status: SUPPORTED
+    evidence:
+      - docs/engineering-calculations/flange-p4-p5-source-qualification.md
+    boundary: Recoverable legacy text exposes method structure but not complete controlled formula provenance.
+  - id: p5-source-is-explicitly-unchecked-and-equations-embedded
+    status: SUPPORTED
+    evidence:
+      - docs/engineering-calculations/flange-p4-p5-source-qualification.md
+    boundary: Do not reconstruct embedded equations from memory.
+  - id: no-authority-promotion
+    status: SUPPORTED
+    evidence:
+      - docs/engineering-calculations/flange-p4-p5-source-qualification.md
+    values:
+      codeCompliance: false
+      designAuthority: false
+      governingEligible: false
+      productionAuthorized: false
+  - id: prior-validation-gates-remain-open
+    status: SUPPORTED
+    values:
+      pr731_exact_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+      pr732_exact_native_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+      pr732_supporting_execution: PASS_18_OF_18_SOURCE_RECONSTRUCTED
+next_action: Controlled formula-level P4 source recovery before any detailed flange-strength production kernel.

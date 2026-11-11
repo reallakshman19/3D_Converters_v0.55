@@ -1,0 +1,113 @@
+{
+  "schema": "kd320-published-reference-prefill/v1",
+  "target": {
+    "benchmarkId": "KD3-QF-022",
+    "evidenceClass": "PRIMARY_PUBLISHED_NUMERICAL_ORACLE",
+    "viii3Edition": "2025",
+    "methodId": "KD3-FATIGUE-001"
+  },
+  "authority": {
+    "q2OracleAdmissionReady": false,
+    "nativeCoreKd3Qualified": false,
+    "codeCompliance": false,
+    "canUseForDesignAuthority": false,
+    "productionKernelAllowed": false,
+    "automaticPromotionAllowed": false
+  },
+  "references": [
+    {
+      "referenceId": "PVP2025-154710",
+      "title": "Fatigue analysis of a hydrogen pressure vessel using ASME BPVC VIII-3 KD-10 and comparing with the results of VIII-3 KD-322 using degraded S-N curves",
+      "authors": ["Mohamadreza Nourani"],
+      "publicationYear": 2025,
+      "doi": "10.1115/PVP2025-154710",
+      "sourceClass": "PRIMARY_ASME_CONFERENCE_PAPER_AUTHOR_UPLOADED_FULL_TEXT",
+      "viii3EditionUsed": "2023",
+      "exactLocators": [
+        "Section 2.4; equations (5)-(16); paper page 7",
+        "Section 3.2; Table 3; paper page 8",
+        "References [1]; paper page 10"
+      ],
+      "sourceSha256": null,
+      "sourceHashStatus": "PENDING_RETAINED_PDF_BYTES",
+      "methodEvidence": {
+        "stressRoute": "PRINCIPAL_STRESS_DIFFERENCES_WITH_ASSOCIATED_NORMAL_MEAN_STRESS",
+        "correctionParameterEvidence": [
+          {"name": "beta", "value": 0.2, "units": "DIMENSIONLESS", "scope": "CARBON_OR_LOW_ALLOY_STEEL_FORGED_NON_WELDED"}
+        ],
+        "fatigueCurveReference": "Figure KD-320.1",
+        "formulaExpressionStored": false
+      },
+      "numericalEvidence": {
+        "sourceLocator": "Table 3",
+        "units": {"stress": "psi", "pressure": "bar", "cycles": "cycles"},
+        "chainFields": ["alternatingStressIntensity", "associatedMeanStress", "correctionParameters", "equivalentAlternatingStress", "permissibleCycles"],
+        "rows": [
+          {"pressureRange": "450-350", "alternatingStressIntensity": 15230, "associatedMeanStress": 17736, "equivalentAlternatingStress": 17748, "permissibleCycles": 186586871},
+          {"pressureRange": "450-300", "alternatingStressIntensity": 16615, "associatedMeanStress": 17406, "equivalentAlternatingStress": 19302, "permissibleCycles": 70950500},
+          {"pressureRange": "450-200", "alternatingStressIntensity": 19384, "associatedMeanStress": 16747, "equivalentAlternatingStress": 22382, "permissibleCycles": 3868374},
+          {"pressureRange": "450-100", "alternatingStressIntensity": 22153, "associatedMeanStress": 16087, "equivalentAlternatingStress": 25425, "permissibleCycles": 878920},
+          {"pressureRange": "450-50", "alternatingStressIntensity": 23537, "associatedMeanStress": 15758, "equivalentAlternatingStress": 26932, "permissibleCycles": 494533},
+          {"pressureRange": "450-0", "alternatingStressIntensity": 24922, "associatedMeanStress": 15428, "equivalentAlternatingStress": 28431, "permissibleCycles": 338438}
+        ]
+      },
+      "editionReconciliation": {
+        "targetEdition": "2025",
+        "status": "NOT_PERFORMED",
+        "controlledSourceRef": "Q1-SRC-VIII3-2025"
+      },
+      "independentAdmission": {"status": "NOT_PERFORMED", "checkedBy": null, "checkedAt": null},
+      "admission": {
+        "eligibleForQf022": false,
+        "status": "NOT_ADMISSIBLE_TARGET_EDITION_MISMATCH",
+        "blockers": ["VIII3_EDITION_2023_NOT_TARGET_2025", "SOURCE_SHA256_PENDING", "CONTROLLED_2025_EDITION_RECONCILIATION_PENDING", "INDEPENDENT_ADMISSION_PENDING"]
+      }
+    },
+    {
+      "referenceId": "PVP2024-123674",
+      "title": "Fatigue Analysis of HPHT Subsea Equipment According to API 17TR8",
+      "authors": ["Kumarswamy Karpanan", "Brian Skeels"],
+      "publicationYear": 2024,
+      "doi": "10.1115/PVP2024-123674",
+      "sourceClass": "PRIMARY_ASME_CONFERENCE_PAPER_AUTHOR_UPLOADED_FULL_TEXT",
+      "viii3EditionUsed": "2021",
+      "exactLocators": [
+        "Section 3.2.2; ASME Section VIII Division 3 method description",
+        "Section 5.1.4; Table 8; paper page 8",
+        "References [15]; paper page 9"
+      ],
+      "sourceSha256": null,
+      "sourceHashStatus": "PENDING_RETAINED_PDF_BYTES",
+      "methodEvidence": {
+        "stressRoute": "PRINCIPAL_STRESS_TO_SHEAR_RANGE_AND_MEAN_STRESS",
+        "fatigueCurveScope": "TENSILE_STRENGTH_90_KSI",
+        "formulaExpressionStored": false
+      },
+      "numericalEvidence": {
+        "sourceLocator": "Table 8",
+        "units": {"stress": "psi", "pressure": "psi", "cycles": "cycles"},
+        "chainFields": ["reportedAmplitude", "permissibleCycles", "damage"],
+        "cumulativeDamage": 0.172,
+        "rows": [
+          {"phase": "FAT", "minPressure": 0, "maxPressure": 30000, "appliedCycles": 2, "reportedAmplitude": 93793, "permissibleCycles": 853, "damage": 0.0023},
+          {"phase": "EFAT", "minPressure": 0, "maxPressure": 21500, "appliedCycles": 2, "reportedAmplitude": 67218, "permissibleCycles": 2579, "damage": 0.0008},
+          {"phase": "SIT_ETC", "minPressure": 0, "maxPressure": 20000, "appliedCycles": 50, "reportedAmplitude": 62529, "permissibleCycles": 3405, "damage": 0.0147},
+          {"phase": "INSTALLATION_COMMISSIONING_WORKOVERS", "minPressure": 2000, "maxPressure": 19000, "appliedCycles": 1000, "reportedAmplitude": 53149, "permissibleCycles": 6798, "damage": 0.1471},
+          {"phase": "WORKOVERS_PIGGING_ES", "minPressure": 12000, "maxPressure": 19000, "appliedCycles": 500, "reportedAmplitude": 31811, "permissibleCycles": 67754, "damage": 0.0074},
+          {"phase": "NORMAL_OPERATION", "minPressure": 17500, "maxPressure": 19000, "appliedCycles": 1000000, "reportedAmplitude": 7413, "permissibleCycles": 3.24e13, "damage": 3.09e-8}
+        ]
+      },
+      "editionReconciliation": {
+        "targetEdition": "2025",
+        "status": "NOT_PERFORMED",
+        "controlledSourceRef": "Q1-SRC-VIII3-2025"
+      },
+      "independentAdmission": {"status": "NOT_PERFORMED", "checkedBy": null, "checkedAt": null},
+      "admission": {
+        "eligibleForQf022": false,
+        "status": "NOT_ADMISSIBLE_TARGET_EDITION_MISMATCH_AND_PARTIAL_CHAIN",
+        "blockers": ["VIII3_EDITION_2021_NOT_TARGET_2025", "FULL_SALT_MEAN_PARAMETER_SEQ_CHAIN_NOT_RETAINED", "SOURCE_SHA256_PENDING", "CONTROLLED_2025_EDITION_RECONCILIATION_PENDING", "INDEPENDENT_ADMISSION_PENDING"]
+      }
+    }
+  ]
+}

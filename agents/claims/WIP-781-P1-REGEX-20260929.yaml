@@ -1,0 +1,18 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-781-P1-REGEX-20260929
+claim_state: ACTIVE
+branch: agent/issue-781-p1-regex-evidence-20260929
+workstream: XML_CII_STANDALONE_ISSUE_781_P1_REGEX_EVIDENCE
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_REGEX_SMART_MASTER_EVIDENCE_TRANSPORT
+  - XML_CII_REGEX_PREFLIGHT_CACHE_CUSTODY
+  - XML_CII_REGEX_RESULT_SEMANTIC_STATUS
+protected_paths:
+  - tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js
+  - tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-evidence.js
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-09-29

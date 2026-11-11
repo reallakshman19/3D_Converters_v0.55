@@ -1,0 +1,38 @@
+work_id: PR664
+pull_request: 664
+branch: agent/vibration-assessment-evidence-20260819
+base_branch: main
+base_sha: 12f9601b7fe9441f7cf7750da5892c09e5ebab7a
+engineering_basis_head: e659bfd35ead074ce5319ded0dca6251806e521c
+last_full_pr_state_observed_head: bd214492dbcd683617970eb94084f4c325f4bf47
+agent_state: HANDOVER_READY
+current_stage: OWNER_GATE
+execution_mode: MANUAL
+criticality: ENGINEERING_CRITICAL
+mutation_authority: HANDOVER_ONLY
+merge_authority: OWNER_ONLY_NOT_GRANTED
+coordination_state: SAFE
+validation:
+  focused_assessment_evidence: PASS_14_OF_14_LOCAL_EXACT_BYTES_CONTROLLED_RECONSTRUCTION
+  exact_product_test_blob_identity: PASS
+  source_syntax: PASS
+  source_size_policy: PASS
+  mechanism_item_schema_compatibility: PASS_SOURCE_INSPECTION
+  changed_file_reconciliation: PASS_10_INTENDED_0_UNEXPLAINED_AT_OBSERVED_HEAD
+  mergeable: PASS_TRUE_AT_OBSERVED_HEAD
+  reviews: ZERO_AT_OBSERVED_HEAD
+  review_threads: ZERO_AT_OBSERVED_HEAD
+  commit_statuses: NOT_RUN_ZERO_RETURNED
+  pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_acceptance: NOT_APPLICABLE_NO_UI
+protected_authority:
+  receipt_authority: ASSESSMENT_RESULT_EVIDENCE_ONLY
+  creates_current_engineering_result: false
+  currentness_authority: ASSESSMENT_EVIDENCE_FRESHNESS_ONLY
+  screening_authority: NOT_AUTHORIZED_BY_THIS_PR
+  design_authority: false
+  root_cause_authority: false
+  code_compliance: false
+  project_schema_v2_declared: false
+exact_next_action: STOP_OWNER_GATE_DO_NOT_MERGE; on explicit owner progression re-ground and run repository-native focused tests before merge decision

@@ -1,0 +1,26 @@
+schema: AgentClaims.v1
+pr: 690
+scope: HP_PIPING_CLASS_INTAKE_PACKAGE_ROUNDTRIP
+claims:
+  - id: PR690-C01
+    claim: The current direct-input v1-representable HP class can be exported to the same hp-piping-class-intake-package/v1 format with a mandatory canonical re-import check before success.
+    status: IMPLEMENTED_NOT_NATIVE_EXECUTED
+  - id: PR690-C02
+    claim: Editable export fails closed for governed basis products, nonempty external KD calculation-basis custody, empty KD shells, unsupported package-owned fields, and stale external KD state-pair binding.
+    status: IMPLEMENTED_NOT_NATIVE_EXECUTED
+  - id: PR690-C03
+    claim: Replacement preview surfaces identity, structure, method, stress, damage, fatigue and custody changes including B31.3/VIII-3 editions and KD state-pair custody.
+    status: IMPLEMENTED_NOT_NATIVE_EXECUTED
+  - id: PR690-C04
+    claim: Apply requires the exact package to have been validated against the unchanged current workspace signature.
+    status: IMPLEMENTED_NOT_NATIVE_EXECUTED
+  - id: PR690-C05
+    claim: The native PR Node/workbench suite has passed.
+    status: NOT_RUN
+  - id: PR690-C06
+    claim: Native CORE KD320 is qualified or PR690 establishes Code/design authority.
+    status: FALSE
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false

@@ -1,0 +1,48 @@
+schema: AgentStatus.v1
+pr_or_wip: PR688
+pull_request: 688
+branch: agent/vib-matrix-run-currentness-20260821
+base: main
+base_sha_at_start: 1d0e9245f9a6333ce43fb8085602ec112241a411
+pr_base_at_allocation: 1d0e9245f9a6333ce43fb8085602ec112241a411
+pr_head_at_allocation: c066bf318c3e828534516271c8d870934dee1c86
+hosted_reconciliation_head: 00cd5f16a3752c6b3c0325b071523bceba044ef6
+predecessor_pr: 686
+predecessor_state: MERGED
+state: DRAFT_READY_FOR_REVIEW
+criticality: ENGINEERING_CRITICAL_PRESENTATION_CURRENTNESS
+authority:
+  engineering_authority: NONE
+  screening_authority: NOT_AUTHORIZED
+  design_authority: false
+  numerical_authority: NONE
+  aggregation_authority: NONE
+  persistence_authority: NONE
+  determines_applicability: false
+  determines_completeness: false
+  determines_governing_result: false
+  blocks_execution: false
+  blocks_navigation: false
+  blocks_calculation: false
+  blocks_persistence: false
+validation:
+  current_main_grounding: PASS_MAIN_1D0E9245
+  exact_changed_paths: PASS_10_INTENDED
+  branch_relation: PASS_AHEAD_24_BEHIND_0_AT_HOSTED_RECONCILIATION
+  exact_git_blob_backups: PASS_CONNECTOR_TREE_BLOB
+  diff_normalization: PASS_SOURCE_INSPECTION
+  physical_line_policy: PASS
+  open_pr_coordination: PASS_NO_EXACT_CURRENT_PRODUCTION_OVERLAP
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_numerical: NOT_APPLICABLE
+hosted_reconciliation:
+  mergeable: true
+  changed_files: 10
+  commit_status_checks: 0
+  pr_workflow_runs: 0
+  reviews: 0
+  review_threads: 0
+  comments: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: NATIVE_FOCUSED_AND_BROWSER_WHEN_AVAILABLE_THEN_OWNER_MERGE_DECISION

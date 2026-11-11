@@ -1,0 +1,37 @@
+schema: AgentStatus.v1
+pr_or_wip: PR687
+pull_request: 687
+branch: agent/hp-transient-bulk-intake
+base: main
+base_sha_at_start: cd02030d7d28438ddda8e11ac92acb319cd06cd9
+predecessor_pr: 685
+predecessor_merge: cd02030d7d28438ddda8e11ac92acb319cd06cd9
+state: DRAFT_READY_FOR_NATIVE_BROWSER_QUALIFICATION
+criticality: HP_PRODUCTION_PRODUCTIVITY
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+validation:
+  main_grounding: PASS
+  hosted_reconciliation_pre_record_head: e56b4ce88e227ecd7c016559627474366c7d5fcb
+  branch_ancestry: PASS_AHEAD_15_BEHIND_0
+  changed_paths: PASS_7_IMPLEMENTATION_TEST_PLUS_3_RECOVERY
+  helper_syntax: PASS
+  enhancer_syntax: PASS
+  route_syntax: PASS
+  exact_blob_focused_suite: PASS_22_OF_22
+  canonical_transient_integration: PASS_2_OF_2
+  state_value_drift_falsifier: PASS_STATE_VALUE_CHANGED
+  mergeable: true
+  draft: true
+  hosted_status_checks: NOT_RUN_ZERO_RETURNED
+  hosted_pr_workflows: NOT_RUN_ZERO_RETURNED
+  reviews: 0
+  review_threads: 0
+  transient_full_app_browser: NOT_RUN
+  combined_hp_browser_command: NOT_RUN
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED_FOR_PR687
+next_action: KEEP_DRAFT_OR_RUN_NATIVE_FULL_APP_BEFORE_OWNER_MERGE_DECISION

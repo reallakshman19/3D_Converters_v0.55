@@ -1,0 +1,91 @@
+contract	Run focused contracts	﻿2026-10-01T15:51:53.0896771Z ##[group]Run set +e
+contract	Run focused contracts	2026-10-01T15:51:53.0896999Z ^[[36;1mset +e^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0897258Z ^[[36;1mnode tests/stagedjson-to-xml-envelope-contract.test.mjs > stagedjson-contract.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0897524Z ^[[36;1mstaged_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0897782Z ^[[36;1mnode tests/inputxml-pages-runtime-publication.test.mjs > pages-runtime-contract.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0898071Z ^[[36;1mpages_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0898327Z ^[[36;1mnode tests/inputxml-runtime-transient-recovery.test.mjs > inputxml-runtime-recovery.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0898597Z ^[[36;1mrecovery_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0898813Z ^[[36;1mnode tests/inputxml-runtime-cache.test.mjs > inputxml-runtime-cache.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0899045Z ^[[36;1mcache_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0899295Z ^[[36;1mnode tests/inputxml-blocked-diagnostics-ui.test.mjs > inputxml-blocked-diagnostics-ui.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0899574Z ^[[36;1mdiagnostics_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0899875Z ^[[36;1mnode --check tests/inputxml-pages-live-release.test.mjs > inputxml-pages-live-release-syntax.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0900160Z ^[[36;1mlive_syntax_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0900404Z ^[[36;1mnode tests/inputxml-live-release-static.test.mjs > inputxml-live-release-static.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0900811Z ^[[36;1mlive_static_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0901065Z ^[[36;1mnode tests/inputxml-browser-offline-smoke.test.mjs > inputxml-browser-offline-smoke.log 2>&1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0901333Z ^[[36;1msmoke_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0901461Z ^[[36;1mtest -f .nojekyll^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0901592Z ^[[36;1mnojekyll_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0901750Z ^[[36;1mtest -f scripts/inputxml_compiler/__init__.py^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902047Z ^[[36;1minitializer_status=$?^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902191Z ^[[36;1mcat stagedjson-contract.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902349Z ^[[36;1mcat pages-runtime-contract.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902512Z ^[[36;1mcat inputxml-runtime-recovery.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902684Z ^[[36;1mcat inputxml-runtime-cache.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0902853Z ^[[36;1mcat inputxml-blocked-diagnostics-ui.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0903050Z ^[[36;1mcat inputxml-pages-live-release-syntax.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0903237Z ^[[36;1mcat inputxml-live-release-static.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0903421Z ^[[36;1mcat inputxml-browser-offline-smoke.log^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0903850Z ^[[36;1mif (( staged_status || pages_status || recovery_status || cache_status || diagnostics_status || live_syntax_status || live_static_status || smoke_status || nojekyll_status || initializer_status )); then^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0904252Z ^[[36;1m  exit 1^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.0904361Z ^[[36;1mfi^[[0m
+contract	Run focused contracts	2026-10-01T15:51:53.1579527Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+contract	Run focused contracts	2026-10-01T15:51:53.1579733Z ##[endgroup]
+contract	Run focused contracts	2026-10-01T15:51:54.8752547Z stagedjson-to-xml envelope contract passed
+contract	Run focused contracts	2026-10-01T15:51:54.8753802Z (node:2009) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/converters/stagedjson-to-xml.js is not specified and it doesn't parse as CommonJS.
+contract	Run focused contracts	2026-10-01T15:51:54.8754803Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	Run focused contracts	2026-10-01T15:51:54.8755456Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	Run focused contracts	2026-10-01T15:51:54.8755837Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	Run focused contracts	2026-10-01T15:51:54.8764237Z InputXML Pages runtime publication contract passed
+contract	Run focused contracts	2026-10-01T15:51:54.8772350Z inputxml runtime transient recovery passed
+contract	Run focused contracts	2026-10-01T15:51:54.8773224Z (node:2027) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js is not specified and it doesn't parse as CommonJS.
+contract	Run focused contracts	2026-10-01T15:51:54.8775544Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	Run focused contracts	2026-10-01T15:51:54.8776688Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	Run focused contracts	2026-10-01T15:51:54.8777541Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	Run focused contracts	2026-10-01T15:51:54.8781459Z InputXML retryable runtime cache contract passed.
+contract	Run focused contracts	2026-10-01T15:51:54.8782644Z (node:2035) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-runtime-cache.js is not specified and it doesn't parse as CommonJS.
+contract	Run focused contracts	2026-10-01T15:51:54.8783542Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	Run focused contracts	2026-10-01T15:51:54.8784349Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	Run focused contracts	2026-10-01T15:51:54.8786316Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	Run focused contracts	2026-10-01T15:51:54.8792635Z InputXML blocked diagnostics UI contract passed.
+contract	Run focused contracts	2026-10-01T15:51:54.8793522Z (node:2042) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/tabs/model-converters/converters/inputxml-blocked-diagnostics.js is not specified and it doesn't parse as CommonJS.
+contract	Run focused contracts	2026-10-01T15:51:54.8795904Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	Run focused contracts	2026-10-01T15:51:54.8796896Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	Run focused contracts	2026-10-01T15:51:54.8797671Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	Run focused contracts	2026-10-01T15:51:54.8809509Z node:internal/modules/run_main:123
+contract	Run focused contracts	2026-10-01T15:51:54.8809918Z     triggerUncaughtException(
+contract	Run focused contracts	2026-10-01T15:51:54.8811665Z     ^
+contract	Run focused contracts	2026-10-01T15:51:54.8812060Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8812693Z AssertionError [ERR_ASSERTION]: app runtime shell must bind model-converters-tab.js?v=20260928-rvm-full-scope-core-1
+contract	Run focused contracts	2026-10-01T15:51:54.8813206Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8813431Z false !== true
+contract	Run focused contracts	2026-10-01T15:51:54.8813691Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8814337Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-live-release-static.test.mjs:36:11 {
+contract	Run focused contracts	2026-10-01T15:51:54.8814919Z   generatedMessage: false,
+contract	Run focused contracts	2026-10-01T15:51:54.8815266Z   code: 'ERR_ASSERTION',
+contract	Run focused contracts	2026-10-01T15:51:54.8815601Z   actual: false,
+contract	Run focused contracts	2026-10-01T15:51:54.8815921Z   expected: true,
+contract	Run focused contracts	2026-10-01T15:51:54.8816240Z   operator: 'strictEqual',
+contract	Run focused contracts	2026-10-01T15:51:54.8816571Z   diff: 'simple'
+contract	Run focused contracts	2026-10-01T15:51:54.8816880Z }
+contract	Run focused contracts	2026-10-01T15:51:54.8817114Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8817325Z Node.js v22.23.3
+contract	Run focused contracts	2026-10-01T15:51:54.8818694Z (node:2067) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js is not specified and it doesn't parse as CommonJS.
+contract	Run focused contracts	2026-10-01T15:51:54.8819461Z Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+contract	Run focused contracts	2026-10-01T15:51:54.8819850Z To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+contract	Run focused contracts	2026-10-01T15:51:54.8820189Z (Use `node --trace-warnings ...` to show where the warning was created)
+contract	Run focused contracts	2026-10-01T15:51:54.8820546Z file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:162
+contract	Run focused contracts	2026-10-01T15:51:54.8820888Z     throw new Error(`InputXML runtime asset verification failed for ${asset.url}.`);
+contract	Run focused contracts	2026-10-01T15:51:54.8821094Z           ^
+contract	Run focused contracts	2026-10-01T15:51:54.8821157Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8821355Z Error: InputXML runtime asset verification failed for ../converters/scripts/cii_syntax_check_2019.py.
+contract	Run focused contracts	2026-10-01T15:51:54.8821778Z     at verifiedAssetBytes (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:162:11)
+contract	Run focused contracts	2026-10-01T15:51:54.8822650Z     at async loadAsset (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:169:18)
+contract	Run focused contracts	2026-10-01T15:51:54.8823517Z     at async loadVerifiedInputXmlRuntime (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:196:52)
+contract	Run focused contracts	2026-10-01T15:51:54.8824497Z     at async runSmoke (file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:82:21)
+contract	Run focused contracts	2026-10-01T15:51:54.8825139Z     at async file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:119:1
+contract	Run focused contracts	2026-10-01T15:51:54.8825358Z 
+contract	Run focused contracts	2026-10-01T15:51:54.8825408Z Node.js v22.23.3
+contract	Run focused contracts	2026-10-01T15:51:54.8839067Z ##[error]Process completed with exit code 1.

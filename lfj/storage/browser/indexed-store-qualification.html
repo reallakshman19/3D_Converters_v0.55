@@ -1,0 +1,99 @@
+<!doctype html><meta charset="utf-8"><title>STORE-GATE real IndexedDB source/selection acceptance</title>
+<script type="module">
+import {openIndexedRecordStore} from './indexed-record-store.mjs';
+const sourceBasis={sourceRefId:'SRC1',sourceSha256:'a'.repeat(64),sourceRevision:'r1:sha256:'+'a'.repeat(64)};
+const failCode=async(fn,code)=>{try{await fn();throw Error('EXPECTED_'+code);}catch(e){if(e.code!==code)throw e;}};
+window.runRealIndexedDBTests=async()=>{
+ const dbName='lfj-v41-store-'+crypto.randomUUID();
+ const sourceNs='source:'+sourceBasis.sourceRefId;
+ const result={};
+ try{
+  const originalRows=Array.from({length:22},(_,i)=>({schema:'LFJ.JSON.OccurrenceEvent.v1',kind:i%2===0?'OPEN':'SEAL',ordinal:Math.floor(i/2),sourceRefId:sourceBasis.sourceRefId,sourceSha256:sourceBasis.sourceSha256,sourceRevision:sourceBasis.sourceRevision,occurrenceId:'o'+i}));
+  let store=await openIndexedRecordStore({databaseName:dbName,namespace:sourceNs,generation:'JOB-1',basis:sourceBasis,kind:'source'});
+  await store.stagePage(originalRows.slice(0,10));
+  await store.stagePage(originalRows.slice(10));
+  await failCode(async()=>{for await(const r of store.readOrdered())void r;},'STORE_NOT_COMMITTED');
+  const manifest={schema:'LFJ.JSON.OccurrenceIndexSummary.v1',...sourceBasis,complete:true,occurrenceCount:11,eventCount:22,rightsBasis:'SOURCE_FACTS_ONLY',engineeringReady:false};
+  // The IDB commit is genuinely async; R07 must not mistake its return for a sync publish.
+  const completion=store.commit(manifest);
+  if(!(completion instanceof Promise))throw Error('IDB_COMMIT_NOT_ASYNC');
+  await completion;
+  const opens=[];for await(const e of store.readOrdered())opens.push(e);
+  if(opens.length!==11||opens.some(e=>e.kind!=='OPEN'))throw Error('SOURCE_COUNT_INVALID');
+  store.close();
+  store=await openIndexedRecordStore({databaseName:dbName,namespace:sourceNs,generation:'JOB-1',basis:sourceBasis,kind:'source'});
+  const restart=[];for await(const e of store.readOrdered())restart.push(e);
+  if(restart.length!==11)throw Error('RESTART_MISSING_ROWS');
+  result.sourceCount=restart.length;
+  store.close();
+  // A newer provisional generation may not borrow the old published head.
+  const provisional=await openIndexedRecordStore({databaseName:dbName,namespace:sourceNs,generation:'JOB-2',basis:sourceBasis,kind:'source'});
+  await provisional.stagePage(originalRows.slice(0,1));
+  await failCode(async()=>{for await(const e of provisional.readOrdered())void e;},'STORE_NOT_COMMITTED');
+  await provisional.abort();
+  await failCode(async()=>{for await(const e of provisional.readOrdered())void e;},'STORE_ABORTED');
+  provisional.close();
+  const old=await openIndexedRecordStore({databaseName:dbName,namespace:sourceNs,generation:'JOB-1',basis:sourceBasis,kind:'source'});
+  const remain=[];for await(const e of old.readOrdered())remain.push(e);
+  if(remain.length!==11)throw Error('PREVIOUS_COMMIT_CLOBBERED');
+  old.close();
+  result.abortPreservedPrevious=true;
+  const selected=await openIndexedRecordStore({databaseName:dbName,namespace:'selected:SRC1',generation:'SELECT-1',basis:sourceBasis,kind:'selection',selectionDigest:'SITE-A',jobEpoch:'SELECT-1'});
+  const rows=Array.from({length:137},(_,i)=>({kind:'OPEN',ordinal:i,sourceRefId:sourceBasis.sourceRefId,sourceSha256:sourceBasis.sourceSha256,sourceRevision:sourceBasis.sourceRevision,occurrenceId:'id-'+i,payload:'x'.repeat(24)}));
+  for(let start=0;start<rows.length;start+=11)await selected.stagePage(rows.slice(start,start+11));
+  const scopedManifest={schema:'LFJ.CommittedSelectionPageManifest.v1',...sourceBasis,complete:true,selectedCount:rows.length,selectionDigest:'SITE-A',jobEpoch:'SELECT-1',rightsBasis:'SOURCE_FACTS_ONLY',engineeringReady:false};
+  await failCode(()=>selected.commit({...scopedManifest,selectionDigest:'FORGED-SITE'}),'STORE_MANIFEST_MISMATCH');
+  await selected.commit(scopedManifest);
+  const page=await selected.readRange(90,7,65536);
+  if(page.length!==7||page[0].ordinal!==90||page[6].ordinal!==96)throw Error('NOT_INDEXED_RANGE');
+  result.pageOrdinals=page.map(x=>x.ordinal);
+  selected.close();
+  const recover=await openIndexedRecordStore({databaseName:dbName,namespace:'selected:SRC1',generation:'SELECT-1',basis:sourceBasis,kind:'selection',selectionDigest:'SITE-A',jobEpoch:'SELECT-1'});
+  const recovered=await recover.readRange(136,7,65536);
+  if(recovered.length!==1||recovered[0].ordinal!==136)throw Error('INDEXED_RESTART_FAILED');
+  recover.close();
+  result.recoveredPage=true;
+  // Two overlapping page writes must NEVER reserve the same ordinal range.
+  const concurrent=await openIndexedRecordStore({databaseName:dbName,
+    namespace:'source:CONCURRENT',generation:'CONCURRENT-1',basis:sourceBasis,kind:'source'});
+  const writes=await Promise.allSettled([
+    concurrent.stagePage(originalRows.slice(0,2)),
+    concurrent.stagePage(originalRows.slice(2,4))
+  ]);
+  if(writes.filter(x=>x.status==='fulfilled').length!==1||
+     writes.filter(x=>x.status==='rejected'&&x.reason?.code==='STORE_STAGE_BUSY').length!==1)
+    throw Error('STORE_CONCURRENT_STAGE_NOT_FENCED');
+  await concurrent.abort();
+  concurrent.close();
+  result.concurrentStagesSerialized=true;
+  const crashing=await openIndexedRecordStore({databaseName:dbName,namespace:'source:CRASH',generation:'CRASH-1',basis:sourceBasis,kind:'source',beforeHeadCommit:tx=>tx.abort()});
+  await crashing.stagePage(originalRows.slice(0,4));
+  await failCode(()=>crashing.commit({...manifest,eventCount:4,occurrenceCount:2}),'STORE_COMMIT_ABORTED');
+  await failCode(async()=>{for await(const e of crashing.readOrdered())void e;},'STORE_ABORTED');
+  crashing.close();
+  const afterCrash=await openIndexedRecordStore({databaseName:dbName,
+    namespace:'source:CRASH',generation:'CRASH-1',basis:sourceBasis,kind:'source'});
+  await failCode(async()=>{for await(const e of afterCrash.readOrdered())void e;},'STORE_NOT_COMMITTED');
+  afterCrash.close();
+  result.abortBeforeCompleteInvisible=true;
+  // Cancellation from inside the commit admission point must abort the SAME
+  // IndexedDB transaction before any head becomes observable.
+  let raceAbort, race;
+  race=await openIndexedRecordStore({databaseName:dbName,namespace:'source:CANCEL',
+    generation:'CANCEL-1',basis:sourceBasis,kind:'source',
+    beforeHeadCommit:()=>{raceAbort=race.abort();}});
+  await race.stagePage(originalRows.slice(0,4));
+  await failCode(()=>race.commit({...manifest,eventCount:4,occurrenceCount:2}),'STORE_COMMIT_ABORTED');
+  await raceAbort;
+  race.close();
+  const reopened=await openIndexedRecordStore({databaseName:dbName,namespace:'source:CANCEL',
+    generation:'CANCEL-1',basis:sourceBasis,kind:'source'});
+  await failCode(async()=>{for await(const e of reopened.readOrdered())void e;},'STORE_NOT_COMMITTED');
+  reopened.close();
+  result.cancelDuringCommitInvisible=true;
+  await failCode(()=>openIndexedRecordStore({databaseName:dbName,namespace:'NO-PORT',generation:'X',basis:sourceBasis,kind:'source',indexedDB:null}),'STORE_UNAVAILABLE');
+  result.noStorageExplicit=true;
+  return result;
+ }finally{indexedDB.deleteDatabase(dbName);}
+};
+</script>

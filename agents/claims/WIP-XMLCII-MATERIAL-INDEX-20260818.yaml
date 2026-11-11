@@ -1,0 +1,19 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-MATERIAL-INDEX-20260818
+claim_state: RELEASED
+branch: agent/xml-cii-material-authority-index-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+superseded_by: PR632
+release_reason: PR_NUMBERED_CUSTODY_ACTIVE
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-material-authority.js
+    - tests/xml-cii-preview-material-authority-index.test.mjs
+  prefixes: []
+authority_domains:
+  - XML_CII_PREVIEW_MATERIAL_LOOKUP_PREPARATION
+coordination_state: RELEASED_TO_PR632
+last_verified_main: e3fa32bf3e6d919d9ed3e3e17aa32fae2beea14e
+last_updated: 2026-08-18T19:38:00+04:00

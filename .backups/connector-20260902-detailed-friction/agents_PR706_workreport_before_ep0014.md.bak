@@ -1,0 +1,47 @@
+# PR706 Work Report
+
+CHAIN_ID: ENGCALC-BOLTED-JOINTS
+LEG_ID: LEG-01
+PR: 706
+BRANCH: agent/engcalc-bolted-joints-phase1-20260902
+BASE_MAIN: bff53e336bdbddbe0fb829b7991ca5ed27fc836a
+LATEST_MATERIAL_HEAD: c6f5b2117bf4b98428227105227119117362f77d
+LATEST_ENDPOINT: EP-0013
+STATE: ACTIVE_AUTO
+EXECUTION_MODE: AUTO
+AUTO_STATE: DETAILED_FRICTION_REFERENCE_COMPLETE
+SCOPE_AUTHORITY: LOCKED_TO_APPROVED_MISSION
+MERGE_AUTHORITY: OWNER_ONLY_NOT_GRANTED
+
+## Mission
+
+Implement the approved `Engineering Calculations -> Flanges & Joints / Bolts` critical path with source-traceable numerical kernels, explicit 3D/load mechanics, non-authorizing master-data custody, independent analytical fixtures, and fail-closed authority semantics.
+
+## Delivered capability
+
+### Flange
+
+- pure SI `FLANGE.RATED_LOAD.UG44B` benchmark kernel;
+- flange-face moment transport and opening-load resolution;
+- BENCHMARK_ONLY central Engineering Calculations adapter/registration;
+- source register and synthetic exact-match flange master custody.
+
+### Bolts
+
+- explicit preload foundation `F = A_s * S_ref * alpha`;
+- short-form `T = K F d` with explicit K range and no hidden preload/K defaults;
+- synthetic exact-match bolt thread/material/friction master custody;
+- linear rigid-plate/equal-stiffness bolt-group reference distribution with force/moment equilibrium residuals;
+- detailed thread/bearing-friction reference model with exact NASA-based relation, explicit friction/radius, legacy linearized comparator, CLI and analytical fixtures.
+
+## Validation truth
+
+Detailed-friction source-reconstructed: PASS 8/8. Exact native full-repository validation: NOT_RUN / ENVIRONMENT_BLOCKED.
+
+## EXACT_NEXT_ACTION
+
+Implement installation torsional stress and combined axial/torsional von-Mises utilization using thread torque only and explicit stress-section diameter.
+
+## Durable relay
+
+Latest endpoint: `agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0013.md`.

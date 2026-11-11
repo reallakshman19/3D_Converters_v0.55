@@ -1,0 +1,35 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-BA-20260818
+branch: agent/xml-cii-batch-a-replay-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_BATCH_A_ONLY
+qualification: APPENDIX_A_96_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-events.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-runtime.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf.js
+  - tests/xml-cii-standalone-master-perf.test.mjs
+  - tests/xml-cii-standalone-config-cache-custody.test.mjs
+  - tests/xml-cii-standalone-support-gap-equivalence.test.mjs
+  - agents/WIP-XMLCII-BA-20260818_workreport.md
+  - agents/status/WIP-XMLCII-BA-20260818.yaml
+  - agents/claims/WIP-XMLCII-BA-20260818.yaml
+exclusions:
+  - .github/workflows/**
+  - converters/scripts/inputxml_to_cii2019.py
+  - support/GAP resolver semantic changes
+  - CII writer/runtime ownership changes
+  - workers
+  - derived indexes
+  - preview virtualization
+  - source DOM parse caching
+coordination:
+  PR595: PREDECESSOR_SALVAGE_TO_SUPERSEDE
+  PR589: COORDINATION_REQUIRED_SEMANTIC_EQUIVALENCE_ONLY
+  PR597: SAFE_EXACT_FILE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T05:56:00+04:00

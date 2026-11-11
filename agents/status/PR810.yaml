@@ -1,0 +1,30 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR810
+mission: Repair Issue 781 live Regex, B31.3 Preview, and Weight Match screenshot acceptance failures.
+workstream: XML_CII_ISSUE_781_LIVE_ACCEPTANCE
+branch: agent/issue-781-live-acceptance-20260930
+criticality: ENGINEERING_CRITICAL
+agent_state: MERGED
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR810_workreport.md
+current_stage: OWNER_MERGED_20260930
+blocker: Inherited CAESAR dropdown and FBX cache-chain static key assertions fail on merged #809/current main too; separate test-only correction needed if green checks are required.
+main_head_last_checked: d81ed7a84a6c8bfbbf5530dd662671eef69b27ec
+validation:
+  user_screenshots_baseline: FAIL
+  regex_41_branch_clicks: PASS_BROWSER
+  b313_41_branch_build: PASS_BROWSER_WITH_T1_GUARD_AND_CONTROLLED_T1_FALLBACK
+  weight_41_branch_weight_master: PASS_BROWSER_17MS_MAX_FRAME_GAP
+  combined_mode_a_master_path: PASS_BROWSER_WEIGHT_BUILD_17MS_MAX_FRAME_GAP_AFTER_PREVIEW_FIX
+  combined_mode_a_weight_entry: PASS_BROWSER_100MS_MAX_FRAME_GAP_WITH_BRANCH_OCCURRENCE_CACHE
+  combined_mode_a_weight_build: PASS_BROWSER_100MS_MAX_FRAME_GAP_WITH_ALL_APPLIED_MASTERS
+  full_docs_b313_valid_t1_controls: PASS_BROWSER
+  active_branch_scope_request_urls: PASS_BROWSER_NEW_KEY_ONLY
+  manual_match1_two_accept_custody: PASS_BROWSER
+  release_cache_parity: PASS_STATIC
+  ci_initial_head_988cdf3b: TWO_INHERITED_FAIL_CAESAR_AND_FBX
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: No remaining PR810 action; Weight Rating owner follow-up tracked in WIP-781-WEIGHT-RATING-20261001.
+last_updated: 2026-10-01

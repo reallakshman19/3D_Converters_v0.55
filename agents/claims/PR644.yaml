@@ -1,0 +1,27 @@
+pr: 644
+claim_state: RELEASED
+branch: agent/vibration-aiv-canvas-evidence-hardening-20260818
+scope: AIV canvas evidence/export/currency hardening stacked on PR643
+released_by: OWNER_AUTHORIZED_MERGE
+released_to: main@79546f988b18686459a68103b4675bbba9bcf434
+exact_files:
+  - tabs/vibration-aiv-screening-package-state.js
+  - tabs/vibration-aiv-canvas-projection-coverage.js
+  - tabs/vibration-aiv-canvas-evidence-view.js
+  - tabs/vibration-aiv-execution.js
+  - tabs/vibration-aiv-canvas-export-controller.js
+  - tabs/vibration-aiv-unified-canvas-projection.js
+  - tabs/vibration-aiv-unified-canvas-inspector.js
+  - tabs/vibration-aiv-unified-canvas-view.js
+  - tests/vibration-aiv-canvas-export.test.mjs
+  - tests/vibration-aiv-canvas-evidence-hardening.test.mjs
+  - agents/PR644_workreport.md
+  - agents/status/PR644.yaml
+  - agents/claims/PR644.yaml
+exclusions:
+  - AIV numerical equations/constants
+  - Stage-9 reduction rule
+  - line/case authority promotion
+  - generic EI main-line governing aggregation
+  - workflow files
+merge_authority: OWNER_GRANTED_AND_EXECUTED

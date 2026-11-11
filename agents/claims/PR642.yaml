@@ -1,0 +1,22 @@
+pr: 642
+claim_state: RELEASED
+branch: agent/vibration-aiv-canvas-hardening-20260818
+scope: AIV flare branch lifecycle and disconnected readiness
+released_by: OWNER_AUTHORIZED_MERGE
+released_to: main@79546f988b18686459a68103b4675bbba9bcf434
+exact_files:
+  - converters/vibration/aiv/aiv-flare-network-table-generator.js
+  - tabs/vibration-aiv-unified-canvas-workflow.js
+  - tabs/vibration-aiv-unified-canvas-author.js
+  - tests/vibration-aiv-unified-canvas-branch-lifecycle.test.mjs
+  - agents/PR642_workreport.md
+  - agents/status/PR642.yaml
+  - agents/claims/PR642.yaml
+exclusions:
+  - AIV numerical equations/constants
+  - Stage-9 reduction rule
+  - line/case authority promotion
+  - generic EI main-line governing aggregation
+  - design authority
+  - workflow files
+merge_authority: OWNER_GRANTED_AND_EXECUTED

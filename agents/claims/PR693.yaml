@@ -1,0 +1,29 @@
+schema: AgentClaim.v1
+pr_or_wip: PR693
+pull_request: 693
+claim_state: ACTIVE
+branch: agent/vib-m13-action-completion-custody-20260821
+authority_domains:
+  - VIBRATION_ACTION_COMPLETION_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/action-completion.js
+    - converters/vibration/facility/action-completion-ledger.js
+    - converters/vibration/facility/action-lifecycle.js
+    - tabs/vibration-integrity-run-evidence.js
+    - tests/vibration-facility-action-completion.test.mjs
+exclusions:
+  - mechanism equations and coefficients
+  - source/master qualification
+  - applicability and AssessmentCompleteness authority
+  - EI main-line aggregation authority
+  - design authority
+  - bare UI checkbox completion
+  - operator identity invention
+  - cross-run completion carry-forward
+coordination:
+  PR691: MERGED_M13_ACTION_FOUNDATION
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

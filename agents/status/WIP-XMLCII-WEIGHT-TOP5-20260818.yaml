@@ -1,0 +1,25 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-WEIGHT-TOP5-20260818
+mission: Replace full per-issue Weight candidate sort/allocation with stable bounded top-five selection.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-weight-match-top5-20260818
+criticality: ENGINEERING_CRITICAL
+agent_state: TERMINAL_SUPERSEDED
+pr_recovery_state: SUPERSEDED_BY_PR633
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-WEIGHT-TOP5-20260818_workreport.md
+current_stage: SUPERSEDED_BY_PR633
+blocker: NONE
+superseded_by: PR633
+validation:
+  source_trace: PASS
+  mandatory_backup: PASS_EXACT_BLOB_PRE_EDIT
+  syntax: PASS
+  focused_legacy_equivalence: PASS_LOCAL_IMPLEMENTATION_COUPLED
+  scale_sort_bound: PASS_MAX_SORTED_ROWS_5_AT_100_X_10000
+  exact_byte_custody: PASS
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR633
+exact_next_action: Continue from agents/PR633_workreport.md and agents/status/PR633.yaml.
+last_updated: 2026-08-18T20:00:00+04:00

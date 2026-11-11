@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-XML229-BORE-6ae1bed6
+claim_state: ACTIVE
+claim_modes: [COORDINATED]
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/integration/xml229-preview-engineering-fact-producer.mjs
+    - converters/scripts/xml_to_cii2019.py
+  prefixes:
+    - converters/scripts/xml_cii_connected_port
+authority_domains: [physical component bore fact, OLET takeoff edge diameter]
+protected: [source dimensions, geometry, Final masses, release gates, workflows]
+last_verified_head: 9ad61417dbd3c473b4e6c0f6fa1aa8eb6005221b

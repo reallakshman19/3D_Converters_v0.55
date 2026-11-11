@@ -1,0 +1,52 @@
+(node:6352) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\CodeA\3DC_live_acceptance\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "status": "PASS",
+  "fixture": "41 branches / 1654 nodes",
+  "rows": 180,
+  "editedPrefix": [
+    "3",
+    "600"
+  ],
+  "manual": [
+    "900",
+    "450"
+  ],
+  "classFill": {
+    "pipingClass": "31441C4",
+    "rating": "300",
+    "rows": 178
+  },
+  "match1BecameStale": true,
+  "repeatBuild": true,
+  "reopen": true,
+  "timings": [
+    {
+      "label": "prefix build without Preview",
+      "maxFrameGapMs": 83
+    },
+    {
+      "label": "manual Rating 900",
+      "maxFrameGapMs": 119
+    },
+    {
+      "label": "second manual Rating",
+      "maxFrameGapMs": 127
+    },
+    {
+      "label": "class fill Rating 300",
+      "maxFrameGapMs": 183
+    },
+    {
+      "label": "repeat Build after class fill",
+      "maxFrameGapMs": 100
+    },
+    {
+      "label": "reopen persisted Rating",
+      "maxFrameGapMs": 116
+    }
+  ],
+  "errors": []
+}

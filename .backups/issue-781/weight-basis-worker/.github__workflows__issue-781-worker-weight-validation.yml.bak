@@ -1,0 +1,108 @@
+name: Issue 781 Worker Weight API Validation
+# Final literal-head qualification for the worker-resident Weight API + applied Line List projection.
+
+on:
+  push:
+    branches:
+      - agent/issue-781-worker-weight-api-mapping-projection-20260930
+    paths:
+      - .github/workflows/issue-781-worker-weight-validation.yml
+      - converters/xml-cii2019-core/linelist-mapping.js
+      - converters/xml-cii2019-core/weight-match-ranking-service.js
+      - tabs/xml-cii-2019-standalone/workers/**
+      - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js
+      - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+      - tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js
+      - tests/xml-cii-issue-781-worker-weight-api.test.mjs
+      - tests/xml-cii-issue-781-weight-build-performance.test.mjs
+      - tests/browser/xml-cii-worker-weight-scale-e2e.html
+      - tests/browser/xml-cii-weight-basis-fastpath-e2e.html
+      - tests/browser/xml-cii-line-list-remap-preview-e2e.html
+      - scripts/run-xml-cii-worker-weight-scale-e2e.mjs
+      - scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs
+      - scripts/run-xml-cii-line-list-remap-preview-e2e.mjs
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout literal source head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check worker API runtime
+        run: |
+          node --check converters/xml-cii2019-core/linelist-mapping.js
+          node --check converters/xml-cii2019-core/weight-match-ranking-service.js
+          node --check tabs/xml-cii-2019-standalone/workers/master-dataset-protocol.js
+          node --check tabs/xml-cii-2019-standalone/workers/master-dataset-service.js
+          node --check tabs/xml-cii-2019-standalone/workers/master-dataset-client.js
+          node --check tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js
+          node --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js
+          node --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+          node --check tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js
+      - name: Run Issue 781 worker/projection regressions
+        run: |
+          node --test \
+            tests/xml-cii-issue-781-worker-weight-api.test.mjs \
+            tests/xml-cii-issue-781-weight-liveness.test.mjs \
+            tests/xml-cii-issue-781-weight-build-performance.test.mjs \
+            tests/xml-cii-master-worker-metadata-import.test.mjs \
+            tests/xml-cii-master-preview-worker-search.test.mjs
+      - name: Run Weight / Match-1 authority regressions
+        run: |
+          node --test \
+            tests/xml-cii-issue-776-weight-review-authority.test.mjs \
+            tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs \
+            tests/xml-cii-issue-776-weight-unit-custody.test.mjs \
+            tests/xml-cii-issue-776-match1-provenance.test.mjs \
+            tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs \
+            tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+
+  browser-worker-scale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout literal source head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.52.0
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/issue-781-worker-http.log 2>&1 &
+      - name: Requalify dataset worker 10k / 50k / 100k responsiveness
+        run: node scripts/run-xml-cii-master-dataset-scale-e2e.mjs
+      - name: Qualify six-issue Weight ranking at 10k / 50k / 100k
+        run: node scripts/run-xml-cii-worker-weight-scale-e2e.mjs
+      - name: Qualify Weight Build basis fast path in Chromium
+        run: node scripts/run-xml-cii-weight-basis-fastpath-e2e.mjs
+      - name: Prove APPLIED Key1/Key2 survives worker remap and Preview fetch
+        run: node scripts/run-xml-cii-line-list-remap-preview-e2e.mjs
+      - name: Upload worker-scale evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-781-worker-weight-scale
+          path: |
+            ValidationRecords/xml-cii-master-dataset-scale-e2e.json
+            ValidationRecords/xml-cii-issue-781-worker-weight-scale-e2e.json
+            ValidationRecords/xml-cii-issue-781-weight-basis-fastpath-e2e.json
+            ValidationRecords/xml-cii-issue-781-line-list-remap-preview-e2e.json
+            /tmp/issue-781-worker-http.log
+          if-no-files-found: warn

@@ -1,0 +1,47 @@
+schema: AgentClaim.v1
+pr_or_wip: PR661
+claim_state: ACTIVE
+branch: agent/vibration-verification-kernel-20260819
+files:
+  exact:
+    - converters/vibration/verification/contracts.js
+    - converters/vibration/verification/evaluate.js
+    - converters/vibration/project/verification.js
+    - tests/vibration-verification-fixtures.mjs
+    - tests/vibration-verification-contract.test.mjs
+    - tests/vibration-project-verification.test.mjs
+    - agents/PR661_workreport.md
+    - agents/status/PR661.yaml
+    - agents/claims/PR661.yaml
+    - agents/WIP-VIB-VERIFY-KERNEL-20260819_workreport.md
+    - agents/status/WIP-VIB-VERIFY-KERNEL-20260819.yaml
+    - agents/claims/WIP-VIB-VERIFY-KERNEL-20260819.yaml
+  prefixes: []
+authority_domains:
+  - VIBRATION_FIELD_MEASUREMENT_VERIFICATION_REQUIREMENTS
+  - VIBRATION_ENGINEER_MEASUREMENT_DISPOSITION
+  - VIBRATION_PROJECT_VERIFICATION_PROJECTION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - measurement acquisition or signal-processing math
+  - measurement evidence custody semantics
+  - visual inspection evidence
+  - automatic mechanism applicability
+  - AssessmentCompleteness.v1 semantics
+  - screening or candidate governing result calculation
+  - EI main-line aggregation
+  - automatic root-cause conclusions
+  - project persistence schema migration
+  - verification persistence or UI
+  - corrective-action or confirmation lifecycle
+  - design code safety or screening authority promotion
+  - runtime writer canvas or workflow files
+coordination:
+  PR615: MERGED_PREDECESSOR_MEASUREMENT_CUSTODY_REUSED
+  PR657: INDEPENDENT_T1_PRESENTATION
+  PR658: INDEPENDENT_LINE_CASE_STATUS_PRESENTATION
+  PR659: MERGED_HP_ONLY_MAIN_DRIFT_REPLAYED
+coordination_state: SAFE
+merge_authority: OWNER_ONLY_NOT_GRANTED

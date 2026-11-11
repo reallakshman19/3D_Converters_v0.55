@@ -1,0 +1,19 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR981
+branch: agent/issue-980-mode-b-node-custody-20261008
+criticality: ENGINEERING_CRITICAL
+current_stage: P0_CODE_AND_REPRO_AUTHORED_CI_QUEUED
+takeover_authority: READ_ONLY_UNTIL_EXACT_HEAD_REVALIDATION
+owner_priority: "#980 Mode B before #925 J04"
+parent: "#921"
+base: main
+merge_authority: OWNER_ONLY_NOT_GRANTED
+code_checkpoint: 2338c2e32385cdd9a134b6667cc5d9d059f86683
+validation: NOT_RUN_HOSTED_EXACT_HEAD_QUEUED
+end_to_end_original_combined: NOT_RUN
+source_docs_mirror: VERIFIED_BEFORE_METADATA
+overlap: "#978 standalone-run-parity source and docs; serialized for P0"
+report_path: agents/PR981_workreport.md
+handover_readiness: READY_WITH_UNVERIFIED_TESTS
+exact_next_action: Consume current head #980 + #781/#776 CI; validate 3-source duplicate branch and missing numeric source preservation; run actual combined UI/CII, do not merge.

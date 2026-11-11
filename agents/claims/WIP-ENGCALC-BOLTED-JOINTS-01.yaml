@@ -1,0 +1,14 @@
+id: WIP-ENGCALC-BOLTED-JOINTS-01
+chain_id: ENGCALC-BOLTED-JOINTS
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: SUPERSEDED_BY_PR706
+superseded_by: PR706
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - tests/flange-ug44-core.test.mjs
+  - scripts/calc-flange-ug44.mjs
+authority_claims:
+  - flange-rated-load-ug44-kernel
+  - flange-joint-local-load-resolution
+note: Active custody moved to agents/claims/PR706.yaml after PR allocation and registry integration.

@@ -1,0 +1,82 @@
+[
+  {
+    "number": "630",
+    "nextNumber": "640",
+    "nextDistance": 514.0
+  },
+  {
+    "number": "1210",
+    "nextNumber": "1220",
+    "nextDistance": 214.0
+  },
+  {
+    "number": "1800",
+    "nextNumber": "1810",
+    "nextDistance": 514.0
+  },
+  {
+    "number": "2410",
+    "nextNumber": "2420",
+    "nextDistance": 214.0
+  },
+  {
+    "number": "4019",
+    "nextNumber": "4020",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "5080",
+    "nextNumber": "5090",
+    "nextDistance": 409.1799999999348
+  },
+  {
+    "number": "4079",
+    "nextNumber": "4080",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "4139",
+    "nextNumber": "4140",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "4199",
+    "nextNumber": "4200",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "4299",
+    "nextNumber": "4300",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "7370",
+    "nextNumber": "7380",
+    "nextDistance": 412.1799999999348
+  },
+  {
+    "number": "3079",
+    "nextNumber": "3080",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "3149",
+    "nextNumber": "3150",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "3219",
+    "nextNumber": "3220",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "3289",
+    "nextNumber": "3290",
+    "nextDistance": 3.0
+  },
+  {
+    "number": "3359",
+    "nextNumber": "3360",
+    "nextDistance": 3.0
+  }
+]

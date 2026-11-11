@@ -1,0 +1,89 @@
+{
+  "schema": "VibrationSbcType3CandidateBenchmarkCustody.v1",
+  "sliceId": "SBC-PF-007-BENCHMARK-CUSTODY",
+  "oracle": {
+    "id": "VIB-SBC-PROC-ORACLE-01",
+    "referenceCase": "EI-D7-SBC-TYPE3",
+    "purpose": "CANDIDATE_REPRODUCIBILITY_ORACLE_ONLY",
+    "independentEngineeringQualification": false,
+    "calibrationUseAllowed": false
+  },
+  "controlledSource": {
+    "repository": "reallaksh19/Common",
+    "commit": "fb549185b9b27edc2379734240320a85c5bef9f6",
+    "path": "EI - AVIFF Guidelines 2nd Edition.pdf",
+    "gitBlobSha1": "9d3eccc56429411e17c07a579bdebbd13cb0bdc5",
+    "locator": "Appendix D7 / EI AVIFF T3 Type-3 worked example",
+    "qualificationStatus": "IDENTITY_PINNED_ENGINEERING_QUALIFICATION_NOT_ESTABLISHED"
+  },
+  "corroboratingReference": {
+    "repository": "reallaksh19/Advanced_Analysis",
+    "commit": "76eb4bd075ce2e8e2442d02b2798df7be491fb4b",
+    "path": "docs/EI data/EI_AVIFF_Guidelines_2nd_Edition_Examples.md",
+    "gitBlobSha1": "c050cd90802c27241c510c6f0ac43bfaf7a89e9d",
+    "role": "STRUCTURED_TRANSCRIPTION_REFERENCE_ONLY",
+    "independentSource": false
+  },
+  "combinationVector": {
+    "firstSpanHasUnsupportedMass": true,
+    "c": 0.68,
+    "d": 0.20,
+    "e": 0.70,
+    "firstLocationLof": 1.0,
+    "f": 0.60,
+    "g": 0.20,
+    "mainlineLof": 1.0,
+    "mainlineMultiplier": 1.42,
+    "expected": {
+      "firstGeometryLof": 0.70,
+      "firstModifier": 0.70,
+      "subsequentGeometryLof": 0.60,
+      "subsequentModifier": 0.60,
+      "overallModifier": 0.70,
+      "mainlineAdjustedLof": 1.42,
+      "finalLof": 0.70
+    },
+    "absoluteTolerance": 1e-12
+  },
+  "curveCustody": {
+    "d": {
+      "figureId": "T3-1",
+      "evidenceOrigin": "USER_PROJECT_EXACT_CURVE_READ",
+      "publicationState": "BLOCKED_SOURCE_DATA_CONFLICT"
+    },
+    "f": {
+      "figureId": "T3-3",
+      "evidenceOrigin": "USER_PROJECT_EXACT_CURVE_READ",
+      "publicationState": "BLOCKED_SOURCE_DATA_CONFLICT"
+    },
+    "g": {
+      "figureId": "T3-4",
+      "evidenceOrigin": "USER_PROJECT_EXACT_CURVE_READ",
+      "publicationState": "BLOCKED_SOURCE_DATA_CONFLICT"
+    },
+    "runtimeCurveActivation": false,
+    "masterPublicationAuthorized": false
+  },
+  "retainedEvidence": {
+    "browserHarness": "ValidationRecords/VibrationSBC/ProductionFreeze/SBC-PF-006-browser-harness.json",
+    "sourceTraceRegister": "docs/vibration/SBC-source-trace-register-v1.md",
+    "candidateCombinationKernel": "converters/vibration/sbc/type3-combination.js",
+    "candidateMasterAssistedKernel": "converters/vibration/sbc/type3-master-assisted-candidate.js"
+  },
+  "authority": {
+    "engineeringAuthority": "NONE",
+    "screeningAuthority": "NOT_AUTHORIZED",
+    "designAuthority": false,
+    "masterDataAuthority": false,
+    "sourceQualification": "NOT_ESTABLISHED",
+    "candidateOnly": true
+  },
+  "validationPolicy": {
+    "productionMustNotImportThisRecord": true,
+    "repositoryNativeFocusedTests": "REQUIRED_AT_RELEASE_GATE",
+    "fullRepositoryNodeSuite": "REQUIRED_AT_RELEASE_GATE",
+    "benchmarkedChromiumJourney": "REQUIRED_AT_RELEASE_GATE",
+    "missingExecutionEvidence": "NOT_FROZEN",
+    "benchmarkParityDoesNotAuthorizeScreening": true
+  }
+}

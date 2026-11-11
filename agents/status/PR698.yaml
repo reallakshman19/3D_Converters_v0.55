@@ -1,0 +1,33 @@
+schema: AgentStatus.v1
+pr_or_wip: PR698
+pull_request: 698
+branch: agent/hp-review-package-verifier
+base: main
+base_sha_after_replay: ad71a42af34afef565ea4645de83d0613996a106
+predecessor_pr: 696
+predecessor_merge: 18995591bd4d4f9625affc573392c53b52c00b0b
+state: READY_FOR_REVIEW_PENDING_NATIVE_VALIDATION
+criticality: HP_PRODUCTION_REVIEW_PACKAGE_VERIFICATION
+authority:
+  verification_purpose: INDEPENDENT_REVIEW_PACKAGE_SELF_CONSISTENCY
+  verification_authority: PACKAGE_SELF_CONSISTENCY_ONLY
+  ledger_entry_cryptographic_integrity: NOT_AVAILABLE_V1
+  reviewer_identity_authentication: NOT_AVAILABLE_USER_DECLARED
+  digital_signature: false
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  release_authority: false
+validation:
+  predecessor_merge: PASS
+  current_main_replay: PASS
+  branch_ancestry_last_reconciled: PASS_BEHIND_0
+  implementation_test_ci_paths: PASS_7_INTENDED_BEFORE_RECOVERY
+  read_only_source_audit: PASS
+  authority_integrity_boundary_source_audit: PASS
+  native_verifier_node_suite: NOT_RUN
+  hp_real_workbench_workflow: NOT_RUN_ZERO_RETURNED
+  full_app_verifier_interaction: NOT_RUN
+  full_repository_regression: NOT_RUN
+merge_authority: NOT_GRANTED_FOR_PR698
+next_action: EXECUTE_NATIVE_VERIFIER_TESTS_IF_AVAILABLE_AND_RECONCILE_EXACT_HEAD

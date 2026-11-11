@@ -1,0 +1,68 @@
+TAP version 13
+# (node:26108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: source, staged, scope, weight and Run options invalidate superseded output
+ok 1 - source, staged, scope, weight and Run options invalidate superseded output
+  ---
+  duration_ms: 8.4392
+  type: 'test'
+  ...
+# Subtest: navigation and newly supplied conversion results remain available
+ok 2 - navigation and newly supplied conversion results remain available
+  ---
+  duration_ms: 4.2049
+  type: 'test'
+  ...
+# Subtest: Mode A forwards result invalidation after direct replacement
+ok 3 - Mode A forwards result invalidation after direct replacement
+  ---
+  duration_ms: 34.5872
+  type: 'test'
+  ...
+# Subtest: shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+not ok 4 - shared Run options invalidate every source output, so Mode B cannot reuse a stale source result
+  ---
+  duration_ms: 78.5963
+  type: 'test'
+  location: 'C:\\CodeA\\3DC_live_acceptance\\tests\\xml-cii-output-result-invalidation.test.mjs:33:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        null,
+    +   {
+    +     ciiText: 'old-output',
+    +     enrichedText: '<old-geometry/>'
+    +   }
+    -   null
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: ~
+    1: ~
+  actual:
+    0: ~
+    1:
+      enrichedText: '<old-geometry/>'
+      ciiText: 'old-output'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/CodeA/3DC_live_acceptance/tests/xml-cii-output-result-invalidation.test.mjs:40:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 3
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 297.8922

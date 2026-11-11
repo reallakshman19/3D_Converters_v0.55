@@ -1,0 +1,88 @@
+export const FIT_SOURCE_BASIS_EVIDENCE_SCHEMA = 'FitSourceBasisEvidence.v1';
+
+export const FIT_SOURCE_BASIS_EVIDENCE = Object.freeze({
+  schema: FIT_SOURCE_BASIS_EVIDENCE_SCHEMA,
+  calculationId: 'VIB.FIV.FLOW_TURBULENCE',
+  methodRevision: 'ei-aviff2-fit-screening-v1',
+  method: Object.freeze({
+    publisher: 'Energy Institute',
+    publication: 'Guidelines for the avoidance of vibration induced fatigue failure in process pipework',
+    edition: '2nd Edition, January 2008',
+    isbn: '9780852934630',
+    technicalModule: 'T2.2 Flow Induced Turbulence',
+    productMethodBasis: 'ADOPTED_EI_T2_2_REFERENCE',
+    source: Object.freeze({
+      repository: 'reallaksh19/Common',
+      commit: 'fb549185b9b27edc2379734240320a85c5bef9f6',
+      path: 'EI - AVIFF Guidelines 2nd Edition.pdf',
+      gitBlob: '9d3eccc56429411e17c07a579bdebbd13cb0bdc5',
+      locator: 'Technical Module T2.2 — Flow Induced Turbulence',
+      authority: 'GOVERNING_METHOD_SOURCE',
+    }),
+    specification: Object.freeze({
+      repository: 'reallaksh19/3D_Converters',
+      path: 'docs/vibration/FIT-Engineering-Method-Specification-v1.md',
+      authority: 'GOVERNED_IMPLEMENTATION_SPECIFICATION',
+    }),
+  }),
+  officialErrata: Object.freeze({
+    status: 'REVIEWED_NOT_APPLICABLE_TO_FIT_T2_2',
+    publisherStatement: 'Official errata affect pages 61 and 68 and are incorporated into the current EI PDF.',
+    corrections: Object.freeze([
+      Object.freeze({ page: 61, flowchart: 'T2-5', disposition: 'AIV_FEED_CORRECTION_NOT_FIT_T2_2' }),
+      Object.freeze({ page: 68, flowchart: 'T2-8', disposition: 'VALVE_TRANSIENT_PEAK_FORCE_CORRECTION_NOT_FIT_T2_2' }),
+    ]),
+  }),
+  benchmarkBasis: Object.freeze({
+    publishedVectorAuthority: 'EI_WORKED_EXAMPLE_PDF',
+    publishedVectorSource: Object.freeze({
+      repository: 'reallaksh19/Common',
+      commit: 'fb549185b9b27edc2379734240320a85c5bef9f6',
+      path: 'EI - AVIFF Guidelines 2nd Edition_Examples.pdf',
+      gitBlob: '3e2517d0df527a051084fc02e69cb7afa31f8d47',
+      locator: 'Appendix D Examples D2 and D4',
+      authority: 'PUBLISHED_BENCHMARK_SOURCE',
+    }),
+    ownerQualificationAnchor: 'CONTROLLED_WORKED_EXAMPLE_DOCX',
+    qualificationAnchorSource: Object.freeze({
+      repository: 'reallaksh19/Common',
+      commit: '7bfead910f6bca91b10748ead009e40f20c82219',
+      path: 'Energy-Institute-AVIFF---Worked-Examples.doc.docx',
+      gitBlob: 'ceee15ed5f7f320045d5f3979024e2e8664613f2',
+      authority: 'OWNER_QUALIFICATION_ANCHOR',
+    }),
+    ownerQualificationPolicy: 'WORKED_EXAMPLE_BENCHMARK_SUFFICIENT',
+    qualificationExample: 'EI-D4-FIT-PRODUCED-WATER-10IN',
+    docxRole: 'REVISED_PROJECT_SCENARIO_EVIDENCE',
+    retainedWorkbookRole: 'MIGRATION_PARITY_EVIDENCE_ONLY',
+    retainedWorkbookSource: Object.freeze({
+      repository: 'reallaksh19/CRF-4-1',
+      commit: '68dc8e1fa2ef67073c59b3afc56f1bf40953d535',
+      path: 'Extended calc2/AIV FIV/FIT.xlsm',
+      gitBlob: 'd7d4c1a773fe1b2e9791f258b2b7a07e95bdc41e',
+      sheet: 'Flow Induced Turbulence',
+      authority: 'MIGRATION_PARITY_EVIDENCE_ONLY',
+    }),
+  }),
+  sourcePrecedence: Object.freeze([
+    'GOVERNING_METHOD_SOURCE',
+    'GOVERNED_IMPLEMENTATION_SPECIFICATION',
+    'PUBLISHED_BENCHMARK_SOURCE',
+    'OWNER_QUALIFICATION_ANCHOR',
+    'MIGRATION_PARITY_EVIDENCE_ONLY',
+  ]),
+  projectBasis: Object.freeze({
+    productReferenceMethod: 'CONFIRMED',
+    externalProjectOrClientAdoption: 'PROJECT_SPECIFIC_CONFIRMATION_REQUIRED',
+    note: 'Using the product FIT reference method does not itself prove a client or project procedure has adopted it.',
+  }),
+  authority: Object.freeze({
+    calculationState: 'IMPLEMENTED',
+    qualificationState: 'SCREENING',
+    engineeringAuthority: 'SCREENING',
+    screeningAuthority: 'AUTHORIZED_BOUNDED',
+    authorityScope: 'EI_T2_2_BOUNDED_FIT_SCREENING',
+    designAuthority: false,
+    fullMultiMechanismScreeningAuthority: false,
+  }),
+});

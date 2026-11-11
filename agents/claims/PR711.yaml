@@ -1,0 +1,49 @@
+id: PR711
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-03
+branch: agent/engcalc-bolt-registry-integration-20260902
+claim_state: BLOCKED_AUTO_VALIDATION_GATE
+stacked_dependency_pr: 709
+exclusive_paths:
+  - converters/engineering-calculations/adapters/bolt-short-form.js
+  - converters/engineering-calculations/adapters/bolt-detailed-friction.js
+  - converters/engineering-calculations/adapters/bolt-installation-strength.js
+  - tests/bolt-engineering-calculations-registry.test.mjs
+shared_paths_currently_modified:
+  - converters/engineering-calculations/default-registry.js
+evidence_paths:
+  - agents/PR711_workreport.md
+  - agents/status/PR711.yaml
+  - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0018.md
+authority_claims:
+  - central-registration-of-short-form-bolt-reference
+  - central-registration-of-detailed-friction-bolt-reference
+  - central-registration-of-installation-combined-stress-reference
+coordination_state: STACKED_DEPENDENCY_STALE_MAIN_VALIDATION_GATE
+protected_authority:
+  engineering_authority: NONE_FOR_NEW_REFERENCE_ADAPTERS
+  method_state: IMPLEMENTED
+  data_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+  master_data_authority: UNRESOLVED
+protected_scope:
+  - No new Engineering Calculation contract family in LEG-03.
+  - No bolt-group arbitrary-array UI/registry integration in LEG-03.
+  - No real material/thread/friction/reference-stress master records.
+  - No workflow/runtime/writer/canvas mutation without explicit authorization.
+  - No numerical-kernel equation changes.
+  - No advance to a new engineering leg while focused validation is NOT_RUN.
+validation_custody:
+  pr709_hosted_run: 33615022066
+  pr709_hosted_scope: HP_PIPING_CLASS_I1_I3_ONLY
+  pr709_hosted_result: FAIL_OUTSIDE_BOLT_SCOPE
+  bolt_focused_execution: NOT_RUN
+  pr711_registry_execution: NOT_RUN
+hard_stops:
+  - PR711 is stacked on unmerged PR709 and is not a standalone main merge candidate.
+  - Exact bolt-focused central validation is NOT_RUN.
+  - Current main drift requires later reconciliation.
+  - Browser console acceptance is NOT_RUN.
+exact_next_action: Execute the three focused bolt/registry tests on an exact PR711 stacked checkout. If exact execution remains unavailable, stop with NOT_RUN. Await explicit owner disposition of PR709 before any re-ground/merge path; do not add CI or expand engineering scope to bypass this gate.

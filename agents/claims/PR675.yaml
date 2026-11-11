@@ -1,0 +1,34 @@
+schema: AgentClaim.v1
+pr_or_wip: PR675
+claim_state: ACTIVE
+pull_request: 675
+branch: agent/vib-source-campaign-runner-20260820
+files:
+  exact:
+    - scripts/run-vibration-source-campaign.mjs
+    - tests/vibration-source-campaign.test.mjs
+    - agents/PR675_workreport.md
+    - agents/status/PR675.yaml
+    - agents/claims/PR675.yaml
+authority_domains:
+  - VIBRATION_CONTROLLED_SOURCE_CAMPAIGN_EXECUTION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - scripts/extract-vibration-master-source.mjs semantics
+  - source-register values and lifecycle states
+  - T2.4 T2.5 T2.9 T4 numerical or rule qualification
+  - SBC table or curve activation
+  - engineering master publication
+  - UI behavior
+  - calculation kernels
+  - workflow files
+coordination:
+  PR653: SHARED_READ_T24_T25_SOURCE_QUALIFICATION
+  PR655: SHARED_READ_T4_SOURCE_QUALIFICATION
+  ISSUE545: SHARED_READ_T29_QUALIFICATION
+  PR486: MERGED_FOUNDATION_READ_ONLY
+coordination_state: REPLAYED_ON_CURRENT_MAIN_NO_EXACT_CONFLICT
+merge_authority: OWNER_AUTHORIZED_FOR_PR675_2026_08_20
+release_condition: FINAL_RECONCILIATION_THEN_SQUASH_MERGE

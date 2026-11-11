@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-ASSESSMENT-EVIDENCE-20260819
+claim_state: RELEASED_TO_PR664
+branch: agent/vibration-assessment-evidence-20260819
+files:
+  exact: []
+  prefixes: []
+authority_domains: []
+claim_modes: []
+successor_pr: 664
+current_recovery_authority: agents/claims/PR664.yaml
+coordination_state: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED

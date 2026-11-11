@@ -1,0 +1,15 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-VIB-COMPLETENESS-20260818
+mission: Make EI assessment completeness the primary Vibration Integrity presentation without changing engineering calculations.
+workstream: VIBRATION_COMPLETENESS_PRESENTATION
+branch: agent/vibration-completeness-first-20260818
+agent_state: MIGRATED_TO_PR627
+pr_recovery_state: TERMINAL
+handover_readiness: READY
+report_path: agents/WIP-VIB-COMPLETENESS-20260818_workreport.md
+replacement: PR627
+main_head_last_checked: bca7fc9390c018753d09161052b0bf2fd54e33ce
+exact_next_action: Use agents/PR627_workreport.md, agents/status/PR627.yaml, and agents/claims/PR627.yaml as current recovery authority.
+last_updated: 2026-08-18T14:19:00Z
+merge_authority: OWNER_ONLY_NOT_GRANTED

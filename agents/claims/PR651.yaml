@@ -1,0 +1,27 @@
+schema: AgentClaim.v1
+pr: 651
+claim_state: ACTIVE
+branch: agent/hp-kd320-q1-semantic-intake
+claim_modes:
+  - EXCLUSIVE
+  - COORDINATED
+files:
+  exact:
+    - engineering/hp-class-standardization/qualification/kd320-q1/semantic-csv-intake.js
+    - tabs/hp-kd320-evidence-intake-tab.js
+    - tabs/engineering-workspace-tab.js
+    - tests/b313-chapter-ix-kd320-q1-semantic-csv-intake.test.mjs
+    - tests/hp-kd320-evidence-intake-ui.test.mjs
+authority_domains:
+  - KD320_Q1_SEMANTIC_EVIDENCE_TRANSPORT_PREVIEW
+exclusions:
+  - NATIVE_KD320_ARITHMETIC
+  - FATIGUE_CURVE_DATA
+  - LICENSED_SOURCE_TEXT
+  - PERSISTED_Q1_LEDGER_MUTATION
+  - PRODUCTION_QUALIFICATION
+  - DESIGN_AUTHORITY
+  - AUTOMATIC_EVIDENCE_ADMISSION
+coordination:
+  PR649: COORDINATION_REQUIRED_DRIFTED_SHARED_WORKSPACE_FILE_DIFFERENT_CACHE_LINE
+merge_authority: OWNER_ONLY_NOT_GRANTED

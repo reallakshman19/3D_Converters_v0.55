@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PipeStressExport>
+  <Branch>
+    <Branchname>/HBMR-1000-24"-P2810042-61440-01/B2</Branchname>
+    <Node><NodeNumber>110</NodeNumber><ComponentType>REDU</ComponentType><ComponentRefNo>=67127481/31</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>610</OutsideDiameter><Position>73502.00 119970.00 103293.10</Position></Node>
+    <Node><NodeNumber>120</NodeNumber><ComponentType>REDU</ComponentType><ComponentRefNo>=67127481/31</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102785.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/32</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102785.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/32</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102588.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/33</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102588.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/33</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102584.90</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>PCOM</ComponentType><ComponentRefNo>=67127481/35</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102584.90</Position></Node>
+    <Node><NodeNumber>130</NodeNumber><ComponentType>RIGID</ComponentType><ComponentRefNo>=67127481/56</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>508</OutsideDiameter><Position>73502.00 119970.00 102518.20</Position></Node>
+  </Branch>
+  <Branch>
+    <Branchname>/HBMR-1000-24"-P2810042-61440-01/B5</Branchname>
+    <Node><NodeNumber>70</NodeNumber><ComponentType>BRAN</ComponentType><ComponentRefNo>=67127481/65</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73502.00 119970.00 104457.10</Position></Node>
+    <Node><NodeNumber>190</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/181</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73823.73 120291.73 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/181</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73826.00 120294.00 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>VALV</ComponentType><ComponentRefNo>=67127481/71</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73826.00 120294.00 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>VALV</ComponentType><ComponentRefNo>=67127481/71</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73978.73 120446.73 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/72</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73978.73 120446.73 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/72</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73980.99 120448.99 104457.10</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/186</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73980.99 120448.99 104457.10</Position></Node>
+    <Node><NodeNumber>200</NodeNumber><ComponentType>RIGID</ComponentType><ComponentRefNo>=67127481/186</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>74029.78 120497.78 104457.10</Position></Node>
+  </Branch>
+  <Branch>
+    <Branchname>/HBMR-1000-24"-P2810042-61440-01/B6</Branchname>
+    <Node><NodeNumber>390</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/97</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>77679.00 117680.00 101245.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/97</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>77748.00 117680.00 101245.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/98</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>77748.00 117680.00 101245.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/98</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>77751.20 117680.00 101245.20</Position></Node>
+    <Node><NodeNumber>400</NodeNumber><ComponentType>RIGID</ComponentType><ComponentRefNo>=67127481/75</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>77751.20 117680.00 101245.20</Position></Node>
+  </Branch>
+  <Branch>
+    <Branchname>/HBMR-1000-24"-P2810042-61440-01/B7</Branchname>
+    <Node><NodeNumber>430</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/102</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 105814.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FLAN</ComponentType><ComponentRefNo>=67127481/102</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73502.00 117844.00 105894.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/103</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>33.4</OutsideDiameter><Position>73502.00 117844.00 105894.20</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/103</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 105897.40</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>VALV</ComponentType><ComponentRefNo>=67127481/104</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 105897.40</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>VALV</ComponentType><ComponentRefNo>=67127481/104</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106189.40</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/106</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106189.40</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>GASK</ComponentType><ComponentRefNo>=67127481/106</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106192.60</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FBLI</ComponentType><ComponentRefNo>=67127481/105</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106192.60</Position></Node>
+    <Node><NodeNumber>-1</NodeNumber><ComponentType>FBLI</ComponentType><ComponentRefNo>=67127481/105</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106225.00</Position></Node>
+    <Node><NodeNumber>440</NodeNumber><ComponentType>RIGID</ComponentType><ComponentRefNo>=67127481/101</ComponentRefNo><Endpoint>2</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 117844.00 106225.00</Position></Node>
+  </Branch>
+  <Branch>
+    <Branchname>/HBMR-1000-24"-P2810042-61440-01/B4</Branchname>
+    <Node><NodeNumber>80</NodeNumber><ComponentType>BRAN</ComponentType><ComponentRefNo>=67127481/57</ComponentRefNo><Endpoint>1</Endpoint><OutsideDiameter>60.3</OutsideDiameter><Position>73502.00 119970.00 104357.10</Position></Node>
+  </Branch>
+</PipeStressExport>

@@ -1,0 +1,33 @@
+{
+  "schema": "XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V4",
+  "ok": true,
+  "elapsedMs": 538.5999999940395,
+  "maxWallMs": 5000,
+  "maxFrameGapMs": 33.19999999999999,
+  "maxFrameGapLimitMs": 250,
+  "branchCount": 41,
+  "pipeNodes": 1653,
+  "totalXmlNodes": 1654,
+  "sourceBytes": 891826,
+  "stagedRows": 8001,
+  "stagedBytes": 1268838,
+  "unrelatedAuthorityDatasetRows": 300000,
+  "unrelatedAuthorityDatasetsSkipped": true,
+  "rawPayloadPreserved": true,
+  "dtxrResolvedText": "GATE VALVE",
+  "rows": 1,
+  "inputValue": "25",
+  "lineKey": "P0310051",
+  "rating": "150",
+  "status": "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json",
+  "statusHistory": [
+    "Reading XML source…",
+    "Resolving staged JSON…",
+    "Preparing Weight Match basis in worker…",
+    "Loading Weight basis runtime…",
+    "Preparing split/inline geometry in Weight worker…",
+    "Collecting Weight basis in worker…",
+    "Validating Match-1 in worker · 1 component(s)…",
+    "0 mapped · 1 exact · 0 flange fallback · 0 inferred · 0 missing Rating · 0 unresolved · 1 shown · inline-fast-path.json"
+  ]
+}

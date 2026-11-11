@@ -1,0 +1,2 @@
+PASS: retained CII owners/scaling; absent predecessors, zero-length, changed and invalid weights blocked
+WEIGHT_COMPONENT_NODE_ID branch=/B1 source_node=-1 runtime_node=40 reference=REF-1

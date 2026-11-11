@@ -1,0 +1,12 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-CAPABILITY-20260818
+claim_state: RELEASED_MIGRATED_TO_PR626
+files:
+  exact: []
+  prefixes: []
+authority_domains: []
+claim_modes:
+  - OBSERVE_ONLY
+superseded_by: PR626
+last_verified_head: c7b8442621ed1e1b67c4abe507a29fc44390fb50
+coordination_state: MIGRATED

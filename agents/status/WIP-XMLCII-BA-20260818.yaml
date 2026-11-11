@@ -1,0 +1,37 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-BA-20260818
+mission: "Clean superseding replay of XML→CII Standalone Performance Batch A"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-batch-a-replay-20260818
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: MANUAL_CONTINUATION
+auto_state: NOT_REQUESTED
+agent_state: IMPLEMENTING
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-BA-20260818_workreport.md
+appendix_a_status: CURRENT
+main_head_last_checked: 00a3296f4b860ab1acb49ed690a4122122394d56
+merge_base: 00a3296f4b860ab1acb49ed690a4122122394d56
+grounding_epoch: GE-XMLCII-BA-001
+predecessor_pr: 595
+predecessor_disposition: SALVAGE_PARTIAL_SUPERSEDE
+protected_authority:
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+  - INPUTXML_TO_CII2019_IMMUTABLE_CORE_UNCHANGED
+validation:
+  runtime_perf_syntax: PASS_LOCAL_EXECUTION
+  state_syntax: PASS_LOCAL_EXECUTION
+  draft_authority_counts: PASS_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  changed_master_persistence: PASS_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  restart_custody: PASS_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  browser_acceptance: NOT_RUN
+  support_gap_equivalence: NOT_RUN
+highest_risk: "Draft mapping accidentally becoming APPLIED authority before explicit Apply."
+exact_next_action: "Replay bounded Batch-A production/test delta, validate, reconcile, then open draft superseding PR."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T05:55:00+04:00

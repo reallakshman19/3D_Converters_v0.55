@@ -1,0 +1,82 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P P3-A actual Build Preview button positive and staged-source RED retirement</title>
+<div id="fixture"></div><pre id="evidence">RUNNING</pre>
+<script type="module">
+import {xmlCiiRenderPreviewPhase,xmlCiiBuildAndRenderPreview} from
+  '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js';
+const mode=new URLSearchParams(location.search).get('case')||'scale';
+const heartbeat=[];let prev=performance.now();
+const timer=setInterval(()=>{const now=performance.now();heartbeat.push(Math.max(0,now-prev-25));prev=now;},25);
+const finish=(res)=>{clearInterval(timer);const output={mode,...res,
+  maxHeartbeatGapMs:Number(Math.max(0,...heartbeat).toFixed(2))};
+  globalThis.__P3A_BUTTON_RESULT__=output;
+  document.querySelector('#evidence').textContent=JSON.stringify(output,null,2);
+};
+async function until(fn,label,ms=25000) {
+  const deadline=performance.now()+ms;
+  while(performance.now()<deadline){if(fn())return;
+    await new Promise(resolve=>setTimeout(resolve,25));}
+  throw Error('TIMEOUT '+label);
+}
+try{
+  localStorage.clear();
+  const xml=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml').then(r=>r.text());
+  const config={
+    linelist:{masterRows:Array.from({length:385},(_,i)=>({
+      Service:'SYS','Line Number':String(200000+i),
+      'Piping Class':'P'+String(i%40).padStart(2,'0'),
+      Rating:'150',Material:'A106-B',DN:String(50+(i%10)*25),
+    })),fieldMap:{lineKey1:'Service',lineKey2:'Line Number',lineSeqNo:'Line Number',
+      pipingClass:'Piping Class',rating:'Rating',material:'Material',convertedBore:'DN'}},
+    pipingClass:{masterRows:Array.from({length:10699},(_,i)=>({
+      pipingClass:'P'+String(i%40).padStart(2,'0'),
+      convertedBore:50+(i%10)*25,componentType:'PIPE',rating:'150',
+      materialName:'A106-B',schedule:'40',wallThickness:6+(i%3),corrosion:1.5,
+    })),fieldMap:{}},
+    material:{mapRows:Array.from({length:383},(_,i)=>({code:String(1000+i),material:'A106-B'}))},
+    weight:{masterRows:Array.from({length:1595},(_,i)=>({
+      componentType:'VALV',bore:50+(i%10)*25,rating:'150',length:100+(i%8),weight:10+i/10,
+    }))},overrides:{},
+  };
+  let shouldReject=mode==='reject';
+  const opts={
+    resolveStagedJsonText:()=>shouldReject
+      ? Promise.reject(new Error('P3A_STAGED_REJECTION_SENTINEL')) : '',
+    ensureOverrides:c=>c.overrides,
+    onSaveConfig(){},
+    openOverridePopup(){},
+  };
+  const root=document.querySelector('#fixture');
+  root.innerHTML=xmlCiiRenderPreviewPhase(new File([xml],'SYS-001_Single.xml'),config);
+  const host=root.querySelector('#mc-preview-table-host');
+  await xmlCiiBuildAndRenderPreview(root,xml,config,opts);
+  const initialButton=host.querySelector('[data-mc-preview-build]');
+  if(!initialButton)throw Error('Actual Build Preview button absent');
+  const start=performance.now();
+  initialButton.click();
+  let initialFailureCode=null;
+  if(mode==='reject'){
+    await until(()=>host.textContent.includes('Preview failed'),'classified staged failure',8000);
+    initialFailureCode=host.querySelector('code')?.textContent||'';
+    if(initialFailureCode!=='STAGED_SOURCE_FAILED')throw Error('Staged failure was not classified: '+initialFailureCode);
+    if(host.textContent.includes('Building preview...'))throw Error('Spinner remains after rejected staged source');
+    shouldReject=false;
+    const retry=host.querySelector('[data-mc-preview-job-retry]');
+    if(!retry)throw Error('No recoverable Retry Preview action');
+    retry.click();
+  }
+  await until(()=>host.__xmlCiiPreviewResult?.branchRows?.length===9
+    && host.__xmlCiiPreviewOriginalOccurrences?.nodeCount===541,'full source + preview completion',35000);
+  const source=host.__xmlCiiPreviewOriginalOccurrences;
+  const rendered=host.querySelectorAll('table, [data-mc-edit-type]').length;
+  const hash=host.dataset.mcPreviewBasisId;
+  finish({ok:source.branchCount===9&&source.nodeCount===541
+       && host.__xmlCiiPreviewResult.branchRows.length===9
+       && /^[a-f0-9]{64}$/.test(hash)&&rendered>0,
+    firstFailureCode:initialFailureCode,
+    branchCount:source.branchCount,originalNodeCount:source.nodeCount,
+    legacyReviewNodeCount:host.__xmlCiiPreviewResult.nodeRows.length,
+    renderedControls:rendered,basisId:hash,elapsedMs:Number((performance.now()-start).toFixed(2)),
+    ownerPrivateDataVerified:false,engineeringAcceptance:'NOT_ASSESSED'});
+}catch(error){finish({ok:false,error:String(error?.stack||error)})}
+</script>

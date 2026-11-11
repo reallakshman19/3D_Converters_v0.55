@@ -1,0 +1,45 @@
+schema: AgentStatus.v1
+pr_or_wip: PR671
+pull_request: 671
+branch: agent/vibration-right-rail-scope-selector-20260819
+base: main
+base_sha_at_allocation: 0364664705264f4e20b5dbebb3eb7ab996088111
+reconciliation_commit: 1dfc354d10908d84819279c3741addd4b98a0f22
+state: MERGE_AUTHORIZED_PENDING_EXACT_HEAD_MERGE
+criticality: STANDARD_PRESENTATION_NAVIGATION
+coordination_state: SAFE_AFTER_CURRENT_MAIN_RECONCILIATION
+hosted_reconciliation:
+  basis_head: 1c112c2641e477117bfe9149edeb2a45c11749c8
+  ahead_by: 28
+  behind_by: 0
+  changed_files: 14
+  unexplained_files: 0
+  mergeable: true
+  draft: true
+  comments: 0
+  reviews: 0
+  review_threads: 0
+  commit_status_entries: 0
+  commit_status_classification: NOT_RUN
+  pr_triggered_workflow_runs: 0
+  workflow_classification: NOT_RUN
+validation:
+  scope_contract_test: PASS_7_OF_7_LOCAL_EXECUTION
+  scope_module_syntax: PASS_LOCAL_EXECUTION
+  exact_scope_blob_identity: PASS
+  integration_wiring: PASS_SOURCE_INSPECTION
+  repository_native_regressions: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  native_backup: NOT_RUN_ENVIRONMENT_BLOCKED
+authority:
+  creates_case_identity: false
+  persistence_changed: false
+  determines_applicability: false
+  determines_completeness: false
+  determines_next_action: false
+  numerical_authority_changed: false
+  screening_authority_changed: false
+  workflow_files_changed: false
+merge_authority: OWNER_AUTHORIZED_2026-08-19T17:53:54Z
+merge_authorization_source: USER_MESSAGE_MERGE_WHAT_NEXT
+exact_next_action: REFRESH_EXACT_HEAD_THEN_READY_AND_SQUASH_MERGE

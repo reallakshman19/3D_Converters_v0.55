@@ -1,0 +1,135 @@
+<!doctype html><meta charset="utf-8">
+<title>LFJ #1147 B0 actual Resolver source-backed sparse projection</title>
+<script type="module">
+const fail=(code,detail)=>Object.assign(new Error(detail),{code});
+const worker=(file,payload)=>new Promise((resolve,reject)=>{
+  const w=new Worker(new URL(file,location.href),{type:'module'});
+  w.onmessage=({data})=>{
+    if(data?.type==='DONE'){w.terminate();resolve(data.result);}
+    if(data?.type==='ERROR'){w.terminate();reject(fail(data.code,data.message));}
+  };
+  w.onerror=e=>{w.terminate();reject(fail('WORKER_ERROR',e.message));};
+  w.postMessage(payload);
+});
+const openDb=name=>new Promise((resolve,reject)=>{
+  const r=indexedDB.open(name);
+  r.onupgradeneeded=()=>{r.transaction.abort();reject(fail('NO_DB','test must not create unknown DB'));};
+  r.onsuccess=()=>resolve(r.result);
+  r.onerror=()=>reject(r.error);
+});
+const read=(db,key)=>new Promise((resolve,reject)=>{
+  const r=db.transaction('heads','readonly').objectStore('heads').get(key);
+  r.onsuccess=()=>resolve(r.result);
+  r.onerror=()=>reject(r.error);
+});
+window.runResolverProjectionOriginal=async({url,oracle,config={}})=>{
+  if(!url.startsWith('/Benchmarks/'))throw fail('SOURCE_URL','canonical fixture URL required');
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok)throw fail('SOURCE_HTTP','original fixture not served');
+  const blob=await response.blob();
+  if(blob.size!==oracle.bytes)throw fail('ORIGINAL_BYTES','fixture mismatch');
+  const id=crypto.randomUUID(),srcDb='lfj-b0-src-'+id,projectionDb='lfj-b0-projection-'+id;
+  const begin=performance.now(),before=(await navigator.storage.estimate()).usage??null;
+  const longTasks=[],obs=new PerformanceObserver(list=>{
+    for(const e of list.getEntries())if(e.duration>=50)longTasks.push(e.duration);
+  });
+  try{obs.observe({entryTypes:['longtask']});}catch{}
+  try{
+    const sourceCatalog=await worker('../consumer-sparse-b0/compact-paged.worker.mjs',{
+      type:'START',blob,expectedSha256:oracle.sha256,
+      databaseName:srcDb,generation:id,revision:'B0-PROJECTION'
+    });
+    if(sourceCatalog.occurrenceCount!==oracle.occurrenceCount||
+       sourceCatalog.sourceSha256!==oracle.sha256)
+      throw fail('SOURCE_CENSUS','source catalog mismatch');
+    const result=await worker('./projection.worker.mjs',{
+      type:'PROJECT',sourceDatabaseName:srcDb,sourceGeneration:id,
+      projectionDatabaseName:projectionDb,projectionGeneration:id,
+      blob,expectedSha256:oracle.sha256,config,toleranceMm:6
+    });
+    if(result.schema!=='LFJ.B0.ResolverProjection.v1'||
+       result.sourceOccurrences!==oracle.occurrenceCount||
+       result.domainSha256!==oracle.domainSha256||
+       result.consumerManifestDigest!==oracle.consumerManifestDigest||
+       result.factCount!==oracle.factCount||
+       result.spatialGroupCount!==oracle.groups||
+       result.traversedDomainObjects!==oracle.sourceObjects||
+       result.engineeringReady!==false||result.appWired!==false){
+      const db=await openDb(projectionDb),diffs=[];
+      try{
+        for(const entry of oracle.sampleFacts||[]){
+          const pageNo=Math.floor(entry.index/128);
+          const fact=await new Promise((resolve,reject)=>{
+            const req=db.transaction('pages','readonly').objectStore('pages').get([id,pageNo]);
+            req.onsuccess=()=>resolve(req.result?.rows?.[entry.index%128]||null);
+            req.onerror=()=>reject(req.error);
+          });
+          if(!fact){diffs.push({index:entry.index,missing:true});continue;}
+          const wrong=[];
+          for(const key of Object.keys(entry.expected)){
+            if(JSON.stringify(fact[key])!==JSON.stringify(entry.expected[key]))
+              wrong.push({key,expected:JSON.stringify(entry.expected[key])?.slice(0,150),
+                actual:JSON.stringify(fact[key])?.slice(0,150)});
+          }
+          if(wrong.length)diffs.push({index:entry.index,path:fact.path,wrong});
+        }
+      }finally{db.close();}
+      throw fail('DOMAIN_PROJECTION_ORACLE','source-derived consumer projection mismatch: '+JSON.stringify({
+        actual:{facts:result.factCount,groups:result.spatialGroupCount,
+          objects:result.traversedDomainObjects,digest:result.domainSha256,roots:result.rootBranches},
+        expected:{facts:oracle.factCount,groups:oracle.groups,
+          objects:oracle.sourceObjects,digest:oracle.domainSha256},diffs:diffs.slice(0,5)}));
+    }
+    const db=await openDb(projectionDb);
+    let head;
+    try{head=await read(db,'active');}finally{db.close();}
+    if(!head?.complete||head.domainSha256!==oracle.domainSha256||
+       head.factCount!==oracle.factCount||head.sourceSha256!==oracle.sha256||
+       head.consumerManifestDigest!==result.consumerManifestDigest)
+      throw fail('PROJECTION_HEAD','incomplete or stale consumer projection head');
+    // A complete original source is not permission to publish a partial,
+    // wrongly bounded or stale consumer projection.
+    async function rejects(payload,wanted){
+      let code='';
+      try{await worker('./projection.worker.mjs',payload);}
+      catch(e){code=e.code;}
+      if(code!==wanted)throw fail('NEGATIVE_NOT_REJECTED',
+        wanted+' required; observed '+(code||'SUCCESS'));
+      return code;
+    }
+    const rejectBase={
+      type:'PROJECT',sourceDatabaseName:srcDb,sourceGeneration:id,
+      blob,expectedSha256:oracle.sha256,config,toleranceMm:6
+    };
+    const oversizedDb='lfj-b0-oversize-'+id;
+    const oversized=await rejects({
+      ...rejectBase,projectionDatabaseName:oversizedDb,
+      projectionGeneration:id+'-limited',branchSpanLimit:32
+    },'BRANCH_SPAN_LIMIT');
+    const oversizedStore=await openDb(oversizedDb);
+    try{
+      if(await read(oversizedStore,'active'))
+        throw fail('INVALID_HEAD','oversized source branch published a projection HEAD');
+    }finally{oversizedStore.close();}
+    const changedBlob=new Blob([blob.slice(0,blob.size-1),' ']);
+    if(changedBlob.size!==blob.size)throw fail('NEGATIVE_FIXTURE','byte length changed');
+    const changed=await rejects({
+      ...rejectBase,blob:changedBlob,
+      projectionDatabaseName:'lfj-b0-changed-'+id,
+      projectionGeneration:id+'-changed'
+    },'SOURCE_HASH_MISMATCH');
+    const after=(await navigator.storage.estimate()).usage??null;
+    return {schema:'LFJ.B0.ResolverSourceProjectionOracle.v1',
+      originalBytes:blob.size,sourceCatalog,
+      projection:result,verifiedFullDomainDigest:true,
+      negatives:{oversizedBranch:oversized,changedSource:changed,
+        oversizedHeadPublished:false},
+      measurementMs:performance.now()-begin,
+      storageDelta:before===null||after===null?null:after-before,
+      mainThreadLongTasks:longTasks.length,
+      maxLongTaskMs:Math.max(0,...longTasks),
+      sourceOnly:true,engineeringReady:false,appWired:false};
+  }finally{obs.disconnect();}
+};
+window.__projectionReady=true;
+</script>

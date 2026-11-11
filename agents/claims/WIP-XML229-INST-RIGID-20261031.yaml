@@ -1,0 +1,24 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-XML229-INST-RIGID-20261031
+claim_state: LOCAL_IMPLEMENTATION_COMPLETE
+branch: fix/xml229-inst-rigid-20261031
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/integration/xml229-finalized-weight-geometry.mjs
+    - converters/scripts/xml229_native_final_mass_binding.py
+    - converters/scripts/xml_to_cii2019_runtime_custody.py
+    - tests/xml-cii-229-p4-real-engineering-fact-producer.test.mjs
+    - tests/xml229-instrument-python-worker-cases.mjs
+    - tests/xml229-native-final-mass-consumption.test.py
+    - tests/xml229-p4-producer-integrity-cases.mjs
+  mirrors:
+    - docs/tabs/xml-cii-2019-standalone/integration/xml229-finalized-weight-geometry.mjs
+    - docs/converters/scripts/xml229_native_final_mass_binding.py
+    - docs/converters/scripts/xml_to_cii2019_runtime_custody.py
+authority_domains: [Owner-selected INST rigid family before Final, exact CII proof bytes]
+protected: [source coordinates, source weights, mass-owner cardinality, native release guards, workflows]
+merge_authority: OWNER_ONLY_NOT_GRANTED
+
+publication_pr: 362
+archive_state: HISTORICAL_SCOPE_CONSOLIDATED_IN_PR362
+active_report: agents/PR362_workreport.md

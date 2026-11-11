@@ -1,0 +1,28 @@
+schema: AgentClaims.v1
+pr: 692
+branch: agent/hp-intake-roundtrip-browser
+claims:
+  - id: PR692-001
+    statement: verify:hp-production-browser now requires base, product-matrix, and intake-roundtrip lanes.
+    status: IMPLEMENTED_NOT_FULL_APP_QUALIFIED
+  - id: PR692-002
+    statement: Intake round-trip FULL_APP receipt cannot claim qualification before real routed navigation completes.
+    status: IMPLEMENTED_AND_SELF_TESTED_FAIL_CLOSED
+  - id: PR692-003
+    statement: The authored browser journey includes stale replacement-validation falsification before Apply.
+    status: EXACT_SOURCE_FALSIFIER_PASS_8_OF_8_FULL_APP_NOT_RUN
+  - id: PR692-004
+    statement: Chromium CDP transport for the new runner executes successfully in self-test mode.
+    status: PASS_SELF_TEST_ONLY
+  - id: PR692-005
+    statement: Authority remains review-only and numerical authority is unchanged.
+    status: SOURCE_CONFIRMED
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  numerical_authority: UNCHANGED
+prohibited_claims:
+  - FULL_APP_PASS_WITHOUT_NATIVE_ROUTED_EXECUTION
+  - HOSTED_CI_PASS_WHEN_NO_RUN_EXISTS
+  - DESIGN_AUTHORITY

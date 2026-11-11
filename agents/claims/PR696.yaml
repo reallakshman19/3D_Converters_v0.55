@@ -1,0 +1,29 @@
+schema: AgentClaims.v1
+pr_or_wip: PR696
+pull_request: 696
+branch: agent/hp-review-disposition-custody
+claims:
+  - id: PR696-C1
+    statement: Review disposition is bound to the exact serialized canonical engineering-review report by SHA-256.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C2
+    statement: Any changed report hash makes prior disposition entries historical relative to the new report rather than silently carrying review state forward.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C3
+    statement: Allowed dispositions contain no design approval or release-authority state.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C4
+    statement: Ledger, entries and packages retain nativeCoreKd3Qualified=false, codeCompliance=false, canUseForDesignAuthority=false and canAuthorizeRelease=false.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C5
+    statement: Reviewer/checker identity is USER_DECLARED and digitalSignature=false; SHA-256 does not authenticate actor identity.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C6
+    statement: Review custody is persisted separately from HpPipingClassProject engineering inputs.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C7
+    statement: Review-disposition entries are append-only and contiguous under the ledger parser.
+    status: IMPLEMENTED_SOURCE_AUDITED
+  - id: PR696-C8
+    statement: Native Node and FULL_APP disposition suites have executed successfully.
+    status: NOT_CLAIMED_NOT_RUN

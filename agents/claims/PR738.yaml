@@ -1,0 +1,19 @@
+pr: 738
+chain: ENGCALC-BOLTED-JOINTS
+claims:
+  - id: gre-equivalent-pressure-reference
+    statement: PR738 implements the recovered GRE equivalent-pressure chain in explicit SI as SCREENING_REFERENCE_ONLY.
+    validation: PASS_SOURCE_RECONSTRUCTED_EXACT_GITHUB_BLOBS
+  - id: gre-workbook-row-regression
+    statement: Focused analytical and retained workbook-row regression executes 23/23 PASS from exact GitHub source/test/fixture blobs under Node v22.16.0.
+    validation: PASS_SOURCE_RECONSTRUCTED_EXACT_GITHUB_BLOBS
+  - id: gre-native-pr-head-gate
+    statement: Exact native PR-head execution has not occurred; GitHub returned zero pull-request workflow runs for material head 208fa7b194b326c2ab6769ace87aefb24cd4f552.
+    validation: NOT_RUN_ENVIRONMENT_BLOCKED
+  - id: gre-no-leak-rate-contact-separation
+    statement: The implementation explicitly does not evaluate physical leak rate, gasket contact stress, or flange separation.
+    validation: PASS
+  - id: gre-authority-boundary
+    statement: The uncontrolled memo/project applicability prevents Code, design or governing authority promotion.
+    validation: PASS
+next_action: Exact PR-head focused execution; no central registration/UI/contact/separation/leak-rate extension before its own evidence gate.

@@ -1,0 +1,24 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR638
+mission: Surface non-authoritative T1 mechanism suggestions from exact verified facts.
+workstream: VIBRATION_T1_SUGGESTIONS
+branch: agent/vibration-t1-suggestions-20260818
+base: main
+base_head: d9d14d13b089c968c989544ddbdf023063b43e67
+implementation_basis_head: 990ca74afb76871c865a9ad442cdeea1cdb1415a
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: AUTO
+auto_state: COMPLETE_PHASE
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR638_workreport.md
+current_stage: HANDOVER
+blocker: REPOSITORY_NATIVE_EXECUTION_UNAVAILABLE
+hosted_statuses: NOT_RUN_ZERO_RETURNED
+hosted_workflow_runs: NOT_RUN_ZERO_RETURNED
+review_threads: 0
+coordination_state: SAFE
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,25 @@
+id: WIP-VIB-EIT-ROADMAP-20260818
+branch: agent/vibration-eit-roadmap-20260818
+criticality: ENGINEERING_CRITICAL
+claim_state: ACTIVE
+paths:
+  - converters/vibration/eit/**
+  - converters/vibration/roadmap/**
+  - tabs/vibration-roadmap-panel.js
+  - scripts/inspect-vibration-eit-roadmap.mjs
+  - tests/vibration-eit-generic.test.mjs
+  - tests/vibration-roadmap-projection.test.mjs
+authority_domains:
+  - EIT_COMPATIBILITY_IMPORT_NORMALIZATION
+  - ROADMAP_PRESENTATION_PROJECTION
+exclusions:
+  - engineering equations
+  - mechanism applicability authority
+  - mainline aggregation authority
+  - existing AIV/FIT/SBC production files
+  - workflow files
+coordination:
+  PR571: mechanism coverage; no shared files edited
+  PR539_PR540: vibration family/console view; exact files avoided
+  PR506_PR517: AIV hardening; existing AIV EIT files untouched
+  PR546_PR508: SBC; files untouched

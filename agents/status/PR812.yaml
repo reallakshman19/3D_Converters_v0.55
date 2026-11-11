@@ -1,0 +1,18 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR812
+branch: agent/issue-781-output-custody-20261001
+criticality: ENGINEERING_CRITICAL
+takeover_authority: WRITE_ALLOWED_BOUNDED_WEIGHT_CANVAS_AND_XML_COMPOSITION
+current_stage: MERGED_TO_PR811_BRANCH_ABSENT_FROM_MAIN
+successor_pr: PR813
+current_runtime_release: 20261001-weight-output-2
+followup_validation: REGEX_PROPAGATION_AND_SAVED_WEIGHT_PRECEDENCE_PASS_NATIVE_UI_AND_REAL41
+report_path: agents/PR812_workreport.md
+dependency: PR811
+merge_authority: OWNER_ONLY_NOT_GRANTED
+full_cii_acceptance: FAIL_16_UNRESOLVED_COMPONENT_OWNERS
+owner_decision: PENDING_EXPLICIT_GEOMETRY_AND_WEIGHT_OWNERSHIP_APPROVAL
+remote_checks_observed_head: f30552b8d648fb12a697778f6d1c27bbe6ff533b
+remote_checks: ONE_PASS_THREE_PREEXISTING_FAILURES
+exact_next_action: Follow main integration successor; retain pending16 geometry/ownership decision. No merge authority.

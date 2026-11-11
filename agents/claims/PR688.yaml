@@ -1,0 +1,32 @@
+schema: AgentClaim.v1
+pr_or_wip: PR688
+pull_request: 688
+claim_state: ACTIVE
+branch: agent/vib-matrix-run-currentness-20260821
+authority_domains:
+  - VIBRATION_FACILITY_MATRIX_CURRENTNESS
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/mechanism-currentness.js
+    - tabs/vibration-integrity-matrix-context.js
+    - tabs/vibration-integrity-view.js
+    - tabs/vibration-integrity-roadmap-bridge.js
+    - tests/vibration-facility-mechanism-currentness.test.mjs
+    - agents/PR688_workreport.md
+    - agents/status/PR688.yaml
+    - agents/claims/PR688.yaml
+exclusions:
+  - vibration mechanism equations and coefficients
+  - source/master qualification
+  - applicability and completeness authority
+  - EI main-line aggregation authority
+  - design authority
+  - right-panel blocking or execution authority
+  - project persistence
+coordination:
+  PR686: MERGED_FACILITY_RUN_CUSTODY_FOUNDATION
+  PR657: NO_EXACT_CURRENT_PRODUCTION_OVERLAP
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

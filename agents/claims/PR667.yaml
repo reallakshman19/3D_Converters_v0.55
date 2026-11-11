@@ -1,0 +1,46 @@
+schema: AgentClaim.v1
+pr_or_wip: PR667
+claim_state: MERGE_AUTHORIZED_PENDING
+pull_request: 667
+branch: agent/vibration-roadmap-workflow-20260819
+files:
+  exact:
+    - tabs/vibration-roadmap-workflow-view.js
+    - tabs/vibration-roadmap-panel.js
+    - tabs/vibration-roadmap-panel.css
+    - tests/vibration-roadmap-workflow-panel.test.mjs
+    - .backups/connector-20260819-vib-roadmap-workflow/tabs/vibration-roadmap-panel.js
+    - .backups/connector-20260819-vib-roadmap-workflow/tabs/vibration-roadmap-panel.css
+    - agents/PR667_workreport.md
+    - agents/status/PR667.yaml
+    - agents/claims/PR667.yaml
+    - agents/WIP-VIB-ROADMAP-WORKFLOW-20260819_workreport.md
+    - agents/status/WIP-VIB-ROADMAP-WORKFLOW-20260819.yaml
+    - agents/claims/WIP-VIB-ROADMAP-WORKFLOW-20260819.yaml
+  prefixes: []
+authority_domains:
+  - ROADMAP_ACTION_FIRST_PRESENTATION
+  - RIGHT_RAIL_WORKFLOW_FOCUS_PRESENTATION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - VIBRATION_LINE_CASE_ASSESSMENT_STATUS_PROJECTION
+  - AssessmentCompleteness.v1 semantics
+  - MechanismCoverage.v1 semantics
+  - mechanism applicability
+  - numerical engineering calculations
+  - screening governing calculation
+  - project persistence/schema/currentness
+  - engineer disposition authority
+  - verification authority
+  - design/code/safety/root-cause authority
+  - workflow files
+coordination:
+  PR615: MERGED_STALE_ACTIVE_CLAIM_LIVE_PR_CLOSED
+  PR658: ACTIVE_SEMANTIC_NEIGHBOR_NO_EXACT_FILE_OVERLAP_DO_NOT_DUPLICATE_STATUS_AUTHORITY
+  PR665: ACTIVE_PROJECT_V2_NEIGHBOR_NO_DEPENDENCY_NO_FILE_OVERLAP
+coordination_state: SAFE_WITH_STALE_CLAIM_RECONCILIATION
+merge_authority: OWNER_GRANTED_FOR_PR667_2026-08-19
+merge_authorization_source: USER_MESSAGE_FIX_667_AND_MERGE
+release_condition: PR667_MERGED

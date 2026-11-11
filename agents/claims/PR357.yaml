@@ -1,0 +1,25 @@
+schema: AgentClaim.v1
+pr_or_wip: PR357
+claim_state: SUBMITTED_REVIEW_HELD
+branch: fix/xml229-json-restraints-body-bore-6ae1bed6
+wbs: [CIIFR-R4-6.6-M30, CIIFR-R4-6.7-M31]
+source: https://github.com/reallakshman19/3D_Converters/issues/350#issuecomment-6530010922
+authority_domains: [source-bound pre-Final JSON restraints, physical component body bore]
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/integration/xml229-preview-engineering-fact-producer.mjs
+    - tabs/xml-cii-2019-standalone/integration/xml229-physical-bore-authority.mjs
+    - converters/xml-cii2019-core/support-mapping-config.js
+    - converters/xml-cii2019-core/support-mapping-legacy.js
+  prefixes: [tabs/xml-cii-2019-standalone/integration/xml229-prefinal-restraint, tabs/xml-cii-2019-standalone/integration/xml229-component-body]
+  mirrors: [docs/tabs/xml-cii-2019-standalone, docs/converters/xml-cii2019-core]
+protected: [source positions and endpoint dimensions, physical owners, Owner Final0, native writer and guards, workflows]
+base: 7ac4f00a9fedb23952611ddc9be0465289813f20
+merge_authority: OWNER_ONLY_NOT_GRANTED
+native_validation_extension:
+  - converters/scripts/xml229_native_final_mass_binding.py
+  - converters/scripts/xml229_prefinal_restraint_source.py
+  - converters/scripts/xml229_prefinal_restraints.py
+  - converters/scripts/xml_to_cii2019_runtime_custody.py
+  - converters/xml-cii-2019-standalone/engine.js
+reason: Recompute permitted pre-Final restraints from actual source JSON/config before unchanged whole-XML comparison

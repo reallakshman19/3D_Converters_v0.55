@@ -1,0 +1,24 @@
+schema: AgentClaim.v1
+pr_or_wip: PR379
+claim_state: DRAFT_COORDINATION_REQUIRED
+branch: fix/xml229-candidate-preview-native-hold-20261102
+issue: https://github.com/reallakshman19/3D_Converters/issues/376
+pr_url: https://github.com/reallakshman19/3D_Converters/pull/379
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-editable-preview-table.js
+    - tabs/xml-cii-2019-standalone/integration/xml229-run-hold-audit.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+    - converters/scripts/xml_to_cii2019_master_addon.py
+    - converters/scripts/xml_to_cii2019_patched.py
+  mirrors: docs/tabs and docs/converters exact counterparts
+authority_domains: [read_only_format_linekey_preview, actual_native_failure_diagnosis, bounded_python_ambiguity_diagnostics]
+protected: [native_final_mass, source_owner_identity, staged_json_ambiguity_refusal, independent_cii_release]
+coordination: COORDINATION_REQUIRED_WITH_PR377_PR378_PR260_PR253
+merge_authority: OWNER_ONLY_NOT_GRANTED
+
+  additional_exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-converter-failure-diagnostic.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-debug.mjs
+  additional_mirrors: docs/tabs exact counterparts

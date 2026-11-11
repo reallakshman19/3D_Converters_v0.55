@@ -1,0 +1,31 @@
+pr: 731
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  issue: 721
+  phase: P2_SCHEMA_CUSTODY_ONLY
+  production_paths:
+    - converters/engineering-calculations/flange/master-store.js
+    - converters/engineering-calculations/bolts/master-store.js
+  test_paths:
+    - tests/engineering-master-custody.test.mjs
+protected_authority:
+  ug44: BENCHMARK_ONLY
+  bolt_scalar_methods: REFERENCE_KERNEL_ONLY
+  master_ceiling: ENGINEERING_SANDBOX
+  real_master_values_added: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+coordination:
+  p1_pr: 730
+  shared_agentchain_index: DO_NOT_EDIT_UNTIL_PR730_DISPOSITION
+validation_gate:
+  state: NOT_RUN_ENVIRONMENT_BLOCKED
+  command: node --test tests/flange-master-store.test.mjs tests/bolt-master-store.test.mjs tests/engineering-master-custody.test.mjs
+hard_stops:
+  - NO_P3_UNTIL_P2_FOCUSED_TEST_RESULT
+  - NO_REAL_STANDARD_VALUES_WITHOUT_CONTROLLED_P1_SOURCE
+  - NO_AUTHORITY_PROMOTION
+  - NO_VIBRATION_CONSOLE_SCOPE_MUTATION
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR810
+claim_state: RELEASED_MERGED
+branch: agent/issue-781-live-acceptance-20260930
+workstream: XML_CII_ISSUE_781_LIVE_ACCEPTANCE
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_REGEX_ROLE_ASSIGNMENT
+  - XML_CII_B313_PREVIEW_PANEL_LIFECYCLE
+  - XML_CII_WEIGHT_MATCH_UI_LIVENESS
+  - XML_CII_BRANCH_SCOPE_PHASE_NAVIGATION_LIVENESS
+protected_paths:
+  - tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js
+  - tabs/xml-cii-2019-standalone/xml-cii-regex-suggestion-candidates.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-auto-basis.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-authority-ui.js
+  - tabs/xml-cii-2019-standalone/xml-cii-branch-scope.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-branch-scope-state.js
+  - tabs/xml-cii-2019-standalone/xml-cii-mode-a-batch-core.js
+  - tabs/xml-cii-2019-standalone/workers/weight-basis-service.js
+coordination_state: COORDINATION_REQUIRED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-10-01

@@ -1,0 +1,19 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR981
+branch: agent/issue-980-mode-b-node-custody-20261008
+criticality: ENGINEERING_CRITICAL
+current_stage: P0_CODE_AND_REPRO_AUTHORED_CI_QUEUED
+takeover_authority: READ_ONLY_UNTIL_EXACT_HEAD_REVALIDATION
+owner_priority: "#980 Mode B before #925 J04"
+parent: "#921"
+base: main
+merge_authority: OWNER_ONLY_NOT_GRANTED
+code_checkpoint: 6f2515a57e0a8b6c075c2038b3cd762907167439
+validation: NOT_RUN_HOSTED_EXACT_HEAD_QUEUED
+end_to_end_original_combined: NOT_RUN
+source_docs_mirror: TEN_PAIRS_SHA_EQUAL_PRE_METADATA
+overlap: "#978 standalone-run-parity source and docs; serialized for P0"
+report_path: agents/PR981_workreport.md
+handover_readiness: READY_WITH_UNVERIFIED_TESTS
+exact_next_action: Read exact-head #980 and protected #781/#776 CI; run real combined UI/CII oracle; do not merge; J04 paused.

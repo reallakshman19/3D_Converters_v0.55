@@ -1,0 +1,51 @@
+schema: AgentClaim.v1
+pr_or_wip: PR658
+claim_state: MERGE_AUTHORIZED_PENDING
+pull_request: 658
+branch: agent/vibration-line-case-status-20260819
+files:
+  exact:
+    - tabs/vibration-integrity-assessment-status.js
+    - tabs/vibration-integrity-assessment-status-view.js
+    - tabs/vibration-integrity-roadmap-bridge.js
+    - tabs/vibration-integrity-tab.js
+    - tabs/vibration-integrity-view.js
+    - tabs/vibration-roadmap-panel.js
+    - tabs/vibration-roadmap-panel.css
+    - tests/vibration-integrity-assessment-status.test.mjs
+    - tests/vibration-integrity-assessment-status-view.test.mjs
+    - tests/vibration-roadmap-linecase-context.test.mjs
+    - agents/PR658_workreport.md
+    - agents/status/PR658.yaml
+    - agents/claims/PR658.yaml
+  prefixes:
+    - .backups/connector-20260819-vib-linecase-roadmap/
+authority_domains:
+  - VIBRATION_LINE_CASE_ASSESSMENT_STATUS_PROJECTION
+  - SELECTED_REGISTER_SCOPE_RIGHT_RAIL_CONTEXT
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - mechanism identification producer semantics
+  - automatic applicability or automatic dispositions
+  - AssessmentCompleteness.v1 calculation semantics
+  - MechanismCoverage.v1 calculation semantics
+  - project lineId to facility line identity mapping
+  - project case subject identity or case persistence
+  - project schema serialization or load currentness
+  - screening or candidate governing calculations
+  - EI main-line aggregation
+  - numerical equations coefficients tolerances units or masters
+  - AIV or FIT production-freeze authority
+  - engineering disposition or verification authority
+  - screening design code safety or root-cause authority promotion
+  - workflow files
+coordination:
+  PR667: MERGED_RIGHT_RAIL_PREDECESSOR_STALE_POST_MERGE_CLAIM_CONSUME_MAIN_ONLY
+  PR665: OPEN_PROJECT_V2_NEIGHBOR_NO_EXACT_FILE_OVERLAP_NO_PERSISTENCE_DEPENDENCY
+  PR657: OPEN_STALE_PRESENTATION_NEIGHBOR_NOT_CONSUMED_AS_AUTHORITY
+coordination_state: SAFE_WITH_EXPLICIT_IDENTITY_BOUNDARY
+merge_authority: OWNER_GRANTED_FOR_PR658_2026-08-19
+merge_authorization_source: USER_MESSAGE_MERGE_PROCEED_NEXT
+release_condition: PR658_MERGED

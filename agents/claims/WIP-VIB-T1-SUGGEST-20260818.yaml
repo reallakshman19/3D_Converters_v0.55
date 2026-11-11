@@ -1,0 +1,7 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-T1-SUGGEST-20260818
+claim_state: RELEASED
+superseded_by: PR638
+branch: agent/vibration-t1-suggestions-20260818
+coordination_state: MIGRATED_TO_PR638
+merge_authority: OWNER_ONLY_NOT_GRANTED

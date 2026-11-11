@@ -1,0 +1,38 @@
+pr: 742
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8_EXPLICIT_JOINT_FACE_RESOLVER
+state: BLOCKED_VALIDATION_AND_SOURCE_REQUIRED
+execution_mode: AUTO
+auto_state: BLOCKED_VALIDATION_AND_SOURCE_REQUIRED
+base_pr: 741
+base_sha: fd2bb9f9391a3c44868098ee4564f356ec32a7b0
+main_sha: 78b361d1f649d41378f568ebe1a237c4bc140c73
+latest_endpoint: EP-0031
+authority:
+  source: EXPLICIT_CALLER_SUPPLIED_CONTEXT_ONLY
+  automatic_model_route: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+dependency_reconciliation:
+  source_pr: 732
+  file: converters/engineering-calculations/mechanics/load-resultant.js
+  source_blob_sha: 3707a1cb3278eb67637c404a85b2012e50b4f481
+  branch_blob_sha: 3707a1cb3278eb67637c404a85b2012e50b4f481
+  byte_identity: PASS
+validation:
+  resolver_blob_sha: 70b2978ea703c2498edb685f7256402cb890cb50
+  test_blob_sha: 964969d302e5e68af78a6f8f04d196d460c98078
+  source_reconstructed_exact_github_blobs: PASS_12_OF_12
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+  resolver_physical_lines: 208
+  new_js_line_policy: PASS
+backup:
+  connector_pre_edit_copy: EVIDENCE_ONLY
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+hard_stop: node --test tests/flange-joint-model-context.test.mjs
+next_source_gate: CONTROLLED_FLANGE_FACE_FRAME_AND_SIGNED_SIX_DOF_SOURCE
+merge_authority: OWNER_ONLY_NOT_GRANTED

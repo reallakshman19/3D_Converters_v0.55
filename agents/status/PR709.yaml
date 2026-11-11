@@ -1,0 +1,43 @@
+id: PR709
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-02
+state: ACTIVE_AUTO
+execution_mode: AUTO
+auto_state: INSTALLATION_STRENGTH_REFERENCE_COMPLETE
+scope_authority: LOCKED_TO_APPROVED_MISSION
+branch: agent/engcalc-bolt-installation-strength-20260902
+base_main: d043376eb623822c657904f707bccf199b3356b3
+latest_material_head: 6ff6e56fee4444908bbb877bca6dc67bacd8db87
+engineering_critical: true
+authority_domain: bolted-joint-installation-strength
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+bolts:
+  installation_strength_state: REFERENCE_KERNEL_ONLY
+  transmitted_torque_component: THREAD_TORQUE_ONLY
+  bearing_torque_in_bolt_torsion: false
+  total_wrench_torque_in_bolt_torsion: false
+  stress_section_diameter: EXPLICIT_CALLER_INPUT
+  reference_stress: EXPLICIT_CALLER_INPUT
+  registry_integrated: false
+authority_boundary:
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+source_authority:
+  real_material_reference_stress: UNRESOLVED
+  real_thread_friction_master_data: UNRESOLVED
+  detailed_torque_reference_basis: NASA_RP_1228_REFERENCE_ONLY
+  bolting_paper_role: QUALITATIVE_TORSIONAL_STRESS_CONTEXT_ONLY
+validation:
+  source_architecture_inspection: PASS
+  base_drift: PASS_ZERO_BEHIND
+  direct_source_reconstructed_test: PASS_8_OF_8
+  detailed_torque_equivalent_integration: PASS_2_OF_2_SUPPORTING
+  cli_source_reconstructed: PASS
+  new_js_mjs_size_policy: PASS
+  syntax_check: PASS
+  exact_native_full_repository: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_APPLICABLE_STANDALONE_KERNEL
+  independent_engineering_review: NOT_RUN
+exact_next_action: Close this bounded installation-strength leg after relay synchronization. A later central-integration leg may expose the bolt reference calculators only after re-grounding shared-file backup/validation constraints; authority remains non-authorizing.

@@ -1,0 +1,63 @@
+{
+  "schema": "AivPf02CurrentHeadSourceReproduction.v1",
+  "sliceId": "PF-02",
+  "issueId": 513,
+  "repository": "reallaksh19/3D_Converters",
+  "currentMainSha": "3c3a01ebe00abaa739252c2e67bacb5126540182",
+  "classification": "SOURCE_CONTRACT_MISMATCH_REPRODUCED_SUPPORTING_EVIDENCE_ONLY",
+  "fullBrowserPass": false,
+  "registeredApiMatrixPass": false,
+  "productionMutationAuthorized": false,
+  "sourceCustody": [
+    {"path":"converters/vibration/aiv/aiv-readiness.js","blob":"6423267fd49b3d720874a7b699b0b48a657a5df6"},
+    {"path":"converters/vibration/aiv/aiv-calculator.js","blob":"5014342e1436ca9fbf723242a348f768fb842f0c"},
+    {"path":"converters/vibration/aiv/aiv-kernel-candidate.js","blob":"b0967c4c2e9fb98c90b6a3e9028ce9851e9bbcbb"},
+    {"path":"converters/engineering-calculations/adapters/vibration-aiv.js","blob":"2dff38ac41005a7835c14cc3ed9502da46e70524"},
+    {"path":"converters/engineering-calculations/engine.js","blob":"7b37f45cd22789e565ce8c4b1c31d01a263f9c74"},
+    {"path":"converters/vibration/aiv/source-csv.js","blob":"057c57c7d26aaa69b81eeaa0d802d24c3af433c9"},
+    {"path":"converters/vibration/aiv/aiv-tabular-common.js","blob":"7db1eac719093013d8ed3bb9c478e5e246145b63"},
+    {"path":"tabs/vibration-aiv-screening-gate.js","blob":"dcde1fadd5b54f17d07e63da4705680dbcf152d4"},
+    {"path":"tabs/vibration-aiv-screening-request.js","blob":"a9bcef48c9bab98dd8229b5435c6dc87e9f86749"}
+  ],
+  "mismatches": [
+    {
+      "domain": "mass-flow unit",
+      "input": {"value": 53482, "unit": "lb/h"},
+      "tabularParser": "PRESERVES_VALUE_AND_UNIT_PAIR",
+      "readinessFinding": "validateSource checks positive massFlow.value but does not validate massFlow.unit",
+      "kernelFinding": "massFlowKgS accepts only kg/s or kg/h and otherwise throws AIV_CANDIDATE_UNIT_UNSUPPORTED",
+      "supportingExecution": {
+        "parserResult": {"value": 53482, "unit": "lb/h"},
+        "kernelErrorCode": "AIV_CANDIDATE_UNIT_UNSUPPORTED",
+        "status": "PASS_EXPECTED_MISMATCH_OBSERVED"
+      }
+    },
+    {
+      "domain": "upstream/downstream pressure ordering",
+      "input": {"p1PaAbs": 200000, "p2PaAbs": 200000},
+      "readinessFinding": "validatePressureEvidence checks positive absolute values and gauge reference evidence but does not enforce resolved p1 > p2",
+      "kernelFinding": "sourcePwlDb requires p1PaAbs > p2PaAbs and throws AIV_CANDIDATE_PRESSURE_DROP_INVALID otherwise",
+      "supportingExecution": {
+        "kernelErrorCode": "AIV_CANDIDATE_PRESSURE_DROP_INVALID",
+        "status": "PASS_EXPECTED_KERNEL_REJECTION_OBSERVED"
+      }
+    }
+  ],
+  "executionMethod": {
+    "type": "LOCAL_EXECUTION_EXTRACTED_CURRENT_SOURCE_LOGIC",
+    "description": "Executed the exact current tabular quantity behavior and exact current kernel unit/pressure-domain branches as extracted from the recorded GitHub source blobs. This did not execute the full repository module graph or registered calculateEngineering API.",
+    "limitations": [
+      "No native checkout was available.",
+      "No real application browser journey executed.",
+      "No full registered calculateEngineering matrix executed.",
+      "Source inspection is used for the readiness side of the mismatch."
+    ]
+  },
+  "liveProductGate": {
+    "status": "NOT_RUN_ENVIRONMENT_BLOCKED",
+    "requiredBeforeProductionPatch": true,
+    "reason": "PF-02 retains its live-current-head product-first requirement; this environment cannot provide the required navigation-permitted real-app Chromium execution."
+  },
+  "falsifier": "If a navigation-permitted exact-current-head browser plus direct registered API matrix demonstrates equivalent fail-closed behavior for every PF-02 domain, classify NOT_REPRODUCIBLE_ON_CURRENT_MAIN and do not implement a parity patch.",
+  "disposition": "EVIDENCE_STRENGTHENED_PRODUCTION_MUTATION_BLOCKED"
+}

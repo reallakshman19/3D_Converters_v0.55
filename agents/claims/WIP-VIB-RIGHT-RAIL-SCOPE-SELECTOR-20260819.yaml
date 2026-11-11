@@ -1,0 +1,7 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-RIGHT-RAIL-SCOPE-SELECTOR-20260819
+claim_state: SUPERSEDED
+branch: agent/vibration-right-rail-scope-selector-20260819
+superseded_by: PR671
+current_claim: agents/claims/PR671.yaml
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR671

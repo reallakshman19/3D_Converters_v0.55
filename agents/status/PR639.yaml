@@ -1,0 +1,24 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR639
+mission: Align FIT runtime provenance to the existing controlled EI T2.2 method authority without changing numerics.
+workstream: VIBRATION_FIT_SOURCE_AUTHORITY
+branch: agent/vibration-fit-source-authority-20260818
+base: main
+base_head: d9d14d13b089c968c989544ddbdf023063b43e67
+implementation_basis_head: 6165852d74942d73790cd2f69bd16ade169cdcbf
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+execution_mode: AUTO
+auto_state: COMPLETE_PHASE
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR639_workreport.md
+current_stage: HANDOVER
+blocker: REPOSITORY_NATIVE_EXECUTION_UNAVAILABLE
+hosted_statuses: NOT_RUN_ZERO_RETURNED
+hosted_workflow_runs: NOT_RUN_ZERO_RETURNED
+review_threads: 0
+coordination_state: SAFE_GLOBAL_SOURCE_REGISTRY_EXCLUDED_DUE_PR635
+merge_authority: OWNER_ONLY_NOT_GRANTED

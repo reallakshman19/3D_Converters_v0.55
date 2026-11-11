@@ -1,0 +1,6 @@
+work_id: WIP-AIV-CANVAS-EVIDENCE-20260818
+claim_state: RELEASED
+released_to: PR644
+branch: agent/vibration-aiv-canvas-evidence-hardening-20260818
+scope: AIV canvas evidence/export/currency hardening stacked on PR643
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_THIS_REPAIR_SET

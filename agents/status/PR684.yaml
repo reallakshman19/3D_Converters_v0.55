@@ -1,0 +1,26 @@
+schema: AgentStatus.v1
+pr_or_wip: PR684
+pull_request: 684
+branch: agent/aiv-facility-scenario-handoff-20260820
+base: main
+base_sha: 1f8f12daf3846780341ad34ab56f9dc0bde05593
+implementation_basis_head: 08d82ef15fbff4508c5e36e24d755b2efd68ed18
+state: DRAFT_RECONCILED_UNMERGED
+criticality: ENGINEERING_CRITICAL_ORCHESTRATION
+predecessor_pr: 682
+predecessor_state: MERGED
+validation:
+  current_main_grounding: PASS
+  overlap: SAFE_PR506_SALVAGE_ONLY_PER_MERGED_PR517
+  changed_paths: PASS_18_TOTAL_15_PRODUCTION_TEST_PLUS_3_RECOVERY
+  mergeable: PASS_TRUE_AT_EA63BFC78B919481679EA9C1AC2533F91021B4F4
+  facility_relationship_custody_falsifiers: ENCODED_NOT_RUN
+  callback_preexecution_falsifiers: ENCODED_NOT_RUN
+  scenario_set_currentness_falsifiers: ENCODED_NOT_RUN
+  standalone_facility_separation: ENCODED_NOT_RUN
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+  hosted_checks: ZERO_PR_TRIGGERED_RUNS_AT_EA63BFC78B919481679EA9C1AC2533F91021B4F4
+  independent_numerical: NOT_APPLICABLE
+merge_authority: NOT_GRANTED_FOR_PR684
+next_action: OWNER_REVIEW_OR_NATIVE_BROWSER_VALIDATION

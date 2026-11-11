@@ -1,0 +1,81 @@
+{
+  "schema": "AivProductionFreezeValidation.v1",
+  "sliceId": "PF-02",
+  "issueId": 513,
+  "productionShaBefore": "3c3a01ebe00abaa739252c2e67bacb5126540182",
+  "candidateShaAfter": null,
+  "browserWorkflowStatus": "NOT_RUN_ENVIRONMENT_BLOCKED",
+  "browserWorkflow": [
+    "Open exact-current-head application in navigation-permitted Chromium",
+    "Navigate Engineering Calculations -> Vibration -> VIB.AIV.ACOUSTIC",
+    "Load controlled D.2.3 dataset",
+    "For each PF-02 negative domain edit the authoritative table field through the product UI",
+    "Run Check Readiness and record NOT_READY or METHOD_GAP with field/row/identity context",
+    "Verify Run Screening cannot become enabled for blocked engineering state",
+    "Restore valid data and prove READY_FOR_QUALIFICATION can execute screening",
+    "Separately exercise registered calculateEngineering with equivalent invalid canonical inputs and compare executable-contract disposition"
+  ],
+  "currentMainFinding": {
+    "classification": "SOURCE_CONTRACT_MISMATCH_REPRODUCED_SUPPORTING_EVIDENCE_ONLY",
+    "supportingReproduction": "ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-current-head-source-reproduction.json",
+    "unitMismatch": "Tabular quantity parsing preserves arbitrary explicit units and current readiness does not validate source mass-flow unit, while the numerical kernel rejects units outside kg/s and kg/h.",
+    "pressureOrderingMismatch": "Current readiness validates pressure positivity/reference evidence but not resolved upstream > downstream ordering; the kernel rejects non-positive pressure drop.",
+    "productionMutationAuthorized": false
+  },
+  "sourceInspection": {
+    "uiGate": {
+      "path": "tabs/vibration-aiv-screening-gate.js",
+      "blob": "dcde1fadd5b54f17d07e63da4705680dbcf152d4",
+      "finding": "Run Screening requires readiness counts with readyForQualification > 0, notReady=0, methodGap=0, plus current assumption acceptance."
+    },
+    "requestBuilder": {
+      "path": "tabs/vibration-aiv-screening-request.js",
+      "blob": "a9bcef48c9bab98dd8229b5435c6dc87e9f86749",
+      "finding": "Workspace request construction requires a readiness-qualified envelope and fails if NOT_READY or METHOD_GAP blockers exist."
+    },
+    "readiness": {
+      "path": "converters/vibration/aiv/aiv-readiness.js",
+      "blob": "6423267fd49b3d720874a7b699b0b48a657a5df6",
+      "finding": "Readiness validates many evidence/domain conditions but does not share all numerical executable-domain checks such as supported source units and resolved pressure ordering."
+    },
+    "registeredAdapter": {
+      "path": "converters/engineering-calculations/adapters/vibration-aiv.js",
+      "blob": "2dff38ac41005a7835c14cc3ed9502da46e70524",
+      "finding": "validateInput checks non-empty tables/topology, inventory attestations and assumption profile but does not invoke buildAivReadiness or a shared PF-02 executable contract."
+    },
+    "currentCalculator": {
+      "path": "converters/vibration/aiv/aiv-calculator.js",
+      "blob": "5014342e1436ca9fbf723242a348f768fb842f0c",
+      "finding": "Screening delegates to numerical kernel stages without first asserting the same readiness contract."
+    },
+    "kernel": {
+      "path": "converters/vibration/aiv/aiv-kernel-candidate.js",
+      "blob": "b0967c4c2e9fb98c90b6a3e9028ce9851e9bbcbb",
+      "finding": "Kernel explicitly enforces supported units and p1>p2 among other executable-domain checks."
+    },
+    "registeredEngine": {
+      "path": "converters/engineering-calculations/engine.js",
+      "blob": "7b37f45cd22789e565ce8c4b1c31d01a263f9c74",
+      "finding": "Shared engine calls definition validation before definition.calculate; existing AIV-specific hooks remain sufficient in principle, so no shared-engine change is justified without live reproduction."
+    }
+  },
+  "pr506CandidateEvidence": {
+    "classification": "SALVAGE_SUPPORT_NOT_PRODUCT_AUTHORITY",
+    "head": "b846cbfb765cbc01734154ad837b12d040fe0bf7",
+    "executableContractBlob": "a6de9d2c6bda73370fa5d9889503de4757b95701",
+    "candidateCalculatorBlob": "f9785783a155371d7174dfc3ebe326e577abddb6",
+    "warning": "Candidate includes PF-03 simultaneous-group semantics; do not replay wholesale."
+  },
+  "preFixDisposition": "CURRENT_MAIN_SOURCE_CONTRACT_MISMATCH_LIVE_PRODUCT_REPRODUCTION_NOT_RUN",
+  "productionFilesChanged": [],
+  "repositoryTestsChanged": [],
+  "frozenExpectedValuesChanged": false,
+  "fullBrowserPassClaimed": false,
+  "knownEnvironmentBlockers": [
+    "Native repository checkout fails because github.com cannot resolve in the execution container.",
+    "Direct hosted-app DNS resolution also fails in the execution container.",
+    "No navigation-capable browser tool is available in the connected environment."
+  ],
+  "exactNextAction": "Obtain exact-current-head real-app browser access and execute the PF-02 UI + direct registered-API matrix. If reproduced, implement only the smallest PF-02 shared executable-domain validation and permanent regressions; otherwise record NOT_REPRODUCIBLE_ON_CURRENT_MAIN.",
+  "nextSliceAuthorized": false
+}

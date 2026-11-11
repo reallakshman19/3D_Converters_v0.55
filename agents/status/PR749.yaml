@@ -1,0 +1,23 @@
+schema: engineering-pr-status-v2
+pr: 749
+chain: ENGCALC-BOLTED-JOINTS
+endpoint: EP-0038
+state: BLOCKED
+auto_state: HARD_STOP_EXTERNAL_CONTROLLED_SOURCE_REQUIRED
+execution_mode: AUTO
+scope_authority: LOCKED_TO_P8_CONTROLLED_SOURCE_SUBMISSION_WORKFLOW
+merge_authority: OWNER_ONLY_NOT_GRANTED
+base:
+  pr: 748
+  head: b7f4b86fda6411b254ca817dc325b69c0520b935
+material_head: a883120613092f24b20e9c0748098b49e8af1be9
+validation:
+  issue_form_document_inspection: PASS
+  workflow_boundary_document_inspection: PASS
+  calculation_code_changed: NOT_APPLICABLE
+  native_numerical_execution: NOT_APPLICABLE
+  real_controlled_source_supplied: FAIL_NOT_SUPPLIED
+  independent_engineering_review_real_record: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+  connector_pre_edit_backup: EVIDENCE_ONLY
+hard_stop: REAL_CONTROLLED_AND_INDEPENDENTLY_ACCEPTED_FLANGE_FACE_BINDING_SOURCE_REQUIRED

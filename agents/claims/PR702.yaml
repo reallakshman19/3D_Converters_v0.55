@@ -1,0 +1,31 @@
+schema: engineering-pr-claim/v1
+pr: 702
+repository: reallaksh19/3D_Converters
+branch: agent/cii-fortran-format-authority-fix-20260826
+status: HANDOVER_READY
+criticality: ENGINEERING_CRITICAL
+authority_domain:
+  - CII_V11_FIXED_FORMAT_VALIDATION
+  - CII_V14_FIXED_FORMAT_VALIDATION
+claimed_paths:
+  - converters/scripts/cii14_section_rules.py
+  - converters/scripts/cii_syntax_check_2019.py
+  - converters/scripts/test_cii_format_authority_convergence.py
+  - .backups/connector-20260826-cii-format-authority/
+  - agents/PR702_workreport.md
+  - agents/status/PR702.yaml
+  - agents/claims/PR702.yaml
+excluded_authority:
+  - cii_v11_v14 converter semantics
+  - browser worker/runtime switching
+  - XML/CII writer semantics
+  - topology or node mapping
+  - engineering numerical values
+  - units
+  - generic numeric or D-exponent semantics
+  - workflow files
+remaining_gate:
+  - exact repository checkout focused Python regression
+  - exact repository checkout full CII Python regression
+  - external CAESAR import only if required for release acceptance
+merge_authority: OWNER_ONLY_NOT_GRANTED

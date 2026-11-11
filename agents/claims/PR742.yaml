@@ -1,0 +1,54 @@
+pr: 742
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+claims:
+  - id: P8_P3_TRANSPORT_RECONCILED
+    statement: PR742 carries the PR732 load-resultant transport implementation byte-for-byte.
+    evidence: git_blob_sha_3707a1cb3278eb67637c404a85b2012e50b4f481
+    classification: PASS_SOURCE_IDENTITY
+  - id: P8_EXPLICIT_FACE_FRAME_FAIL_CLOSED
+    statement: The resolver requires finite unit, mutually orthogonal, right-handed flange-face axes plus explicit positive opening direction and mating-side identity.
+    evidence: converters/engineering-calculations/flange/joint-model-context.js
+    classification: IMPLEMENTED
+  - id: P8_RESULTANT_TRANSPORT_THEN_ROTATE
+    statement: Each six-DOF resultant is transported exactly once to the flange face and then transformed by projection onto the declared local basis.
+    evidence: tests/flange-joint-model-context.test.mjs
+    classification: PASS_SOURCE_RECONSTRUCTED_EXACT_GITHUB_BLOBS_12_OF_12
+  - id: P8_NO_SCALAR_DECOMPOSITION
+    statement: The resolver requires signed component loads and has no path for scalar resultant decomposition.
+    evidence: JointModelContext.v1 input contract
+    classification: IMPLEMENTED_FAIL_CLOSED
+  - id: P8_MASTER_BINDINGS_IDENTITY_ONLY
+    statement: Flange, bolt and gasket master record identities are retained but not resolved or trusted by this slice.
+    evidence: resolutionState_IDENTITY_ONLY_NOT_RESOLVED
+    classification: IMPLEMENTED_NON_AUTHORIZING
+  - id: P8_AUTHORITY_NOT_PROMOTED
+    statement: Automatic model route, solver invocation, design authority, Code compliance and governing eligibility remain false.
+    evidence: resolver result authority fields
+    classification: PASS_SOURCE_INSPECTION
+  - id: P8_NATIVE_VALIDATION
+    statement: Exact native PR-head focused execution has not been observed.
+    evidence: environment limitation
+    classification: NOT_RUN_ENVIRONMENT_BLOCKED
+scope:
+  include:
+    - converters/engineering-calculations/mechanics/load-resultant.js
+    - converters/engineering-calculations/flange/joint-model-context.js
+    - tests/flange-joint-model-context.test.mjs
+    - docs/engineering-calculations/flange-p8-explicit-joint-model-context.md
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0031.md
+    - agents/status/PR742.yaml
+    - agents/claims/PR742.yaml
+    - agents/PR742_workreport.md
+    - agents/agentchain.md
+    - .backups/connector-20260905-p8-resolver/agents_agentchain_before_ep0031.md.bak
+  exclude:
+    - automatic_3dv_adapter
+    - automatic_inputxml_adapter
+    - automatic_accdb_adapter
+    - master_store_resolution
+    - flange_or_bolt_solver_invocation
+    - central_registry
+    - ui
+    - workflows
+merge_authority: OWNER_ONLY_NOT_GRANTED

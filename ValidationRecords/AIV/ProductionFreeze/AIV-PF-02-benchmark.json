@@ -1,0 +1,50 @@
+{
+  "schema": "AivProductionFreezeBenchmarkLedger.v1",
+  "sliceId": "PF-02",
+  "issueId": 513,
+  "baseSha": "3c3a01ebe00abaa739252c2e67bacb5126540182",
+  "testedHead": null,
+  "results": [
+    {"benchmarkId":"B1","status":"NOT_RUN","reason":"PF-02 real-application Chromium reproduction is not available; no production parity patch is authorized."},
+    {"benchmarkId":"B2","status":"NOT_RUN","reason":"No PF-02 production implementation candidate has been committed."},
+    {"benchmarkId":"B3","status":"NOT_RUN","reason":"No PF-02 production implementation candidate has been committed."},
+    {"benchmarkId":"B4","status":"NOT_RUN","reason":"No PF-02 production implementation candidate has been committed."},
+    {"benchmarkId":"B5","status":"NOT_RUN","reason":"No PF-02 production implementation candidate has been committed."},
+    {"benchmarkId":"B6","status":"NOT_RUN","reason":"No PF-02 production implementation candidate has been committed."},
+    {"benchmarkId":"B7","status":"NOT_RUN","reason":"PF-02 readiness/executable parity release gate executes only after live reproduction and minimal fix."},
+    {"benchmarkId":"B8","status":"NOT_RUN","reason":"PF-03 grouping semantics remain frozen and outside this slice."},
+    {"benchmarkId":"B9","status":"NOT_RUN","reason":"Master provenance custody remains frozen and outside the source-contract reproduction."},
+    {"benchmarkId":"B10","status":"NOT_RUN","reason":"Assumption custody remains frozen and must not regress."},
+    {"benchmarkId":"B11","status":"NOT_RUN","reason":"Round-trip custody remains frozen and must not regress."},
+    {"benchmarkId":"B12","status":"NOT_RUN","reason":"Async custody remains frozen and must not regress."},
+    {"benchmarkId":"B13","status":"NOT_RUN","reason":"Degraded-canvas behavior remains frozen and must not regress."},
+    {"benchmarkId":"B14","status":"NOT_RUN","reason":"Real-browser performance observations are unavailable in the current environment."}
+  ],
+  "supportingSourceReproduction": {
+    "path": "ValidationRecords/AIV/ProductionFreeze/AIV-PF-02-current-head-source-reproduction.json",
+    "status": "PASS_SUPPORTING_SOURCE_CONTRACT_MISMATCH_ONLY",
+    "browserEquivalent": false,
+    "registeredApiEquivalent": false
+  },
+  "pf02RequiredParityMatrix": [
+    {"domain":"pressure ordering","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"READINESS_CHECK_GAP_KERNEL_REJECTS"},
+    {"domain":"absolute pressure positivity","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"PARTIAL_READINESS_CHECK_RESOLVED_GAUGE_DOMAIN_NEEDS_EXECUTION"},
+    {"domain":"temperature domain","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"READINESS_DOMAIN_NOT_SHARED_WITH_KERNEL"},
+    {"domain":"supported units","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"MASS_FLOW_UNIT_MISMATCH_REPRODUCED_SUPPORTING"},
+    {"domain":"gauge reference evidence","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"SOURCE_CHECKS_PRESENT_EXECUTABLE_MATRIX_NOT_RUN"},
+    {"domain":"sonic state unresolved/invalid","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"UNRESOLVED_CHECK_PRESENT_DIRECT_CANONICAL_INVALID_STATE_NEEDS_EXECUTION"},
+    {"domain":"trim state/reduction/provenance","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"READINESS_CHECKS_PRESENT_EXACT_EXECUTABLE_PARITY_NOT_RUN"},
+    {"domain":"required assessment geometry","uiExpected":"NOT_READY_OR_METHOD_GAP","registeredApiExpected":"REJECT","currentEvidence":"READINESS_AND_KERNEL_CONSUMPTION_DIFFER_SOURCE_INSPECTION"},
+    {"domain":"physical distance evidence","uiExpected":"NOT_READY","registeredApiExpected":"REJECT","currentEvidence":"PROVENANCE_CHECK_PRESENT_UNIT_PARITY_NOT_SHARED"},
+    {"domain":"supported assessment method envelope","uiExpected":"METHOD_GAP","registeredApiExpected":"REJECT","currentEvidence":"CURRENT_READINESS_HAS_NO_EXPLICIT_STAGE8_METHOD_GAP_FOR_ALL_DECLARED_TYPES"},
+    {"domain":"valid controlled D2.3","uiExpected":"READY_FOR_QUALIFICATION_AND_EXECUTABLE","registeredApiExpected":"EXECUTE_WITH_ASSESSMENT_SCREENING_AUTHORITY","currentEvidence":"CURRENT_HEAD_EXECUTION_NOT_RUN"}
+  ],
+  "frozenOracles": [
+    {"id":"D23_RELIEF_RAW_PWL","expected":164.6851759525391,"unit":"dB","absoluteTolerance":1e-10},
+    {"id":"D23_RELIEF_POINT_PWL","expected":164.3734876408508,"unit":"dB","absoluteTolerance":1e-10},
+    {"id":"MULTI_SOURCE_EQUAL","expected":163.0102999566398,"unit":"dB","absoluteTolerance":1e-9},
+    {"id":"MULTI_SOURCE_ASYM","expected":160.41392685158226,"unit":"dB","absoluteTolerance":1e-9}
+  ],
+  "oracleRule": "Expected values/tolerances are immutable during PF-02. A parity fix that changes a frozen engineering result stops the slice as BLOCKED_BENCHMARK_REGRESSION.",
+  "disposition": "PF02_CURRENT_MAIN_SOURCE_MISMATCH_ALL_RELEASE_EXECUTION_NOT_RUN"
+}

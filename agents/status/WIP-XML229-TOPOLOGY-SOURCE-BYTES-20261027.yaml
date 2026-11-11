@@ -1,0 +1,12 @@
+work_id: WIP-XML229-TOPOLOGY-SOURCE-BYTES-20261027
+actor: Oracle standalone UNKNOWN
+base: 30e555e3d39db57b6b07e3720b54751f8ab73238
+state: REVIEW_READY_BROWSER_PASS
+scope: exact topology source UTF-8 hash, root/docs parser and encoding regressions
+protected: geometry, kg, owner rules, Final CAS, native writer/reconciler, workflows
+merge_authority: NOT_GRANTED
+private_output_verified: false
+report: agents/PR345_workreport.md
+pr_number: 345
+tested_head: 094183fb51aecb4b44a59f4a472eac9581445913
+browser_status: LF_CRLF_ROOT_DOCS_FULL_JOURNEY_PASS

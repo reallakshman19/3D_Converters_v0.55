@@ -1,0 +1,29 @@
+schema: AgentClaim.v1
+pr_or_wip: PR704
+claim_state: MERGED_POST_VALIDATED
+branch: agent/vib-m16-mitigation-custody-20260821
+authority_domains:
+  - VIBRATION_MITIGATION_PROPOSAL_CUSTODY
+  - VIBRATION_MITIGATION_IMPLEMENTATION_CUSTODY
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/mitigation/contracts.js
+    - converters/vibration/mitigation/ledger.js
+    - tests/vibration-mitigation-custody.test.mjs
+    - agents/PR704_workreport.md
+    - agents/status/PR704.yaml
+    - agents/claims/PR704.yaml
+exclusions:
+  - automatic mitigation recommendation
+  - design approval or design authority
+  - predicted numerical benefit without governed calculation
+  - automatic root-cause inference
+  - M13 action completion mutation
+  - M14 verification mutation
+  - M15 RCA mutation
+  - post-modification confirmation logic
+  - project persistence changes
+release_condition: SATISFIED_POST_MERGE_HOSTED_FOCUSED_TEST_PASS_RUN_33615134622_AND_OWNER_MERGE_AUTHORITY

@@ -1,0 +1,21 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-BORE-WALL-INDEX-20260818
+mission: Index Preview Bore/Wall staged evidence and exact Piping Class walls once per Preview without authority change.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-bore-wall-index-20260818
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+agent_state: COMPLETE
+pr_recovery_state: SUPERSEDED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-BORE-WALL-INDEX-20260818_workreport.md
+appendix_a_status: NOT_REQUIRED_NEW_WORK_ITEM
+grounding_epoch: GE-003
+current_stage: MIGRATED_TO_PR
+blocker: NONE
+superseded_by: PR628
+active_status_record: agents/status/PR628.yaml
+active_claim_record: agents/claims/PR628.yaml
+exact_next_action: Continue from PR628 recovery records; do not mutate under this WIP identity.
+last_updated: 2026-08-18T18:30:00+04:00

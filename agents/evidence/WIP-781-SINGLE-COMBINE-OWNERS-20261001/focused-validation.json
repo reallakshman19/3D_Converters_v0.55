@@ -1,0 +1,101 @@
+[
+  {
+    "label": "unchanged-main-focused",
+    "command": [
+      "node",
+      "--test",
+      "tests/xml-cii-issue-776-benchmark-basis.test.mjs",
+      "tests/xml-cii-issue-776-topology-runtime.test.mjs",
+      "tests/xml-cii-issue-776-weight-review-authority.test.mjs",
+      "tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs",
+      "tests/xml-cii-issue-776-regex-index-cache.test.mjs",
+      "tests/xml-cii-issue-776-b313-central-api-parity.test.mjs",
+      "tests/xml-cii-issue-776-weight-unit-custody.test.mjs",
+      "tests/xml-cii-issue-776-match1-provenance.test.mjs",
+      "tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs",
+      "tests/xml-cii-issue-776-downstream-match1-validation.test.mjs",
+      "tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs",
+      "tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs",
+      "tests/xml-cii-issue-776-stale-match1-review-ux.test.mjs",
+      "tests/xml-cii-issue-776-post-run-weight-authority.test.mjs",
+      "tests/xml-cii-issue-776-standalone-run-match1-custody.test.mjs",
+      "tests/xml-cii-issue-776-workflow-weight-master-revision.test.mjs",
+      "tests/xml-cii-issue-776-junction-enrichment-authority.test.mjs",
+      "tests/xml-cii-issue-776-mode-a-acceptance-label.test.mjs",
+      "tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs",
+      "tests/xml-cii-issue-776-flange-weight-geometry.test.mjs",
+      "tests/xml-cii-issue-776-deployment-parity.test.mjs",
+      "tests/xml-cii-mode-a-preview-restoration.test.mjs"
+    ],
+    "exitCode": 0,
+    "status": "PASS",
+    "observation": "EXECUTION",
+    "oracle": "EXISTING_GATE_PLUS_INDEPENDENT_PHYSICAL_FIXTURES"
+  },
+  {
+    "label": "dataset-custody",
+    "command": [
+      "node",
+      "--test",
+      "tests/xml-cii-master-dataset-config.test.mjs",
+      "tests/xml-cii-master-dataset-coordinator.test.mjs",
+      "tests/xml-cii-master-dataset-persistence.test.mjs",
+      "tests/xml-cii-master-dataset-rollback-custody.test.mjs",
+      "tests/xml-cii-master-dataset-startup-hydration.test.mjs",
+      "tests/xml-cii-master-dataset-worker.test.mjs",
+      "tests/xml-cii-master-preview-worker-search.test.mjs",
+      "tests/xml-cii-master-worker-integration.test.mjs"
+    ],
+    "exitCode": 0,
+    "status": "PASS",
+    "observation": "EXECUTION",
+    "oracle": "EXISTING_GATE_PLUS_INDEPENDENT_PHYSICAL_FIXTURES"
+  },
+  {
+    "label": "mission-focused",
+    "command": [
+      "node",
+      "--test",
+      "tests/xml-cii-weight-output-authority.test.mjs",
+      "tests/xml-cii-output-result-invalidation.test.mjs",
+      "tests/xml-cii-issue-781-worker-weight-api.test.mjs",
+      "tests/xml-cii-issue-781-weight-liveness.test.mjs",
+      "tests/xml-cii-mode-a-consolidated.test.mjs",
+      "tests/xml-cii-mode-a-consolidated-rigid-review.test.mjs",
+      "tests/xml-cii-issue-776-downstream-match1-validation.test.mjs",
+      "tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs",
+      "tests/xml-cii-issue-776-standalone-run-match1-custody.test.mjs",
+      "tests/xml-cii-issue-776-deployment-parity.test.mjs",
+      "tests/xml-cii-issue-781-auto-authority-followup.test.mjs",
+      "tests/xml-cii-issue-781-postmerge-screenshot-repair.test.mjs",
+      "tests/xml-cii-processing-mode.test.mjs",
+      "tests/xml-cii-issue-781-weight-match-authority-presentation.test.mjs"
+    ],
+    "exitCode": 0,
+    "status": "PASS",
+    "observation": "EXECUTION",
+    "oracle": "EXISTING_GATE_PLUS_INDEPENDENT_PHYSICAL_FIXTURES"
+  },
+  {
+    "label": "physical-geometry",
+    "command": [
+      "C:\\Users\\reall\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "tests/xml-cii-weighted-geometry.test.py"
+    ],
+    "exitCode": 0,
+    "status": "PASS",
+    "observation": "EXECUTION",
+    "oracle": "EXISTING_GATE_PLUS_INDEPENDENT_PHYSICAL_FIXTURES"
+  },
+  {
+    "label": "publication-guard",
+    "command": [
+      "C:\\Users\\reall\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "tests/xml-cii-weight-owner-guard.test.py"
+    ],
+    "exitCode": 0,
+    "status": "PASS",
+    "observation": "EXECUTION",
+    "oracle": "EXISTING_GATE_PLUS_INDEPENDENT_PHYSICAL_FIXTURES"
+  }
+]

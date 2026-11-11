@@ -1,0 +1,27 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: ACTIVE
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - converters/engineering-calculations/adapters/flange-ug44.js
+  - tests/flange-ug44-core.test.mjs
+  - tests/flange-ug44-registry.test.mjs
+  - scripts/calc-flange-ug44.mjs
+shared_paths_currently_modified:
+  - converters/engineering-calculations/default-registry.js
+  - converters/engineering-calculations/index.js
+authority_claims:
+  - flange-rated-load-ug44-benchmark-kernel
+  - flange-joint-local-load-resolution
+  - benchmark-only-engineering-calculation-registration
+coordination_state: SAFE_BY_OBSERVED_OPEN_PR_PATH_SEARCH
+protected_authority:
+  engineering_authority: NONE_PENDING_SOURCE_QUALIFICATION
+  calculation_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+next_shared_mutation_gate: Re-run open-PR overlap search and native focused tests before any further shared Engineering Calculations edit.

@@ -1,0 +1,50 @@
+schema: AgentClaim.v1
+pr_or_wip: PR671
+claim_state: ACTIVE
+pull_request: 671
+branch: agent/vibration-right-rail-scope-selector-20260819
+files:
+  exact:
+    - tabs/vibration-roadmap-scope-selection.js
+    - tabs/vibration-integrity-roadmap-bridge.js
+    - tabs/vibration-roadmap-panel.js
+    - tabs/vibration-roadmap-controller.js
+    - tests/vibration-roadmap-scope-selector.test.mjs
+    - .backups/connector-20260819-vib-right-rail-scope-selector/tabs/vibration-integrity-roadmap-bridge.js
+    - .backups/connector-20260819-vib-right-rail-scope-selector/tabs/vibration-roadmap-panel.js
+    - .backups/connector-20260819-vib-right-rail-scope-selector/tabs/vibration-roadmap-controller.js
+    - agents/PR671_workreport.md
+    - agents/status/PR671.yaml
+    - agents/claims/PR671.yaml
+    - agents/WIP-VIB-RIGHT-RAIL-SCOPE-SELECTOR-20260819_workreport.md
+    - agents/status/WIP-VIB-RIGHT-RAIL-SCOPE-SELECTOR-20260819.yaml
+    - agents/claims/WIP-VIB-RIGHT-RAIL-SCOPE-SELECTOR-20260819.yaml
+  prefixes: []
+authority_domains:
+  - RIGHT_RAIL_EXISTING_REGISTER_SCOPE_NAVIGATION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+exclusions:
+  - project case persistence or case creation
+  - mechanism applicability
+  - AssessmentCompleteness.v1 semantics
+  - next-action engineering semantics
+  - numerical calculations or masters
+  - AIV readiness/calculator authority
+  - FIT production-freeze authority
+  - engineering disposition verification design code safety root-cause authority
+  - PR649 shared UI cache custody
+  - PR665 project-v2 persistence files
+  - workflow files
+coordination:
+  PR668: MERGED_EXECUTABLE_CASE_ACTION_PREDECESSOR
+  PR667: MERGED_ACTION_FIRST_ROADMAP_PREDECESSOR
+  PR658: MERGED_LINE_CASE_STATUS_PREDECESSOR
+  PR649: OPEN_SHARED_UI_CACHE_NO_FINAL_FILE_OVERLAP
+  PR665: OPEN_PROJECT_V2_NO_FINAL_FILE_OVERLAP
+  PR517: OPEN_AIV_PF02_NO_FILE_OVERLAP
+  PR539: OPEN_FIT_FREEZE_NO_FILE_OVERLAP
+  PR670: MERGED_HP_KD320_NO_FINAL_FILE_OVERLAP
+coordination_state: SAFE_AFTER_CURRENT_MAIN_RECONCILIATION
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR671

@@ -1,0 +1,17 @@
+id: WIP-ENGCALC-BOLTED-JOINTS-01
+chain_id: ENGCALC-BOLTED-JOINTS
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: ACTIVE
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - tests/flange-ug44-core.test.mjs
+  - scripts/calc-flange-ug44.mjs
+authority_claims:
+  - flange-rated-load-ug44-kernel
+  - flange-joint-local-load-resolution
+shared_paths_not_claimed:
+  - converters/engineering-calculations/default-registry.js
+  - converters/engineering-calculations/index.js
+  - tabs/engineering-calculation-console-view.js
+blocked_shared_mutation_reason: Existing-file edits require native backup command and fresh overlap reconciliation.

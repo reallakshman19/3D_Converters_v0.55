@@ -1,0 +1,33 @@
+pr: 737
+chain: ENGCALC-BOLTED-JOINTS
+leg: P6-GRE-SOURCE-QUALIFICATION
+state: ACTIVE_AUTO
+base_pr: 734
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+material_head: 081edad56505de889ca7aaf8d48c2f79d3043438
+latest_endpoint: EP-0026
+authority:
+  source_role: LEGACY_EQUIVALENT_PRESSURE_SCREENING
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_byte_identity: PASS
+  biff8_formula_recovery: PASS
+  workbook_numeric_replay: PASS_100_OF_100
+  workbook_check_replay: PASS_30_OF_30
+  native_repo_test: NOT_APPLICABLE_DOCUMENTATION_ONLY
+  independent_engineering_review: NOT_RUN
+source:
+  filename: FLANGE LEAKAGE CHECK GRE.xls
+  bytes: 437760
+  sha256: 44dd5e17daac62274f75bced45532b8c3344e293630c8a99226b996ca496d49f
+  git_blob: 2ba444cf85d0130b86a2e079c11c5bc4f06a72b0
+boundaries:
+  physical_leak_rate_model: NOT_PRESENT
+  gasket_contact_stress_model: NOT_PRESENT
+  separation_model: NOT_PRESENT
+  controlled_memo_basis: UNRESOLVED
+next_action: Implement new-file-only screening reference kernel with explicit SI inputs and workbook regression; no registry/UI/leak-rate/contact/separation claims.
+merge_authority: OWNER_ONLY
+merge_authorized: false

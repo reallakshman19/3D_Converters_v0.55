@@ -1,0 +1,17 @@
+[
+  {
+    "repositoryPath": "Benchmarks/XML-CII-2019/SYS-6-S8810010-01.xml",
+    "sha256": "850868f8614d3cdb99772cf2a08c0bfdde685ff25d57815bbb6ffa0d30b56a07",
+    "snapshotEqualsMain": true
+  },
+  {
+    "repositoryPath": "Benchmarks/XML-CII-2019/SYS-6-S8810011-01.xml",
+    "sha256": "33762a5c3edf2fef84c5edfee5042c2705be45bee4ecf98c92dab9c988759821",
+    "snapshotEqualsMain": true
+  },
+  {
+    "repositoryPath": "Benchmarks/XML-CII-2019/SYS-S8811956-01.xml",
+    "sha256": "ac5680c585ea248054d4e4c12c8db7a829aa4e454e7793154edef5f21704db7a",
+    "snapshotEqualsMain": true
+  }
+]

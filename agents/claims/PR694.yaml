@@ -1,0 +1,34 @@
+schema: AgentClaims.v1
+pr: 694
+branch: agent/hp-engineering-review-report
+claims:
+  - id: PR694-001
+    statement: HP Piping Class can export one deterministic standalone HTML engineering-review report and one machine-readable JSON report from the current canonical project and canonical review result.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR694-002
+    statement: The report does not implement an independent Chapter IX or fatigue numerical path; product and cycle values are delegated to hp-piping-class-result-export/v1 after its existing round-trip gate.
+    status: SOURCE_CONFIRMED
+  - id: PR694-003
+    statement: External USER_CALCULATED_KD3 custody, including calculation reference and checker identity where supplied, is retained in the report without authority promotion.
+    status: SOURCE_CONFIRMED
+  - id: PR694-004
+    statement: STATIC_REFERENCE_FAIL and fatigue U greater than one are reportable engineering outcomes, while incomplete calculation, identity mismatch, authority promotion, or round-trip corruption block the report transaction.
+    status: AUTHORED_NOT_EXECUTED
+  - id: PR694-005
+    statement: Report export follows HP workbench project custody by preferring the stored current project and falling back to the route context project only before persisted state is available.
+    status: SOURCE_CONFIRMED
+  - id: PR694-006
+    statement: Report authority remains review-only.
+    status: SOURCE_CONFIRMED
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  report_purpose: ENGINEERING_REVIEW_ONLY
+prohibited_claims:
+  - NATIVE_KD320_QUALIFIED
+  - CODE_COMPLIANCE_ESTABLISHED
+  - DESIGN_AUTHORITY
+  - REPORT_IS_INDEPENDENT_ENGINEERING_CALCULATION
+  - NATIVE_TEST_PASS_WITHOUT_EXECUTION

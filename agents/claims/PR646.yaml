@@ -1,0 +1,37 @@
+pr: 646
+claim_state: ACTIVE
+branch: agent/sbc-full-vertical-ui-20260819
+scope: governed SBC Type 1-4 connection workspace and its browser cache-custody chain
+exact_files:
+  - core/app.js
+  - core/engineering-tabs-extension.js
+  - index.html
+  - main-rhbg-fitguard.js
+  - tabs/engineering-calculations-tab.js
+  - tabs/engineering-workspace-tab.js
+  - tabs/vibration-integrity-sbc-workspace-model.js
+  - tabs/vibration-integrity-sbc-workspace-view.js
+  - tabs/vibration-integrity-tab.js
+  - tabs/vibration-integrity-ui-contract.js
+  - tabs/vibration-integrity-user-data-shell.js
+  - tests/vibration-sbc-full-workspace-cache-chain.test.mjs
+  - tests/vibration-sbc-full-workspace.test.mjs
+  - tests/vibration-sbc-type3-runtime-cache-chain.test.mjs
+  - agents/PR646_workreport.md
+  - agents/status/PR646.yaml
+  - agents/claims/PR646.yaml
+exclusions:
+  - SBC numerical equations or Type 1/2/4 kernels
+  - Type-3 combination/derivation/currentness implementation
+  - T3 figure curve values, interpolation, publication or activation
+  - VibrationMaster publication
+  - EI main-line aggregation semantics
+  - automatic SBC type classification
+  - screening/design/code authority promotion
+  - Product Freeze disposition
+  - .github/workflows/*
+coordination:
+  pr_546: SAFE_NO_EXACT_PRODUCTION_FILE_OVERLAP
+  pr_512: MERGED_IN_MAIN
+  pr_615: MERGED_IN_MAIN
+merge_authority: OWNER_ONLY_NOT_GRANTED

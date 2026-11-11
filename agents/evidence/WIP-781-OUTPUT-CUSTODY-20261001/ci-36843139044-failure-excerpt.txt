@@ -1,0 +1,23 @@
+contract	Run focused contracts	2026-10-01T09:30:21.7145806Z 
+contract	Run focused contracts	2026-10-01T09:30:21.7146354Z AssertionError [ERR_ASSERTION]: canonical model tab must bind ModelConvertersTab.js?v=20260928-rvm-full-scope-core-1
+contract	Run focused contracts	2026-10-01T09:30:21.7146816Z 
+contract	Run focused contracts	2026-10-01T09:30:21.7146935Z false !== true
+contract	Run focused contracts	2026-10-01T09:30:21.7147064Z 
+contract	Run focused contracts	2026-10-01T09:30:21.7147537Z     at file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-live-release-static.test.mjs:36:11 {
+contract	Run focused contracts	2026-10-01T09:30:21.7148111Z   generatedMessage: false,
+contract	Run focused contracts	2026-10-01T09:30:21.7148382Z   code: 'ERR_ASSERTION',
+contract	Run focused contracts	2026-10-01T09:30:21.7148629Z   actual: false,
+contract	Run focused contracts	2026-10-01T09:30:21.7148861Z   expected: true,
+contract	Run focused contracts	2026-10-01T09:30:21.7149096Z   operator: 'strictEqual',
+contract	Run focused contracts	2026-10-01T09:30:21.7149342Z   diff: 'simple'
+contract	Run focused contracts	2026-10-01T09:30:21.7149560Z }
+contract	Run focused contracts	2026-10-01T09:30:21.7174703Z 
+contract	Run focused contracts	2026-10-01T09:30:21.7175194Z Error: InputXML runtime asset verification failed for ../converters/scripts/cii_syntax_check_2019.py.
+contract	Run focused contracts	2026-10-01T09:30:21.7176103Z     at verifiedAssetBytes (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:162:11)
+contract	Run focused contracts	2026-10-01T09:30:21.7177125Z     at async loadAsset (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:169:18)
+contract	Run focused contracts	2026-10-01T09:30:21.7178182Z     at async loadVerifiedInputXmlRuntime (file:///home/runner/work/3D_Converters/3D_Converters/converters/inputxml-release-runtime-loader.js:196:52)
+contract	Run focused contracts	2026-10-01T09:30:21.7179844Z     at async runSmoke (file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:82:21)
+contract	Run focused contracts	2026-10-01T09:30:21.7181187Z     at async file:///home/runner/work/3D_Converters/3D_Converters/tests/inputxml-browser-offline-smoke.test.mjs:119:1
+contract	Run focused contracts	2026-10-01T09:30:21.7181653Z 
+contract	Run focused contracts	2026-10-01T09:30:21.7181755Z Node.js v22.23.2
+contract	Run focused contracts	2026-10-01T09:30:21.7193633Z ##[error]Process completed with exit code 1.

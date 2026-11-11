@@ -1,0 +1,191 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 781 Weight Build basis fast-path qualification</title>
+<div id="root"></div>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  bindXmlCiiWeightMatchPhase,
+  invalidateXmlCiiWeightCache,
+  xmlCiiRenderWeightMatchPhase,
+  xmlCiiWeightRawPayloadText,
+} from '../../tabs/model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20260930-issue781-weight-basis-worker-1';
+import { publishXmlCiiPreviewRatingSnapshot } from '../../converters/xml-cii2019-core/preview-rating-snapshot.js';
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20260930-issue781-weight-basis-worker-1';
+
+const MAX_WALL_MS = 5000;
+const MAX_FRAME_GAP_MS = 250;
+const PIPE_COUNT = 1200;
+const STAGED_FILLER_COUNT = 8000;
+const DTXR_RAW = 'GATE   VALVE';
+
+function pipeNodes() {
+  return Array.from({ length: PIPE_COUNT }, (_, index) => {
+    const nodeNo = (index + 1) * 10;
+    const x = index * 10;
+    return `<Node><NodeNumber>${nodeNo}</NodeNumber><NodeName>P-${nodeNo}</NodeName><ComponentType>PIPE</ComponentType><Position>${x} 0 0</Position></Node>`;
+  }).join('');
+}
+
+function sourceXml() {
+  const x = (PIPE_COUNT - 1) * 10 + 100;
+  return `<Model><Branch><Branchname>B1</Branchname>${pipeNodes()}<Node><NodeNumber>-1</NodeNumber><NodeName>GATE VALVE</NodeName><ComponentType>VALV</ComponentType><ComponentRefNo>V-FAST-1</ComponentRefNo><Endpoint>2</Endpoint><Position>${x} 0 0</Position></Node></Branch></Model>`;
+}
+
+function stagedPayload() {
+  const filler = Array.from({ length: STAGED_FILLER_COUNT }, (_, index) => ({
+    type: 'PIPE',
+    attributes: {
+      REF: `NOISE-${index}`,
+      APOS: `${index} 0 0`,
+      LPOS: `${index + 1} 0 0`,
+      DTXR_POS: 'PIPE',
+    },
+  }));
+  const x = (PIPE_COUNT - 1) * 10 + 100;
+  filler.push({
+    type: 'VALV',
+    attributes: {
+      REF: 'V-FAST-1',
+      APOS: `${x - 100} 0 0`,
+      LPOS: `${x} 0 0`,
+      DTXR_POS: DTXR_RAW,
+    },
+  });
+  return JSON.stringify(filler, null, 2);
+}
+
+function ensureOverrides(config) {
+  if (!config.overrides || typeof config.overrides !== 'object') config.overrides = {};
+  return config.overrides;
+}
+
+async function build() {
+  invalidateXmlCiiWeightCache();
+  const coordinator = createMasterDatasetImportCoordinator();
+  publishXmlCiiPreviewRatingSnapshot([{
+    branchName: 'B1',
+    lineKey: 'P0310051',
+    pipingClass: '61440',
+    sizeMm: 100,
+    rating: '150',
+    ratingSource: 'fast-path-e2e',
+  }], { authorityDigest: 'fast-path-e2e' });
+
+  const config = {
+    dropGasketNodes: true,
+    dropGasketsInEnrichment: true,
+    splitCondensedValveFlange: false,
+    weight: {
+      valveHintLengthToleranceMm: 6,
+      useNodeNameValveHints: true,
+      masterRows: [{
+        id: 'target',
+        boreMm: 100,
+        rating: '150',
+        lengthMm: 100,
+        weight: 25,
+        typeDesc: 'GATE VALVE',
+      }],
+    },
+    overrides: {},
+  };
+
+  const stagedJson = stagedPayload();
+  const rawPayloadPreserved = xmlCiiWeightRawPayloadText(stagedJson) === stagedJson
+    && xmlCiiWeightRawPayloadText(DTXR_RAW) === DTXR_RAW;
+  const root = document.querySelector('#root');
+  root.innerHTML = xmlCiiRenderWeightMatchPhase();
+  bindXmlCiiWeightMatchPhase(root, {
+    xmlFile: new File([sourceXml()], 'weight-fast-path.xml', { type: 'application/xml' }),
+    stagedJsonText: stagedJson,
+    config,
+    onSaveConfig() {},
+    ensureOverrides,
+    resolveStagedJsonText: async () => ({ text: stagedJson, label: 'inline-fast-path.json' }),
+    prepareWeightBasis: (request = {}) => coordinator.prepareWeightBasis({
+      xmlText: request.xmlText || '',
+      stagedJsonText: request.stagedJsonText || '',
+      config: request.config || {},
+      datasetRefs: {},
+      ratingMode: request.ratingMode || 'preview',
+      previewRatingSnapshot: request.snapshot || {},
+    }, { onProgress: request.onProgress }),
+  });
+
+  const button = root.querySelector('#mc-wm-refresh');
+  const statusEl = root.querySelector('#mc-wm-status');
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  let running = true;
+  let lastFrame = performance.now();
+  let maxFrameGapMs = 0;
+  const tick = (now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - lastFrame);
+    lastFrame = now;
+    if (running) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  const started = performance.now();
+  button.click();
+
+  while (button.dataset.wmBusy === 'true' && performance.now() - started < MAX_WALL_MS) {
+    await new Promise((resolve) => setTimeout(resolve, 20));
+  }
+  const elapsedMs = performance.now() - started;
+  await new Promise((resolve) => requestAnimationFrame((now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - lastFrame);
+    running = false;
+    resolve();
+  }));
+  const status = statusEl.textContent || '';
+  const rows = root.querySelectorAll('#mc-wm-content tbody tr').length;
+  const inputValue = root.querySelector('.mc-rigid-review-input')?.value || '';
+  const rating = root.querySelector('#mc-wm-content tbody tr td:nth-child(6)')?.textContent?.trim() || '';
+  const dtxr = root.querySelector('#mc-wm-content tbody tr td:nth-child(9)')?.textContent || '';
+  const ok = rawPayloadPreserved
+    && button.dataset.wmBusy !== 'true'
+    && elapsedMs < MAX_WALL_MS
+    && maxFrameGapMs <= MAX_FRAME_GAP_MS
+    && status !== 'Error'
+    && !/Preparing Weight Match basis/i.test(status)
+    && rows === 1
+    && Number(inputValue) === 25
+    && rating === '150';
+
+  coordinator.dispose();
+  return {
+    schema: 'XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V1',
+    ok,
+    elapsedMs,
+    maxWallMs: MAX_WALL_MS,
+    maxFrameGapMs,
+    maxFrameGapLimitMs: MAX_FRAME_GAP_MS,
+    pipeNodes: PIPE_COUNT,
+    stagedRows: STAGED_FILLER_COUNT + 1,
+    stagedBytes: stagedJson.length,
+    rawPayloadPreserved,
+    dtxrResolvedText: dtxr,
+    rows,
+    inputValue,
+    rating,
+    status,
+  };
+}
+
+try {
+  const result = await build();
+  if (!result.ok) throw new Error(`Weight fast-path qualification failed: ${JSON.stringify(result)}`);
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_RESULT__ = result;
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+} catch (error) {
+  const result = {
+    schema: 'XMLCII_ISSUE_781_WEIGHT_BASIS_FASTPATH_E2E_V1',
+    ok: false,
+    error: String(error?.stack || error),
+  };
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_RESULT__ = result;
+  globalThis.__XML_CII_WEIGHT_BASIS_FASTPATH_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

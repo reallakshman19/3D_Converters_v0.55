@@ -1,0 +1,263 @@
+FORMATCONVERTERS
+CONVERTERS, EXCHANGE, MAPPING
+CONVERTERS
+3D Model Converters
+XML→CII 2019 Standalone
+XML Builder
+Basic GLB-PCF
+Universal XML
+Universal Enrichment Workbench
+stagedJson Properties
+StagedJSON→Enriched XML
+EXCHANGE
+Model Exchange
+Interchange Config
+Support Mapping
+Adapter Mapping
+ENGINEERING
+Engineering Calculations
+XML→CII 2019 Standalone
+
+Mode A processes multiple XML files as isolated models; no node or branch identities are merged across files.
+
+Source Mode: XML
+Active Source: Loaded (877.2 KB)
+Separate Models: 1/1
+Branches: 41/41
+Masters: 1/4 loaded
+Master Readiness: Loaded
+Diagnostics: not built
+1 Source & Masters
+2 Regex Tester
+3 Resolver / JSON Trace
+4 Preview
+5 Diagnostics
+6 Weight Match
+7 Support Type Mapper
+8 Config
+9 Propagation Audit
+10 Output / Run
+Mode A per-file readiness — 1/1 ready
+XML file	Selected branches	Blocking	Warnings	Status
+EF-05-PRO.TEST.xml	41	0	0	READY
+Mode A batch scope: 1 independent XML files · 41/41 selected branch occurrences · 1654 XML nodes. Run remains a fan-out operation: one isolated conversion and artifact set per XML file.
+5 Run
+Run the conversion — optionally analyze PSI116 topology, generate a reviewed TopoFix sidecar, and use only a committed fix for CII.
+Pre-run Summary
+Source	Status	Message
+source mode	xml	0 blocking items
+artifacts	0	available artifacts
+Pre-run Checklist
+ID	Label	Status	Severity	Blocking	Message
+source-loaded	Source loaded	ready	ok	false	Source text or file is available.
+source-kind	Source kind resolved	ready	ok	false	Resolved source kind: xml.
+support-config-valid	Support config valid	ready	ok	false	Support/config JSON is parseable.
+output-mode	Output mode selected	ready	ok	false	Output mode: both.
+import-masters	Import Masters status	ready	ok	false	Master context is available.
+preview-audit	Preview / Diagnostics / Matched Audit status	missing	warning	false	Preview has not been built yet.
+weight-match	Weight Match status	missing	warning	false	Weight Match result is not available.
+support-mapper	Support Type Mapper status	missing	warning	false	Support mapper result is not available.
+run-result	Run result available after run	pending	warning	false	No run result yet.
+regex	Regex status for XML mode	missing	warning	false	Regex tester has not been run yet.
+resolver-json	Resolver / JSON Trace status for XML mode	missing	warning	false	Resolver / JSON Trace has not been built yet.
+manual-restraints	Manual restraints status for XML mode	missing	warning	false	Manual restraint review has not been run yet.
+Readiness
+!
+Line List
+not loaded
+!
+Piping Class Master
+not loaded
+!
+Material Map
+not loaded
+OK
+Valve Weights
+1595 row(s)
+OK
+Sample line key from
+/ASIM-1885-10"-S8810101-91261M7-HC/B1
+S8810101
+Run Options
+Coords Mode
+first
+all
+none
+Create enriched XML before CII
+kg -> N weight conversion (x10)
+PSI116 Topology Sidecar
+Analyze PSI116 topology
+Generate reviewed TopoFix XML
+Use committed TopoFix XML for CII
+Reviewed TopoFix action IDs
+Analysis is non-mutating. TopoFix requires explicit reviewed action IDs and is used for CII only after the atomic transaction commits.
+Run Conversion
+Run - Review Weight Matches
+Opens 4A Weight Match to review approximate weights, then Finalize and Run.
+Refresh readiness / checklist
+Run Separate Models
+Finalize, Run & Download ZIP
+Processing 1/1: EF-05-PRO.TEST.xml
+Output Artifacts / Downloads
+Kind	Artifact	Available	Filename	Bytes
+enriched	Enriched XML/InputXML	false		0
+cii	CII	false		0
+diagnostics	Diagnostics JSON	false		0
+manifest	Run Manifest JSON	false		0
+Download Enriched XML/InputXML
+Download CII
+Download Diagnostics JSON
+Download Run Manifest JSON
+CII Preview Canvas
+Download .cii
+Refresh geometry
+Geometry preview: 1613 segment(s), 1654 node(s), 119 support(s). Drag to orbit, scroll to zoom.
+Run conversion to enable the .cii preview and download.
+Logs
+Level	Source	Message
+warning	readiness	Preview / Diagnostics / Matched Audit status: Preview has not been built yet.
+warning	readiness	Weight Match status: Weight Match result is not available.
+warning	readiness	Support Type Mapper status: Support mapper result is not available.
+warning	readiness	Run result available after run: No run result yet.
+warning	readiness	Regex status for XML mode: Regex tester has not been run yet.
+warning	readiness	Resolver / JSON Trace status for XML mode: Resolver / JSON Trace has not been built yet.
+warning	readiness	Manual restraints status for XML mode: Manual restraint review has not been run yet.
+Run Manifest
+{
+  "schema": "xml-cii-2019-output-run-manifest/v1",
+  "sourceMode": "xml",
+  "outputMode": "both",
+  "sourceBytes": 898247,
+  "masterRowCounts": {
+    "lineList": 0,
+    "pipingClass": 0,
+    "materialMap": 0,
+    "weight": 1595
+  },
+  "regex": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "resolver": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "manualOrSideLoad": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "previewAudit": {
+    "matched": 0,
+    "rejected": 0
+  },
+  "weightMatch": {
+    "issues": 0,
+    "finalized": 0
+  },
+  "supportMapper": {
+    "previewRows": 0,
+    "diagnostics": 0
+  },
+  "topology": {
+    "analyze": false,
+    "generateTopoFix": false,
+    "useTopoFixForCii": false,
+    "selectedActionIds": [],
+    "committed": false,
+    "ciiInputSource": "original"
+  },
+  "artifacts": {
+    "enriched": false,
+    "cii": false,
+    "topologyFindings": false,
+    "topologyPlan": false,
+    "topoFixXml": false,
+    "diagnostics": false,
+    "manifest": false
+  }
+}
+Raw JSON advanced/debug
+3D converters
+
+Loading workspace...
+
+🐞
+0 0 0 0 XML 0 Built 0 Guide 0 Stop 0 Rendered 0 Cfg XML(PCFX1) Tol 0.5
+Clear Export
+Logs Trace Supports Events Conversion Scene
+Time	Severity	Category	Message
+Rigid Weights Need Review
+10 rigid node(s) have zero weight and length greater than 6 mm.
+Cancel
+Enter missing weights before conversion. Suggestions use the resolved Rating from explicit overrides, Piping Class master, or Regex extraction. DTXR Rating is comparison evidence only unless explicitly fetched in Preview.
+10
+0
+0
+0
+10
+0%
+Branch	Bore	Rating	Node	DTXR	Length	Manual Weight	Nearest Suggestions
+
+/ASIM-1836-4"-P8810031-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810031-31441C4-PP/B4	100 mm		~5060	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810033-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810033-31441C4-PP/B4	100 mm		~5650	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810035-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810035-31441C4-PP/B4	100 mm		~6290	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810037-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810037-31441C4-PP/B4	100 mm		~6400	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810039-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810039-31441C4-PP/B4	100 mm		~6430	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810032-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810032-31441C4-PP/B4	100 mm		~7470	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810034-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810034-31441C4-PP/B4	100 mm		~7490	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810036-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810036-31441C4-PP/B4	100 mm		~7510	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810038-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810038-31441C4-PP/B4	100 mm		~7530	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+
+
+/ASIM-1836-4"-P8810040-31441C4-PP · DN100 · 1 node(s)
+
+/ASIM-1836-4"-P8810040-31441C4-PP/B5	100 mm		~7560	Not found	86.0 mm		
+14.152 kg · flange-length-extrapolated · confidence 45%
+BLOCKED: 0 safe, 0 review, 10 blocked.
+Apply Rating as per DTXR
+Apply nearest suggestions
+Skip Review
+Apply Weights and Continue

@@ -1,0 +1,580 @@
+{
+  "schema": "relay-v3.2-delp-execution-graph",
+  "programme": {
+    "root": "reallaksh19/3D_Converters#1105",
+    "base_ref": "main",
+    "repository": "reallaksh19/3D_Converters",
+    "total_weight": 100,
+    "acceptance_claims": [
+      {
+        "id": "C_SOURCE",
+        "weight": 40,
+        "kind": "SEMANTIC",
+        "claim": "Genuine consumer-ready LFJ source session with original-value and safety semantics is served in canonical 3D and independently accepted by #1104."
+      },
+      {
+        "id": "C_XCU",
+        "weight": 25,
+        "kind": "SEMANTIC",
+        "claim": "XCU physically contains the immutable LFJ runtime and its real staged Pages origin can independently read source values through native Worker and IndexedDB without app wiring."
+      },
+      {
+        "id": "C_MARKUP",
+        "weight": 25,
+        "kind": "SEMANTIC",
+        "claim": "Markup physically contains that same LFJ runtime and its actual _site origin can independently read source values through native Worker and IndexedDB without app wiring."
+      },
+      {
+        "id": "C_CROSS",
+        "weight": 10,
+        "kind": "DELIVERY_GATE",
+        "claim": "Both external distributions independently prove exact upstream source/served SHA, compatibility, benchmarks and rollback; neither becomes a consumer-integrated release."
+      }
+    ],
+    "decomposition_policy": {
+      "mode": "ENFORCED",
+      "claim_first": {
+        "mode": "ENFORCED",
+        "require_independence_basis": true
+      }
+    },
+    "decomposition_proposal": {
+      "version": "V2",
+      "responsibilities": [
+        {
+          "id": "P01_SOURCE",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C_SOURCE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C_SOURCE",
+              "weight": 40
+            }
+          ],
+          "outcome": "An independently usable and served 3D_Converters LFJ SourceSession opens real source bytes, commits complete original occurrences in a native Worker/durable store, and returns verified original selected values with revocable stale rights for a separately accepting consumer.",
+          "independence_basis": "#1104 independently attests the frozen public schema and can reject original source-value, selection, lifecycle and served-origin failures.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Original occurrence value reader verifies complete OPEN and SEAL pair and returns bounded exact source bytes after index commit",
+              "verify": "Independent source SHA, byte spans, repeated names and scalar, array, object oracles"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Complete source and scope/dependency/job lifecycle rejects stale, closed, cancelled and aborted reads without leaking an old generation",
+              "verify": "Independent Worker failure, IndexedDB transaction abort, changed same-length source, scope-only and dependency-only tests"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Canonical docs-served LFJ public module runs native Chromium Worker, real IndexedDB and original value reads without foreground fallback",
+              "verify": "Independent actual 3D docs HTTP origin run with original source byte oracle"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Frozen SourceSession version and source manifest are independently accepted or rejected by #1104 before target copies",
+              "verify": "RECEIVER_HANDOFF_V1 with source and served immutable digests, exact-red/green, reviewer ACCEPT/REJECT"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/runtime/",
+            "lfj/consumer-port/",
+            "lfj/qualification/provisional/"
+          ],
+          "acceptance_methods": [
+            "Independent source/manifest byte and selected-row oracles",
+            "Real served Chromium + native Worker and durable store negative tests",
+            "Exact-head source review and RED-before-GREEN",
+            "Immutable source SHA and original fixture provenance"
+          ],
+          "depends_on": [],
+          "parallel_ok": []
+        },
+        {
+          "id": "P02_XCU",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C_XCU"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C_XCU",
+              "weight": 25
+            }
+          ],
+          "outcome": "XML_Compare_Utilities independently obtains a complete, source-backed LFJ session from its installed local release: original bytes remain readable after durable index completion, selections remain exhaustive, and invalid source generations fail closed without modifying existing applications.",
+          "independence_basis": "Independent XCU real Pages staging and Chromium original-byte/Worker/IDB oracle with source/served asset SHA from upstream immutable commit.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Complete independently upstream-attested LFJ ESM/Worker closure is physically installed in XCU",
+              "verify": "Compare immutable upstream commit file hashes against vendor files, not co-copied manifest"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "XCU actual GitHub Pages staged artifact imports local native module Worker and commits real durable indexed source",
+              "verify": "Verify rsync Pages staging and served URLs; optional docs mirror separately"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "XCU served LFJ reads full selected original source bytes and rejects mutated/closed/aborted sessions",
+              "verify": "Independent exact source SHA and OPEN/SEAL/selection byte-oracle against populated XCU fixture"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "XCU retains a coherent previous source-processing release after rollback and rejects stale mixed-version artifacts or incompatible persisted generations without changing any existing application source or engineering authority.",
+              "verify": "Compare prior supported runtime, corrupt missing module/IDB schema rollback, unchanged existing app source"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "vendor/lfj/",
+            "tests/lfj/"
+          ],
+          "acceptance_methods": [
+            "Independent source/manifest byte and selected-row oracles",
+            "Real served Chromium + native Worker and durable store negative tests",
+            "Exact-head source review and RED-before-GREEN",
+            "Immutable source SHA and original fixture provenance"
+          ],
+          "depends_on": [
+            "P01_SOURCE"
+          ],
+          "parallel_ok": [
+            "P03_MARKUP"
+          ],
+          "parallel_ok_basis": "Identical relative vendor paths resolve to distinct physical GitHub repositories; no shared writer or file."
+        },
+        {
+          "id": "P03_MARKUP",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C_MARKUP"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C_MARKUP",
+              "weight": 25
+            }
+          ],
+          "outcome": "3DMarkupTool contains the identical physically installed source-pinned LFJ package usable from its actual _site output and Node without touching current managed-stage importer or app bundles.",
+          "independence_basis": "Independent _site artifact source-versus-served Worker/IDB/original source oracle; explicit no additional LFJ import in Rollup app bundles.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Complete identical upstream-attested LFJ ESM and native Worker closure is installed in Markup",
+              "verify": "Compare immutable upstream source bytes and vendor closure with XCU expected module SHA"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Markup actual _site build serves LFJ public module and separate native Worker with durable IndexedDB",
+              "verify": "Verify real HTTP _site and no new LFJ import in app.bundle.js or static-shell.bundle.js"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Markup served LFJ returns original selected value bytes and complete source census on genuine staged source",
+              "verify": "Independent BM_CII managed-stage profile, repeated owner/name and first-middle-last byte oracle"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Markup retains coherent previous package and rejects stale incompatible cached version or store after rollback",
+              "verify": "Corrupt Worker/missing module/version-mix and unchanged existing source-parser and RVM code tests"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "vendor/lfj/",
+            "tests/lfj/"
+          ],
+          "acceptance_methods": [
+            "Independent source/manifest byte and selected-row oracles",
+            "Real served Chromium + native Worker and durable store negative tests",
+            "Exact-head source review and RED-before-GREEN",
+            "Immutable source SHA and original fixture provenance"
+          ],
+          "depends_on": [
+            "P01_SOURCE"
+          ],
+          "parallel_ok": [
+            "P02_XCU"
+          ],
+          "parallel_ok_basis": "Same relative vendor paths reside in a physically separate repository; parallel writers are isolated by distinct repository ownership."
+        },
+        {
+          "id": "P04_CROSS",
+          "work_class": "GATE",
+          "owns_claims": [
+            "C_CROSS"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C_CROSS",
+              "weight": 10
+            }
+          ],
+          "outcome": "Both external copies and canonical upstream independently attest identical immutable LFJ source closure and fail-closed deployment and rollback readiness, without engineering application adoption.",
+          "independence_basis": "An independent checker fetches the frozen 3D_Converters commit and independently hashes target installed/HTTP-served assets; no implementation-owned source golden is accepted.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Both physical target copy manifests independently match frozen upstream byte and dependency closure",
+              "verify": "Independently reconstruct allowed complete ESM/Worker closure at immutable original commit"
+            },
+            {
+              "id": "U02",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Both target-local Node and actual hosted-tree Chromium Worker/IDB provenance checks pass",
+              "verify": "Exact-head Node22/24, Chromium and SHA/byte-count oracle reports from each repo"
+            },
+            {
+              "id": "U03",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Both target release variants reject missing modules, stale cache, stale source and incompatible IndexedDB generation",
+              "verify": "Independent injected corruption/restart and rollback fixtures"
+            },
+            {
+              "id": "U04",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Exact candidate handover distinguishes external deployable source facts from unintegrated engineering consumers",
+              "verify": "Cross-repo TASK_EVIDENCE, raw metrics with authentic source SHA and #1104 receiver linkage"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/qualification/cross-release/"
+          ],
+          "acceptance_methods": [
+            "Independent source/manifest byte and selected-row oracles",
+            "Real served Chromium + native Worker and durable store negative tests",
+            "Exact-head source review and RED-before-GREEN",
+            "Immutable source SHA and original fixture provenance"
+          ],
+          "depends_on": [
+            "P02_XCU",
+            "P03_MARKUP"
+          ],
+          "parallel_ok": []
+        }
+      ],
+      "released_proposal_digest": "sha256:6c6c20b7c12581416f0866509893aca22aea6a412c0413b46e2320a8d4101726",
+      "bindings": [
+        {
+          "responsibility_id": "P01_SOURCE",
+          "ref": "reallaksh19/3D_Converters#1108"
+        },
+        {
+          "responsibility_id": "P02_XCU",
+          "ref": "reallaksh19/XML_Compare_Utilities#1347"
+        },
+        {
+          "responsibility_id": "P03_MARKUP",
+          "ref": "reallaksh19/3DMarkupTool#506"
+        },
+        {
+          "responsibility_id": "P04_CROSS",
+          "ref": "reallaksh19/3D_Converters#1109"
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "ref": "reallaksh19/3D_Converters#1105",
+      "kind": "ROOT",
+      "reserve_weight": 0
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1108",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1105",
+      "weight": 40,
+      "responsibility_id": "P01_SOURCE",
+      "work_class": "PRODUCT",
+      "outcome": "An independently usable and served 3D_Converters LFJ SourceSession opens real source bytes, commits complete original occurrences in a native Worker/durable store, and returns verified original selected values with revocable stale rights for a separately accepting consumer.",
+      "independence_basis": "#1104 independently attests the frozen public schema and can reject original source-value, selection, lifecycle and served-origin failures.",
+      "owns_claims": [
+        "C_SOURCE"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/runtime/",
+        "lfj/consumer-port/",
+        "lfj/qualification/provisional/"
+      ],
+      "acceptance_methods": [
+        "Independent source/manifest byte and selected-row oracles",
+        "Real served Chromium + native Worker and durable store negative tests",
+        "Exact-head source review and RED-before-GREEN",
+        "Immutable source SHA and original fixture provenance"
+      ],
+      "depends_on": [],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "weight": 25,
+          "outcome": "Original occurrence value reader verifies complete OPEN and SEAL pair and returns bounded exact source bytes after index commit",
+          "verify": "Independent source SHA, byte spans, repeated names and scalar, array, object oracles"
+        },
+        {
+          "id": "U02",
+          "weight": 25,
+          "outcome": "Complete source and scope/dependency/job lifecycle rejects stale, closed, cancelled and aborted reads without leaking an old generation",
+          "verify": "Independent Worker failure, IndexedDB transaction abort, changed same-length source, scope-only and dependency-only tests"
+        },
+        {
+          "id": "U03",
+          "weight": 25,
+          "outcome": "Canonical docs-served LFJ public module runs native Chromium Worker, real IndexedDB and original value reads without foreground fallback",
+          "verify": "Independent actual 3D docs HTTP origin run with original source byte oracle"
+        },
+        {
+          "id": "U04",
+          "weight": 25,
+          "outcome": "Frozen SourceSession version and source manifest are independently accepted or rejected by #1104 before target copies",
+          "verify": "RECEIVER_HANDOFF_V1 with source and served immutable digests, exact-red/green, reviewer ACCEPT/REJECT"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/XML_Compare_Utilities#1347",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1105",
+      "weight": 25,
+      "responsibility_id": "P02_XCU",
+      "work_class": "PRODUCT",
+      "outcome": "XML_Compare_Utilities independently obtains a complete, source-backed LFJ session from its installed local release: original bytes remain readable after durable index completion, selections remain exhaustive, and invalid source generations fail closed without modifying existing applications.",
+      "independence_basis": "Independent XCU real Pages staging and Chromium original-byte/Worker/IDB oracle with source/served asset SHA from upstream immutable commit.",
+      "owns_claims": [
+        "C_XCU"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "vendor/lfj/",
+        "tests/lfj/"
+      ],
+      "acceptance_methods": [
+        "Independent source/manifest byte and selected-row oracles",
+        "Real served Chromium + native Worker and durable store negative tests",
+        "Exact-head source review and RED-before-GREEN",
+        "Immutable source SHA and original fixture provenance"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1108"
+      ],
+      "parallel_ok": [
+        "reallaksh19/3DMarkupTool#506"
+      ],
+      "parallel_ok_basis": "Identical relative vendor paths resolve to distinct physical GitHub repositories; no shared writer or file.",
+      "units": [
+        {
+          "id": "U01",
+          "weight": 25,
+          "outcome": "Complete independently upstream-attested LFJ ESM/Worker closure is physically installed in XCU",
+          "verify": "Compare immutable upstream commit file hashes against vendor files, not co-copied manifest"
+        },
+        {
+          "id": "U02",
+          "weight": 25,
+          "outcome": "XCU actual GitHub Pages staged artifact imports local native module Worker and commits real durable indexed source",
+          "verify": "Verify rsync Pages staging and served URLs; optional docs mirror separately"
+        },
+        {
+          "id": "U03",
+          "weight": 25,
+          "outcome": "XCU served LFJ reads full selected original source bytes and rejects mutated/closed/aborted sessions",
+          "verify": "Independent exact source SHA and OPEN/SEAL/selection byte-oracle against populated XCU fixture"
+        },
+        {
+          "id": "U04",
+          "weight": 25,
+          "outcome": "XCU retains a coherent previous source-processing release after rollback and rejects stale mixed-version artifacts or incompatible persisted generations without changing any existing application source or engineering authority.",
+          "verify": "Compare prior supported runtime, corrupt missing module/IDB schema rollback, unchanged existing app source"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3DMarkupTool#506",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1105",
+      "weight": 25,
+      "responsibility_id": "P03_MARKUP",
+      "work_class": "PRODUCT",
+      "outcome": "3DMarkupTool contains the identical physically installed source-pinned LFJ package usable from its actual _site output and Node without touching current managed-stage importer or app bundles.",
+      "independence_basis": "Independent _site artifact source-versus-served Worker/IDB/original source oracle; explicit no additional LFJ import in Rollup app bundles.",
+      "owns_claims": [
+        "C_MARKUP"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "vendor/lfj/",
+        "tests/lfj/"
+      ],
+      "acceptance_methods": [
+        "Independent source/manifest byte and selected-row oracles",
+        "Real served Chromium + native Worker and durable store negative tests",
+        "Exact-head source review and RED-before-GREEN",
+        "Immutable source SHA and original fixture provenance"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1108"
+      ],
+      "parallel_ok": [
+        "reallaksh19/XML_Compare_Utilities#1347"
+      ],
+      "parallel_ok_basis": "Same relative vendor paths reside in a physically separate repository; parallel writers are isolated by distinct repository ownership.",
+      "units": [
+        {
+          "id": "U01",
+          "weight": 25,
+          "outcome": "Complete identical upstream-attested LFJ ESM and native Worker closure is installed in Markup",
+          "verify": "Compare immutable upstream source bytes and vendor closure with XCU expected module SHA"
+        },
+        {
+          "id": "U02",
+          "weight": 25,
+          "outcome": "Markup actual _site build serves LFJ public module and separate native Worker with durable IndexedDB",
+          "verify": "Verify real HTTP _site and no new LFJ import in app.bundle.js or static-shell.bundle.js"
+        },
+        {
+          "id": "U03",
+          "weight": 25,
+          "outcome": "Markup served LFJ returns original selected value bytes and complete source census on genuine staged source",
+          "verify": "Independent BM_CII managed-stage profile, repeated owner/name and first-middle-last byte oracle"
+        },
+        {
+          "id": "U04",
+          "weight": 25,
+          "outcome": "Markup retains coherent previous package and rejects stale incompatible cached version or store after rollback",
+          "verify": "Corrupt Worker/missing module/version-mix and unchanged existing source-parser and RVM code tests"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1109",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1105",
+      "weight": 10,
+      "responsibility_id": "P04_CROSS",
+      "work_class": "GATE",
+      "outcome": "Both external copies and canonical upstream independently attest identical immutable LFJ source closure and fail-closed deployment and rollback readiness, without engineering application adoption.",
+      "independence_basis": "An independent checker fetches the frozen 3D_Converters commit and independently hashes target installed/HTTP-served assets; no implementation-owned source golden is accepted.",
+      "owns_claims": [
+        "C_CROSS"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/qualification/cross-release/"
+      ],
+      "acceptance_methods": [
+        "Independent source/manifest byte and selected-row oracles",
+        "Real served Chromium + native Worker and durable store negative tests",
+        "Exact-head source review and RED-before-GREEN",
+        "Immutable source SHA and original fixture provenance"
+      ],
+      "depends_on": [
+        "reallaksh19/XML_Compare_Utilities#1347",
+        "reallaksh19/3DMarkupTool#506"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "weight": 25,
+          "outcome": "Both physical target copy manifests independently match frozen upstream byte and dependency closure",
+          "verify": "Independently reconstruct allowed complete ESM/Worker closure at immutable original commit"
+        },
+        {
+          "id": "U02",
+          "weight": 25,
+          "outcome": "Both target-local Node and actual hosted-tree Chromium Worker/IDB provenance checks pass",
+          "verify": "Exact-head Node22/24, Chromium and SHA/byte-count oracle reports from each repo"
+        },
+        {
+          "id": "U03",
+          "weight": 25,
+          "outcome": "Both target release variants reject missing modules, stale cache, stale source and incompatible IndexedDB generation",
+          "verify": "Independent injected corruption/restart and rollback fixtures"
+        },
+        {
+          "id": "U04",
+          "weight": 25,
+          "outcome": "Exact candidate handover distinguishes external deployable source facts from unintegrated engineering consumers",
+          "verify": "Cross-repo TASK_EVIDENCE, raw metrics with authentic source SHA and #1104 receiver linkage"
+        }
+      ]
+    }
+  ],
+  "plan_updates": []
+}

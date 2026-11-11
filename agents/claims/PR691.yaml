@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+pr_or_wip: PR691
+pull_request: 691
+claim_state: ACTIVE
+branch: agent/vib-m13-actions-findings-20260821
+authority_domains:
+  - VIBRATION_REQUIRED_ACTIONS_FINDINGS
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - converters/vibration/facility/action-lifecycle.js
+    - tabs/vibration-integrity-view.js
+    - tabs/vibration-integrity-run-evidence.js
+    - tests/vibration-facility-action-lifecycle.test.mjs
+    - tests/vibration-integrity-run-evidence.test.mjs
+exclusions:
+  - mechanism equations and coefficients
+  - source/master qualification
+  - applicability and AssessmentCompleteness authority
+  - EI main-line aggregation authority
+  - design authority
+  - completion mutation/persistence
+  - right-panel blocking authority
+coordination:
+  PR688: MERGED_MATRIX_CURRENTNESS_FOUNDATION
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

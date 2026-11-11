@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr: 648
+work_id: PR648
+branch: agent/hp-kd320-csv-intake-preview
+criticality: ENGINEERING_CRITICAL
+claim_state: COMPLETE_PENDING_MERGE
+scope:
+  paths:
+    - engineering/hp-class-standardization/qualification/kd320-q2/csv-intake.js
+    - tabs/hp-kd320-evidence-intake-tab.js
+    - tabs/engineering-workspace-tab.js
+    - tests/b313-chapter-ix-kd320-csv-intake.test.mjs
+    - tests/hp-kd320-evidence-intake-ui.test.mjs
+  authority_domain: KD320_EVIDENCE_INTAKE_PREVIEW_ONLY
+dependencies:
+  - PR622
+  - PR623
+  - PR625
+protected_invariants:
+  - Q2 evaluator semantics unchanged
+  - edition reconciliation evaluator semantics unchanged
+  - native CORE KD320 remains false
+  - Code compliance remains false
+  - design authority remains false
+  - production kernel remains blocked
+  - no automatic admission or promotion
+merge_authority: OWNER_GRANTED_ON_COMPLETION

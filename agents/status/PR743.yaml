@@ -1,0 +1,36 @@
+pr: 743
+chain: ENGCALC-BOLTED-JOINTS
+leg: P8_ADVANCED_ANALYSIS_INTERFACE_ADAPTER
+state: BLOCKED_VALIDATION_AND_FACE_BINDING_REQUIRED
+execution_mode: AUTO
+auto_state: BLOCKED_VALIDATION_AND_FACE_BINDING_REQUIRED
+base_pr: 742
+base_sha: 554cb6ff8a9e86974c84dbf8c43a6d374eb46638
+source:
+  repository: reallaksh19/Advanced_Analysis
+  commit: eabb93cd44c59ce182d73284cb707653917e07c8
+  interface_set_schema: linear-piping-interface-set/v1
+  interface_recovery_schema: linear-piping-interface-recovery/v1
+authority:
+  source: QUALIFIED_CROSS_REPOSITORY_INTERFACE_CONTRACT_NON_AUTHORIZING
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+scope:
+  automatic_3d_extraction: false
+  explicit_flange_face_declaration_required: true
+  explicit_opening_direction_required: true
+  master_bindings_resolved: false
+  solver_invoked: false
+  central_registry_modified: false
+  ui_modified: false
+validation:
+  source_contract_inspection: PASS
+  new_github_blob_identity: PASS
+  source_reconstructed_focused_suite: PASS_15_OF_15
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+  native_backup_command: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+hard_stop: node --test tests/flange-advanced-analysis-interface-adapter.test.mjs
+latest_endpoint: EP-0032
+merge_authority: OWNER_ONLY_NOT_GRANTED

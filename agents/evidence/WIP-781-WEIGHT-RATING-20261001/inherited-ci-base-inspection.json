@@ -1,0 +1,12 @@
+{
+  "status": "FAIL_ON_BASE_ARTIFACTS",
+  "observation": "ARTIFACT_INSPECTION",
+  "base": "d6f19bdd3bf2c07e339d5e549d1b82795aa0fb4c",
+  "rootIndexOldExpectationPresent": false,
+  "canonicalOldExpectationPresent": false,
+  "asset": "converters/scripts/cii_syntax_check_2019.py",
+  "manifestHash": "c2e4cc8014da54ed1ea6a516d11d778de60d304feef181dcfe3397e031b6dc74",
+  "baseBlobHash": "30e9a19da557e6844a2980d0906fc0b708d1b2fb0867cf787cdec27ea2ff73ac",
+  "matches": false,
+  "limits": "Independent base blob/hash inspection; no base browser product execution. Root key failures inherited from PR810; InputXML module/hash inputs unchanged by PR811."
+}

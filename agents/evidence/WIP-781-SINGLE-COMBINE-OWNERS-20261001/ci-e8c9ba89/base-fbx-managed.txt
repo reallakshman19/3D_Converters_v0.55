@@ -1,0 +1,374 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /primaryAccept = '\.fbx,\.FBX,\.zip,\.ZIP'/. Input:
+
+"import { getConverterById } from './converter-registry.js?v=20260617-basic-glb-3';\n" +
+  "import { run as runBaseFbxToStagedJson } from './converters/fbx-to-stagedjson.js?v=20260804-fbx-multifamily-release-1';\n" +
+  "import { canonicalJson } from './converters/fbx/canonical-json.js';\n" +
+  "import { resolveBrowserFbxPrimary } from './converters/fbx/fbx2-browser-inputs.js?v=20260804-fbx-multifamily-release-1';\n" +
+  "import { buildMappingWorklist } from './converters/fbx/mapping-worklist.js';\n" +
+  "import { buildReviewBundle } from './converters/fbx/mapping-review-bundle.js';\n" +
+  "import { parseFbxInWorker } from './converters/fbx/parser-client.js';\n" +
+  "import { loadBrowserParserEvidence } from './converters/fbx/parser-provenance.js';\n" +
+  "import { reviewShardCsv } from './converters/fbx/review-execution/review-csv.js';\n" +
+  '\n' +
+  "export const FBX_CONVERT_OPERATION = 'Convert with approved mapping';\n" +
+  "export const FBX_REVIEW_OPERATION = 'Create mapping review bundle';\n" +
+  "export const FBX_REVIEW_UI_VERSION = '20260802-fbx2-managed-reference-1';\n" +
+  "export const FBX_REVIEW_UI_BUILD = '20260804-fbx-multifamily-release-1';\n" +
+  'const DEFAULT_REVIEW_SHARD_SIZE = 500;\n' +
+  "const PRIMARY_ACCEPT = '.fbx,.FBX,.zip,.ZIP';\n" +
+  "const SECONDARY_ACCEPT = '.fbxmap.json,.json,.JSON,.zip,.ZIP';\n" +
+  "const PRIMARY_LABEL = 'FBX Input or governed FBX2 source ZIP';\n" +
+  "const SECONDARY_LABEL = 'Mapping JSON or managed-stage JSON/ZIP (optional)';\n" +
+  '\n' +
+  'function findInput(context, role) {\n' +
+  '  return context.inputFiles?.find((file) => file.role === role);\n' +
+  '}\n' +
+  'function baseName(name) {\n' +
+  "  return String(name || 'model.fbx').replace(/\\.[^.]+$/, '') || 'model';\n" +
+  '}\n' +
+  'function positiveInteger(value, fallback) {\n' +
+  '  const parsed = Number(value ?? fallback);\n' +
+  '  if (!Number.isSafeInteger(parsed) || parsed < 1) {\n' +
+  "    throw new Error('Review Items per Shard must be a positive integer.');\n" +
+  '  }\n' +
+  '  return parsed;\n' +
+  '}\n' +
+  'function jsonOutput(name, value) {\n' +
+  "  return { name, text: canonicalJson(value), mime: 'application/json;charset=utf-8' };\n" +
+  '}\n' +
+  'function csvOutput(name, text) {\n' +
+  "  return { name, text, mime: 'text/csv;charset=utf-8' };\n" +
+  '}\n' +
+  'function reviewDiagnostics() {\n' +
+  '  return [\n' +
+  "    'PARSE_PASS',\n" +
+  "    'MAPPING_WORKLIST_PASS',\n" +
+  "    'REVIEW_BUNDLE_PASS',\n" +
+  "    'BROWSER_REFERENCE_EXECUTION',\n" +
+  "    'BOUNDED_MEMORY_CLI_NOT_EXECUTED',\n" +
+  '  ];\n' +
+  '}\n' +
+  'function reviewReport(worklist, bundle, shards) {\n' +
+  '  return {\n' +
+  "    schema: 'FbxBrowserReviewReport.v1',\n" +
+  "    status: 'MAPPING_REVIEW_READY',\n" +
+  "    executionStrategy: 'BROWSER_REFERENCE_IN_MEMORY',\n" +
+  '    boundedMemory: false,\n' +
+  '    worklistId: worklist.worklistId,\n' +
+  '    bundleId: bundle.bundleId,\n' +
+  '    workItemCount: worklist.workItems.length,\n' +
+  '    shardCount: shards.length,\n' +
+  '    diagnostics: reviewDiagnostics(),\n' +
+  '  };\n' +
+  '}\n' +
+  'function appendShardOutputs(outputs, bundle, shards) {\n' +
+  '  for (const shard of shards) {\n' +
+  '    const metadata = bundle.shards.find((entry) => entry.shardId === shard.shardId);\n' +
+  '    if (!metadata) throw new Error(`Review bundle lacks shard metadata for ${shard.shardId}.`);\n' +
+  '    outputs.push(jsonOutput(metadata.fileName, shard));\n' +
+  "    outputs.push(csvOutput(metadata.fileName.replace(/\\.json$/i, '.csv'), reviewShardCsv(shard)));\n" +
+  '  }\n' +
+  '}\n' +
+  'async function createBrowserReview(context) {\n' +
+  "  const primary = await resolveBrowserFbxPrimary(findInput(context, 'primary'));\n" +
+  '  const bytes = primary.bytes;\n' +
+  '  const stem = baseName(primary.name);\n' +
+  '  const maxItems = positiveInteger(context.options?.reviewMaxItemsPerShard, DEFAULT_REVIEW_SHARD_SIZE);\n' +
+  "  context.setStatus?.('Parsing FBX for mapping review...', 'running');\n" +
+  '  const parserEvidence = await loadBrowserParserEvidence();\n' +
+  '  const graph = await parseFbxInWorker(bytes, { signal: context.signal });\n' +
+  "  context.setStatus?.('Building deterministic mapping review bundle...', 'running');\n" +
+  '  const worklist = await buildMappingWorklist({ bytes, graph, parserEvidence });\n' +
+  '  const { bundle, shards } = await buildReviewBundle(worklist, maxItems);\n' +
+  '  const outputs = [\n' +
+  '    jsonOutput(`${stem}.fbx-source-graph.json`, graph),\n' +
+  '    jsonOutput(`${stem}.fbx-mapping-worklist.json`, worklist),\n' +
+  "    jsonOutput('manifest.json', bundle),\n" +
+  '    jsonOutput(`${stem}.fbx-browser-review-report.json`, reviewReport(worklist, bundle, shards)),\n' +
+  '  ];\n' +
+  '  appendShardOutputs(outputs, bundle, shards);\n' +
+  "  context.setStatus?.('MAPPING_REVIEW_READY', 'ok');\n" +
+  '  return {\n' +
+  '    ok: true,\n' +
+  "    conversionStatus: 'MAPPING_REVIEW_READY',\n" +
+  '    outputs,\n' +
+  '    logs: { stdout: reviewDiagnostics(), stderr: [] },\n' +
+  '  };\n' +
+  '}\n' +
+  '\n' +
+  'export async function runFbxWithReviewUi(context = {}, baseRun = runBaseFbxToStagedJson) {\n' +
+  '  const operation = context.options?.fbxOperation || FBX_CONVERT_OPERATION;\n' +
+  '  if (operation === FBX_CONVERT_OPERATION) return baseRun(context);\n' +
+  '  if (operation !== FBX_REVIEW_OPERATION) throw new Error(`Unsupported FBX operation: ${operation}`);\n' +
+  '  try {\n' +
+  '    return await createBrowserReview(context);\n' +
+  '  } catch (error) {\n' +
+  '    const detail = error instanceof Error ? error.message : String(error);\n' +
+  "    context.setStatus?.('BLOCKED_MAPPING_REVIEW', 'error');\n" +
+  '    throw new Error(`BLOCKED_MAPPING_REVIEW ${detail}`);\n' +
+  '  }\n' +
+  '}\n' +
+  '\n' +
+  'function appendReviewOptions(converter) {\n' +
+  '  const existing = Array.isArray(converter.options) ? converter.options : [];\n' +
+  '  const retained = existing.filter((option) => ![\n' +
+  "    'fbxOperation', 'reviewMaxItemsPerShard', 'fbxSelectedZoneLabel',\n" +
+  '  ].includes(option.key));\n' +
+  '  converter.options = [\n' +
+  '    ...retained,\n' +
+  '    {\n' +
+  "      key: 'fbxOperation',\n" +
+  "      label: 'FBX Workflow',\n" +
+  "      type: 'select',\n" +
+  '      options: [FBX_CONVERT_OPERATION, FBX_REVIEW_OPERATION],\n' +
+  '    },\n' +
+  '    {\n' +
+  "      key: 'reviewMaxItemsPerShard',\n" +
+  "      label: 'Review Items per Shard',\n" +
+  "      type: 'number',\n" +
+  "      step: '1',\n" +
+  '    },\n' +
+  '    {\n' +
+  "      key: 'fbxSelectedZoneLabel',\n" +
+  "      label: 'Managed Reference Zone Label',\n" +
+  "      type: 'text',\n" +
+  "      placeholder: '/GLRD-1000-CU-PI-P',\n" +
+  '    },\n' +
+  '  ];\n' +
+  '}\n' +
+  '\n' +
+  'function synchronizeInput(converter, role, label, accept, required) {\n' +
+  '  const inputs = Array.isArray(converter.inputs) ? converter.inputs : [];\n' +
+  '  let input = inputs.find((entry) => entry?.role === role);\n' +
+  '  if (!input) {\n' +
+  '    input = { role };\n' +
+  '    inputs.push(input);\n' +
+  '  }\n' +
+  '  input.label = label;\n' +
+  '  input.accept = accept;\n' +
+  '  input.required = required;\n' +
+  '  converter.inputs = inputs;\n' +
+  '}\n' +
+  '\n' +
+  'export function configureManagedReferenceInputs(converter) {\n' +
+  '  converter.primaryAccept = PRIMARY_ACCEPT;\n' +
+  '  converter.primaryLabel = PRIMARY_LABEL;\n' +
+  '  converter.secondaryLabel = SECONDARY_LABEL;\n' +
+  '  converter.secondaryAccept = SECONDARY_ACCEPT;\n' +
+  "  synchronizeInput(converter, 'primary', PRIMARY_LABEL, PRIMARY_ACCEPT, true);\n" +
+  "  synchronizeInput(converter, 'secondary', SECONDARY_LABEL, SECONDARY_ACCEPT, false);\n" +
+  '  return converter;\n' +
+  '}\n' +
+  '\n' +
+  'export function installFbxReviewUiAddon() {\n' +
+  "  const converter = getConverterById('fbx_to_stagedjson');\n" +
+  '  if (!converter || converter.__fbxReviewUiAddonInstalled === FBX_REVIEW_UI_VERSION) {\n' +
+  '    return false;\n' +
+  '  }\n' +
+  '  converter.defaults = {\n' +
+  '    ...(converter.defaults || {}),\n' +
+  '    fbxOperation: FBX_CONVERT_OPERATION,\n' +
+  '    reviewMaxItemsPerShard: DEFAULT_REVIEW_SHARD_SIZE,\n' +
+  "    fbxSelectedZoneLabel: '',\n" +
+  '  };\n' +
+  '  appendReviewOptions(converter);\n' +
+  '  configureManagedReferenceInputs(converter);\n' +
+  "  converter.description = 'Convert FBX with mapping JSON, or reconcile a managed-stage JSON/ZIP against an explicit zone. The exact governed FBX2 ZIP pair is identity-bound to /GLRD-1000-CU-PI-P. Mapping review bundles remain non-authoritative.';\n" +
+  '  converter.run = (context = {}) => runFbxWithReviewUi(context, runBaseFbxToStagedJson);\n' +
+  '  converter.__fbxReviewUiAddonInstalled = FBX_REVIEW_UI_VERSION;\n' +
+  '  converter.reviewUiBuild = FBX_REVIEW_UI_BUILD;\n' +
+  '  return true;\n' +
+  '}\n'
+
+    at file:///C:/Users/reall/AppData/Local/Temp/xml-cii-base-alkg3h1m/tests/fbx/test-fbx2-managed-reference-static.mjs:25:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: "import { getConverterById } from './converter-registry.js?v=20260617-basic-glb-3';\n" +
+    "import { run as runBaseFbxToStagedJson } from './converters/fbx-to-stagedjson.js?v=20260804-fbx-multifamily-release-1';\n" +
+    "import { canonicalJson } from './converters/fbx/canonical-json.js';\n" +
+    "import { resolveBrowserFbxPrimary } from './converters/fbx/fbx2-browser-inputs.js?v=20260804-fbx-multifamily-release-1';\n" +
+    "import { buildMappingWorklist } from './converters/fbx/mapping-worklist.js';\n" +
+    "import { buildReviewBundle } from './converters/fbx/mapping-review-bundle.js';\n" +
+    "import { parseFbxInWorker } from './converters/fbx/parser-client.js';\n" +
+    "import { loadBrowserParserEvidence } from './converters/fbx/parser-provenance.js';\n" +
+    "import { reviewShardCsv } from './converters/fbx/review-execution/review-csv.js';\n" +
+    '\n' +
+    "export const FBX_CONVERT_OPERATION = 'Convert with approved mapping';\n" +
+    "export const FBX_REVIEW_OPERATION = 'Create mapping review bundle';\n" +
+    "export const FBX_REVIEW_UI_VERSION = '20260802-fbx2-managed-reference-1';\n" +
+    "export const FBX_REVIEW_UI_BUILD = '20260804-fbx-multifamily-release-1';\n" +
+    'const DEFAULT_REVIEW_SHARD_SIZE = 500;\n' +
+    "const PRIMARY_ACCEPT = '.fbx,.FBX,.zip,.ZIP';\n" +
+    "const SECONDARY_ACCEPT = '.fbxmap.json,.json,.JSON,.zip,.ZIP';\n" +
+    "const PRIMARY_LABEL = 'FBX Input or governed FBX2 source ZIP';\n" +
+    "const SECONDARY_LABEL = 'Mapping JSON or managed-stage JSON/ZIP (optional)';\n" +
+    '\n' +
+    'function findInput(context, role) {\n' +
+    '  return context.inputFiles?.find((file) => file.role === role);\n' +
+    '}\n' +
+    'function baseName(name) {\n' +
+    "  return String(name || 'model.fbx').replace(/\\.[^.]+$/, '') || 'model';\n" +
+    '}\n' +
+    'function positiveInteger(value, fallback) {\n' +
+    '  const parsed = Number(value ?? fallback);\n' +
+    '  if (!Number.isSafeInteger(parsed) || parsed < 1) {\n' +
+    "    throw new Error('Review Items per Shard must be a positive integer.');\n" +
+    '  }\n' +
+    '  return parsed;\n' +
+    '}\n' +
+    'function jsonOutput(name, value) {\n' +
+    "  return { name, text: canonicalJson(value), mime: 'application/json;charset=utf-8' };\n" +
+    '}\n' +
+    'function csvOutput(name, text) {\n' +
+    "  return { name, text, mime: 'text/csv;charset=utf-8' };\n" +
+    '}\n' +
+    'function reviewDiagnostics() {\n' +
+    '  return [\n' +
+    "    'PARSE_PASS',\n" +
+    "    'MAPPING_WORKLIST_PASS',\n" +
+    "    'REVIEW_BUNDLE_PASS',\n" +
+    "    'BROWSER_REFERENCE_EXECUTION',\n" +
+    "    'BOUNDED_MEMORY_CLI_NOT_EXECUTED',\n" +
+    '  ];\n' +
+    '}\n' +
+    'function reviewReport(worklist, bundle, shards) {\n' +
+    '  return {\n' +
+    "    schema: 'FbxBrowserReviewReport.v1',\n" +
+    "    status: 'MAPPING_REVIEW_READY',\n" +
+    "    executionStrategy: 'BROWSER_REFERENCE_IN_MEMORY',\n" +
+    '    boundedMemory: false,\n' +
+    '    worklistId: worklist.worklistId,\n' +
+    '    bundleId: bundle.bundleId,\n' +
+    '    workItemCount: worklist.workItems.length,\n' +
+    '    shardCount: shards.length,\n' +
+    '    diagnostics: reviewDiagnostics(),\n' +
+    '  };\n' +
+    '}\n' +
+    'function appendShardOutputs(outputs, bundle, shards) {\n' +
+    '  for (const shard of shards) {\n' +
+    '    const metadata = bundle.shards.find((entry) => entry.shardId === shard.shardId);\n' +
+    '    if (!metadata) throw new Error(`Review bundle lacks shard metadata for ${shard.shardId}.`);\n' +
+    '    outputs.push(jsonOutput(metadata.fileName, shard));\n' +
+    "    outputs.push(csvOutput(metadata.fileName.replace(/\\.json$/i, '.csv'), reviewShardCsv(shard)));\n" +
+    '  }\n' +
+    '}\n' +
+    'async function createBrowserReview(context) {\n' +
+    "  const primary = await resolveBrowserFbxPrimary(findInput(context, 'primary'));\n" +
+    '  const bytes = primary.bytes;\n' +
+    '  const stem = baseName(primary.name);\n' +
+    '  const maxItems = positiveInteger(context.options?.reviewMaxItemsPerShard, DEFAULT_REVIEW_SHARD_SIZE);\n' +
+    "  context.setStatus?.('Parsing FBX for mapping review...', 'running');\n" +
+    '  const parserEvidence = await loadBrowserParserEvidence();\n' +
+    '  const graph = await parseFbxInWorker(bytes, { signal: context.signal });\n' +
+    "  context.setStatus?.('Building deterministic mapping review bundle...', 'running');\n" +
+    '  const worklist = await buildMappingWorklist({ bytes, graph, parserEvidence });\n' +
+    '  const { bundle, shards } = await buildReviewBundle(worklist, maxItems);\n' +
+    '  const outputs = [\n' +
+    '    jsonOutput(`${stem}.fbx-source-graph.json`, graph),\n' +
+    '    jsonOutput(`${stem}.fbx-mapping-worklist.json`, worklist),\n' +
+    "    jsonOutput('manifest.json', bundle),\n" +
+    '    jsonOutput(`${stem}.fbx-browser-review-report.json`, reviewReport(worklist, bundle, shards)),\n' +
+    '  ];\n' +
+    '  appendShardOutputs(outputs, bundle, shards);\n' +
+    "  context.setStatus?.('MAPPING_REVIEW_READY', 'ok');\n" +
+    '  return {\n' +
+    '    ok: true,\n' +
+    "    conversionStatus: 'MAPPING_REVIEW_READY',\n" +
+    '    outputs,\n' +
+    '    logs: { stdout: reviewDiagnostics(), stderr: [] },\n' +
+    '  };\n' +
+    '}\n' +
+    '\n' +
+    'export async function runFbxWithReviewUi(context = {}, baseRun = runBaseFbxToStagedJson) {\n' +
+    '  const operation = context.options?.fbxOperation || FBX_CONVERT_OPERATION;\n' +
+    '  if (operation === FBX_CONVERT_OPERATION) return baseRun(context);\n' +
+    '  if (operation !== FBX_REVIEW_OPERATION) throw new Error(`Unsupported FBX operation: ${operation}`);\n' +
+    '  try {\n' +
+    '    return await createBrowserReview(context);\n' +
+    '  } catch (error) {\n' +
+    '    const detail = error instanceof Error ? error.message : String(error);\n' +
+    "    context.setStatus?.('BLOCKED_MAPPING_REVIEW', 'error');\n" +
+    '    throw new Error(`BLOCKED_MAPPING_REVIEW ${detail}`);\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    'function appendReviewOptions(converter) {\n' +
+    '  const existing = Array.isArray(converter.options) ? converter.options : [];\n' +
+    '  const retained = existing.filter((option) => ![\n' +
+    "    'fbxOperation', 'reviewMaxItemsPerShard', 'fbxSelectedZoneLabel',\n" +
+    '  ].includes(option.key));\n' +
+    '  converter.options = [\n' +
+    '    ...retained,\n' +
+    '    {\n' +
+    "      key: 'fbxOperation',\n" +
+    "      label: 'FBX Workflow',\n" +
+    "      type: 'select',\n" +
+    '      options: [FBX_CONVERT_OPERATION, FBX_REVIEW_OPERATION],\n' +
+    '    },\n' +
+    '    {\n' +
+    "      key: 'reviewMaxItemsPerShard',\n" +
+    "      label: 'Review Items per Shard',\n" +
+    "      type: 'number',\n" +
+    "      step: '1',\n" +
+    '    },\n' +
+    '    {\n' +
+    "      key: 'fbxSelectedZoneLabel',\n" +
+    "      label: 'Managed Reference Zone Label',\n" +
+    "      type: 'text',\n" +
+    "      placeholder: '/GLRD-1000-CU-PI-P',\n" +
+    '    },\n' +
+    '  ];\n' +
+    '}\n' +
+    '\n' +
+    'function synchronizeInput(converter, role, label, accept, required) {\n' +
+    '  const inputs = Array.isArray(converter.inputs) ? converter.inputs : [];\n' +
+    '  let input = inputs.find((entry) => entry?.role === role);\n' +
+    '  if (!input) {\n' +
+    '    input = { role };\n' +
+    '    inputs.push(input);\n' +
+    '  }\n' +
+    '  input.label = label;\n' +
+    '  input.accept = accept;\n' +
+    '  input.required = required;\n' +
+    '  converter.inputs = inputs;\n' +
+    '}\n' +
+    '\n' +
+    'export function configureManagedReferenceInputs(converter) {\n' +
+    '  converter.primaryAccept = PRIMARY_ACCEPT;\n' +
+    '  converter.primaryLabel = PRIMARY_LABEL;\n' +
+    '  converter.secondaryLabel = SECONDARY_LABEL;\n' +
+    '  converter.secondaryAccept = SECONDARY_ACCEPT;\n' +
+    "  synchronizeInput(converter, 'primary', PRIMARY_LABEL, PRIMARY_ACCEPT, true);\n" +
+    "  synchronizeInput(converter, 'secondary', SECONDARY_LABEL, SECONDARY_ACCEPT, false);\n" +
+    '  return converter;\n' +
+    '}\n' +
+    '\n' +
+    'export function installFbxReviewUiAddon() {\n' +
+    "  const converter = getConverterById('fbx_to_stagedjson');\n" +
+    '  if (!converter || converter.__fbxReviewUiAddonInstalled === FBX_REVIEW_UI_VERSION) {\n' +
+    '    return false;\n' +
+    '  }\n' +
+    '  converter.defaults = {\n' +
+    '    ...(converter.defaults || {}),\n' +
+    '    fbxOperation: FBX_CONVERT_OPERATION,\n' +
+    '    reviewMaxItemsPerShard: DEFAULT_REVIEW_SHARD_SIZE,\n' +
+    "    fbxSelectedZoneLabel: '',\n" +
+    '  };\n' +
+    '  appendReviewOptions(converter);\n' +
+    '  configureManagedReferenceInputs(converter);\n' +
+    "  converter.description = 'Convert FBX with mapping JSON, or reconcile a managed-stage JSON/ZIP against an explicit zone. The exact governed FBX2 ZIP pair is identity-bound to /GLRD-1000-CU-PI-P. Mapping review bundles remain non-authoritative.';\n" +
+    '  converter.run = (context = {}) => runFbxWithReviewUi(context, runBaseFbxToStagedJson);\n' +
+    '  converter.__fbxReviewUiAddonInstalled = FBX_REVIEW_UI_VERSION;\n' +
+    '  converter.reviewUiBuild = FBX_REVIEW_UI_BUILD;\n' +
+    '  return true;\n' +
+    '}\n',
+  expected: /primaryAccept = '\.fbx,\.FBX,\.zip,\.ZIP'/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

@@ -1,0 +1,34 @@
+schema: AgentStatus.v1
+pr_or_wip: PR690
+pull_request: 690
+branch: agent/hp-class-package-roundtrip
+base: main
+base_sha_after_replay: d8f109b2a1587d1d79dbe40b8787b7115e6fd5f0
+predecessor_pr: 689
+predecessor_merge: ef09184a00e28078cca3fa2b7939725c213a2bbb
+state: DRAFT_READY_FOR_NATIVE_VALIDATION
+criticality: HP_PRODUCTION_PRODUCTIVITY
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+validation:
+  main_grounding: PASS
+  hosted_reconciliation_pre_sync_head: 4bbdc44cc2234918483434b5a08c8000dbb4a239
+  branch_ancestry: PASS_AHEAD_12_BEHIND_0_AT_RECONCILIATION
+  changed_paths: PASS_4_ENGINEERING_TEST_CI_PLUS_3_RECOVERY
+  source_ownership_audit: PASS
+  authored_roundtrip_suite: AUTHORED_NOT_EXECUTED
+  native_roundtrip_node_suite: NOT_RUN
+  hp_real_workbench_workflow: NOT_RUN_ZERO_RETURNED
+  hp_i1_i3_workflow: NOT_RUN
+  hosted_status_checks: NOT_RUN_ZERO_RETURNED
+  reviews: 0
+  review_threads: 0
+  full_app_roundtrip: NOT_RUN
+  full_repository_regression: NOT_RUN
+  mergeable: true
+  draft: true
+merge_authority: NOT_GRANTED_FOR_PR690
+next_action: RE_READ_EXACT_FINAL_HEAD_AND_EXECUTE_NATIVE_TESTS_IF_AVAILABLE

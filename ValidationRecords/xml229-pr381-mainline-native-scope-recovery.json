@@ -1,0 +1,98 @@
+{
+  "schema": "XML229.PR381.MainlineNativeScopeRecovery.v1",
+  "recordedAt": "2026-11-02",
+  "originalRun": {
+    "physicalFinal": 139,
+    "facts": 973,
+    "unresolved": 0,
+    "failedPhase": "STAGED_POSITION_TRANSFER",
+    "code": "XML229_STAGED_POSITION_AMBIGUOUS",
+    "elapsedMs": 30324,
+    "totalAmbiguous": 38,
+    "sampledConflicts": 20,
+    "sampleTruncated": true
+  },
+  "rootCause": {
+    "kind": "MERGED_FEATURE_BRANCH_NOT_MAIN",
+    "pr379MergedAt": "2026-11-02T03:04:37Z",
+    "pr380MergedAt": "2026-11-02T03:05:22Z",
+    "pr380Target": "fix/xml229-candidate-preview-native-hold-20261102",
+    "mainNativePatchMissingBeforeRepair": true,
+    "mainAddonBlobBefore": "bd7dca33c652cca96e6713c5d2a8d8a46868bfd6",
+    "mainNativeBlobBefore": "3c9fd7091ce89450a4a99dce978e7c4d9f9d3041"
+  },
+  "change": {
+    "target": "main",
+    "branch": "fix/xml229-pr380-native-mainline-20261102",
+    "sourceBranch": "fix/xml229-mandatory-staged-position-scope-20261102",
+    "exactReplacementBlobs": {
+      "addon": "769187923ae79acff6cd01c0f16c70f2fabe5148",
+      "patched": "6719f604c3e7edd4167a39269a7b157fca7a78c5",
+      "test": "2478891689e5fdb9b964dd82743448b177a2647b"
+    },
+    "productionRootDocsMirrors": 2
+  },
+  "checks": [
+    {
+      "name": "GitHub compare main vs already merged feature source",
+      "status": "PASS",
+      "observation": "GITHUB_FETCH_FILE",
+      "oracle": "EXACT_BLOB_SHA",
+      "details": "both Python native production files on main lacked mandatory-scoped gate; PR380 feature branch source contains required change"
+    },
+    {
+      "name": "mainline native source copy",
+      "status": "PASS",
+      "observation": "GITHUB_UPDATE_FILE",
+      "oracle": "PR380_EXACT_BLOB_SHA"
+    },
+    {
+      "name": "mainline docs parity",
+      "status": "PASS",
+      "observation": "GITHUB_FETCH_FILE_BEFORE_AND_SOURCE_COPY",
+      "oracle": "EXACT_BYTES",
+      "details": "two native Python root/docs mirror pairs"
+    },
+    {
+      "name": "regression file from PR380",
+      "status": "PASS",
+      "observation": "GITHUB_CREATE_FILE",
+      "oracle": "PR380_EXACT_BLOB_SHA",
+      "details": "5 tests in tests/test_xml229_staged_position_scope.py"
+    },
+    {
+      "name": "PR380 synthetic native tests",
+      "status": "PASS",
+      "observation": "INHERITED_PREVIOUS_LOCAL_EXECUTION",
+      "oracle": "SYNTHETIC_NATIVE_PYTHON",
+      "details": "5 passed on equivalent PR380 patch; do not relabel as exact PR381-head execution"
+    },
+    {
+      "name": "Exact PR381 head CI",
+      "status": "IN_PROGRESS",
+      "observation": "GITHUB_ACTIONS_PENDING",
+      "oracle": "REPO_CI"
+    },
+    {
+      "name": "139 mass Owner source E2E",
+      "status": "NOT_RUN",
+      "observation": "ORIGINAL_XML_JSON_ACCEPTED_FINAL_NOT_AVAILABLE",
+      "oracle": "INDEPENDENT_RELEASE"
+    },
+    {
+      "name": "Native CII verified output and download",
+      "status": "NOT_RUN",
+      "observation": "NO_NATIVE_CII",
+      "oracle": "INDEPENDENT_CII"
+    }
+  ],
+  "safety": {
+    "autoSelectCoincidentOwner": false,
+    "mandatoryAmbiguityRefusalRetained": true,
+    "mandatoryUnmatchedRefusalRetained": true,
+    "finalMassValueModified": false,
+    "ciiDownloadAuthorized": false
+  },
+  "state": "DRAFT_MAINLINE_INTEGRATION_FIX_NOT_FINAL_RELEASE",
+  "nextAction": "Complete exact PR381 CI and original 139-mass Owner source E2E. For remaining mandatory coincidences, use original XML/staged JSON and basis config to prove unique owner; no release otherwise."
+}

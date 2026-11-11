@@ -1,0 +1,16 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-CSEARCH-REPLAY-20260818
+claim_state: RELEASED_SUPERSEDED_BY_PR637
+branch: agent/xml-cii-preview-search-lazy-replay-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+successor:
+  pr: 637
+  claim_path: agents/claims/PR637.yaml
+  report_path: agents/PR637_workreport.md
+predecessor_coordination:
+  PR616: SUPERSEDED_BY_PR637_OWNER_AUTHORIZED_REPLAY
+release_reason: Clean replay validated and PR custody allocated.
+last_verified_main: d9d14d13b089c968c989544ddbdf023063b43e67
+last_updated: 2026-08-18T20:43:00+04:00

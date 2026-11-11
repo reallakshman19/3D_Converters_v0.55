@@ -1,0 +1,29 @@
+schema: AgentClaims.v1
+pr: 687
+scope: HP_PIPING_CLASS_TRANSIENT_BULK_INTAKE
+claims:
+  - id: PR687-C01
+    claim: Bulk operating-state and governed-cycle CSV/TSV intake is implemented through the existing HP workspace import/controller path.
+    status: IMPLEMENTED
+  - id: PR687-C02
+    claim: Existing external Seq/N custody is retained only when cycle identity, state pair, pressure, material temperature, and structural temperature remain unchanged.
+    status: VERIFIED_FOCUSED
+  - id: PR687-C03
+    claim: Stale external rows are removed with explicit CYCLE_REMOVED, STATE_PAIR_CHANGED, or STATE_VALUE_CHANGED reason.
+    status: VERIFIED_FOCUSED
+  - id: PR687-C04
+    claim: Bulk-applied state/cycle data resolves directly through the existing canonical transient-spectrum resolver.
+    status: VERIFIED_FOCUSED
+  - id: PR687-C05
+    claim: Focused exact-byte Node validation passes 22 of 22 tests.
+    status: PASS
+  - id: PR687-C06
+    claim: Routed FULL_APP transient-bulk browser qualification has passed.
+    status: NOT_RUN
+  - id: PR687-C07
+    claim: Native CORE KD320 is qualified or this PR establishes Code/design authority.
+    status: FALSE
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false

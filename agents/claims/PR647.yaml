@@ -1,0 +1,47 @@
+schema: AgentClaim.v1
+pr: 647
+claim_state: ACTIVE
+branch: agent/sbc-connection-evidence-20260819
+base_pr: 646
+claim_modes:
+  - EXCLUSIVE
+  - COORDINATED
+files:
+  exact:
+    - index.html
+    - main-rhbg-fitguard.js
+    - core/app.js
+    - core/engineering-tabs-extension.js
+    - tabs/engineering-workspace-tab.js
+    - tabs/engineering-calculations-tab.js
+    - tabs/vibration-integrity-tab.js
+    - tabs/vibration-integrity-sbc-connection-model.js
+    - tabs/vibration-integrity-sbc-connection-view.js
+    - tabs/vibration-integrity-sbc-workspace-view.js
+    - tabs/vibration-integrity-user-data-shell.js
+    - tests/vibration-sbc-connection-authoring.test.mjs
+    - tests/vibration-sbc-full-workspace-cache-chain.test.mjs
+    - tests/vibration-sbc-type3-runtime-cache-chain.test.mjs
+    - agents/PR647_workreport.md
+    - agents/status/PR647.yaml
+    - agents/claims/PR647.yaml
+authority_domains:
+  - SBC_CONNECTION_PROJECT_INPUT_AUTHORING
+  - SBC_STRUCTURAL_COMPLETENESS_PRESENTATION
+  - SBC_INPUT_SEMANTIC_PROVENANCE_PRESENTATION
+  - SBC_UI_CACHE_CUSTODY
+exclusions:
+  - SBC_NUMERICAL_KERNELS
+  - SBC_B1_B2_EXPECTED_VALUES
+  - SBC_T3_CURVES
+  - SBC_TYPE3_CANDIDATE_INPUT_CUSTODY
+  - VIBRATION_MASTER_PUBLICATION
+  - EI_MAINLINE_AGGREGATION
+  - SBC_LIFECYCLE_PROMOTION
+  - SCREENING_OR_DESIGN_AUTHORITY
+  - AUTOMATIC_TYPE_CLASSIFICATION
+  - .github/workflows/*
+coordination:
+  PR646: COORDINATED_HARD_DEPENDENCY_PARENT_FILES_AND_CACHE_CHAIN
+  PR546: SAFE_NO_TYPE3_SOURCE_MASTER_OR_CANDIDATE_INPUT_MUTATION
+merge_authority: OWNER_ONLY_NOT_GRANTED

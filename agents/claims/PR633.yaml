@@ -1,0 +1,33 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR633
+claim_state: ACTIVE
+branch: agent/xml-cii-weight-match-top5-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/xml-cii-weight-match.js
+    - tests/xml-cii-weight-match-top5-performance.test.mjs
+    - agents/PR633_workreport.md
+    - agents/status/PR633.yaml
+    - agents/claims/PR633.yaml
+  prefixes: []
+authority_domains:
+  - XML_CII_LEGACY_WEIGHT_MATCH_CANDIDATE_SELECTION_PERFORMANCE
+claim_modes:
+  - EXCLUSIVE
+exclusions:
+  - tabs/xml-cii-2019-standalone/ui-adapted/**
+  - converters/xml-cii2019-core/weight-valve-hints.js
+  - support/GAP semantics
+  - CII writer/runtime
+  - Python conversion
+  - .github/workflows/**
+coordination:
+  PR616: NO_EXACT_FILE_OVERLAP
+  C5_C5M: EXCLUDED_ADAPTED_PREVIEW_FILES
+coordination_state: SAFE_ISOLATED
+last_verified_base: 3a26d25902ef8d6f304422cba507f2500dfa61a1
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR633
+last_updated: 2026-08-18T19:59:00+04:00

@@ -1,0 +1,14 @@
+schema: AgentClaim.v1
+pr_or_wip: PR360
+claim_state: SUBMITTED_REVIEW_HELD
+branch: fix/xml229-instrument-active-source-download-6ae1bed6
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-artifact-download.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-instrument-fresh-review.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-instrument-source-review-ui.mjs
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+  mirrors: [docs/tabs/xml-cii-2019-standalone/ui-adapted]
+authority_domains: [explicit source-revision activation, fresh verified Worker orchestration, manual artifact click ownership and current Final challenge]
+protected: [native preflight, writer, mass reconciliation, geometry, units, engineering masters, previous Final decisions, workflows]
+merge_authority: OWNER_ONLY_NOT_GRANTED

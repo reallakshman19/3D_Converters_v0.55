@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-C5M-20260818
+branch: agent/xml-cii-c5-material-incremental-engine-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C5_MATERIAL_ENGINE_ONLY
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-incremental.js
+  - tests/xml-cii-standalone-preview-incremental-material.test.mjs
+  - agents/WIP-XMLCII-C5M-20260818_workreport.md
+  - agents/claims/WIP-XMLCII-C5M-20260818.yaml
+exclusions:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun-core.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-bore-wall-authority.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-rating-authority.js
+  - converters/scripts/inputxml_to_cii2019.py
+  - support/GAP semantics
+  - CII writer/runtime
+  - workers
+coordination:
+  PR613: INTEGRATION_BLOCKER_NO_FILE_OVERLAP
+  PR611: NO_PRODUCTION_OVERLAP
+  PR616: NO_PRODUCTION_OVERLAP
+  PR614: REQUALIFY_SCALE_AFTER_ENGINE_LANDS
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T12:20:00+04:00

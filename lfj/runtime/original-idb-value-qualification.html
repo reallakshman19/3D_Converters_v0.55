@@ -1,0 +1,90 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LFJ #1108 U02 — native Worker + committed IndexedDB original value</title>
+<script type="module">
+import {openSourceSession} from './source-session.mjs';
+import {openIndexedRecordStore} from '../storage/browser/indexed-record-store.mjs';
+
+window.runOriginalIdbValue=async raw=>{
+  // This adapter is intentionally missing at RED: source store only supports
+  // readOrdered OPEN events, not direct durable OPEN+SEAL lookup.
+  const {openIndexedOccurrencePairStore,createPairedIndexStore}=
+    await import('./indexed-occurrence-pairs.mjs');
+  const bytes=new TextEncoder().encode(raw);
+  const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),
+    x=>x.toString(16).padStart(2,'0')).join('');
+  const revision='U02-REV',sourceRefId='U02-SOURCE',jobId='U02-JOB',
+    sourceRevision=revision+':sha256:'+sha,selectionDigest='U02-ALL';
+  const basis={sourceRefId,sourceSha256:sha,sourceRevision};
+  const dbName='lfj-u02-value-'+crypto.randomUUID();
+  const pairDb=dbName+'-pairs';
+  let live={...basis,byteLength:bytes.byteLength,selectionDigest,jobId,
+    dependencyRevision:'stable-dependency'};
+  const sourceStore=await openIndexedRecordStore({
+    databaseName:dbName,namespace:'source',generation:jobId,basis,kind:'source'
+  });
+  const selectedStore=await openIndexedRecordStore({
+    databaseName:dbName,namespace:'selected',generation:jobId,basis,
+    kind:'selection',selectionDigest,jobEpoch:jobId
+  });
+  const pairPort=await openIndexedOccurrencePairStore({
+    databaseName:pairDb,namespace:'source',generation:jobId,basis
+  });
+  const paired=createPairedIndexStore({indexStore:sourceStore,pairPort});
+  const id=path=>JSON.stringify(['lfj-json-value/v1',sourceRefId,sourceRevision,path]);
+  let session;
+  try{
+    session=await openSourceSession({
+      blob:new Blob([bytes]),revision,sourceRefId,jobId,selectionDigest,
+      expectedSha256:sha,selection:{mode:'ALL',includes:[],excludes:[]},
+      trustedWorkerCtor:Worker,
+      createWorker:()=>new Worker(new URL('../ports/source-browser-worker.mjs',import.meta.url),
+        {type:'module'}),indexStore:paired,selectedStore,pageEvents:2,
+      getCurrentBasis:()=>({...live})
+    });
+    const name0=await session.readOccurrence({
+      occurrenceId:id('/0/name'),expectedSourceRevision:sourceRevision,maxBytes:2048
+    });
+    const name1=await session.readOccurrence({
+      occurrenceId:id('/1/name'),expectedSourceRevision:sourceRevision,maxBytes:2048
+    });
+    const root=await session.readOccurrence({
+      occurrenceId:id(''),expectedSourceRevision:sourceRevision,maxBytes:2048
+    });
+    let cursor=null,rows=[];
+    do{
+      const page=await session.readPage({cursor,maxRows:2,maxBytes:65536});
+      rows.push(...page.rows.map(r=>r.path));
+      cursor=page.cursor;
+    }while(cursor!==null);
+    // Selected IndexedDB pages alone must not survive loss of original
+    // R07 committed source head, even with unchanged source/scope digest.
+    await sourceStore.abort();
+    let revokedPageCode='';
+    try{await session.readPage({cursor:null,maxRows:1,maxBytes:65536});}
+    catch(e){revokedPageCode=e?.code;}
+    live.dependencyRevision='replaced-during-current-job';
+    let staleCode='';
+    try{await session.readOccurrence({
+      occurrenceId:id('/0/name'),expectedSourceRevision:sourceRevision,maxBytes:2048
+    });}catch(e){staleCode=e?.code;}
+    await session.close();
+    let closedCode='';
+    try{await session.readOccurrence({
+      occurrenceId:id('/0/name'),expectedSourceRevision:sourceRevision,maxBytes:2048
+    });}catch(e){closedCode=e?.code;}
+    return {sha,receivedName0:new TextDecoder().decode(name0.bytes),
+      receivedName1:new TextDecoder().decode(name1.bytes),
+      distinctIds:name0.occurrenceId!==name1.occurrenceId,
+      rootText:new TextDecoder().decode(root.bytes),
+      sourceCount:session.summary.occurrenceCount,
+      eventCount:session.summary.eventCount,rows,
+      staleCode,closedCode,revokedPageCode,completion:session.completion.kind,
+      rightsBasis:session.pageManifest.rightsBasis};
+  }finally{
+    try{await session?.close();}catch{}
+    try{sourceStore.close();selectedStore.close();pairPort.close();}catch{}
+    indexedDB.deleteDatabase(dbName);indexedDB.deleteDatabase(pairDb);
+  }
+};
+</script>

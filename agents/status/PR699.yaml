@@ -1,0 +1,36 @@
+schema: AgentStatus.v1
+pr_or_wip: PR699
+pull_request: 699
+branch: agent/vib-m14-activity-verification-authoring-20260821
+base: main
+base_sha_at_start: ad71a42af34afef565ea4645de83d0613996a106
+pr_allocation_head: f67b2d00507e2d031bc62a7aa36c197030cda401
+hosted_reconciliation_head: 9756f7b0ed4c68812facbb258925106a1c583073
+predecessor_pr: 697
+predecessor_state: MERGED
+state: DRAFT_READY_FOR_OWNER_REVIEW
+criticality: ENGINEERING_CRITICAL_MEASUREMENT_VERIFICATION_AUTHORING
+validation:
+  current_main_grounding: PASS_MAIN_AD71A42A
+  project_measurement_evidence_audit: PASS_SOURCE_INSPECTION
+  authority_boundary: PASS_SOURCE_INSPECTION
+  exact_scope_matching: PASS_SOURCE_INSPECTION
+  backup_custody: PASS_CONNECTOR_GIT_BLOB
+  semantic_diff: PASS_BOUNDED
+  exact_changed_path_scope: PASS_18_INTENDED
+  line_policy: PASS_117_15_298_85_96_209_70
+  open_pr_coordination: PASS_WITH_STALE_PR479_OVERLAP_CLASSIFIED
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  vibration_regressions: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_numerical: NOT_APPLICABLE
+hosted_reconciliation:
+  relation: AHEAD_36_BEHIND_0
+  mergeable: true
+  commit_status_checks: NOT_RUN_ZERO_RETURNED
+  pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+  reviews: 0
+  review_threads: 0
+  comments: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: OWNER_REVIEW_OR_EXPLICIT_PR699_MERGE_AUTHORIZATION

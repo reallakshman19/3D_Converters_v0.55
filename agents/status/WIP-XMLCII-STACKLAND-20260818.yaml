@@ -1,0 +1,20 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+id: WIP-XMLCII-STACKLAND-20260818
+branch: agent/xml-cii-post-batch-a-stack-landing-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+state: LANDING_IN_PROGRESS
+main_basis: e94ee8989d0f42d0a4d770ebb8ed6044eefb5f69
+main_tree: 309d75671a8655d5c85bfb1257eb6a13374055b3
+qualified_source_pr: 607
+qualified_source_head: f7fb087179c4b80275b3afdb0f361a11255d3996
+qualified_source_tree: 090283c05291ac3f8883497b6e2c5834eaa7e673
+provenance_prs: [602, 603, 604, 606, 607]
+merged_prs: [601]
+excluded_prs: [605]
+appendix_a: 100/100
+browser_validation: NOT_RUN
+workers: NOT_ADMITTED
+merge_authority: OWNER_GRANTED_2026-08-18
+next_action: land exact PR607 tree, reconcile diff, then squash merge

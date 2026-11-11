@@ -1,0 +1,4 @@
+schema: AgentStatus.v1
+work_id: WIP-XML229-OLET-6ae1bed6
+state: ALLOCATED_TO_PR355
+report: agents/PR355_workreport.md

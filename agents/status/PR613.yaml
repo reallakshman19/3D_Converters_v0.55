@@ -1,0 +1,24 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: PR613
+pull_request: 613
+branch: agent/xml-cii-c6b-preview-source-custody-20260818
+base_main: e93cf16b9670a9876135a659b4f26506857b2c36
+workstream: XML_CII_STANDALONE_PERFORMANCE
+stage: C6B_PREVIEW_SOURCE_CUSTODY
+criticality: ENGINEERING_CRITICAL
+state: QUALIFIED_DRAFT_PENDING_OWNER_MERGE_AUTHORITY
+coordination: SAFE_EXACT_FILES
+appendix_a: 98/100
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR613
+worker_admission: NOT_ADMITTED
+validation:
+  production_syntax: PASS_4_OF_4
+  rich_c6b_equivalence: PASS_6_OF_6
+  landed_c6_regression: PASS_6_OF_6
+  landed_c5_weight_regression: PASS_6_OF_6
+  committed_portable_regression: PASS_4_OF_4
+  remote_blob_parity: PASS_5_OF_5
+  browser_timing: NOT_RUN
+  broader_release: NOT_RUN
+exact_next_action: Reconcile live PR state and leave unmerged pending explicit owner authority; continue C5 dependency trace read-only.

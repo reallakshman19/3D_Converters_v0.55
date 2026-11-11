@@ -1,0 +1,45 @@
+pr: 746
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  include:
+    - converters/engineering-calculations/flange/flange-face-binding-source-register.js
+    - tests/flange-face-binding-source-register.test.mjs
+    - docs/engineering-calculations/bolted-joints-p8-controlled-binding-source-register.md
+    - agents/PR746_workreport.md
+    - agents/status/PR746.yaml
+    - agents/claims/PR746.yaml
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0035.md
+    - agents/agentchain.md
+  exclude:
+    - real project binding source data
+    - automatic FlangeFaceBinding.v1 production
+    - automatic 3D flange-face inference
+    - governed flange/bolt/gasket master resolution
+    - flange or bolt solver invocation
+    - central Engineering Calculations registry integration
+    - UI/reporting
+    - authority promotion
+source_contract:
+  register_schema: FlangeFaceBindingSourceRegister.v1
+  record_schema: FlangeFaceBindingSourceRecord.v1
+  source_authority: PROJECT_SOURCE_CUSTODY_ONLY
+  exact_identity_policy: EXACT_IDENTIFIERS_ONLY
+  ambiguity_disposition: UNAMBIGUOUS_REQUIRED
+  candidate_count: 1
+  hidden_tolerance_defaults: false
+  real_project_record_admitted: false
+authority:
+  automatic_binding_producer: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_blob: 9254991c257b04bb26c15dc69d92cfcbf63660a5
+  test_blob: 342387a1489936eb366d11d508b465c1a4980cb1
+  source_blob_custody: PASS
+  test_blob_custody: PASS
+  focused_test_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+hard_stop: REAL_CONTROLLED_BINDING_RECORD_AND_EXACT_NATIVE_PR746_FOCUSED_TEST
+merge_authority: OWNER_ONLY_NOT_GRANTED

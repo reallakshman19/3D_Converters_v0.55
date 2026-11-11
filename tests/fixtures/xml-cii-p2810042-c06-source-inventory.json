@@ -1,0 +1,64 @@
+{
+  "schema": "xml-cii-p2810042-c06-source-inventory/v1",
+  "source": {
+    "file": "SYS-24-P2810042_PSI.xml",
+    "pipeFullName": "/SYS-24-P2810042",
+    "branchCount": 9,
+    "nodeCount": 172,
+    "boreTagCount": 0,
+    "wallThicknessZeroCount": 172,
+    "uniqueOutsideDiameters": [33.4, 60.3, 457, 508, 610]
+  },
+  "lineList": {
+    "service": "P",
+    "lineNumber": "2810042",
+    "unit": 28,
+    "fluid": "HC",
+    "phase": "L",
+    "nominalPipeSizeIn": 24,
+    "pipingClass": "61440",
+    "designPressureMaxKPag": 9440,
+    "designPressureMin": "FV",
+    "designTempMaxC": 82,
+    "designTempMinC": 5,
+    "material": "CS",
+    "constructionClass": "Class-3c",
+    "stressCriticalLine": "Yes",
+    "testPressureKPa": 15315,
+    "testMedium": "Water"
+  },
+  "branches": [
+    {"branch":"B2","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B2","nodeCount":49,"positiveNodeCount":13,"outsideDiameters":[508,610]},
+    {"branch":"B3","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B3","nodeCount":12,"positiveNodeCount":3,"outsideDiameters":[610]},
+    {"branch":"B8","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B8","nodeCount":4,"positiveNodeCount":4,"outsideDiameters":[457]},
+    {"branch":"B5","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B5","nodeCount":33,"positiveNodeCount":12,"outsideDiameters":[33.4,60.3]},
+    {"branch":"B6","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B6","nodeCount":34,"positiveNodeCount":12,"outsideDiameters":[33.4,60.3,610]},
+    {"branch":"B4","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B4","nodeCount":12,"positiveNodeCount":3,"outsideDiameters":[60.3,610]},
+    {"branch":"B7","sourceBranchName":"/HBMR-1000-24\"-P2810042-61440-01/B7","nodeCount":12,"positiveNodeCount":3,"outsideDiameters":[33.4,60.3]},
+    {"branch":"EXE/B1","sourceBranchName":"/HBMR-1000-24-\"P2810042-61440-01-EXE/B1","nodeCount":12,"positiveNodeCount":4,"outsideDiameters":[508]},
+    {"branch":"EXE/B2","sourceBranchName":"/HBMR-1000-24-\"P2810042-61440-01-EXE/B2","nodeCount":4,"positiveNodeCount":2,"outsideDiameters":[610]}
+  ],
+  "rigidOwners": [
+    {"branch":"B2","nodeNumber":"20","componentRefNo":"=67127481/48","connectionType":"","outsideDiameter":610,"weight":0,"position":"72588.00 115930.00 100000.00"},
+    {"branch":"B2","nodeNumber":"130","componentRefNo":"=67127481/56","connectionType":"BRAN","outsideDiameter":508,"weight":0,"position":"73502.00 119970.00 102518.20"},
+    {"branch":"B3","nodeNumber":"150","componentRefNo":"=67127481/44","connectionType":"BRAN","outsideDiameter":610,"weight":0,"position":"76156.00 119970.00 103725.10"},
+    {"branch":"B5","nodeNumber":"200","componentRefNo":"=67127481/186","connectionType":"","outsideDiameter":33.4,"weight":0,"position":"74029.78 120497.78 104457.10"},
+    {"branch":"B5","nodeNumber":"290","componentRefNo":"=67127481/65","connectionType":"CLOS","outsideDiameter":60.3,"weight":0,"position":"74691.35 121000.50 100743.00"},
+    {"branch":"B6","nodeNumber":"310","componentRefNo":"=67127481/94","connectionType":"","outsideDiameter":60.3,"weight":0,"position":"73866.51 119605.49 104257.10"},
+    {"branch":"B6","nodeNumber":"400","componentRefNo":"=67127481/75","connectionType":"GBF","outsideDiameter":33.4,"weight":0,"position":"77751.20 117680.00 101245.20"},
+    {"branch":"B4","nodeNumber":"420","componentRefNo":"=67127481/57","connectionType":"CLOS","outsideDiameter":610,"weight":0,"position":"73502.00 119216.10 104357.10"},
+    {"branch":"B7","nodeNumber":"440","componentRefNo":"=67127481/101","connectionType":"CLOS","outsideDiameter":60.3,"weight":0,"position":"73502.00 117844.00 106225.00"},
+    {"branch":"EXE/B1","nodeNumber":"450","componentRefNo":"=67127432/17","connectionType":"","outsideDiameter":508,"weight":0,"position":"73502.00 119970.00 101124.00"},
+    {"branch":"EXE/B2","nodeNumber":"10","componentRefNo":"=67127432/19","connectionType":"BRAN","outsideDiameter":610,"weight":0,"position":"72298.40 115930.00 100000.00"}
+  ],
+  "reportedWitnesses": [
+    {"id":"coordinate-main-b2-node10","branch":"B2","nodeNumber":"10","position":"72298.40 115930.00 100000.00","outsideDiameter":610},
+    {"id":"reducer-110","branch":"B2","nodeNumber":"110","outsideDiameter":610,"componentRefNo":"=67127481/31"},
+    {"id":"reducer-120","branch":"B2","nodeNumber":"120","outsideDiameter":508,"componentRefNo":"=67127481/31"},
+    {"id":"weight-149-150","branch":"B3","nodeNumber":"150","outsideDiameter":610,"componentRefNo":"=67127481/44","weight":0},
+    {"id":"mixed-small-bore","branch":"B5","nodeNumber":"70","outsideDiameter":33.4},
+    {"id":"mixed-dn50","branch":"B7","nodeNumber":"440","outsideDiameter":60.3,"componentRefNo":"=67127481/101"},
+    {"id":"exe-480-10","branch":"EXE/B2","nodeNumber":"10","position":"72298.40 115930.00 100000.00","outsideDiameter":610,"componentRefNo":"=67127432/19","weight":0}
+  ],
+  "authorityInvariant": "Line-list and Branchname 24-inch identity are line-level competing/fallback evidence; explicit node OutsideDiameter remains primary where present."
+}

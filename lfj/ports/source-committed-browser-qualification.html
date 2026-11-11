@@ -1,0 +1,63 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>R10 R06-R09 Committed Source Query in Actual Chromium</title>
+<script type="module">
+import {runCommittedSourceQuery} from './committed-worker-query.mjs';
+
+window.runR10CommittedQuery=async json=>{
+  const bytes=new TextEncoder().encode(json),blob=new Blob([bytes],{type:'application/json'});
+  const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),
+    x=>x.toString(16).padStart(2,'0')).join('');
+  const revision='R10-BROWSER-REV',sourceRefId='R10-BROWSER-FILE';
+  const sourceRevision=revision+':sha256:'+sha;
+  let events=[],committed=null,indexReads=0,indexAborts=0;
+  const indexStore={
+    async stagePage(batch){events.push(...batch);},
+    commit(summary){committed=summary;},
+    abort(){events=[];committed=null;indexAborts++;},
+    async *readOrdered(){
+      indexReads++;
+      if(!committed)throw new Error('uncommitted source');
+      for(const x of events)if(x.kind==='OPEN')yield x;
+    }
+  };
+  let provisional=[],selected=null,pageReads=0;
+  const selectedStore={
+    async stagePage(rows){provisional.push(...rows);},
+    async commit(manifest){selected={manifest,rows:[...provisional]};},
+    async abort(){selected=null;provisional=[];},
+    async readRange(offset,maxRows,maxBytes){
+      pageReads++;
+      if(!selected)throw Error('uncommitted selection');
+      let rows=[],size=0;
+      for(const row of selected.rows.slice(offset)){
+        const b=new TextEncoder().encode(JSON.stringify(row)).byteLength;
+        if(rows.length===maxRows||size+b>maxBytes)break;
+        rows.push(row);size+=b;
+      }
+      return rows;
+    }
+  };
+  const selectedId=JSON.stringify(['lfj-json-value/v1',sourceRefId,sourceRevision,'/0']);
+  const result=await runCommittedSourceQuery({
+    blob,revision,expectedSha256:sha,sourceRefId,jobId:'R10-BROWSER-ACTUAL',
+    selectionDigest:'branch-zero',selection:{mode:'EXPLICIT',includes:[selectedId],excludes:[]},
+    createWorker:()=>new Worker(new URL('./source-browser-worker.mjs',import.meta.url),{type:'module'}),
+    trustedWorkerCtor:Worker,indexStore,selectedStore,pageEvents:2,
+    getCurrentBasis:()=>({sourceRefId,sourceSha256:sha,sourceRevision,byteLength:bytes.length,selectionDigest:'branch-zero',jobId:'R10-BROWSER-ACTUAL'})
+  });
+  try{
+    let cursor=null,paths=[];
+    do{
+      const page=await result.readPage({cursor,maxRows:1,maxBytes:65536});
+      paths.push(...page.rows.map(x=>x.path));cursor=page.cursor;
+    }while(cursor!==null);
+    return {paths,indexReads,pageReads,indexAborts,sha,
+      complete:result.completion.kind,bytes:result.receipt.workerConsumedBytes,
+      originalValues:result.summary.occurrenceCount,
+      selectedCount:result.selectionSummary.selectedCount,
+      engineeringReady:result.pageManifest.engineeringReady,
+      rightsBasis:result.pageManifest.rightsBasis};
+  }finally{await result.close();}
+};
+</script>

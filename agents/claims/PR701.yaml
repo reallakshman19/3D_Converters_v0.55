@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+pr: 701
+branch: agent/hp-review-ledger-v2-hash-chain
+domain: HP_PIPING_CLASS_REVIEW_CUSTODY
+claim:
+  adds:
+    - v2 SHA-256 hash-chained review disposition ledger
+    - v2 review package ledger-head binding
+    - backward-compatible v1 verification without retroactive integrity promotion
+    - schema-separated v1/v2 browser storage with ambiguous dual-store fail-closed behavior
+    - read-only v1/v2 independent package verification disclosure
+  excludes:
+    - reviewer identity authentication
+    - PKI or digital signature
+    - trusted timestamping
+    - ASME Code compliance
+    - design approval
+    - release authorization
+    - native KD320 qualification or implementation
+    - HP engineering equation or calculation changes
+authority:
+  actor_identity_authority: USER_DECLARED
+  digital_signature: false
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  release_authority: false
+merge_authority: NOT_GRANTED

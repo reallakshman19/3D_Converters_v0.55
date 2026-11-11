@@ -1,0 +1,28 @@
+pr: 748
+chain: ENGCALC-BOLTED-JOINTS
+endpoint: EP-0037
+state: BLOCKED / AUTO
+execution_mode: AUTO
+auto_state: HARD_STOP_EXTERNAL_CONTROLLED_SOURCE_REQUIRED
+scope: P8_BINDING_SOURCE_ACQUISITION_PACKAGE
+base_pr: 747
+main_sha: 78b361d1f649d41378f568ebe1a237c4bc140c73
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  template_non_runtime: PASS
+  placeholder_project_facts: NONE
+  independent_review_gate_documented: PASS
+  calculation_code_changed: NOT_APPLICABLE
+  native_numerical_execution: NOT_APPLICABLE
+  real_controlled_source_supplied: NO_BLOCKED
+  independent_review_real_record: NOT_RUN
+  native_backup: NOT_RUN_CONNECTOR_ONLY_ENVIRONMENT
+  connector_backup: EVIDENCE_ONLY
+authority:
+  automatic_binding_producer: false
+  automatic_3d_extraction: false
+  master_bindings_resolved: false
+  solver_invoked: false
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false

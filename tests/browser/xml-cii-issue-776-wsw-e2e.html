@@ -1,0 +1,122 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 776 WSW exact-head XML→CII benchmark</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { runXmlCii2019Workflow } from '../../tabs/xml-cii-2019-standalone/xml-cii-workflow-api-atta-default.js?v=20260928-issue776-authority-2';
+
+function section(ciiText, name) {
+  return String(ciiText || '').split(`#$ ${name}`, 2)[1]?.split('#$', 1)[0] || '';
+}
+
+function elements(ciiText) {
+  const rows = section(ciiText, 'ELEMENTS').split(/\r?\n/).filter((line) => line.trim());
+  const out = [];
+  for (let offset = 0; offset + 14 < rows.length; offset += 15) {
+    const head = rows[offset].trim().split(/\s+/).map(Number);
+    if (!Number.isFinite(head[0]) || !Number.isFinite(head[1])) break;
+    const pointers = rows[offset + 12].trim().split(/\s+/).map(Number);
+    out.push({
+      from: head[0], to: head[1],
+      dx: head[2], dy: head[3], dz: head[4],
+      rigid: pointers[1] || 0,
+      restraint: pointers[3] || 0,
+    });
+  }
+  return out;
+}
+
+function coordsCount(ciiText) {
+  const rows = section(ciiText, 'COORDS').split(/\r?\n/).filter((line) => line.trim());
+  return Number(rows[0] || 0);
+}
+
+function sameDelta(left, right, tolerance = 1e-6) {
+  return ['dx','dy','dz'].every((key) => Math.abs(Number(left?.[key]) - Number(right?.[key])) <= tolerance);
+}
+
+try {
+  const [xmlResponse, originalResponse] = await Promise.all([
+    fetch('../../Benchmarks/WSW-2-RE-AFC.xml', { cache: 'no-store' }),
+    fetch('../../Benchmarks/WSW-2-RE-AFC_ORI.cii', { cache: 'no-store' }),
+  ]);
+  if (!xmlResponse.ok) throw new Error(`benchmark XML fetch failed: HTTP ${xmlResponse.status}`);
+  if (!originalResponse.ok) throw new Error(`benchmark original CII fetch failed: HTTP ${originalResponse.status}`);
+  const sourceText = await xmlResponse.text();
+  const originalCii = await originalResponse.text();
+
+  const result = await runXmlCii2019Workflow({
+    sourceKind: 'xml',
+    sourceName: 'WSW-2-RE-AFC.xml',
+    sourceText,
+    stagedJsonText: '',
+    supportConfigJson: JSON.stringify({
+      splitCondensedValveFlange: true,
+      dropGasketNodes: true,
+      dropGasketsInEnrichment: true,
+    }),
+    options: {
+      outputMode: 'both',
+      coordsMode: 'first',
+      kgToNewton: true,
+      splitCondensedValveFlange: true,
+      useRestraintTypeBasedOnJson: true,
+    },
+  });
+
+  if (!result.ok || !result.ciiText) {
+    throw new Error(`workflow failed: ${result.error || 'no CII text'}\n${(result.logs || []).join('\n')}`);
+  }
+
+  const generated = elements(result.ciiText);
+  const original = elements(originalCii);
+  const generatedByPair = new Map(generated.map((row) => [`${row.from}->${row.to}`, row]));
+  const originalByPair = new Map(original.map((row) => [`${row.from}->${row.to}`, row]));
+
+  const pipe = generatedByPair.get('70->80');
+  const originalPipe = originalByPair.get('70->80');
+  if (!pipe) throw new Error('generated CII is missing focused 70→80 element');
+  if (pipe.rigid !== 0) throw new Error(`70→80 must remain pipe; generated RIGID pointer=${pipe.rigid}`);
+  if (!sameDelta(pipe, originalPipe)) throw new Error(`70→80 geometry differs from original benchmark: generated=${JSON.stringify(pipe)} original=${JSON.stringify(originalPipe)}`);
+
+  for (const junction of [360, 770]) {
+    const incoming = generated.filter((row) => row.to === junction);
+    const outgoing = generated.filter((row) => row.from === junction);
+    if (!incoming.length || !outgoing.length) {
+      throw new Error(`canonical junction ${junction} is disconnected: incoming=${incoming.length}, outgoing=${outgoing.length}`);
+    }
+  }
+
+  const generatedCoords = coordsCount(result.ciiText);
+  const originalCoords = coordsCount(originalCii);
+  if (generatedCoords !== originalCoords) {
+    throw new Error(`COORDS anchor count drift: generated=${generatedCoords}, original=${originalCoords}`);
+  }
+
+  const evidence = {
+    schema: 'XMLCII_ISSUE_776_WSW_E2E_V1',
+    ok: true,
+    generatedCoords,
+    originalCoords,
+    focused70to80: pipe,
+    junction360: {
+      incoming: generated.filter((row) => row.to === 360),
+      outgoing: generated.filter((row) => row.from === 360),
+    },
+    junction770: {
+      incoming: generated.filter((row) => row.to === 770),
+      outgoing: generated.filter((row) => row.from === 770),
+    },
+    runParityStats: result.diagnostics?.runParityStats || null,
+    logs: result.logs || [],
+  };
+  globalThis.__XML_CII_ISSUE_776_WSW_RESULT__ = evidence;
+  globalThis.__XML_CII_ISSUE_776_WSW_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} catch (error) {
+  const evidence = { ok: false, error: String(error?.stack || error) };
+  globalThis.__XML_CII_ISSUE_776_WSW_RESULT__ = evidence;
+  globalThis.__XML_CII_ISSUE_776_WSW_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+}
+</script>

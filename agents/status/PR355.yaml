@@ -1,0 +1,18 @@
+schema: AgentStatus.v1
+work_id: PR355
+state: REVIEW_READY_DRAFT
+governing_wbs: CIIFR-R4-6.4
+source: https://github.com/reallakshman19/3D_Converters/issues/351#issuecomment-6498100565
+branch: fix/xml229-olet-helper-route-6ae1bed6
+base: 59df118588837f70ca22dfe0d0573ef874e07dd0
+tested_implementation: af40c23396b5ef2d2868a866f221d84d84c99540
+report: agents/PR355_workreport.md
+native_ci: PASS_PYTHON_AND_JS22_JS24
+preview_and_browser_regressions: PASS
+overall_ci: FAIL_15_HISTORICAL_PREFLIGHTS_68_CHECKS_PASS
+native_import: NOT_RUN
+owner_trial: NOT_RUN
+independent_review: NOT_RUN
+page_record: DRAFT_PR84_UNPUBLISHED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Owner reviews PR355 and CI preflight blockers, then fresh BM2 trial after merge/deployment

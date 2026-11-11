@@ -1,0 +1,35 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR632
+claim_state: ACTIVE
+branch: agent/xml-cii-material-authority-index-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-material-authority.js
+    - tests/xml-cii-preview-material-authority-index.test.mjs
+    - agents/PR632_workreport.md
+    - agents/status/PR632.yaml
+    - agents/claims/PR632.yaml
+  prefixes: []
+authority_domains:
+  - XML_CII_PREVIEW_MATERIAL_LOOKUP_PREPARATION
+claim_modes:
+  - EXCLUSIVE
+exclusions:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-incremental.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun-core.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-rating-authority.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-bore-wall-authority.js
+  - converters/xml-cii2019-core/material-code-fuzzy-resolver.js
+  - .github/workflows/**
+coordination:
+  C5M: COORDINATED_AUTHORITY_NO_EXACT_FILE_OVERLAP
+  PR628: INDEPENDENT_BORE_WALL
+  PR616: INDEPENDENT_PREVIEW_SEARCH
+coordination_state: COORDINATION_REQUIRED_BOUNDED
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR632
+last_verified_main: e3fa32bf3e6d919d9ed3e3e17aa32fae2beea14e
+last_updated: 2026-08-18T19:36:00+04:00

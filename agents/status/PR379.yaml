@@ -1,0 +1,17 @@
+schema: AgentStatus.v1
+pr: 379
+branch: fix/xml229-candidate-preview-native-hold-20261102
+state: DRAFT_PARTIAL_FIX_VERIFIED_NO_GOVERNED_CII
+merge_authority: OWNER_ONLY_NOT_GRANTED
+baseline_main_sha: 2477a6fdee1002d5063bc51e94777ba940e6fa82
+live_main_at_pr_creation: 150684490a827084306e81b945e5aa1280f9053e
+validation_record: ValidationRecords/xml229-pr379-focused-validation.json
+source_authority: UNCHANGED
+native_final_mass_release: HELD
+json_staged_position_ambiguity: UNRESOLVED_REQUIRES_SOURCE_SPECIFIC_EVIDENCE
+overlap: COORDINATION_REQUIRED_WITH_PR377_PR378_PR260_PR253
+exact_next_action: Inspect exact-source claim ambiguity when user Final geometry/offset/decision basis is available; test new UI and Python diagnostics on PR379 production head in CI/Chromium; preserve draft.
+
+native_failure_evidence_export: BOUNDED_CLAIM_INDEX_SAMPLES_AVAILABLE_AFTER_NEXT_FAILED_RUN
+root_docs_parity: PASS_EIGHT_PRODUCTION_FILES
+extra_validation: LOCAL_TYPED_PYTHON_RECEIPT_SAMPLE_PASS

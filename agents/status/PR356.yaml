@@ -1,0 +1,13 @@
+schema: AgentStatus.v1
+pr_or_wip: PR356
+state: REVIEW_READY_DRAFT
+report: agents/PR356_workreport.md
+base: 690400a012d2bbc8f53a4e192ce80addacfa1439
+implementation_head: bcecd2d1a61af683863a22752f0e059f76de7291
+wbs: CIIFR-R4-6.5-M29
+source: https://github.com/reallakshman19/3D_Converters/issues/351#issuecomment-6528178717
+ci_at_implementation: 68_PASS_15_HISTORICAL_PREFLIGHT_FAIL
+current_head_ci: See exact-head reconciliation in PR356 conversation.
+native_import: NOT_RUN
+owner_trial: NOT_RUN
+exact_next_action: Review bounded diff and original-source CII evidence; address historical CI blockers and perform separately authorized fresh Owner trial/merge.

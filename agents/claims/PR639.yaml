@@ -1,0 +1,31 @@
+schema: AgentClaim.v1
+pr_or_wip: PR639
+claim_state: ACTIVE
+files:
+  exact:
+    - converters/vibration/fit/method.js
+    - converters/vibration/fit/source-basis-evidence.js
+    - converters/vibration/fit/calculate.js
+    - converters/vibration/fit/index.js
+    - converters/engineering-calculations/adapters/vibration-fit.js
+    - tests/vibration-fit-workbook-reference.test.mjs
+    - tests/vibration-fit-source-authority.test.mjs
+    - tests/vibration-fit-engineering-source-authority.test.mjs
+    - agents/PR639_workreport.md
+    - agents/status/PR639.yaml
+    - agents/claims/PR639.yaml
+  prefixes: []
+authority_domains:
+  - VIBRATION_FIT_SOURCE_PROVENANCE
+  - VIBRATION_FIT_RUNTIME_AUTHORITY_LABELING
+claim_modes:
+  - EXCLUSIVE
+exclusions:
+  - FIT numerical equations correlations coefficients constants
+  - FIT applicability limits and multiphase resolution
+  - benchmark expected values tolerances
+  - screening or design authority promotion
+  - converters/vibration/source/registry.js
+  - workflow files
+coordination_state: SAFE_GLOBAL_SOURCE_REGISTRY_EXCLUDED_DUE_PR635
+merge_authority: OWNER_ONLY_NOT_GRANTED

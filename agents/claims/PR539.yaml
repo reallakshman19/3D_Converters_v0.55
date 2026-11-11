@@ -1,0 +1,33 @@
+schema: AgentClaim.v1
+pr: 539
+branch: agent/fit-production-authorized-freeze
+claim_state: ACTIVE
+files:
+  exact:
+    - converters/engineering-calculations/adapters/vibration-fit.js
+    - tabs/engineering-calculation-vibration-family.js
+    - tabs/engineering-calculation-console-view.js
+    - tests/engineering-calculation-console-fit-preflight.test.mjs
+    - agents/PR539_workreport.md
+    - agents/status/PR539.yaml
+    - agents/claims/PR539.yaml
+  prefixes:
+    - .backups/connector-20260819-fit-pr539-reground/
+authority_domains:
+  - FIT_PRODUCT_LIFECYCLE_PRESENTATION
+  - FIT_SCREENING_AUTHORITY_METADATA_WITHOUT_NUMERICAL_CHANGE
+exclusions:
+  - FIT equations correlations coefficients tolerances masters
+  - FIT methodRevision
+  - FIT source/provenance identity
+  - FIT applicability widening
+  - AIV readiness or calculator authority
+  - SBC or other vibration mechanisms
+  - workflow runtime writer canvas switches
+coordination:
+  PR517: OPEN_AIV_PF02_AUTHORITY_SEPARATE
+  PR540: STACKED_STALE_REASSESS_AFTER_PR539
+  PR665: OPEN_PROJECT_V2_NO_INTENDED_OVERLAP
+  PR649: OPEN_BENCHMARK_WORKBENCH_NO_INTENDED_OVERLAP
+coordination_state: SAFE
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR539

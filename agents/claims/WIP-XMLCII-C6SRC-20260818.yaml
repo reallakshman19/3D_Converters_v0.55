@@ -1,0 +1,32 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: WIP-XMLCII-C6SRC-20260818
+branch: agent/xml-cii-c6-source-parse-custody-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C6_SOURCE_PARSE_ONLY
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-source-mode.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-source-preview.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-source-derived-context.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf-evidence.js
+  - tests/xml-cii-standalone-source-parse-cache.test.mjs
+  - tests/xml-cii-standalone-source-parse-cache-integration.test.mjs
+  - agents/WIP-XMLCII-C6SRC-20260818_workreport.md
+  - agents/status/WIP-XMLCII-C6SRC-20260818.yaml
+  - agents/claims/WIP-XMLCII-C6SRC-20260818.yaml
+exclusions:
+  - .github/workflows/**
+  - converter/enrichment parser migration
+  - workers
+  - persisted cache
+  - support/GAP semantics
+  - CII writer/runtime
+coordination:
+  PR606: HARD_STACK_BASE
+  PR600: SALVAGE_PREDECESSOR_TO_SUPERSEDE
+  PR605: SEMANTIC_COORDINATION_ONLY_NO_EXACT_FILE_OVERLAP
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T07:02:00+04:00

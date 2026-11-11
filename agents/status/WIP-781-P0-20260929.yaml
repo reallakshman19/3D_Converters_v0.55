@@ -1,0 +1,31 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-781-P0-20260929
+mission: Implement Issue 781 STEP-781-01 B31.3 live Preview row custody and explicit restraint preservation trace.
+workstream: XML_CII_STANDALONE_ISSUE_781_P0
+branch: agent/issue-781-p0-b313-rest-20260929
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/WIP-781-P0-20260929_workreport.md
+current_stage: PR_REVIEW_HANDOFF
+blocker: NONE
+protocol_basis:
+  protocol: V3.1
+  common_sha: 1ced68258afeaf50df113b1d38a4ceb9193587e3
+  two_pass_revision: TPG-2P-2026-09-28-R3
+validation:
+  validated_material_head: d369d59318919f644f08383828ab3079258b85aa
+  issue_781_p0_workflow: PASS_RUN_36606373500
+  issue_776_authority_workflow: PASS_RUN_36606373345
+  semantic_core_timing: PASS_RUN_36606373338
+  b313_live_row_custody: PASS
+  explicit_restraint_source_to_final_cii: PASS
+  pr780_dataset_regressions: PASS
+  browser_scale: PASS
+  native_backup_utility: NOT_RUN_ENVIRONMENT_BLOCKED
+  connector_exact_blob_backups: COMPLETE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+exact_next_action: Publish TASK_RESULT for STEP-781-01, refresh PR #782 description, mark it ready for Owner review, and leave merge authority with the Owner.
+last_updated: 2026-09-29

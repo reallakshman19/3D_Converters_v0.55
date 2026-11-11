@@ -1,0 +1,19 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR981
+branch: agent/issue-980-mode-b-node-custody-20261008
+criticality: ENGINEERING_CRITICAL
+current_stage: P0_LIVE_SINGLE_ATTA_MDS_ROUTING_AUTHORED_CI_QUEUED
+takeover_authority: READ_ONLY_UNTIL_EXACT_HEAD_REVALIDATION
+owner_priority: "#980 Mode B before #925 J04"
+parent: "#921"
+base: main
+merge_authority: OWNER_ONLY_NOT_GRANTED
+code_checkpoint: 9887986e9e869524ca31c452a9c22d48b0f8ee7a
+validation: NOT_RUN_HOSTED_EXACT_HEAD_QUEUED
+end_to_end_original_combined: NOT_RUN
+source_docs_mirror: TWENTY_PAIRS_SHA_EQUAL_BEFORE_METADATA
+overlap: "#978 standalone-run-parity source and docs; serialized for P0"
+report_path: agents/PR981_workreport.md
+handover_readiness: READY_WITH_UNVERIFIED_TESTS
+exact_next_action: Consume P0 #980/#781/#776 exact-head checks; live Single route now versioned through ATTA/MDS; full browser and CII oracle NOT_RUN, no merge.

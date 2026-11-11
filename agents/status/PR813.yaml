@@ -1,0 +1,23 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR813
+branch: agent/issue-781-mode-b-main-20261001
+criticality: ENGINEERING_CRITICAL
+current_stage: MERGED_OWNER_INTEGRATION_COMPLETE
+takeover_authority: WRITE_ALLOWED_BOUNDED_INTEGRATION
+live_main: e6e3458f51c3a680b413aa525c5e87fdae257533
+predecessor: PR812_MERGED_TO_PR811_BRANCH_NOT_MAIN
+merge_authority: OWNER_ONLY_NOT_GRANTED
+full_cii_acceptance: FAIL_16_UNRESOLVED_COMPONENT_OWNERS
+validation: MODE_B_NATIVE_UI_DOWNLOAD_AND_ALL_FIELDS_PASS_36_REGRESSIONS_PASS
+remote_repaired_deployment: NOT_RUN_PENDING_OWNER_MERGE
+remote_checks_observed_head: a2d500d95663a4b757489ecef31e0a1368dd5f9c
+remote_checks: THIRTEEN_PASS_THREE_PREEXISTING_FAILURES
+main_gate_local_validation: PASS_28_OF_28
+report_path: agents/PR813_workreport.md
+handover_readiness: READY_FOR_RECOVERY
+exact_next_action: Follow successor WIP-781-SINGLE-COMBINE-OWNERS-20261001 for explicit owner-authorized modes and component geometry repair. Historical16 failure retained.
+
+merge_commit: 8d1165617259fb62b9ab7209be7f028ffe479793
+merged_at: 2026-10-01T11:29:24Z
+live_reconciled_main: bebf552e6d45eaefb1d2dc878a8e7a172d1bfd22

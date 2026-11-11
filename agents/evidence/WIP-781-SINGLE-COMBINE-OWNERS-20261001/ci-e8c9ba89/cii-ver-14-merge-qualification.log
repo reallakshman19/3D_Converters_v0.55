@@ -1,0 +1,70 @@
+qualify	Run Ver 14 paired benchmark qualification	﻿2026-10-01T15:38:20.2917753Z ##[group]Run python test_cii14_multi_merge.py -v
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2918771Z ^[[36;1mpython test_cii14_multi_merge.py -v^[[0m
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2985983Z shell: /usr/bin/bash -e {0}
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2986267Z env:
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2986573Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2987056Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2987531Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2987944Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2988697Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2989125Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.2989473Z ##[endgroup]
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4409681Z test_cross_version_merge_is_rejected (__main__.TestCii14ProfileAndMerge.test_cross_version_merge_is_rejected) ... ok
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4439900Z test_node_collision_is_rejected_by_default (__main__.TestCii14ProfileAndMerge.test_node_collision_is_rejected_by_default) ... FAIL
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4495320Z test_paired_archive_locks_ver14_record_deltas (__main__.TestCii14ProfileAndMerge.test_paired_archive_locks_ver14_record_deltas) ... ok
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4542731Z test_real_ver14_benchmark_self_merge_with_5000_offset (__main__.TestCii14ProfileAndMerge.test_real_ver14_benchmark_self_merge_with_5000_offset) ... ERROR
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4581575Z test_unqualified_nonzero_section_fails_closed (__main__.TestCii14ProfileAndMerge.test_unqualified_nonzero_section_fails_closed) ... ok
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4583041Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4583842Z ======================================================================
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4585395Z ERROR: test_real_ver14_benchmark_self_merge_with_5000_offset (__main__.TestCii14ProfileAndMerge.test_real_ver14_benchmark_self_merge_with_5000_offset)
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4587131Z ----------------------------------------------------------------------
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4588440Z Traceback (most recent call last):
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4597865Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 112, in _float
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4599676Z     value = float(text.strip())
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4600777Z             ^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4601764Z ValueError: could not convert string to float: '5.556000E-01-1.777778E+01'
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4602898Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4603608Z The above exception was the direct cause of the following exception:
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4604707Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4605185Z Traceback (most recent call last):
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4606981Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/test_cii14_multi_merge.py", line 66, in test_real_ver14_benchmark_self_merge_with_5000_offset
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4609122Z     output, summary = merge.merge_cii14_texts(
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4610263Z                       ^^^^^^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4611741Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 448, in merge_cii14_texts
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4613513Z     units_ref = _units(models[0].sections["UNITS"], models[0].label)
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4614563Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4616167Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 264, in _units
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4617646Z     numeric.extend(_float(token, f"{label}: UNITS") for token in row.split())
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4624638Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 264, in <genexpr>
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4626282Z     numeric.extend(_float(token, f"{label}: UNITS") for token in row.split())
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4627533Z                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4629182Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 114, in _float
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4631426Z     raise MergeError(f"{label}: invalid numeric token {text!r}") from exc
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4633037Z cii14_multi_merge.MergeError: SYS-v14-A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4634220Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4634741Z ======================================================================
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4636647Z FAIL: test_node_collision_is_rejected_by_default (__main__.TestCii14ProfileAndMerge.test_node_collision_is_rejected_by_default)
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4638731Z ----------------------------------------------------------------------
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4640020Z Traceback (most recent call last):
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4641349Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/cii14_multi_merge.py", line 112, in _float
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4642941Z     value = float(text.strip())
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4643699Z             ^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4644901Z ValueError: could not convert string to float: '5.556000E-01-1.777778E+01'
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4647581Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4647947Z The above exception was the direct cause of the following exception:
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4649207Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4649643Z cii14_multi_merge.MergeError: A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4650237Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4650561Z During handling of the above exception, another exception occurred:
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4651054Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4651254Z Traceback (most recent call last):
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4652527Z   File "/home/runner/work/3D_Converters/3D_Converters/converters/scripts/test_cii14_multi_merge.py", line 113, in test_node_collision_is_rejected_by_default
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4653935Z     with self.assertRaisesRegex(merge.MergeError, "node collision"):
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4654645Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4655594Z AssertionError: "node collision" does not match "A: UNITS: invalid numeric token '5.556000E-01-1.777778E+01'"
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4656378Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4656660Z ----------------------------------------------------------------------
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4657296Z Ran 5 tests in 0.024s
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4657556Z 
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4657743Z FAILED (failures=1, errors=1)
+qualify	Run Ver 14 paired benchmark qualification	2026-10-01T15:38:20.4711776Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,32 @@
+pr: 646
+branch: agent/sbc-full-vertical-ui-20260819
+base: main
+base_sha: 0a16ce60d515f38151911e673860c24d341c035e
+implementation_head: e41c98398371395bc7e519afb041374ce9880c1d
+agent_state: ACTIVE
+current_stage: DRAFT_REVIEW_HANDOFF
+execution_mode: STANDARD
+criticality: ENGINEERING_CRITICAL
+mutation_authority: BOUNDED_SBC_UI_ONLY
+merge_authority: OWNER_ONLY_NOT_GRANTED
+validation_truth:
+  live_source_grounding: PASS_GITHUB_SOURCE
+  changed_file_reconciliation: PASS_GITHUB_COMPARE
+  numerical_master_curve_isolation: PASS_DIFF_INSPECTION
+  workflow_isolation: PASS_DIFF_INSPECTION
+  repository_native_node_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  full_vibration_suites: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_journey: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+protected_authority:
+  sbc_lifecycle: RESERVED
+  type_1_execution: FORBIDDEN
+  type_2_execution: FORBIDDEN
+  type_3_authority: CANDIDATE_ONLY
+  type_4_execution: FORBIDDEN
+  t3_curve_state: BLOCKED_SOURCE_DATA_CONFLICT
+  full_vertical_screening_authority: NOT_AUTHORIZED
+  design_authority: false
+  fit_only_mainline_accepted: false
+  automatic_type_classification: false
+next_action: EXECUTE_FOCUSED_NODE_AND_SERVED_BROWSER_GATES_THEN_REVIEW

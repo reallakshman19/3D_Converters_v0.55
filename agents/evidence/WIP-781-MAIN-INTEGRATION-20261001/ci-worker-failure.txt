@@ -1,0 +1,737 @@
+focused	Run Weight / Match-1 authority regressions	﻿2026-10-01T10:41:14.8051836Z ##[group]Run node --test \
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8052038Z ^[[36;1mnode --test \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8052232Z ^[[36;1m  tests/xml-cii-issue-776-weight-review-authority.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8052511Z ^[[36;1m  tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8052777Z ^[[36;1m  tests/xml-cii-issue-776-weight-unit-custody.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8053018Z ^[[36;1m  tests/xml-cii-issue-776-match1-provenance.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8053263Z ^[[36;1m  tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs \^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8053521Z ^[[36;1m  tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs^[[0m
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8113901Z shell: /usr/bin/bash -e {0}
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8114157Z ##[endgroup]
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8652370Z TAP version 13
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8826843Z # Issue \#776 Match-1 acceptance paths carry provenance.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8883160Z # Subtest: tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8892510Z ok 1 - tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8900461Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8900843Z   duration_ms: 26.098169
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8901187Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.8901479Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9081939Z # Issue \#776 Match-1 provenance/fingerprint regression passed.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9092389Z # (node:2123) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/xml-cii2019-core/rigid-weight-authority.js is not specified and it doesn't parse as CommonJS.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9093931Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9094878Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9095646Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9125283Z # Subtest: tests/xml-cii-issue-776-match1-provenance.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9128207Z ok 2 - tests/xml-cii-issue-776-match1-provenance.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9128751Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9129092Z   duration_ms: 24.420794
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9129450Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9129772Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9352503Z # node:internal/modules/run_main:123
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9353566Z #     triggerUncaughtException(
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9354225Z #     ^
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9357271Z # AssertionError [ERR_ASSERTION]: The input did not match the regular expression /if \\(blockedWeightKeys\\.has\\(text\\(nr\\.key\\)\\)\\) continue/. Input:
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9359813Z # '// Standalone XML→CII run parity\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9360364Z #   '// -----------------------------\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9361008Z #   '// The parent Model Converters workflow enriches the XML in the browser\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9361932Z #   '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9362715Z #   '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9363499Z #   '// the Python conversion runs. This module reuses that enrichment authority and\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9364416Z #   '// now emits deterministic evidence proving that the exact XML sent to Python\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9365227Z #   '// contains the Preview and Weight Match facts that were selected.\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9365765Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9366490Z #   "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9367612Z #   "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9374140Z #   "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9375632Z #   "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9376888Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9377385Z #   'const PARITY_MODULE_URL = new URL(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9378181Z #   "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-2',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9378851Z #   '  import.meta.url,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9379237Z #   ');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9379575Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9380208Z #   "function text(value) { return value === undefined || value === null ? '' : String(value); }\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9380764Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9381167Z #   'function parseConfig(raw) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9381757Z #   '  try {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9382239Z #   "    const value = JSON.parse(text(raw) || '{}');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9382947Z #   "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9383556Z #   '  } catch { return {}; }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9383943Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9384274Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9384960Z #   "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9385614Z #   'function elementChildren(parent) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9386184Z #   '  return [...(parent?.childNodes || parent?.children || [])]\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9386870Z #   '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9387365Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9388106Z #   'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9389034Z #   'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9389896Z #   'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9403684Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9404227Z #   'function ensureChild(document, parent, name) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9404945Z #   '  let element = firstChild(parent, name);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9405620Z #   '  if (element) return element;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9414799Z #   "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9415720Z #   '    ? document.createElementNS(parent.namespaceURI, name)\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9416367Z #   '    : document.createElement(name);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9416881Z #   '  parent.appendChild(element);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9417331Z #   '  return element;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9417720Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9418060Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9418563Z #   'function setChildText(document, parent, name, value) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9419129Z #   '  const clean = text(value).trim();\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9419621Z #   '  if (!clean) return false;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9428421Z #   '  ensureChild(document, parent, name).textContent = clean;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9429022Z #   '  return true;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9429428Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9429822Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9430257Z #   'function numeric(value) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9430864Z #   "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9431480Z #   '  return Number.isFinite(n) ? n : null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9432184Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9432530Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9432973Z #   'function recordExpected(entries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9433429Z #   '  scope,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9434064Z #   '  branchName,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9434489Z #   "  nodeNumber = '',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9434898Z #   '  path,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9435268Z #   '  field,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9435634Z #   '  value,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9436018Z #   "  kind = 'text',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9436617Z #   "  source = 'preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9437028Z #   '}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9437480Z #   '  const expected = text(value).trim();\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9437993Z #   '  if (!expected) return;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9438730Z #   '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9439325Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9439662Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9440359Z #   'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9441404Z #   '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9442493Z #   "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9443398Z #   "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9489528Z #   '  }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9529905Z #   "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9559999Z #   "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9562816Z #   '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9582349Z #   '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9649437Z #   '  if (!result.branchRows.length) return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9672204Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9692268Z #   '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9693261Z #   "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9722671Z #   "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9751958Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9754344Z #   "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9772202Z #   "    const branchName = childText(branch, 'Branchname');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9777513Z #   '    const row = byBranch.get(branchName);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9802133Z #   '    if (!row) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9802787Z #   "    const pressure = ensureChild(document, branch, 'Pressure');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9813033Z #   "    const temperature = ensureChild(document, branch, 'Temperature');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9831994Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9852079Z #   '    const branchWrites = [\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9862483Z #   "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9872727Z #   "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9892525Z #   "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9912437Z #   "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9926057Z #   "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9932414Z #   "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9933736Z #   "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9934459Z #   '    ];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9934658Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9934927Z #   '    for (const write of branchWrites) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9935553Z #   "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9936316Z #   '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9936826Z #   '      result.appliedFields += 1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9937218Z #   '      recordExpected(result.expectedEntries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9937741Z #   "        scope: 'branch', branchName, path: write.path, field: write.field,\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9938325Z #   "        value: write.value, kind: write.kind, source: 'standalone-preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9938724Z #   '      });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9938930Z #   '    }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9939119Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9939499Z #   "    for (const node of childrenByName(branch, 'Node')) {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9939953Z #   "      const nodeNumber = childText(node, 'NodeNumber');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9948986Z #   '      const nodeWrites = [\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9972394Z #   "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9975169Z #   "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:14.9992309Z #   "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0002327Z #   "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0012303Z #   "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0013073Z #   "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0013521Z #   '      ];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0013817Z #   '      for (const write of nodeWrites) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0014465Z #   "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0015193Z #   '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0015670Z #   '        result.appliedFields += 1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0016067Z #   '        recordExpected(result.expectedEntries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0016625Z #   "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0017270Z #   "          value: write.value, kind: write.kind, source: 'standalone-preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0017684Z #   '        });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0032387Z #   '      }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0061934Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0062348Z #   '    }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0072268Z #   '  }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0072686Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0073145Z #   '  if (!result.appliedFields) return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0073644Z #   '  diagnostics.push({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0074154Z #   "    type: 'standalone-process-parity-applied',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0074684Z #   '    fields: result.appliedFields,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0075503Z #   "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0076174Z #   '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0076699Z #   '  result.xmlText = new XMLSerializer().serializeToString(document);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0077456Z #   '  return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0078048Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0078383Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0078805Z #   'const WEIGHT_MATCH_MODULE_URL = new URL(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0079616Z #   "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0080468Z #   '  import.meta.url,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0080841Z #   ');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0081163Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0081874Z #   'export async function loadParentWeightMatchModules() {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0082494Z #   '  const [renderer, parity] = await Promise.all([\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0083052Z #   '    import(WEIGHT_MATCH_MODULE_URL.href),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0083698Z #   '    import(PARITY_MODULE_URL.href),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0084125Z #   '  ]);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0084967Z #   '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0085732Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0086075Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0086645Z #   'export function standaloneParityOptions(supportConfigJson, options = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0087329Z #   '  const config = parseConfig(supportConfigJson);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0087964Z #   '  const split = options.splitCondensedValveFlange !== undefined\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0088611Z #   '    ? options.splitCondensedValveFlange !== false\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0089205Z #   '    : (config.splitCondensedValveFlange !== false);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0089679Z #   '  return {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0090180Z #   "    supportConfigJson: text(supportConfigJson) || '{}',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0090730Z #   '    splitCondensedValveFlange: split,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0091238Z #   '    split_condensed_valve_flange: split,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0092421Z #   '    condenseRigidXsd: config.condenseRigidXsd === true || config.condense_rigid_xsd === true,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0093042Z #   '  };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0093494Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0093867Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0094463Z #   'export async function prepareStandaloneWeightReviewXml(state = {}, config = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0095155Z #   '  const sourceText = text(state?.sourceText);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0095751Z #   '  const stagedJsonText = text(state?.stagedJsonText);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0096733Z #   "  if (!sourceText.trim()) return { xmlText: sourceText, config, diagnostics: [], stats: {}, error: 'Weight review requires non-empty XML source text.' };\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0097653Z #   '  const parity = await import(PARITY_MODULE_URL.href);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0098434Z #   "  const supportConfigJson = JSON.stringify(config && typeof config === 'object' ? config : {});\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0099324Z #   '  const options = standaloneParityOptions(supportConfigJson, state?.options || {});\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0100309Z #   '  const authority = prepareStandaloneRigidWeightAuthority(parity, sourceText, stagedJsonText, config, options);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0101245Z #   '  const enriched = await parity.enrichXmlForCii2019(sourceText, stagedJsonText, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0102330Z #   '    ...options, supportConfigJson: JSON.stringify(deferStandaloneRigidWeights(config)),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0102918Z #   '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0103497Z #   "  const preparedConfig = enriched?.config && typeof enriched.config === 'object'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0104412Z #   '    ? { ...enriched.config, ...config, overrides: { ...(enriched.config.overrides || {}), ...(config?.overrides || {}) } }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0105078Z #   '    : config;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0105584Z #   '  const geometry = applyXmlCiiStagedGeometryAuthority(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0106138Z #   '    enriched?.xmlText || sourceText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0106602Z #   '    stagedJsonText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0107047Z #   '    { config: preparedConfig },\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0107449Z #   '  );\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0108033Z #   '  return {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0108460Z #   '    xmlText: geometry.xmlText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0108930Z #   '    config: preparedConfig,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0109559Z #   '    diagnostics: [...(enriched?.diagnostics || []), ...(geometry?.diagnostics || [])],\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0110441Z #   '    stats: { ...(enriched?.stats || {}), ...(geometry?.stats || {}) },\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0110981Z #   '    weig'... 5143 more characters
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0111977Z #     at file:///home/runner/work/3D_Converters/3D_Converters/tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs:6:8 {
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0112689Z #   generatedMessage: true,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0113070Z #   code: 'ERR_ASSERTION',
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0113910Z #   actual: '// Standalone XML→CII run parity\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0114473Z #     '// -----------------------------\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0115109Z #     '// The parent Model Converters workflow enriches the XML in the browser\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0115889Z #     '// (process data, staged-support restraints with CMPSUPGAP gaps, DTXR\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0116793Z #     '// annotations, weight master matches, valve/flange split renumbering) BEFORE\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0117631Z #     '// the Python conversion runs. This module reuses that enrichment authority and\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0118460Z #     '// now emits deterministic evidence proving that the exact XML sent to Python\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0119237Z #     '// contains the Preview and Weight Match facts that were selected.\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0119722Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0120377Z #     "import { enrichStandaloneDtxrAnnotations } from './xml-cii-standalone-dtxr-enrichment.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0121385Z #     "import { createStandaloneRunParityEvidence } from './xml-cii-run-parity-evidence.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0122638Z #     "import { applyXmlCiiStagedGeometryAuthority } from '../../converters/xml-cii2019-core/staged-geometry-authority.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0124070Z #     "import { deferStandaloneRigidWeights, prepareStandaloneRigidWeightAuthority, applyStandaloneAcceptedRigidWeights } from './xml-cii-weight-output-authority.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0125060Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0125475Z #     'const PARITY_MODULE_URL = new URL(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0126266Z #     "  '../model-converters/converters/xmltocii2019_helper/enrichment-run-parity.js?v=20261001-weight-output-2',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0128389Z #     '  import.meta.url,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0128905Z #     ');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0129218Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0129792Z #     "function text(value) { return value === undefined || value === null ? '' : String(value); }\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0142474Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0142953Z #     'function parseConfig(raw) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0143382Z #     '  try {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0143865Z #     "    const value = JSON.parse(text(raw) || '{}');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0144538Z #     "    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0145117Z #     '  } catch { return {}; }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0146065Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0146402Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0147031Z #     "function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0147697Z #     'function elementChildren(parent) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0148265Z #     '  return [...(parent?.childNodes || parent?.children || [])]\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0148937Z #     '    .filter((node) => node?.nodeType === undefined || node.nodeType === 1);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0149441Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0150183Z #     'function childrenByName(parent, name) { return elementChildren(parent).filter((node) => localName(node) === name); }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0151325Z #     'function firstChild(parent, name) { return childrenByName(parent, name)[0] || null; }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0152524Z #     'function childText(parent, name) { return text(firstChild(parent, name)?.textContent).trim(); }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0153140Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0153822Z #     'function ensureChild(document, parent, name) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0154332Z #     '  let element = firstChild(parent, name);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0154793Z #     '  if (element) return element;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0155681Z #     "  element = parent?.namespaceURI && typeof document.createElementNS === 'function'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0156437Z #     '    ? document.createElementNS(parent.namespaceURI, name)\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0156969Z #     '    : document.createElement(name);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0157426Z #     '  parent.appendChild(element);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0157852Z #     '  return element;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0158198Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0158512Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0158962Z #     'function setChildText(document, parent, name, value) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0159469Z #     '  const clean = text(value).trim();\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0159905Z #     '  if (!clean) return false;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0160426Z #     '  ensureChild(document, parent, name).textContent = clean;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0160900Z #     '  return true;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0161237Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0161890Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0162260Z #     'function numeric(value) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0162772Z #     "  const n = Number(text(value).replace(/[^0-9.+-eE]/g, ''));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0163290Z #     '  return Number.isFinite(n) ? n : null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0163721Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0164031Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0164425Z #     'function recordExpected(entries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0164838Z #     '  scope,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0165197Z #     '  branchName,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0165579Z #     "  nodeNumber = '',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0165981Z #     '  path,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0166337Z #     '  field,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0166684Z #     '  value,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0167030Z #     "  kind = 'text',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0167451Z #     "  source = 'preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0167838Z #     '}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0168265Z #     '  const expected = text(value).trim();\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0168747Z #     '  if (!expected) return;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0169413Z #     '  entries.push({ scope, branchName, nodeNumber, path, field, expected, kind, source });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0169995Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0170321Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0170982Z #     'async function applyStandaloneProcessParity(xmlText, config, stagedJsonText, diagnostics) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0172147Z #     '  const result = { xmlText, branchRows: [], nodeRows: [], expectedEntries: [], appliedFields: 0 };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0172995Z #     "  if (typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0173934Z #     "    throw new Error('DOMParser/XMLSerializer is unavailable for standalone run parity enrichment.');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0174550Z #     '  }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0175336Z #     "  const { xmlCiiDryRunPreview } = await import('./ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0176295Z #     "  const preview = xmlCiiDryRunPreview(xmlText, config, stagedJsonText || '');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0177107Z #     '  result.branchRows = Array.isArray(preview?.branchRows) ? preview.branchRows : [];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0177904Z #     '  result.nodeRows = Array.isArray(preview?.nodeRows) ? preview.nodeRows : [];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0178567Z #     '  if (!result.branchRows.length) return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0179004Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0179786Z #     '  const byBranch = new Map(result.branchRows.map((row) => [text(row.branchName), row]));\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0180589Z #     "  const document = new DOMParser().parseFromString(xmlText, 'application/xml');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0181850Z #     "  if (document.getElementsByTagName('parsererror').length) throw new Error('Standalone run parity could not parse the enriched XML.');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0182667Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0183189Z #     "  for (const branch of [...document.getElementsByTagName('Branch')]) {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0183822Z #     "    const branchName = childText(branch, 'Branchname');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0184375Z #     '    const row = byBranch.get(branchName);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0184841Z #     '    if (!row) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0185387Z #     "    const pressure = ensureChild(document, branch, 'Pressure');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0186065Z #     "    const temperature = ensureChild(document, branch, 'Temperature');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0186559Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0186928Z #     '    const branchWrites = [\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0187692Z #     "      { owner: pressure, name: 'Pressure1', path: ['Pressure', 'Pressure1'], field: 'p1', value: row.p1, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0188813Z #     "      { owner: pressure, name: 'HydroPressure', path: ['Pressure', 'HydroPressure'], field: 'hydroPressure', value: row.hydroPressure, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0190000Z #     "      { owner: temperature, name: 'Temperature1', path: ['Temperature', 'Temperature1'], field: 't1', value: row.t1, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0191094Z #     "      { owner: temperature, name: 'Temperature2', path: ['Temperature', 'Temperature2'], field: 't2', value: row.t2, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0192506Z #     "      { owner: temperature, name: 'Temperature3', path: ['Temperature', 'Temperature3'], field: 't3', value: row.t3, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0193548Z #     "      { owner: branch, name: 'FluidDensity', path: ['FluidDensity'], field: 'density', value: row.density, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0194576Z #     "      { owner: branch, name: 'MaterialNumber', path: ['MaterialNumber'], field: 'materialCode', value: row.materialCode, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0195243Z #     '    ];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0195595Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0196014Z #     '    for (const write of branchWrites) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0196744Z #     "      const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0197565Z #     '      if (!valid || !setChildText(document, write.owner, write.name, write.value)) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0198148Z #     '      result.appliedFields += 1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0198646Z #     '      recordExpected(result.expectedEntries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0199261Z #     "        scope: 'branch', branchName, path: write.path, field: write.field,\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0199957Z #     "        value: write.value, kind: write.kind, source: 'standalone-preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0200465Z #     '      });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0200804Z #     '    }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0201131Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0201840Z #     "    for (const node of childrenByName(branch, 'Node')) {\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0202507Z #     "      const nodeNumber = childText(node, 'NodeNumber');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0202996Z #     '      const nodeWrites = [\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0203646Z #     "        { name: 'PipingClass', field: 'pipingClass', value: row.pipingClass, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0204377Z #     "        { name: 'Rating', field: 'rating', value: row.rating, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0205094Z #     "        { name: 'MaterialName', field: 'material', value: row.material, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0205893Z #     "        { name: 'MaterialCode', field: 'materialCode', value: row.materialCode, kind: 'text' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0206909Z #     "        { name: 'WallThickness', field: 'wallThickness', value: row.wallThickness, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0207779Z #     "        { name: 'CorrosionAllowance', field: 'corrosion', value: row.corrosion, kind: 'number' },\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0208473Z #     '      ];\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0208916Z #     '      for (const write of nodeWrites) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0209697Z #     "        const valid = write.kind === 'number' ? numeric(write.value) !== null : text(write.value).trim() !== '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0210646Z #     '        if (!valid || !setChildText(document, node, write.name, write.value)) continue;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0211284Z #     '        result.appliedFields += 1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0212019Z #     '        recordExpected(result.expectedEntries, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0212686Z #     "          scope: 'node', branchName, nodeNumber, path: [write.name], field: write.field,\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0213406Z #     "          value: write.value, kind: write.kind, source: 'standalone-preview',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0213920Z #     '        });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0214280Z #     '      }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0214613Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0214942Z #     '    }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0215304Z #     '  }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0215627Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0216053Z #     '  if (!result.appliedFields) return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0216529Z #     '  diagnostics.push({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0217040Z #     "    type: 'standalone-process-parity-applied',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0217545Z #     '    fields: result.appliedFields,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0218351Z #     "    message: 'Branch process and node facts were synchronised from the standalone Preview and Weight Match authorities.',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0219008Z #     '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0219541Z #     '  result.xmlText = new XMLSerializer().serializeToString(document);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0220080Z #     '  return result;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0220448Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0220768Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0221187Z #     'const WEIGHT_MATCH_MODULE_URL = new URL(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0222235Z #     "  '../model-converters/converters/xmltocii2019_helper/weight-match-renderer.js?v=20261001-weight-rating-1',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0222935Z #     '  import.meta.url,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0223314Z #     ');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0223635Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0224127Z #     'export async function loadParentWeightMatchModules() {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0224735Z #     '  const [renderer, parity] = await Promise.all([\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0225285Z #     '    import(WEIGHT_MATCH_MODULE_URL.href),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0225785Z #     '    import(PARITY_MODULE_URL.href),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0226197Z #     '  ]);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0227020Z #     '  return { bindXmlCiiWeightMatchPhase: renderer.bindXmlCiiWeightMatchPhase, enrichXmlForCii2019: parity.enrichXmlForCii2019 };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0227742Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0228057Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0228623Z #     'export function standaloneParityOptions(supportConfigJson, options = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0229301Z #     '  const config = parseConfig(supportConfigJson);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0229934Z #     '  const split = options.splitCondensedValveFlange !== undefined\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0230564Z #     '    ? options.splitCondensedValveFlange !== false\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0232073Z #     '    : (config.splitCondensedValveFlange !== false);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0232653Z #     '  return {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0233191Z #     "    supportConfigJson: text(supportConfigJson) || '{}',\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0233759Z #     '    splitCondensedValveFlange: split,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0234281Z #     '    split_condensed_valve_flange: split,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0235195Z #     '    condenseRigidXsd: config.condenseRigidXsd === true || config.condense_rigid_xsd === true,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0235806Z #     '  };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0236153Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0236478Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0237203Z #     'export async function prepareStandaloneWeightReviewXml(state = {}, config = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0237895Z #     '  const sourceText = text(state?.sourceText);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0238488Z #     '  const stagedJsonText = text(state?.stagedJsonText);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0239475Z #     "  if (!sourceText.trim()) return { xmlText: sourceText, config, diagnostics: [], stats: {}, error: 'Weight review requires non-empty XML source text.' };\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0240354Z #     '  const parity = await import(PARITY_MODULE_URL.href);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0241183Z #     "  const supportConfigJson = JSON.stringify(config && typeof config === 'object' ? config : {});\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0242261Z #     '  const options = standaloneParityOptions(supportConfigJson, state?.options || {});\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0243217Z #     '  const authority = prepareStandaloneRigidWeightAuthority(parity, sourceText, stagedJsonText, config, options);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0244126Z #     '  const enriched = await parity.enrichXmlForCii2019(sourceText, stagedJsonText, {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0244945Z #     '    ...options, supportConfigJson: JSON.stringify(deferStandaloneRigidWeights(config)),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0245509Z #     '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0246077Z #     "  const preparedConfig = enriched?.config && typeof enriched.config === 'object'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0247015Z #     '    ? { ...enriched.config, ...config, overrides: { ...(enriched.config.overrides || {}), ...(config?.overrides || {}) } }\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0247645Z #     '    : config;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0248164Z #     '  const geometry = applyXmlCiiStagedGeometryAuthority(\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0248696Z #     '    enriched?.xmlText || sourceText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0249152Z #     '    stagedJsonText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0249587Z #     '    { config: preparedConfig },\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0249996Z #     '  );\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0250342Z #     '  return {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0250756Z #     '    xmlText: geometry.xmlText,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0251194Z #     '    config: preparedConfig,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0252016Z #     '    diagnostics: [...(enriched?.diagnostics || []), ...(geometry?.diagnostics || [])],\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0252770Z #     '    stats: { ...(enriched?.stats || {}), ...(geometry?.stats || {}) },\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0253291Z #     '    weig'... 5143 more characters,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0253880Z #   expected: /if \\(blockedWeightKeys\\.has\\(text\\(nr\\.key\\)\\)\\) continue/,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0254378Z #   operator: 'match',
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0254723Z #   diff: 'simple'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0255040Z # }
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0255366Z # Node.js v22.23.2
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0255897Z # Subtest: tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0256598Z not ok 3 - tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0257074Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0257398Z   duration_ms: 60.394009
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0257736Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0258403Z   location: '/home/runner/work/3D_Converters/3D_Converters/tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs:1:1'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0259127Z   failureType: 'testCodeFailure'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0259505Z   exitCode: 1
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0259823Z   signal: ~
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0260143Z   error: 'test failed'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0260485Z   code: 'ERR_TEST_FAILURE'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0260837Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0261312Z # Issue \#776 Weight Match acceptance/validation semantics verified.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0262121Z # Subtest: tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0263000Z ok 4 - tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0263500Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0263830Z   duration_ms: 47.207849
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0264194Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0264523Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0563626Z # node:internal/modules/run_main:123
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0578712Z #     triggerUncaughtException(
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0605853Z #     ^
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0613074Z # AssertionError [ERR_ASSERTION]: The input did not match the regular expression /await prepareStandaloneWeightReviewXml\\(state, config\\)/. Input:
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0632477Z # "import { resolveStandaloneWeightReviewRating, standaloneWeightReviewRatingInfo } from './xml-cii-adapted-weight-rating-authority.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0674661Z #   "import { applyXmlCiiFlangeWeightFallbackToIssue } from '../../../converters/xml-cii2019-core/flange-weight-fallback.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0722251Z #   "import { rankXmlCiiWeightCandidates } from '../../../converters/xml-cii2019-core/weight-valve-hints.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0723242Z #   "import { flattenModeARigidReviewEntries } from './xml-cii-adapted-rigid-review-mode-a-state.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0762477Z #   "import { prepareStandaloneWeightReviewXml } from '../xml-cii-standalone-run-parity.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0792484Z #   "import { materializeXmlCiiDatasetBackedConfig } from '../xml-cii-dataset-backed-config.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0804731Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0842449Z #   `const esc = (value) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0843411Z #   "const attr = (value) => esc(value).replace(/'/g, '&\#39;');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0844445Z #   "const text = (value) => value === undefined || value === null ? '' : String(value).trim();\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0869230Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0874570Z #   'export async function collectModeARigidWeightReviewIssues(state = {}, config = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0892191Z #   '  const effectiveConfig = await materializeXmlCiiDatasetBackedConfig(config, state);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0898419Z #   '  const prepared = await prepareStandaloneWeightReviewXml(state, effectiveConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0919409Z #   '  if (prepared.error) throw new Error(prepared.error);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0938035Z #   '  const validated = prepared.weightAuthority;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0940004Z #   '  const basisRows = validated.basisRows;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0943719Z #   '  const authorityConfig = validated.config;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0962128Z #   '  return basisRows.map((issue) => {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0968847Z #   '    const staleMatch1 = validated.validation.stale?.[issue.key] || null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.0990889Z #   '    const savedWeight = Number(authorityConfig.overrides?.rigidWeight?.[issue.key]);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1002250Z #   '    const sourceWeight = Number(issue.originalWeight);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1012270Z #   '    const acceptedWeight = savedWeight > 0 ? savedWeight : (sourceWeight > 0 ? sourceWeight : null);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1018254Z #   '    const authority = resolveStandaloneWeightReviewRating(issue, authorityConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1052007Z #   '    const rating = authority.rating;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1072076Z #   '    const ranking = rating\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1082205Z #   '      ? rankXmlCiiWeightCandidates({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1102092Z #   '          boreMm: issue.boreMm,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1121968Z #   '          rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1123130Z #   '          lengthMm: issue.lengthMm,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1123647Z #   '          nodeName: issue.nodeName,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1124093Z #   '          componentType: issue.componentType,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1124545Z #   '          componentRefNo: issue.componentRefNo,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1125278Z #   '          dtxr: issue.dtxr,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1125717Z #   '        }, authorityConfig, { includeRejected: true })\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1126207Z #   '      : { candidates: [], rejectedCandidates: [] };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1126709Z #   '    return applyXmlCiiFlangeWeightFallbackToIssue({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1127298Z #   '      ...issue,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1127608Z #   '      staleMatch1,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1127944Z #   '      acceptedWeight,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1128555Z #   "      acceptedWeightSource: savedWeight > 0 ? 'Saved weight' : (sourceWeight > 0 ? 'XML weight' : ''),\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1129082Z #   '      rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1129440Z #   '      dtxrRating: authority.dtxrRating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1129845Z #   '      ratingAuthority: authority,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1130259Z #   '      ratingConflict: authority.conflict,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1130662Z #   '      branchRating: issue.rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1131102Z #   '      candidates: ranking.candidates.slice(0, 5),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1131873Z #   '      rejectedCandidates: ranking.rejectedCandidates.slice(0, 3),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1132369Z #   '    }, authorityConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1132681Z #   '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1132937Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1133177Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1133482Z #   'function ratingInfo(issue) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1133948Z #   '  const info = standaloneWeightReviewRatingInfo(issue);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1134384Z #   '  const title = info.conflict\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1134995Z #   '    ? `DTXR rating ${info.dtxrRating}\# differs from resolved/override rating ${info.shownRating}.`\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1135559Z #   '    : (info.missingWithDtxr\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1136156Z #   '      ? `DTXR contains ${info.dtxrRating}\#, but normal execution does not auto-populate Rating.`\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1136984Z #   "      : (info.derivedRating ? `Resolved Rating: ${info.derivedRating}` : 'Rating used for weight suggestions'));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1137579Z #   '  return { ...info, title };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1137889Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1138122Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1138442Z #   'function staleMatch1Notice(issue) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1138846Z #   '  const stale = issue?.staleMatch1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1139203Z #   "  if (!stale) return '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1139744Z #   '  const changed = Array.isArray(stale.changedFields) && stale.changedFields.length\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1140657Z #   "    ? ` · changed: ${stale.changedFields.join(', ')}`\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1141123Z #   "    : '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1141475Z #   '  const prior = Number(stale.weightKg);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1142336Z #   "  const priorText = Number.isFinite(prior) && prior > 0 ? `Prior Match-1 ${prior} kg invalidated` : 'Prior Match-1 invalidated';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1144199Z #   '  return `<div data-stale-match1 title="${attr(`Match-1 was rejected because its accepted geometry/rating/master basis is stale (${stale.reason || \\'basis changed\\'}).${changed}`)}" style="margin-bottom:5px;color:\#fca5a5;font-size:10px;font-weight:700;">⚠ ${esc(priorText)}${esc(changed)}</div>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1145317Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1145567Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1145923Z #   'function candidateButtons(issue, rowIndex) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1146419Z #   '  return (issue.candidates || []).map((candidate) => {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1147104Z #   '    const weight = candidate.suggestedWeight ?? candidate.selectedWeight ?? candidate.weight;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1147807Z #   '    const rawScore = Number(candidate.totalScore ?? candidate.score ?? 0);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1148426Z #   '    const score = Math.round((rawScore <= 1 ? rawScore * 100 : rawScore));\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1149008Z #   '    const fallback = candidate.flangeWeightFallback === true;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1149659Z #   '    const method = fallback\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1150055Z #   "      ? 'Flange length-scaled fallback'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1150814Z #   "      : (candidate.preferred ? 'Exact master match' : (candidate.weightMethod || (candidate.inferredWeight ? 'Inferred' : 'Review')));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1152089Z #   "    const scoreText = fallback ? '' : ` · confidence ${score}%`;\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1153316Z #   "    const details = [method, fallback ? candidate.weightWarning : `confidence/rank score ${score}%`, candidate.typeDesc || candidate.valveType || candidate.type || ''].filter(Boolean).join(' · ');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1155888Z #   '    return `<button type="button" class="mc-rigid-review-candidate${candidate.preferred ? \\' best\\' : \\'\\'}" data-mode-a-rigid-candidate="${rowIndex}" data-mode-a-rigid-weight="${attr(weight)}" title="${attr(details)}" style="font-size:11px;padding:3px 6px;margin:2px;cursor:pointer;">${candidate.preferred ? \\'★ \\' : \\'\\'}${esc(weight)} kg · ${esc(method)}${scoreText}</button>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1157299Z #   "  }).join('');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1157592Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1157842Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1158171Z #   'function rowMarkup(issue, rowIndex) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1158610Z #   '  const best = issue.candidates?.[0] || null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1159016Z #   '  const info = ratingInfo(issue);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1159371Z #   '  const badge = info.conflict\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1159926Z #   `    ? '<span title="Rating conflict with DTXR" style="color:\#fca5a5;font-weight:700;"> !</span>'\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1160795Z #   `    : (info.missingWithDtxr ? '<span title="DTXR Rating available as evidence" style="color:\#fbbf24;font-weight:700;"> DTXR</span>' : '');\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1162142Z #   "  const search = [issue.fileName, issue.alias, issue.branchName, issue.nodeNumberDisplay, issue.nodeNumber, issue.dtxr].map((value) => text(value).toLowerCase()).join(' ');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1163202Z #   '  return `<tr data-mode-a-rigid-review-row data-source-id="${attr(issue.sourceId)}" data-search="${attr(search)}">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1164214Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.fileName || issue.alias || issue.sourceId)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1165255Z #   '    <td title="${attr(issue.branchName)}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:260px;">${esc(issue.branchName)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1166276Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.boreMm == null ? \\'\\' : `${Number(issue.boreMm).toFixed(0)} mm`)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1168700Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="text" class="mc-rigid-review-rating-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(info.shownRating)}" title="${attr(info.title)}" style="width:64px;background:\#101827;color:\#fff;border:1px solid ${info.conflict || info.missingWithDtxr ? \\'\#ef4444\\' : \\'\#31455f\\'};border-radius:4px;padding:4px;font-size:11px;">${badge}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1170830Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.nodeNumberDisplay || issue.nodeNumber)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1172138Z #   '    <td title="${attr(issue.dtxrSourcePath || \\'\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:180px;">${esc(issue.dtxr || \\'Not found\\')}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1173741Z #   '    <td title="${attr(issue.elementLengthSource || \\'prepared component geometry\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.lengthMm == null ? \\'\\' : `${Number(issue.lengthMm).toFixed(1)} mm`)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1178014Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="number" min="0" step="0.001" class="mc-rigid-review-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(issue.acceptedWeight ?? (best ? (best.suggestedWeight ?? best.selectedWeight ?? best.weight ?? \\'\\') : \\'\\'))}" placeholder="kg" style="width:78px;background:\#101827;color:\#fff;border:1px solid \#31455f;border-radius:4px;padding:4px;"><small data-reviewed-weight-source style="display:block;color:\#94a3b8;">${esc(issue.acceptedWeightSource || (best ? `Proposed · ${best.weightMethod || \\'master\\'}` : \\'Unresolved\\'))}</small></td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1181261Z #   '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:300px;">${staleMatch1Notice(issue)}${candidateButtons(issue, rowIndex) || \\'<span style="color:\#64748b;">No suggestion</span>\\'}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1182362Z #   '  </tr>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1182638Z #   '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1182883Z #   '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1183211Z #   'function popupMarkup(rows, entries) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1183957Z #   '  const sourceOptions = entries.map((entry) => `<option value="${attr(entry.sourceId)}">${esc(entry.fileName)}</option>`).join(\\'\\');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1185572Z #   '  return `<div class="mc-rigid-review-dialog" role="dialog" aria-modal="true" aria-label="Consolidated rigid zero weight review" style="color:\#e2e8f0;max-height:90vh;overflow:auto;background:\#0f172a;border:1px solid \#253a55;border-radius:8px;padding:18px;max-width:1380px;width:96%;">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1187240Z #   '    <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid \#253a55;padding-bottom:12px;margin-bottom:12px;">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1189130Z #   '      <div><div style="font-size:18px;font-weight:700;color:\#9cc5ff;">Rigid Weights Need Review — Consolidated</div><div data-mode-a-rigid-summary style="font-size:12px;color:\#94a3b8;margin-top:4px;">${rows.length} rigid node(s) across ${entries.length} XML file(s).</div></div>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1190871Z #   '      <button type="button" data-mode-a-rigid-cancel style="cursor:pointer;background:transparent;border:1px solid \#475569;border-radius:6px;color:\#94a3b8;padding:6px 12px;">Cancel Batch Run</button>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1191916Z #   '    </div>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1194074Z #   '    <div style="background:\#2a210b;border:1px solid \#7c5a18;color:\#ffe7a3;padding:9px;border-radius:6px;font-size:12px;margin-bottom:10px;">Saved/XML weights are kept; suggestions populate only missing weights. Apply accepts the displayed values without clicking each suggestion. Bulk suggestions fill blank fields; selecting a row suggestion explicitly replaces that row. Review proposed master, interpolated and empirical weights before applying. Values here and in enriched XML are kg'... 8647 more characters
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1196176Z #     at file:///home/runner/work/3D_Converters/3D_Converters/tests/xml-cii-issue-776-weight-review-authority.test.mjs:11:8 {
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1196788Z #   generatedMessage: true,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1197100Z #   code: 'ERR_ASSERTION',
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1197924Z #   actual: "import { resolveStandaloneWeightReviewRating, standaloneWeightReviewRatingInfo } from './xml-cii-adapted-weight-rating-authority.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1199032Z #     "import { applyXmlCiiFlangeWeightFallbackToIssue } from '../../../converters/xml-cii2019-core/flange-weight-fallback.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1199962Z #     "import { rankXmlCiiWeightCandidates } from '../../../converters/xml-cii2019-core/weight-valve-hints.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1200824Z #     "import { flattenModeARigidReviewEntries } from './xml-cii-adapted-rigid-review-mode-a-state.js';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1201903Z #     "import { prepareStandaloneWeightReviewXml } from '../xml-cii-standalone-run-parity.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1203102Z #     "import { materializeXmlCiiDatasetBackedConfig } from '../xml-cii-dataset-backed-config.js?v=20261001-weight-output-2';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1203717Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1204353Z #     `const esc = (value) => String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1205204Z #     "const attr = (value) => esc(value).replace(/'/g, '&\#39;');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1205833Z #     "const text = (value) => value === undefined || value === null ? '' : String(value).trim();\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1206296Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1206822Z #     'export async function collectModeARigidWeightReviewIssues(state = {}, config = {}) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1207584Z #     '  const effectiveConfig = await materializeXmlCiiDatasetBackedConfig(config, state);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1208314Z #     '  const prepared = await prepareStandaloneWeightReviewXml(state, effectiveConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1208916Z #     '  if (prepared.error) throw new Error(prepared.error);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1209394Z #     '  const validated = prepared.weightAuthority;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1209839Z #     '  const basisRows = validated.basisRows;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1210284Z #     '  const authorityConfig = validated.config;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1210698Z #     '  return basisRows.map((issue) => {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1211215Z #     '    const staleMatch1 = validated.validation.stale?.[issue.key] || null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1212146Z #     '    const savedWeight = Number(authorityConfig.overrides?.rigidWeight?.[issue.key]);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1212749Z #     '    const sourceWeight = Number(issue.originalWeight);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1213426Z #     '    const acceptedWeight = savedWeight > 0 ? savedWeight : (sourceWeight > 0 ? sourceWeight : null);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1214183Z #     '    const authority = resolveStandaloneWeightReviewRating(issue, authorityConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1214711Z #     '    const rating = authority.rating;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1215092Z #     '    const ranking = rating\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1215482Z #     '      ? rankXmlCiiWeightCandidates({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1215884Z #     '          boreMm: issue.boreMm,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1216242Z #     '          rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1216594Z #     '          lengthMm: issue.lengthMm,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1216983Z #     '          nodeName: issue.nodeName,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1217408Z #     '          componentType: issue.componentType,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1217859Z #     '          componentRefNo: issue.componentRefNo,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1218253Z #     '          dtxr: issue.dtxr,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1218686Z #     '        }, authorityConfig, { includeRejected: true })\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1219156Z #     '      : { candidates: [], rejectedCandidates: [] };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1219702Z #     '    return applyXmlCiiFlangeWeightFallbackToIssue({\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1220092Z #     '      ...issue,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1220403Z #     '      staleMatch1,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1220728Z #     '      acceptedWeight,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1221321Z #     "      acceptedWeightSource: savedWeight > 0 ? 'Saved weight' : (sourceWeight > 0 ? 'XML weight' : ''),\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1222050Z #     '      rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1222411Z #     '      dtxrRating: authority.dtxrRating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1222817Z #     '      ratingAuthority: authority,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1223234Z #     '      ratingConflict: authority.conflict,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1223638Z #     '      branchRating: issue.rating,\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1224077Z #     '      candidates: ranking.candidates.slice(0, 5),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1224632Z #     '      rejectedCandidates: ranking.rejectedCandidates.slice(0, 3),\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1225107Z #     '    }, authorityConfig);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1225640Z #     '  });\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1225900Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1226146Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1226449Z #     'function ratingInfo(issue) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1226912Z #     '  const info = standaloneWeightReviewRatingInfo(issue);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1227462Z #     '  const title = info.conflict\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1228078Z #     '    ? `DTXR rating ${info.dtxrRating}\# differs from resolved/override rating ${info.shownRating}.`\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1228628Z #     '    : (info.missingWithDtxr\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1229227Z #     '      ? `DTXR contains ${info.dtxrRating}\#, but normal execution does not auto-populate Rating.`\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1230058Z #     "      : (info.derivedRating ? `Resolved Rating: ${info.derivedRating}` : 'Rating used for weight suggestions'));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1230646Z #     '  return { ...info, title };\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1230948Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1231197Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1231648Z #     'function staleMatch1Notice(issue) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1232125Z #     '  const stale = issue?.staleMatch1;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1232497Z #     "  if (!stale) return '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1233039Z #     '  const changed = Array.isArray(stale.changedFields) && stale.changedFields.length\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1233717Z #     "    ? ` · changed: ${stale.changedFields.join(', ')}`\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1234108Z #     "    : '';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1234471Z #     '  const prior = Number(stale.weightKg);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1235250Z #     "  const priorText = Number.isFinite(prior) && prior > 0 ? `Prior Match-1 ${prior} kg invalidated` : 'Prior Match-1 invalidated';\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1237130Z #     '  return `<div data-stale-match1 title="${attr(`Match-1 was rejected because its accepted geometry/rating/master basis is stale (${stale.reason || \\'basis changed\\'}).${changed}`)}" style="margin-bottom:5px;color:\#fca5a5;font-size:10px;font-weight:700;">⚠ ${esc(priorText)}${esc(changed)}</div>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1238233Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1238486Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1238850Z #     'function candidateButtons(issue, rowIndex) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1239354Z #     '  return (issue.candidates || []).map((candidate) => {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1240042Z #     '    const weight = candidate.suggestedWeight ?? candidate.selectedWeight ?? candidate.weight;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1240772Z #     '    const rawScore = Number(candidate.totalScore ?? candidate.score ?? 0);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1241482Z #     '    const score = Math.round((rawScore <= 1 ? rawScore * 100 : rawScore));\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1242179Z #     '    const fallback = candidate.flangeWeightFallback === true;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1242653Z #     '    const method = fallback\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1243056Z #     "      ? 'Flange length-scaled fallback'\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1243859Z #     "      : (candidate.preferred ? 'Exact master match' : (candidate.weightMethod || (candidate.inferredWeight ? 'Inferred' : 'Review')));\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1244715Z #     "    const scoreText = fallback ? '' : ` · confidence ${score}%`;\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1245954Z #     "    const details = [method, fallback ? candidate.weightWarning : `confidence/rank score ${score}%`, candidate.typeDesc || candidate.valveType || candidate.type || ''].filter(Boolean).join(' · ');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1248429Z #     '    return `<button type="button" class="mc-rigid-review-candidate${candidate.preferred ? \\' best\\' : \\'\\'}" data-mode-a-rigid-candidate="${rowIndex}" data-mode-a-rigid-weight="${attr(weight)}" title="${attr(details)}" style="font-size:11px;padding:3px 6px;margin:2px;cursor:pointer;">${candidate.preferred ? \\'★ \\' : \\'\\'}${esc(weight)} kg · ${esc(method)}${scoreText}</button>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1249790Z #     "  }).join('');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1250213Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1250460Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1250793Z #     'function rowMarkup(issue, rowIndex) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1251246Z #     '  const best = issue.candidates?.[0] || null;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1251764Z #     '  const info = ratingInfo(issue);\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1252256Z #     '  const badge = info.conflict\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1252865Z #     `    ? '<span title="Rating conflict with DTXR" style="color:\#fca5a5;font-weight:700;"> !</span>'\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1253870Z #     `    : (info.missingWithDtxr ? '<span title="DTXR Rating available as evidence" style="color:\#fbbf24;font-weight:700;"> DTXR</span>' : '');\\n` +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1255110Z #     "  const search = [issue.fileName, issue.alias, issue.branchName, issue.nodeNumberDisplay, issue.nodeNumber, issue.dtxr].map((value) => text(value).toLowerCase()).join(' ');\\n" +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1256252Z #     '  return `<tr data-mode-a-rigid-review-row data-source-id="${attr(issue.sourceId)}" data-search="${attr(search)}">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1257341Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.fileName || issue.alias || issue.sourceId)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1258501Z #     '    <td title="${attr(issue.branchName)}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:260px;">${esc(issue.branchName)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1259657Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.boreMm == null ? \\'\\' : `${Number(issue.boreMm).toFixed(0)} mm`)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1262347Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="text" class="mc-rigid-review-rating-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(info.shownRating)}" title="${attr(info.title)}" style="width:64px;background:\#101827;color:\#fff;border:1px solid ${info.conflict || info.missingWithDtxr ? \\'\#ef4444\\' : \\'\#31455f\\'};border-radius:4px;padding:4px;font-size:11px;">${badge}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1264476Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);">${esc(issue.nodeNumberDisplay || issue.nodeNumber)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1265681Z #     '    <td title="${attr(issue.dtxrSourcePath || \\'\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:180px;">${esc(issue.dtxr || \\'Not found\\')}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1267313Z #     '    <td title="${attr(issue.elementLengthSource || \\'prepared component geometry\\')}" style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);white-space:nowrap;">${esc(issue.lengthMm == null ? \\'\\' : `${Number(issue.lengthMm).toFixed(1)} mm`)}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1271446Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);"><input type="number" min="0" step="0.001" class="mc-rigid-review-input" data-review-id="${attr(issue.reviewId)}" data-source-id="${attr(issue.sourceId)}" data-issue-key="${attr(issue.key)}" value="${attr(issue.acceptedWeight ?? (best ? (best.suggestedWeight ?? best.selectedWeight ?? best.weight ?? \\'\\') : \\'\\'))}" placeholder="kg" style="width:78px;background:\#101827;color:\#fff;border:1px solid \#31455f;border-radius:4px;padding:4px;"><small data-reviewed-weight-source style="display:block;color:\#94a3b8;">${esc(issue.acceptedWeightSource || (best ? `Proposed · ${best.weightMethod || \\'master\\'}` : \\'Unresolved\\'))}</small></td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1274509Z #     '    <td style="padding:7px;border-bottom:1px solid rgba(148,163,184,.1);min-width:300px;">${staleMatch1Notice(issue)}${candidateButtons(issue, rowIndex) || \\'<span style="color:\#64748b;">No suggestion</span>\\'}</td>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1275370Z #     '  </tr>`;\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1275642Z #     '}\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1275895Z #     '\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1276355Z #     'function popupMarkup(rows, entries) {\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1277303Z #     '  const sourceOptions = entries.map((entry) => `<option value="${attr(entry.sourceId)}">${esc(entry.fileName)}</option>`).join(\\'\\');\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1278995Z #     '  return `<div class="mc-rigid-review-dialog" role="dialog" aria-modal="true" aria-label="Consolidated rigid zero weight review" style="color:\#e2e8f0;max-height:90vh;overflow:auto;background:\#0f172a;border:1px solid \#253a55;border-radius:8px;padding:18px;max-width:1380px;width:96%;">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1280775Z #     '    <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid \#253a55;padding-bottom:12px;margin-bottom:12px;">\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1282793Z #     '      <div><div style="font-size:18px;font-weight:700;color:\#9cc5ff;">Rigid Weights Need Review — Consolidated</div><div data-mode-a-rigid-summary style="font-size:12px;color:\#94a3b8;margin-top:4px;">${rows.length} rigid node(s) across ${entries.length} XML file(s).</div></div>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1284614Z #     '      <button type="button" data-mode-a-rigid-cancel style="cursor:pointer;background:transparent;border:1px solid \#475569;border-radius:6px;color:\#94a3b8;padding:6px 12px;">Cancel Batch Run</button>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1285466Z #     '    </div>\\n' +
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1287729Z #     '    <div style="background:\#2a210b;border:1px solid \#7c5a18;color:\#ffe7a3;padding:9px;border-radius:6px;font-size:12px;margin-bottom:10px;">Saved/XML weights are kept; suggestions populate only missing weights. Apply accepts the displayed values without clicking each suggestion. Bulk suggestions fill blank fields; selecting a row suggestion explicitly replaces that row. Review proposed master, interpolated and empirical weights before applying. Values here and in enriched XML are kg'... 8647 more characters,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1289727Z #   expected: /await prepareStandaloneWeightReviewXml\\(state, config\\)/,
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1290192Z #   operator: 'match',
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1290478Z #   diff: 'simple'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1290738Z # }
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1290991Z # Node.js v22.23.2
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1291433Z # Subtest: tests/xml-cii-issue-776-weight-review-authority.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1292124Z not ok 5 - tests/xml-cii-issue-776-weight-review-authority.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1292528Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1292793Z   duration_ms: 61.064885
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1293074Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1293669Z   location: '/home/runner/work/3D_Converters/3D_Converters/tests/xml-cii-issue-776-weight-review-authority.test.mjs:1:1'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1294291Z   failureType: 'testCodeFailure'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1294595Z   exitCode: 1
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1294841Z   signal: ~
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1295081Z   error: 'test failed'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1295353Z   code: 'ERR_TEST_FAILURE'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1295632Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1384093Z # (node:2164) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/3D_Converters/3D_Converters/converters/invocation-builder.js is not specified and it doesn't parse as CommonJS.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1385410Z # Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1386454Z # To eliminate this warning, add "type": "module" to /home/runner/work/3D_Converters/3D_Converters/package.json.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1387248Z # (Use `node --trace-warnings ...` to show where the warning was created)
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1400950Z # Issue \#776 kg→N unit custody verified.
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1438598Z # Subtest: tests/xml-cii-issue-776-weight-unit-custody.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1439310Z ok 6 - tests/xml-cii-issue-776-weight-unit-custody.test.mjs
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1439935Z   ---
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1440290Z   duration_ms: 63.401708
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1440715Z   type: 'test'
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1441156Z   ...
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1492826Z 1..6
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1493414Z # tests 6
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1493649Z # suites 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1493885Z # pass 4
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1494153Z # fail 2
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1494392Z # cancelled 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1494647Z # skipped 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1494887Z # todo 0
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1495176Z # duration_ms 289.955981
+focused	Run Weight / Match-1 authority regressions	2026-10-01T10:41:15.1509378Z ##[error]Process completed with exit code 1.

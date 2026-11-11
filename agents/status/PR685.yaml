@@ -1,0 +1,42 @@
+schema: AgentStatus.v1
+pr_or_wip: PR685
+pull_request: 685
+branch: agent/hp-product-bulk-full-app-qualification
+base: main
+base_sha_at_start: 60e057a864194ce65ac10b18895c9098f6d65e23
+predecessor_pr: 683
+predecessor_merge: 60e057a864194ce65ac10b18895c9098f6d65e23
+state: DRAFT_FULL_APP_NATIVE_EXECUTION_PENDING
+criticality: HP_PRODUCTION_BROWSER_QUALIFICATION
+authority:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  numerical_authority: UNCHANGED
+validation:
+  main_grounding: PASS
+  initial_branch_ancestry: PASS_AHEAD_2_BEHIND_0
+  initial_changed_paths: PASS_3_INTENDED
+  final_reconciled_paths_before_status_sync: PASS_6_INTENDED
+  companion_runner_syntax: PASS
+  companion_static_regression: PASS_9_OF_9
+  chromium_cdp_self_test: PASS
+  chromium_runtime_exceptions: 0
+  exact_runner_blob: PASS_949213b0692014d125af2c145a68162ef5935a6d
+  exact_test_blob: PASS_6061a6abd4db0c7377711ee63a9620cf50447bec
+  independent_numerical: PASS
+  product_matrix_full_app: NOT_RUN_NATIVE_CHECKOUT_UNAVAILABLE
+  combined_hp_browser_command: NOT_RUN_NATIVE_CHECKOUT_UNAVAILABLE
+  base_browser_lane_rerun: NOT_RUN_UNCHANGED_THIS_PR
+  full_repository_regression: NOT_RUN
+hosted_reconciliation:
+  observed_head_before_recovery_sync: 7b91eca66ab9be20a6de97510755eae62973d65d
+  mergeable: true
+  behind_main: 0
+  commit_status_checks: 0
+  pr_workflow_runs: 0
+  reviews: 0
+  review_threads: 0
+merge_authority: NOT_GRANTED
+next_action: RUN_NATIVE_COMBINED_FULL_APP_WHEN_AVAILABLE_THEN_RECONCILE

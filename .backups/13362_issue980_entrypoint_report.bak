@@ -1,0 +1,10 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR981
+branch: agent/issue-980-mode-b-node-custody-20261008
+claim_state: ACTIVE_SERIALIZED_P0
+authority_domains: [XML_CII_MODE_B_COMBINED_NODE_CUSTODY, XML_CII_PARITY_CONVERTER_INPUT_RELEASE]
+coordination_state: COORDINATION_REQUIRED
+overlap_with: ["PR978 paused standalone-run-parity.js and docs"]
+protected_paths: [tabs/xml-cii-2019-standalone/xml-cii-run-parity-evidence.js, tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js, docs/tabs/xml-cii-2019-standalone/xml-cii-run-parity-evidence.js, docs/tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js]
+merge_authority: OWNER_ONLY_NOT_GRANTED

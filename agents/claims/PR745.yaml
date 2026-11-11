@@ -1,0 +1,43 @@
+pr: 745
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  include:
+    - docs/engineering-calculations/bolted-joints-p8-binding-producer-source-qualification.md
+    - agents/PR745_workreport.md
+    - agents/status/PR745.yaml
+    - agents/claims/PR745.yaml
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0034.md
+    - agents/agentchain.md
+  exclude:
+    - automatic FlangeFaceBinding.v1 producer implementation
+    - geometric or bbox engineering inference
+    - governed flange/bolt/gasket master resolution
+    - flange or bolt solver invocation
+    - central Engineering Calculations registry integration
+    - UI/reporting
+    - authority promotion
+qualified_evidence:
+  three_dv_identity: PASS
+  rvm_uxml_topology: PASS_AS_EVIDENCE_ONLY
+  uxml_face_records: PASS_AS_EVIDENCE_ONLY
+  uxml_connectivity: PASS_AS_EVIDENCE_ONLY
+not_qualified:
+  physical_flange_source_authority: true
+  selected_calculation_face_authority: true
+  positive_opening_direction_authority: true
+  mating_side_authority: true
+  exact_advanced_analysis_cross_binding_source: true
+producer:
+  admitted: false
+  blocker: CONTROLLED_SEMANTIC_SOURCE_MISSING
+authority:
+  method: P8_BINDING_PRODUCER_SOURCE_QUALIFICATION
+  can_use_for_design_authority: false
+  governing_eligible: false
+validation:
+  source_seam_inspection: PASS
+  producer_admission: FAIL_SOURCE_NOT_SUFFICIENT
+  executable_test: NOT_APPLICABLE_NO_EXECUTABLE_CHANGE
+hard_stop: CONTROLLED_PROJECT_OR_UPSTREAM_BINDING_SOURCE_REQUIRED
+merge_authority: OWNER_ONLY_NOT_GRANTED

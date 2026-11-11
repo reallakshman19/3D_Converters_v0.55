@@ -1,0 +1,26 @@
+pr: 738
+chain: ENGCALC-BOLTED-JOINTS
+leg: P6-GRE-EQUIVALENT-PRESSURE
+state: BLOCKED_AUTO
+base_pr: 737
+base_main: 78b361d1f649d41378f568ebe1a237c4bc140c73
+material_head: 208fa7b194b326c2ab6769ace87aefb24cd4f552
+latest_endpoint: EP-0027
+authority:
+  source_authority: SCREENING_REFERENCE_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+validation:
+  source_reconstructed_exact_github_blobs: PASS_23_OF_23
+  native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+  pr_head_workflow_runs: 0
+  independent_engineering_review: NOT_RUN
+boundaries:
+  physical_leak_rate_evaluated: false
+  gasket_contact_stress_evaluated: false
+  flange_separation_evaluated: false
+  controlled_memo_basis: UNRESOLVED
+next_action: Run the two focused P6 tests on an exact PR-head checkout. Preserve NOT_RUN if unavailable; do not central-register or add contact/separation/leak-rate claims.
+merge_authority: OWNER_ONLY
+merge_authorized: false

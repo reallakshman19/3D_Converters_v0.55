@@ -1,0 +1,132 @@
+TAP version 13
+# (node:32672) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/tabs/xml-cii-2019-standalone/workers/master-dataset-client.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Weight ranking recovers once from worker message transport failure
+ok 1 - Weight ranking recovers once from worker message transport failure
+  ---
+  duration_ms: 27.4295
+  type: 'test'
+  ...
+# Subtest: Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+ok 2 - Weight ranking cannot wait forever: timed-out worker is restarted and retried once
+  ---
+  duration_ms: 14.1351
+  type: 'test'
+  ...
+# Subtest: mapping draft status explicitly prompts Apply mapping without modal interruption
+ok 3 - mapping draft status explicitly prompts Apply mapping without modal interruption
+  ---
+  duration_ms: 0.5763
+  type: 'test'
+  ...
+# Subtest: Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+ok 4 - Weight Match bounds async I/O and exposes the lightweight basis/ranking stages
+  ---
+  duration_ms: 0.8743
+  type: 'test'
+  ...
+# Subtest: worker Weight basis preserves split geometry and Preview rating authority
+ok 5 - worker Weight basis preserves split geometry and Preview rating authority
+  ---
+  duration_ms: 19.1335
+  type: 'test'
+  ...
+# Subtest: Weight basis resolves staged length and bore lazily without a full XML rewrite
+ok 6 - Weight basis resolves staged length and bore lazily without a full XML rewrite
+  ---
+  duration_ms: 2.2083
+  type: 'test'
+  ...
+# Subtest: Weight basis collector does not hydrate unrelated applied master datasets
+ok 7 - Weight basis collector does not hydrate unrelated applied master datasets
+  ---
+  duration_ms: 0.5385
+  type: 'test'
+  ...
+# Subtest: changed runtime files remain byte-identical to docs mirrors
+ok 8 - changed runtime files remain byte-identical to docs mirrors
+  ---
+  duration_ms: 3.425
+  type: 'test'
+  ...
+# (node:12736) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/CodeA/3DC_live_acceptance/converters/xml-cii2019-core/linelist-mapping.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\CodeA\\3DC_live_acceptance\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+ok 9 - configured prefix supplies missing Rating and preserves mapping order; DTXR remains explicit
+  ---
+  duration_ms: 30.9221
+  type: 'test'
+  ...
+# Subtest: Preview wins over prefix; conflicting Preview cannot be silently filled
+ok 10 - Preview wins over prefix; conflicting Preview cannot be silently filled
+  ---
+  duration_ms: 2.1912
+  type: 'test'
+  ...
+# Subtest: manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+ok 11 - manual input persists existing overrides, wins over stale Preview, and clearing restores prefix
+  ---
+  duration_ms: 1.6022
+  type: 'test'
+  ...
+# Subtest: class fill replaces visible same-class line/branch overrides and preserves another class
+ok 12 - class fill replaces visible same-class line/branch overrides and preserves another class
+  ---
+  duration_ms: 5.8538
+  type: 'test'
+  ...
+# Subtest: worker validates changed manual Rating before ranking or releasing accepted Match1
+ok 13 - worker validates changed manual Rating before ranking or releasing accepted Match1
+  ---
+  duration_ms: 18.558
+  type: 'test'
+  ...
+# Subtest: candidate weights follow the configured/manual Rating instead of the incoming row Rating
+ok 14 - candidate weights follow the configured/manual Rating instead of the incoming row Rating
+  ---
+  duration_ms: 5.7198
+  type: 'test'
+  ...
+# Subtest: APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+ok 15 - APPLIED line-list mapping projects Key1/Key2/Line Seq into normalized worker rows
+  ---
+  duration_ms: 1.2471
+  type: 'test'
+  ...
+# Subtest: worker-resident Weight Match ranking equals shared pure ranking
+ok 16 - worker-resident Weight Match ranking equals shared pure ranking
+  ---
+  duration_ms: 1.9084
+  type: 'test'
+  ...
+# Subtest: Weight Match worker rejects a non-weight dataset
+ok 17 - Weight Match worker rejects a non-weight dataset
+  ---
+  duration_ms: 0.7629
+  type: 'test'
+  ...
+# Subtest: standalone dataset-backed Weight Build has no all-master materializer dependency
+ok 18 - standalone dataset-backed Weight Build has no all-master materializer dependency
+  ---
+  duration_ms: 11.1212
+  type: 'test'
+  ...
+# Subtest: source/docs mirrors are exact for changed runtime modules
+ok 19 - source/docs mirrors are exact for changed runtime modules
+  ---
+  duration_ms: 5.2542
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 256.8124

@@ -1,0 +1,34 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: PR602
+pull_request: 602
+branch: agent/xml-cii-c1-c7-replay-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C1_C7_ONLY
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-workflow-shell.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-render-scope.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dom-sync.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-perf-evidence.js
+  - tests/xml-cii-standalone-render-scope.test.mjs
+  - tests/xml-cii-standalone-master-dom-sync.test.mjs
+  - tests/xml-cii-standalone-perf-evidence.test.mjs
+  - agents/PR602_workreport.md
+  - agents/status/PR602.yaml
+  - agents/claims/PR602.yaml
+exclusions:
+  - .github/workflows/**
+  - preview virtualization
+  - workers
+  - indexes
+  - source DOM cache
+  - support/GAP semantics
+  - CII writer/runtime
+coordination:
+  PR601: HARD_STACK_BASE
+  PR596: SUPERSEDED_SALVAGE_PREDECESSOR
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:15:00+04:00

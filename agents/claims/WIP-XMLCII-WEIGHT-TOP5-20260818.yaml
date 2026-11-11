@@ -1,0 +1,13 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-WEIGHT-TOP5-20260818
+claim_state: RELEASED_SUPERSEDED_BY_PR633
+branch: agent/xml-cii-weight-match-top5-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_LEGACY_WEIGHT_MATCH_CANDIDATE_SELECTION_PERFORMANCE
+superseded_by: PR633
+release_reason: PR_NUMBER_ALLOCATED_AND_PR633_CLAIM_ACTIVE
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR633
+last_updated: 2026-08-18T20:00:00+04:00

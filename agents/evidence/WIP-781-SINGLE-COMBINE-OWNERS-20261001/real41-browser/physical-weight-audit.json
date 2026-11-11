@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "observation": "DOWNLOADED_ARTIFACT_INSPECTION",
+  "oracle": "INDEPENDENT_SOURCE_PHYSICAL_ENDPOINTS_AND_ENTERED_MASSES",
+  "weightedSourceComponents": 174,
+  "positiveCiiOwners": 174,
+  "reviewedWeights": 174,
+  "scale": 10.0,
+  "sourceGeometry": "actual immediate predecessor, including negative IDs",
+  "serialization": "CII six significant digits",
+  "converterImported": false
+}

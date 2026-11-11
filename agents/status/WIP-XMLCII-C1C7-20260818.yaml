@@ -1,0 +1,29 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-C1C7-20260818
+mission: "Clean C1 incremental-render and C7 performance-evidence replay"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c1-c7-replay-20260818
+stack_base_pr: 601
+stack_base_sha: cac7fbc191ebf630b284b63d17abda9364ddfcfb
+criticality: ENGINEERING_CRITICAL
+work_intent: IMPLEMENT
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/WIP-XMLCII-C1C7-20260818_workreport.md
+appendix_a_status: CURRENT
+qualification: 98_OF_100
+validation:
+  focused_node_tests: PASS_8_OF_8_LOCAL_IMPLEMENTATION_COUPLED
+  browser_acceptance: NOT_RUN
+  mandatory_pre_edit_backup: PASS_AFTER_LOCAL_UTILITY_RECONSTRUCTION_REPAIR
+protected_authority:
+  - APPLIED_MAPPING_AUTHORITY_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+  - CII_WRITER_RUNTIME_UNCHANGED
+  - INPUTXML_TO_CII2019_IMMUTABLE_CORE_UNCHANGED
+highest_risk: "Partial-render classification suppressing a required authority/UI refresh."
+exact_next_action: "Publish surgical C1/C7 production/test checkpoint, reconcile stacked diff, open draft PR."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:08:00+04:00

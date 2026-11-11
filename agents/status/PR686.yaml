@@ -1,0 +1,55 @@
+schema: AgentStatus.v1
+pr_or_wip: PR686
+pull_request: 686
+branch: agent/vib-facility-mechanism-evidence-20260820
+base: main
+base_sha_at_start: db5f9e250edfa6fa01097b02ff71b1737ea78436
+current_main_observed: cd02030d7d28438ddda8e11ac92acb319cd06cd9
+reconciliation_basis_head: 58d92086d61379cbea770ad4b9dc9816f7f5eea3
+report_sync: CURRENT_RECOVERY_ONLY_COMMITS_ALLOWED
+predecessor_pr: 684
+predecessor_state: MERGED
+state: DRAFT_VALIDATION_BLOCKED
+criticality: ENGINEERING_CRITICAL_EVIDENCE_ORCHESTRATION
+authority:
+  engineering_authority: NONE
+  screening_authority: NOT_AUTHORIZED
+  design_authority: false
+  numerical_authority: NONE
+  aggregation_authority: NONE
+  persistence_authority: NONE
+  determines_applicability: false
+  determines_completeness: false
+  blocks_execution: false
+  blocks_navigation: false
+  blocks_calculation: false
+  blocks_persistence: false
+validation:
+  current_main_grounding: PASS
+  predecessor_merge: PASS
+  main_drift: PASS_HP_ONLY_NO_EXACT_OVERLAP
+  diff_normalization: PASS
+  physical_line_policy: PASS
+  reconstructed_custody_syntax: PASS_LOCAL_EXECUTION
+  reconstructed_custody_falsifiers: PASS_LOCAL_EXECUTION_WITH_STUBS
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  repository_native_vibration_regressions: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_numerical: NOT_APPLICABLE
+hosted_reconciliation:
+  basis_head: 58d92086d61379cbea770ad4b9dc9816f7f5eea3
+  state: OPEN_DRAFT_UNMERGED
+  mergeable: true
+  changed_files: 18
+  intended_files: 18
+  unexplained_files: 0
+  ahead_main: 42
+  behind_main: 1_HP_ONLY
+  commit_status_checks: 0_NOT_RUN
+  pr_workflow_runs: 0_NOT_RUN
+  reviews: 0
+  review_threads: 0
+  comments: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED
+current_blocker: REPOSITORY_NATIVE_AND_BROWSER_EXECUTION_UNAVAILABLE
+next_action: RUN_FOCUSED_NATIVE_TESTS_VIBRATION_REGRESSIONS_AND_BROWSER_WHEN_AVAILABLE

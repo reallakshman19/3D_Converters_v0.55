@@ -1,0 +1,23 @@
+pr: 741
+claims:
+  - id: P8_MODEL_CONTEXT_SEAM
+    statement: The current 3DV selection path can provide candidate component identity/path, units, explicit transform matrices and geometry, but bbox-derived orientation is not admitted as an engineering flange-face frame.
+    status: PASS_SOURCE_INSPECTION
+  - id: P8_INPUTXML_LOAD_SOURCE
+    statement: InputXML FLANGE and FORCESMOMENTS contracts are blocking/unverified in the inspected projection route and cannot be used as an automatic P8 load source.
+    status: PASS_SOURCE_INSPECTION
+  - id: P8_ACCDB_RESULT_SOURCE
+    statement: The inspected ACCDB restraint-summary path retains scalar resultant force/moment and case identity, not a qualified signed six-DOF joint load vector.
+    status: PASS_SOURCE_INSPECTION
+  - id: P8_CANONICAL_CONTRACT
+    statement: P8 requires explicit flange-face point and right-handed frame, signed six-DOF load components with source point/case provenance, and exact governed master identities before automatic solver execution.
+    status: PASS_CONTRACT_DEFINITION
+  - id: P8_AUTOMATIC_INTEGRATION
+    statement: Automatic model-to-flange/bolt/gasket solver integration is available.
+    status: FAIL_NOT_IMPLEMENTED
+  - id: P8_AUTHORITY
+    statement: This leg grants code/design/governing authority.
+    status: FAIL_FALSE_BY_DESIGN
+merge:
+  authority: OWNER_ONLY
+  authorized: false

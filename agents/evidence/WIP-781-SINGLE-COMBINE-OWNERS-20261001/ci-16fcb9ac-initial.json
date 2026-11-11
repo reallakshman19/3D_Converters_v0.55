@@ -1,0 +1,170 @@
+{
+  "baseRefOid": "bebf552e6d45eaefb1d2dc878a8e7a172d1bfd22",
+  "headRefOid": "16fcb9ac87712ec6e59a94b8f5f9b89d72da8283",
+  "isDraft": true,
+  "mergeable": "MERGEABLE",
+  "reviewDecision": "",
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T15:51:44Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486834/job/110454391184",
+      "name": "qualify",
+      "startedAt": "2026-10-01T15:51:28Z",
+      "status": "COMPLETED",
+      "workflowName": "CAESAR v11-v14 Dropdown Qualification"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-01T15:51:40Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486770/job/110454390807",
+      "name": "live-ui",
+      "startedAt": "2026-10-01T15:51:24Z",
+      "status": "COMPLETED",
+      "workflowName": "FBX Live UI Cache Chain"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486817/job/110454391725",
+      "name": "qualify",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "CII Ver 14 Merge Qualification"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486819/job/110454390763",
+      "name": "managed-reference",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "FBX2 Browser Managed Reference"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486875/job/110454391444",
+      "name": "focused-regressions",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 776 XML-CII Authority Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486832/job/110454391153",
+      "name": "auto-authority-followup",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Auto Authority Follow-up Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486750/job/110454391135",
+      "name": "linelist-sheet-selection",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Line-list Sheet Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486732/job/110454390603",
+      "name": "screenshot-acceptance",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Post-merge Screenshot Repair Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486771/job/110454390969",
+      "name": "weight-build",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Weight Build Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486944/job/110454391887",
+      "name": "weight-match-authority-ux",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Weight Match Authority UX Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486910/job/110454394269",
+      "name": "focused",
+      "startedAt": "2026-10-01T15:51:12Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Worker Weight API Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486913/job/110454391011",
+      "name": "scope-tree",
+      "startedAt": "2026-10-01T15:51:36Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "ATT RVM Scope Tree"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486922/job/110454391274",
+      "name": "p0-custody",
+      "startedAt": "2026-10-01T15:51:38Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "Issue 781 P0 XML-CII Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486823/job/110454390967",
+      "name": "contract",
+      "startedAt": "2026-10-01T15:51:44Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "StagedJSON and Pages Runtime Contract"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486875/job/110454391810",
+      "name": "wsw-browser-e2e",
+      "startedAt": "2026-10-01T15:51:11Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 776 XML-CII Authority Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/reallaksh19/3D_Converters/actions/runs/36887486910/job/110454394574",
+      "name": "browser-worker-scale",
+      "startedAt": "2026-10-01T15:51:12Z",
+      "status": "QUEUED",
+      "workflowName": "Issue 781 Worker Weight API Validation"
+    }
+  ]
+}

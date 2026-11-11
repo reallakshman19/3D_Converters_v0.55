@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+pr_or_wip: PR638
+claim_state: ACTIVE
+files:
+  exact:
+    - converters/vibration/mechanisms/identification-suggestions.js
+    - tabs/vibration-integrity-identification-view.js
+    - tests/vibration-identification-suggestions.test.mjs
+    - tests/vibration-identification-suggestions-ui.test.mjs
+    - docs/vibration/T1-Mechanism-Suggestion-Facts-v1.md
+    - agents/PR638_workreport.md
+    - agents/status/PR638.yaml
+    - agents/claims/PR638.yaml
+  prefixes: []
+authority_domains:
+  - VIBRATION_T1_SUGGESTION_ONLY
+claim_modes:
+  - EXCLUSIVE
+exclusions:
+  - automatic applicability
+  - automatic dispositions
+  - identification model mutations
+  - coverage/completeness changes
+  - numerical screening
+  - design authority
+  - workflow files
+coordination_state: SAFE
+merge_authority: OWNER_ONLY_NOT_GRANTED

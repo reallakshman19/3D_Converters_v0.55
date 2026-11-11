@@ -1,0 +1,18 @@
+{
+  "cwd": "C:/CodeA/3DC_live_acceptance",
+  "testedCodeHead": "c0a9ddb38c13d9cbb5000f7601f67644ccee6465",
+  "focusedNodeCommand": "node --test tests/xml-cii-weight-output-authority.test.mjs tests/xml-cii-output-result-invalidation.test.mjs tests/xml-cii-issue-781-worker-weight-api.test.mjs tests/xml-cii-issue-781-weight-liveness.test.mjs tests/xml-cii-mode-a-consolidated.test.mjs tests/xml-cii-mode-a-consolidated-rigid-review.test.mjs tests/xml-cii-issue-776-downstream-match1-validation.test.mjs tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs tests/xml-cii-issue-776-standalone-run-match1-custody.test.mjs tests/xml-cii-issue-776-deployment-parity.test.mjs tests/xml-cii-issue-781-auto-authority-followup.test.mjs tests/xml-cii-issue-781-postmerge-screenshot-repair.test.mjs",
+  "nativeGuardCommand": "python tests/xml-cii-weight-owner-guard.test.py",
+  "guardBrowserCommand": "node tests/browser/xml-cii-weight-output-custody-e2e.mjs --expect-weight-owner-block",
+  "fullArtifactAuditCommand": "python tests/xml-cii-real-weight-export-audit.py",
+  "fullArtifactAuditExpectedExit": 2,
+  "modeBCommand": "node tests/browser/xml-cii-mode-b-xml-export-e2e.mjs",
+  "environment": {
+    "XML_CII_PLAYWRIGHT_MODULE": "C:/CodeA/3DC_776/node_modules/playwright",
+    "XML_CII_CHROMIUM_EXECUTABLE": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "XML_CII_41_BRANCH_FIXTURE": "C:/CodeA/3DC_809/Benchmarks/EF-05-PRO.TEST.xml"
+  },
+  "followupTestedBasisHead": "4d2606e48df2d5dd7a7c6307004ec07b42d1cd67",
+  "followupRuntimeRelease": "20261001-weight-output-2",
+  "followupNativeBrowserCommand": "node tests/browser/xml-cii-auto-propagation-review-preservation-e2e.mjs"
+}

@@ -1,0 +1,22 @@
+schema: AgentClaim.v1
+work_id: WIP-hp-kd-product-path-numerical
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd-product-path-numerical
+base_sha: 93a682a378f0326365daa69712c22d8259b95196
+criticality: ENGINEERING_CRITICAL
+intent: QUALIFY_SOFTWARE_PRODUCT_PATH
+scope:
+  - tests/hp-piping-class-kd-product-path-numerical.test.mjs
+  - engineering/hp-class-standardization/qualification/user-calculated-kd3-product-path-numerical.md
+protected_boundaries:
+  calculation_mode: USER_CALCULATED_KD3
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  no_native_kd320_arithmetic: true
+  no_ui_change: true
+  no_schema_change: true
+  no_kernel_change: true
+coordination:
+  pr649: authority_independent_shared_repo_only
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_SUCCESSOR

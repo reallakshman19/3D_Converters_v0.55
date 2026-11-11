@@ -1,0 +1,20 @@
+{
+  "issue": 781,
+  "branch": "agent/issue-781-linelist-integration-v2-20260930",
+  "basisMain": "3976929fd0d012fae5c3bf4014eb10af7e8ab332",
+  "status": "PASS",
+  "nativeExecution": "node utils/backup.js save <file> <context>",
+  "note": "Fresh native backups were executed against locally reconstructed bytes whose Git blob SHA was verified against unchanged main before mutation. Service and worker-events backups from the superseded branch remain valid because they were also executed before edits against the same immutable main blobs.",
+  "freshBackups": [
+    {"file":"tabs/xml-cii-2019-standalone/workers/master-dataset-normalize.js","blobSha":"f9803689869848e96d95623c9a376ff0fd4fd241","localBackupId":1},
+    {"file":"docs/tabs/xml-cii-2019-standalone/workers/master-dataset-normalize.js","blobSha":"f9803689869848e96d95623c9a376ff0fd4fd241","localBackupId":2},
+    {"file":"tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-mapping-events.js","blobSha":"90cb5695c0593c6b9dbee3bd0b810bb1fe4ae5e2","localBackupId":3},
+    {"file":"docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-mapping-events.js","blobSha":"90cb5695c0593c6b9dbee3bd0b810bb1fe4ae5e2","localBackupId":4}
+  ],
+  "reusedPreEditBackups": [
+    {"file":"tabs/xml-cii-2019-standalone/workers/master-dataset-service.js","blobSha":"6410935a1ebc950638760726e4f49521f5465d08","priorBackupId":232},
+    {"file":"docs/tabs/xml-cii-2019-standalone/workers/master-dataset-service.js","blobSha":"6410935a1ebc950638760726e4f49521f5465d08","priorBackupId":233},
+    {"file":"tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js","blobSha":"f231577f7eaaddbef7371e65ba547f6579fedf04","priorBackupId":234},
+    {"file":"docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-worker-events.js","blobSha":"f231577f7eaaddbef7371e65ba547f6579fedf04","priorBackupId":235}
+  ]
+}

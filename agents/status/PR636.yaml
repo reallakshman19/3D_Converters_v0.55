@@ -1,0 +1,39 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR636
+mission: Add opt-in branch-only parent Preview execution and remove discarded node-row work from Run parity.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-parent-branch-only-20260818
+pr_url: https://github.com/reallaksh19/3D_Converters/pull/636
+pr_allocation_head: eed8db00a7e14b7538d9921e4e23e0b0af1f1ad9
+implementation_head: 18ffc7480b12d9c3b69db3d3b3ddb2bb305ea561
+main_head_last_checked: 765d15e87def22291792ddb533df9ea532fb3f67
+merge_base: 765d15e87def22291792ddb533df9ea532fb3f67
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR636_workreport.md
+appendix_a_status: STALE_MERGED_PREDECESSOR_RECONCILED
+current_stage: CI_REVIEW
+blocker: NONE
+predecessor:
+  pr: 630
+  live_state: MERGED
+  metadata_state: STALE_ACTIVE_SUPERSEDED
+validation:
+  source_trace: PASS
+  mandatory_backups: PASS_EXACT_BLOBS_PRE_EDIT
+  syntax: PASS
+  focused_helper_contract: PASS_LOCAL_IMPLEMENTATION_COUPLED
+  branch_row_equivalence: PASS_LOCAL_STUBBED_IMPORT_BOUNDARY
+  node_work_suppression: PASS_ZERO_RANK_CALLS_BRANCH_ONLY
+  exact_byte_custody: PASS
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+scope:
+  production_modified: 2
+  integration_source_modified: false
+  workflows_changed: false
+merge_authority: OWNER_AUTO_MODE_GRANTED
+exact_next_action: Complete PR custody migration and WIP release, then reconcile exact final head/checks/reviews/threads and merge automatically if clean.
+last_updated: 2026-08-18T20:33:00+04:00

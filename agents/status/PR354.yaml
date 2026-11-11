@@ -1,0 +1,15 @@
+schema: AgentPrStatus.v1
+repository: reallakshman19/3D_Converters
+pr_or_wip: PR354
+branch: fix/xml229-enriched-download-6ae1bed6
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: HEALTHY
+handover_readiness: READY
+report_path: agents/PR354_workreport.md
+report_basis_head: bdd5e581d7c3cc9f6b719454c3a75d395dbc5d3a
+main_head_last_checked: 59df118588837f70ca22dfe0d0573ef874e07dd0
+current_stage: REVIEW_PENDING
+blocker: CI_HISTORICAL_GUARDS_AND_OWNER_REVIEW
+highest_risk: Stale source or Final artifact must never be published
+exact_next_action: Review PR354 and applicable CI; Owner merge then run/download trial

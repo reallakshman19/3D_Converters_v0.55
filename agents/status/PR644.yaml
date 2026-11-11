@@ -1,0 +1,26 @@
+pr: 644
+branch: agent/vibration-aiv-canvas-evidence-hardening-20260818
+base_pr: 643
+base_sha: afe72d5cc4859bf4d76e95c83563e86d4169b902
+agent_state: INACTIVE
+current_stage: MERGED_VIA_PR643_AND_PR642
+execution_mode: AUTO
+auto_state: COMPLETE
+criticality: ENGINEERING_CRITICAL
+mutation_authority: CLOSED
+merge_authority: OWNER_GRANTED_AND_EXECUTED
+merge:
+  intermediate_squash_sha: 37aa956cbdbe487a93d90fab1c9aaad3cd27443b
+  final_main_sha: 79546f988b18686459a68103b4675bbba9bcf434
+  merge_method: STACKED_SQUASH
+validation_truth:
+  repository_native_node_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser_journey: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_statuses: NOT_RUN_EMPTY
+  pr_workflow_runs: NOT_RUN_EMPTY
+protected_authority:
+  aiv_line_case_screening_authority: NOT_AUTHORIZED
+  generic_ei_mainline_aiv: BLOCKED
+  canvas_presentation_authority: NON_AUTHORITATIVE
+  design_authority: false
+next_action: NONE_REPAIR_SET_MERGED

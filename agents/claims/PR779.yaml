@@ -1,0 +1,35 @@
+schema: AgentClaim.v1
+pr_or_wip: PR779
+claim_state: ACTIVE_MERGE_AUTHORIZED
+branch: agent/app-tab-lifecycle-performance
+predecessor_pr: PR778_MERGED
+base_branch: main
+files:
+  exact:
+    - core/app-standalone-runtime.js
+    - core/engineering-tabs-extension.js
+    - core/app.js
+    - tabs/model-converters-tab.js
+    - tabs/model-converters/ModelConvertersTab.js
+    - tabs/model-converters/ModelConvertersTab-fbx2-managed-reference.js
+    - tabs/model-converters/index.js
+    - tabs/model-converters/legacy-adapter.js
+    - converters/view/model-conv-preview-renderer.js
+    - index.html
+    - main-rhbg-fitguard.js
+    - agents/PR779_workreport.md
+    - agents/status/PR779.yaml
+    - agents/claims/PR779.yaml
+  mirrored_prefixes:
+    - docs/core/
+    - docs/tabs/model-converters/
+    - docs/converters/view/
+authority_domains:
+  - APP_TAB_LIFECYCLE
+  - MODEL_CONVERTERS_UI_RESOURCE_CLEANUP
+claim_modes:
+  - PREDECESSOR_PR778_MERGED
+notes:
+  - "PR779 was rebased onto the squash merge of PR778 to retain its issue #776 cache chain."
+  - "No engineering calculation, topology, mapping, or converter export authority changes."
+merge_authority: OWNER_AUTHORIZED_20260928

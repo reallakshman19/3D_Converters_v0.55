@@ -1,0 +1,22 @@
+schema: AgentStatus.v1
+repository: reallakshman19/3D_Converters
+work_id: PR343
+source_wip: WIP-XML229-SOURCE-BINDING-20261026
+role: ORACLE_STANDALONE_WITH_OWNER_AUTHORIZED_SCOPED_CODING
+chat_id: UNKNOWN
+independent_reviewer_routing_label: 6adef8f2
+branch: fix/xml229-topofix-source-binding-20261026
+pr: 343
+state: DRAFT_OPEN_CURRENT_HEAD_VALIDATION_PENDING
+report: agents/PR343_workreport.md
+basis_head: 331abb23779e408d3d33796a2848884335db6d89
+parent_basis_head: abf507f6866e444fb7ed73055494f5e12d67a721
+qualification: OWNER_SCOPED_EXCEPTION_NO_FORMAL_SCORE
+runtime_effort: UNKNOWN_TELEMETRY_CHECK_WAIVED_FOR_EXACT_TASK
+validation:
+  local_root: 10_PASS_0_FAIL
+  local_docs: 10_PASS_0_FAIL_SAME_CASES
+  remote_candidate_chromium: PASS_RAW_ARTIFACTS_INSPECTED
+  direct_post_publication_browser: NOT_RUN
+release: INCOMPLETE_HOLD
+next_action: Inspect_current_head_CI_and_direct_production_browser_evidence_keep_native_HELD

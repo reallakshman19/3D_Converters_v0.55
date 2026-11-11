@@ -1,0 +1,116 @@
+name: Issue 776 XML-CII Authority Validation
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Issue 776 focused regressions
+        id: focused
+        shell: bash
+        run: |
+          set +e
+          node --test \
+            tests/xml-cii-issue-776-benchmark-basis.test.mjs \
+            tests/xml-cii-issue-776-topology-runtime.test.mjs \
+            tests/xml-cii-issue-776-weight-review-authority.test.mjs \
+            tests/xml-cii-issue-776-weight-acceptance-validation.test.mjs \
+            tests/xml-cii-issue-776-regex-index-cache.test.mjs \
+            tests/xml-cii-issue-776-b313-central-api-parity.test.mjs \
+            tests/xml-cii-issue-776-weight-unit-custody.test.mjs \
+            tests/xml-cii-issue-776-match1-provenance.test.mjs \
+            tests/xml-cii-issue-776-match1-acceptance-paths.test.mjs \
+            tests/xml-cii-issue-776-downstream-match1-validation.test.mjs \
+            tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs \
+            tests/xml-cii-issue-776-stale-match1-no-auto-rerank.test.mjs \
+            tests/xml-cii-issue-776-stale-match1-review-ux.test.mjs \
+            tests/xml-cii-issue-776-post-run-weight-authority.test.mjs \
+            tests/xml-cii-issue-776-standalone-run-match1-custody.test.mjs \
+            tests/xml-cii-issue-776-workflow-weight-master-revision.test.mjs \
+            tests/xml-cii-issue-776-junction-enrichment-authority.test.mjs \
+            tests/xml-cii-issue-776-mode-a-acceptance-label.test.mjs \
+            tests/xml-cii-issue-776-mode-a-weight-canonical-geometry.test.mjs \
+            tests/xml-cii-issue-776-flange-weight-geometry.test.mjs \
+            tests/xml-cii-issue-776-deployment-parity.test.mjs \
+            tests/xml-cii-mode-a-preview-restoration.test.mjs 2>&1 | tee issue-776-focused.log
+          status=${PIPESTATUS[0]}
+          echo "status=${status}" >> "${GITHUB_OUTPUT}"
+          exit 0
+      - name: Run adjacent authority regressions
+        id: adjacent
+        shell: bash
+        run: |
+          set +e
+          node --test \
+            tests/xml-cii-smart-ui-preflight.test.mjs \
+            tests/xml-cii-regex-confidence-buckets.test.mjs \
+            tests/xml-cii-b313-preview-od-selection.test.mjs \
+            tests/xml-cii-b313-preview-pressure-unit.test.mjs \
+            tests/xml-cii-b313-preview-blocker-ui-static.test.mjs \
+            tests/engineering-calculation-core.test.mjs 2>&1 | tee issue-776-adjacent.log
+          status=${PIPESTATUS[0]}
+          echo "status=${status}" >> "${GITHUB_OUTPUT}"
+          exit 0
+      - name: Upload validation logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-776-validation-logs
+          path: |
+            issue-776-focused.log
+            issue-776-adjacent.log
+          if-no-files-found: error
+      - name: Enforce regression result
+        if: always()
+        shell: bash
+        run: |
+          echo "focused=${{ steps.focused.outputs.status }} adjacent=${{ steps.adjacent.outputs.status }}"
+          test "${{ steps.focused.outputs.status }}" = "0"
+          test "${{ steps.adjacent.outputs.status }}" = "0"
+
+  wsw-browser-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.52.0
+          npx playwright install --with-deps chromium
+      - name: Start static server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/issue-776-http.log 2>&1 &
+      - name: Run exact-head WSW browser conversion
+        run: node scripts/run-xml-cii-issue-776-wsw-e2e.mjs
+      - name: Upload WSW exact-head evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-776-wsw-e2e
+          path: |
+            ValidationRecords/xml-cii-issue-776-wsw-e2e.json
+            /tmp/issue-776-http.log
+          if-no-files-found: warn

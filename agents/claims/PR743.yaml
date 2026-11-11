@@ -1,0 +1,41 @@
+pr: 743
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  include:
+    - converters/engineering-calculations/flange/advanced-analysis-semantic-hash.js
+    - converters/engineering-calculations/flange/advanced-analysis-interface-adapter.js
+    - tests/flange-advanced-analysis-interface-adapter.test.mjs
+    - docs/engineering-calculations/bolted-joints-p8-advanced-analysis-interface-adapter.md
+    - agents/PR743_workreport.md
+    - agents/status/PR743.yaml
+    - agents/claims/PR743.yaml
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0032.md
+    - agents/agentchain.md
+  exclude:
+    - automatic 3D flange detection
+    - governed flange/bolt/gasket master resolution
+    - flange or bolt solver invocation
+    - central Engineering Calculations registry integration
+    - UI/reporting
+    - authority promotion
+source_contract:
+  repository: reallaksh19/Advanced_Analysis
+  commit: eabb93cd44c59ce182d73284cb707653917e07c8
+  admitted_interface_kinds:
+    - NOZZLE
+    - EQUIPMENT
+  flange_face_role_inferred: false
+  opening_axis_inferred: false
+  sign_reversal_inferred: false
+authority:
+  method: QUALIFIED_CROSS_REPOSITORY_INTERFACE_CONTRACT_NON_AUTHORIZING
+  can_use_for_design_authority: false
+  governing_eligible: false
+validation:
+  source_contract_inspection: PASS
+  new_blob_identity: PASS
+  reconstructed_focused_suite: PASS_15_OF_15
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+hard_stop: EXACT_NATIVE_PR743_FOCUSED_TEST_AND_CONTROLLED_FLANGE_FACE_BINDING
+merge_authority: OWNER_ONLY_NOT_GRANTED

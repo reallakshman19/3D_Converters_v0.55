@@ -1,0 +1,174 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>PR780 master dataset scale qualification</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import { createMasterDatasetImportCoordinator } from '../../tabs/xml-cii-2019-standalone/workers/master-dataset-import-coordinator.js?v=20260929-pr780-worker-search-1';
+import { commitDatasetReadyMaster } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-commit.js?v=20260929-pr780-metadata-import-1';
+
+const SIZES = [10000, 50000, 100000];
+const MAX_FRAME_GAP_MS = 250;
+const SAMPLE_LIMIT = 150;
+const coordinator = createMasterDatasetImportCoordinator();
+const encoder = new TextEncoder();
+
+function rowsFor(count) {
+  return Array.from({ length: count }, (_, index) => ({
+    code: `MAT-${index + 1}`,
+    material: `Synthetic material ${index + 1}`,
+    group: `G${index % 97}`,
+    searchMarker: index === count - 1 ? `needle-${count}` : 'ordinary',
+  }));
+}
+
+async function responsiveMeasure(operation) {
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  let running = true;
+  let last = performance.now();
+  let maxFrameGapMs = 0;
+  let frames = 0;
+  const tick = (now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - last);
+    last = now;
+    frames += 1;
+    if (running) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  const started = performance.now();
+  const value = await operation();
+  const elapsedMs = performance.now() - started;
+  await new Promise((resolve) => requestAnimationFrame((now) => {
+    maxFrameGapMs = Math.max(maxFrameGapMs, now - last);
+    frames += 1;
+    running = false;
+    resolve();
+  }));
+  return { value, elapsedMs, maxFrameGapMs, frames };
+}
+
+function commitImportedDataset(ready, count) {
+  return commitDatasetReadyMaster({
+    context: {
+      config: { material: {} },
+      materialMapRows: [],
+      rawRows: { materialMap: [] },
+      mappingRows: {},
+      previewRows: {},
+      rowCounts: {},
+      datasetRefs: {},
+      appliedMappingRevision: { materialMap: 0 },
+    },
+    config: { material: {} },
+    key: 'materialMap',
+    ready,
+    sourceMetadata: {
+      key: 'materialMap',
+      source: `scale-${count}.json`,
+      sourceType: 'worker-import',
+      status: 'loaded',
+      rowCount: count,
+    },
+  });
+}
+
+try {
+  const scales = [];
+  for (const count of SIZES) {
+    const fixtureStarted = performance.now();
+    const payload = encoder.encode(JSON.stringify(rowsFor(count)));
+    const fixturePrepMs = performance.now() - fixtureStarted;
+    const buffer = payload.buffer.slice(payload.byteOffset, payload.byteOffset + payload.byteLength);
+
+    const imported = await responsiveMeasure(() => coordinator.openBuffer(
+      'materialMap',
+      buffer,
+      `scale-${count}.json`,
+      { fieldMapOverride: {} },
+    ));
+    const ready = imported.value;
+    if (ready?.metadata?.rowCount !== count) throw new Error(`row count mismatch at ${count}`);
+
+    const metadataCommit = await responsiveMeasure(() => commitImportedDataset(ready, count));
+    const committed = metadataCommit.value;
+    const context = committed.context;
+    if ((context.materialMapRows || []).length !== 0) throw new Error(`resident normalized rows retained at ${count}`);
+    if ((context.rawRows?.materialMap || []).length !== 0) throw new Error(`resident raw rows retained at ${count}`);
+    if (context.rowCounts?.materialMap !== count) throw new Error(`metadata row count mismatch at ${count}`);
+    if (context.datasetRefs?.materialMap?.datasetId !== ready.metadata.datasetId) throw new Error(`dataset ref mismatch at ${count}`);
+    if ((context.previewRows?.materialMap || []).length > SAMPLE_LIMIT) throw new Error(`preview sample exceeds ${SAMPLE_LIMIT} at ${count}`);
+    if ((context.mappingRows?.materialMap || []).length > SAMPLE_LIMIT) throw new Error(`mapping sample exceeds ${SAMPLE_LIMIT} at ${count}`);
+    if (Array.isArray(committed.config?.material?.mapRows)) throw new Error(`support config retained dataset rows at ${count}`);
+
+    const transient = await responsiveMeasure(() => coordinator.materializeRows(
+      'materialMap',
+      count,
+      ready.metadata.datasetId,
+    ));
+    if (transient.value.rows.length !== count) throw new Error(`transient operation materialization mismatch at ${count}`);
+
+    const searched = await responsiveMeasure(() => coordinator.search('materialMap', `needle-${count}`));
+    const indexes = searched.value?.indexes || [];
+    if (searched.value?.matchCount !== 1 || indexes[0] !== count - 1) {
+      throw new Error(`worker search mismatch at ${count}: ${JSON.stringify(searched.value)}`);
+    }
+
+    const scale = {
+      rows: count,
+      payloadBytes: payload.byteLength,
+      fixturePrepMs,
+      workerImportMs: imported.elapsedMs,
+      workerImportMaxFrameGapMs: imported.maxFrameGapMs,
+      workerImportFrames: imported.frames,
+      metadataOnlyCommitMs: metadataCommit.elapsedMs,
+      metadataOnlyCommitMaxFrameGapMs: metadataCommit.maxFrameGapMs,
+      metadataOnlyCommitFrames: metadataCommit.frames,
+      retainedNormalizedRows: context.materialMapRows.length,
+      retainedRawRows: context.rawRows.materialMap.length,
+      retainedPreviewRows: context.previewRows.materialMap.length,
+      retainedMappingRows: context.mappingRows.materialMap.length,
+      transientOperationMaterializationMs: transient.elapsedMs,
+      transientOperationMaterializationMaxFrameGapMs: transient.maxFrameGapMs,
+      transientOperationMaterializationFrames: transient.frames,
+      workerSearchMs: searched.elapsedMs,
+      workerSearchMaxFrameGapMs: searched.maxFrameGapMs,
+      workerSearchFrames: searched.frames,
+      matchCount: searched.value.matchCount,
+      lastMatchIndex: indexes[0],
+    };
+    scale.metadataOnlyCustody = scale.retainedNormalizedRows === 0
+      && scale.retainedRawRows === 0
+      && scale.retainedPreviewRows <= SAMPLE_LIMIT
+      && scale.retainedMappingRows <= SAMPLE_LIMIT;
+    scale.responsive = [
+      scale.workerImportMaxFrameGapMs,
+      scale.metadataOnlyCommitMaxFrameGapMs,
+      scale.transientOperationMaterializationMaxFrameGapMs,
+      scale.workerSearchMaxFrameGapMs,
+    ].every((value) => value <= MAX_FRAME_GAP_MS);
+    if (!scale.metadataOnlyCustody) throw new Error(`metadata-only custody failed at ${count}: ${JSON.stringify(scale)}`);
+    if (!scale.responsive) throw new Error(`frame-gap responsiveness threshold exceeded at ${count}: ${JSON.stringify(scale)}`);
+    scales.push(scale);
+    await coordinator.releaseMaster('materialMap');
+  }
+
+  const evidence = {
+    schema: 'XMLCII_MASTER_DATASET_SCALE_E2E_V2',
+    ok: true,
+    responsivenessThresholdMs: MAX_FRAME_GAP_MS,
+    retainedSampleLimit: SAMPLE_LIMIT,
+    fixturePreparationExcludedFromProductTiming: true,
+    custodyDefinition: 'Dataset-backed retained application state is metadata plus bounded preview/mapping samples; full-row materialization is measured separately as transient operation data.',
+    scales,
+  };
+  globalThis.__XML_CII_MASTER_DATASET_SCALE_RESULT__ = evidence;
+  globalThis.__XML_CII_MASTER_DATASET_SCALE_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} catch (error) {
+  const evidence = { schema: 'XMLCII_MASTER_DATASET_SCALE_E2E_V2', ok: false, error: String(error?.stack || error) };
+  globalThis.__XML_CII_MASTER_DATASET_SCALE_RESULT__ = evidence;
+  globalThis.__XML_CII_MASTER_DATASET_SCALE_DONE__ = true;
+  document.querySelector('#out').textContent = JSON.stringify(evidence, null, 2);
+} finally {
+  coordinator.dispose();
+}
+</script>

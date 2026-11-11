@@ -1,0 +1,48 @@
+CHAIN_STATE_VERSION: 3
+CHAIN_ID: AIV-EIT-IMPORT-STATUS-CHROMIUM
+MISSION: Make AIV imported EI .eit status truthful and verify the corrected presentation in Chromium without promoting engineering authority.
+ACTIVE_ENDPOINT: EP-0002
+ACTIVE_ENDPOINT_FILE: agents/chains/AIV-EIT-IMPORT-STATUS-CHROMIUM/endpoints/EP-0002.md
+LATEST_MATERIAL_LEG: LEG-001
+LATEST_MATERIAL_LEG_FILE: agents/chains/AIV-EIT-IMPORT-STATUS-CHROMIUM/material-legs/LEG-001.md
+BRANCH: fix/aiv-eit-import-status-chromium-20260903
+BASE_MAIN: 06697380b8ad71980399d540362639c095733dd5
+MATERIAL_VALIDATION_HEAD: 08bde94f811158dd36360a0194b3f406cbfd4bef
+PR: 725
+PR_STATE: OPEN_DRAFT
+STATE: ACTIVE
+ENGINEERING_STATE: BLOCKED
+CUSTODY_STATE: HELD
+QUALIFICATION_STATE: PASS
+WRITE_AUTHORITY: READ_ONLY
+AUTO_STATE: PAUSED
+MERGE_AUTHORITY: OWNER_ONLY
+MERGE_AUTHORIZED: FALSE
+WORK_ITEM_SOURCE: OWNER_DIRECT
+WORK_ITEM_KEY: owner-direct:reallaksh19/3D_Converters:AIV-EIT-import-status-chromium
+WORK_ITEM_MODE: EXCLUSIVE
+AUTHORITY_DOMAIN: AIV_IMPORT_STATUS_PRESENTATION_ONLY
+COORDINATION_STATE: SAFE_WITH_STALE_PR506_NOT_USED
+COMMON_PROTOCOL: engineering-pr-delivery-v2
+COMMON_PROTOCOL_BASIS: 293a3db7993a6945c01adc592a7ff14a339c504a
+OWNER_DIRECTIVE: 2026-09-03T10:10:17Z — rebase, diagnose imported EI worked-example status, and ensure Chromium execution
+COMMON_EIT_REF: reallaksh19/Common@e3ace4802a022f565f95b4af7f01a203df82dbcd/Energy-Institute-AVIFF---Worked-Examples.eit
+COMMON_EIT_DRIFT_STATUS: PASS_UNCHANGED_FROM_CONTROLLED_LINEAGE
+ROOT_CAUSE: Successful EI .eit import clears internal controlled-benchmark identity by design, while the old promotion renderer ignored state.eitImport and mislabeled the imported state CONTROLLED_BENCHMARK_NOT_LOADED. Static Actions budget/no-run copy was also stale.
+PATCH_STATUS: SOURCE_AND_ISOLATED_CHROMIUM_VALIDATED
+IMPORTED_EIT_UI_STATUS: IMPORTED_EIT_REVIEW_REQUIRED
+HISTORICAL_RESULT_AUTHORITY: EVIDENCE_ONLY_REVIEW_REQUIRED
+CURRENT_SCREENING_REQUIREMENT: resolve readiness and rerun VIB.AIV.ACOUSTIC at assessment scope
+EXACT_CHANGED_SOURCE_IDENTITY: PASS
+NODE_STATUS: PASS_5_OF_5_FOCUSED_EXACT_SOURCE
+CHROMIUM_STATUS: PASS_ISOLATED_PROMOTION_UI_CHROME_144
+FULL_APPLICATION_CHROMIUM_STATUS: NOT_RUN
+HOSTED_AIV_RUN: 33744399646
+HOSTED_AIV_STATUS: FAIL_BEFORE_REPOSITORY_REGRESSIONS
+HOSTED_AIV_FIRST_FAILURE: AIV_D23_SECTION_HEADING_AMBIGUOUS_EXPECTED_1_RECEIVED_0
+HOSTED_PATCH_REGRESSION_STATUS: NOT_RUN_BY_HOSTED_WORKFLOW
+PRODUCTION_FREEZE_RUN: 33744399643
+PRODUCTION_FREEZE_STATUS: FAIL_PREEXISTING_STAGE4
+RELEASE_STATE: RELEASE_NOT_QUALIFIED
+CURRENT_BLOCKER: Existing D.2.3 controlled-source PDF extraction gate fails before hosted AIV regression and canvas-release steps. Full application Chromium production journey is therefore not qualified by hosted CI.
+EXACT_NEXT_ACTION: Under separate qualified scope, repair or disposition the existing D.2.3 controlled-source extraction gate, then rerun hosted AIV qualification so verify:aiv-canvas-release reaches tests/vibration-aiv-promotion-status.test.mjs. Do not merge PR725 without explicit Owner authorization.

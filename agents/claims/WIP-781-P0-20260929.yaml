@@ -1,0 +1,23 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-781-P0-20260929
+claim_state: ACTIVE
+branch: agent/issue-781-p0-b313-rest-20260929
+workstream: XML_CII_STANDALONE_ISSUE_781_P0
+criticality: ENGINEERING_CRITICAL
+authority_domains:
+  - XML_CII_PREVIEW_B313_ACTION_ROW_CUSTODY
+  - XML_CII_EXPLICIT_RESTRAINT_PRESERVATION_TRACE
+  - XML_CII_RUNTIME_RESTRAINT_CUSTODY_AUDIT
+protected_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-wall-update.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-b313-wall-audit-controller.js
+  - converters/scripts/xml_to_cii2019_runtime_custody.py
+  - .github/workflows/issue-781-p0-validation.yml
+  - tests/xml-cii-issue-781-b313-live-row-custody.test.js
+  - tests/xml-cii-issue-781-explicit-restraint-custody.test.py
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-09-29

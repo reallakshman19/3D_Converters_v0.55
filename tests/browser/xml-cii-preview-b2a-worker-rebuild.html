@@ -1,0 +1,88 @@
+<!doctype html><meta charset="utf-8"><title>Preview B2-A Worker programme rebuild</title>
+<div id="fixture"></div><pre id="record">RUNNING</pre>
+<script type="module">
+import {xmlCiiRenderPreviewPhase,xmlCiiBuildAndRenderPreview,
+  xmlCiiRebuildPreviewThroughWorker} from
+  '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js';
+import {runAtomicPreviewClassTransaction} from
+  '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-class-transaction.js';
+const heartbeat=[];let last=performance.now();
+const timer=setInterval(()=>{const n=performance.now();heartbeat.push(Math.max(0,n-last-25));last=n;},25);
+const done=result=>{clearInterval(timer);globalThis.__PREVIEW_B2A_RESULT__={
+  ...result,maxHeartbeatGapMs:Number(Math.max(0,...heartbeat).toFixed(2)),
+};document.querySelector('#record').textContent=JSON.stringify(globalThis.__PREVIEW_B2A_RESULT__,null,2);};
+try {
+  localStorage.clear();
+  const xmlText=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml').then(r=>{
+    if(!r.ok)throw Error('Fixture '+r.status);return r.text();
+  });
+  const config={
+    linelist:{masterRows:Array.from({length:385},(_,i)=>({
+      Service:'SYS','Line Number':String(200000+i),'Piping Class':'P'+String(i%40).padStart(2,'0'),
+      Rating:'150',Material:'A106-B',DN:String(50+(i%10)*25),
+    })),fieldMap:{lineKey1:'Service',lineKey2:'Line Number',
+      lineSeqNo:'Line Number',pipingClass:'Piping Class',rating:'Rating',material:'Material',convertedBore:'DN'}},
+    pipingClass:{masterRows:Array.from({length:10699},(_,i)=>({
+      pipingClass:'P'+String(i%40).padStart(2,'0'),convertedBore:50+(i%10)*25,
+      componentType:'PIPE',rating:'150',materialName:'A106-B',
+      wallThickness:6+(i%3),corrosion:1.5,
+    }))},
+    material:{mapRows:Array.from({length:383},(_,i)=>({code:String(1000+i),material:'A106-B'}))},
+    weight:{masterRows:Array.from({length:1595},(_,i)=>({
+      componentType:'VALV',bore:50+(i%10)*25,rating:'150',length:100+(i%8),weight:10+i/10,
+    }))},overrides:{},
+  };
+  let rejected=false;
+  const options={
+    resolveStagedJsonText:()=>{
+      if(rejected){rejected=false;return Promise.reject(Error('B2A_SIMULATED_STAGED_FAILURE'));}
+      return '';
+    },
+    onSaveConfig(){},ensureOverrides:c=>c.overrides,openOverridePopup(){},
+  };
+  const root=document.querySelector('#fixture');
+  root.innerHTML=xmlCiiRenderPreviewPhase(new File([xmlText],'SYS-001_Single.xml'),config);
+  const host=root.querySelector('#mc-preview-table-host');
+  await xmlCiiBuildAndRenderPreview(root,xmlText,config,options); // initial idle, no synchronous enrichment
+  await xmlCiiRebuildPreviewThroughWorker(root,xmlText,config,options);
+  const baseline=host.dataset.mcPreviewBasisId;
+  if(host.__xmlCiiPreviewOriginalOccurrences?.nodeCount!==541)throw Error('Source census incomplete');
+  if(!host.__xmlCiiPreviewFactReadModel)throw Error('Fact pages not installed');
+  let failure=null,rollback=false;
+  rejected=true;
+  try{
+    await runAtomicPreviewClassTransaction({
+      config,
+      applyOverride:async()=>{config.overrides.pipingClass={probe:'P02'};return {probe:true};},
+      hydrateAuthority:async()=>({status:'TEST_PROVIDER'}),
+      persistConfig:async()=>{},
+      rebuildPreview:async({rollback:rolledBack})=>{
+        if(rolledBack)rollback=true;
+        await xmlCiiRebuildPreviewThroughWorker(root,xmlText,config,options);
+      },
+    });
+  }catch(e){failure=e;}
+  if(!failure)throw Error('Rejected rebuild falsely accepted class transaction');
+  if(failure.code!=='PREVIEW_REBUILD_INCOMPLETE')throw Error('Unclassified rejection: '+failure.code);
+  if(!rollback)throw Error('Atomic class rollback did not run');
+  if(config.overrides.pipingClass)throw Error('Manual class override was not rolled back');
+  if(host.dataset.mcPreviewBasisId!==baseline)throw Error('Rollback rebuilt a stale or wrong InputBasis');
+  if(host.__xmlCiiPreviewOriginalOccurrences?.branchCount!==9||
+      host.__xmlCiiPreviewOriginalOccurrences?.nodeCount!==541)
+    throw Error('Rollback lost original population');
+  // Positive authority edit causes a new SHA-bound Worker basis; no stale cache.
+  await runAtomicPreviewClassTransaction({
+    config,applyOverride:async()=>{config.overrides.pipingClass={probe:'P02'};return {probe:true};},
+    hydrateAuthority:async()=>({status:'TEST_PROVIDER'}),
+    persistConfig:async()=>{},
+    rebuildPreview:async()=>{await xmlCiiRebuildPreviewThroughWorker(root,xmlText,config,options);},
+  });
+  const revised=host.dataset.mcPreviewBasisId;
+  if(revised===baseline)throw Error('Manual override did not invalidate full InputBasis');
+  if(!host.__xmlCiiPreviewFactReadModel)throw Error('Paginated source fact store lost on class rebuild');
+  done({ok:true,rollback,classifiedError:failure.code,initialBasis:baseline,revisedBasis:revised,
+    originalBranches:host.__xmlCiiPreviewOriginalOccurrences?.branchCount,
+    originalNodes:host.__xmlCiiPreviewOriginalOccurrences?.nodeCount,
+    engineeringAccepted:false,privateOwnerInputsVerified:false});
+}catch(e){done({ok:false,error:String(e?.stack||e)})}
+</script>

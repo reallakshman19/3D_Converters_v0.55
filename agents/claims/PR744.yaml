@@ -1,0 +1,43 @@
+pr: 744
+chain: ENGCALC-BOLTED-JOINTS
+claim_state: ACTIVE_AUTO_BLOCKED
+scope:
+  include:
+    - converters/engineering-calculations/flange/flange-face-binding.js
+    - tests/flange-face-binding.test.mjs
+    - docs/engineering-calculations/flange-p8-flange-face-binding.md
+    - agents/PR744_workreport.md
+    - agents/status/PR744.yaml
+    - agents/claims/PR744.yaml
+    - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0033.md
+    - agents/agentchain.md
+  exclude:
+    - automatic 3D flange-face inference
+    - routing-axis or bounding-box engineering authority
+    - automatic FlangeFaceBinding.v1 production
+    - governed flange/bolt/gasket master resolution
+    - flange or bolt solver invocation
+    - central Engineering Calculations registry integration
+    - UI/reporting
+    - authority promotion
+binding_contract:
+  schema: FlangeFaceBinding.v1
+  model_source_schema: rvm-converter-stage/v1
+  analysis_repository: reallaksh19/Advanced_Analysis
+  analysis_commit: eabb93cd44c59ce182d73284cb707653917e07c8
+  physical_flange_role_inferred: false
+  flange_face_point_inferred: false
+  opening_direction_inferred: false
+  mating_side_inferred: false
+  geometry_inference_used: false
+authority:
+  method: CONTROLLED_PROJECT_SEMANTIC_BINDING_NON_AUTHORIZING
+  can_use_for_design_authority: false
+  governing_eligible: false
+validation:
+  source_blob_custody: PASS
+  test_blob_custody: PASS
+  focused_suite: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_native_pr_head: NOT_RUN_ENVIRONMENT_BLOCKED
+hard_stop: EXACT_NATIVE_PR744_FOCUSED_TEST_AND_CONTROLLED_BINDING_PRODUCER_QUALIFICATION
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,15 @@
+schema: AgentClaim.v1
+pr: 672
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd320-pr1290-candidate-adjudication
+base_sha_at_allocation: cd88796a69075cb63565ea08f3dbbab5dfe32c6e
+scope:
+  - engineering/hp-class-standardization/qualification/kd320-q1/pr1290-candidate-reconciliation.json
+  - engineering/hp-class-standardization/qualification/kd320-q1/pr1290-candidate-audit.js
+  - scripts/audit-b313-ch9-kd320-pr1290-candidate.mjs
+  - tests/b313-chapter-ix-kd320-pr1290-candidate.test.mjs
+purpose: quarantine Advanced_Analysis PR1290 as source-extraction candidate evidence and prevent any Q1/native KD320 authority promotion without target-edition controlled evidence
+exclusive_authority_claim: false
+production_route: USER_CALCULATED_KD3
+native_core_kd3_qualified: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR672

@@ -1,0 +1,50 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /20260802-rvm-full-scope-tree-1/. Input:
+
+'/**\n' +
+  ' * index.js — canonical public entry point for the model-converters module.\n' +
+  ' *\n' +
+  ' * All consumers (viewer shell, tests, other tabs) should import from here\n' +
+  ' * rather than from legacy-adapter.js, ModelConvertersTab.js, or any other\n' +
+  ' * internal file.\n' +
+  ' *\n' +
+  ' * The exports from sub-modules (WorkflowShell, ConverterSelector,\n' +
+  ' * ConverterRunner) are available here for convenience.\n' +
+  ' */\n' +
+  '\n' +
+  "export { renderModelConvertersTab } from './ModelConvertersTab-fbx2-managed-reference.js?v=20260928-rvm-full-scope-core-1-tabperf1';\n" +
+  '\n' +
+  '// Re-export reusable module surfaces so external consumers have one import target.\n' +
+  "export { XML_CII_WORKFLOW_PHASES, normalizeWorkflowPhaseId, getWorkflowPhase } from './WorkflowShell.js?v=20260928-tabperf1';\n" +
+  "export { getDefaultConverterId, isValidConverterId, getConverterById } from './ConverterSelector.js';\n" +
+  "export { runConverter, buildNoopLogger } from './ConverterRunner.js';\n"
+
+    at file:///C:/Users/reall/AppData/Local/Temp/xml-cii-base-alkg3h1m/tests/model-converters/test-rvmattr-scope-tree.mjs:66:8 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '/**\n' +
+    ' * index.js — canonical public entry point for the model-converters module.\n' +
+    ' *\n' +
+    ' * All consumers (viewer shell, tests, other tabs) should import from here\n' +
+    ' * rather than from legacy-adapter.js, ModelConvertersTab.js, or any other\n' +
+    ' * internal file.\n' +
+    ' *\n' +
+    ' * The exports from sub-modules (WorkflowShell, ConverterSelector,\n' +
+    ' * ConverterRunner) are available here for convenience.\n' +
+    ' */\n' +
+    '\n' +
+    "export { renderModelConvertersTab } from './ModelConvertersTab-fbx2-managed-reference.js?v=20260928-rvm-full-scope-core-1-tabperf1';\n" +
+    '\n' +
+    '// Re-export reusable module surfaces so external consumers have one import target.\n' +
+    "export { XML_CII_WORKFLOW_PHASES, normalizeWorkflowPhaseId, getWorkflowPhase } from './WorkflowShell.js?v=20260928-tabperf1';\n" +
+    "export { getDefaultConverterId, isValidConverterId, getConverterById } from './ConverterSelector.js';\n" +
+    "export { runConverter, buildNoopLogger } from './ConverterRunner.js';\n",
+  expected: /20260802-rvm-full-scope-tree-1/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v22.23.2

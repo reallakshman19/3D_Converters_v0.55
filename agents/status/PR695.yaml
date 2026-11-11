@@ -1,0 +1,34 @@
+schema: AgentStatus.v1
+pr_or_wip: PR695
+pull_request: 695
+branch: agent/vib-m13-action-completion-authoring-20260821
+base: main
+base_sha_at_start: 54a4f56e36c2025320ea464630fbffac9accc71d
+pr_head_at_allocation: 577d8ae2d93885873e7a0a8d3ab258f38d3923a3
+hosted_reconciliation_head: 21ff0d9152fc6706437b1146f0e2240b14d1f062
+predecessor_pr: 693
+predecessor_state: MERGED
+state: DRAFT_READY_FOR_OWNER_REVIEW
+criticality: ENGINEERING_CRITICAL_ACTION_COMPLETION_AUTHORING
+validation:
+  current_main_grounding: PASS_MAIN_54A4F56E
+  exact_git_blob_backups: PASS_CONNECTOR_TREE_BLOB
+  diff_reconciliation: PASS_12_INTENDED_PATHS
+  semantic_diff_normalization: PASS_EXISTING_PLUS_8_2_2
+  new_file_line_policy: PASS_246_71_147
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_numerical: NOT_APPLICABLE
+hosted_reconciliation:
+  exact_reconciliation_head: 21ff0d9152fc6706437b1146f0e2240b14d1f062
+  changed_files: 12
+  mergeable: true
+  ahead: 19
+  behind: 0
+  commit_status_checks: NOT_RUN_ZERO_RETURNED
+  pr_workflow_runs: NOT_RUN_ZERO_RETURNED
+  reviews: 0
+  review_threads: 0
+  comments: 0
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: OWNER_REVIEW_OR_MERGE_AUTHORIZATION

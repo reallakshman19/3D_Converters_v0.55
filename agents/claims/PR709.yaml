@@ -1,0 +1,35 @@
+id: PR709
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-02
+branch: agent/engcalc-bolt-installation-strength-20260902
+claim_state: ACTIVE_AUTO
+exclusive_paths:
+  - converters/engineering-calculations/bolts/installation-strength.js
+  - tests/bolt-installation-strength.test.mjs
+  - tests/bolt-installation-strength-detailed-torque.test.mjs
+  - scripts/calc-bolt-installation-strength.mjs
+  - docs/engineering-calculations/bolt-installation-strength-source-register.md
+shared_paths_currently_modified: []
+evidence_paths:
+  - agents/PR709_workreport.md
+  - agents/status/PR709.yaml
+  - agents/agentchain/ENGCALC-BOLTED-JOINTS/EP-0015.md
+authority_claims:
+  - installation-axial-stress-reference
+  - solid-circular-thread-torque-torsional-stress-reference
+  - axial-torsion-von-mises-reference
+  - explicit-reference-stress-utilization
+coordination_state: SAFE_FOR_BOUNDED_NEW_FILE_SCOPE
+auto_state: INSTALLATION_STRENGTH_REFERENCE_COMPLETE
+protected_authority:
+  engineering_authority: NONE_FOR_NEW_REFERENCE_METHOD
+  installation_strength_state: REFERENCE_KERNEL_ONLY
+  transmitted_torque_component: THREAD_TORQUE_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+hard_stops:
+  - Real material/reference-stress and thread/friction master authority remain unresolved.
+  - Central registry/UI integration is intentionally outside this minimal leg and requires separate shared-file re-grounding.
+  - Exact native full-repository execution remains unavailable in the current environment.
+exact_next_action: Synchronize the post-validation relay endpoint and leave PR709 draft/unmerged. Any central registration must be a later bounded leg with fresh overlap, backup and validation checks.

@@ -1,0 +1,74 @@
+{
+  "schema": "XML229.PR378.E2EQualification.v1",
+  "repository": "reallakshman19/3D_Converters",
+  "pr": 378,
+  "testedCodeHead": "182218290fbce6624d322ffb156434c8eb567100",
+  "source": {
+    "path": "Benchmarks/EF-05-PRO.TEST.xml",
+    "branches": 41,
+    "nodes": 1654,
+    "sha256": "2573883480af904096dea2663c9cf585be2db28dd047785397b4d61edee0a030"
+  },
+  "nativeCii": {
+    "sha256": "b4b563854f5ad647cd72d8a985436961a855b0a5f731c7b2a50f06eea227e32a",
+    "bytes": 1540393,
+    "elements": 600,
+    "rigids": 183,
+    "syntax2019Ok": true
+  },
+  "evidence": {
+    "uiClickDownload": {
+      "status": "PASS",
+      "source": "REAL_CHROMIUM_ISOLATED_SERVER",
+      "mastersImported": 0,
+      "stagedJson": false,
+      "elapsedMs": 16380,
+      "ciRun": 41361694868,
+      "artifactId": 13104973673
+    },
+    "browserNativeNoMasters": {
+      "status": "PASS",
+      "source": "REAL_BROWSER_WORKER_PYODIDE"
+    },
+    "browserNativeConflictingFormats": {
+      "status": "PASS",
+      "source": "REAL_BROWSER_WORKER_PYODIDE",
+      "formatUnresolvedCount": 41
+    },
+    "sevenRealPythonMasterMatrix": {
+      "status": "PASS",
+      "scenarios": [
+        "no_masters",
+        "line_list_only",
+        "piping_class_only",
+        "material_only",
+        "all_three_without_format",
+        "two_conflicting_formats",
+        "missing_rating"
+      ],
+      "ciRun": 41361694602
+    },
+    "separateFormatReviewPasses": {
+      "status": "PASS",
+      "scope": "DETERMINISTIC_DRY_RUN_NOT_OWNER_PRIVATE_UI"
+    },
+    "selectedPublicStagedJson": {
+      "status": "EXPECTED_FAILURE",
+      "code": "XML229_STAGED_POSITION_AMBIGUOUS"
+    },
+    "combinedAllMastersJsonWeightUi": {
+      "status": "FAIL",
+      "code": "INSTRUMENT_ADVISORY_UI_TIMEOUT",
+      "ciRun": 41361694868
+    }
+  },
+  "limitations": [
+    "Native CII artifact test-only not accepted Final weight release",
+    "No independent source-bound Final mass/geometry CII consumption approval",
+    "Owner private config and staged JSON not validated",
+    "Full combined JSON/Weight E2E not passing",
+    "Source/docs exact-file overlap with active PR260 requires coordination"
+  ],
+  "nativeCiiReleaseAuthorized": false,
+  "mergeAuthorized": false
+}

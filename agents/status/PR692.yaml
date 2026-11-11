@@ -1,0 +1,29 @@
+schema: AgentStatus.v1
+pr_or_wip: PR692
+pull_request: 692
+branch: agent/hp-intake-roundtrip-browser
+base: main
+base_sha_after_replay: 414a5fcbe41faee9b78e62fd02689d507e9c057f
+predecessor_pr: 690
+predecessor_merge: be575ebc83c30a66fb11bdd67af609025259f27c
+state: READY_FOR_FULL_APP_NATIVE_CHECKOUT
+criticality: HP_PRODUCTION_QUALIFICATION
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  can_use_for_design_authority: false
+  numerical_authority: UNCHANGED
+validation:
+  main_replay: PASS
+  branch_ancestry_last_reconciled: PASS_BEHIND_0
+  implementation_test_paths: PASS_4_INTENDED_BEFORE_RECOVERY
+  source_contract_audit: PASS
+  exact_browser_falsifier_suite: PASS_8_OF_8
+  chromium_self_test: PASS
+  chromium_self_test_full_app: false
+  full_app_intake_roundtrip: NOT_RUN
+  combined_hp_production_browser: NOT_RUN
+  full_repository_regression: NOT_RUN
+  hosted_pr_workflows: NOT_RUN_ZERO_RETURNED
+merge_authority: NOT_GRANTED_FOR_PR692
+next_action: RECONCILE_EXACT_HEAD_THEN_RUN_FULL_APP_IN_NATIVE_CHECKOUT

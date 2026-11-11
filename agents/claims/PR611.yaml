@@ -1,0 +1,35 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+claim_id: PR611
+pull_request: 611
+branch: agent/xml-cii-c4b-config-routing-20260818-0759
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+authority: WRITE_ALLOWED_C4B_ACTIVE_CONFIG_REVISION_ROUTING
+qualification: APPENDIX_A_98_OF_100
+claimed_paths:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-config.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-weight-match-v2.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-bend-radius-toggle.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-support-type-mapper.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-diagnostics-audit-v7.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-atta-default.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-mode-a-state.js
+  - tests/xml-cii-standalone-config-revision-routing.test.mjs
+  - tests/xml-cii-standalone-config-save-routing.test.mjs
+  - tests/xml-cii-standalone-mode-a-dependency-routing.test.mjs
+exclusions:
+  - .github/workflows/**
+  - converters/scripts/inputxml_to_cii2019.py
+  - support/GAP semantics
+  - CII writer/runtime
+  - engineering formulas or units
+  - workers
+  - persisted derived indexes or revision metadata
+  - result-publication authority changes
+coordination:
+  PR605: SEMANTIC_ONLY_NO_EXACT_FILE_OVERLAP
+  PR589: SEMANTIC_ONLY_NO_EXACT_FILE_OVERLAP
+  PR598: SALVAGE_ONLY_NO_ACCEPTED_DEPENDENCY
+  PR599: SALVAGE_ONLY_NO_ACCEPTED_DEPENDENCY
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_THIS_NEW_STAGE_PR

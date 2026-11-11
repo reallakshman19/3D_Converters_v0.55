@@ -1,0 +1,28 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR603
+mission: "Actual C2 virtualized master Preview without row truncation"
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-c2-virtual-preview-20260818
+stack_base_pr: 602
+report_basis_head: 9bd908e8ea3414b014fff6dc386e0bd723969eb9
+criticality: ENGINEERING_CRITICAL
+pr_recovery_state: RECOVERABLE
+takeover_authority: WRITE_ALLOWED
+handover_readiness: READY
+report_path: agents/PR603_workreport.md
+appendix_a_status: CURRENT_98_OF_100
+validation:
+  focused_virtualization_tests: PASS_5_OF_5_LOCAL_IMPLEMENTATION_COUPLED
+  changed_file_reconciliation: PASS_REMOTE_7_EXPECTED_PATHS
+  mergeability: PASS_REMOTE_TRUE
+  browser_scroll_search: NOT_RUN
+  status_checks: NOT_RUN_NONE_OBSERVED
+protected_authority:
+  - APPLIED_MASTER_ROWS_UNCHANGED
+  - MAPPING_AUTHORITY_UNCHANGED
+  - SUPPORT_GAP_SEMANTICS_UNCHANGED
+highest_risk: "Virtual window hiding logical rows or mapping filtered rows to wrong APPLIED source identity."
+exact_next_action: "Keep PR603 draft; workers remain not admitted; proceed to C4 dependency revisions or C6 source parse custody as a separate work pack."
+merge_authority: OWNER_ONLY_NOT_GRANTED
+last_updated: 2026-08-18T06:25:00+04:00

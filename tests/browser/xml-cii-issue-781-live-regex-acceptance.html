@@ -1,0 +1,211 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 781 Regex click-path acceptance</title>
+<main id="app"></main>
+<pre id="result">RUNNING</pre>
+<script type="module">
+import { createDefaultRegexTesterConfig } from '../../tabs/xml-cii-2019-standalone/xml-cii-regex-tester.js';
+import { masterDatasetCoordinator } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-dataset-runtime.js';
+import { createDefaultRegexSuggestionProfile } from '../../tabs/xml-cii-2019-standalone/xml-cii-regex-smart-suggestions.js';
+import { renderStandaloneRegexTesterPanel } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-tester.js';
+import { enhanceRegexSmartWorkbench } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-regex-smart-ui.js';
+import { runExplicitFormatBrowserCases } from '../xml229-explicit-format-browser-cases.mjs';
+
+const app = document.querySelector('#app');
+const result = document.querySelector('#result');
+const runtimeErrors = [];
+window.addEventListener('error', (event) => runtimeErrors.push(event.message));
+window.addEventListener('unhandledrejection', (event) => runtimeErrors.push(String(event.reason)));
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+function cards() {
+  const builder = [...app.querySelectorAll('.xml-cii-regex-rule-card')]
+    .find((node) => /Interactive Click-to-Map Token Builder/.test(node.querySelector('h4')?.textContent || ''));
+  const row = [...builder.children].find((node) => node.style?.overflowX === 'auto');
+  return [...row.children];
+}
+
+function clickRole(position, label) {
+  const button = [...cards()[position - 1].querySelectorAll('button')]
+    .find((node) => node.textContent.trim() === label);
+  assert(button, `${label} button is absent from token #${position}`);
+  button.click();
+}
+
+function render(stateRef) {
+  app.replaceChildren();
+  renderStandaloneRegexTesterPanel(app, stateRef.current, stateRef, () => render(stateRef));
+  enhanceRegexSmartWorkbench(app, stateRef.current, stateRef, () => render(stateRef));
+}
+
+function clickFormat(label) {
+  const button = [...app.querySelectorAll('.xml-cii-sub-phase-pill')]
+    .find((node) => node.textContent.trim() === label);
+  assert(button, label + ' selector is absent');
+  button.click();
+}
+
+function makeState(sourceText) {
+  const config = createDefaultRegexTesterConfig();
+  config.formats[0].rating.tokenPosition = '';
+  config.formats[0].bore.tokenPosition = '';
+  return {
+    sourceKind: 'xml',
+    sourceText,
+    regexTesterConfig: config,
+    regexSuggestionProfile: { ...createDefaultRegexSuggestionProfile(), operatingMode: 'SUGGEST_ONLY' },
+    masterContext: {
+      lineRows: [{ lineKey1: 'P', lineKey2: '8810021' }],
+      pipingClassRows: [{ pipingClass: '31441C4' }],
+      config: {
+        linelist: { fieldMap: { lineKey1: 'lineKey1', lineKey2: 'lineKey2' } },
+        pipingClass: { fieldMap: { pipingClass: 'pipingClass' } },
+      },
+    },
+  };
+}
+
+async function waitFor(predicate, label) {
+  const deadline = performance.now() + 10000;
+  while (!predicate()) {
+    if (performance.now() > deadline) throw new Error(`Timed out waiting for ${label}`);
+    await new Promise((resolve) => setTimeout(resolve, 20));
+  }
+}
+
+try {
+  const response = await fetch('../../Benchmarks/EF-05-PRO.TEST.xml', { cache: 'no-store' });
+  assert(response.ok, `41-branch XML unavailable: HTTP ${response.status}`);
+  const sourceText = await response.text();
+  const stateRef = { current: makeState(sourceText) };
+  render(stateRef);
+  assert(stateRef.current.regexTesterResult.branchSamples.length === 41, 'Expected all 41 real branch samples');
+
+  clickRole(4, 'Line Key');
+  assert(stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition === '4',
+    'Format 1 manual Line Key click must replace the previous selected column');
+  clickRole(4, 'Line Key');
+  assert(stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition === '',
+    'Format 1 repeated manual Line Key click must deselect the sole selected column');
+
+  stateRef.current = makeState(sourceText);
+  stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition = '3,4';
+  render(stateRef);
+  assert(stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition === '3,4',
+    'Untouched legacy comma-separated Line Key selection must survive render/load');
+  clickRole(3, 'Line Key');
+  assert(stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition === '3',
+    'Manual Line Key click over a legacy comma selection must explicitly reconcile to the clicked column');
+
+  stateRef.current = makeState(sourceText);
+  render(stateRef);
+  clickFormat('Format 2 (Alternative)');
+  assert(stateRef.current.regexTesterConfig.activeFormatIndex === 1,
+    'Format 2 selector did not activate the alternative format');
+  clickRole(4, 'Line Key');
+  assert(stateRef.current.regexTesterConfig.formats[1].lineKey.tokenPosition === '4',
+    'Format 2 manual Line Key click must replace the previous selected column');
+  clickRole(4, 'Line Key');
+  assert(stateRef.current.regexTesterConfig.formats[1].lineKey.tokenPosition === '',
+    'Format 2 repeated manual Line Key click must deselect the sole selected column');
+
+  stateRef.current = makeState(sourceText);
+  render(stateRef);
+  clickRole(3, 'Bore');
+  const manual = structuredClone(stateRef.current.regexTesterConfig.formats[0]);
+  assert(manual.bore.tokenPosition === '3', 'Manual Bore click did not select token #3');
+  assert(manual.lineKey.tokenPosition === '', 'Manual Bore click left stale unlocked Line Key');
+  assert(stateRef.current.regexSmartManualLocks.bore === true, 'Manual Bore click did not lock Bore');
+
+  stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition = '3';
+  stateRef.current.regexSmartManualLocks = { bore: true, pipingClass: true };
+  stateRef.current.regexSuggestionProfile = { ...createDefaultRegexSuggestionProfile(), operatingMode: 'AUTO_PREVIEW_SAFE' };
+  stateRef.current.regexSmartPreflight = null;
+  render(stateRef);
+  await waitFor(() => stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition === '', 'locked Bore cleanup');
+  const automatic = stateRef.current.regexTesterConfig.formats[0];
+  assert(automatic.bore.tokenPosition === '3', 'Auto-analysis displaced locked Bore');
+  assert(String(automatic.pipingClass.tokenPosition) === '4', 'Auto-analysis displaced locked Piping Class');
+
+  stateRef.current = makeState(sourceText);
+  render(stateRef);
+  const badge = cards()[2].querySelector('[data-smart-token-badge="bore"]');
+  assert(badge, 'C95% Bore badge is absent from token #3');
+  badge.click();
+  await waitFor(() => stateRef.current.regexTesterConfig.formats[0].bore.tokenPosition === '3', 'Bore badge apply');
+  const badgeResult = stateRef.current.regexTesterConfig.formats[0];
+  assert(badgeResult.lineKey.tokenPosition === '', 'Bore badge left stale Line Key');
+  assert(stateRef.current.regexSmartManualLocks.bore === true, 'Bore badge did not lock the selected role');
+
+  stateRef.current = makeState(sourceText);
+  const blockedState = stateRef.current;
+  blockedState.regexTesterConfig.formats[0].bore.tokenPosition = '3';
+  blockedState.regexTesterConfig.formats[0].rating.tokenPosition = '3';
+  blockedState.regexSmartManualLocks = { bore: true, pipingClass: true };
+  const defaultProfile = createDefaultRegexSuggestionProfile();
+  blockedState.regexSuggestionProfile = {
+    ...defaultProfile,
+    formatPolicy: { ...defaultProfile.formatPolicy, maximumFormats: 1 },
+  };
+  // Register actual worker-backed masters, not fabricated dataset IDs: a failed
+  // worker lookup is not equivalent to a governed BLOCKED preflight.
+  const encoder = new TextEncoder();
+  const buffer = (rows) => {
+    const bytes = encoder.encode(JSON.stringify(rows));
+    return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+  };
+  const lineFieldMap = blockedState.masterContext.config.linelist.fieldMap;
+  const classFieldMap = blockedState.masterContext.config.pipingClass.fieldMap;
+  const lineReady = await masterDatasetCoordinator.openBuffer(
+    'lineList', buffer(blockedState.masterContext.lineRows), 'j03-line-list.json', { fieldMapOverride: lineFieldMap },
+  );
+  const classReady = await masterDatasetCoordinator.openBuffer(
+    'pipingClass', buffer(blockedState.masterContext.pipingClassRows), 'j03-piping-class.json', { fieldMapOverride: classFieldMap },
+  );
+  blockedState.masterContext.datasetRefs = {
+    lineList: { ...lineReady.metadata, fieldMap: lineFieldMap },
+    pipingClass: { ...classReady.metadata, fieldMap: classFieldMap },
+  };
+  blockedState.masterContext.rowCounts = { lineList: 1, pipingClass: 1 };
+  const blockedBefore = structuredClone(blockedState.regexTesterConfig);
+  render(stateRef);
+  await waitFor(() => /Automatic evidence analysis blocked/.test(stateRef.current.regexSmartStatus || ''), 'dataset-backed blocked preflight');
+  assert(stateRef.current.regexSmartPreflight.status === 'BLOCKED', 'Expected blocked dataset receipt');
+  assert(stateRef.current.regexSmartPreflight.metrics.sampleCount === 41, 'Blocked dataset path did not analyze all 41 samples');
+  assert(JSON.stringify(stateRef.current.regexTesterConfig) === JSON.stringify(blockedBefore), 'Blocked dataset auto-analysis changed a token mapping');
+  const blockedApply = app.querySelector('[data-regex-smart-toolbar] [data-smart-action="apply"]');
+  assert(blockedApply && !blockedApply.disabled, 'Expected a safe-suggestion button to challenge the blocked guard');
+  blockedApply.click();
+  await waitFor(() => /Preflight blocked/.test(app.querySelector('[data-regex-smart-message]')?.textContent || ''), 'blocked direct apply');
+  assert(JSON.stringify(stateRef.current.regexTesterConfig) === JSON.stringify(blockedBefore), 'Blocked Apply cleared a token mapping or Rating');
+  const blockedBadge = cards()[2].querySelector('[data-smart-token-badge="bore"]');
+  assert(blockedBadge, 'Expected the Bore suggestion badge on the blocked receipt');
+  app.querySelector('[data-regex-smart-message]').textContent = '';
+  blockedBadge.click();
+  await waitFor(() => /Preflight blocked/.test(app.querySelector('[data-regex-smart-message]')?.textContent || ''), 'blocked badge apply');
+  assert(JSON.stringify(stateRef.current.regexTesterConfig) === JSON.stringify(blockedBefore), 'Blocked badge changed a token mapping');
+  assert(runtimeErrors.length === 0, `Runtime errors: ${runtimeErrors.join(' | ')}`);
+
+  const explicitFormats = await runExplicitFormatBrowserCases(sourceText);
+  globalThis.__XML_CII_LIVE_REGEX_RESULT__ = {
+    ok: true,
+    explicitFormats,
+    branchCount: stateRef.current.regexTesterResult.branchSamples.length,
+    j03: { replacementStyle: true, legacyUntouchedUntilClick: true, format2: true },
+    manual: { lineKey: manual.lineKey.tokenPosition, bore: manual.bore.tokenPosition },
+    automatic: { lineKey: automatic.lineKey.tokenPosition, bore: automatic.bore.tokenPosition },
+    badge: { lineKey: badgeResult.lineKey.tokenPosition, bore: badgeResult.bore.tokenPosition },
+    blocked: { status: stateRef.current.regexSmartPreflight.status, lineKey: stateRef.current.regexTesterConfig.formats[0].lineKey.tokenPosition, bore: stateRef.current.regexTesterConfig.formats[0].bore.tokenPosition, rating: stateRef.current.regexTesterConfig.formats[0].rating.tokenPosition },
+    runtimeErrors,
+  };
+  result.textContent = JSON.stringify(globalThis.__XML_CII_LIVE_REGEX_RESULT__, null, 2);
+} catch (error) {
+  globalThis.__XML_CII_LIVE_REGEX_RESULT__ = { ok: false, error: error?.stack || String(error), runtimeErrors };
+  result.textContent = JSON.stringify(globalThis.__XML_CII_LIVE_REGEX_RESULT__, null, 2);
+}
+globalThis.__XML_CII_LIVE_REGEX_DONE__ = true;
+masterDatasetCoordinator.dispose();
+</script>

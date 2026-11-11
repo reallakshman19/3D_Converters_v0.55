@@ -1,0 +1,58 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr: 647
+mission: governed SBC connection structural and project-evidence authoring for Type 1, 2 and 4
+workstream: VIB.SBC.SMALL_BORE
+branch: agent/sbc-connection-evidence-20260819
+base_pr: 646
+base_sha: 706b692581326803a091fe6418c0a2bdf1d627f0
+implementation_head: 5b49894d4a48c460b361c6d66af46902a83b5063
+hosted_inspection_head: b933ea3cdc2fc2a8f6537c5f931599e9a57712b1
+work_intent: IMPLEMENT
+criticality: ENGINEERING_CRITICAL
+agent_state: ACTIVE
+pr_recovery_state: CONTINUE
+handover_readiness: READY
+report_path: agents/PR647_workreport.md
+appendix_a_status: PASS_95_OF_100
+execution_mode: AUTO
+auto_state: BLOCKED_QUALIFICATION_EVIDENCE_AFTER_SAFE_SLICE
+scope_authority: LOCKED_TO_APPROVED_MISSION
+mutation_authority: COMPLETE_FOR_BOUNDED_AUTHORING_SLICE
+merge_authority: OWNER_ONLY_NOT_GRANTED
+blocker: NUMERICAL_QUALIFICATION_BLOCKED_BY_CONTROLLED_SOURCE_AND_B2_EVIDENCE
+protected_authority:
+  sbc_lifecycle: RESERVED
+  engineering_authority: NONE
+  screening_authority: NOT_AUTHORIZED
+  design_authority: false
+  automatic_type_classification: false
+  numerical_execution: false
+  fit_only_mainline_accepted: false
+  type3_curve_state: BLOCKED_SOURCE_DATA_CONFLICT
+  type3_candidate_input_custody: EXISTING_PATH_ONLY
+qualification_gate:
+  benchmark_execution_allowed: false
+  production_expected_value_generation_forbidden: true
+  type1_b1: SOURCE_AND_EXPECTED_VALUES_NOT_FROZEN
+  type1_b2: MISSING_INDEPENDENT_ENGINEERING_EVIDENCE
+  type2_b1: SOURCE_AND_EXPECTED_VALUES_NOT_FROZEN
+  type2_b2: MISSING_INDEPENDENT_ENGINEERING_EVIDENCE
+  type4_b1: SOURCE_AND_EXPECTED_VALUES_NOT_FROZEN
+  type4_b2: MISSING_INDEPENDENT_ENGINEERING_EVIDENCE
+validation_truth:
+  live_grounding: PASS_SOURCE_INSPECTION
+  appendix_a: PASS_95_OF_100
+  parent_compare: PASS_22_AHEAD_0_BEHIND_17_FILES_BEFORE_RECOVERY_MIGRATION
+  numerical_master_workflow_isolation: PASS_DIFF_INSPECTION
+  github_mergeable: true
+  hosted_commit_statuses: NOT_RUN_EMPTY_0
+  hosted_pr_workflow_runs: NOT_RUN_EMPTY_0
+  reviews: 0
+  review_threads: 0
+  native_backup: NOT_RUN_ENVIRONMENT_BLOCKED
+  native_git_remote: NOT_RUN_ENVIRONMENT_BLOCKED_DNS
+  repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  independent_engineering_review: NOT_RUN
+exact_next_action: WAIT_FOR_CONTROLLED_SOURCE_B1_B2_ENGINEERING_EVIDENCE_OR_OWNER_DIRECTION

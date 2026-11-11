@@ -1,0 +1,31 @@
+id: PR706
+chain_id: ENGCALC-BOLTED-JOINTS
+leg_id: LEG-01
+branch: agent/engcalc-bolted-joints-phase1-20260902
+claim_state: ACTIVE_AUTO_BLOCKED
+exclusive_paths:
+  - converters/engineering-calculations/flange/ug44.js
+  - converters/engineering-calculations/flange/joint-loads.js
+  - converters/engineering-calculations/adapters/flange-ug44.js
+  - tests/flange-ug44-core.test.mjs
+  - tests/flange-ug44-registry.test.mjs
+  - scripts/calc-flange-ug44.mjs
+shared_paths_currently_modified:
+  - converters/engineering-calculations/default-registry.js
+  - converters/engineering-calculations/index.js
+evidence_paths:
+  - docs/engineering-calculations/flange-ug44-source-register.md
+authority_claims:
+  - flange-rated-load-ug44-benchmark-kernel
+  - flange-joint-local-load-resolution
+  - benchmark-only-engineering-calculation-registration
+coordination_state: SAFE_FOR_CURRENT_BOUNDED_SCOPE
+auto_state: BLOCKED_VALIDATION_REQUIRED
+protected_authority:
+  engineering_authority: NONE_PENDING_SOURCE_QUALIFICATION
+  calculation_state: BENCHMARK_ONLY
+  code_compliance: false
+  design_authority: false
+  governing_eligible: false
+hard_stop: Focused exact/native flange tests are NOT_RUN and required before another engineering-critical production mutation.
+next_shared_mutation_gate: Run focused exact/native flange tests, record PASS/FAIL, then re-run open-PR overlap and base-drift checks before shared/master-data mutation.

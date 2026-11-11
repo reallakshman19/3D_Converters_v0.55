@@ -1,0 +1,4 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-XML229-JSON-BODY-6ae1bed6
+claim_state: FORWARDED_TO_PR357
+canonical: agents/claims/PR357.yaml

@@ -1,0 +1,25 @@
+{
+  "schema": "LFJ.V4.1.DeployedModuleManifest.v1",
+  "scope": "REAL_BROWSER_SOURCE_MODULE_CLOSURE",
+  "sourceHead": "6f91bbab99a8b31fc5c5c415c4b097737a0a6a83",
+  "sources": [
+    "lfj/ports/source-browser-worker.mjs",
+    "lfj/ports/committed-worker-query.mjs",
+    "lfj/ports/source-worker-port.mjs",
+    "lfj/source/source-snapshot.mjs",
+    "lfj/transport/lifecycle/lifecycle-session.mjs",
+    "lfj/transport/execution/bounded-source-transfer.mjs",
+    "lfj/query/selection/exact-occurrence-selection.mjs",
+    "lfj/query/pages/committed-selection-pages.mjs",
+    "lfj/index/source-occurrence-index.mjs",
+    "lfj/transport/execution/required-worker.mjs",
+    "lfj/tokenizer/json-tokenizer.mjs",
+    "lfj/storage/browser/indexed-record-store.mjs"
+  ],
+  "workerEntrypoint": "lfj/ports/source-browser-worker.mjs",
+  "coordinator": "lfj/ports/committed-worker-query.mjs",
+  "resolverWired": false,
+  "persistentStoreWired": false,
+  "engineeringReady": false,
+  "reason": "12 exact runtime module mirrors verified, but actual Resolver UI bootstrap and large-file acceptance remain NOT_WIRED"
+}

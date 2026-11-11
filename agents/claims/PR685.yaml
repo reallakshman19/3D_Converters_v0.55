@@ -1,0 +1,26 @@
+schema: AgentClaim.v1
+pr_or_wip: PR685
+pull_request: 685
+claim_state: ACTIVE
+branch: agent/hp-product-bulk-full-app-qualification
+authority_domains:
+  - HP_PIPING_CLASS_BROWSER_QUALIFICATION
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - package.json
+    - scripts/validate-hp-piping-class-product-matrix-browser.mjs
+    - tests/hp-piping-class-product-matrix-browser-script.test.mjs
+    - agents/PR685_workreport.md
+    - agents/status/PR685.yaml
+    - agents/claims/PR685.yaml
+exclusions:
+  - HP engineering equations and coefficients
+  - native KD320 implementation or qualification
+  - Code/source/evidence authority
+  - HP product calculation kernels
+  - design authority
+  - PR681 base browser runner implementation
+release_condition: EXPLICIT_OWNER_MERGE_AUTHORIZATION_AFTER_RECONCILIATION

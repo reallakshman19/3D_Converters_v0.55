@@ -1,0 +1,115 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 1000 P0 Preview RED / source-level browser reproduction</title>
+<main id="fixture"></main><pre id="record">STARTING</pre>
+<script type="module">
+import {xmlCiiRenderPreviewPhase} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js';
+
+const mode = new URLSearchParams(location.search).get('case') || 'scale';
+const expectedMasterCounts = {linelist:385, pipingClass:10699, material:383, weight:1595};
+const events = [], longTasks = [], heartbeatGaps = [];
+let previousBeat = performance.now(), done = false, clickStart = Infinity;
+const timer = setInterval(() => {
+  const now = performance.now();
+  heartbeatGaps.push(Math.max(0, now - previousBeat - 25));
+  previousBeat = now;
+},25);
+addEventListener('unhandledrejection', (event) => {
+  events.push({type:'unhandledrejection',message:String(event.reason?.stack || event.reason)});
+  event.preventDefault(); // Record the product rejection, do not let the harness itself crash.
+});
+addEventListener('error', (event) => events.push({type:'error',message:String(event.message)}));
+try {
+  new PerformanceObserver(list => longTasks.push(...list.getEntries()
+      .filter(x => x.startTime >= clickStart).map(x => Number(x.duration.toFixed(2)))))
+    .observe({entryTypes:['longtask']});
+} catch {}
+const finish = (record) => {
+  if (done) return;
+  done = true;clearInterval(timer);
+  const result={schema:'PREVIEW_P0_RED_BROWSER_V1',mode,kind:'PUBLIC_REPO_XML_WITH_SYNTHETIC_OWNER_SCALE_MASTERS',
+    masterCounts:expectedMasterCounts,events,
+    longestLongTaskMs:Math.max(0,...longTasks),longTaskCount:longTasks.length,
+    maxHeartbeatGapMs:Math.max(0,...heartbeatGaps),...record};
+  document.querySelector('#record').textContent=JSON.stringify(result,null,2);
+  globalThis.__PREVIEW_P0_RED_RESULT__=result;
+};
+try {
+  localStorage.clear();
+  const response=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml');
+  if(!response.ok) throw Error('Public benchmark missing: '+response.status);
+  const xml=await response.text();
+  const parsed=new DOMParser().parseFromString(xml,'application/xml');
+  if(parsed.getElementsByTagName('parsererror').length) throw Error('Public XML invalid');
+  const expectedBranches=parsed.getElementsByTagName('Branch').length;
+  const expectedNodes=parsed.getElementsByTagName('Node').length;
+  if(!expectedBranches) throw Error('Benchmark contains no branches');
+  const config={
+    linelist:{masterRows:Array.from({length:385},(_,i)=>({
+      Service:'SYS','Line Number':String(200000+i),
+      'Piping Class':'P'+String(i%40).padStart(2,'0'),Rating:'150',
+      Material:'A106-B',DN:String(50+(i%10)*25),
+    })),fieldMap:{lineKey1:'Service',lineKey2:'Line Number',
+      lineSeqNo:'Line Number',pipingClass:'Piping Class',rating:'Rating',material:'Material',convertedBore:'DN'}},
+    pipingClass:{masterRows:Array.from({length:10699},(_,i)=>({
+      pipingClass:'P'+String(i%40).padStart(2,'0'),
+      convertedBore:50+(i%10)*25,componentType:'PIPE',
+      rating:'150',materialName:'A106-B',schedule:'40',wallThickness:6+(i%3),corrosion:1.5,
+    })),fieldMap:{}},
+    material:{mapRows:Array.from({length:383},(_,i)=>({code:String(1000+i),material:'A106-B'}))},
+    weight:{masterRows:Array.from({length:1595},(_,i)=>({
+      componentType:'VALV',bore:50+(i%10)*25,rating:'150',length:100+(i%8),weight:10+i/10,
+    }))},
+    overrides:{},
+  };
+  const masterCounts={linelist:config.linelist.masterRows.length,pipingClass:config.pipingClass.masterRows.length,
+    material:config.material.mapRows.length,weight:config.weight.masterRows.length};
+  const fixture=document.querySelector('#fixture');
+  fixture.innerHTML=xmlCiiRenderPreviewPhase(new File([xml],'public-sys001.xml'),config);
+  const host=fixture.querySelector('#mc-preview-table-host');
+  if(!host?.querySelector('[data-mc-preview-build]')) throw Error('Real 4 Preview button missing');
+  let starts=0, resolvedMs=null;
+  const resolveStagedJsonText=()=> {
+    resolvedMs=performance.now()-starts;
+    if(mode==='reject') return Promise.reject(new Error('P0_STAGED_SOURCE_REJECTED_SENTINEL'));
+    return '';
+  };
+  // Use the REAL Build Preview button. Simulate rejected staged-source supplier
+  // without replacing or mocking the production click handler.
+  const options={resolveStagedJsonText,onSaveConfig(){},
+    ensureOverrides(c){return c.overrides},openOverridePopup(){}};
+  // The button handler is bound only after calling the normal phase adapter.
+  const renderer=await import('../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js');
+  await renderer.xmlCiiBuildAndRenderPreview(fixture,xml,config,options); // idle only, no computation
+  const button=host.querySelector('[data-mc-preview-build]');
+  if(!button) throw Error('Preview button disappeared before the click');
+  // Profiler is armed from Playwright after imports/setup; measure only the click.
+  globalThis.__PREVIEW_P0_READY__=true;
+  await new Promise(resolve=>{ globalThis.__PREVIEW_P0_TRIGGER__=resolve; });
+  heartbeatGaps.length=0;longTasks.length=0;
+  starts=performance.now();clickStart=starts;previousBeat=starts;
+  button.click();
+  const timeoutMs=mode==='reject'?1000:90000;
+  const deadline=performance.now()+timeoutMs;
+  const poll=()=>{
+    const preview=host.__xmlCiiPreviewResult;
+    // Terminal output must be distinguished from actual selected coverage.
+    const rendered=Boolean(host.querySelector('.bulk-map-container-host'));
+    const completed=Boolean(preview?.branchRows?.length && rendered);
+    if(completed || performance.now()>deadline){
+      const spinner=host.textContent.includes('Building preview...');
+      const status=completed?'COMPLETED':(spinner?'SPINNER_STUCK':'FAILED_NOT_CLASSIFIED');
+      const observedBranches=preview?.branchRows?.length||0;
+      finish({status,productResponsive:status==='COMPLETED',
+        observedBranches,expectedBranches,expectedNodes,
+        fullSelectedBranchesPreserved:completed && observedBranches===expectedBranches,
+        stagedResolveEnteredMs:resolvedMs,elapsedMs:Number((performance.now()-starts).toFixed(2)),
+        spinner,visibleError:Boolean(host.querySelector('[role="alert"],[data-preview-error]')),
+        domChildren:host.querySelectorAll('*').length,
+        javascriptHeapBytes:performance.memory?.usedJSHeapSize??null,
+      });
+    }else setTimeout(poll,50);
+  };
+  setTimeout(poll,50);
+}catch(error){finish({status:'HARNESS_OR_PRODUCT_THROW',error:String(error?.stack||error)})}
+</script>

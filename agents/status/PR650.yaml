@@ -1,0 +1,34 @@
+schema: AgentStatus.v1
+pr: 650
+repository: reallaksh19/3D_Converters
+branch: agent/hp-kd320-four-record-intake-r2
+base: main
+base_sha: 989b24f361ad287a0c0f25f267a118338bf2ed7a
+criticality: ENGINEERING_CRITICAL
+intent: IMPLEMENT
+state: OPEN_DRAFT_HANDOVER_READY
+coordination: COORDINATION_REQUIRED_PR649_NON_OVERLAPPING_HUNK
+authority:
+  native_core_kd3_qualified: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+  automatic_promotion_allowed: false
+  merge_authority: OWNER_ONLY_NOT_GRANTED
+validation:
+  js_syntax: PASS_LOCAL_EXECUTION
+  focused_transport_harness: PASS_16_OF_16_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED
+  changed_file_reconciliation: PASS_12_OF_12_GITHUB_DIFF_INSPECTION
+  mergeability: PASS_AT_PRE_RECOVERY_HEAD
+  reviews: ZERO_AT_PRE_RECOVERY_HEAD
+  review_threads: ZERO_AT_PRE_RECOVERY_HEAD
+  full_repository_native_tests: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN
+  commit_statuses: ZERO_NOT_RUN_AT_PRE_RECOVERY_HEAD
+  pr_workflow_runs: ZERO_NOT_RUN_AT_PRE_RECOVERY_HEAD
+coordination_detail:
+  pr: 649
+  shared_file: tabs/engineering-workspace-tab.js
+  classification: COORDINATED_NON_OVERLAPPING_CACHE_HUNKS
+  required_before_second_merge: reground_and_preserve_both_cache_identities
+exact_next_action: leave draft unmerged; before merge reground main and PR649 then refresh all validation surfaces and obtain owner authorization

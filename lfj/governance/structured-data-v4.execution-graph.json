@@ -1,0 +1,2555 @@
+{
+  "schema": "relay-v3.2-delp-execution-graph",
+  "programme": {
+    "root": "reallaksh19/3D_Converters#1042",
+    "base_ref": "main",
+    "total_weight": 130,
+    "acceptance_claims": [
+      {
+        "id": "C1_ROOT",
+        "weight": 9,
+        "kind": "SEMANTIC",
+        "claim": "Every supported staged root from all three adopter repositories is recognized by an explicit versioned profile with its source envelope preserved and disallowed ambiguities rejected."
+      },
+      {
+        "id": "C1_OWNER",
+        "weight": 7,
+        "kind": "SEMANTIC",
+        "claim": "Parent Site and Zone facts do not change when a descendant has unrelated local attributes."
+      },
+      {
+        "id": "C2_CUSTODY",
+        "weight": 6,
+        "kind": "SEMANTIC",
+        "claim": "Each loaded input retains all original bytes and immutable identity even when an interior edit preserves length."
+      },
+      {
+        "id": "C2_TOKENS",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Every syntactic token is recognized across bounded input chunks without accepting malformed or partial documents."
+      },
+      {
+        "id": "C2_INDEX",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Every ordered source occurrence has a distinct revision-bound path and truthful ancestry and raw-byte span."
+      },
+      {
+        "id": "C3_ISOLATION",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Large jobs do not silently occupy the foreground and their queue pressure remains bounded."
+      },
+      {
+        "id": "C3_LIFECYCLE",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Cancelled or superseded jobs never publish acceptable results and abandoned jobs release resources."
+      },
+      {
+        "id": "C3_SELECT",
+        "weight": 4,
+        "kind": "SEMANTIC",
+        "claim": "Source scopes include exactly intended occurrences and exclude every forbidden descendant."
+      },
+      {
+        "id": "C3_PAGE",
+        "weight": 4,
+        "kind": "SEMANTIC",
+        "claim": "All selected occurrences remain reachable through bounded pages without changing source custody or accepting old cursors."
+      },
+      {
+        "id": "C5_PORTS",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Two supported local execution environments yield identical source identities and scope results."
+      },
+      {
+        "id": "C5_REMOTE",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Authorized remote operations agree with local source meaning while forged or exhausted access is rejected."
+      },
+      {
+        "id": "C4_RES_SCOPE",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "3D Resolver scope choices reflect exact source ownership and remain responsive with large sources."
+      },
+      {
+        "id": "C6_RES_SCOPE",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "3D Resolver scope choices reflect exact source ownership and remain responsive with large sources."
+      },
+      {
+        "id": "C4_RES_TRACE",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "Resolver emits all intended XML-CII DTXR POS and PS records with original engineering authority."
+      },
+      {
+        "id": "C6_RES_TRACE",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "Resolver emits all intended XML-CII DTXR POS and PS records with original engineering authority."
+      },
+      {
+        "id": "C4_ENR_INTAKE",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "Enrichment receives exactly intended source branches without hidden clipping or unsupported envelope coercion."
+      },
+      {
+        "id": "C6_ENR_INTAKE",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "Enrichment receives exactly intended source branches without hidden clipping or unsupported envelope coercion."
+      },
+      {
+        "id": "C4_ENR_OUTPUT",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "Enriched staged output and XML retain original occurrences and unchanged geometry material and topology authority."
+      },
+      {
+        "id": "C6_ENR_OUTPUT",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "Enriched staged output and XML retain original occurrences and unchanged geometry material and topology authority."
+      },
+      {
+        "id": "C4_XCU_INTAKE",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "XCU Draft loads full original sources with strict revision custody and no unsafe foreground fallback."
+      },
+      {
+        "id": "C6_XCU_INTAKE",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "XCU Draft loads full original sources with strict revision custody and no unsafe foreground fallback."
+      },
+      {
+        "id": "C4_XCU_OUTPUT",
+        "weight": 3,
+        "kind": "SEMANTIC",
+        "claim": "XCU Draft emits all original untouched source and topology with only reviewed scoped edits applied."
+      },
+      {
+        "id": "C6_XCU_OUTPUT",
+        "weight": 2,
+        "kind": "SEMANTIC",
+        "claim": "XCU Draft emits all original untouched source and topology with only reviewed scoped edits applied."
+      },
+      {
+        "id": "G1_RELEASE",
+        "weight": 10,
+        "kind": "DELIVERY_GATE",
+        "claim": "Independent acceptance requires real populated large sources and correct engineering outputs from all three JSON adopter repositories before JSON release."
+      },
+      {
+        "id": "C7_MARKUP",
+        "weight": 8,
+        "kind": "SEMANTIC",
+        "claim": "The managed JSON viewer keeps its exact converter, unit and engineering rights while large-source inspection remains usable and existing RVM and ATT results stay correct."
+      },
+      {
+        "id": "C8_GLB",
+        "weight": 4,
+        "kind": "SEMANTIC",
+        "claim": "A binary GLB asset retains all original bytes with accurate versioned chunk offsets and rejects malformed chunk boundaries."
+      },
+      {
+        "id": "C8_GLTF",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Structured glTF and GLB asset metadata preserves node identities, references, extensions and bounds without inventing missing geometry."
+      },
+      {
+        "id": "C9_FBX",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "Accepted existing FBX source-graph occurrences, connections and transforms can be viewed under common source custody without losing parser authority."
+      },
+      {
+        "id": "C10_ASSET_QUERY",
+        "weight": 5,
+        "kind": "SEMANTIC",
+        "claim": "GLB and FBX structural selections remain complete, bounded and cancellable while binary geometry is left opaque until explicitly requested."
+      },
+      {
+        "id": "G2_ASSET_ACCEPTANCE",
+        "weight": 3,
+        "kind": "DELIVERY_GATE",
+        "claim": "Independent accepted asset sources prove correct binary boundaries, source-graph meaning and bounded usage before binary structural support is released."
+      }
+    ],
+    "decomposition_policy": {
+      "mode": "ENFORCED",
+      "claim_first": {
+        "mode": "ENFORCED",
+        "require_independence_basis": true
+      }
+    },
+    "decomposition_proposal": {
+      "version": "V2",
+      "responsibilities": [
+        {
+          "id": "R01",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C1_ROOT"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C1_ROOT",
+              "weight": 9
+            }
+          ],
+          "outcome": "Every supported staged root from all three adopter repositories is recognized by an explicit versioned profile with its source envelope preserved and disallowed ambiguities rejected.",
+          "independence_basis": "Independent source and expected format matrices from 3D_Converters, XML_Compare_Utilities and 3DMarkupTool can independently accept or reject every format/capability pair.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Root families used by all three repositories are distinguished without guesswork",
+              "verify": "Independent array, hierarchy, objects, branches and typed-single root cases from all three repos"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Declared producer and converter rights govern allowed uses",
+              "verify": "Independent schema, profile, converterSchema, units and capability decision table"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Outer source facts survive recognition and contradictory hints are refused",
+              "verify": "Byte-preserving envelope and dual-key ambiguity negative oracles"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Each source variant receives correct read, view, edit and export permissions",
+              "verify": "Three-repository compatibility and negative permissions matrix"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/contracts/profiles/"
+          ],
+          "acceptance_methods": [
+            "Independent array, hierarchy, objects, branches, single and dual-envelope matrix",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [],
+          "parallel_ok": []
+        },
+        {
+          "id": "R02",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C1_OWNER"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C1_OWNER",
+              "weight": 7
+            }
+          ],
+          "outcome": "Parent Site and Zone facts do not change when a descendant has unrelated local attributes.",
+          "independence_basis": "Independent parent/child owner-site/zone fixtures. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Local owner beats descendant values",
+              "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Local owner beats descendant values"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Inheritance follows declared rules",
+              "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Inheritance follows declared rules"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Conflicting owner rights are diagnosed",
+              "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Conflicting owner rights are diagnosed"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Same-name siblings remain distinct",
+              "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Same-name siblings remain distinct"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/adapters/ownership/"
+          ],
+          "acceptance_methods": [
+            "Independent parent/child owner-site/zone fixtures",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R01"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R03",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C2_CUSTODY"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C2_CUSTODY",
+              "weight": 6
+            }
+          ],
+          "outcome": "Each loaded input retains all original bytes and immutable identity even when an interior edit preserves length.",
+          "independence_basis": "Independent SHA256 and changed-interior byte oracle. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Original bytes are fully represented",
+              "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Original bytes are fully represented"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unicode source offsets remain truthful",
+              "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Unicode source offsets remain truthful"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Interior edits revoke stale identity",
+              "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Interior edits revoke stale identity"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Incomplete intake is rejected",
+              "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Incomplete intake is rejected"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/source/"
+          ],
+          "acceptance_methods": [
+            "Independent SHA256 and changed-interior byte oracle",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R01"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R04",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C2_TOKENS"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C2_TOKENS",
+              "weight": 5
+            }
+          ],
+          "outcome": "Every syntactic token is recognized across bounded input chunks without accepting malformed or partial documents.",
+          "independence_basis": "Independent escaped-string, multibyte, malformed and deep nesting corpus. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Split escaped strings stay intact",
+              "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Split escaped strings stay intact"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Split Unicode characters stay intact",
+              "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Split Unicode characters stay intact"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Malformed tokens reject explicitly",
+              "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Malformed tokens reject explicitly"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Excessive depth and scalars fail safely",
+              "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Excessive depth and scalars fail safely"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/tokenizer/"
+          ],
+          "acceptance_methods": [
+            "Independent escaped-string, multibyte, malformed and deep nesting corpus",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R03"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R05",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C2_INDEX"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C2_INDEX",
+              "weight": 5
+            }
+          ],
+          "outcome": "Every ordered source occurrence has a distinct revision-bound path and truthful ancestry and raw-byte span.",
+          "independence_basis": "Independent recursive source occurrence and span census. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "All descendants are represented",
+              "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: All descendants are represented"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Identical names retain distinct identity",
+              "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Identical names retain distinct identity"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Parent and span relationships are exact",
+              "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Parent and span relationships are exact"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Source mismatch invalidates indexed facts",
+              "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Source mismatch invalidates indexed facts"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/index/"
+          ],
+          "acceptance_methods": [
+            "Independent recursive source occurrence and span census",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R02",
+            "R04"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R06",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C3_ISOLATION"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C3_ISOLATION",
+              "weight": 5
+            }
+          ],
+          "outcome": "Large jobs do not silently occupy the foreground and their queue pressure remains bounded.",
+          "independence_basis": "Explicit no-worker fallback, transfer-pressure and source-progress negatives. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Large work never runs inline unexpectedly",
+              "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Large work never runs inline unexpectedly"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Transfer memory stays bounded",
+              "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Transfer memory stays bounded"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Progress follows consumed source bytes",
+              "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Progress follows consumed source bytes"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unavailable execution support fails closed",
+              "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Unavailable execution support fails closed"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/transport/execution/"
+          ],
+          "acceptance_methods": [
+            "Explicit no-worker fallback, transfer-pressure and source-progress negatives",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R05"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R07",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C3_LIFECYCLE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C3_LIFECYCLE",
+              "weight": 5
+            }
+          ],
+          "outcome": "Cancelled or superseded jobs never publish acceptable results and abandoned jobs release resources.",
+          "independence_basis": "Independent cancel/crash/stale-revision fault cases. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Cancelled work has a terminal outcome",
+              "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Cancelled work has a terminal outcome"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Crashes cannot produce partial success",
+              "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Crashes cannot produce partial success"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Old revisions cannot publish outputs",
+              "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Old revisions cannot publish outputs"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Retries never reuse old selections",
+              "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Retries never reuse old selections"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/transport/lifecycle/"
+          ],
+          "acceptance_methods": [
+            "Independent cancel/crash/stale-revision fault cases",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R06"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R08",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C3_SELECT"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C3_SELECT",
+              "weight": 4
+            }
+          ],
+          "outcome": "Source scopes include exactly intended occurrences and exclude every forbidden descendant.",
+          "independence_basis": "Independent complete selection oracle with repeated names. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Explicit includes select exact occurrences",
+              "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Explicit includes select exact occurrences"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Nested exclusions have declared priority",
+              "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Nested exclusions have declared priority"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Repeated names never merge selection",
+              "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Repeated names never merge selection"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Incompatible scope is rejected",
+              "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Incompatible scope is rejected"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/query/selection/"
+          ],
+          "acceptance_methods": [
+            "Independent complete selection oracle with repeated names",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R05",
+            "R07"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R09",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C3_PAGE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C3_PAGE",
+              "weight": 4
+            }
+          ],
+          "outcome": "All selected occurrences remain reachable through bounded pages without changing source custody or accepting old cursors.",
+          "independence_basis": "Independent one-row page union and stale-cursor checks. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Every page stays within row cap",
+              "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Every page stays within row cap"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Page union equals complete selection",
+              "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Page union equals complete selection"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Page order is deterministic",
+              "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Page order is deterministic"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Replaced source invalidates previous cursors",
+              "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Replaced source invalidates previous cursors"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/query/pages/"
+          ],
+          "acceptance_methods": [
+            "Independent one-row page union and stale-cursor checks",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R08"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R10",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C5_PORTS"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C5_PORTS",
+              "weight": 5
+            }
+          ],
+          "outcome": "Two supported local execution environments yield identical source identities and scope results.",
+          "independence_basis": "Independent cross-runtime source/hash/results expectations. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Inputs yield identical digests",
+              "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Inputs yield identical digests"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Nested occurrences match exactly",
+              "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Nested occurrences match exactly"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Ordered pages match exactly",
+              "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Ordered pages match exactly"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unsupported capabilities are explicit",
+              "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Unsupported capabilities are explicit"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/ports/"
+          ],
+          "acceptance_methods": [
+            "Independent cross-runtime source/hash/results expectations",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R06",
+            "R09"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R11",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C5_REMOTE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C5_REMOTE",
+              "weight": 5
+            }
+          ],
+          "outcome": "Authorized remote operations agree with local source meaning while forged or exhausted access is rejected.",
+          "independence_basis": "Tenant/permission/replay/TTL attack oracle against real isolated transport. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Tenant data remains isolated",
+              "verify": "Independent oracle: Tenant/permission/replay/TTL attack oracle against real isolated transport; outcome: Tenant data remains isolated"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Remote output is bound to source revision",
+              "verify": "Independent oracle: Tenant/permission/replay/TTL attack oracle against real isolated transport; outcome: Remote output is bound to source revision"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Retries and expiry have deterministic effects",
+              "verify": "Independent oracle: Tenant/permission/replay/TTL attack oracle against real isolated transport; outcome: Retries and expiry have deterministic effects"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Requests beyond quota fail safely",
+              "verify": "Independent oracle: Tenant/permission/replay/TTL attack oracle against real isolated transport; outcome: Requests beyond quota fail safely"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/api-port/"
+          ],
+          "acceptance_methods": [
+            "Tenant/permission/replay/TTL attack oracle against real isolated transport",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R10"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R12",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_RES_SCOPE",
+            "C6_RES_SCOPE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_RES_SCOPE",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_RES_SCOPE",
+              "weight": 2
+            }
+          ],
+          "outcome": "3D Resolver scope choices reflect exact source ownership and remain responsive with large sources.",
+          "independence_basis": "Existing J01 child-owner and equal-length cache RED oracles. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Ancestor ownership is correct",
+              "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Ancestor ownership is correct"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "A scope retains exact source identity",
+              "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: A scope retains exact source identity"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Source replacement invalidates cached scopes",
+              "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Source replacement invalidates cached scopes"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Row limits do not limit source selection",
+              "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Row limits do not limit source selection"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "tabs/xml-cii-2019-standalone/xml-cii-json-hierarchy-scope.js",
+            "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-resolver-scope.js"
+          ],
+          "acceptance_methods": [
+            "Existing J01 child-owner and equal-length cache RED oracles",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R09",
+            "R10"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R13",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_RES_TRACE",
+            "C6_RES_TRACE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_RES_TRACE",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_RES_TRACE",
+              "weight": 2
+            }
+          ],
+          "outcome": "Resolver emits all intended XML-CII DTXR POS and PS records with original engineering authority.",
+          "independence_basis": "Independent input XML and expected trace/CII outputs. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Full and scoped output facts agree",
+              "verify": "Independent oracle: Independent input XML and expected trace/CII outputs; outcome: Full and scoped output facts agree"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Every required occurrence is retained",
+              "verify": "Independent oracle: Independent input XML and expected trace/CII outputs; outcome: Every required occurrence is retained"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "CII and rating source authority persists",
+              "verify": "Independent oracle: Independent input XML and expected trace/CII outputs; outcome: CII and rating source authority persists"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Superseded trace cannot overwrite a later source",
+              "verify": "Independent oracle: Independent input XML and expected trace/CII outputs; outcome: Superseded trace cannot overwrite a later source"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "tabs/xml-cii-2019-standalone/xml-cii-resolver-json-trace.js",
+            "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-events.js"
+          ],
+          "acceptance_methods": [
+            "Independent input XML and expected trace/CII outputs",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R12"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R14",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_ENR_INTAKE",
+            "C6_ENR_INTAKE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_ENR_INTAKE",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_ENR_INTAKE",
+              "weight": 2
+            }
+          ],
+          "outcome": "Enrichment receives exactly intended source branches without hidden clipping or unsupported envelope coercion.",
+          "independence_basis": "Independent staged shapes and 1885 authored-vs-generated fixture classification. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Array and objects roots retain all branches",
+              "verify": "Independent oracle: Independent staged shapes and 1885 authored-vs-generated fixture classification; outcome: Array and objects roots retain all branches"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Scoped descendants are complete",
+              "verify": "Independent oracle: Independent staged shapes and 1885 authored-vs-generated fixture classification; outcome: Scoped descendants are complete"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unsupported roots fail explicitly",
+              "verify": "Independent oracle: Independent staged shapes and 1885 authored-vs-generated fixture classification; outcome: Unsupported roots fail explicitly"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Large source intake can be interrupted",
+              "verify": "Independent oracle: Independent staged shapes and 1885 authored-vs-generated fixture classification; outcome: Large source intake can be interrupted"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "tabs/stagedjson-to-enrichxml/sj-parser.js",
+            "tabs/stagedjson-to-enrichxml/sj-app.js"
+          ],
+          "acceptance_methods": [
+            "Independent staged shapes and 1885 authored-vs-generated fixture classification",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R09",
+            "R10"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R15",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_ENR_OUTPUT",
+            "C6_ENR_OUTPUT"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_ENR_OUTPUT",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_ENR_OUTPUT",
+              "weight": 2
+            }
+          ],
+          "outcome": "Enriched staged output and XML retain original occurrences and unchanged geometry material and topology authority.",
+          "independence_basis": "Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Full source results conserve all occurrences",
+              "verify": "Independent oracle: Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only; outcome: Full source results conserve all occurrences"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unrecognized source facts remain visible",
+              "verify": "Independent oracle: Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only; outcome: Unrecognized source facts remain visible"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Original engineering fields remain unchanged",
+              "verify": "Independent oracle: Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only; outcome: Original engineering fields remain unchanged"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Edited output identifies untouched source",
+              "verify": "Independent oracle: Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only; outcome: Edited output identifies untouched source"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "tabs/stagedjson-to-enrichxml/sj-enrichment-engine.js",
+            "tabs/stagedjson-to-enrichxml/sj-export.js",
+            "tabs/xml-cii-2019-standalone/stagedjson-enrichment/"
+          ],
+          "acceptance_methods": [
+            "Independent engineering output/CSV/audit oracle; generated 1885 remains custody-only",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R14"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R16",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_XCU_INTAKE",
+            "C6_XCU_INTAKE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_XCU_INTAKE",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_XCU_INTAKE",
+              "weight": 2
+            }
+          ],
+          "outcome": "XCU Draft loads full original sources with strict revision custody and no unsafe foreground fallback.",
+          "independence_basis": "Original XCU staged client inline-fallback counterexample plus source census. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Every occurrence has a valid origin",
+              "verify": "Independent oracle: Original XCU staged client inline-fallback counterexample plus source census; outcome: Every occurrence has a valid origin"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Large source intake stays nonblocking",
+              "verify": "Independent oracle: Original XCU staged client inline-fallback counterexample plus source census; outcome: Large source intake stays nonblocking"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Workers cannot silently become inline parse",
+              "verify": "Independent oracle: Original XCU staged client inline-fallback counterexample plus source census; outcome: Workers cannot silently become inline parse"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Failed or stale loads never count as complete",
+              "verify": "Independent oracle: Original XCU staged client inline-fallback counterexample plus source census; outcome: Failed or stale loads never count as complete"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "workbench3d/workers/staged-json-worker.js",
+            "workbench3d/workers/staged-json-worker-client.js",
+            "tabs/topology-trace-validator/topology-staged-load-flow.js"
+          ],
+          "acceptance_methods": [
+            "Original XCU staged client inline-fallback counterexample plus source census",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R09",
+            "R10"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R17",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C4_XCU_OUTPUT",
+            "C6_XCU_OUTPUT"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C4_XCU_OUTPUT",
+              "weight": 3
+            },
+            {
+              "claim_id": "C6_XCU_OUTPUT",
+              "weight": 2
+            }
+          ],
+          "outcome": "XCU Draft emits all original untouched source and topology with only reviewed scoped edits applied.",
+          "independence_basis": "Independent full before/after source and topology comparison. This responsibility has independently rejectable outputs and negative cases.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Edits require matching original facts",
+              "verify": "Independent oracle: Independent full before/after source and topology comparison; outcome: Edits require matching original facts"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Untouched source occurrences remain present",
+              "verify": "Independent oracle: Independent full before/after source and topology comparison; outcome: Untouched source occurrences remain present"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Revisions support reversible review decisions",
+              "verify": "Independent oracle: Independent full before/after source and topology comparison; outcome: Revisions support reversible review decisions"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Full output preserves attachments and geometry",
+              "verify": "Independent oracle: Independent full before/after source and topology comparison; outcome: Full output preserves attachments and geometry"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "tabs/topology-trace-validator/topology-staged-export.js",
+            "tabs/topology-trace-validator/topology-attribute-edit-ledger.js",
+            "workbench3d/core/staged-json-core.js"
+          ],
+          "acceptance_methods": [
+            "Independent full before/after source and topology comparison",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R16"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R18",
+          "work_class": "GATE",
+          "owns_claims": [
+            "G1_RELEASE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "G1_RELEASE",
+              "weight": 10
+            }
+          ],
+          "outcome": "Independent acceptance requires real populated large sources and correct engineering outputs from all three JSON adopter repositories before JSON release.",
+          "independence_basis": "An independent reviewer can separately veto the JSON release by checking original source hashes, genuinely independent golden results and reproducible interaction measurements from all three adopters.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Real input and golden output custody is attested",
+              "verify": "Independent oracle: Custodian-signed source/golden hashes and repeatable measured device negative acceptance; outcome: Real input and golden output custody is attested"
+            },
+            {
+              "id": "U02",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Actual populated large sources meet approved limits",
+              "verify": "Independent oracle: Custodian-signed source/golden hashes and repeatable measured device negative acceptance; outcome: Actual populated large sources meet approved limits"
+            },
+            {
+              "id": "U03",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "All three adopting repository outputs match independently approved engineering facts",
+              "verify": "Independent source-to-output check including markup RVM and ATT along with XCU Draft and 3D Converters outputs"
+            },
+            {
+              "id": "U04",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Unauthorized and crashed requests remain rejected",
+              "verify": "Independent oracle: Custodian-signed source/golden hashes and repeatable measured device negative acceptance; outcome: Unauthorized and crashed requests remain rejected"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/acceptance/json/"
+          ],
+          "acceptance_methods": [
+            "Custodian-signed source/golden hashes and repeatable measured device negative acceptance",
+            "Independent RED before GREEN on exact source",
+            "Exact head self-review and source/docs parity",
+            "Relevant failure, latency and memory metrics"
+          ],
+          "depends_on": [
+            "R11",
+            "R13",
+            "R15",
+            "R17",
+            "R19"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R19",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C7_MARKUP"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C7_MARKUP",
+              "weight": 8
+            }
+          ],
+          "outcome": "The managed JSON viewer keeps its exact converter, unit and engineering rights while large-source inspection remains usable and existing RVM and ATT results stay correct.",
+          "independence_basis": "Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Viewer recognizes its actual managed source profile without guessing",
+              "verify": "External acceptance oracle: Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases; verify viewer recognizes its actual managed source profile without guessing"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Rich-topology and converter rights remain unchanged",
+              "verify": "External acceptance oracle: Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases; verify rich-topology and converter rights remain unchanged"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Large source selection remains usable without stale results",
+              "verify": "External acceptance oracle: Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases; verify large source selection remains usable without stale results"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Existing authoritative RVM and ATT outputs retain accepted facts",
+              "verify": "External acceptance oracle: Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases; verify existing authoritative rvm and att outputs retain accepted facts"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "src/managed-stage-json-ui-controller.js",
+            "src/source-parser.js",
+            "src/managed-stage-profile-parser.js",
+            "tests/lfj/managed-stage/"
+          ],
+          "acceptance_methods": [
+            "Owner-real BM_CII staged input and independent RVM and ATT source-output oracles with negative profile and unit cases",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R01",
+            "R09",
+            "R10"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R20",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C8_GLB"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C8_GLB",
+              "weight": 4
+            }
+          ],
+          "outcome": "A binary GLB asset retains all original bytes with accurate versioned chunk offsets and rejects malformed chunk boundaries.",
+          "independence_basis": "Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "GLB header and declared length match exact bytes",
+              "verify": "External acceptance oracle: Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes; verify glb header and declared length match exact bytes"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "JSON chunk location and alignment are exact",
+              "verify": "External acceptance oracle: Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes; verify json chunk location and alignment are exact"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "BIN payload and unrecognized chunks are retained untouched",
+              "verify": "External acceptance oracle: Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes; verify bin payload and unrecognized chunks are retained untouched"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Truncated or malformed chunk boundaries are explicitly rejected",
+              "verify": "External acceptance oracle: Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes; verify truncated or malformed chunk boundaries are explicitly rejected"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/formats/glb/chunks/"
+          ],
+          "acceptance_methods": [
+            "Independently generated valid and corrupt GLB 2.0 chunk corpus with retained-byte hashes",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R03",
+            "R04",
+            "R06"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R21",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C8_GLTF"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C8_GLTF",
+              "weight": 5
+            }
+          ],
+          "outcome": "Structured glTF and GLB asset metadata preserves node identities, references, extensions and bounds without inventing missing geometry.",
+          "independence_basis": "Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Scene and node references keep original ordering",
+              "verify": "External acceptance oracle: Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries; verify scene and node references keep original ordering"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Mesh accessor and buffer references stay correctly bounded",
+              "verify": "External acceptance oracle: Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries; verify mesh accessor and buffer references stay correctly bounded"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Required unknown extensions cannot be silently accepted",
+              "verify": "External acceptance oracle: Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries; verify required unknown extensions cannot be silently accepted"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "All original extras and metadata remain addressable",
+              "verify": "External acceptance oracle: Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries; verify all original extras and metadata remain addressable"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/formats/gltf/"
+          ],
+          "acceptance_methods": [
+            "Independent glTF 2.0 reference assets, validator results and malformed accessor/reference adversaries",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R20",
+            "R05",
+            "R09"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R22",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C9_FBX"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C9_FBX",
+              "weight": 5
+            }
+          ],
+          "outcome": "Accepted existing FBX source-graph occurrences, connections and transforms can be viewed under common source custody without losing parser authority.",
+          "independence_basis": "Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Existing FBX object and occurrence identities remain distinct",
+              "verify": "External acceptance oracle: Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative; verify existing fbx object and occurrence identities remain distinct"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Hierarchy and connection edges retain original meaning",
+              "verify": "External acceptance oracle: Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative; verify hierarchy and connection edges retain original meaning"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Transforms, axes and units are never rewritten by the shared engine",
+              "verify": "External acceptance oracle: Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative; verify transforms, axes and units are never rewritten by the shared engine"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Unsupported FBX variants and unresolved items remain explicit",
+              "verify": "External acceptance oracle: Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative; verify unsupported fbx variants and unresolved items remain explicit"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/formats/fbx/bridge/"
+          ],
+          "acceptance_methods": [
+            "Existing governed ufbx and FbxSourceGraph.v2 source/occurrence/transform goldens plus unsupported ASCII negative",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R03",
+            "R06",
+            "R09"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R23",
+          "work_class": "PRODUCT",
+          "owns_claims": [
+            "C10_ASSET_QUERY"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "C10_ASSET_QUERY",
+              "weight": 5
+            }
+          ],
+          "outcome": "GLB and FBX structural selections remain complete, bounded and cancellable while binary geometry is left opaque until explicitly requested.",
+          "independence_basis": "Independent full scene-graph census, one-row page union and cancel/replace large-binary regression; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Binary scene selection covers every intended occurrence",
+              "verify": "External acceptance oracle: Independent full scene-graph census, one-row page union and cancel/replace large-binary regression; verify binary scene selection covers every intended occurrence"
+            },
+            {
+              "id": "U02",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Metadata pages are bounded without loading every vertex",
+              "verify": "External acceptance oracle: Independent full scene-graph census, one-row page union and cancel/replace large-binary regression; verify metadata pages are bounded without loading every vertex"
+            },
+            {
+              "id": "U03",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Cancelled operations cannot leak selected stale items",
+              "verify": "External acceptance oracle: Independent full scene-graph census, one-row page union and cancel/replace large-binary regression; verify cancelled operations cannot leak selected stale items"
+            },
+            {
+              "id": "U04",
+              "kind": "SEMANTIC",
+              "weight": 25,
+              "outcome": "Replaced original binaries invalidate old identities and cursors",
+              "verify": "External acceptance oracle: Independent full scene-graph census, one-row page union and cancel/replace large-binary regression; verify replaced original binaries invalidate old identities and cursors"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/query/assets/"
+          ],
+          "acceptance_methods": [
+            "Independent full scene-graph census, one-row page union and cancel/replace large-binary regression",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R07",
+            "R09",
+            "R21",
+            "R22"
+          ],
+          "parallel_ok": []
+        },
+        {
+          "id": "R24",
+          "work_class": "GATE",
+          "owns_claims": [
+            "G2_ASSET_ACCEPTANCE"
+          ],
+          "claim_allocations": [
+            {
+              "claim_id": "G2_ASSET_ACCEPTANCE",
+              "weight": 3
+            }
+          ],
+          "outcome": "Independent accepted asset sources prove correct binary boundaries, source-graph meaning and bounded usage before binary structural support is released.",
+          "independence_basis": "Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations; this responsibility can be independently accepted or rejected without assuming sibling success.",
+          "semantic_units": [
+            {
+              "id": "U01",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Original binary source and expected graph custody is independently attested",
+              "verify": "External acceptance oracle: Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations; verify original binary source and expected graph custody is independently attested"
+            },
+            {
+              "id": "U02",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "GLB structural outputs match independent format oracles",
+              "verify": "External acceptance oracle: Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations; verify glb structural outputs match independent format oracles"
+            },
+            {
+              "id": "U03",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "FBX graph projection agrees with existing governed source authority",
+              "verify": "External acceptance oracle: Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations; verify fbx graph projection agrees with existing governed source authority"
+            },
+            {
+              "id": "U04",
+              "kind": "DELIVERY_GATE",
+              "weight": 25,
+              "outcome": "Populated binary assets meet measured approved resource limits",
+              "verify": "External acceptance oracle: Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations; verify populated binary assets meet measured approved resource limits"
+            }
+          ],
+          "size_budget": {
+            "target_loc": 350,
+            "hard_loc": 900,
+            "target_minutes": 15,
+            "hard_minutes": 20
+          },
+          "write_surface": [
+            "lfj/acceptance/binary/"
+          ],
+          "acceptance_methods": [
+            "Independently attested GLB/FBX original bytes, graph reference goldens and real-device resource observations",
+            "Independent RED before GREEN at exact source head",
+            "Source and docs parity with dedicated output manifest",
+            "Negative resource/authority claims and exact-head review"
+          ],
+          "depends_on": [
+            "R20",
+            "R21",
+            "R22",
+            "R23"
+          ],
+          "parallel_ok": []
+        }
+      ],
+      "released_proposal_digest": "sha256:a52f221e3ba736fe2f76c203ce5608b8b8fb612daa067f9d84958ceab8e11c9d",
+      "bindings": [
+        {
+          "responsibility_id": "R01",
+          "ref": "reallaksh19/3D_Converters#1052"
+        },
+        {
+          "responsibility_id": "R03",
+          "ref": "reallaksh19/3D_Converters#1057"
+        },
+        {
+          "responsibility_id": "R04",
+          "ref": "reallaksh19/3D_Converters#1062"
+        },
+        {
+          "responsibility_id": "R02",
+          "ref": "reallaksh19/3D_Converters#1064"
+        },
+        {
+          "responsibility_id": "R05",
+          "ref": "reallaksh19/3D_Converters#1068"
+        },
+        {
+          "responsibility_id": "R06",
+          "ref": "reallaksh19/3D_Converters#1071"
+        },
+        {
+          "responsibility_id": "R07",
+          "ref": "reallaksh19/3D_Converters#1078"
+        },
+        {
+          "responsibility_id": "R08",
+          "ref": "reallaksh19/3D_Converters#1082"
+        },
+        {
+          "responsibility_id": "R09",
+          "ref": "reallaksh19/3D_Converters#1085"
+        },
+        {
+          "responsibility_id": "R10",
+          "ref": "reallaksh19/3D_Converters#1088"
+        },
+        {
+          "responsibility_id": "R12",
+          "ref": "reallaksh19/3D_Converters#1091"
+        }
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "ref": "reallaksh19/3D_Converters#1042",
+      "kind": "ROOT",
+      "reserve_weight": 70
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1052",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 9,
+      "responsibility_id": "R01",
+      "work_class": "PRODUCT",
+      "outcome": "Every supported staged root from all three adopter repositories is recognized by an explicit versioned profile with its source envelope preserved and disallowed ambiguities rejected.",
+      "independence_basis": "Independent source and expected format matrices from 3D_Converters, XML_Compare_Utilities and 3DMarkupTool can independently accept or reject every format/capability pair.",
+      "owns_claims": [
+        "C1_ROOT"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/contracts/profiles/"
+      ],
+      "acceptance_methods": [
+        "Independent array, hierarchy, objects, branches, single and dual-envelope matrix",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "weight": 25,
+          "verify": "Independent array, hierarchy, objects, branches and typed-single root cases from all three repos",
+          "outcome": "Root families used by all three repositories are distinguished without guesswork"
+        },
+        {
+          "id": "U02",
+          "weight": 25,
+          "verify": "Independent schema, profile, converterSchema, units and capability decision table",
+          "outcome": "Declared producer and converter rights govern allowed uses"
+        },
+        {
+          "id": "U03",
+          "weight": 25,
+          "verify": "Byte-preserving envelope and dual-key ambiguity negative oracles",
+          "outcome": "Outer source facts survive recognition and contradictory hints are refused"
+        },
+        {
+          "id": "U04",
+          "weight": 25,
+          "verify": "Three-repository compatibility and negative permissions matrix",
+          "outcome": "Each source variant receives correct read, view, edit and export permissions"
+        }
+      ],
+      "primary_pr": "reallaksh19/3D_Converters#1053",
+      "candidate_ref": "lfj/r01-root-profile-authority"
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1057",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 6,
+      "responsibility_id": "R03",
+      "work_class": "PRODUCT",
+      "outcome": "Each loaded input retains all original bytes and immutable identity even when an interior edit preserves length.",
+      "independence_basis": "Independent SHA256 and changed-interior byte oracle. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C2_CUSTODY"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/source/"
+      ],
+      "acceptance_methods": [
+        "Independent SHA256 and changed-interior byte oracle",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1052"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Original bytes are fully represented",
+          "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Original bytes are fully represented"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Unicode source offsets remain truthful",
+          "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Unicode source offsets remain truthful"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Interior edits revoke stale identity",
+          "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Interior edits revoke stale identity"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Incomplete intake is rejected",
+          "verify": "Independent oracle: Independent SHA256 and changed-interior byte oracle; outcome: Incomplete intake is rejected"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1062",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R04",
+      "work_class": "PRODUCT",
+      "outcome": "Every syntactic token is recognized across bounded input chunks without accepting malformed or partial documents.",
+      "independence_basis": "Independent escaped-string, multibyte, malformed and deep nesting corpus. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C2_TOKENS"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/tokenizer/"
+      ],
+      "acceptance_methods": [
+        "Independent escaped-string, multibyte, malformed and deep nesting corpus",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1057"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Split escaped strings stay intact",
+          "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Split escaped strings stay intact"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Split Unicode characters stay intact",
+          "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Split Unicode characters stay intact"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Malformed tokens reject explicitly",
+          "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Malformed tokens reject explicitly"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Excessive depth and scalars fail safely",
+          "verify": "Independent oracle: Independent escaped-string, multibyte, malformed and deep nesting corpus; outcome: Excessive depth and scalars fail safely"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1064",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 7,
+      "responsibility_id": "R02",
+      "work_class": "PRODUCT",
+      "outcome": "Parent Site and Zone facts do not change when a descendant has unrelated local attributes.",
+      "independence_basis": "Independent parent/child owner-site/zone fixtures. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C1_OWNER"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/adapters/ownership/"
+      ],
+      "acceptance_methods": [
+        "Independent parent/child owner-site/zone fixtures",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1052"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Local owner beats descendant values",
+          "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Local owner beats descendant values"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Inheritance follows declared rules",
+          "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Inheritance follows declared rules"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Conflicting owner rights are diagnosed",
+          "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Conflicting owner rights are diagnosed"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Same-name siblings remain distinct",
+          "verify": "Independent oracle: Independent parent/child owner-site/zone fixtures; outcome: Same-name siblings remain distinct"
+        }
+      ],
+      "primary_pr": "reallaksh19/3D_Converters#1067",
+      "candidate_ref": "lfj/r02-source-ownership"
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1068",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R05",
+      "work_class": "PRODUCT",
+      "outcome": "Every ordered source occurrence has a distinct revision-bound path and truthful ancestry and raw-byte span.",
+      "independence_basis": "Independent recursive source occurrence and span census. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C2_INDEX"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/index/"
+      ],
+      "acceptance_methods": [
+        "Independent recursive source occurrence and span census",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1064",
+        "reallaksh19/3D_Converters#1062"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "All descendants are represented",
+          "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: All descendants are represented"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Identical names retain distinct identity",
+          "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Identical names retain distinct identity"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Parent and span relationships are exact",
+          "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Parent and span relationships are exact"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Source mismatch invalidates indexed facts",
+          "verify": "Independent oracle: Independent recursive source occurrence and span census; outcome: Source mismatch invalidates indexed facts"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1071",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R06",
+      "work_class": "PRODUCT",
+      "outcome": "Large jobs do not silently occupy the foreground and their queue pressure remains bounded.",
+      "independence_basis": "Explicit no-worker fallback, transfer-pressure and source-progress negatives. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C3_ISOLATION"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/transport/execution/"
+      ],
+      "acceptance_methods": [
+        "Explicit no-worker fallback, transfer-pressure and source-progress negatives",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1068"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Large work never runs inline unexpectedly",
+          "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Large work never runs inline unexpectedly"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Transfer memory stays bounded",
+          "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Transfer memory stays bounded"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Progress follows consumed source bytes",
+          "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Progress follows consumed source bytes"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Unavailable execution support fails closed",
+          "verify": "Independent oracle: Explicit no-worker fallback, transfer-pressure and source-progress negatives; outcome: Unavailable execution support fails closed"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1078",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R07",
+      "work_class": "PRODUCT",
+      "outcome": "Cancelled or superseded jobs never publish acceptable results and abandoned jobs release resources.",
+      "independence_basis": "Independent cancel/crash/stale-revision fault cases. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C3_LIFECYCLE"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/transport/lifecycle/"
+      ],
+      "acceptance_methods": [
+        "Independent cancel/crash/stale-revision fault cases",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1071"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Cancelled work has a terminal outcome",
+          "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Cancelled work has a terminal outcome"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Crashes cannot produce partial success",
+          "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Crashes cannot produce partial success"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Old revisions cannot publish outputs",
+          "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Old revisions cannot publish outputs"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Retries never reuse old selections",
+          "verify": "Independent oracle: Independent cancel/crash/stale-revision fault cases; outcome: Retries never reuse old selections"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1082",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 4,
+      "responsibility_id": "R08",
+      "work_class": "PRODUCT",
+      "outcome": "Source scopes include exactly intended occurrences and exclude every forbidden descendant.",
+      "independence_basis": "Independent complete selection oracle with repeated names. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C3_SELECT"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/query/selection/"
+      ],
+      "acceptance_methods": [
+        "Independent complete selection oracle with repeated names",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1068",
+        "reallaksh19/3D_Converters#1078"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Explicit includes select exact occurrences",
+          "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Explicit includes select exact occurrences"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Nested exclusions have declared priority",
+          "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Nested exclusions have declared priority"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Repeated names never merge selection",
+          "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Repeated names never merge selection"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Incompatible scope is rejected",
+          "verify": "Independent oracle: Independent complete selection oracle with repeated names; outcome: Incompatible scope is rejected"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1085",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 4,
+      "responsibility_id": "R09",
+      "work_class": "PRODUCT",
+      "outcome": "All selected occurrences remain reachable through bounded pages without changing source custody or accepting old cursors.",
+      "independence_basis": "Independent one-row page union and stale-cursor checks. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C3_PAGE"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/query/pages/"
+      ],
+      "acceptance_methods": [
+        "Independent one-row page union and stale-cursor checks",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1082"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Every page stays within row cap",
+          "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Every page stays within row cap"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Page union equals complete selection",
+          "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Page union equals complete selection"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Page order is deterministic",
+          "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Page order is deterministic"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Replaced source invalidates previous cursors",
+          "verify": "Independent oracle: Independent one-row page union and stale-cursor checks; outcome: Replaced source invalidates previous cursors"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1088",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R10",
+      "work_class": "PRODUCT",
+      "outcome": "Two supported local execution environments yield identical source identities and scope results.",
+      "independence_basis": "Independent cross-runtime source/hash/results expectations. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C5_PORTS"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "lfj/ports/"
+      ],
+      "acceptance_methods": [
+        "Independent cross-runtime source/hash/results expectations",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1071",
+        "reallaksh19/3D_Converters#1085"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Inputs yield identical digests",
+          "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Inputs yield identical digests"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Nested occurrences match exactly",
+          "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Nested occurrences match exactly"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Ordered pages match exactly",
+          "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Ordered pages match exactly"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Unsupported capabilities are explicit",
+          "verify": "Independent oracle: Independent cross-runtime source/hash/results expectations; outcome: Unsupported capabilities are explicit"
+        }
+      ]
+    },
+    {
+      "ref": "reallaksh19/3D_Converters#1091",
+      "kind": "LEAF",
+      "parent": "reallaksh19/3D_Converters#1042",
+      "weight": 5,
+      "responsibility_id": "R12",
+      "work_class": "PRODUCT",
+      "outcome": "3D Resolver scope choices reflect exact source ownership and remain responsive with large sources.",
+      "independence_basis": "Existing J01 child-owner and equal-length cache RED oracles. This responsibility has independently rejectable outputs and negative cases.",
+      "owns_claims": [
+        "C4_RES_SCOPE",
+        "C6_RES_SCOPE"
+      ],
+      "size_budget": {
+        "target_loc": 350,
+        "hard_loc": 900,
+        "target_minutes": 15,
+        "hard_minutes": 20
+      },
+      "write_surface": [
+        "tabs/xml-cii-2019-standalone/xml-cii-json-hierarchy-scope.js",
+        "tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-resolver-scope.js"
+      ],
+      "acceptance_methods": [
+        "Existing J01 child-owner and equal-length cache RED oracles",
+        "Independent RED before GREEN on exact source",
+        "Exact head self-review and source/docs parity",
+        "Relevant failure, latency and memory metrics"
+      ],
+      "depends_on": [
+        "reallaksh19/3D_Converters#1085",
+        "reallaksh19/3D_Converters#1088"
+      ],
+      "parallel_ok": [],
+      "units": [
+        {
+          "id": "U01",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Ancestor ownership is correct",
+          "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Ancestor ownership is correct"
+        },
+        {
+          "id": "U02",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "A scope retains exact source identity",
+          "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: A scope retains exact source identity"
+        },
+        {
+          "id": "U03",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Source replacement invalidates cached scopes",
+          "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Source replacement invalidates cached scopes"
+        },
+        {
+          "id": "U04",
+          "kind": "SEMANTIC",
+          "weight": 25,
+          "outcome": "Row limits do not limit source selection",
+          "verify": "Independent oracle: Existing J01 child-owner and equal-length cache RED oracles; outcome: Row limits do not limit source selection"
+        }
+      ]
+    }
+  ],
+  "plan_updates": [
+    {
+      "id": "LFJ-V4-SCOPE-EXPANSION",
+      "kind": "SCOPE_EXPANSION",
+      "reason": "Owner-approved upgrade to format-neutral large structured data: add 3DMarkupTool consumer and separately governed GLB glTF FBX ingestion plus asset acceptance, preserving original JSON scope points.",
+      "owner_authorized": true,
+      "owner_basis": "Owner approval in current conversation, 2026-10-08, and issue #1042 Pass-1 freeze approval #6057297345.",
+      "units": [],
+      "nodes": [
+        "reallaksh19/3D_Converters#1042"
+      ]
+    }
+  ]
+}

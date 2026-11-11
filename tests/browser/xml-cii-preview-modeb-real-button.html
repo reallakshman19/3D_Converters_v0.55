@@ -1,0 +1,116 @@
+<!doctype html>
+<meta charset="utf-8"><title>Agent P B3B2-B actual Mode B Build Preview button</title>
+<div id="fixture"></div><pre id="evidence">RUNNING</pre>
+<script type="module">
+import {combineXmlWithNodeOffsets} from '../../converters/xml-cii2019-core/xml-node-offset-combine.js';
+import {xmlCiiRenderPreviewPhase,xmlCiiBuildAndRenderPreview} from
+ '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-renderer.js';
+
+const mode=new URLSearchParams(location.search).get('case')||'positive';
+const ticks=[];let lastTick=performance.now();
+const heartbeat=setInterval(()=>{const now=performance.now();ticks.push(Math.max(0,now-lastTick-25));lastTick=now;},25);
+function finish(x){
+ clearInterval(heartbeat);
+ const result={...x,mode,maxHeartbeatGapMs:Math.max(0,...ticks)};
+ globalThis.__P3B2B_REAL_BUTTON_RESULT__=result;
+ document.querySelector('#evidence').textContent=JSON.stringify(result,null,2);
+}
+async function until(fn,label,ms=75000){
+ const deadline=performance.now()+ms;
+ while(performance.now()<deadline){
+  if(fn())return;
+  await new Promise(r=>setTimeout(r,30));
+ }
+ throw Error('TIMEOUT '+label);
+}
+try{
+ localStorage.clear();
+ const response=await fetch('../../Benchmarks/XML-CII-2019/SYS-001_Single.xml');
+ if(!response.ok)throw Error('No public XML: '+response.status);
+ const rawXml=await response.text();
+ const source=new DOMParser().parseFromString(rawXml,'application/xml');
+ const rawBranches=source.getElementsByTagName('Branch').length;
+ const rawNodes=source.getElementsByTagName('Node').length;
+ if(rawBranches!==9||rawNodes!==541)throw Error('Public XML census changed');
+ const originals=[
+  {sourceId:'SYS-001-A',fileName:'SYS-001-A.xml',xmlText:rawXml},
+  {sourceId:'SYS-001-B',fileName:'SYS-001-B.xml',xmlText:rawXml},
+ ];
+ const combined=combineXmlWithNodeOffsets(originals,{offsetStep:100000});
+ const config={
+  modeBManifest:combined.manifest,sourceMode:'B',
+  linelist:{masterRows:[{Service:'SYS','Line Number':'200000','Piping Class':'P01',Rating:'150',DN:'150'}],
+    fieldMap:{lineKey1:'Service',lineKey2:'Line Number',pipingClass:'Piping Class',rating:'Rating',convertedBore:'DN'}},
+  pipingClass:{masterRows:[{pipingClass:'P01',convertedBore:150,materialName:'A106-B',
+   rating:'150',schedule:'40',wallThickness:6.2}],fieldMap:{}},
+  material:{mapRows:[{material:'A106-B',code:'001'}]},weight:{masterRows:[]},overrides:{},
+ };
+ const opts={
+  previewSourceMode:'B',modeBManifest:combined.manifest,
+  modeBOriginalSources:mode==='missing-originals'?null:originals,
+  resolveStagedJsonText:()=>'',onSaveConfig(){},
+  ensureOverrides:c=>c.overrides,openOverridePopup(){},
+ };
+ const root=document.querySelector('#fixture');
+ root.innerHTML=xmlCiiRenderPreviewPhase(new File([combined.xmlText],'SYS-001-COMBINED'),config);
+ const host=root.querySelector('#mc-preview-table-host');
+ if(!host)throw Error('Actual Preview host missing');
+ const errors=[];addEventListener('unhandledrejection',e=>{errors.push(String(e.reason));e.preventDefault();});
+ await xmlCiiBuildAndRenderPreview(root,combined.xmlText,config,opts);
+ const button=host.querySelector('[data-mc-preview-build]');
+ if(!button)throw Error('Build Preview button missing');
+ if(mode==='wrong-original'){
+  opts.modeBOriginalSources=structuredClone(originals);
+  // Same-length changed original field, not a changed branch count.
+  opts.modeBOriginalSources[1].xmlText=
+   opts.modeBOriginalSources[1].xmlText.replace('<ComponentType>VALV</ComponentType>',
+    '<ComponentType>PIPE</ComponentType>');
+  if(opts.modeBOriginalSources[1].xmlText===originals[1].xmlText)
+    throw Error('Negative fixture did not change any source bytes');
+ }
+ const started=performance.now();button.click();
+ let initialFailureCode=null;
+ if(mode==='missing-originals'){
+  await until(()=>Boolean(host.querySelector('[data-mc-preview-job-retry]')),'recoverable missing originals');
+  initialFailureCode=host.querySelector('[data-mc-preview-job-state] code')?.textContent;
+  if(initialFailureCode!=='MODE_B_ORIGINAL_SOURCES_REQUIRED')
+   throw Error('Wrong fail-closed classification: '+initialFailureCode);
+  if(host.__xmlCiiPreviewResult?.branchRows?.length)
+   throw Error('Mode B ran without originals');
+  opts.modeBOriginalSources=originals;
+  host.querySelector('[data-mc-preview-job-retry]').click();
+ }
+ await until(()=>Boolean(host.__xmlCiiPreviewFactReadModel)||
+   Boolean(host.querySelector('[data-mc-preview-job-retry]')),'Mode B terminal');
+ if(!host.__xmlCiiPreviewFactReadModel){
+  const code=host.querySelector('[data-mc-preview-job-state] code')?.textContent||'';
+  finish({ok:mode==='wrong-original' && (
+    code==='CONTENT_DIGEST_MISMATCH' || code==='MODE_B_VALUE_DRIFT'),
+   code,error:host.textContent.slice(0,800),unhandled:errors});
+ }else{
+  const facts=host.__xmlCiiPreviewFactReadModel;
+  const sourceOccurrences=host.__xmlCiiPreviewOriginalOccurrences;
+  const expectedNodes=rawNodes*2,expectedBranches=rawBranches*2;
+  const expectedFactCount=expectedBranches*2+expectedNodes*5;
+  const first=await facts.getFacts({basisId:facts.info.basisId,limit:200});
+  const panel=host.querySelector('[data-mc-preview-source-facts]');
+  const result={
+   ok:sourceOccurrences?.branchCount===expectedBranches
+    &&sourceOccurrences?.nodeCount===expectedNodes
+    &&facts.info.expectedOccurrenceCount===expectedBranches+expectedNodes
+    &&facts.info.totalFactCount===expectedFactCount
+    &&first.complete===false&&first.items.length===200
+    &&Boolean(panel)&&host.__xmlCiiPreviewResult?.branchRows?.length===expectedBranches
+    &&host.dataset.mcPreviewSourceMode==='B'&&errors.length===0,
+   firstFailureCode:initialFailureCode,
+   branchCount:sourceOccurrences?.branchCount,nodeCount:sourceOccurrences?.nodeCount,
+   engineeringRows:host.__xmlCiiPreviewResult?.branchRows?.length,
+   sourceFactCount:facts.info.totalFactCount,expectedFactCount,
+   engineeringReady:facts.info.engineeringReady,
+   elapsedMs:Number((performance.now()-started).toFixed(2)),
+   privateOwnerInputsVerified:false,unhandled:errors,
+  };
+  finish(result);
+ }
+}catch(error){finish({ok:false,error:String(error?.stack||error)})}
+</script>

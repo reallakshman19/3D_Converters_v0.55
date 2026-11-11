@@ -1,0 +1,50 @@
+name: XML229 Run stage truth
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js'
+      - 'docs/tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js'
+      - 'tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js'
+      - 'docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js'
+      - 'tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a.js'
+      - 'docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a.js'
+      - 'tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a-fast.js'
+      - 'docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a-fast.js'
+      - 'tests/xml-cii-229-run-stage-truth-entrypoints.test.mjs'
+      - 'tests/xml-cii-229-run-stage-truth.test.mjs'
+      - '.github/workflows/xml229-run-stage-truth.yml'
+permissions:
+  contents: read
+jobs:
+  stage-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22','24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Verify exact head, root/docs and syntax
+        run: |
+          git rev-parse HEAD
+          node --check tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js
+          node --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+          node --check tests/xml-cii-229-run-stage-truth.test.mjs
+          node --check tests/xml-cii-229-run-stage-truth-entrypoints.test.mjs
+          node --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a.js
+          node --check tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a-fast.js
+          diff -u tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a.js docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a.js
+          diff -u tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a-fast.js docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-run-workflow-mode-a-fast.js
+          diff -u tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js docs/tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js
+          diff -u tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js docs/tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+      - name: Owner-shaped 28-branch O1 versus legacy Run readiness
+        run: node --test tests/xml-cii-229-run-stage-truth-entrypoints.test.mjs tests/xml-cii-229-run-stage-truth.test.mjs tests/xml-cii-229-run-format-diagnostics.test.mjs tests/xml-cii-229-readiness-cache-invalidation.test.mjs
+      - name: Existing standalone 5 Run UI
+        run: node tests/xml-cii-standalone-output-run.test.js

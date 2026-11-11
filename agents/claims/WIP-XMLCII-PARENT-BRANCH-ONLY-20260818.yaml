@@ -1,0 +1,16 @@
+schema: AgentClaim.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-PARENT-BRANCH-ONLY-20260818
+claim_state: RELEASED_SUPERSEDED_BY_PR636
+branch: agent/xml-cii-parent-branch-only-20260818
+workstream: XML_CII_STANDALONE_PERFORMANCE
+criticality: ENGINEERING_CRITICAL
+successor:
+  pr: 636
+  claim_path: agents/claims/PR636.yaml
+  report_path: agents/PR636_workreport.md
+predecessor_coordination:
+  PR630: MERGED_STALE_ACTIVE_METADATA_SUPERSEDED
+release_reason: PR custody allocated after validated implementation; exact production/test authority migrated to PR636.
+last_verified_main: 765d15e87def22291792ddb533df9ea532fb3f67
+last_updated: 2026-08-18T20:34:00+04:00

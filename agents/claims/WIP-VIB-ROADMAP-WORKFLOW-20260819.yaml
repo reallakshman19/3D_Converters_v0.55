@@ -1,0 +1,8 @@
+schema: AgentClaim.v1
+pr_or_wip: WIP-VIB-ROADMAP-WORKFLOW-20260819
+claim_state: RELEASED_TO_PR667
+successor: PR667
+branch: agent/vibration-roadmap-workflow-20260819
+released_scope_to: agents/claims/PR667.yaml
+coordination_state: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,54 @@
+schema: AgentClaim.v1
+pr_or_wip: PR699
+pull_request: 699
+claim_state: ACTIVE
+branch: agent/vib-m14-activity-verification-authoring-20260821
+authority_domains:
+  - VIBRATION_PROJECT_MEASUREMENT_HANDOFF
+  - VIBRATION_ACTION_VERIFICATION_AUTHORING
+  - VIBRATION_ACTION_VERIFICATION_SESSION_LEDGER
+claim_modes:
+  - EXCLUSIVE
+  - SHARED_READ
+files:
+  exact:
+    - tabs/vibration-project-evidence-handoff.js
+    - converters/vibration/facility/action-verification-ledger.js
+    - tabs/vibration-integrity-action-verification-audit.js
+    - tabs/vibration-integrity-action-verification-controller.js
+    - tabs/vibration-integrity-action-verification-view.js
+    - tabs/engineering-calculations-tab.js
+    - tabs/vibration-integrity-tab.js
+    - tabs/vibration-integrity-activity-view.js
+    - tabs/vibration-integrity-audit-log.js
+    - tests/vibration-integrity-action-verification-authoring.test.mjs
+    - tests/vibration-project-evidence-handoff.test.mjs
+exclusions:
+  - tabs/vibration-integrity-user-data-shell.js
+  - measurement acquisition contract changes
+  - verification evaluate/contracts changes
+  - Project-v2 persistence changes
+  - mechanism equations and coefficients
+  - applicability and AssessmentCompleteness authority
+  - EI aggregation authority
+  - root-cause authority
+  - design authority
+  - automatic action completion
+claims:
+  - id: PR699-001
+    statement: Project measurement evidence is transported explicitly and never inferred from facility inputs.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR699-002
+    statement: Selectable evidence matches exact current action scenario snapshot ID and hash.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR699-003
+    statement: Verification history is isolated by project plus exact action occurrence.
+    status: IMPLEMENTED_NOT_RUNTIME_QUALIFIED
+  - id: PR699-004
+    statement: Accepted verification cannot mutate M13 action completion state.
+    status: SOURCE_CONFIRMED
+coordination:
+  PR697: MERGED_M14_ACTION_VERIFICATION_FOUNDATION
+  PR479: STALE_COORDINATION_NEIGHBOR_LEGACY_VI_TAB_OVERLAP
+  PR665: PROJECT_V2_PERSISTENCE_NEIGHBOR_NO_EXACT_OVERLAP
+release_condition: OWNER_MERGE_AUTHORITY_REQUIRED

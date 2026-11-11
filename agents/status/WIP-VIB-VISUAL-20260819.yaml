@@ -1,0 +1,12 @@
+work_id: WIP-VIB-VISUAL-20260819
+branch: agent/vibration-visual-inspection-20260819
+agent_state: RELEASED_TO_PR662
+current_stage: HANDOVER_COMPLETE
+execution_mode: MANUAL
+criticality: ENGINEERING_CRITICAL
+mutation_authority: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED
+coordination_state: RELEASED_TO_PR662
+successor_pr: 662
+current_recovery_authority: agents/PR662_workreport.md
+exact_next_action: use PR662 recovery artifacts; do not resume this WIP identity

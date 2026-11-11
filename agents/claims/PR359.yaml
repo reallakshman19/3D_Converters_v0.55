@@ -1,0 +1,14 @@
+schema: AgentClaim.v1
+pr_or_wip: PR359
+claim_state: SUBMITTED_REVIEW_HELD
+branch: fix/xml229-browser-instrument-model-review-6ae1bed6
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-instrument-source-review-ui.mjs
+    - tabs/xml-cii-2019-standalone/integration/xml229-instrument-source-review.mjs
+    - tabs/xml-cii-2019-standalone/integration/xml229-instrument-source-offsets.mjs
+  mirrors: [docs/tabs/xml-cii-2019-standalone/ui-adapted, docs/tabs/xml-cii-2019-standalone/integration]
+authority_domains: [optional explicit source revision download]
+protected: [Final decisions, active source, native preflight, native writer and reconciliation, source coordinates and weights, workflows]
+merge_authority: OWNER_ONLY_NOT_GRANTED

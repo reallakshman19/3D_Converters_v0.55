@@ -1,0 +1,47 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: PR517
+mission: "Issue #513 PF-02 readiness-to-executable calculator contract parity"
+workstream: AIV_PRODUCTION_FREEZE_PF02
+branch: agent/aiv-pf02-readiness-contract-20260815
+live_main_basis: 3c3a01ebe00abaa739252c2e67bacb5126540182
+reground_commit: 132f50e6311b2a869dc616d9c2cb4b505c088927
+backup_branch: backup/pr517-pre-reground-20260819
+work_intent: IMPLEMENT
+execution_mode: AUTO
+auto_state: RUNNING_BLOCKED_AT_LIVE_PRODUCT_GATE
+criticality: ENGINEERING_CRITICAL
+agent_state: BLOCKED_EXTERNAL_EXECUTION_GATE
+pr_recovery_state: HEALTHY_CURRENT_MAIN_REGROUND
+handover_readiness: READY
+report_path: agents/PR517_workreport.md
+appendix_a_status: PASS_95_OF_100_SCOPE_LIMITED
+production_mutation_authority: BLOCKED_PENDING_LIVE_REPRODUCTION
+grounding_epoch: PR517-PF02-GE-20260819-AUTO-01
+current_stage: CURRENT_MAIN_SOURCE_CONTRACT_MISMATCH_REPRODUCED_LIVE_MATRIX_NOT_RUN
+blocker: "PF-02 requires navigation-permitted exact-current-head real-app browser + direct registered API parity execution before production mutation. Current environment has no repository checkout and cannot resolve the hosted app over network/DNS."
+highest_risk: "Treating source/extracted-logic evidence as a browser/registered-API PASS or importing PR506 PF-03 grouping semantics."
+validation:
+  current_main_grounding: PASS_SOURCE_INSPECTION
+  clean_reground: PASS
+  unit_source_contract_mismatch: PASS_LOCAL_EXECUTION_EXTRACTED_CURRENT_LOGIC
+  pressure_order_source_contract_mismatch: PASS_LOCAL_EXECUTION_EXTRACTED_CURRENT_LOGIC
+  real_browser_matrix: NOT_RUN_ENVIRONMENT_BLOCKED
+  registered_api_matrix: NOT_RUN_NO_FULL_CHECKOUT
+  release_benchmarks: NOT_RUN
+  native_backup: NOT_RUN_NO_CHECKOUT
+source_findings:
+  readiness_blob: 6423267fd49b3d720874a7b699b0b48a657a5df6
+  calculator_blob: 5014342e1436ca9fbf723242a348f768fb842f0c
+  kernel_blob: b0967c4c2e9fb98c90b6a3e9028ce9851e9bbcbb
+  adapter_blob: 2dff38ac41005a7835c14cc3ed9502da46e70524
+  screening_gate_blob: dcde1fadd5b54f17d07e63da4705680dbcf152d4
+  screening_request_blob: a9bcef48c9bab98dd8229b5435c6dc87e9f86749
+  candidate_gap: "Readiness and executable numerical-domain validation are separate contracts; unsupported units and resolved pressure ordering provide concrete current-main mismatch evidence."
+production_mutation_gate:
+  required: true
+  condition: LIVE_CURRENT_HEAD_UI_AND_REGISTERED_API_REPRODUCTION
+  owner_waiver_present: false
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR517
+exact_next_action: "Keep PR517 draft/unmerged. Obtain navigation-permitted exact-current-head browser/API execution; if PF-02 mismatch reproduces, implement only the minimal shared PF-02 executable-domain contract and permanent regressions, excluding PF-03 grouping."
+last_updated: 2026-08-19T22:35:00+04:00

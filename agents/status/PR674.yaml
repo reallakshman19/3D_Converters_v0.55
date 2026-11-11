@@ -1,0 +1,55 @@
+schema: AgentStatus.v1
+pr_or_wip: PR674
+pull_request: 674
+branch: agent/vib-right-rail-mechanism-cockpit-20260820
+base: main
+base_sha: 72ef2f1907a3e2ebde8ad0abe156d2aedd01b284
+implementation_basis_head: 60adffe185cabb0c5d841c715018c44c44c00888
+pr_head_observed: 60adffe185cabb0c5d841c715018c44c44c00888
+report_basis_head: 60adffe185cabb0c5d841c715018c44c44c00888
+state: MERGE_AUTHORIZED_PENDING
+criticality: ENGINEERING_CRITICAL_PRESENTATION_INTEGRATION
+coordination_state: COORDINATION_REQUIRED_NO_EXACT_CONFLICT
+remote_state:
+  open: true
+  draft: true
+  mergeable: true
+  changed_files: 12
+  reviews: 0
+  review_threads: 0
+  main_drift: NONE_OBSERVED
+validation:
+  repository_grounding: PASS_SOURCE_INSPECTION
+  overlap_grounding: PASS_SOURCE_INSPECTION
+  final_changed_file_negative_assurance: PASS_GITHUB_COMPARE
+  guidance_only_contract: PASS_SOURCE_INSPECTION
+  non_blocking_flags: PASS_SOURCE_INSPECTION
+  reconstructed_new_module_syntax: PASS_LOCAL_EXECUTION_HISTORICAL_PRE_HARDENING
+  reconstructed_mechanism_summary: PASS_LOCAL_EXECUTION_IMPLEMENTATION_COUPLED_HISTORICAL_PRE_HARDENING
+  cavitation_t29_projection: PASS_SOURCE_INSPECTION
+  thermowell_source_conflict_projection: PASS_SOURCE_INSPECTION
+  missing_lof_preserved_null: PASS_SOURCE_INSPECTION
+  focused_repository_test: NOT_RUN_ENVIRONMENT_BLOCKED
+  repository_native_regressions: NOT_RUN_ENVIRONMENT_BLOCKED
+  browser: NOT_RUN_ENVIRONMENT_BLOCKED
+  native_backup: NOT_RUN_ENVIRONMENT_BLOCKED
+  exact_head_status_contexts: NOT_RUN_ZERO_RETURNED
+  exact_head_workflow_runs: NOT_RUN_ZERO_RETURNED
+authority:
+  guidance_only: true
+  blocks_execution: false
+  blocks_navigation: false
+  blocks_calculation: false
+  blocks_persistence: false
+  authority_gate: false
+  engineering_authority_changed: false
+  numerical_authority_changed: false
+  screening_authority_changed: false
+  applicability_authority_changed: false
+  completeness_authority_changed: false
+  aggregation_authority_created: false
+  project_persistence_changed: false
+  workflow_files_changed: false
+merge_authority: OWNER_GRANTED_FOR_PR674_2026-08-20
+merge_authorization_source: USER_MESSAGE_ENSURE_RIGHT_PANEL_DOES_NOT_ACT_AS_BLOCKING_AUTHORITY_ITS_ONLY_GUIDANCE_LINKING_MERGE_PROCEED
+exact_next_action: MARK_READY_RECONCILE_EXACT_HEAD_AND_SQUASH_MERGE_PR674

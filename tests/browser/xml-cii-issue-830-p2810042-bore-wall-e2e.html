@@ -1,0 +1,207 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Issue 830 P2810042 bore/wall witness ledger</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  prepareStandaloneWeightReviewXml,
+  enrichStandaloneXmlForRun,
+} from '../../tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js';
+import {
+  xmlCiiDryRunPreview,
+} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2';
+
+const CONFIG = {
+  splitCondensedValveFlange: true,
+  split_condensed_valve_flange: true,
+  dropGasketNodes: true,
+  dropGasketsInEnrichment: true,
+  dropShortElementLengthNodes: false,
+  pipingClass: {
+    masterRows: [
+      { 'Piping Class': '61440', DN: 25, 'Wall Thickness': 6.35, SCH: '80', Rating: '600' },
+      { 'Piping Class': '61440', DN: 50, 'Wall Thickness': 8.7376, SCH: '80', Rating: '600' },
+      { 'Piping Class': '61440', DN: 500, 'Wall Thickness': 26.1874, SCH: '80', Rating: '600' },
+      { 'Piping Class': '61440', DN: 600, 'Wall Thickness': 30.9626, SCH: '80', Rating: '600' },
+    ],
+  },
+};
+
+const WITNESSES = [
+  { id: 'reducer-110', branch: 'B2', node: '110', componentType: 'REDU', ref: '=67127481/31', endpoint: '1', sourceOd: 610, bore: 600, wall: 30.9626, role: 'reported reducer 110-120' },
+  { id: 'reducer-120', branch: 'B2', node: '120', componentType: 'REDU', ref: '=67127481/31', endpoint: '2', sourceOd: 508, bore: 500, wall: 26.1874, role: 'reported reducer 110-120 / start 120-129' },
+  { id: 'span-129', branch: 'B2', node: '129', componentType: 'FLAN', ref: '=67127481/32', endpoint: '2', sourceOd: 508, bore: 500, wall: 26.1874, role: 'reported 120-129' },
+  { id: 'span-70', branch: 'B5', node: '70', componentType: 'BRAN', ref: '=67127481/65', endpoint: '1', sourceOd: 33.4, bore: 25, wall: 6.35, role: 'reported 70-197' },
+  { id: 'span-197', branch: 'B5', node: '197', componentType: 'VALV', ref: '=67127481/71', endpoint: '1', sourceOd: 33.4, bore: 25, wall: 6.35, role: 'reported 70-197' },
+  { id: 'span-390', branch: 'B6', node: '390', componentType: 'FLAN', ref: '=67127481/97', endpoint: '1', sourceOd: 33.4, bore: 25, wall: 6.35, role: 'reported 390-399 bore-only' },
+  { id: 'span-399', branch: 'B6', node: '399', componentType: 'FLAN', ref: '=67127481/97', endpoint: '2', sourceOd: 33.4, bore: 25, wall: 6.35, role: 'reported 390-399 bore-only' },
+  { id: 'span-437', branch: 'B7', node: '437', componentType: 'FLAN', ref: '=67127481/102', endpoint: '2', sourceOd: 33.4, bore: 25, wall: 6.35, role: 'reported 437-439 mixed-bore span' },
+  { id: 'span-439', branch: 'B7', node: '439', componentType: 'VALV', ref: '=67127481/104', endpoint: '2', sourceOd: 60.3, bore: 50, wall: 8.7376, role: 'reported 437-439 mixed-bore span' },
+  { id: 'control-80', branch: 'B4', node: '80', componentType: 'BRAN', ref: '=67127481/57', endpoint: '1', sourceOd: 60.3, bore: 50, wall: 8.7376, role: 'unrelated source control' },
+];
+
+function text(value) { return value == null ? '' : String(value).trim(); }
+function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }
+function children(parent, name) {
+  return [...(parent?.childNodes || [])].filter((child) => child.nodeType === 1 && localName(child) === name);
+}
+function childText(parent, name) { return text(children(parent, name)[0]?.textContent); }
+function parse(xmlText) {
+  const doc = new DOMParser().parseFromString(String(xmlText || ''), 'application/xml');
+  if (doc.getElementsByTagName('parsererror').length) throw new Error('XML parse failed');
+  return doc;
+}
+function branchSuffix(name) { return text(name).match(/\/(B\d+)$/i)?.[1]?.toUpperCase() || ''; }
+function nodeIndex(xmlText) {
+  const out = new Map();
+  const doc = parse(xmlText);
+  for (const branch of [...doc.getElementsByTagName('Branch')]) {
+    const suffix = branchSuffix(childText(branch, 'Branchname'));
+    for (const node of children(branch, 'Node')) {
+      const key = `${suffix}::${childText(node, 'NodeNumber')}`;
+      out.set(key, {
+        branch: suffix,
+        node: childText(node, 'NodeNumber'),
+        componentType: childText(node, 'ComponentType'),
+        ref: childText(node, 'ComponentRefNo'),
+        endpoint: childText(node, 'Endpoint'),
+        outsideDiameter: Number(childText(node, 'OutsideDiameter')),
+        bore: Number(childText(node, 'BoreMm')),
+        wall: Number(childText(node, 'WallThickness')),
+      });
+    }
+  }
+  return out;
+}
+function previewIndex(rows) {
+  return new Map((rows || []).map((row) => [
+    `${branchSuffix(row.branchName)}::${text(row.nodeNumber)}`,
+    row,
+  ]));
+}
+function close(actual, expected, tolerance = 1e-6) {
+  return Number.isFinite(Number(actual))
+    && Math.abs(Number(actual) - Number(expected)) <= tolerance;
+}
+function requireValue(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+try {
+  const response = await fetch('../fixtures/xml-cii-p2810042-c02-witness.xml', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`fixture fetch failed: HTTP ${response.status}`);
+  const sourceText = await response.text();
+
+  const prepared = await prepareStandaloneWeightReviewXml(
+    { sourceText, stagedJsonText: '', options: { splitCondensedValveFlange: true } },
+    CONFIG,
+  );
+  if (prepared.error) throw new Error(`prepareStandaloneWeightReviewXml failed: ${prepared.error}`);
+
+  const preview = xmlCiiDryRunPreview(prepared.xmlText, CONFIG, '');
+  const final = await enrichStandaloneXmlForRun({
+    sourceText,
+    stagedJsonText: '',
+    supportConfigJson: JSON.stringify(CONFIG),
+    options: { splitCondensedValveFlange: true },
+  });
+  if (!final.applied) {
+    throw new Error(`enrichStandaloneXmlForRun failed: ${final.error || 'not applied'}\n${(final.logs || []).join('\n')}`);
+  }
+
+  const preparedByNode = nodeIndex(prepared.xmlText);
+  const previewByNode = previewIndex(preview.nodeBoreWallRows);
+  const finalByNode = nodeIndex(final.xmlText);
+  const ledger = [];
+
+  for (const expected of WITNESSES) {
+    const key = `${expected.branch}::${expected.node}`;
+    const enriched = preparedByNode.get(key);
+    const previewRow = previewByNode.get(key);
+    const engine = finalByNode.get(key);
+    requireValue(enriched, `${expected.id}: prepared/enriched node ${key} missing`);
+    requireValue(previewRow, `${expected.id}: Preview authority row ${key} missing`);
+    requireValue(engine, `${expected.id}: final engine-input node ${key} missing`);
+
+    requireValue(enriched.componentType === expected.componentType, `${expected.id}: enriched type ${enriched.componentType} != ${expected.componentType}`);
+    requireValue(engine.componentType === expected.componentType, `${expected.id}: engine type ${engine.componentType} != ${expected.componentType}`);
+    requireValue(enriched.ref === expected.ref && engine.ref === expected.ref, `${expected.id}: component ref drift`);
+    requireValue(enriched.endpoint === expected.endpoint && engine.endpoint === expected.endpoint, `${expected.id}: endpoint drift`);
+    requireValue(close(enriched.outsideDiameter, expected.sourceOd), `${expected.id}: source OD drift in enriched XML`);
+    requireValue(close(enriched.bore, expected.bore), `${expected.id}: enriched BoreMm ${enriched.bore} != DN${expected.bore}`);
+    requireValue(close(previewRow.boreMm, expected.bore), `${expected.id}: Preview bore ${previewRow.boreMm} != DN${expected.bore}`);
+    requireValue(close(Number(previewRow.wallThickness), expected.wall), `${expected.id}: Preview wall ${previewRow.wallThickness} != ${expected.wall}`);
+    requireValue(previewRow.boreSource === 'xml-outside-diameter', `${expected.id}: Preview bore source ${previewRow.boreSource}`);
+    requireValue(previewRow.boreFallbackUsed === false, `${expected.id}: source-backed witness unexpectedly used Branchname fallback`);
+    requireValue(previewRow.boreNeedsReview === false, `${expected.id}: source-backed witness unexpectedly needs bore review`);
+    requireValue(close(engine.bore, expected.bore), `${expected.id}: engine BoreMm ${engine.bore} != DN${expected.bore}`);
+    requireValue(close(engine.wall, expected.wall), `${expected.id}: engine wall ${engine.wall} != ${expected.wall}`);
+
+    ledger.push({
+      ...expected,
+      sourceAuthority: 'OutsideDiameter',
+      enriched: {
+        componentType: enriched.componentType,
+        ref: enriched.ref,
+        endpoint: enriched.endpoint,
+        outsideDiameter: enriched.outsideDiameter,
+        boreMm: enriched.bore,
+      },
+      preview: {
+        boreMm: previewRow.boreMm,
+        boreSource: previewRow.boreSource,
+        fallbackUsed: previewRow.boreFallbackUsed,
+        traceStatus: previewRow.boreTraceStatus || '',
+        needsReview: previewRow.boreNeedsReview,
+        wallThicknessMm: Number(previewRow.wallThickness),
+        wallSource: previewRow.wallThicknessSource,
+      },
+      engineInput: {
+        componentType: engine.componentType,
+        ref: engine.ref,
+        endpoint: engine.endpoint,
+        boreMm: engine.bore,
+        wallThicknessMm: engine.wall,
+      },
+    });
+  }
+
+  const mixed = ledger.filter((row) => row.branch === 'B7' && ['437','439'].includes(row.node));
+  requireValue(new Set(mixed.map((row) => row.engineInput.boreMm)).size === 2,
+    '437-439 span endpoints must retain mixed DN25/DN50 geometry; branch-wide flattening detected');
+  requireValue(
+    !preparedByNode.has('B7::438') && !finalByNode.has('B7::438'),
+    'generated B7 node 438 is a 3.2 mm short helper and must remain removed by the 6 mm cleanup policy',
+  );
+
+  const result = {
+    schema: 'XMLCII_ISSUE_830_P2810042_BORE_WALL_LEDGER_V1',
+    ok: true,
+    fixture: 'source-derived from SYS-24-P2810042_PSI.xml',
+    class: '61440',
+    preparedStats: prepared.stats || {},
+    finalStats: final.stats || {},
+    parity: final.evidence || null,
+    witnesses: ledger,
+    assertions: {
+      reducer110to120Distinct: true,
+      span120to129Dn500: true,
+      span70to197Dn25: true,
+      span390to399Dn25: true,
+      span437to439MixedDn25Dn50: true,
+      span437to439ShortHelper438Removed: true,
+      unrelatedControl80Dn50: true,
+      componentTypesPreservedForWitnessSet: true,
+      branchNameFallbackUsedForWitnessSet: false,
+    },
+  };
+  globalThis.__XML_CII_ISSUE_830_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_830_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+} catch (error) {
+  const result = { ok: false, error: String(error?.stack || error) };
+  globalThis.__XML_CII_ISSUE_830_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_830_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

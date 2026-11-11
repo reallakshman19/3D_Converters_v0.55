@@ -1,0 +1,28 @@
+schema: AgentClaim.v1
+work_id: WIP-hp-kd-review-compact
+claim_state: ACTIVE
+branch: agent/hp-kd-review-compact
+files:
+  exact:
+    - tabs/hp-piping-class-kd-productivity.js
+    - tabs/hp-piping-class-workbench-tab.js
+    - tabs/engineering-workspace-tab.js
+    - tests/hp-piping-class-kd-productivity.test.mjs
+    - tests/hp-piping-class-kd-compact-ui.test.mjs
+    - agents/WIP-hp-kd-review-compact_workreport.md
+    - agents/status/WIP-hp-kd-review-compact.yaml
+    - agents/claims/WIP-hp-kd-review-compact.yaml
+authority_domains:
+  - HP_KD_REVIEW_PRODUCTIVITY_UI
+  - USER_CALCULATED_KD3_ROW_AUTHORING
+exclusions:
+  - KD320_NATIVE_ARITHMETIC
+  - Q1_Q2_QUALIFICATION_EVIDENCE
+  - FATIGUE_CURVE_DATA
+  - HP_PROJECT_SCHEMA
+  - NUMERICAL_KERNELS
+  - DESIGN_AUTHORITY
+  - .github/workflows/*
+coordination:
+  PR649: SHARED_ENGINEERING_WORKSPACE_FILE_NON_OVERLAPPING_CACHE_HUNK
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_SUCCESSOR

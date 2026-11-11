@@ -1,0 +1,13 @@
+work_id: WIP-XML229-TOPOLOGY-RUN-20261027
+owner: Oracle standalone UNKNOWN
+state: REVIEW_READY_DRAFT
+base: 0d4908eb3af1fcafee4436671675d7790f6322b2
+scope: topology-only engine entry, Run topology review UI, fresh O1/Worker transition, readiness diagnostics, root/docs mirrors and focused tests
+protected: native writer, mass formulas, physical-owner predicates, Final acceptance rules, workflow files
+coordination: existing PR329 domain overlap disclosed; its branch untouched
+
+pr_number: 344
+branch: oracle/xml229-topology-fresh-run-20261027
+report: agents/PR344_workreport.md
+ci_state: FULL_BROWSER_JOURNEY_PASS
+tested_head: 2033d03fda2401a078f2d17d881626c05451bb9e

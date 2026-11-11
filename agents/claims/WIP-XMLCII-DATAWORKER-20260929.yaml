@@ -1,0 +1,26 @@
+work_id: WIP-XMLCII-DATAWORKER-20260929
+state: ACTIVE
+owner: chatgpt
+source_issue: 776
+branch: agent/xml-cii-master-dataset-worker-20260929
+authority_domain:
+  - XML_CII_STANDALONE_MASTER_INGESTION
+  - XML_CII_STANDALONE_MASTER_PERSISTENCE
+  - XML_CII_STANDALONE_MASTER_PREVIEW_SEARCH
+planned_paths:
+  - tabs/xml-cii-2019-standalone/workers/
+  - tests/xml-cii-master-dataset-worker*.test.mjs
+future_existing_paths_requiring_backup:
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-events.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-master-runtime.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-state.js
+  - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-import-masters.js
+coordination:
+  pr599: COORDINATION_REQUIRED_STALE_SALVAGE_READ_ONLY
+  pr614: RELATED_VALIDATION_ONLY_NO_PRODUCTION_CLAIM
+protected_authority:
+  - APPLIED_MAPPING_SEMANTICS
+  - SUPPORT_GAP_SEMANTICS
+  - XML_CII_TOPOLOGY_GEOMETRY_UNITS
+  - CII_WRITER_AUTHORITY
+merge_authority: OWNER_ONLY_NOT_GRANTED

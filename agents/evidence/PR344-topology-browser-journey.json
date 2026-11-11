@@ -1,0 +1,237 @@
+{
+  "schema": "XML229.PR344.ValidationReceipt.v1",
+  "pr": 344,
+  "repository": "reallakshman19/3D_Converters",
+  "baseSha": "0d4908eb3af1fcafee4436671675d7790f6322b2",
+  "testedHead": "2033d03fda2401a078f2d17d881626c05451bb9e",
+  "testedTree": "011afe9efda5c0e0be66958b2fef4e5b839be2f1",
+  "observation": "REMOTE_EXECUTION_INSPECTED_BY_ORACLE",
+  "independentReviewerIdentity": "NOT_AUTHENTICATED",
+  "browserJob": {
+    "runId": 40510136527,
+    "jobId": 122209554983,
+    "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136527/job/122209554983",
+    "node": "v22.23.3",
+    "playwright": "1.52.0",
+    "status": "PASS"
+  },
+  "browserJourneys": [
+    {
+      "schema": "XML229.TopoFixToNativeBrowserJourney.v1",
+      "route": "root",
+      "status": "PASS",
+      "realChromium": true,
+      "realO1": true,
+      "realEngineeringWorkers": true,
+      "realWasmPython": true,
+      "originalFixtureKg": 7,
+      "freshFinalBeforeExplicitSelection": 0,
+      "finalFixtureKg": 12.5,
+      "ok": true,
+      "hasCii": true,
+      "physicalCount": 1,
+      "exact": true,
+      "massVerified": true,
+      "ciiSha256": "dfb68211cc96feea6f6e25233df4eafdd91ae8a841ebed0cbd0eda29ec468f3c"
+    },
+    {
+      "schema": "XML229.TopoFixToNativeBrowserJourney.v1",
+      "route": "/docs",
+      "status": "PASS",
+      "realChromium": true,
+      "realO1": true,
+      "realEngineeringWorkers": true,
+      "realWasmPython": true,
+      "originalFixtureKg": 7,
+      "freshFinalBeforeExplicitSelection": 0,
+      "finalFixtureKg": 12.5,
+      "ok": true,
+      "hasCii": true,
+      "physicalCount": 1,
+      "exact": true,
+      "massVerified": true,
+      "ciiSha256": "dfb68211cc96feea6f6e25233df4eafdd91ae8a841ebed0cbd0eda29ec468f3c"
+    }
+  ],
+  "coverage": "Synthetic fixture, real O1/IDB, four actual fixture master contents, real engineering Workers, actual serialized vendored WASM topology/native engine, explicit fixture Final edits, independent actual-CII reconciliation and automatic browser download. No engine/Worker/input-resolver mocks in this browser test.",
+  "localChecks": {
+    "outputRunAndNewRegressions": 17,
+    "l3": 10,
+    "nativeCliAndIndependentParse": 3,
+    "nativePython": 21,
+    "topologyPython": 7,
+    "custodyExport": 5,
+    "publicPrefinalLive": "PASS_NATIVE_NOT_RUN"
+  },
+  "legacyCiFailureClasses": {
+    "pinnedAncestry": 24,
+    "scope": 3
+  },
+  "legacyCiFailures": [
+    {
+      "id": 122209557162,
+      "name": "actual-lifecycle (race)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209557162",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209557133,
+      "name": "actual-lifecycle (scope)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209557133",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209556931,
+      "name": "actual-lifecycle (nc-kind)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209556931",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209556879,
+      "name": "actual-lifecycle (xml)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209556879",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209556795,
+      "name": "actual-lifecycle (config)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209556795",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209556651,
+      "name": "actual-lifecycle (inflight)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135662/job/122209556651",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209555924,
+      "name": "c05-1-baseline",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136914/job/122209555924",
+      "classification": "LEGACY_SCOPE_GATE"
+    },
+    {
+      "id": 122209555705,
+      "name": "joint-maximum-source-domain (root-raw)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136694/job/122209555705",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209555659,
+      "name": "original-scope-discriminator (root)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136890/job/122209555659",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209555536,
+      "name": "joint-maximum-source-domain (docs-raw)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136694/job/122209555536",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209555025,
+      "name": "original-scope-discriminator (docs-raw)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136890/job/122209555025",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209554993,
+      "name": "c06-final",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136701/job/122209554993",
+      "classification": "LEGACY_SCOPE_GATE"
+    },
+    {
+      "id": 122209554367,
+      "name": "original-semantic-served-browser",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136351/job/122209554367",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209554233,
+      "name": "actual-default-and-worker (combined-optin)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136145/job/122209554233",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553935,
+      "name": "actual-entry-asset-and-refusal (root-raw)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136036/job/122209553935",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553778,
+      "name": "actual-entry-asset-and-refusal (docs-raw)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136036/job/122209553778",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553716,
+      "name": "actual-default-and-worker (default-root)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136145/job/122209553716",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553646,
+      "name": "actual-default-and-worker (default-docs)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136145/job/122209553646",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553602,
+      "name": "actual-entry-asset-and-refusal (docs-built)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136036/job/122209553602",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553537,
+      "name": "option-a-policy-boundary (count-in)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136124/job/122209553537",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553515,
+      "name": "actual-default-and-worker (optin-root)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136145/job/122209553515",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553423,
+      "name": "option-a-policy-boundary (byte-in)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136124/job/122209553423",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553417,
+      "name": "option-a-policy-boundary (count-out)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136124/job/122209553417",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209553293,
+      "name": "actual-default-and-worker (optin-docs)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136145/job/122209553293",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209552965,
+      "name": "option-a-policy-boundary (byte-out)",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136124/job/122209552965",
+      "classification": "PINNED_ANCESTRY_GATE"
+    },
+    {
+      "id": 122209552401,
+      "name": "c05-5-4-final",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510136026/job/122209552401",
+      "classification": "LEGACY_SCOPE_GATE"
+    },
+    {
+      "id": 122209552390,
+      "name": "real-intake",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/40510135776/job/122209552390",
+      "classification": "PINNED_ANCESTRY_GATE"
+    }
+  ],
+  "privateOwnerFinalToCii": "NOT_RUN_EXACT_CUSTODY_INPUTS_ABSENT",
+  "mergeAndDeployment": "NOT_AUTHORIZED_FOR_PR344",
+  "nativeReleaseBoundary": "Actual current Owner output requires exact source/Final/native proof; fixture success grants no private model release authority."
+}

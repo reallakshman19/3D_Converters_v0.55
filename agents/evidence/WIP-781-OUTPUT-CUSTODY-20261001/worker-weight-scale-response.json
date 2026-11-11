@@ -1,0 +1,62 @@
+{
+  "schema": "XMLCII_ISSUE_781_WORKER_WEIGHT_SCALE_E2E_V1",
+  "ok": true,
+  "issueCount": 6,
+  "responsivenessThresholdMs": 250,
+  "rankWallClockThresholdMs": 5000,
+  "fixturePreparationExcludedFromProductTiming": true,
+  "custody": "Weight master remains worker-resident; browser sends six bounded issue rows and receives ranked results only.",
+  "scales": [
+    {
+      "rows": 10000,
+      "issues": 6,
+      "payloadBytes": 1013892,
+      "fixturePrepMs": 6,
+      "workerImportMs": 167.40000000596046,
+      "workerImportMaxFrameGapMs": 16.799999999999997,
+      "workerImportFrames": 12,
+      "workerRankMs": 22.899999976158142,
+      "workerRankMaxFrameGapMs": 16.599999999999994,
+      "workerRankFrames": 3,
+      "returnedIssues": 6,
+      "candidateMarker": "target-10000",
+      "candidateRowIndex": 10000,
+      "responsive": true,
+      "rankCompleted": true
+    },
+    {
+      "rows": 50000,
+      "issues": 6,
+      "payloadBytes": 5113891,
+      "fixturePrepMs": 31,
+      "workerImportMs": 331.40000000596046,
+      "workerImportMaxFrameGapMs": 16.700000000000045,
+      "workerImportFrames": 22,
+      "workerRankMs": 32.19999998807907,
+      "workerRankMaxFrameGapMs": 16.799999999999955,
+      "workerRankFrames": 3,
+      "returnedIssues": 6,
+      "candidateMarker": "target-50000",
+      "candidateRowIndex": 50000,
+      "responsive": true,
+      "rankCompleted": true
+    },
+    {
+      "rows": 100000,
+      "issues": 6,
+      "payloadBytes": 10238892,
+      "fixturePrepMs": 78.90000000596046,
+      "workerImportMs": 690.9000000059605,
+      "workerImportMaxFrameGapMs": 16.799999999999955,
+      "workerImportFrames": 45,
+      "workerRankMs": 64.19999998807907,
+      "workerRankMaxFrameGapMs": 16.700000000000045,
+      "workerRankFrames": 5,
+      "returnedIssues": 6,
+      "candidateMarker": "target-100000",
+      "candidateRowIndex": 100000,
+      "responsive": true,
+      "rankCompleted": true
+    }
+  ]
+}

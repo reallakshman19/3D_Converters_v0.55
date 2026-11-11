@@ -1,0 +1,18 @@
+schema: AgentClaim.v1
+pr_or_wip: PR356
+claim_state: REVIEW_READY_OWNER_SCOPED
+branch: fix/xml229-tee-port-route-6ae1bed6
+source: https://github.com/reallakshman19/3D_Converters/issues/351#issuecomment-6528178717
+wbs: CIIFR-R4-6.5-M29
+authority_domains: [pre-Final TEE port route classification]
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-node-occurrence-ledger.js
+    - tabs/xml-cii-2019-standalone/integration/xml229-tee-port-route.mjs
+    - tests/xml229-olet-helper-route.test.mjs
+    - tests/xml229-tee-port-route.test.mjs
+    - scripts/audit-xml229-bm2-tee-output.py
+  mirrors: [docs/tabs/xml-cii-2019-standalone]
+protected: [source coordinates and identities, physical owners, Final kg, restraint placement, native writer, late-geometry checks, release, workflows]
+last_verified_implementation_head: bcecd2d1a61af683863a22752f0e059f76de7291
+merge_authority: OWNER_ONLY_NOT_GRANTED

@@ -1,0 +1,29 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+pr: 648
+work_id: PR648
+branch: agent/hp-kd320-csv-intake-preview
+base_pr: 625
+workstream: HP_KD320_QUALIFICATION
+stage: Q2_CSV_EVIDENCE_INTAKE_PREVIEW
+criticality: ENGINEERING_CRITICAL
+state: READY_FOR_AUTHORIZED_MERGE
+execution_mode: MANUAL
+merge_authority: OWNER_GRANTED_ON_COMPLETION
+authority:
+  q2_oracle_admission_ready: false
+  native_core_kd320: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+  automatic_promotion_allowed: false
+validation:
+  focused_node_suite: PASS_16_OF_16_LOCAL_EXECUTION
+  production_blob_identity: PASS
+  changed_file_ledger: PASS_11_OF_11
+  review_threads: PASS_ZERO_OPEN
+  submitted_reviews: PASS_ZERO
+  browser_execution: NOT_RUN_ENVIRONMENT_BLOCKED
+  hosted_commit_statuses: NOT_RUN_ZERO_ENTRIES
+  hosted_pr_workflows: NOT_RUN_ZERO_RUNS
+exact_next_action: Mark PR648 ready and merge it into PR625 branch with an expected-head guard; then refresh each predecessor and continue top-down to main.

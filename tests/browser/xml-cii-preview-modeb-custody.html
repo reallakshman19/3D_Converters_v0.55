@@ -1,0 +1,59 @@
+<!doctype html><meta charset="utf-8">
+<title>Agent P P3-B3A Native Chromium Mode B Source Custody</title>
+<pre id="record">RUNNING</pre>
+<script type="module">
+import {combineXmlWithNodeOffsets} from '../../converters/xml-cii2019-core/xml-node-offset-combine.js';
+import {attestXmlCiiModeBSourceCustody} from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-facts-modeb-custody.js';
+import {makeBasisRef,assertBasisDigest,assertContentDigest,digestUtf8,digestCanonical,canonicalJson}
+ from '../../contracts/gc-pw-v1/contract.mjs';
+const done=result=>{
+ globalThis.__P3B3_BROWSER_RESULT__=result;
+ document.querySelector('#record').textContent=JSON.stringify(result,null,2);
+};
+const ports={assertBasisDigest,assertContentDigest,digestUtf8,digestCanonical,canonicalJson};
+try{
+ const outer=pipes=>'<PipeStressExport xmlns="urn:psi116"><Units>mm</Units>'+pipes+'</PipeStressExport>';
+ const node=(n,kind)=>'<Node><NodeNumber>'+n+'</NodeNumber><ComponentType>'+kind+'</ComponentType></Node>';
+ const pipe=(ref,nodes)=>'<Pipe><Branch><Branchname>/REPEATED/B1</Branchname>'
+  +'<Material>'+ref+'</Material>'+nodes.join('')+'</Branch></Pipe>';
+ const originals=[
+  {sourceId:'PL01',fileName:'PL01.xml',xmlText:outer(pipe('A',[node(100,'PIPE'),node(-1,'GASK')]))},
+  {sourceId:'PL06',fileName:'PL06.xml',xmlText:outer(pipe('B',[node(100,'PIPE'),node(-1,'GASK')]))},
+ ];
+ const combined=combineXmlWithNodeOffsets(originals,{offsetStep:100000});
+ const combinedSource={sourceId:'COMBINED',xmlText:combined.xmlText};
+ const config={modeBManifest:combined.manifest};
+ const bound=async rows=>makeBasisRef({
+  domainId:'xml-cii/2019',
+  sourceRefs:await Promise.all(rows.map(async r=>({
+    sourceId:r.sourceId,mediaType:'application/xml',sha256:await digestUtf8(r.xmlText),
+  }))),
+  selectionSha256:await digestCanonical(['PL01','PL06']),
+  stagedSourceSha256:null,masters:{},
+  configSha256:await digestCanonical(config),
+  overridesSha256:await digestCanonical({}),
+  scope:[{sourceId:'PL01',selectionRef:'ALL'},{sourceId:'PL06',selectionRef:'ALL'}],
+ });
+ const basis=await bound([...originals,combinedSource]);
+ const input={basis,config,originalSources:originals,combinedSource,manifest:combined.manifest,ports};
+ const attested=await attestXmlCiiModeBSourceCustody(input);
+ if(attested.branchCount!==2||attested.nodeCount!==4||
+  attested.sourceTotals[1].offset!==100000||attested.engineeringAccepted!==false)
+    throw Error('Mode B source node/order/offset positive failure');
+ const tampered=combinedSource.xmlText.replace('<ComponentType>GASK</ComponentType>',
+  '<ComponentType>PIPE</ComponentType>');
+ let negative=null;
+ try{
+   const changed={sourceId:'COMBINED',xmlText:tampered};
+   await attestXmlCiiModeBSourceCustody({...input,combinedSource:changed,
+    basis:await bound([...originals,changed])});
+ }catch(error){negative=error.code||String(error);}
+ if(negative!=='MODE_B_VALUE_DRIFT')throw Error('Same-length semantic mutation did not fail closed: '+negative);
+ done({ok:true,branchCount:attested.branchCount,nodeCount:attested.nodeCount,
+  originalOffset:attested.sourceTotals.map(x=>x.offset),
+  sourceRefs:attested.originalSources.map(x=>x.sourceId),
+  equalLengthMutationRejected:tampered.length===combinedSource.xmlText.length,
+  negativeCode:negative,engineeringAccepted:attested.engineeringAccepted,
+  ownerPrivateDataVerified:false});
+}catch(error){done({ok:false,error:String(error?.stack||error)})}
+</script>

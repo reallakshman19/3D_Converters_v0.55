@@ -1,0 +1,53 @@
+<!doctype html><meta charset="utf-8"><title>V4.1 actual served docs LFJ durable query integration</title>
+<script type="module">
+import {runCommittedSourceQuery} from './ports/committed-worker-query.mjs';
+import {openIndexedRecordStore} from './storage/browser/indexed-record-store.mjs';
+window.runRealDeployedDurableChain=async json=>{
+ const raw=new TextEncoder().encode(json),blob=new Blob([raw],{type:'application/json'});
+ const sha=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw)),
+   v=>v.toString(16).padStart(2,'0')).join('');
+ const revision='DOCS-DURABLE-R1',sourceRefId='DOCS-DURABLE-SRC',
+   sourceRevision=revision+':sha256:'+sha,jobId='DOCS-DURABLE-JOB',
+   selectionDigest='docs-original-branch';
+ const basis={sourceRefId,sourceSha256:sha,sourceRevision};
+ const current={...basis,byteLength:raw.length,selectionDigest,jobId};
+ const databaseName='lfj-docs-durable-'+crypto.randomUUID(),
+   sourceNs='source:'+sourceRefId,selectionNs='selected:'+sourceRefId;
+ const index=await openIndexedRecordStore({databaseName,
+   namespace:sourceNs,generation:jobId,basis,kind:'source'});
+ const selected=await openIndexedRecordStore({databaseName,
+   namespace:selectionNs,generation:jobId,basis,kind:'selection',selectionDigest,jobEpoch:jobId});
+ let session;
+ try{
+   const id=JSON.stringify(['lfj-json-value/v1',sourceRefId,sourceRevision,'/0']);
+   session=await runCommittedSourceQuery({
+     blob,revision,expectedSha256:sha,sourceRefId,jobId,selectionDigest,
+     indexStore:index,selectedStore:selected,
+     selection:{mode:'EXPLICIT',includes:[id],excludes:[]},
+     trustedWorkerCtor:Worker,
+     createWorker:()=>new Worker(new URL('./ports/source-browser-worker.mjs',import.meta.url),{type:'module'}),
+     getCurrentBasis:()=>current,pageEvents:2
+   });
+   const complete=session.completion.kind,consumed=session.receipt.workerConsumedBytes;
+   const selectedCount=session.selectionSummary.selectedCount,sourceCount=session.summary.occurrenceCount;
+   let paths=[],cursor=null,requests=0;
+   do{
+     const page=await session.readPage({cursor,maxRows:2,maxBytes:65536});
+     if(page.rightsBasis!=='SOURCE_FACTS_ONLY'||page.engineeringReady!==false)
+       throw Error('DEPLOY_ENGINEERING_RIGHTS_LEAK');
+     paths.push(...page.rows.map(r=>r.path));cursor=page.cursor;requests++;
+   }while(cursor!==null);
+   await session.close();index.close();selected.close();
+   const reopened=await openIndexedRecordStore({databaseName,
+     namespace:selectionNs,generation:jobId,basis,kind:'selection',selectionDigest,jobEpoch:jobId});
+   const persisted=await reopened.readRange(0,256,1048576);
+   reopened.close();
+   return{sha,complete,consumed,selectedCount,sourceCount,paths,requests,
+     persistedPaths:persisted.map(r=>r.path)};
+ }finally{
+   try{await session?.close();}catch{}
+   try{index.close();selected.close();}catch{}
+   indexedDB.deleteDatabase(databaseName);
+ }
+};
+</script>

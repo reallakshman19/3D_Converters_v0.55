@@ -1,0 +1,8 @@
+schema: AgentStatus.v1
+pr_or_wip: WIP-VIB-RIGHT-RAIL-CASE-ACTION-20260819
+branch: agent/vibration-right-rail-case-action-20260819
+state: RELEASED_TO_PR668
+released_to: PR668
+coordination_state: RELEASED
+merge_authority: OWNER_ONLY_NOT_GRANTED_FOR_PR668
+exact_next_action: USE_AGENTS_PR668_WORKREPORT_MD

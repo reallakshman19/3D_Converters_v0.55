@@ -1,0 +1,65 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LFJ #1147 B0 source-only query through actual Chromium Workers and IDB</title>
+<script type="module">
+const fail=(code,message)=>Object.assign(new Error(message),{code});
+function runWorker(file,payload){
+  const worker=new Worker(new URL(file,location.href),{type:'module'});
+  return new Promise((resolve,reject)=>{
+    worker.onmessage=({data})=>{
+      if(data?.type==='DONE'){worker.terminate();resolve(data.result);}
+      if(data?.type==='ERROR'){
+        worker.terminate();reject(fail(data.code,data.message));
+      }
+    };
+    worker.onerror=error=>{
+      worker.terminate();reject(fail('WORKER_ERROR',error.message));
+    };
+    worker.postMessage(payload);
+  });
+}
+window.runB0QueryOriginal=async({url,oracle})=>{
+  if(!url.startsWith('/Benchmarks/'))throw fail('FIXTURE_URL','original benchmark required');
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok)throw fail('FIXTURE_HTTP','original HTTP fixture unavailable');
+  const blob=await response.blob();
+  if(blob.size!==oracle.bytes)throw fail('FIXTURE_DRIFT','original source byte count differs');
+  const generation=crypto.randomUUID();
+  const databaseName='lfj-b0-paged-query-'+generation;
+  const before=(await navigator.storage.estimate()).usage??null;
+  const longTasks=[];
+  const observer=new PerformanceObserver(list=>{
+    for(const entry of list.getEntries())
+      if(entry.duration>=50)longTasks.push(entry.duration);
+  });
+  try{observer.observe({entryTypes:['longtask']});}catch{}
+  const start=performance.now();
+  try{
+    const catalog=await runWorker('../consumer-sparse-b0/compact-paged.worker.mjs',{
+      type:'START',blob,databaseName,generation,
+      expectedSha256:oracle.sha256,revision:'B0-QUERY-SOURCE'
+    });
+    if(!catalog||catalog.schema!=='LFJ.B0.PagedOccurrenceResearch.v1'||
+       catalog.originalBytes!==oracle.bytes||
+       catalog.sourceSha256!==oracle.sha256||
+       catalog.occurrenceCount!==oracle.occurrenceCount)
+      throw fail('SOURCE_CATALOG','original source catalog was not complete');
+    const query=await runWorker('./query.worker.mjs',{
+      type:'QUERY',databaseName,generation,blob,oracle
+    });
+    if(query.schema!=='LFJ.B0.QueryBrowserOracle.v1'||
+       query.occurrences!==oracle.occurrenceCount||
+       query.sourceSha256!==oracle.sha256||
+       query.scopedCount!==69||query.appWired!==false)
+      throw fail('QUERY_ORACLE','source-only query facts failed independent expected count');
+    const after=(await navigator.storage.estimate()).usage??null;
+    return {schema:'LFJ.B0.SourceAndQueryHarness.v1',sourceCatalog:catalog,
+      query,measurementMs:performance.now()-start,
+      storageDelta:before===null||after===null?null:after-before,
+      mainThreadLongTasks:longTasks.length,
+      maxMainThreadLongTaskMs:Math.max(0,...longTasks),
+      sourceOnly:true,engineeringReady:false,appWired:false};
+  }finally{observer.disconnect();}
+};
+window.__b0QueryReady=true;
+</script>

@@ -1,0 +1,22 @@
+schema: AgentClaim.v1
+pr_or_wip: PR378
+claim_state: DRAFT_COORDINATION_REQUIRED
+branch: fix/xml229-preview-substage-timing-20261101
+issue: https://github.com/reallakshman19/3D_Converters/issues/376
+pr_url: https://github.com/reallakshman19/3D_Converters/pull/378
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/xml-cii-workflow-service.js
+    - tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-worker.mjs
+    - tests/xml-cii-j04-service-release-gate.test.mjs
+    - tests/xml229-issue376-source-native-matrix.mjs
+    - scripts/xml229-issue376-browser-native-probe.mjs
+    - scripts/xml229-issue376-ui-click-e2e.mjs
+    - scripts/xml229-ef05-native-output-e2e.mjs
+  mirrors:
+    - docs/tabs/xml-cii-2019-standalone/xml-cii-workflow-service.js
+    - docs/tabs/xml-cii-2019-standalone/integration/xml229-original-blob-gcpw-worker.mjs
+authority_domains: [base_xml_conversion_without_optional_master_enrichment, preview_two_read_only_format_pass_transport]
+protected: [final_mass, staged_json_claims, xml_native_geometry, master_values, native_writer, independent_cii_release]
+coordination: COORDINATION_REQUIRED_WITH_OPEN_PR260
+merge_authority: OWNER_ONLY_NOT_GRANTED

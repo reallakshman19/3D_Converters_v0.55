@@ -1,0 +1,101 @@
+{
+  "schema": "XML229.PR379.Validation.v1",
+  "recordedAt": "2026-11-02",
+  "scope": "Read-only 4 Preview candidates, actual failed-native diagnosis, bounded staged-position ambiguity evidence",
+  "testedProductionCodeHead": "4949cb090874d69f3e2958ab1f6e68bb35a112aa",
+  "sourceSha256": "2573883480af904096dea2663c9cf585be2db28dd047785397b4d61edee0a030",
+  "stagedPublicZipSha256": "b0dc26ace4a718087cbc5d107c963a471c95f20a51d56d8559a9415d98be9353",
+  "testEnvironment": {
+    "node": "v22.16.0",
+    "python": "3.13.5",
+    "runtime": "local PR378 site runtime with equivalent PR379 focused patches"
+  },
+  "tests": [
+    {
+      "name": "41 EF05 source branch candidate display F1/F2",
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "SOURCE_EXTRACTOR",
+      "assertions": "41 ambiguous branch occurrences each show F1 and F2 proposals; authoritative lineKey remains blank"
+    },
+    {
+      "name": "Native failure diagnosis outranks format warning",
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "INDEPENDENT_EXPECTATION",
+      "assertions": "NATIVE_CANDIDATE_FAILED primary, failed-native boundary, format warning separate, ciiDownloadAuthorized=false"
+    },
+    {
+      "name": "JavaScript syntax of four edited modules",
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "NODE_PARSER"
+    },
+    {
+      "name": "Python syntax and in-memory coincident-owner diagnostic",
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "PYTHON_AND_SYNTHETIC_AMBIGUOUS_SOURCE",
+      "assertions": "one ambiguous staged claim, two candidate-position rows, no source bytes in diagnostic"
+    },
+    {
+      "name": "Public EF05 and original public staged JSON",
+      "status": "PASS",
+      "observation": "LOCAL_EXECUTION",
+      "oracle": "PUBLIC_FIXTURE",
+      "result": {
+        "dtxrPosAmbiguous": 0,
+        "dtxrPosMandatoryUnmatched": 320,
+        "dtxrPosExcluded": 6840
+      },
+      "warning": "Unmodified public source and JSON are not user's accepted Final geometry/basis; no inference about the user's actual 249-mass native failure"
+    },
+    {
+      "name": "Native Run HOLD audit CI Node22/24",
+      "status": "PASS",
+      "observation": "REMOTE_EXECUTION",
+      "oracle": "REPO_TESTS",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/41377561376",
+      "assertions": "63/63 on both Node 22 and Node 24"
+    },
+    {
+      "name": "Actual 4 Preview Worker CI",
+      "status": "PASS",
+      "observation": "REMOTE_EXECUTION",
+      "oracle": "REPO_TESTS",
+      "url": "https://github.com/reallakshman19/3D_Converters/actions/runs/41377561030"
+    },
+    {
+      "name": "New exact-head PR379 custom test in CI",
+      "status": "NOT_RUN",
+      "observation": "NOT_OBSERVED",
+      "oracle": "NONE",
+      "warning": "No configured CI job explicitly invokes the newly added custom test yet"
+    },
+    {
+      "name": "Owner's private staged finalized source and governed native CII release",
+      "status": "NOT_RUN",
+      "observation": "NOT_OBSERVED",
+      "oracle": "INDEPENDENT_OUTPUT_RECONCILIATION",
+      "warning": "Actual source geometry and accepted Final packet absent; no .cii download authorized"
+    },
+    {
+      "name": "Production Chromium on user persisted private configuration",
+      "status": "NOT_RUN",
+      "observation": "NOT_OBSERVED",
+      "oracle": "NONE"
+    }
+  ],
+  "mirrorParity": {
+    "filesChecked": 6,
+    "status": "PASS",
+    "observation": "GITHUB_CONNECTOR_EXACT_BYTES"
+  },
+  "authority": {
+    "sourceFormatAutoSelected": false,
+    "massAuthorityChanged": false,
+    "nativeFailureCodeChanged": false,
+    "governedCiiDownloadAuthorized": false
+  },
+  "overall": "DRAFT_PARTIAL_FIX_VERIFIED_NO_GOVERNED_CII"
+}

@@ -1,0 +1,30 @@
+schema: AgentStatus.v1
+repository: reallaksh19/3D_Converters
+work_id: WIP-hp-kd320-csv-intake-preview
+branch: agent/hp-kd320-csv-intake-preview
+base_pr: 625
+workstream: HP_KD320_QUALIFICATION
+stage: Q2_CSV_EVIDENCE_INTAKE_PREVIEW
+criticality: ENGINEERING_CRITICAL
+state: IMPLEMENTED_VALIDATED_PENDING_PR
+execution_mode: MANUAL
+merge_authority: OWNER_GRANTED_ON_COMPLETION
+authority:
+  q2_oracle_admission_ready: false
+  native_core_kd320: false
+  code_compliance: false
+  design_authority: false
+  production_kernel_allowed: false
+  automatic_promotion_allowed: false
+validation:
+  source_grounding: PASS_SOURCE_INSPECTION
+  parser_and_gate_suite: PASS_12_OF_12_LOCAL_EXECUTION
+  ui_and_registration_suite: PASS_4_OF_4_LOCAL_EXECUTION
+  combined_focused_suite: PASS_16_OF_16_LOCAL_EXECUTION
+  parser_remote_blob_identity: PASS_A900E372DD3FAD44D9B8135AA5D1C1B8AC751B34
+  ui_remote_blob_identity: PASS_CFDD62CD865CC427972E22708A4E3ED1780DCEEA
+  workspace_remote_blob_identity: PASS_88036CD97B5469627CA88821262732A6001F087C
+  browser_execution: NOT_RUN_ENVIRONMENT_BLOCKED_CHROMIUM_HANGS_ON_TRIVIAL_PAGE
+  hosted_ci: NOT_RUN_NOT_OBSERVED
+authority_oracle_class: IMPLEMENTATION_COUPLED_PLUS_EXISTING_GATE_CONTRACTS
+exact_next_action: Open a draft successor PR on PR625, reconcile changed files/checks, then merge the authorized stack only after each PR is confirmed clean and mergeable.

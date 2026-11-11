@@ -1,0 +1,14 @@
+schema: AgentStatus.v1
+pr_or_wip: WIP-XML229-INST-RIGID-20261031
+state: IMPLEMENTED_LOCALLY
+report: agents/WIP-XML229-INST-RIGID-20261031_workreport.md
+branch: fix/xml229-inst-rigid-20261031
+base: ab2d979e3631291122a1aeb85a71442cdb3624bf
+validation: JS_89_PASS_PYTHON_33_PASS_SOURCE_BYTE_CHECK_PASS
+review_mode: AUTHOR_VALIDATION
+merge_authority: OWNER_ONLY_NOT_GRANTED
+next_action: Open revised source in updated app and complete new Preview and Final review
+
+publication_pr: 362
+archive_state: HISTORICAL_SCOPE_CONSOLIDATED_IN_PR362
+active_report: agents/PR362_workreport.md

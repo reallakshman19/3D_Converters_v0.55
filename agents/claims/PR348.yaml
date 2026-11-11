@@ -1,0 +1,16 @@
+schema: AgentClaim.v1
+pr_or_wip: PR348
+claim_state: ACTIVE
+claim_modes: [COORDINATED]
+files:
+  exact:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-output-run.js
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-run-auto-native.mjs
+    - tabs/xml-cii-2019-standalone/xml-cii-output-run-readiness.js
+  prefixes:
+    - tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-
+    - docs/tabs/xml-cii-2019-standalone/ui-adapted/xml229-native-run-
+authority_domains: [native Run UI orchestration, non-authorizing diagnostics]
+protected: [native writer, actual mass reconciliation, Final decisions, original fixtures, workflow files]
+coordination: Direct Owner current-main follow-up; reconcile older PR329 and PR312 before integration
+last_verified_head: 1098e1bd85b1ebe6000350ba24508e5bff1e8eb6

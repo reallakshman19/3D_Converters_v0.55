@@ -1,0 +1,20 @@
+{
+  "head": "e8c9ba89ef8354f7b1c3be2267fba12df5f09eb3",
+  "base": "bebf552e6d45eaefb1d2dc878a8e7a172d1bfd22",
+  "pass": 9,
+  "fail": 7,
+  "pending": 0,
+  "corrected": [
+    "browser-worker-scale: typed10.5 Final rather than candidate Match1; native174 rows PASS201ms max",
+    "scope-tree: inherited exact parent query assertion; base FAIL/current PASS"
+  ],
+  "remainingInherited": [
+    "CII Ver14 benchmark UNITS parser (exact base reproduction)",
+    "FBX Managed Reference primaryAccept contract (exact base reproduction)",
+    "CAESAR dropdown cache (predecessor same assertion)",
+    "FBX Live UI cache (predecessor same assertion)",
+    "StagedJSON cache/InputXML manifest (predecessor log)"
+  ],
+  "oracle": "WORKFLOW_EXECUTION_AND_BASE_REPRODUCTION; static cache contracts implementation-coupled",
+  "remoteReplay": "NOT_RUN_PENDING_PUSH"
+}

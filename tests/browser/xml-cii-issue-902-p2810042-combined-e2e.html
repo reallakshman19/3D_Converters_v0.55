@@ -1,0 +1,214 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>C06.2 P2810042 combined authority ledger</title>
+<pre id="out">RUNNING</pre>
+<script type="module">
+import {
+  prepareStandaloneWeightReviewXml,
+  enrichStandaloneXmlForRun,
+} from '../../tabs/xml-cii-2019-standalone/xml-cii-standalone-run-parity.js';
+import { xmlCiiDryRunPreview } from '../../tabs/xml-cii-2019-standalone/ui-adapted/xml-cii-adapted-preview-dryrun.js?v=20261001-weight-output-2';
+import {
+  P2810042_C06_CLASS_ROWS,
+  P2810042_C06_TARGET_WEIGHTS,
+  buildP2810042C06FixtureXml,
+} from '../fixtures/xml-cii-p2810042-c06-combined-fixture.js';
+
+const WALLS = new Map([
+  [25, 6.35], [50, 8.7376], [450, 23.8252], [500, 26.1874], [600, 30.9626],
+]);
+const DNS = new Map([[33.4, 25], [60.3, 50], [457, 450], [508, 500], [610, 600]]);
+const CONFIG = {
+  splitCondensedValveFlange: true,
+  split_condensed_valve_flange: true,
+  dropGasketNodes: true,
+  dropGasketsInEnrichment: true,
+  dropShortElementLengthNodes: false,
+  pipingClass: { masterRows: P2810042_C06_CLASS_ROWS },
+  rating: { defaultRating: '600' },
+  weight: { masterRows: [] },
+};
+const TARGET_WEIGHTS = P2810042_C06_TARGET_WEIGHTS;
+const WITNESSES = [
+  { id: 'coordinate-main-10', branch: 'B2', node: '10', od: 610, type: 'BRAN', ref: '=67127481/56' },
+  { id: 'reducer-110', branch: 'B2', node: '110', od: 610, type: 'REDU', ref: '=67127481/31' },
+  { id: 'reducer-120', branch: 'B2', node: '120', od: 508, type: 'REDU', ref: '=67127481/31' },
+  { id: 'weight-150', branch: 'B3', node: '150', od: 610, type: 'RIGID', ref: '=67127481/44', weight: 42.25 },
+  { id: 'dn450', branch: 'B8', node: '150', od: 457, type: 'BRAN', ref: '=67127481/167' },
+  { id: 'dn25', branch: 'B5', node: '70', od: 33.4, type: 'BRAN', ref: '=67127481/65' },
+  { id: 'dn50', branch: 'B4', node: '80', od: 60.3, type: 'BRAN', ref: '=67127481/57' },
+  { id: 'mixed-b4-dn600', branch: 'B4', node: '420', od: 610, type: 'RIGID', ref: '=67127481/57' },
+  { id: 'dn50-rigid', branch: 'B7', node: '440', od: 60.3, type: 'RIGID', ref: '=67127481/101' },
+  { id: 'weight-exe-10', branch: 'EXE/B2', node: '10', od: 610, type: 'RIGID', ref: '=67127432/19', weight: 51.5 },
+];
+
+function text(value) { return value == null ? '' : String(value).trim(); }
+function branchSuffix(name) {
+  const raw = text(name);
+  if (/EXE\/B2$/i.test(raw)) return 'EXE/B2';
+  const match = raw.match(/\/(B\d+)$/i);
+  return match?.[1]?.toUpperCase() || '';
+}
+function localName(node) { return text(node?.localName || node?.nodeName).replace(/^.*:/, ''); }
+function children(parent, name) {
+  return [...(parent?.childNodes || [])].filter((child) => child.nodeType === 1 && localName(child) === name);
+}
+function childText(parent, name) { return text(children(parent, name)[0]?.textContent); }
+function parse(xmlText) {
+  const doc = new DOMParser().parseFromString(String(xmlText || ''), 'application/xml');
+  if (doc.getElementsByTagName('parsererror').length) throw new Error('XML parse failed');
+  return doc;
+}
+function nodeIndex(xmlText) {
+  const out = new Map();
+  const doc = parse(xmlText);
+  for (const branch of [...doc.getElementsByTagNameNS('*', 'Branch')]) {
+    const suffix = branchSuffix(childText(branch, 'Branchname'));
+    for (const node of children(branch, 'Node')) {
+      out.set(`${suffix}::${childText(node, 'NodeNumber')}`, {
+        branch: suffix,
+        node: childText(node, 'NodeNumber'),
+        componentType: childText(node, 'ComponentType'),
+        ref: childText(node, 'ComponentRefNo'),
+        endpoint: childText(node, 'Endpoint'),
+        rigid: childText(node, 'Rigid'),
+        connectionType: childText(node, 'ConnectionType'),
+        position: childText(node, 'Position'),
+        outsideDiameter: Number(childText(node, 'OutsideDiameter')),
+        boreMm: Number(childText(node, 'BoreMm')),
+        wallThickness: Number(childText(node, 'WallThickness')),
+        weight: Number(childText(node, 'Weight') || 0),
+      });
+    }
+  }
+  return out;
+}
+function previewIndex(rows) {
+  return new Map((rows || []).map((row) => [
+    `${branchSuffix(row.branchName)}::${text(row.nodeNumber)}`,
+    row,
+  ]));
+}
+function rowId(row) { return `${branchSuffix(row.branchName)}::${text(row.nodeNumber)}`; }
+function close(actual, expected, tolerance = 1e-6) {
+  return Number.isFinite(Number(actual)) && Math.abs(Number(actual) - Number(expected)) <= tolerance;
+}
+function requireValue(condition, message) { if (!condition) throw new Error(message); }
+
+try {
+  const sourceText = buildP2810042C06FixtureXml();
+  const sourceByNode = nodeIndex(sourceText);
+
+  const prepared = await prepareStandaloneWeightReviewXml(
+    { sourceText, stagedJsonText: '', options: { splitCondensedValveFlange: true } },
+    structuredClone(CONFIG),
+  );
+  requireValue(!prepared.error, `prepareStandaloneWeightReviewXml failed: ${prepared.error}`);
+
+  const basisRows = prepared.weightAuthority?.basisRows || [];
+  const accepted = {};
+  for (const target of TARGET_WEIGHTS) {
+    const row = basisRows.find((item) => rowId(item) === `${target.branch}::${target.node}`);
+    requireValue(row, `${target.id}: rigid owner missing from review basis`);
+    requireValue(row.componentRefNo === target.ref, `${target.id}: review ref drift`);
+    accepted[row.key] = target.kg;
+  }
+
+  const runConfig = structuredClone(CONFIG);
+  runConfig.overrides = { rigidWeight: accepted };
+  const preview = xmlCiiDryRunPreview(prepared.xmlText, runConfig, '');
+  const final = await enrichStandaloneXmlForRun({
+    sourceText,
+    stagedJsonText: '',
+    supportConfigJson: JSON.stringify(runConfig),
+    options: { splitCondensedValveFlange: true },
+  });
+  requireValue(final.applied, `enrichStandaloneXmlForRun failed: ${final.error || 'not applied'}`);
+
+  const previewByNode = previewIndex(preview.nodeBoreWallRows);
+  const finalByNode = nodeIndex(final.xmlText);
+  const ledger = [];
+
+  for (const witness of WITNESSES) {
+    const key = `${witness.branch}::${witness.node}`;
+    const source = sourceByNode.get(key);
+    const previewRow = previewByNode.get(key);
+    const engine = finalByNode.get(key);
+    const expectedDn = DNS.get(witness.od);
+    const expectedWall = WALLS.get(expectedDn);
+
+    requireValue(source && previewRow && engine, `${witness.id}: source/Preview/final row missing`);
+    requireValue(close(source.outsideDiameter, witness.od), `${witness.id}: source OD mismatch`);
+    requireValue(source.componentType === witness.type && source.ref === witness.ref, `${witness.id}: source identity mismatch`);
+    requireValue(engine.componentType === witness.type && engine.ref === witness.ref, `${witness.id}: final identity drift`);
+    requireValue(close(engine.outsideDiameter, witness.od), `${witness.id}: final OD drift`);
+    requireValue(close(previewRow.boreMm, expectedDn), `${witness.id}: Preview bore ${previewRow.boreMm} != DN${expectedDn}`);
+    requireValue(previewRow.boreSource === 'xml-outside-diameter', `${witness.id}: Preview bore source ${previewRow.boreSource}`);
+    requireValue(previewRow.boreFallbackUsed === false, `${witness.id}: source-backed bore used fallback`);
+    requireValue(close(Number(previewRow.wallThickness), expectedWall), `${witness.id}: Preview wall mismatch`);
+    requireValue(close(engine.boreMm, expectedDn), `${witness.id}: final BoreMm mismatch`);
+    requireValue(close(engine.wallThickness, expectedWall), `${witness.id}: final wall mismatch`);
+    if (witness.weight != null) requireValue(close(engine.weight, witness.weight), `${witness.id}: accepted weight not on exact owner`);
+    else requireValue(close(engine.weight, source.weight), `${witness.id}: unexpected weight delta`);
+
+    ledger.push({
+      ...witness,
+      expectedDn,
+      expectedWallMm: expectedWall,
+      source: {
+        position: source.position,
+        outsideDiameterMm: source.outsideDiameter,
+        wallThicknessMm: source.wallThickness,
+        weightKg: source.weight,
+        componentType: source.componentType,
+        componentRefNo: source.ref,
+      },
+      preview: {
+        boreMm: previewRow.boreMm,
+        boreSource: previewRow.boreSource,
+        fallbackUsed: previewRow.boreFallbackUsed,
+        wallThicknessMm: Number(previewRow.wallThickness),
+        wallSource: previewRow.wallThicknessSource,
+      },
+      finalEngineXml: {
+        position: engine.position,
+        outsideDiameterMm: engine.outsideDiameter,
+        boreMm: engine.boreMm,
+        wallThicknessMm: engine.wallThickness,
+        weightKg: engine.weight,
+        componentType: engine.componentType,
+        componentRefNo: engine.ref,
+        rigid: engine.rigid,
+        connectionType: engine.connectionType,
+      },
+    });
+  }
+
+  const result = {
+    schema: 'XMLCII_ISSUE_902_P2810042_COMBINED_AUTHORITY_BROWSER_V1',
+    ok: true,
+    authority: {
+      lineIdentity: 'P/2810042 NPS24 class 61440',
+      boreRule: 'explicit source OutsideDiameter -> nominal DN before Branchname/line-list fallback',
+      wallRule: 'per-node DN + class 61440 master row',
+      weightRule: 'reviewed override writes only to exact Rigid=2 owner',
+    },
+    regressionWeightTokensKg: Object.fromEntries(TARGET_WEIGHTS.map((row) => [row.id, row.kg])),
+    acceptedWeightKeys: Object.keys(accepted),
+    preparedStats: prepared.stats || {},
+    finalStats: final.stats || {},
+    finalEvidence: final.evidence || null,
+    ledger,
+    supportConfigJson: JSON.stringify(runConfig),
+    finalXmlText: final.xmlText,
+  };
+  globalThis.__XML_CII_ISSUE_902_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_902_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify({ ...result, finalXmlText: '[omitted]' }, null, 2);
+} catch (error) {
+  const result = { schema: 'XMLCII_ISSUE_902_P2810042_COMBINED_AUTHORITY_BROWSER_V1', ok: false, error: String(error?.stack || error) };
+  globalThis.__XML_CII_ISSUE_902_DONE__ = true;
+  globalThis.__XML_CII_ISSUE_902_RESULT__ = result;
+  document.querySelector('#out').textContent = JSON.stringify(result, null, 2);
+}
+</script>

@@ -1,0 +1,27 @@
+schema: AgentPrStatus.v1
+repository: reallaksh19/3D_Converters
+pr_or_wip: WIP-XMLCII-PARENT-BRANCH-ONLY-20260818
+mission: Add opt-in branch-only parent Preview execution and remove discarded node-row work from Run parity.
+workstream: XML_CII_STANDALONE_PERFORMANCE
+branch: agent/xml-cii-parent-branch-only-20260818
+criticality: ENGINEERING_CRITICAL
+agent_state: TERMINAL_SUPERSEDED
+pr_recovery_state: SUPERSEDED_BY_PR636
+handover_readiness: COMPLETE
+report_path: agents/WIP-XMLCII-PARENT-BRANCH-ONLY-20260818_workreport.md
+current_stage: PR_CUSTODY_MIGRATED
+blocker: NONE
+successor:
+  pr: 636
+  report_path: agents/PR636_workreport.md
+  status_path: agents/status/PR636.yaml
+  claim_path: agents/claims/PR636.yaml
+validation:
+  mandatory_backups: PASS_EXACT_BLOBS_PRE_EDIT
+  focused_helper_contract: PASS_LOCAL_IMPLEMENTATION_COUPLED
+  branch_row_equivalence: PASS_LOCAL_STUBBED_IMPORT_BOUNDARY
+  node_work_suppression: PASS_ZERO_RANK_CALLS_BRANCH_ONLY
+  repository_native_browser: NOT_RUN_ENVIRONMENT_BLOCKED
+merge_authority: OWNER_AUTO_MODE_GRANTED_FOR_SUCCESSOR_PR636
+exact_next_action: Use PR636 custody for all further reconciliation and merge decisions.
+last_updated: 2026-08-18T20:34:00+04:00
