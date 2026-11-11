@@ -5,6 +5,7 @@ import {
   childText,
   children,
   exactClassWallFromIndex,
+  nodeBoreMm,
   stagedBranchWallEvidenceFromIndex,
   resolveBranchNominalBore,
   text,
@@ -92,7 +93,12 @@ function withWallEvidenceFields(result, dtxr) {
 }
 
 function correctedRow(row, branch, indexes, config) {
-  const boreMm = resolveBranchNominalBore(row.branchName, row.sizeMm, config);
+  // v0.55 (from v0.35 PR #36): nominal bore comes from the source XML node
+  // OutsideDiameter; the branch-name/regex bore is only a fallback.
+  const localBores = branch ? [...new Set(children(branch, 'Node')
+    .map(nodeBoreMm).filter((bore)=>Number.isFinite(bore)&&bore>0))] : [];
+  const boreMm = localBores.length ? localBores[0] :
+    resolveBranchNominalBore(row.branchName, row.sizeMm, config);
   const evidence = branchEvidence(branch, row.branchName, indexes.stagedWall);
   const { authority, dtxr } = wallAuthorityForBore({
     boreMm,
@@ -105,6 +111,9 @@ function correctedRow(row, branch, indexes, config) {
     ...row,
     sizeMm: boreMm,
     size: boreMm ? `${boreMm}mm` : row.size,
+    nominalBoreAuthority:localBores.length?'actual-node-outside-diameter':'line-fallback-no-verified-od',
+    mixedDiameterBranch:localBores.length>1,
+    branchNodeNominalBoresMm:localBores,
     wallThicknessKey: classSizeKey(row, boreMm),
   };
   if (authority) {

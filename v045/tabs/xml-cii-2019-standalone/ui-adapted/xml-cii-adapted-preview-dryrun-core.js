@@ -295,10 +295,14 @@ export function _branchXmlFallbackFacts(branch) {
 
 export function _branchBoreFromFirstUsefulNode(branch) {
   for (const n of _xmlChildrenByName(branch, 'Node')) {
-    const b = Number(_xmlText(n, 'BoreMm') || _xmlText(n, 'Bore'));
-    if (Number.isFinite(b) && b > 0) return b;
     const od = Number(_xmlText(n, 'OuterDiameter') || _xmlText(n, 'OutsideDiameter') || _xmlText(n, 'OD'));
-    if (Number.isFinite(od) && od > 0) { const d = _nominalDnFromOd(od); if (d && d > 0) return d; }
+    if (Number.isFinite(od) && od > 0) {
+      const d = _nominalDnFromOd(od);
+      if (d && d > 0 && d !== od) return d;
+      continue; // Unknown OD cannot be treated as DN/branch regex.
+    }
+    const bore = Number(_xmlText(n, 'BoreMm') || _xmlText(n, 'Bore'));
+    if (Number.isFinite(bore) && bore > 0) return bore;
   }
   return null;
 }
@@ -615,8 +619,13 @@ function _xmlCiiDryRunNodeRow({ branch, branchName, boreMm, branchRating, resolv
     const componentType = _xmlText(node, 'ComponentType');
     const weightEligible = isXmlCiiWeightReviewNode(node);
     const dtxrRes = weightEligible ? cachedNodeDtxr(node, stagedIndex, config, dtxrCache) : { value: '', source: 'not-weight-eligible', matchedKey: '' };
+    const od = Number(_xmlText(node,'OutsideDiameter'));
+    const mappedDn = Number.isFinite(od) && od > 0 ? _nominalDnFromOd(od) : null;
+    const nodeBore = mappedDn !== null
+      ? (mappedDn !== od ? mappedDn : null)
+      : (Number(_xmlText(node,'BoreMm')) > 0 ? Number(_xmlText(node,'BoreMm')) : boreMm);
     const rankStart = perf?.now() ?? 0;
-    const ranking = (weightEligible && boreMm != null && branchRating && lengthMm != null) ? rankXmlCiiWeightCandidates({ boreMm, rating: branchRating, lengthMm, nodeName: _xmlText(node, 'NodeName'), componentType, componentRefNo: _xmlText(node, 'ComponentRefNo'), dtxr: dtxrRes.value || '' }, config, { includeRejected: true, candidateRows: weightBoreIndex.forBore(boreMm) }) : { nodeHint: null, candidates: [], rejectedCandidates: [], best: null };
+    const ranking = (weightEligible && nodeBore != null && branchRating && lengthMm != null) ? rankXmlCiiWeightCandidates({ boreMm: nodeBore, rating: branchRating, lengthMm, nodeName: _xmlText(node, 'NodeName'), componentType, componentRefNo: _xmlText(node, 'ComponentRefNo'), dtxr: dtxrRes.value || '' }, config, { includeRejected: true, candidateRows: weightBoreIndex.forBore(nodeBore) }) : { nodeHint: null, candidates: [], rejectedCandidates: [], best: null };
     if (perf) totals.weightRanking += perf.now() - rankStart;
     const candidates = ranking.candidates.slice(0, 5);
     const weightKey = xmlCiiWeightReviewNodeOverrideKey(branchName, node, nodeIdx);
@@ -630,7 +639,7 @@ function _xmlCiiDryRunNodeRow({ branch, branchName, boreMm, branchRating, resolv
         branchName,
         nodeNumber,
         componentType,
-        boreMm,
+        boreMm:nodeBore,
         rating: branchRating,
         resolvedPipingClass,
         lengthMm,

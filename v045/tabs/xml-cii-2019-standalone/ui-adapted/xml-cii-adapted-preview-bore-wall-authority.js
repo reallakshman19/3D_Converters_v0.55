@@ -37,7 +37,10 @@ function branchDtxrWallEvidence(branch, branchName, stagedEvidenceIndex, boreMm,
 }
 
 function correctedRow(row, branch, stagedEvidenceIndex, config) {
-  const boreMm = resolveBranchNominalBore(row.branchName, row.sizeMm, config);
+  const localBores = branch ? [...new Set(children(branch, 'Node')
+    .map(nodeBoreMm).filter((bore)=>Number.isFinite(bore)&&bore>0))] : [];
+  const boreMm = localBores.length ? localBores[0] :
+    resolveBranchNominalBore(row.branchName, row.sizeMm, config);
   const dtxr = branchDtxrWallEvidence(
     branch, row.branchName, stagedEvidenceIndex, boreMm, config,
   );
@@ -50,6 +53,9 @@ function correctedRow(row, branch, stagedEvidenceIndex, config) {
     ...row,
     sizeMm: boreMm,
     size: boreMm ? `${boreMm}mm` : row.size,
+    nominalBoreAuthority:localBores.length?'actual-node-outside-diameter':'line-fallback-no-verified-od',
+    mixedDiameterBranch:localBores.length>1,
+    branchNodeNominalBoresMm:localBores,
     wallThicknessKey: classSizeKey(row, boreMm),
   };
   if (authority) {

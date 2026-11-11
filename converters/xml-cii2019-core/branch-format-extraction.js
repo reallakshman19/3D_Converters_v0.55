@@ -158,6 +158,26 @@ function evaluate(source, formatInput, index, sequence, legacy) {
   };
 }
 
+function lineKeyNorm(value) { return text(value).toUpperCase().replace(/\s+/g, ''); }
+const LINE_KEY_SETS = new WeakMap();
+function lineListKeys(config) {
+  const rows = record(config).linelist?.masterRows;
+  if (!Array.isArray(rows) || !rows.length) return null;
+  if (!LINE_KEY_SETS.has(rows)) {
+    const keys = new Set();
+    for (const row of rows) {
+      if (!row || typeof row !== 'object') continue;
+      for (const field of ['lineKey', 'lineNoKey']) {
+        const key = lineKeyNorm(row[field]);
+        if (key) keys.add(key);
+      }
+    }
+    LINE_KEY_SETS.set(rows, keys);
+  }
+  const keys = LINE_KEY_SETS.get(rows);
+  return keys.size ? keys : null;
+}
+
 // Only source identity can create a two-format conflict. Rating and bore
 // are optional enrichment outputs and must never reject a valid identity.
 const FIELDS = ['lineKey', 'pipingClass'];
@@ -188,10 +208,25 @@ export function extractBranchFieldsWithFormats(branchName, config = {}) {
   const matched = candidates.filter((candidate) => candidate.status === 'MATCHED');
   if (!matched.length) return unresolved('UNMATCHED', candidates, origin);
 
-  const chosen = matched[0];
+  let chosen = matched[0];
+  let resolution;
   const agree = matched.every((candidate) => FIELDS.every((field) => candidate[field] === chosen[field]));
-  if (!agree) return unresolved('AMBIGUOUS', candidates, origin);
+  if (!agree) {
+    // v0.55: disagreeing formats are settled ONLY by exact loaded Line List
+    // evidence. Exactly one candidate line key must exist in the Line List;
+    // otherwise the branch stays AMBIGUOUS (fail closed).
+    const keys = lineListKeys(config);
+    const listed = keys ? matched.filter((candidate) => keys.has(lineKeyNorm(candidate.lineKey))) : [];
+    const distinct = new Set(listed.map((candidate) => lineKeyNorm(candidate.lineKey)));
+    if (distinct.size !== 1) return unresolved('AMBIGUOUS', candidates, origin);
+    const winners = listed.filter((candidate) => candidate.pipingClass === listed[0].pipingClass);
+    if (winners.length !== listed.length) return unresolved('AMBIGUOUS', candidates, origin);
+    chosen = listed[0];
+    matched.splice(0, matched.length, ...listed);
+    resolution = 'LINE_LIST_EXACT';
+  }
   return {
+    ...(resolution ? { resolution } : {}),
     status: 'MATCHED',
     lineKey: chosen.lineKey,
     pipingClass: chosen.pipingClass,

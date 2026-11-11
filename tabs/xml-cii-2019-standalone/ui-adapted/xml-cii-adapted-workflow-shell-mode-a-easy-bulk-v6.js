@@ -16,7 +16,7 @@ import { disposeAdaptedGeometryPreviews } from './xml-cii-adapted-cii-preview-ca
 import { xmlCiiProcessingMode } from './xml-cii-adapted-processing-mode.js?v=20261001-single-weight-owners-1';
 import { installLfjO1SourceIntake } from './xml-cii-adapted-lfj-o1-intake.js';
 import { uninstallNativeRunDelegation } from './xml-cii-adapted-events-mode-a.js?v=20261008-p0-mode-b-parity-1';
-import { isV045Phase, v055MasterGate, v045ViewRef, renderV045ActivePhase, bindV045WorkflowEvents, installV045WorkspaceHooks } from './xml-cii-v055-seam.js?v=20261111-v055-1';
+import { isV045Phase, v055MasterGate, v045ViewRef, renderV045ActivePhase, bindV045WorkflowEvents, installV045WorkspaceHooks, pruneSupersededRestoreFailures } from './xml-cii-v055-seam.js?v=20261111-v055-2';
 
 let activeWorkflowState = createXmlCiiAdaptedWorkflowState();
 installRigidReviewActionsEnhancement();
@@ -38,6 +38,9 @@ export function renderXmlCiiAdaptedWorkflowShell(container, initialState) {
   const stateRef = createXmlCiiModeAStateRef(baseRef);
   const render = () => {
     ensureXmlCiiBranchSelectionInRef(stateRef);
+    // v0.55: a fresh import replaces a failed startup restore of that master.
+    const pruned = pruneSupersededRestoreFailures(stateRef.current);
+    if (pruned !== stateRef.current) stateRef.current = pruned;
     activeWorkflowState = stateRef.current;
     const scrollStates = [];
     container.querySelectorAll('.xml-cii-main-workspace, .model-converters-left, .xml-cii-standalone-output pre, .xml-cii-standalone-card pre').forEach((el, idx) => {

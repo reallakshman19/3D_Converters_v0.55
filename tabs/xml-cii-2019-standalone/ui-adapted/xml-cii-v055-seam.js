@@ -210,6 +210,33 @@ export function bindV045WorkflowEvents(container, viewRef, render) {
   return result;
 }
 
+/**
+ * 3D_Converters records a startup restore failure per master (for example a
+ * stored record that points at a dataset no longer in IndexedDB) and nothing
+ * clears it when the user then imports that master again, so Preview stays
+ * blocked with MASTER_RESTORE_FAILED. A failure is stale only when the master
+ * now uses a DIFFERENT dataset than the one that failed. A failure for the
+ * dataset still in use, or with no replacement, is kept (fails closed).
+ * Returns the same state object when nothing is stale.
+ */
+export function pruneSupersededRestoreFailures(state) {
+  const failures = state?.masterRestoreFailures;
+  if (!failures || typeof failures !== 'object') return state;
+  const refs = state?.masterContext?.datasetRefs || {};
+  const stale = Object.keys(failures).filter((masterKey) => {
+    const current = String(refs[masterKey]?.datasetId || '');
+    return current && current !== String(failures[masterKey]?.datasetId || '');
+  });
+  if (!stale.length) return state;
+  const nextFailures = { ...failures };
+  const nextIdentity = { ...(state.masterRestoreFailureIdentity || {}) };
+  for (const masterKey of stale) {
+    delete nextFailures[masterKey];
+    delete nextIdentity[masterKey];
+  }
+  return { ...state, masterRestoreFailures: nextFailures, masterRestoreFailureIdentity: nextIdentity };
+}
+
 export function resetV055SeamForTests() {
   gate = { signature: '', status: 'idle', error: '' };
   staged = { key: '', text: '' };
